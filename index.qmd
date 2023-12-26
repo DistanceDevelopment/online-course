@@ -2,7 +2,7 @@
 title: "async2024-2"
 ---
 
-This is a Quarto website.
+This is a Quarto website. Eric Rexstad is building it as a start for new introductory workshop content.
 
 To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
 
