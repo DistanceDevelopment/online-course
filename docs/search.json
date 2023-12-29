@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "async2024-2",
     "section": "",
-    "text": "This is a Quarto website. Eric Rexstad is building it as a start for new introductory workshop content.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+    "text": "This is a Quarto website. Eric Rexstad is building it as a start for new introductory workshop content.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n1 + 1\n\n[1] 2"
   },
   {
     "objectID": "about.html",
@@ -12,5 +12,453 @@
     "title": "About",
     "section": "",
     "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "index.html#and-everything-else",
+    "href": "index.html#and-everything-else",
+    "title": "async2024-2",
+    "section": "And everything else",
+    "text": "And everything else"
+  },
+  {
+    "objectID": "02-detfns/detfnlanding.html",
+    "href": "02-detfns/detfnlanding.html",
+    "title": "Fitting detection functions to line transect data",
+    "section": "",
+    "text": "The data are the famous “ducknest” data similar to those data described in (Anderson & Pospahala, 1970). Data exist within the Distance package, so emphasis will be upon performing analysis rather than acquiring data.\nYou will do some exploratory analysis of the detection distances, then use the function ds() to fit detection functions to the data. You’ll also use the function convert_units() for properly dealing with different units of measure in the data.\nThe estimated detection functions will be plotted and assessed for goodness of fit."
+  },
+  {
+    "objectID": "02-detfns/detfnlanding.html#estimating-density-of-duck-nests",
+    "href": "02-detfns/detfnlanding.html#estimating-density-of-duck-nests",
+    "title": "Fitting detection functions to line transect data",
+    "section": "",
+    "text": "The data are the famous “ducknest” data similar to those data described in (Anderson & Pospahala, 1970). Data exist within the Distance package, so emphasis will be upon performing analysis rather than acquiring data.\nYou will do some exploratory analysis of the detection distances, then use the function ds() to fit detection functions to the data. You’ll also use the function convert_units() for properly dealing with different units of measure in the data.\nThe estimated detection functions will be plotted and assessed for goodness of fit."
+  },
+  {
+    "objectID": "02-detfns/truncation-decisions.html",
+    "href": "02-detfns/truncation-decisions.html",
+    "title": "Effect of truncation upon density estimates",
+    "section": "",
+    "text": "This question arose in our discussion of truncation. The truncation decision is one of the first decisions an analyst will make when performing a distance sampling analysis. Is the truncation decision a decision that has profound consequences and therefore deserve lots of thought (answer: probably not). Let’s see\nI have written a function that simply repeatedly calls ds() to fit a detection function to a data set. Within the function is a for() loop containing the call to ds(). After each call to ds() the results of the fitted model object are stored within a data frame for subsequent plotting. The function retains the point estimate of density and the confidence interval bounds of the estimate.\n\n\nIs presented here\n\ntrunc.experiment &lt;- function(mydata, trunc.range=0:25, cu, type=\"line\") {\n  result &lt;- data.frame(est=numeric(),\n                       lcl=numeric(),\n                       ucl=numeric())\n  for (i in seq_along(trunc.range)) {\n    this &lt;- paste0(i-1,\"%\")\n    m &lt;- ds(mydata, key = \"hn\", adj = NULL, convert_units = cu, \n            transect = type, truncation = this)\n    result[i, ] &lt;- m$dht$individuals$D[c(2,5,6)]\n  }\n  return(result)\n}"
+  },
+  {
+    "objectID": "02-detfns/truncation-decisions.html#the-function",
+    "href": "02-detfns/truncation-decisions.html#the-function",
+    "title": "Effect of truncation upon density estimates",
+    "section": "",
+    "text": "Is presented here\n\ntrunc.experiment &lt;- function(mydata, trunc.range=0:25, cu, type=\"line\") {\n  result &lt;- data.frame(est=numeric(),\n                       lcl=numeric(),\n                       ucl=numeric())\n  for (i in seq_along(trunc.range)) {\n    this &lt;- paste0(i-1,\"%\")\n    m &lt;- ds(mydata, key = \"hn\", adj = NULL, convert_units = cu, \n            transect = type, truncation = this)\n    result[i, ] &lt;- m$dht$individuals$D[c(2,5,6)]\n  }\n  return(result)\n}"
+  },
+  {
+    "objectID": "02-detfns/truncation-decisions.html#duck-nest-result",
+    "href": "02-detfns/truncation-decisions.html#duck-nest-result",
+    "title": "Effect of truncation upon density estimates",
+    "section": "Duck nest result",
+    "text": "Duck nest result\nThe figure below shows there is very little change in point estimates of duck nest density until ~20% (1/5th) of the data have been truncated. The magnitude of the point estimate changes are minute in comparison to the width of the confidence intervals.\n\ntrange &lt;- 1:26\nplot(trange-1, duck.trunc$est, type=\"p\", \n     ylim=range(c(duck.trunc[,2], duck.trunc[,3])), pch=20,\n     main=\"Duck nest data\\ntruncation experiment\", ylab=\"Nest density\",\n     xlab=\"Percent data truncated\")\nsegments(trange[trange]-1, duck.trunc[trange,2],\n         trange[trange]-1, duck.trunc[trange,3])\n\n\n\n\nEffects of truncation upon density estimates for duck nest data."
+  },
+  {
+    "objectID": "02-detfns/truncation-decisions.html#simulated-line-transect-result",
+    "href": "02-detfns/truncation-decisions.html#simulated-line-transect-result",
+    "title": "Effect of truncation upon density estimates",
+    "section": "Simulated line transect result",
+    "text": "Simulated line transect result\nThe value of writing functions is they can be re-used if written with sufficient generality. I re-use the truncation function upon a different data set; the simulated data from Practical 3 where the true density is known to be 79.8 animals per hectare (depicted with horizontal dashed line).\n\ndata(\"LTExercise\")\nsim.trunc &lt;- trunc.experiment(mydata=LTExercise, trunc.range=0:25, cu=cu, type=\"line\")\n\n\nplot(trange-1, sim.trunc$est, type=\"p\", \n     ylim=range(c(sim.trunc[,2], sim.trunc[,3])), pch=20,\n     main=\"Simulated data\\ntruncation experiment\", ylab=\"Density\",\n     xlab=\"Percent data truncated\")\nsegments(trange[trange]-1, sim.trunc[trange,2],\n         trange[trange]-1, sim.trunc[trange,3])\nabline(h=79.8, lwd=2, lty=3)\n\n\n\n\nEffects of truncation upon density estimates for simulated line transect data."
+  },
+  {
+    "objectID": "02-detfns/Pr2-instructions.html",
+    "href": "02-detfns/Pr2-instructions.html",
+    "title": "Line transect estimation using R",
+    "section": "",
+    "text": "In this exercise, we use R (R Core Team, 2019) and the Distance package (Miller et al., 2019) to fit different detection function models to the duck nest data (introduced in Exercise 1) and estimate duck nest density and abundance.\n\nObjectives\nThe aims of this exercise are to:\n\nLoad the Distance library\nImport a data file\nFit a basic detection function using the ds function\nPlot and examine a detection function\nAssess goodness of fit of the detection function\nFit different detection function forms.\n\n\n\nSurvey data\nAs a reminder of the survey, 20 line transects, each of length 128.75 km, were searched out to a distance of 2.4 metres (Anderson & Pospahala, 1970). Perpendicular distances to detected nests have been provided in a data set named ducknest. The columns in the file ducknest are:\n\nStudy.Area - this is the name of the study, Monte Vista NWR\nRegion.Label - identifier of regions: in this case there is only one region and it is set to ‘Default’\nArea - size of the study region (km\\(^2\\)): here the area is set to zero. The area of the refuge is 47.7 km\\(^2\\) - this is needed to obtain abundance: for the purposes of this exercise, we are interested in fitting detection functions and density rather than abundance.\nSample.Label - line transect identifier (numbered 1-20)\nEffort - length of the line transects (km)\nobject - unique identifier for each duck nest identified\ndistance - perpendicular distance (metres) to each duck nest.\n\nThe distances allow different key functions/adjustments to be fitted in the detection function model and, by including the transect lengths and area of the region, density and abundance can be estimated.\n\n\nUsing the Distance package\nThe Distance package has been installed in RStudio/Cloud. When you work on your own machine, you will need to install it from CRAN:\n\ninstall.packages(Distance)\n\n\n\nAccessing the data\nThe duck nest data are part of the Distance package, so if you have the package installed, the data set can be accessed simply by using the data() function\n\nlibrary(Distance)\ndata(ducknest)\n\nTo look at the first few rows of ducknest type the following command.\n\nhead(ducknest)\n\nThe object ducknest is a dataframe object made up of rows and columns. There is one row for each detected nest: use the function nrow to remind yourself how many detections there are:\n\nnrow(ducknest)\n\n\n\nSummarising the perpendicular distances\nCreate a numerical summary of the distances:\n\nsummary(ducknest$distance)\n\nSimilarly to plot a histogram of distances, the command is:\n\nhist(ducknest$distance, xlab=\"Distance (m)\")\n\n\n\nFitting a simple detection function model with ds\nDetection functions are fitted using the ds function and this function requires a data frame to have a column called distance. We have this in our ducknest data, therefore, we can simply supply the name of the data frame to the function as follows.\n\n\n\n\n\n\nTake care\n\n\n\nA guaranteed way to produce incorrect results from your analysis is to misspecify the units distances are measured. The ds function has an argument convert_units where the user provides a value to report density in proper units. Providing an incorrect value will result in estimates that are out by orders of magnitude.\n\n\nBefore fitting a model, the units of measure within the survey need to be reconciled. We can choose the units in which duck nest density is to be reported, we choose square kilometres. How to import this information to the ds function?\nThe answer is another function convert_units. Arguments to this function are\n\ndistance_units\n\nunits of measure for perpendicular/radial distances\n\neffort_units\n\nunits of measure for effort (NULL for point transects)\n\narea_units\n\nunits of measure for the study area.\n\n\n\nconversion.factor &lt;- convert_units(\"meter\", \"kilometer\", \"square kilometer\")\n\n\n# Fit half-normal detection function, no adjustment terms\nnest.hn &lt;- ds(data=ducknest, key=\"hn\", adjustment=NULL,\n              convert_units=conversion.factor)\n\nDetails about the arguments for this function:\n\nkey=\"hn\"\n\nfit a half-normal key detection function\n\nadjustment=NULL\n\ndo not include adjustment terms\n\nconvert_units=conversion.factor\n\nrequired because, for this example, the perpendicular distances are in metres and the line transect lengths are in km - this argument converts the perpendicular distance measurements from metres to km.\n\n\nAs we have seen, on executing the ds command some information is provided to the screen reminding the user what model has been fitted and the associated AIC value. More information is supplied if we ask for a summary of the model as follows:\n\n# Summarise model object\nsummary(nest.hn)\n\nCan you match the information with the values you used in Exercise 1 - was your density estimate similar to the one obtained here?\nTo look at the fitted detection function, simply use the plot function:\n\nplot(nest.hn)\n\nThe number of bins in the histogram can be changed by specifying the nc argument, for example, to plot the histogram having 8 bins (as in Exercise 1) we can specify:\n\nplot(nest.hn, nc=8)\n\nThe histogram should look like the one you drew in Exercise 1.\n\n\nGoodness of fit\nPrior to making inference based upon a detection function model, it is prudent to assess the fit of the model. The usual tools for checking goodness of fit are available: the function gof_ds performs goodness of fits tests and plots a QQ-plot. In this command, 8 bins will be used for the chi-square goodness of fit test.\n\ngof_ds(nest.hn)\n\n\n\nSpecifying different detection functions\nDifferent detection function forms and shapes, are specified by changing the key and adjustment arguments.\nThe different options available for key detection functions are:\n\nhalf normal (key=\"hn\") - this is the default\nhazard rate (key=\"hr\")\nuniform (key=\"unif\")\n\nThe different options available for adjustment terms are:\n\nno adjustment terms (adjustment=NULL)\ncosine (adjustment=\"cos\") - default\nHermite polynomial (adjustment=\"herm\")\nSimple polynomial (adjustment=\"poly\")\n\nFor each model specified below, note down the AIC, density and 95% confidence interval and compare it to the model already fitted (i.e. half-normal with no adjustments). Which detection function model would you choose?\nTo fit a uniform key function with cosine adjustment terms, use the command:\n\nnest.uf.cos &lt;- ds(ducknest, key=\"unif\", adjustment=\"cos\",\n                  convert_units=conversion.factor)\n\nBy default, AIC selection will be used to fit adjustment terms of up to order 5. Have any adjustment terms been selected?\nTo fit a hazard rate key function with Hermite polynomial adjustment terms, then use the command:\n\nnest.hr.herm &lt;- ds(ducknest, key=\"hr\", adjustment=\"herm\", \n                  convert_units=conversion.factor)\n\n\n\n\n\n\n\n\n\nReferences\n\nAnderson, D. R., & Pospahala, R. S. (1970). Correction of bias in belt transect studies of immotile objects. The Journal of Wildlife Management, 34(1), 141–146. https://doi.org/10.2307/3799501\n\n\nMiller, D. L., Rexstad, E., Thomas, L., Marshall, L., & Laake, J. L. (2019). Distance Sampling in R. Journal of Statistical Software, 89(1), 1–28. https://doi.org/10.18637/jss.v089.i01\n\n\nR Core Team. (2019). R: A language and environment for statistical computing. Retrieved from https://www.R-project.org"
+  },
+  {
+    "objectID": "02-detfns/Prac2_solution.html",
+    "href": "02-detfns/Prac2_solution.html",
+    "title": "Line transect estimation using R solution",
+    "section": "",
+    "text": "Solution\n\n\n\nLine transect estimation\n\n\n\nInspect duck nest data\nImport and check the data.\n\nlibrary(Distance)\ndata(ducknest)\nhead(ducknest, n=3)\n\n  Region.Label Area Sample.Label Effort object distance      Study.Area\n1      Default    0            1 128.75      1     0.06 Monte Vista NWR\n2      Default    0            1 128.75      2     0.07 Monte Vista NWR\n3      Default    0            1 128.75      3     0.04 Monte Vista NWR\n\nnrow(ducknest)\n\n[1] 534\n\nbrks &lt;- seq(from=0, to=2.4, by=0.3)\nhist(ducknest$distance, breaks=brks, xlab=\"Distance (m)\",\n     main=\"Perpendicular distances duck nests\")\n\n\n\n\n\n\nFit detection functions\nFit the three models using proper units of distance measure.\nThe answer is another function convert_units. Arguments to this function are\n\ndistance_units\n\nunits of measure for perpendicular/radial distances\n\neffort_units\n\nunits of measure for effort (NULL for point transects)\n\narea_units\n\nunits of measure for the study area.\n\n\n\nconversion.factor &lt;- convert_units(\"Meter\", \"Kilometer\", \"Square Kilometer\")\n# Half-normal with no adjustments\nnest.hn &lt;- ds(ducknest, key=\"hn\", adjustment=NULL,\n              convert_units=conversion.factor)\nsummary(nest.hn)\n\n\nSummary for distance analysis \nNumber of observations :  534 \nDistance range         :  0  -  2.4 \n\nModel       : Half-normal key function \nAIC         :  928.1338 \nOptimisation:  mrds (nlminb) \n\nDetection function parameters\nScale coefficient(s):  \n             estimate        se\n(Intercept) 0.9328967 0.1703933\n\n                       Estimate          SE         CV\nAverage p             0.8693482  0.03902051 0.04488479\nN in covered region 614.2533225 29.19681554 0.04753221\n\nSummary statistics:\n   Region  Area CoveredArea Effort   n  k        ER       se.ER      cv.ER\n1 Default 12.36       12.36   2575 534 20 0.2073786 0.007970756 0.03843576\n\nDensity:\n  Label Estimate       se         cv     lcl      ucl       df\n1 Total 49.69687 2.936724 0.05909274 44.2033 55.87318 99.55677\n\n\nIn addition to the half normal key function, fit uniform and hazard rate models with possible adjustment terms.\n\nnest.uf.cos &lt;- ds(ducknest, key=\"unif\", adjustment=\"cos\",\n                  convert_units=conversion.factor)\nnest.hr.herm &lt;- ds(ducknest, key=\"hr\", adjustment=\"herm\", \n                  convert_units=conversion.factor)\n\n\n\nAssess absolute model fit\nThe goodness of fit for the basic model is shown below.\n\ngof_ds(nest.hn, plot=FALSE)\n\n\nGoodness of fit results for ddf object\n\nDistance sampling Cramer-von Mises test (unweighted)\nTest statistic = 0.0353634 p-value = 0.955416\n\n\n\n\nContrast competing models\nA function useful for contrasting models is summarize_ds_models. A summary table of goodness of fit statistics for all models is created below.\n\n# Summarise gof statistics\nknitr::kable(summarize_ds_models(nest.hn, nest.uf.cos, nest.hr.herm, output=\"plain\"), \n               caption=\"Model results for ducknest data set.\", digits=3)\n\n\nModel results for ducknest data set.\n\n\n\n\n\n\n\n\n\n\n\nModel\nKey function\nFormula\nC-vM \\(p\\)-value\nAverage detectability\nse(Average detectability)\nDelta AIC\n\n\n\n\nnest.hn\nHalf-normal\n~1\n0.955\n0.869\n0.039\n0.000\n\n\nnest.uf.cos\nUniform with cosine adjustment term of order 1\nNA\n0.821\n0.846\n0.044\n0.346\n\n\nnest.hr.herm\nHazard-rate\n~1\n0.981\n0.889\n0.050\n1.660\n\n\n\n\n\n\n\nDensity estimates from the competing models\nThe density results from all models are summarized below.\n\n\n\nDensity estimates and confidence intervals for three fitted models.\n\n\nModel\nDetectionFunction\nDensity\nLowerCI\nUpperCI\n\n\n\n\n1\nHalf-normal, no adjustments\n49.70\n44.20\n55.87\n\n\n2\nUniform, cosine adjustments\n51.04\n44.92\n58.00\n\n\n3\nHazard rate, no adjustments\n48.59\n42.52\n55.54\n\n\n\n\n\n\n\nVisualise shape of key functions with duck nest data\nThe detection function plots are shown below.\n\nplot(nest.hn, nc=8, main=\"Half normal, no adjustments\")\nplot(nest.uf.cos, nc=8, main=\"Uniform, cosine adjustments\")\nplot(nest.hr.herm, nc=8, main=\"Hazard rate, no adjustments\")\n\n\n\n\n\n\nHalf normal\n\n\n\n\n\n\n\nUniform with cosine\n\n\n\n\n\n\n\nHazard rate\n\n\n\n\n\n\nThe half-normal detection function with no adjustments has the smallest AIC which provides support for this model. The \\(\\Delta\\)AIC values for all three models is small. In general, you should get similar density estimates using different detection function models, provided those models fit the data well, as in this example."
+  },
+  {
+    "objectID": "02-detfns/detfnlanding.html#lecture-heading",
+    "href": "02-detfns/detfnlanding.html#lecture-heading",
+    "title": "Fitting detection functions to line transect data",
+    "section": "Lecture heading",
+    "text": "Lecture heading\n\nLecture discussion\n\nSlides\n\n\nVideo"
+  },
+  {
+    "objectID": "02-detfns/detfnlanding.html#exercise-heading",
+    "href": "02-detfns/detfnlanding.html#exercise-heading",
+    "title": "Fitting detection functions to line transect data",
+    "section": "Exercise heading",
+    "text": "Exercise heading\n\n\n\nUsing R package\n\nVideo introduction\n\n\nInstructions\n\n\nSolution and discussion\n\n\nVideo summary\n\n\n\n\nUsing Distance for Windows\n\nVideo introduction\n\n\nInstructions\n\n\nSolution and discussion\n\n\nVideo summary"
+  },
+  {
+    "objectID": "02-detfns/detfnlanding.html#supplement-heading",
+    "href": "02-detfns/detfnlanding.html#supplement-heading",
+    "title": "Fitting detection functions to line transect data",
+    "section": "Supplement heading",
+    "text": "Supplement heading\n\nEffect of truncation upon density estimates\n\nDemonstration of changing truncation distance"
+  },
+  {
+    "objectID": "02-detfns/detfnlanding.html#lecture-materials",
+    "href": "02-detfns/detfnlanding.html#lecture-materials",
+    "title": "Fitting detection functions to line transect data",
+    "section": "Lecture materials",
+    "text": "Lecture materials\n\nLecture discussion\n\nSlides\n\n\nVideo"
+  },
+  {
+    "objectID": "02-detfns/detfnlanding.html#exercise-materials",
+    "href": "02-detfns/detfnlanding.html#exercise-materials",
+    "title": "Fitting detection functions to line transect data",
+    "section": "Exercise materials",
+    "text": "Exercise materials\n\n\n\nUsing R package\n\nVideo introduction\n\n\nInstructions\n\n\nSolution and discussion\n\n\nVideo summary\n\n\n\n\nUsing Distance for Windows\n\nVideo introduction\n\n\nInstructions\n\n\nSolution and discussion\n\n\nVideo summary"
+  },
+  {
+    "objectID": "02-detfns/detfnlanding.html#supplemental-materials",
+    "href": "02-detfns/detfnlanding.html#supplemental-materials",
+    "title": "Fitting detection functions to line transect data",
+    "section": "Supplemental materials",
+    "text": "Supplemental materials\n\nEffect of truncation upon density estimates\n\nDemonstration of changing truncation distance"
+  },
+  {
+    "objectID": "03-criticism/criticismlanding.html",
+    "href": "03-criticism/criticismlanding.html",
+    "title": "Model criticism",
+    "section": "",
+    "text": "This practical continues the theme of fitting detection functions to line transect distance sampling data. Follow along with the Rmarkdown (.rmd) file found in the project.\nYou will proceed to fit a number of key function/adjustment term combinations to the data. You will also experiment with setting truncation distances.\nThe data you are analysing are simulated, where the true density and the true detection function is known. You will see how well your analyses perform in producing confidence intervals that include the true density. Also examine how much variability there is between different detection functions in their density estimates.\nAfter completing that main task, you also have the opportunity to analyse another line transect data set of capercaillie, a native Scottish bird."
+  },
+  {
+    "objectID": "03-criticism/criticismlanding.html#absolute-and-relative-fit-of-detection-function-models",
+    "href": "03-criticism/criticismlanding.html#absolute-and-relative-fit-of-detection-function-models",
+    "title": "Model criticism",
+    "section": "",
+    "text": "This practical continues the theme of fitting detection functions to line transect distance sampling data. Follow along with the Rmarkdown (.rmd) file found in the project.\nYou will proceed to fit a number of key function/adjustment term combinations to the data. You will also experiment with setting truncation distances.\nThe data you are analysing are simulated, where the true density and the true detection function is known. You will see how well your analyses perform in producing confidence intervals that include the true density. Also examine how much variability there is between different detection functions in their density estimates.\nAfter completing that main task, you also have the opportunity to analyse another line transect data set of capercaillie, a native Scottish bird."
+  },
+  {
+    "objectID": "03-criticism/criticismlanding.html#lecture-materials",
+    "href": "03-criticism/criticismlanding.html#lecture-materials",
+    "title": "Model criticism",
+    "section": "Lecture materials",
+    "text": "Lecture materials\n\nLecture discussion\n\nSlides\n\n\nVideo"
+  },
+  {
+    "objectID": "03-criticism/criticismlanding.html#exercise-materials",
+    "href": "03-criticism/criticismlanding.html#exercise-materials",
+    "title": "Model criticism",
+    "section": "Exercise materials",
+    "text": "Exercise materials\n\n\n\nUsing R package\n\nVideo introduction\n\n\nInstructions\n\n\nSolution and discussion\n\n\nVideo summary\n\n\n\n\nUsing Distance for Windows\n\nVideo introduction\n\n\nInstructions\n\n\nSolution and discussion\n\n\nVideo summary"
+  },
+  {
+    "objectID": "03-criticism/criticismlanding.html#supplemental-materials",
+    "href": "03-criticism/criticismlanding.html#supplemental-materials",
+    "title": "Model criticism",
+    "section": "Supplemental materials",
+    "text": "Supplemental materials\n\nNothing\n\nThere is no supplemental materials"
+  },
+  {
+    "objectID": "01-intro/introlanding.html#estimating-widehatp_a-with-a-pencil",
+    "href": "01-intro/introlanding.html#estimating-widehatp_a-with-a-pencil",
+    "title": "Fundamentals of distance sampling",
+    "section": "",
+    "text": "This exercise is to familiarise you with distribution of perpendicular distances measured in a distance sampling survey. You will complete a histogram from tablular data provided.\nRather than using a computer, use your eye to fit a smooth function to the distribution depicted in the histogram. This forms the basis for estimating \\(\\widehat{P_a}\\); computed as the ratio of the area under the fitted detection function to the area of the rectangle.\nSubsequent calculations produce an estimate of the density of nests in the sampled region."
+  },
+  {
+    "objectID": "01-intro/introlanding.html#lecture-materials",
+    "href": "01-intro/introlanding.html#lecture-materials",
+    "title": "Fundamentals of distance sampling",
+    "section": "Lecture materials",
+    "text": "Lecture materials\n\nLecture discussion\n\nSlides\n\n\nVideo"
+  },
+  {
+    "objectID": "01-intro/introlanding.html#exercise-materials",
+    "href": "01-intro/introlanding.html#exercise-materials",
+    "title": "Fundamentals of distance sampling",
+    "section": "Exercise materials",
+    "text": "Exercise materials\n\nBut a single exercise\n\nVideo introduction\n\n\nInstructions\n\n\nSolution and discussion\n\n\nVideo summary"
+  },
+  {
+    "objectID": "01-intro/introlanding.html#supplemental-materials",
+    "href": "01-intro/introlanding.html#supplemental-materials",
+    "title": "Fundamentals of distance sampling",
+    "section": "Supplemental materials",
+    "text": "Supplemental materials\n\nNothing to add to first practical\n\nNo supplement"
+  },
+  {
+    "objectID": "01-intro/introlanding.html",
+    "href": "01-intro/introlanding.html",
+    "title": "Fundamentals of distance sampling",
+    "section": "",
+    "text": "This exercise is to familiarise you with distribution of perpendicular distances measured in a distance sampling survey. You will complete a histogram from tablular data provided.\nRather than using a computer, use your eye to fit a smooth function to the distribution depicted in the histogram. This forms the basis for estimating \\(\\widehat{P_a}\\); computed as the ratio of the area under the fitted detection function to the area of the rectangle.\nSubsequent calculations produce an estimate of the density of nests in the sampled region."
+  },
+  {
+    "objectID": "03-criticism/R-prac/modelsel-demo.html",
+    "href": "03-criticism/R-prac/modelsel-demo.html",
+    "title": "Demonstration two stages of model selection",
+    "section": "",
+    "text": "Demonstration\n\n\n\nEastern tropical Pacific dolphin data\nAfter my improvised description of selection of adjustment terms, I thought I should provide a more thorough description via an example. The purpose of the demonstration is to fit models with adjustments to a data set and expose, in detail, all models fitted during the process.\nFor this demonstration, I require a data set with an interesting shape to the histogram. I will not describe the data set, other than to note it contains roughly 1000 detections. We will see this data set again next week. More complete details of the data set, as well as a detailed analysis are in Marques & Buckland (2003)."
+  },
+  {
+    "objectID": "03-criticism/R-prac/modelsel-demo.html#half-normal-cosine",
+    "href": "03-criticism/R-prac/modelsel-demo.html#half-normal-cosine",
+    "title": "Demonstration two stages of model selection",
+    "section": "Half-normal cosine",
+    "text": "Half-normal cosine\n\nhncos &lt;- ds(bino, key=\"hn\", adj=\"cos\")\n\nStarting AIC adjustment term selection.\n\n\nFitting half-normal key function\n\n\nAIC= 2816.871\n\n\nFitting half-normal key function with cosine(2) adjustments\n\n\nAIC= 2806.01\n\n\nFitting half-normal key function with cosine(2,3) adjustments\n\n\nAIC= 2807.589\n\n\n\nHalf-normal key function with cosine(2) adjustments selected.\n\n\nThree models with the half-normal key are fitted, with the preferred model being the second fitted, namely the model with a single adjustment term.\n\n\n\n\n%%{init: {'theme': 'forest' } }%%\ngraph TD\n   D(ds_data, key='hn', adj='cos')\n   D --&gt; ID0\n   D --&gt; ID1\n   D --&gt; ID2\n   ID0(hn0&lt;br&gt;AIC=2817)\n   ID1(hn1&lt;br&gt;AIC=2806)\n   ID2(hn2&lt;br&gt;AIC=2808)\n   FIN(hn1)\n   ID0 --&gt; FIN\n   ID1 --&gt; FIN\n   ID2 --&gt; FIN"
+  },
+  {
+    "objectID": "03-criticism/R-prac/modelsel-demo.html#uniform-cosine",
+    "href": "03-criticism/R-prac/modelsel-demo.html#uniform-cosine",
+    "title": "Demonstration two stages of model selection",
+    "section": "Uniform cosine",
+    "text": "Uniform cosine\n\nunicos &lt;- ds(bino, key=\"unif\", adj=\"cos\")\n\nStarting AIC adjustment term selection.\n\n\nFitting uniform key function\n\n\nAIC= 2971.022\n\n\nFitting uniform key function with cosine(1) adjustments\n\n\nAIC= 2811.177\n\n\nFitting uniform key function with cosine(1,2) adjustments\n\n\nAIC= 2808.378\n\n\nFitting uniform key function with cosine(1,2,3) adjustments\n\n\nAIC= 2806.685\n\n\nFitting uniform key function with cosine(1,2,3,4) adjustments\n\n\nAIC= 2808.105\n\n\n\nUniform key function with cosine(1,2,3) adjustments selected.\n\n\nThe same pattern as with the half-normal key, with a small exception. Four models with the uniform key are fitted, with the preferred model being the third fitted, namely the model with a three adjustment term.\n\n\n\n\n%%{init: {'theme': 'forest' } }%%\ngraph TD\n   D(ds_data, key='unif', adj='cos')\n   D --&gt; ID1\n   D --&gt; ID2\n   D --&gt; ID3\n   D --&gt; ID4\n   ID1(unif1&lt;br&gt;AIC=2811)\n   ID2(unif2&lt;br&gt;AIC=2808)\n   ID3(unif3&lt;br&gt;AIC=2807)\n   ID4(unif4&lt;br&gt;AIC=2808)\n   FIN(unif3)\n   ID1 --&gt; FIN\n   ID2 --&gt; FIN\n   ID3 --&gt; FIN\n   ID4 --&gt; FIN"
+  },
+  {
+    "objectID": "03-criticism/R-prac/modelsel-demo.html#hazard-rate-cosine",
+    "href": "03-criticism/R-prac/modelsel-demo.html#hazard-rate-cosine",
+    "title": "Demonstration two stages of model selection",
+    "section": "Hazard rate cosine",
+    "text": "Hazard rate cosine\n\nhrcos &lt;- ds(bino, key=\"hr\", adj=\"cos\")\n\nStarting AIC adjustment term selection.\n\n\nFitting hazard-rate key function\n\n\nAIC= 2805.467\n\n\nFitting hazard-rate key function with cosine(2) adjustments\n\n\nAIC= 2807.47\n\n\n\nHazard-rate key function selected.\n\n\nTwo models are fitted with the hazard rate key function. The addition of a single adjustment term does not improve the AIC score, so there is no point in fitting a more complex model with additional adjustment terms.\n\n\n\n\n%%{init: {'theme': 'forest' } }%%\ngraph TD\n   D(ds_data, key='hr', adj='cos')\n   D --&gt; ID0\n   D --&gt; ID1\n   ID0(hr0&lt;br&gt;AIC=2805)\n   ID1(hr1&lt;br&gt;AIC=2807)\n   FIN(hr0)\n   ID0 --&gt; FIN\n   ID1 --&gt; FIN\n\n\n\n\n\nThe contestants that emerge from the first round of model competition are:\n\nhalf-normal with 1 adjustment term\nuniform with 3 adjustment terms\nhazard rate with no adjustment terms"
+  },
+  {
+    "objectID": "05-points/pointslanding.html",
+    "href": "05-points/pointslanding.html",
+    "title": "Analysis of point transect data",
+    "section": "",
+    "text": "Having mastered analysis of line transect data, we move on to analysis of point transect data. These data are more difficult to model because the region of the curve where we wish to be most precise is the region where data are most scarce.\nAssessing fit to point transect data also represents a challenge. Consequently, we use plots of the probability density function to gain perspective regarding the influence of regions of the probability density function upon lack of fit.\nTwo data sets are to be analysed: the first is a simulated data set in which both the true shape of the detection function as well as true animal density is known. Fit various detection functions to these data, also examining the effect of truncation (truncation for points is often more severe than for lines) upon estimates. Look for congruence in density estimates–as you did with a similar exercise performed on simulated line transect data in Practical 3.\nFinally, there are two optional data sets of winter wrens collected by Prof. Buckland. Same species and study area, but two different field protocols: one protocol used traditional 5-minute counts while the other protocol employed the “snapshot” method."
+  },
+  {
+    "objectID": "05-points/pointslanding.html#analysis-of-point-transect-data",
+    "href": "05-points/pointslanding.html#analysis-of-point-transect-data",
+    "title": "Analysis of point transect data",
+    "section": "",
+    "text": "Having mastered analysis of line transect data, we move on to analysis of point transect data. These data are more difficult to model because the region of the curve where we wish to be most precise is the region where data are most scarce.\nAssessing fit to point transect data also represents a challenge. Consequently, we use plots of the probability density function to gain perspective regarding the influence of regions of the probability density function upon lack of fit.\nTwo data sets are to be analysed: the first is a simulated data set in which both the true shape of the detection function as well as true animal density is known. Fit various detection functions to these data, also examining the effect of truncation (truncation for points is often more severe than for lines) upon estimates. Look for congruence in density estimates–as you did with a similar exercise performed on simulated line transect data in Practical 3.\nFinally, there are two optional data sets of winter wrens collected by Prof. Buckland. Same species and study area, but two different field protocols: one protocol used traditional 5-minute counts while the other protocol employed the “snapshot” method."
+  },
+  {
+    "objectID": "05-points/pointslanding.html#lecture-materials",
+    "href": "05-points/pointslanding.html#lecture-materials",
+    "title": "Analysis of point transect data",
+    "section": "Lecture materials",
+    "text": "Lecture materials\n\nLecture discussion\n\nSlides\n\n\nVideo"
+  },
+  {
+    "objectID": "05-points/pointslanding.html#exercise-materials",
+    "href": "05-points/pointslanding.html#exercise-materials",
+    "title": "Analysis of point transect data",
+    "section": "Exercise materials",
+    "text": "Exercise materials\n\n\n\nUsing R package\n\nVideo introduction\n\n\nInstructions\n\n\nSolution and discussion\n\n\nVideo summary\n\n\n\n\nUsing Distance for Windows\n\nVideo introduction\n\n\nInstructions\n\n\nSolution and discussion\n\n\nVideo summary"
+  },
+  {
+    "objectID": "05-points/pointslanding.html#supplemental-materials",
+    "href": "05-points/pointslanding.html#supplemental-materials",
+    "title": "Analysis of point transect data",
+    "section": "Supplemental materials",
+    "text": "Supplemental materials\n\nUniformity assumption as spatial replicates increase\n\nNo supplemental material"
+  },
+  {
+    "objectID": "05-points/R-prac/Prac5_solution.html",
+    "href": "05-points/R-prac/Prac5_solution.html",
+    "title": "Point transect sampling solution",
+    "section": "",
+    "text": "Solution\n\n\n\nPoint transect analysis exercise"
+  },
+  {
+    "objectID": "05-points/R-prac/Prac5_solution.html#truncation-of-20m",
+    "href": "05-points/R-prac/Prac5_solution.html#truncation-of-20m",
+    "title": "Point transect sampling solution",
+    "section": "Truncation of 20m",
+    "text": "Truncation of 20m\n\nPTExercise.hn.t20m &lt;- ds(data=PTExercise, transect=\"point\", key=\"hn\", truncation=20,\n                    convert_units=conversion.factor)\nPTExercise.hr.t20m &lt;- ds(data=PTExercise, transect=\"point\", key=\"hr\", truncation=20,\n                    convert_units=conversion.factor)\nPTExercise.uf.cos.t20m &lt;- ds(data=PTExercise, transect=\"point\", key=\"unif\", \n                        adjustment=\"cos\", truncation=20,convert_units=conversion.factor)\n\n\n\n\nResults from simulated point transect data.\n\n\n\n\n\n\n\n\n\n\n\n\nDetectionFunction\nAdjustments\nTruncation\nAIC\nDensity\nD.CV\nLower.CI\nUpper.CI\n\n\n\n\nHalf-normal\nNone\n34.2\n919.140\n79.630\n0.126\n62.121\n102.074\n\n\nHalf-normal\nNone\n20.0\n764.305\n70.826\n0.157\n51.978\n96.507\n\n\nHazard rate\nNone\n20.0\n767.211\n62.364\n0.187\n43.207\n90.015\n\n\nUniform\nCosine\n20.0\n765.503\n75.044\n0.144\n56.515\n99.648"
+  },
+  {
+    "objectID": "05-points/R-prac/Prac5_solution.html#plots-of-probability-density-functions-to-inspect-fit",
+    "href": "05-points/R-prac/Prac5_solution.html#plots-of-probability-density-functions-to-inspect-fit",
+    "title": "Point transect sampling solution",
+    "section": "Plots of probability density functions to inspect fit",
+    "text": "Plots of probability density functions to inspect fit\n\nplot(PTExercise.hn, main=\"Half normal, no truncation\", pdf=TRUE)\nplot(PTExercise.hn.t20m, main=\"Half normal, truncation 20m\", pdf=TRUE)\nplot(PTExercise.hr.t20m, main=\"Hazard rate, truncation 20m\", pdf=TRUE)\nplot(PTExercise.uf.cos.t20m, main=\"Uniform with cosine, truncation 20m\", pdf=TRUE)\n\n\n\n\n\n\nHalf normal without truncation\n\n\n\n\n\n\n\nHalf normal 20m truncation\n\n\n\n\n\n\n\n\n\nHazard rate 20m truncation\n\n\n\n\n\n\n\nUniform cosine 20m truncation\n\n\n\n\n\n\nWe see a fair degree of variability between analyses - reliable analysis of point transect data is more difficult than for line transect data. We see greater loss in precision from truncating data relative to line transect sampling, but if we do not truncate data, different models can give widely differing estimates."
+  },
+  {
+    "objectID": "05-points/R-prac/Prac5_solution.html#probability-density-functions-for-bucklands-winter-wren-point-transects",
+    "href": "05-points/R-prac/Prac5_solution.html#probability-density-functions-for-bucklands-winter-wren-point-transects",
+    "title": "Point transect sampling solution",
+    "section": "Probability density functions for Buckland’s winter wren point transects",
+    "text": "Probability density functions for Buckland’s winter wren point transects\n\nplot(wren5min.uf.cos.t110, main=\"5 minute count\")\nplot(wrensnap.hr.cos.t110, main=\"Snapshot moment\")\n\n\n\n\n\n\nDetection function 5 minute count\n\n\n\n\n\n\n\nDetection function snapshot\n\n\n\n\n\n\nAs the detection distance histograms indicate, winter wren showed evidence of observer avoidance, more than other species in the Montrave study. We show the detection function graph rather than the PDF to emphasise the evasive movement aspect of the data. If you conduct the goodness of fit test, using gof_ds(), you will find that the models still suitably fit the data."
+  },
+  {
+    "objectID": "04-precision/precisionlanding.html",
+    "href": "04-precision/precisionlanding.html",
+    "title": "Precision of density estimates",
+    "section": "",
+    "text": "This exercise examines the ability to precisely estimate density from line transect data.\nThe data are again simulated and there are two data sets. The first data set you will analyse has transects of varying lengths; increasing from west to east in the study area. In addition to this change in transect lengths, there is an accompanying gradient in animal density, decreasing from west to east. In combination, this leads to transects with very high encounter rates in the west and transects with very low encounter rates in the east.\nYou are to analyse these data in several ways, focusing your attention on the precision associated with each estimation method.\nThere is a second data set that shares the same survey design (short transects in the west, long transects in the east). But in this second data set, there in no accompanying animal density gradient. Perform similar analyses with this data set."
+  },
+  {
+    "objectID": "04-precision/precisionlanding.html#precision-of-density-estimates",
+    "href": "04-precision/precisionlanding.html#precision-of-density-estimates",
+    "title": "Precision of density estimates",
+    "section": "",
+    "text": "This exercise examines the ability to precisely estimate density from line transect data.\nThe data are again simulated and there are two data sets. The first data set you will analyse has transects of varying lengths; increasing from west to east in the study area. In addition to this change in transect lengths, there is an accompanying gradient in animal density, decreasing from west to east. In combination, this leads to transects with very high encounter rates in the west and transects with very low encounter rates in the east.\nYou are to analyse these data in several ways, focusing your attention on the precision associated with each estimation method.\nThere is a second data set that shares the same survey design (short transects in the west, long transects in the east). But in this second data set, there in no accompanying animal density gradient. Perform similar analyses with this data set."
+  },
+  {
+    "objectID": "04-precision/precisionlanding.html#lecture-materials",
+    "href": "04-precision/precisionlanding.html#lecture-materials",
+    "title": "Precision of density estimates",
+    "section": "Lecture materials",
+    "text": "Lecture materials\n\nLecture discussion\n\nSlides\n\n\nVideo"
+  },
+  {
+    "objectID": "04-precision/precisionlanding.html#exercise-materials",
+    "href": "04-precision/precisionlanding.html#exercise-materials",
+    "title": "Precision of density estimates",
+    "section": "Exercise materials",
+    "text": "Exercise materials\n\n\n\nUsing R package\n\nVideo introduction\n\n\nInstructions\n\n\nSolution and discussion\n\n\nVideo summary\n\n\n\n\nUsing Distance for Windows\n\nVideo introduction\n\n\nInstructions\n\n\nSolution and discussion\n\n\nVideo summary"
+  },
+  {
+    "objectID": "04-precision/precisionlanding.html#supplemental-materials",
+    "href": "04-precision/precisionlanding.html#supplemental-materials",
+    "title": "Precision of density estimates",
+    "section": "Supplemental materials",
+    "text": "Supplemental materials\n\nCould use left-truncation\n\nThere is no supplemental material"
+  },
+  {
+    "objectID": "03-criticism/DistWin-prac/temp.html",
+    "href": "03-criticism/DistWin-prac/temp.html",
+    "title": "Placeholder",
+    "section": "",
+    "text": "blank file holder"
+  },
+  {
+    "objectID": "02-detfns/DistWin-prac/temp.html",
+    "href": "02-detfns/DistWin-prac/temp.html",
+    "title": "Placeholder",
+    "section": "",
+    "text": "blank file holder"
+  },
+  {
+    "objectID": "04-precision/DistWin-prac/temp.html",
+    "href": "04-precision/DistWin-prac/temp.html",
+    "title": "Placeholder",
+    "section": "",
+    "text": "blank file holder"
+  },
+  {
+    "objectID": "05-points/DistWin-prac/temp.html",
+    "href": "05-points/DistWin-prac/temp.html",
+    "title": "Placeholder",
+    "section": "",
+    "text": "blank file holder"
+  },
+  {
+    "objectID": "05-points/R-prac/Pr5-instructions.html",
+    "href": "05-points/R-prac/Pr5-instructions.html",
+    "title": "Point transect sampling",
+    "section": "",
+    "text": "The purpose of this exercise is to analyse point transect survey data: it can sometimes be more difficult than line transect data. In the first problem, the data are simulated and so the true density is known. In the second problem, two different data collection methods were used to survey song birds."
+  },
+  {
+    "objectID": "05-points/R-prac/Pr5-instructions.html#probability-density-function",
+    "href": "05-points/R-prac/Pr5-instructions.html#probability-density-function",
+    "title": "Point transect sampling",
+    "section": "Probability density function",
+    "text": "Probability density function\nTo plot the more informative probability density function (pdf), an additional argument is required in the plot() function:\n\nplot(ptdat.hn, pdf=TRUE)"
+  },
+  {
+    "objectID": "05-points/R-prac/Pr5-instructions.html#analyse-both-conventional-and-snapshot-data-sets",
+    "href": "05-points/R-prac/Pr5-instructions.html#analyse-both-conventional-and-snapshot-data-sets",
+    "title": "Point transect sampling",
+    "section": "Analyse both conventional and snapshot data sets",
+    "text": "Analyse both conventional and snapshot data sets\nWhat to do:\n\nSelect a simple model for exploratory data analysis. Experiment with different truncation distances, \\(w\\), and select a suitable value for each method. Are there any potential problems with any of the data sets?\nTry other models and model options. Use plots, AIC values and goodness-of-fit test statistics to determine an adequate model.\nRecord your estimates of density and corresponding confidence interval for each method."
+  },
+  {
+    "objectID": "02-detfns/R-prac/Pr2-instructions.html",
+    "href": "02-detfns/R-prac/Pr2-instructions.html",
+    "title": "Line transect estimation using R",
+    "section": "",
+    "text": "In this exercise, we use R (R Core Team, 2019) and the Distance package (Miller et al., 2019) to fit different detection function models to the duck nest data (introduced in Exercise 1) and estimate duck nest density and abundance.\n\nObjectives\nThe aims of this exercise are to:\n\nLoad the Distance library\nImport a data file\nFit a basic detection function using the ds function\nPlot and examine a detection function\nAssess goodness of fit of the detection function\nFit different detection function forms.\n\n\n\nSurvey data\nAs a reminder of the survey, 20 line transects, each of length 128.75 km, were searched out to a distance of 2.4 metres (Anderson & Pospahala, 1970). Perpendicular distances to detected nests have been provided in a data set named ducknest. The columns in the file ducknest are:\n\nStudy.Area - this is the name of the study, Monte Vista NWR\nRegion.Label - identifier of regions: in this case there is only one region and it is set to ‘Default’\nArea - size of the study region (km\\(^2\\)): here the area is set to zero. The area of the refuge is 47.7 km\\(^2\\) - this is needed to obtain abundance: for the purposes of this exercise, we are interested in fitting detection functions and density rather than abundance.\nSample.Label - line transect identifier (numbered 1-20)\nEffort - length of the line transects (km)\nobject - unique identifier for each duck nest identified\ndistance - perpendicular distance (metres) to each duck nest.\n\nThe distances allow different key functions/adjustments to be fitted in the detection function model and, by including the transect lengths and area of the region, density and abundance can be estimated.\n\n\nUsing the Distance package\nThe Distance package has been installed in RStudio/Cloud. When you work on your own machine, you will need to install it from CRAN:\n\ninstall.packages(Distance)\n\n\n\nAccessing the data\nThe duck nest data are part of the Distance package, so if you have the package installed, the data set can be accessed simply by using the data() function\n\nlibrary(Distance)\ndata(ducknest)\n\nTo look at the first few rows of ducknest type the following command.\n\nhead(ducknest)\n\nThe object ducknest is a dataframe object made up of rows and columns. There is one row for each detected nest: use the function nrow to remind yourself how many detections there are:\n\nnrow(ducknest)\n\n\n\nSummarising the perpendicular distances\nCreate a numerical summary of the distances:\n\nsummary(ducknest$distance)\n\nSimilarly to plot a histogram of distances, the command is:\n\nhist(ducknest$distance, xlab=\"Distance (m)\")\n\n\n\nFitting a simple detection function model with ds\nDetection functions are fitted using the ds function and this function requires a data frame to have a column called distance. We have this in our ducknest data, therefore, we can simply supply the name of the data frame to the function as follows.\n\n\n\n\n\n\nTake care\n\n\n\nA guaranteed way to produce incorrect results from your analysis is to misspecify the units distances are measured. The ds function has an argument convert_units where the user provides a value to report density in proper units. Providing an incorrect value will result in estimates that are out by orders of magnitude.\n\n\nBefore fitting a model, the units of measure within the survey need to be reconciled. We can choose the units in which duck nest density is to be reported, we choose square kilometres. How to import this information to the ds function?\nThe answer is another function convert_units. Arguments to this function are\n\ndistance_units\n\nunits of measure for perpendicular/radial distances\n\neffort_units\n\nunits of measure for effort (NULL for point transects)\n\narea_units\n\nunits of measure for the study area.\n\n\n\nconversion.factor &lt;- convert_units(\"meter\", \"kilometer\", \"square kilometer\")\n\n\n# Fit half-normal detection function, no adjustment terms\nnest.hn &lt;- ds(data=ducknest, key=\"hn\", adjustment=NULL,\n              convert_units=conversion.factor)\n\nDetails about the arguments for this function:\n\nkey=\"hn\"\n\nfit a half-normal key detection function\n\nadjustment=NULL\n\ndo not include adjustment terms\n\nconvert_units=conversion.factor\n\nrequired because, for this example, the perpendicular distances are in metres and the line transect lengths are in km - this argument converts the perpendicular distance measurements from metres to km.\n\n\nAs we have seen, on executing the ds command some information is provided to the screen reminding the user what model has been fitted and the associated AIC value. More information is supplied if we ask for a summary of the model as follows:\n\n# Summarise model object\nsummary(nest.hn)\n\nCan you match the information with the values you used in Exercise 1 - was your density estimate similar to the one obtained here?\nTo look at the fitted detection function, simply use the plot function:\n\nplot(nest.hn)\n\nThe number of bins in the histogram can be changed by specifying the nc argument, for example, to plot the histogram having 8 bins (as in Exercise 1) we can specify:\n\nplot(nest.hn, nc=8)\n\nThe histogram should look like the one you drew in Exercise 1.\n\n\nGoodness of fit\nPrior to making inference based upon a detection function model, it is prudent to assess the fit of the model. The usual tools for checking goodness of fit are available: the function gof_ds performs goodness of fits tests and plots a QQ-plot. In this command, 8 bins will be used for the chi-square goodness of fit test.\n\ngof_ds(nest.hn)\n\n\n\nSpecifying different detection functions\nDifferent detection function forms and shapes, are specified by changing the key and adjustment arguments.\nThe different options available for key detection functions are:\n\nhalf normal (key=\"hn\") - this is the default\nhazard rate (key=\"hr\")\nuniform (key=\"unif\")\n\nThe different options available for adjustment terms are:\n\nno adjustment terms (adjustment=NULL)\ncosine (adjustment=\"cos\") - default\nHermite polynomial (adjustment=\"herm\")\nSimple polynomial (adjustment=\"poly\")\n\nFor each model specified below, note down the AIC, density and 95% confidence interval and compare it to the model already fitted (i.e. half-normal with no adjustments). Which detection function model would you choose?\nTo fit a uniform key function with cosine adjustment terms, use the command:\n\nnest.uf.cos &lt;- ds(ducknest, key=\"unif\", adjustment=\"cos\",\n                  convert_units=conversion.factor)\n\nBy default, AIC selection will be used to fit adjustment terms of up to order 5. Have any adjustment terms been selected?\nTo fit a hazard rate key function with Hermite polynomial adjustment terms, then use the command:\n\nnest.hr.herm &lt;- ds(ducknest, key=\"hr\", adjustment=\"herm\", \n                  convert_units=conversion.factor)\n\n\n\n\n\n\n\n\n\nReferences\n\nAnderson, D. R., & Pospahala, R. S. (1970). Correction of bias in belt transect studies of immotile objects. The Journal of Wildlife Management, 34(1), 141–146. https://doi.org/10.2307/3799501\n\n\nMiller, D. L., Rexstad, E., Thomas, L., Marshall, L., & Laake, J. L. (2019). Distance Sampling in R. Journal of Statistical Software, 89(1), 1–28. https://doi.org/10.18637/jss.v089.i01\n\n\nR Core Team. (2019). R: A language and environment for statistical computing. Retrieved from https://www.R-project.org"
+  },
+  {
+    "objectID": "02-detfns/R-prac/Prac2_solution.html",
+    "href": "02-detfns/R-prac/Prac2_solution.html",
+    "title": "Line transect estimation using R solution",
+    "section": "",
+    "text": "Solution\n\n\n\nLine transect estimation\n\n\n\nInspect duck nest data\nImport and check the data.\n\nlibrary(Distance)\ndata(ducknest)\nhead(ducknest, n=3)\n\n  Region.Label Area Sample.Label Effort object distance      Study.Area\n1      Default    0            1 128.75      1     0.06 Monte Vista NWR\n2      Default    0            1 128.75      2     0.07 Monte Vista NWR\n3      Default    0            1 128.75      3     0.04 Monte Vista NWR\n\nnrow(ducknest)\n\n[1] 534\n\nbrks &lt;- seq(from=0, to=2.4, by=0.3)\nhist(ducknest$distance, breaks=brks, xlab=\"Distance (m)\",\n     main=\"Perpendicular distances duck nests\")\n\n\n\n\n\n\nFit detection functions\nFit the three models using proper units of distance measure.\nThe answer is another function convert_units. Arguments to this function are\n\ndistance_units\n\nunits of measure for perpendicular/radial distances\n\neffort_units\n\nunits of measure for effort (NULL for point transects)\n\narea_units\n\nunits of measure for the study area.\n\n\n\nconversion.factor &lt;- convert_units(\"Meter\", \"Kilometer\", \"Square Kilometer\")\n# Half-normal with no adjustments\nnest.hn &lt;- ds(ducknest, key=\"hn\", adjustment=NULL,\n              convert_units=conversion.factor)\nsummary(nest.hn)\n\n\nSummary for distance analysis \nNumber of observations :  534 \nDistance range         :  0  -  2.4 \n\nModel       : Half-normal key function \nAIC         :  928.1338 \nOptimisation:  mrds (nlminb) \n\nDetection function parameters\nScale coefficient(s):  \n             estimate        se\n(Intercept) 0.9328967 0.1703933\n\n                       Estimate          SE         CV\nAverage p             0.8693482  0.03902051 0.04488479\nN in covered region 614.2533225 29.19681554 0.04753221\n\nSummary statistics:\n   Region  Area CoveredArea Effort   n  k        ER       se.ER      cv.ER\n1 Default 12.36       12.36   2575 534 20 0.2073786 0.007970756 0.03843576\n\nDensity:\n  Label Estimate       se         cv     lcl      ucl       df\n1 Total 49.69687 2.936724 0.05909274 44.2033 55.87318 99.55677\n\n\nIn addition to the half normal key function, fit uniform and hazard rate models with possible adjustment terms.\n\nnest.uf.cos &lt;- ds(ducknest, key=\"unif\", adjustment=\"cos\",\n                  convert_units=conversion.factor)\nnest.hr.herm &lt;- ds(ducknest, key=\"hr\", adjustment=\"herm\", \n                  convert_units=conversion.factor)\n\n\n\nAssess absolute model fit\nThe goodness of fit for the basic model is shown below.\n\ngof_ds(nest.hn, plot=FALSE)\n\n\nGoodness of fit results for ddf object\n\nDistance sampling Cramer-von Mises test (unweighted)\nTest statistic = 0.0353634 p-value = 0.955416\n\n\n\n\nContrast competing models\nA function useful for contrasting models is summarize_ds_models. A summary table of goodness of fit statistics for all models is created below.\n\n# Summarise gof statistics\nknitr::kable(summarize_ds_models(nest.hn, nest.uf.cos, nest.hr.herm, output=\"plain\"), \n               caption=\"Model results for ducknest data set.\", digits=3)\n\n\nModel results for ducknest data set.\n\n\n\n\n\n\n\n\n\n\n\nModel\nKey function\nFormula\nC-vM \\(p\\)-value\nAverage detectability\nse(Average detectability)\nDelta AIC\n\n\n\n\nnest.hn\nHalf-normal\n~1\n0.955\n0.869\n0.039\n0.000\n\n\nnest.uf.cos\nUniform with cosine adjustment term of order 1\nNA\n0.821\n0.846\n0.044\n0.346\n\n\nnest.hr.herm\nHazard-rate\n~1\n0.981\n0.889\n0.050\n1.660\n\n\n\n\n\n\n\nDensity estimates from the competing models\nThe density results from all models are summarized below.\n\n\n\nDensity estimates and confidence intervals for three fitted models.\n\n\nModel\nDetectionFunction\nDensity\nLowerCI\nUpperCI\n\n\n\n\n1\nHalf-normal, no adjustments\n49.70\n44.20\n55.87\n\n\n2\nUniform, cosine adjustments\n51.04\n44.92\n58.00\n\n\n3\nHazard rate, no adjustments\n48.59\n42.52\n55.54\n\n\n\n\n\n\n\nVisualise shape of key functions with duck nest data\nThe detection function plots are shown below.\n\nplot(nest.hn, nc=8, main=\"Half normal, no adjustments\")\nplot(nest.uf.cos, nc=8, main=\"Uniform, cosine adjustments\")\nplot(nest.hr.herm, nc=8, main=\"Hazard rate, no adjustments\")\n\n\n\n\n\n\nHalf normal\n\n\n\n\n\n\n\nUniform with cosine\n\n\n\n\n\n\n\nHazard rate\n\n\n\n\n\n\nThe half-normal detection function with no adjustments has the smallest AIC which provides support for this model. The \\(\\Delta\\)AIC values for all three models is small. In general, you should get similar density estimates using different detection function models, provided those models fit the data well, as in this example."
+  },
+  {
+    "objectID": "03-criticism/R-prac/Pr3-instructions.html",
+    "href": "03-criticism/R-prac/Pr3-instructions.html",
+    "title": "Assessing line transect detection functions",
+    "section": "",
+    "text": "In Exercise 2, we fitted different detection functions and compared them in terms of goodness of fit and AIC. Here, we continue to fit and assess different models and look at additional arguments in the ds package."
+  },
+  {
+    "objectID": "03-criticism/R-prac/Pr3-instructions.html#accessing-the-data",
+    "href": "03-criticism/R-prac/Pr3-instructions.html#accessing-the-data",
+    "title": "Assessing line transect detection functions",
+    "section": "Accessing the data",
+    "text": "Accessing the data\nLoad the Distance package to access both the data and analytical functions.\n\n# Load library (if not already loaded)\nlibrary(Distance)\n# Access data\ndata(\"LTExercise\")\n# Check that it has been imported correctly\nhead(LTExercise, n=3)\n\n\nData format: no detections on a transect\nBefore fitting models, it is worth investigating the data a bit further: let’s start by summarising the perpendicular distances:\n\n# Summary of perpendicular distances\nsummary(LTExercise$distance)\n\nThe summary indicates that the minimum distance is min(hndat$distance) and the maximum is max(hndat$distance) metres and there is one missing value (indicated by the NA). If we print a few rows of the data, we can see that this missing value occurred on transect ‘Line 11’.\n\n# Print out a few lines of data\nLTExercise[100:102, ]\n\nThe NA indicates that there were no detections on this transect, but the transect information needs to be included otherwise the number of transects and the total line length will be incorrect."
+  },
+  {
+    "objectID": "03-criticism/R-prac/Pr3-instructions.html#truncation",
+    "href": "03-criticism/R-prac/Pr3-instructions.html#truncation",
+    "title": "Assessing line transect detection functions",
+    "section": "Truncation",
+    "text": "Truncation\nLet’s start by fitting a basic model, i.e. no adjustment terms (by default a half normal model is fitted).\nFor this project, perpendicular distances are in metres and the transect lines are recorded in kilometres.\n\nconversion.factor &lt;- convert_units(\"meter\", \"kilometer\", \"square kilometer\")\n# Fit half normal, no adjustments\nlt.hn &lt;- ds(data=LTExercise, key=\"hn\", adjustment=NULL,\n            convert_units=conversion.factor)\n\nLooking at a summary of the model object, how many objects are there in total? What is the maximum observed perpendicular distance?\n\n# Print a summary of the fitted detection function\nsummary(lt.hn)\n\nPlot the detection function and specify many histogram bins:\n\nplot(lt.hn, nc=30)\n\nThe histogram indicates that there is a large gap in detections therefore, to avoid a long right hand tail in the detection function, truncation is necessary. There are several ways to truncate: excluding distances beyond some specified distance or excluding a specified percentage of the largest distances. Note that here we only consider excluding large perpendicular distances, which is frequently referred to as right truncation.\n\nTruncation at a fixed distance\nThe following command truncates the perpendicular distances at 20 metres i.e. objects detected beyond 20m are excluded.\n\n# Truncate at 20metres\nlt.hn.t20m &lt;- ds(data=LTExercise, key=\"hn\", adjustment=NULL, truncation=20,\n                 convert_units=conversion.factor)\n\nGenerate a summary and plot of the detection function to see what effect this truncation has had on the number of objects.\n\n\nTruncating a percentage of distances\nAn alternative way to truncate distances is to specify a percentage of detected objects that should be excluded. In the command below, 10% of the largest distances are excluded.\n\n# Truncate largest 10% of distances\nlt.hn.t10per &lt;- ds(data=LTExercise, key=\"hn\", adjustment=NULL, truncation=\"10%\",\n                   convert_units=conversion.factor)\n\nGenerate a summary and plot to see what effect truncation has had.\n\nsummary(lt.hn.t10per)\nplot(lt.hn.t10per)"
+  },
+  {
+    "objectID": "03-criticism/R-prac/Pr3-instructions.html#exploring-different-models",
+    "href": "03-criticism/R-prac/Pr3-instructions.html#exploring-different-models",
+    "title": "Assessing line transect detection functions",
+    "section": "Exploring different models",
+    "text": "Exploring different models\nDecide on a suitable truncation distance (but don’t spend too long on this) and then fit different key detection functions and adjustment terms to assess whether these data can be satisfactorily analysed with the ‘wrong’ model. By default, the ds function fits a half normal function and cosine adjustment terms (adjustment=\"cos\") of up to order 5: AIC is used to determine how many, if any, adjustment terms are required. This model is specified in the command below:\n\n# Half normal detection, cosine adjustments, no truncation\nlt.hn.cos &lt;- ds(data=LTExercise, key=\"hn\", adjustment=\"cos\",\n                convert_units=conversion.factor)\n\nChange the key and adjustment terms: possible options are listed in Exercise 2 or use the help(ds) for options. See how the bias and precision compare between the models: the true density was 79.8 animals per km\\(^2\\)."
+  },
+  {
+    "objectID": "03-criticism/R-prac/Pr3-instructions.html#converting-exact-distances-to-binned-distances",
+    "href": "03-criticism/R-prac/Pr3-instructions.html#converting-exact-distances-to-binned-distances",
+    "title": "Assessing line transect detection functions",
+    "section": "Converting exact distances to binned distances",
+    "text": "Converting exact distances to binned distances\nSometimes we wish to convert exact distances to binned distances, if for example, there is evidence of rounding to favoured values. To do this in ds we need to specify the cutpoints of the bins, including zero and the maximum distance. In the example below, cutpoints at 0, 10, 20, …, 80 are specified.\n\ndata(capercaillie)\n# Specify cutpoint for bins\nbins &lt;- seq(from=0, to=80, by=10)\nconversion.factor &lt;- convert_units(\"meter\", \"kilometer\", \"hectare\")\n# Fit model with binned distances\ncaper.bin &lt;- ds(data=capercaillie, key=\"hn\", cutpoints=bins, \n                convert_units=conversion.factor)\nplot(caper.bin)"
+  },
+  {
+    "objectID": "03-criticism/R-prac/Prac3_solution.html",
+    "href": "03-criticism/R-prac/Prac3_solution.html",
+    "title": "Assessing line transect detection functions solution",
+    "section": "",
+    "text": "Solution\n\n\n\nAssessing line transect detection functions"
+  },
+  {
+    "objectID": "03-criticism/R-prac/Prac3_solution.html#fitting-multiple-models-to-exact-distance-data",
+    "href": "03-criticism/R-prac/Prac3_solution.html#fitting-multiple-models-to-exact-distance-data",
+    "title": "Assessing line transect detection functions solution",
+    "section": "Fitting multiple models to exact distance data",
+    "text": "Fitting multiple models to exact distance data\n\n# Half normal model \ncaper.hn.cos &lt;- ds(data=capercaillie, key=\"hn\", adjustment=\"cos\",\n                   convert_units=conversion.factor)\n# Hazard rate model  \ncaper.hr.cos &lt;- ds(data=capercaillie, key=\"hr\", adjustment=\"cos\",\n                   convert_units=conversion.factor)\n# Uniform model  \ncaper.uf.cos &lt;- ds(data=capercaillie, key=\"unif\", adjustment=\"cos\",\n                   convert_units=conversion.factor)\n\nThe detection functions and QQ plots are shown below:\n\nplot(caper.hn.cos, main=\"Half normal\")\nx &lt;- gof_ds(caper.hn.cos)\ntext(.5, .1, paste(\"P-value=\", round(x$dsgof$CvM$p,3)))\nplot(caper.hr.cos, main=\"Hazard rate\")\nx &lt;- gof_ds(caper.hr.cos)\ntext(.5, .1, paste(\"P-value=\", round(x$dsgof$CvM$p,3)))\nplot(caper.uf.cos, main=\"Uniform\")\nx &lt;- gof_ds(caper.uf.cos)\ntext(.5, .1, paste(\"P-value=\", round(x$dsgof$CvM$p,3)))\n\n\n\n\n\n\nHalf normal\n\n\n\n\n\n\n\nQQ plot half normal\n\n\n\n\n\n\n\n\n\nHazard rate\n\n\n\n\n\n\n\nQQ plot hazard rate\n\n\n\n\n\n\n\n\n\nUniform with adjustment\n\n\n\n\n\n\n\nQQ plot uniform adj\n\n\n\n\n\n\nSummarise the goodness of fit statistics (in a pretty format). This table indicates that the hazard rate detection function had the lowest AIC but the difference in AIC between all three models was small.\n\nknitr::kable(summarize_ds_models(caper.hn.cos, caper.hr.cos, caper.uf.cos, output=\"plain\"),\n               caption=\"Summary of results of Capercaillie analysis.\", digits = 3)\n\n\nSummary of results of Capercaillie analysis.\n\n\n\n\n\n\n\n\n\n\n\n\n\nModel\nKey function\nFormula\nC-vM \\(p\\)-value\nAverage detectability\nse(Average detectability)\nDelta AIC\n\n\n\n\n2\ncaper.hr.cos\nHazard-rate\n~1\n0.663\n0.703\n0.052\n0.000\n\n\n1\ncaper.hn.cos\nHalf-normal\n~1\n0.332\n0.613\n0.053\n0.031\n\n\n3\ncaper.uf.cos\nUniform with cosine adjustment terms of order 1,2\nNA\n0.613\n0.682\n0.098\n0.280\n\n\n\n\n\nThe results for the three different models are shown below: density is in birds per ha.\n\n\n\nCapercaillie point estimates of density and associated measures of precision.\n\n\nDetectionFunction\nAIC\nPa\nDensity\nD.CV\nLower.CI\nUpper.CI\n\n\n\n\nHalf-normal\n957.905\n0.613\n0.048\n0.148\n0.027\n0.083\n\n\nHazard rate\n957.874\n0.703\n0.042\n0.148\n0.020\n0.084\n\n\nUniform\n958.154\n0.682\n0.043\n0.191\n0.026\n0.069\n\n\n\n\n\nThese capercaillie data are reasonably well-behaved and different models that fit the data well should give similar results."
+  },
+  {
+    "objectID": "03-criticism/R-prac/Prac3_solution.html#converting-exact-distances-to-binned-distances",
+    "href": "03-criticism/R-prac/Prac3_solution.html#converting-exact-distances-to-binned-distances",
+    "title": "Assessing line transect detection functions solution",
+    "section": "Converting exact distances to binned distances",
+    "text": "Converting exact distances to binned distances\nTo deal with rounding in the distance data, the exact distances can be converted into binned distances. The cutpoints need to be chosen with care so that the distance bins are sufficiently wide enough to ensure that the ‘correct’ perpendicular distance is in the band containing the rounded recorded value. The bin widths do not have to be equal, as shown in example here: the cutpoints are 0, 7.5, 17.5, 27.5, …, 67.5, 80.0 m. Note, that any distances beyond the largest bin will be excluded.\n\n# Specify (uneven) cutpoint for bins\nbins &lt;- c(0, seq(from=7.5, to=67.5, by=10), 80)\nprint(bins)\n\n[1]  0.0  7.5 17.5 27.5 37.5 47.5 57.5 67.5 80.0\n\ncaper.hn.bin &lt;- ds(data=capercaillie, key=\"hn\", adjustment=\"cos\", cutpoints=bins,\n                   convert_units=conversion.factor)\nplot(caper.hn.bin, main=\"Capercaillie, binned distances\")\n\n\n\n# See a portion of the results\nknitr::kable(caper.hn.bin$dht$individuals$summary, row.names = FALSE)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRegion\nArea\nCoveredArea\nEffort\nn\nk\nER\nse.ER\ncv.ER\nmean.size\nse.mean\n\n\n\n\nMonaughty Forest\n1472\n3840\n240\n112\n1\n0.4666667\n0\n0\n1\n0\n\n\n\n\nknitr::kable(caper.hn.bin$dht$individuals$D[1:6], row.names = FALSE, digits=3)\n\n\n\n\nLabel\nEstimate\nse\ncv\nlcl\nucl\n\n\n\n\nTotal\n0.045\n0.007\n0.152\n0.026\n0.079\n\n\n\n\n\nNote that the binning of the data results in virtually identical estimates of density (0.045 birds per ha) and essentially no change in the precision of the density estimate compared with the estimates with analysis of exact distance data."
+  },
+  {
+    "objectID": "04-precision/R-prac/Pr4-instructions.html",
+    "href": "04-precision/R-prac/Pr4-instructions.html",
+    "title": "Variance estimation for systematic survey designs",
+    "section": "",
+    "text": "In the lecture describing measures of precision, we explained that systematic survey designs usually have the best variance properties, but obtaining good estimates of the variance is a difficult problem for statisticians. In this exercise, we give an example of a situation where the systematic design gives a density estimate with much better precision than a random design. This means that the usual variance estimators used in the ds function, which are based on random transect placement, are far too high. The true variance is low, but the estimated variance is high.\nWe will see how to implement a post-stratification scheme that enables us to get a better estimate of the variance. In Section 6, we examine another case to see that the unstratified variance estimates provided by ds are usually fine for a systematic design: things only go wrong when there are strong trends in animal density, especially when the strong trends are associated with changes in line length (e.g. the highest densities always occur on the shortest lines, or vice versa).\nWe begin with a population and survey shown below. The data used for this exercise were simulated on a computer: they are not real data. Note the characteristics for the data in Figure 1: extreme trends with very high density on short lines and very low density on long lines. Additionally, the systematic design has covered a fairly large proportion of the survey area (the covered region is shaded). These are danger signals that the usual ds variance estimators might not work well and a post-stratification scheme should be considered.\n\n\n\n\n\nAn example of survey data where there is a strongtrend in density. The systematically placed search strips areshaded. Axis units are in kilometres.\n\n\n\n\n\nObjectives\nThe aims of this exercise are to illustrate:\n\nDefault variance estimation,\nVariance estimation with bootstrapping,\nPost-stratification to improve variance estimation,\nWhen post-stratification is not needed (optional).\n\n\n\nGetting started\nDon’t forget to load the Distance package for your session.\n\nlibrary(Distance)\n\n\n\nBasic (default) variance estimation\nIn the code below, the necessary data file is imported and a simple model is fitted and a summary produced. Make a note of the CV of the density estimate - this is obtained using the default (analytical) estimator in the ds function and is based on the assumption that the lines were placed at random. This CV can then be compared with the CV estimates obtained from alternative methods.\n\n# Import data\ndata(\"Systematic_variance_2\")\nconversion.factor &lt;- convert_units(\"metre\", \"kilometre\", \"square kilometre\")\n# Fit a simple model\nsysvar2.hn &lt;- ds(data=Systematic_variance_2, key=\"hn\", adjustment=NULL,\n                 convert_units=conversion.factor)\n# Summary\nsysvar2.hn$dht$individuals$D\nsysvar2.hn$dht$individuals$N\n\nThe true density and abundance are known (because the data were simulated): the true abundance in the survey region was \\(N=1000\\) and \\(D=2000 \\textrm{ animals per km}^2\\) (i.e. 1000 animals in an area of size \\(A=0.5 \\textrm{km}^2\\)). How do the point estimates compare with truth? What do you think about the precision of the estimates?\n\n\nVariance estimation with bootstrapping\nThe function bootdht_Nhat_summarize pulls out the estimates of abundance \\((\\hat{N_i})\\) for all bootstrap replicates \\(i = 1, \\cdots, N_{boot}\\) where \\(N_{boot}\\) is the number of replicates requested.\nThe following command performs the bootstrap.\n\n# Bootstrap estimate of uncertainty\n# Run the bootstrap (this can take a while if nboot is large!) \nest.boot &lt;- bootdht(model=sysvar2.hn, flatfile=Systematic_variance_2,\n                    summary_fun=bootdht_Nhat_summarize,\n                    convert_units=conversion.factor, nboot=199)\n\nThe arguments for this command are:\n\nmodel - fitted detection function model object\nflatfile - data frame of the survey data\nsummary_fun - function used to obtain the summary statistics from each bootstrap\nconvert_units - conversion units for abundance estimation\nnboot - number of bootstrap samples to generate. Note, it can take a long time to produce a large number of bootstraps and so perhaps try a small number at first.\n\n\n# See the results\nsummary(est.boot)\n\nThe summary includes:\n\nEstimate - the median value of the bootstrap estimates\nse is the standard deviation of the bootstrap estimates\nlcl and ucl are the limits for a 95% confidence interval.\ncv is the coefficient of variation (\\(CV = SE/Estimate\\))\n\nAre the bootstrapped confidence intervals for abundance and density similar to the analytical confidence intervals produced previously?\nRecall that we have a particular situation in which we have systematically placed transects which are unequal in length. Furthermore, there exists an east-west gradient in animal density juxtaposed such that the shortest lines are those that pass through the portion of the study region with the highest density. In the next section, we examine a process by which we can use post-stratification to produce a better estimate of the variance in estimated abundance.\n\n\nPost-stratification to improve variance estimation\nThe estimation of encounter rate variance in the previous section used estimators that assumed the transect lines were randomly placed throughout the triangular region. In our case, the transects were not random, but systematic and, in some circumstances, taking this in account can substantially reduce the encounter rate variance. The data we are working with is an example of this, where there are very high densities on the very shortest lines. In samples of lines, collected using a completely random design, the sample, by chance, might not contain any very short lines, or it might contain several. The variance is therefore very high, because the density estimates will be greatly affected by how many lines fall into the short-line / high-density region: we will get very low density estimates if there are no short lines, but very high density estimates if there are several short lines. By contrast, in a systematic sample, we cover the region methodically and we will always get nearly the same number of lines falling in the high density region. The systematic density variance is therefore much lower than the random placement density variance. Although there is no way of getting a variance estimate that is exactly unbiased for a systematic sample because it is effectively a sample of size 1- only the first line position was randomly chosen and the rest followed on deterministically from there. We can greatly improve on the random-based estimate by using a post-stratification scheme.\nThe post-stratification scheme works by grouping together pairs of adjacent lines from the systematic sample and each pair of adjacent lines is grouped into a stratum. The strata will improve variance estimation, because the systematic sample behaves more like a stratified sample than a random sample. This encounter rate estimator is called ‘O2’ (Fewster et al., 2009) and is implemented in the dht2 function.\n\n# Post-stratification - stratified variance estimation by grouping adjacent transects\n\n# Ensure that Sample.Labels are numeric, this is required for O2 ordering\nSystematic_variance_2$Sample.Label &lt;- as.numeric(Systematic_variance_2$Sample.Label)\n\n# Use the Fewster et al 2009, \"O2\" estimator \nest.O2 &lt;- dht2(sysvar2.hn, flatfile=Systematic_variance_2, strat_formula=~1, \n               convert_units=conversion.factor, er_est=\"O2\")\nprint(est.O2, report=\"density\")\n\nNote that this estimator assumes that the numbering of the transects (in this example Sample.Label takes values 1 to 20) has some geographical meaning (i.e. transect 1 is next to 2 and 2 is next to 3 etc.). If this is not the case, then the user can manually define some sensible grouping of transects and create a column called grouping in the data object.\n\n\nSystematic designs where post-stratification is not needed (optional)\nThe simulated population shown in Figure 2 does not exhibit strong trends across the survey region, otherwise, the strip dimensions and systematic design are the same as for the previous example. These data are stored in the data set Systematic_variance_1.\n\n\n\n\n\nAn example of survey data that does not exhibita trend in density. The systematically placed search strips areshaded. Axis units are in kilometres.\n\n\n\n\nIn the code below, these data are imported into R and a simple detection function model is fitted. The default estimate of variance is then compared to that obtained using the ‘O2’ estimator (Fewster et al., 2009).\n\n# When post-stratification is not needed\n# Import the data\ndata(\"Systematic_variance_1\")\n# Ensure that Sample.Labels are numeric, for O2 ordering\nSystematic_variance_1$Sample.Label &lt;- as.numeric(Systematic_variance_1$Sample.Label)\n# First fit a simple model\nsysvar1.hn &lt;- ds(Systematic_variance_1, key=\"hn\", adjustment=NULL, \n                 convert_units=conversion.factor)\n# Obtain default estimates for comparison\nsysvar1.hn$dht$individuals$D\nsysvar1.hn$dht$individuals$N\n# Now use Fewster et al 2009, \"O2\" estimator \nest1.O2 &lt;- dht2(sysvar1.hn, flatfile=Systematic_variance_1, strat_formula=~1, \n                convert_units=conversion.factor, er_est=\"O2\")\nprint(est1.O2, report=\"both\")\n\nDid you see a difference in the CV and 95% confidence interval between the two estimators?\n\n\n\n\n\n\n\n\nReferences\n\nFewster, R. M., Buckland, S. T., Burnham, K. P., Borchers, D. L., Jupp, P. E., Laake, J. L., & Thomas, L. (2009). Estimating the encounter rate variance in distance sampling. Biometrics, 65(1), 225–236. https://doi.org/10.1111/j.1541-0420.2008.01018.x"
+  },
+  {
+    "objectID": "04-precision/R-prac/Prac4_solution.html",
+    "href": "04-precision/R-prac/Prac4_solution.html",
+    "title": "Variance estimation for systematic survey designs solution",
+    "section": "",
+    "text": "Solution\n\n\n\nVariance estimation for systematic designs\n\n\n\nBasic (default) variance estimation\nRecall the data for this example, in which we have a strong gradient in animal density across our study region and at the same time we have a difference in the lengths of the transects, such that short transects are in regions of high animal density and long transects are in regions of low animal density.\n\nlibrary(Distance)\ndata(\"Systematic_variance_2\")\nconversion.factor &lt;- convert_units(\"metre\", \"kilometre\", \"square kilometre\")\nsysvar2.hn &lt;- ds(data=Systematic_variance_2, key=\"hn\", adjustment=\"cos\",\n                 convert_units=conversion.factor)\nprint(sysvar2.hn$dht$individuals$D)\n\n  Label Estimate       se        cv      lcl      ucl       df\n1 Total 2044.592 566.3958 0.2770214 1161.012 3600.614 20.74468\n\nprint(sysvar2.hn$dht$individuals$N)\n\n  Label Estimate       se        cv     lcl      ucl       df\n1 Total 1022.296 283.1979 0.2770214 580.506 1800.307 20.74468\n\n\nThe point estimates are good (\\(\\hat D = 2,044\\) animals per unit area and \\(\\hat N=1,022\\) - note the size of the area) but the precision obtained with the default estimator is poor: estimated abundance ranges from about 580 to 1,800 - a three-fold difference over which we are uncertain. Given that our survey covered 40% of the triangular region and had a good sample size (254 animals on 20 transects), this would be a disappointing result in practice.\n\n\nVariance estimation with bootstrapping\nThe function bootdht_Nhat_summarize pulls out the estimates of abundance \\((\\hat{N_i})\\) for all bootstrap replicates \\(i = 1, \\cdots, N_{boot}\\) where \\(N_{boot}\\) is the number of replicates requested.\nThe following command performs the bootstrap.\n\nest.boot &lt;- bootdht(model=sysvar2.hn, flatfile=Systematic_variance_2,\n                    summary_fun=bootdht_Nhat_summarize, \n                    convert_units=conversion.factor, nboot=100)\n\n\nsummary(est.boot)\n\nBootstrap results\n\nBoostraps          : 100 \nSuccesses          : 100 \nFailures           : 0 \n\n      median    mean     se    lcl     ucl   cv\nNhat 1021.54 1037.39 231.62 657.69 1486.76 0.23\n\n\nThe bootstrap results are very similar to the analytical results, as we would expect, because again this process assumed the transects were placed at random.\n\n\nPost-stratification to improve variance estimation\n\nSystematic_variance_2$Sample.Label &lt;- as.numeric(Systematic_variance_2$Sample.Label)\nest.O2 &lt;- dht2(sysvar2.hn, flatfile=Systematic_variance_2, \n               strat_formula=~1, convert_units=conversion.factor, er_est=\"O2\")\nprint(est.O2, report=\"density\")\n\nDensity estimates from distance sampling\nStratification : geographical \nVariance       : O2, n/L \nMultipliers    : none \nSample fraction : 1 \n\n\nSummary statistics:\n .Label Area CoveredArea Effort   n  k     ER se.ER cv.ER\n  Total  0.5      0.1922   9.61 254 20 26.431 1.459 0.055\n\nDensity estimates:\n .Label Estimate      se   cv      LCI      UCI     df\n  Total 2044.592 162.914 0.08 1744.988 2395.636 75.871\n\nComponent percentages of variance:\n .Label Detection    ER\n  Total     52.03 47.97\n\n\nThe precision of the estimated abundance has greatly improved in the post-stratified analysis (Fewster et al., 2009).\nIt must be remembered that we have not made any change to our data by the post-stratification; we are using getting a better estimate of the variance. In this case, the increase in precision could make a fundamental difference to the utility of the survey: it might make the difference between being able to make a management decision or not. Usually, trends will not be as extreme as they are in this example and post-stratification will not make a great difference. Such an situation is illustrated in the next problem.\n\n\nSystematic designs where post-stratification is not needed (optional)\nThese data did not exhibit strong trends across the survey region and, hence, there are no great differences between the CVs and 95% confidence intervals using the two methods.\n\n# Access the data\ndata(\"Systematic_variance_1\")\nSystematic_variance_1$Sample.Label &lt;- as.numeric(Systematic_variance_1$Sample.Label)\nsysvar1.hn &lt;- ds(Systematic_variance_1, key=\"hn\", adjustment=NULL, \n                 convert_units=conversion.factor)\nprint(sysvar1.hn$dht$individuals$D)\n\n  Label Estimate       se         cv      lcl      ucl       df\n1 Total 1954.016 160.5554 0.08216688 1657.276 2303.888 50.59541\n\nprint(sysvar1.hn$dht$individuals$N)\n\n  Label Estimate       se         cv      lcl      ucl       df\n1 Total 977.0078 80.27768 0.08216688 828.6378 1151.944 50.59541\n\nest2.O2 &lt;- dht2(sysvar1.hn, flatfile=Systematic_variance_1, strat_formula=~1,\n                convert_units=conversion.factor, er_est=\"O2\")\nprint(est2.O2, report=\"density\")\n\nDensity estimates from distance sampling\nStratification : geographical \nVariance       : O2, n/L \nMultipliers    : none \nSample fraction : 1 \n\n\nSummary statistics:\n .Label Area CoveredArea Effort   n  k    ER se.ER cv.ER\n  Total  0.5      0.2058  10.29 252 20 24.49 1.594 0.065\n\nDensity estimates:\n .Label Estimate      se    cv      LCI      UCI     df\n  Total 1954.015 162.491 0.083 1653.804 2308.723 49.172\n\nComponent percentages of variance:\n .Label Detection    ER\n  Total     38.76 61.24\n\n\n\n\n\n\n\n\n\n\nReferences\n\nFewster, R. M., Buckland, S. T., Burnham, K. P., Borchers, D. L., Jupp, P. E., Laake, J. L., & Thomas, L. (2009). Estimating the encounter rate variance in distance sampling. Biometrics, 65(1), 225–236. https://doi.org/10.1111/j.1541-0420.2008.01018.x"
+  },
+  {
+    "objectID": "01-intro/Pr1-instructions.html",
+    "href": "01-intro/Pr1-instructions.html",
+    "title": "Line transect detection function fitting",
+    "section": "",
+    "text": "In this practical, we plot a histogram of line transect data and estimate a detection function. The data were collected during a line transect survey of duck nests in Monte Vista National Wildlife Refuge, Colorado, USA: twenty lines of 128.75 km were specified and a distance out to 2.4m was searched and the perpendicular distances of detected nests were recorded and summarised (Table 1).\n\n\n\n\nFrequency of duck nests detected in perpendicular distance bands (metres)\n\n\nDistance.band\nFrequency\n\n\n\n\n0.0-0.3\n74\n\n\n0.3-0.6\n73\n\n\n0.6-0.9\n79\n\n\n0.9-1.2\n66\n\n\n1.2-1.5\n78\n\n\n1.5-1.8\n58\n\n\n1.8-2.1\n52\n\n\n2.1-2.4\n54\n\n\n\n\n\n\n\n\n\nObjectives\nThe aim of this exercise is to plot a histogram of the perpendicular distances to the detected duck nests and estimate (by eye) a detection function and hence estimate density of duck nests, i.e. the number of nests per square metre or per square kilometre (be careful of units).\n\n\nAnswer these questions in sequence\nThese steps will produce an estimate of duck nest density.\n\nWith the graph paper PDF found at this link, print the PDF and plot a histogram of the data in Table 1 and fit a detection function by eye.\nEstimate the areas under the rectangle and the fitted detection function curve and hence estimate the proportion of nests that are detected in the covered region, i.e. the region within 2.4m of the transect centre line.\n\n\\[ Area_{rectangle} = \\] \\[ Area_{curve} = \\]\n\\[ \\hat{P}_a = \\frac{Area_{curve}}{Area_{rectangle}} = \\]\n\nObtain an estimate of the number of nests in the covered region (Note \\(n=534\\)):\n\n\\[ \\hat{N}_a = \\frac{n}{\\hat{P}_a} = \\]\n\nEstimate density (Note \\(L = 20 \\times 128.75 = 2575\\) km):\n\n\\[\\hat{D} = \\frac{\\hat{N}_a}{a} = \\frac{\\hat{N}_a}{2wL} = \\]"
+  },
+  {
+    "objectID": "01-intro/Prac1_solution.html",
+    "href": "01-intro/Prac1_solution.html",
+    "title": "Line transect detection function fitting solution",
+    "section": "",
+    "text": "Solution\n\n\n\nEstimation of duck nest density by hand\n\n\nIn this practical, we plot a histogram of line transect data and estimate a detection function. The data were collected during a line transect survey of duck nests in Monte Vista National Wildlife Refuge, Colorado, USA: twenty lines of 128.75 km were specified and a distance out to 2.4m was searched and the perpendicular distances of detected nests were recorded and summarised (Table 1).\n\n\n\n\nFrequency of duck nests detected in perpendicular distance bands (metres)\n\n\nDistance.band\nFrequency\n\n\n\n\n0.0-0.3\n74\n\n\n0.3-0.6\n73\n\n\n0.6-0.9\n79\n\n\n0.9-1.2\n66\n\n\n1.2-1.5\n78\n\n\n1.5-1.8\n58\n\n\n1.8-2.1\n52\n\n\n2.1-2.4\n54\n\n\n\n\n\n\n\n\n\nHistogram of detected nests (black) overlaid with the estimated detection function (red) is shown below.\n\n\n\n\n\n\n\nTo estimate the area under the curve, I read off the heights of the mid points of my fitted curve (red) as follows: 75, 74, 72, 70, 66, 62, 58, 53. Therefore, my estimate of area under the curve is:\n\n\\[ Area_{curve} = (75+74+72+70+66+62+58+53) \\times 0.3 = 530 \\times 0.3 = 159 \\] There are lots of other ways to work out the area under a curve, e.g. counting the number of grid squares under the curve on your graph paper or using the trapezoidal rule.\n\\[Area_{rectangle} = height \\times width = 75 \\times 2.4 = 180\\]\nHence, my estimate of the proportion of nests detected in the covered region is:\n\\[\\hat P_a = \\frac{159}{180} = 0.883\\]\n\nHow many actual nests were there in the covered area? I saw 534 nests, and I estimate the proportion seen is 0.883, so my estimate of nests in the covered region is:\n\n\\[ \\hat N_a = \\frac{n}{\\hat P_a} =\\frac{534}{0.883} = 604.7 \\textrm{ nests in the covered area}\\] This estimate is for a covered area of \\(a = 2wL = 2 \\times (\\frac{2.4}{1000}) \\times 2575 = 12.36\\) km\\(^2\\).\n\nI therefore estimate nest density as:\n\n\\[\\hat D = \\frac{\\hat N_a}{2wL} = \\frac{604.7}{12.36} = 48.9 \\textrm{ nests per km}^2\\]"
   }
 ]

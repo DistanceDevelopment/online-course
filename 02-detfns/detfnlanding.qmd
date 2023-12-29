@@ -1,0 +1,111 @@
+---
+title: Fitting detection functions to line transect data
+author: Centre for Research into Ecological and Environmental Modelling <br> **University of St Andrews**
+date-modified: "January 2024"
+date-format: "MMMM YYYY"
+bibliography: references.bib
+csl: ../style/apa.csl
+---
+
+## Estimating density of duck nests
+
+
+::: columns
+
+::: {.column width="60%"}
+The data are the famous "ducknest" data similar to those data described in [@anderson1970].  Data exist within the Distance package, so emphasis will be upon performing analysis rather than acquiring data.
+
+You will do some exploratory analysis of the detection distances, then use the function `ds()` to fit detection functions to the data.  You'll also use the function `convert_units()` for properly dealing with different units of measure in the data.
+
+The estimated detection functions will be plotted and assessed for goodness of fit.
+:::
+
+::: {.column width="40%"}
+![](nest-unsplash.jpg)
+
+:::
+
+:::
+
+## Lecture materials
+::: slide-deck
+**Lecture discussion**
+
+
+::: slides
+[Slides](Mod2-2023-detfnmod.pdf)
+:::
+
+
+::: video
+[Video](https://youtu.be/_4RX6P4PB4k)
+:::
+:::
+
+## Exercise materials
+
+::: columns
+
+::: {.column width="50%"}
+::: lab
+**Using R package**
+
+::: video
+[Video introduction](https://youtu.be/_4RX6P4PB4k)
+:::
+
+
+::: instructions
+[Instructions](R-prac/Pr2-instructions.qmd)
+:::
+
+::: instructions
+[Solution and discussion](R-prac/Prac2_solution.qmd)
+:::
+
+::: video
+[Video summary](https://youtu.be/_4RX6P4PB4k)
+:::
+
+
+:::
+:::
+
+::: {.column width="50%"}
+
+::: lab
+**Using Distance for Windows**
+
+::: video
+[Video introduction](https://youtu.be/_4RX6P4PB4k)
+:::
+
+::: instructions
+[Instructions](DistWin-prac/temp.qmd)
+:::
+
+::: instructions
+[Solution and discussion](DistWin-prac/temp.qmd)
+:::
+
+::: video
+[Video summary](https://youtu.be/_4RX6P4PB4k)
+:::
+
+:::
+
+:::
+
+
+:::
+
+## Supplemental materials
+::: homework
+**Effect of truncation upon density estimates**
+
+::: instructions
+[Demonstration of changing truncation distance](truncation-decisions.qmd)
+:::
+:::
+
+# References

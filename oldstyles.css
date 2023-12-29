@@ -1,0 +1,17 @@
+/* css styles */
+
+
+.rstudio-cloud {
+  padding: 1em 1em 1em 4em;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  background: #ffffff 5px center/3em no-repeat;
+  background-image: url("style/icons/cloud.png");
+}
+.rstudio-cloud:before {
+  content: "RStudio Cloud: ";
+  clear: right;
+  display: block;
+  font-weight: bold;
+  color: #A7D5E8;
+}

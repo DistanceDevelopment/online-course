@@ -1,0 +1,112 @@
+---
+title: Model criticism
+author: Centre for Research into Ecological and Environmental Modelling <br> **University of St Andrews**
+date-modified: "January 2024"
+date-format: "MMMM YYYY"
+csl: ../style/apa.csl
+---
+
+## Absolute and relative fit of detection function models
+
+
+::: columns
+
+::: {.column width="60%"}
+This practical continues the theme of fitting detection functions to line transect distance sampling data.  Follow along with the Rmarkdown (.rmd) file found in the project.
+
+You will proceed to fit a number of key function/adjustment term combinations to the data.  You will also experiment with setting truncation distances.
+
+The data you are analysing are simulated, where the true density and the true detection function is known.  You will see how well your analyses perform in producing confidence intervals that include the true density.  Also examine how much variability there is between different detection functions in their density estimates.
+
+After completing that main task, you also have the opportunity to analyse another line transect data set of capercaillie, a native Scottish bird.
+:::
+
+::: {.column width="40%"}
+![](criticism-unsplash.jpg)
+
+:::
+
+:::
+
+## Lecture materials
+::: slide-deck
+**Lecture discussion**
+
+
+::: slides
+[Slides](Mod2-2023-detfnmod.pdf)
+:::
+
+
+::: video
+[Video](https://youtu.be/_4RX6P4PB4k)
+:::
+:::
+
+## Exercise materials
+
+::: columns
+
+::: {.column width="50%"}
+::: lab
+**Using R package**
+
+::: video
+[Video introduction](https://youtu.be/_4RX6P4PB4k)
+:::
+
+
+::: instructions
+[Instructions](R-prac/Pr3-instructions.qmd)
+:::
+
+::: instructions
+[Solution and discussion](R-prac/Prac3_solution.qmd)
+:::
+
+::: video
+[Video summary](https://youtu.be/_4RX6P4PB4k)
+:::
+
+
+:::
+:::
+
+::: {.column width="50%"}
+
+::: lab
+**Using Distance for Windows**
+
+::: video
+[Video introduction](https://youtu.be/_4RX6P4PB4k)
+:::
+
+::: instructions
+[Instructions](DistWin-prac/temp.qmd)
+:::
+
+::: instructions
+[Solution and discussion](DistWin-prac/temp.qmd)
+:::
+
+::: video
+[Video summary](https://youtu.be/_4RX6P4PB4k)
+:::
+
+:::
+
+:::
+
+
+:::
+
+## Supplemental materials
+::: homework
+**Nothing**
+
+::: instructions
+There is no supplemental materials
+:::
+:::
+
+# References

@@ -3,18 +3,45 @@ project:
   output-dir: docs
 
 website:
-  title: "async2024-2"
+  title: "Introductory distance sampling training materials"
+  page-footer:
+    left: "Centre for Research into Ecological and Environmental Modelling"
+    right: "University of St Andrews"
   navbar:
+    background: primary
     left:
       - href: index.qmd
-        text: Home
+        text: First page
       - about.qmd
+    right: 
+      - icon: fa-people-pulling
+      - href: https://distancesampling.org
+  sidebar: 
+    style: docked
+    search: true
+    contents: 
+      - section: "Introduction"
+        contents: 
+          - 01-intro/introlanding.qmd
+      - section: "Detection function modelling"
+        contents: 
+          - 02-detfns/detfnlanding.qmd
+      - section: "Model criticism"
+        contents: 
+          - 03-criticism/criticismlanding.qmd
+      - section: "Precision of density estimates"
+        contents: 
+          - 04-precision/precisionlanding.qmd
+      - section: "Point transect analysis"
+        contents: 
+          - 05-points/pointslanding.qmd
 
 format:
   html:
-    theme: cosmo
     css: styles.css
     toc: true
-
+    code-copy: true
+    code-line-numbers: true
+    include-in-header: "style/fontawesome.html"
 
 

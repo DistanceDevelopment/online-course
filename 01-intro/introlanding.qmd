@@ -1,0 +1,82 @@
+---
+title: Fundamentals of distance sampling
+author: Centre for Research into Ecological and Environmental Modelling <br> **University of St Andrews**
+date-modified: "January 2024"
+date-format: "MMMM YYYY"
+csl: ../style/apa.csl
+---
+
+## Estimating $\widehat{P_a}$ with a pencil
+
+::: columns
+
+::: {.column width="60%"}
+
+
+This exercise is to familiarise you with distribution of perpendicular distances measured in a distance sampling survey. You will complete a histogram from tablular data provided.
+
+Rather than using a computer, use your eye to fit a smooth function to the distribution depicted in the histogram.  This forms the basis for estimating $\widehat{P_a}$; computed as the ratio of the area under the fitted detection function to the area of the rectangle.
+
+Subsequent calculations produce an estimate of the density of nests in the sampled region.
+:::
+
+::: {.column width="40%"}
+![](dolph-unsplash.jpg)
+
+:::
+
+:::
+
+## Lecture materials
+::: slide-deck
+**Lecture discussion**
+
+
+::: slides
+[Slides](Mod2-2023-detfnmod.pdf)
+:::
+
+
+::: video
+[Video](https://youtu.be/_4RX6P4PB4k)
+:::
+:::
+
+## Exercise materials
+
+::: lab
+**But a single exercise**
+
+::: video
+[Video introduction](https://youtu.be/_4RX6P4PB4k)
+:::
+
+
+::: instructions
+[Instructions](Pr1-instructions.qmd)
+:::
+
+::: instructions
+[Solution and discussion](Prac1_solution.qmd)
+:::
+
+::: video
+[Video summary](https://youtu.be/_4RX6P4PB4k)
+:::
+
+
+:::
+
+
+
+
+## Supplemental materials
+::: homework
+**Nothing to add to first practical**
+
+::: instructions
+No supplement
+:::
+:::
+
+# References
