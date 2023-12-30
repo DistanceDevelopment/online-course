@@ -81,11 +81,11 @@ The estimated detection functions will be plotted and assessed for goodness of f
 :::
 
 ::: instructions
-[Instructions](DistWin-prac/temp.qmd)
+[Instructions](DistWin-prac/Pr2-instructions-DistWin.qmd)
 :::
 
 ::: instructions
-[Solution and discussion](DistWin-prac/temp.qmd)
+[Solution and discussion](DistWin-prac/Pr2-solution-DistWin.qmd)
 :::
 
 ::: video
