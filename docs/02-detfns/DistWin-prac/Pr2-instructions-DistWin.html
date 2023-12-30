@@ -8,7 +8,7 @@
 
 <meta name="author" content="Centre for Research into Ecological and Environmental Modelling   University of St Andrews">
 
-<title>Introductory distance sampling training materials - Model criticism</title>
+<title>Introductory distance sampling training materials - Line transect estimation using R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,22 +24,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -63,7 +63,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="https://kit.fontawesome.com/78ddb093ea.js" crossorigin="anonymous"></script>
 
 
-<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-sidebar docked nav-fixed">
@@ -73,7 +73,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Introductory distance sampling training materials</span>
     </a>
   </div>
@@ -98,7 +98,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../03-criticism/criticismlanding.html">Model criticism</a></li><li class="breadcrumb-item"><a href="../03-criticism/criticismlanding.html">Model criticism</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Line transect estimation using R</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -129,7 +129,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../01-intro/introlanding.html" class="sidebar-item-text sidebar-link">
+  <a href="../../01-intro/introlanding.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Fundamentals of distance sampling</span></a>
   </div>
 </li>
@@ -146,7 +146,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../02-detfns/detfnlanding.html" class="sidebar-item-text sidebar-link">
+  <a href="../../02-detfns/detfnlanding.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Fitting detection functions to line transect data</span></a>
   </div>
 </li>
@@ -154,16 +154,16 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
  <span class="menu-text">Model criticism</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../03-criticism/criticismlanding.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../03-criticism/criticismlanding.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Model criticism</span></a>
   </div>
 </li>
@@ -180,7 +180,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../04-precision/precisionlanding.html" class="sidebar-item-text sidebar-link">
+  <a href="../../04-precision/precisionlanding.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Precision of density estimates</span></a>
   </div>
 </li>
@@ -197,7 +197,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../05-points/pointslanding.html" class="sidebar-item-text sidebar-link">
+  <a href="../../05-points/pointslanding.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Analysis of point transect data</span></a>
   </div>
 </li>
@@ -213,11 +213,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#absolute-and-relative-fit-of-detection-function-models" id="toc-absolute-and-relative-fit-of-detection-function-models" class="nav-link active" data-scroll-target="#absolute-and-relative-fit-of-detection-function-models">Absolute and relative fit of detection function models</a></li>
-  <li><a href="#lecture-materials" id="toc-lecture-materials" class="nav-link" data-scroll-target="#lecture-materials">Lecture materials</a></li>
-  <li><a href="#exercise-materials" id="toc-exercise-materials" class="nav-link" data-scroll-target="#exercise-materials">Exercise materials</a></li>
-  <li><a href="#supplemental-materials" id="toc-supplemental-materials" class="nav-link" data-scroll-target="#supplemental-materials">Supplemental materials</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  <li><a href="#introduction-to-distance-sampling-with-duck-nest-data" id="toc-introduction-to-distance-sampling-with-duck-nest-data" class="nav-link active" data-scroll-target="#introduction-to-distance-sampling-with-duck-nest-data">Introduction to Distance Sampling with duck nest data</a>
+  <ul class="collapse">
+  <li><a href="#working-on-the-computer" id="toc-working-on-the-computer" class="nav-link" data-scroll-target="#working-on-the-computer">Working on the computer</a></li>
+  <li><a href="#examining-the-data" id="toc-examining-the-data" class="nav-link" data-scroll-target="#examining-the-data">Examining the data</a></li>
+  <li><a href="#studying-the-first-analysis" id="toc-studying-the-first-analysis" class="nav-link" data-scroll-target="#studying-the-first-analysis">Studying the first analysis</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -226,7 +227,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Model criticism</h1>
+<h1 class="title">Line transect estimation using R</h1>
 </div>
 
 
@@ -253,82 +254,60 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="absolute-and-relative-fit-of-detection-function-models" class="level2">
-<h2 class="anchored" data-anchor-id="absolute-and-relative-fit-of-detection-function-models">Absolute and relative fit of detection function models</h2>
-<div class="columns">
-<div class="column" style="width:60%;">
-<p>This practical continues the theme of fitting detection functions to line transect distance sampling data. Follow along with the Rmarkdown (.rmd) file found in the project.</p>
-<p>You will proceed to fit a number of key function/adjustment term combinations to the data. You will also experiment with setting truncation distances.</p>
-<p>The data you are analysing are simulated, where the true density and the true detection function is known. You will see how well your analyses perform in producing confidence intervals that include the true density. Also examine how much variability there is between different detection functions in their density estimates.</p>
-<p>After completing that main task, you also have the opportunity to analyse another line transect data set of capercaillie, a native Scottish bird.</p>
-</div><div class="column" style="width:40%;">
-<p><img src="criticism-unsplash.jpg" class="img-fluid"></p>
+<section id="introduction-to-distance-sampling-with-duck-nest-data" class="level1">
+<h1>Introduction to Distance Sampling with duck nest data</h1>
+<section id="working-on-the-computer" class="level2">
+<h2 class="anchored" data-anchor-id="working-on-the-computer">Working on the computer</h2>
+<ul>
+<li>Download and install the Distance software from http://distancesampling.org/Distance/distance75download.html, if you have not already. Once you have installed it, run <code>Distance</code>.</li>
+<li>Acquire the <code>Distance</code> project for this exercise
+<ul>
+<li>Click on <a href="Ducknest exercise.zip">this link</a> to access data to be used in this exercise.</li>
+</ul></li>
+<li>We are going to work with a project called “Ducknest exercise”. It contains the same data you previously analysed by hand. Back in the Distance software, select <strong>File</strong> followed by <strong>Open project</strong>. Under “<strong>Files of type</strong>” choose <strong>Zip archive files (*.zip).</strong></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Other <code>Distance</code> projects
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>The Sample Projects folder created when you installed the <code>Distance</code> software, contains a number of other data sets, not related to this training workshop. You may want to look at those projects at a later date.</p>
 </div>
 </div>
+</div>
+<p><img src="media/image1.png" class="img-fluid"></p>
+<ul>
+<li>Double click on <strong>Ducknest exercise.zip</strong>. Click <strong>OK</strong> to unpack the project into the current directory and open it. Next time you open the project, you can open the file <em>Ducknest exercise.dst</em> directly.</li>
+</ul>
 </section>
-<section id="lecture-materials" class="level2">
-<h2 class="anchored" data-anchor-id="lecture-materials">Lecture materials</h2>
-<div class="slide-deck">
-<p><strong>Lecture discussion</strong></p>
-<div class="slides">
-<p><a href="Mod3-2023-gof-assumptions.pdf">Slides</a></p>
-</div>
-<div class="video">
-<p><a href="https://youtu.be/HMiQ9rDZoEg">Video</a></p>
-</div>
-</div>
+<section id="examining-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="examining-the-data">Examining the data</h2>
+<ul>
+<li>Click on the <strong>Data</strong> tab of the <strong>Project Browser</strong> to show the <strong>Data Explorer</strong>. Look at the data structure, and in particular how the distance data have been entered. (You will need to click on <strong>Observation</strong> in the left hand pane of the Data Explorer to see this.)</li>
+</ul>
+<p><img src="media/image2.jpeg" class="img-fluid"></p>
 </section>
-<section id="exercise-materials" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-materials">Exercise materials</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="lab">
-<p><strong>Using R package</strong></p>
-<div class="video">
-<p><a href="https://youtu.be/_4RX6P4PB4k">Video introduction</a></p>
-</div>
-<div class="instructions">
-<p><a href="../03-criticism/R-prac/Pr3-instructions.html">Instructions</a></p>
-</div>
-<div class="instructions">
-<p><a href="../03-criticism/R-prac/Prac3_solution.html">Solution and discussion</a></p>
-</div>
-<div class="video">
-<p><a href="https://youtu.be/_4RX6P4PB4k">Video summary</a></p>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="lab">
-<p><strong>Using Distance for Windows</strong></p>
-<div class="video">
-<p><a href="https://youtu.be/_4RX6P4PB4k">Video introduction</a></p>
-</div>
-<div class="instructions">
-<p><a href="../03-criticism/DistWin-prac/temp.html">Instructions</a></p>
-</div>
-<div class="instructions">
-<p><a href="../03-criticism/DistWin-prac/temp.html">Solution and discussion</a></p>
-</div>
-<div class="video">
-<p><a href="https://youtu.be/_4RX6P4PB4k">Video summary</a></p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="supplemental-materials" class="level2">
-<h2 class="anchored" data-anchor-id="supplemental-materials">Supplemental materials</h2>
-<div class="homework">
-<p><strong>Nothing</strong></p>
-<div class="instructions">
-<p>There is no supplemental materials</p>
-</div>
-</div>
-</section>
-<section id="references" class="level1">
-<h1>References</h1>
+<section id="studying-the-first-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="studying-the-first-analysis">Studying the first analysis</h2>
+<ul>
+<li>Click on the <strong>Analysis</strong> tab of the <strong>Project Browser</strong> to show the <strong>Analysis Browser</strong>. You should see one analysis listed, called “Half-normal no adjustments.” Double-click on the grey status button for this analysis to open the <strong>Analysis Inputs</strong> tab for this analysis (you can do the same thing by clicking the 3<sup>rd</sup> button after “Analysis:” on the Analysis Browser menu bar, or by choosing <strong>Analyses</strong> then <strong>Analysis Details…</strong> from the menu bar at the top).</li>
+</ul>
+<p><img src="media/image3.jpeg" class="img-fluid"></p>
+<ul>
+<li>A grey status icon indicates that this analysis has yet to be run. Click on the <strong>Run</strong> button in order to run the analysis. The <strong>Results</strong> tab should turn green.</li>
+<li>Click on the <strong>Results</strong> tab to see the results, and use the <strong>Next &gt;</strong> button to move through the pages of results, looking at each page and trying to relate the analysis given here to the one you did by hand. (<strong>Note:</strong> These are the analysis details (Inputs/Log/Results) for one analysis – you can resize this window so that you can view details from multiple analyses when you have more than one analysis to examine).</li>
+</ul>
+<p><img src="media/image4.jpeg" class="img-fluid"></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
