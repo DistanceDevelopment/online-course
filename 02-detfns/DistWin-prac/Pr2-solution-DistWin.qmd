@@ -1,0 +1,24 @@
+---
+title: Line transect estimation using Distance for Windows software
+author: Centre for Research into Ecological and Environmental Modelling <br> **University of St Andrews**
+date-modified: "January 2024"
+date-format: "MMMM YYYY"
+bibliography: ../references.bib
+csl: ../../style/apa.csl
+---
+
+:::{.callout-warning collapse=false appearance='default' icon=true}
+# Introduction to Distance Sampling with duck nest data
+### Distance for Windows Solution
+
+:::
+
+- Watch the [solutions video](), where we work through the exercise step by step.
+- When you have the Ducknest project open in `Distance` and click on the
+  Data tab, your screen should look like this:
+
+![](media/SOLimage1.jpeg)
+
+- Once you’ve run the analysis, and open the Analysis Details window for that analysis, your screen should look something like this (see below). Distance gets a density estimate of 49.697 nests km<sup>-2</sup>, similar to the value we obtained by hand of 48.9 nests km<sup>-2</sup>.
+
+> ![](media/SOLimage2.jpeg)
