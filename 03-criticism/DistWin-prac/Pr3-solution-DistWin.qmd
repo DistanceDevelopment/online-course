@@ -1,0 +1,46 @@
+# Introduction to Distance Sampling
+
+Line transect analysis with Distance
+
+1a) Results of estimating density from simulated data in which true
+density was 79.8 per km<sup>2</sup>. Findings from some candidate
+models:
+
+|                  |                 |           |                         |                                |                                 |                                 |
+|------------------|-----------------|-----------|-------------------------|--------------------------------|---------------------------------|---------------------------------|
+| **Key function** | **Adjustments** | **w (m)** | ![](./media/image1.wmf) | ![](./media/image2.wmf) **CV** | ![](./media/image2.wmf) **LCL** | ![](./media/image2.wmf) **UCL** |
+| Half normal      | 0               | 35.8      | 87.49                   | 0.16                           | 63                              | 122                             |
+| Half normal      | 0               | 20        | 84.12                   | 0.17                           | 59                              | 120                             |
+| Uniform          | 1               | 20        | 86.43                   | 0.17                           | 61                              | 123                             |
+| Hazard rate      | 0               | 20        | 85.66                   | 0.20                           | 57                              | 129                             |
+| Neg. exponential | 0               | 20        | 105.04                  | 0.21                           | 69                              | 159                             |
+
+Not surprisingly for these data (simulated from a half normal detection
+function with a broad shoulder), the negative exponential model gives a
+higher estimate than the others, although the confidence interval still
+includes the true density. The other models provide very similar
+estimates, though precision is slightly worse for the hazard-rate model
+(because more parameters fitted). Agreement between the estimate and the
+known true density is less good if you do not truncate the data, or do
+not truncate them sufficiently. Take home message: With care, we can get
+reliable estimates using the wrong model (the data were simulated using
+a half-normal detection function).
+
+## Additional question
+
+2\) These capercaillie data are reasonably well-behaved and different
+models that fit the data well should give similar results. Note the
+rounding in the distance data. This means that interval cutpoints for
+histograms and goodness-of-fit testing, and for the analysis of grouped
+data if this is required, should be chosen with care (i.e., distance
+bands ought to be sufficiently broad such that the ‘correct’
+perpendicular distance is in the bands containing the rounded recorded
+value. e.g. 0, 7.5, 17.5, 27.5, …
+
+|                               |                         |                                 |                                 |                                |
+|-------------------------------|-------------------------|---------------------------------|---------------------------------|--------------------------------|
+| **Fitted model**              | ![](./media/image1.wmf) | ![](./media/image1.wmf) **LCL** | ![](./media/image1.wmf) **UCL** | ![](./media/image1.wmf) **CV** |
+| Half normal                   | 4.76                    | 4.01                            | 5.65                            | 0.09                           |
+| Uniform cosine                | 4.28                    | 3.22                            | 5.68                            | 0.14                           |
+| Hazard rate                   | 4.2                     | 3.6                             | 4.9                             | 0.08                           |
+| Half normal with grouped data | 4.06                    | 3.75                            | 4.4                             | 0.09                           |
