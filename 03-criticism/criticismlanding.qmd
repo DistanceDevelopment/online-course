@@ -34,12 +34,12 @@ After completing that main task, you also have the opportunity to analyse anothe
 
 
 ::: slides
-[Slides](Mod2-2023-detfnmod.pdf)
+[Slides](Mod3-2023-gof-assumptions.pdf)
 :::
 
 
 ::: video
-[Video](https://youtu.be/_4RX6P4PB4k)
+[Video](https://youtu.be/HMiQ9rDZoEg)
 :::
 :::
 

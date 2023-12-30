@@ -34,12 +34,12 @@ There is a second data set that shares the same survey design (short transects i
 
 
 ::: slides
-[Slides](Mod2-2023-detfnmod.pdf)
+[Slides](Mod4-2023-precision.pdf)
 :::
 
 
 ::: video
-[Video](https://youtu.be/_4RX6P4PB4k)
+[Video](https://youtu.be/G8-b_Uz6WlY)
 :::
 :::
 

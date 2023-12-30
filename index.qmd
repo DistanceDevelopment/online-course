@@ -1,84 +1,15 @@
 ---
-title: "async2024-2"
+title: "Introductory distance sampling training materials"
 ---
 
-This is a Quarto website. Eric Rexstad is building it as a start for new introductory workshop content.
+::: columns
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
-
-```{r}
-1 + 1
-```
-
-::: rstudio-cloud
-The RStudio Cloud workspace for Data Science Course in a Box project is [here](https://rstudio.cloud/spaces/1655/join?access_code=5rdjusfIYF5iI0Gum2vNsBDLdtdnIEELBkf2EivK).
-You can join the workspace and play around with the sample application exercises.
+::: {.column width="55%"}
+![](D60generic.jpg)
 :::
 
-::: slide-deck
-**Have I cracked it?**
-
-
-::: slides
-[Slides](https://datasciencebox.org/course-materials/_slides/u4-d01-language-of-models/u4-d01-language-of-models.html#1)
+::: {.column width="40%"}
+This is the landing page for the distance sampling training materials website.
 :::
 
-
-::: source
-[Source](https://github.com/rstudio-education/datascience-box/tree/main/course-materials/_slides/u4-d01-language-of-models)
 :::
-
-::: video
-[Video](https://youtu.be/MWkkvDopBKc)
-:::
-:::
-
-::: exam
-exam
-:::
-
-
-::: rstudio-cloud
-cloud again
-:::
-
-
-::: tutorial
-tutorial
-:::
-
-::: instructions
-instructions
-:::
-
-
-
-::: reading
-reading
-:::
-
-::: homework
-homework
-:::
-
-::: lab
-**Lab 10: Grading the professor, Pt. 1**
-
-Fitting and interpreting simple linear regression models
-
-::: instructions
-[Instructions](https://datasciencebox.org/course-materials/lab-instructions/lab-10/lab-10-slr-course-evals.html)
-:::
-
-::: source
-[Source](https://github.com/rstudio-education/datascience-box/tree/master/course-materials/lab-instructions/lab-10)
-:::
-
-::: starter
-[Starter](https://github.com/rstudio-education/datascience-box/tree/master/course-materials/starters/lab/lab-10-slr-course-evals)
-:::
-:::
-
-
-
-## And everything else

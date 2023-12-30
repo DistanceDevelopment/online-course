@@ -33,12 +33,12 @@ Subsequent calculations produce an estimate of the density of nests in the sampl
 
 
 ::: slides
-[Slides](Mod2-2023-detfnmod.pdf)
+[Slides](Mod1-2023-intro.pdf)
 :::
 
 
 ::: video
-[Video](https://youtu.be/_4RX6P4PB4k)
+[Video](https://youtu.be/ZabykAsizFc)
 :::
 :::
 

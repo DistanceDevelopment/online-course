@@ -7,18 +7,16 @@ website:
   page-footer:
     left: "Centre for Research into Ecological and Environmental Modelling"
     right: "University of St Andrews"
+    background: secondary
   navbar:
     background: primary
-    left:
-      - href: index.qmd
-        text: First page
-      - about.qmd
     right: 
       - icon: fa-people-pulling
       - href: https://distancesampling.org
   sidebar: 
     style: docked
     search: true
+    collapse-level: 1
     contents: 
       - section: "Introduction"
         contents: 
