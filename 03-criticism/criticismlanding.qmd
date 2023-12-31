@@ -12,7 +12,7 @@ csl: ../style/apa.csl
 ::: columns
 
 ::: {.column width="60%"}
-This practical continues the theme of fitting detection functions to line transect distance sampling data.  Follow along with the Rmarkdown (.rmd) file found in the project.
+This practical continues the theme of fitting detection functions to line transect distance sampling data.  Follow along with the R code inside the Quarto (.qmd) instructions.
 
 You will proceed to fit a number of key function/adjustment term combinations to the data.  You will also experiment with setting truncation distances.
 
@@ -102,10 +102,10 @@ After completing that main task, you also have the opportunity to analyse anothe
 
 ## Supplemental materials
 ::: homework
-**Nothing**
+**A detailed look at model selection**
 
 ::: instructions
-There is no supplemental materials
+[The two stages of model selection](R-prac/modelsel-demo.qmd)
 :::
 :::
 

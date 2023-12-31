@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Centre for Research into Ecological and Environmental Modelling   University of St Andrews">
 
-<title>Introductory distance sampling training materials – pr3-instructions-distwin</title>
+<title>Introductory distance sampling training materials - Additional detection function modelling using Distance for Windows software</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +21,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -97,7 +117,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Additional detection function modelling using Distance for Windows software</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -133,11 +153,23 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
           <li class="sidebar-item">
- <span class="menu-text">Lecture slides (pdf)</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="../../01-intro/Mod1-2023-intro.pdf" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture slides</span></a>
+  </div>
+</li>
           <li class="sidebar-item">
- <span class="menu-text">Lecture video</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="https://youtu.be/_4RX6P4PB4k" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture video</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../01-intro/introlanding.html#exercise-materials" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercise materials</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -218,87 +250,138 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction-to-distance-sampling" id="toc-introduction-to-distance-sampling" class="nav-link active" data-scroll-target="#introduction-to-distance-sampling">Introduction to Distance Sampling</a></li>
+  <li><a href="#additional-question-with-another-line-transect-data-set" id="toc-additional-question-with-another-line-transect-data-set" class="nav-link active" data-scroll-target="#additional-question-with-another-line-transect-data-set">Additional question with another line transect data set</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Additional detection function modelling using Distance for Windows software</h1>
+</div>
 
 
-<section id="introduction-to-distance-sampling" class="level1">
-<h1>Introduction to Distance Sampling</h1>
-<p><strong>Line transect estimation using Distance</strong></p>
-<p><strong>1(a).</strong> The line transect data immediately below were generated from a half-normal model.</p>
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Centre for Research into Ecological and Environmental Modelling <br> <strong>University of St Andrews</strong> </p>
+          </div>
+  </div>
+    
+  
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">January 2024</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Mord detection function modelling and model criticism
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<section id="distance-for-windows-exercise" class="level3 callout-body-container callout-body">
+<h3 class="anchored" data-anchor-id="distance-for-windows-exercise">Distance for Windows exercise</h3>
+</section>
+</div>
+</div>
+<p>1a). The line transect data below were generated from a half-normal detection function model. You may either enter the data by hand (if you want practice doing this) using instructions in the next bullet point, or skip to step 1b) to open a project containing the data to begin analysis.</p>
 <ul>
-<li>Open a new project (click on <strong>File</strong> then on <strong>New project …</strong>), name it, and click on <strong>Create</strong>. Step through the New Project Setup Wizard (you should not need to change any of the defaults, except the units for density estimates to km<sup>2</sup> not the default hectares, but study each page) and click on <strong>Finish</strong>. This takes you to the Data Entry Wizard. Click <strong>Next</strong> until you get to the “line transect” page Step 4 of 6: Sample layer. Enter say the first 6 line labels (e.g.&nbsp;“line 1”, “line 2”, …) and lengths (5, 2, …). You need to click on the “append new record after current” button on the menu bar or type CTRL + Enter together before entering the information for each line.</li>
+<li>Open a new project (click on <strong>File</strong> then on <strong>New project …</strong>), name it, and click on <strong>Create</strong>. Step through the New Project Setup Wizard (you should not need to change any of the defaults, except the units for density estimates to km<sup>2</sup> not the default hectares, but study each page) and click on <strong>Finish</strong>. This takes you to the Data Entry Wizard. Click <strong>Next</strong> until you get to the “line transect” page Step 4 of 6: Sample layer. Enter say the first 6 line labels (e.g.&nbsp;“line 1”, “line 2”, …) and lengths (5, 2, …). You need to click on the “append new record after current” button on the menu bar or type <code>CTRL + Enter</code> together before entering the information for each line.</li>
 </ul>
 <p><img src="./media/image1.png" class="img-fluid"></p>
 <ul>
-<li>When you have finished, click on <strong>Next</strong> and enter the distances corresponding to each observation in a similar fashion (using CTRL + Enter between each observation). Once you have entered the distance data, go to the analysis browser, and carry out an analysis of these data using the half-normal detection function key.</li>
+<li>When you have finished, click on <strong>Next</strong> and enter the distances corresponding to each observation in a similar fashion (using <code>CTRL + Enter</code> between each observation). Once you have entered the distance data, go to the analysis browser, and carry out an analysis of these data using the half-normal detection function key.</li>
 </ul>
-<p>Perpendicular distances in metres generated from a half-normal line transect model.</p>
-<p>Line 1; length 5km</p>
-<p>7.9 10.2 12.4 3.8 4.8 8.5 13.4 5.8 7.5 11.5</p>
-<p>0.9 9.2 12.5 6.1</p>
-<p>Line 2; length 2km</p>
-<p>9.1 6.4 21.2</p>
-<p>Line 3; length 6km</p>
-<p>3.8 12.6 4.7 17.9 14.5 5.1 4.2 3.6</p>
-<p>Line 4; length 4km</p>
-<p>11.2 12.2 1.8 35.8 2.6 6.2 9.7 4.0 9.7</p>
-<p>Line 5; length 3km</p>
-<p>6.9 5.1 3.3</p>
-<p>Line 6; length 1km</p>
-<p>6.0 18.4 3.8 2.9</p>
-<p>Line 7; length 4km</p>
-<p>3.3 2.9 3.7 13.2 1.0 2.3 13.4 16.2 3.8 19.3</p>
-<p>11.1</p>
-<p>Line 8; length 4km</p>
-<p>0.8 1.5 0.7 10.2 10.0 0.6 7.6 4.4</p>
-<p>Line 9; length 5km</p>
-<p>1.0 1.0 1.2 4.6 9.2 15.8 1.9 3.3 3.7 5.8</p>
-<p>5.9 4.8 12.4 7.6 10.6 17.8 5.8</p>
-<p>Line 10; length 7km</p>
-<p>0.0 0.6 2.0 6.9 7.2 7.7 10.2 1.3 1.7 8.4</p>
-<p>13.4 19.4 12.8 13.2 6.3 10.0 12.4 19.5 1.7 3.1</p>
-<p>3.3 19.4 16.6</p>
-<p>Line 11; length 3km</p>
-<p>no detections</p>
-<p>Line 12; length 4km</p>
-<p>1.0 6.6 12.4 4.9 15.4</p>
-<p><strong>(b)</strong> The full data set is in project <strong>Exercise3.zip</strong> Choose Open project and select zip file type.</p>
+<p>Perpendicular distances in metres generated from a half-normal line transect detection function model.</p>
+<pre><code>Line 1; length 5km
+7.9 10.2 12.4 3.8 4.8 8.5 13.4 5.8 7.5 11.5 0.9 9.2 12.5 6.1
+Line 2; length 2km
+9.1 6.4 21.2
+Line 3; length 6km
+3.8 12.6 4.7 17.9 14.5 5.1 4.2 3.6
+Line 4; length 4km
+11.2 12.2 1.8 35.8 2.6 6.2 9.7 4.0 9.7
+Line 5; length 3km
+6.9 5.1 3.3
+Line 6; length 1km
+6.0 18.4 3.8 2.9
+Line 7; length 4km
+3.3 2.9 3.7 13.2 1.0 2.3 13.4 16.2 3.8 19.3 11.1
+Line 8; length 4km
+0.8 1.5 0.7 10.2 10.0 0.6 7.6 4.4
+Line 9; length 5km
+1.0 1.0 1.2 4.6 9.2 15.8 1.9 3.3 3.7 5.8 5.9 4.8 12.4 7.6 10.6 17.8 5.8
+Line 10; length 7km
+0.0 0.6 2.0 6.9 7.2 7.7 10.2 1.3 1.7 8.4 13.4 19.4 12.8 13.2 6.3 10.0 12.4 19.5 1.7 3.1 3.3 19.4 16.6
+Line 11; length 3km
+no detections
+Line 12; length 4km
+1.0 6.6 12.4 4.9 15.4</code></pre>
+<p>1b) The full data set is in project <code>Exercise3-2023.zip</code> Download the file from <a href="Exercise3-2023.zip">this link</a> and save the file in a location on your computer. Open <code>Distance for Windows</code>. Choose <code>Open project</code> and select zip file type to open the file and begin analysis.</p>
 <ul>
-<li><p>Experiment with keys other than the half-normal (uniform, hazard-rate and negative exponential), to assess whether these data can be satisfactorily analysed using the wrong model.</p></li>
-<li><p>For each key, determine a suitable truncation point, and decide on whether, and which, adjustments are needed. Truncation points come under the data filter – click <strong>New…</strong> in the <strong>Data Filter</strong> section and create and name your own data filter, including truncation. In the example data filter below, the largest 10% of distances were truncated – you may want to truncate at a specific distance, depending on the data.</p></li>
-<li><p>Given that the true density was 79.8 animals / km<sup>2</sup> for these data, how do bias and precision compare between models?</p></li>
+<li>Experiment with keys other than the half-normal (uniform, hazard-rate and negative exponential), to assess whether these data can be satisfactorily analysed using the wrong model.</li>
+<li>For each key, determine a suitable truncation point, and decide on whether, and which, adjustments are needed. Truncation points come under the data filter – click <strong>New…</strong> in the <strong>Data Filter</strong> section and create and name your own data filter, including truncation. In the example data filter below, the largest 10% of distances were truncated–- you may want to truncate at a specific distance, depending on the data.</li>
+<li>Given that the true density was 79.8 animals / km<sup>2</sup> for these data, how do bias and precision compare between models?</li>
 </ul>
-<blockquote class="blockquote">
-<p><img src="./media/image2.png" class="img-fluid"></p>
-</blockquote>
-<hr>
-<p>Additional question***</p>
-<p><strong>2.</strong> Below are perpendicular distance data (m) from line transect surveys of capercaillie (a large grouse) in Scotland. Total line length was 240km. The data are also in a text file <strong>capercaillie.txt</strong> in the Distance project directory. In the text file, column 1 is the transect number, column 2 is the transect length and column 3 is perpendicular distance. Columns are separated by tab characters. Create a new Distance project and either enter the data by hand or use the <strong>Data Import Wizard</strong> (Tools &gt; Import Data Wizard) to import the data from the text file. Then decide on a suitable model for the detection function and estimate bird density.</p>
-<p>CAPERCAILLIE, MONAUGHTY FOREST</p>
-<p>n=112</p>
-<p>28.0 17.0 15.0 14.0 18.0 0.0 38.0 6.0 50.0 65.0</p>
-<p>75.0 1.0 70.0 28.0 40.0 40.0 40.0 15.0 40.0 30.0</p>
-<p>5.0 55.0 60.0 40.0 24.0 30.0 0.0 50.0 55.0 10.0</p>
-<p>40.0 10.0 30.0 34.0 24.0 30.0 15.0 20.0 14.0 48.0</p>
-<p>0.0 30.0 2.0 52.0 11.0 48.0 28.0 38.0 25.0 35.0</p>
-<p>45.0 0.0 16.0 12.0 2.0 14.0 12.0 24.0 70.0 50.0</p>
-<p>49.0 40.0 80.0 18.0 27.0 30.0 30.0 60.0 58.0 14.0</p>
-<p>0.0 56.0 40.0 19.0 21.0 0.0 38.0 20.0 28.0 30.0</p>
-<p>20.0 16.0 0.0 69.0 40.0 46.0 50.0 40.0 70.0 67.0</p>
-<p>28.0 12.0 12.0 22.0 40.0 48.0 48.0 15.0 12.0 0.0</p>
-<p>15.0 20.0 17.0 30.0 30.0 32.0 48.0 20.0 10.0 20.0</p>
-<p>42.0 30.0</p>
+<p><img src="media/image2.png" class="img-fluid"></p>
+<section id="additional-question-with-another-line-transect-data-set" class="level2">
+<h2 class="anchored" data-anchor-id="additional-question-with-another-line-transect-data-set">Additional question with another line transect data set</h2>
+<p><a title="sighmanb, CC BY 2.0 <https://creativecommons.org/licenses/by/2.0>, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Capercaillie_(8751340764).jpg"><img width="256" alt="Capercaillie (8751340764)" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Capercaillie_%288751340764%29.jpg/256px-Capercaillie_%288751340764%29.jpg"></a></p>
+<p><strong>2.</strong> Below are perpendicular distance data (m) from line transect surveys of capercaillie (a large grouse) in Scotland. Total line length was 240km. The data are also in a text file <strong>capercaillie.txt</strong> you may download from <a href="capercaillie.txt">this link</a> and save on your computer. Description of a line transect survey of this species is presented in <span class="citation" data-cites="catt1998a">(<a href="#ref-catt1998a" role="doc-biblioref">Catt et al., 1998</a>)</span></p>
+<p>In the text file, column 1 is the transect number, column 2 is the transect length and column 3 is perpendicular distance as shown.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>  V1  V2 V3
+1  1 240 28
+2  1 240 17
+3  1 240 15
+4  1 240 14
+5  1 240 18
+6  1 240  0</code></pre>
+</div>
+</div>
+<p>Columns are separated by tab characters. Create a new Distance project and either enter the data by hand or use the <strong>Data Import Wizard</strong> (<code>Tools &gt; Import Data Wizard</code>) to import the data from the text file. Then decide on a suitable model for the detection function and estimate bird density.</p>
+<p>Capercaillie, Monaughty Forest 112 detections</p>
+<pre><code>28.0 17.0 15.0 14.0 18.0 0.0 38.0 6.0 50.0 65.0
+75.0 1.0 70.0 28.0 40.0 40.0 40.0 15.0 40.0 30.0
+5.0 55.0 60.0 40.0 24.0 30.0 0.0 50.0 55.0 10.0
+40.0 10.0 30.0 34.0 24.0 30.0 15.0 20.0 14.0 48.0
+0.0 30.0 2.0 52.0 11.0 48.0 28.0 38.0 25.0 35.0
+45.0 0.0 16.0 12.0 2.0 14.0 12.0 24.0 70.0 50.0
+49.0 40.0 80.0 18.0 27.0 30.0 30.0 60.0 58.0 14.0
+0.0 56.0 40.0 19.0 21.0 0.0 38.0 20.0 28.0 30.0
+20.0 16.0 0.0 69.0 40.0 46.0 50.0 40.0 70.0 67.0
+28.0 12.0 12.0 22.0 40.0 48.0 48.0 15.0 12.0 0.0
+15.0 20.0 17.0 30.0 30.0 32.0 48.0 20.0 10.0 20.0
+42.0 30.0</code></pre>
+
 
 
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list">
+<div id="ref-catt1998a" class="csl-entry" role="listitem">
+Catt, D. C., Baines, D., Picozzi, N., Moss, R., &amp; Summers, R. W. (1998). Abundance and distribution of capercaillie <em><span>T</span>etrao urogallus</em> in <span>S</span>cotland 1992–1994. <em>Biological Conservation</em>, <em>85</em>(3), 257–267. <a href="https://doi.org/10.1016/s0006-3207(97)00171-7">https://doi.org/10.1016/s0006-3207(97)00171-7</a>
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

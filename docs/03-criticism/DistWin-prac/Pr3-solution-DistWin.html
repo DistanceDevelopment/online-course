@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Centre for Research into Ecological and Environmental Modelling   University of St Andrews">
 
-<title>Introductory distance sampling training materials – pr3-solution-distwin</title>
+<title>Introductory distance sampling training materials - Additional detection function modelling using Distance for Windows software</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -61,6 +62,8 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <script src="https://kit.fontawesome.com/78ddb093ea.js" crossorigin="anonymous"></script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -97,7 +100,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Additional detection function modelling using Distance for Windows software</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -133,11 +136,23 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
           <li class="sidebar-item">
- <span class="menu-text">Lecture slides (pdf)</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="../../01-intro/Mod1-2023-intro.pdf" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture slides</span></a>
+  </div>
+</li>
           <li class="sidebar-item">
- <span class="menu-text">Lecture video</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="https://youtu.be/_4RX6P4PB4k" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture video</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../01-intro/introlanding.html#exercise-materials" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercise materials</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -218,108 +233,161 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction-to-distance-sampling" id="toc-introduction-to-distance-sampling" class="nav-link active" data-scroll-target="#introduction-to-distance-sampling">Introduction to Distance Sampling</a>
-  <ul class="collapse">
-  <li><a href="#additional-question" id="toc-additional-question" class="nav-link" data-scroll-target="#additional-question">Additional question</a></li>
-  </ul></li>
+  <li><a href="#additional-question" id="toc-additional-question" class="nav-link active" data-scroll-target="#additional-question">Additional question</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Additional detection function modelling using Distance for Windows software</h1>
+</div>
 
 
-<section id="introduction-to-distance-sampling" class="level1">
-<h1>Introduction to Distance Sampling</h1>
-<p>Line transect analysis with Distance</p>
-<p>1a) Results of estimating density from simulated data in which true density was 79.8 per km<sup>2</sup>. Findings from some candidate models:</p>
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Centre for Research into Ecological and Environmental Modelling <br> <strong>University of St Andrews</strong> </p>
+          </div>
+  </div>
+    
+  
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">January 2024</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Mord detection function modelling and model criticism
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<section id="distance-for-windows-exercise-solution" class="level3 callout-body-container callout-body">
+<h3 class="anchored" data-anchor-id="distance-for-windows-exercise-solution">Distance for Windows exercise Solution</h3>
+</section>
+</div>
+</div>
+<p>Results of estimating density from simulated data in which true density was 79.8 per km<sup>2</sup>. Findings from some candidate models:</p>
 <table class="table">
 <colgroup>
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 6%">
-<col style="width: 14%">
-<col style="width: 18%">
-<col style="width: 19%">
-<col style="width: 19%">
+<col style="width: 16%">
+<col style="width: 11%">
+<col style="width: 9%">
+<col style="width: 13%">
+<col style="width: 13%">
+<col style="width: 12%">
+<col style="width: 23%">
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><strong>Key function</strong></td>
-<td><strong>Adjustments</strong></td>
-<td><strong>w (m)</strong></td>
-<td><img src="./media/image1.wmf" class="img-fluid"></td>
-<td><img src="./media/image2.wmf" class="img-fluid"> <strong>CV</strong></td>
-<td><img src="./media/image2.wmf" class="img-fluid"> <strong>LCL</strong></td>
-<td><img src="./media/image2.wmf" class="img-fluid"> <strong>UCL</strong></td>
+<td>Key function</td>
+<td style="text-align: right;">Adjustments</td>
+<td style="text-align: right;">w (m)</td>
+<td style="text-align: right;"><span class="math inline">\(\hat{D}\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(\hat{D}\)</span> CV</td>
+<td style="text-align: right;"><span class="math inline">\(\hat{D}\)</span> LCB</td>
+<td style="text-align: right;"><span class="math inline">\(\hat{D}\)</span> UCB</td>
 </tr>
 <tr class="even">
 <td>Half normal</td>
-<td>0</td>
-<td>35.8</td>
-<td>87.49</td>
-<td>0.16</td>
-<td>63</td>
-<td>122</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">35.8</td>
+<td style="text-align: right;">87.49</td>
+<td style="text-align: right;">0.16</td>
+<td style="text-align: right;">63</td>
+<td style="text-align: right;">122</td>
 </tr>
 <tr class="odd">
 <td>Half normal</td>
-<td>0</td>
-<td>20</td>
-<td>84.12</td>
-<td>0.17</td>
-<td>59</td>
-<td>120</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">84.12</td>
+<td style="text-align: right;">0.17</td>
+<td style="text-align: right;">59</td>
+<td style="text-align: right;">120</td>
 </tr>
 <tr class="even">
 <td>Uniform</td>
-<td>1</td>
-<td>20</td>
-<td>86.43</td>
-<td>0.17</td>
-<td>61</td>
-<td>123</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">86.43</td>
+<td style="text-align: right;">0.17</td>
+<td style="text-align: right;">61</td>
+<td style="text-align: right;">123</td>
 </tr>
 <tr class="odd">
 <td>Hazard rate</td>
-<td>0</td>
-<td>20</td>
-<td>85.66</td>
-<td>0.20</td>
-<td>57</td>
-<td>129</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">85.66</td>
+<td style="text-align: right;">0.20</td>
+<td style="text-align: right;">57</td>
+<td style="text-align: right;">129</td>
 </tr>
 <tr class="even">
 <td>Neg. exponential</td>
-<td>0</td>
-<td>20</td>
-<td>105.04</td>
-<td>0.21</td>
-<td>69</td>
-<td>159</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">105.04</td>
+<td style="text-align: right;">0.21</td>
+<td style="text-align: right;">69</td>
+<td style="text-align: right;">159</td>
 </tr>
 </tbody>
 </table>
-<p>Not surprisingly for these data (simulated from a half normal detection function with a broad shoulder), the negative exponential model gives a higher estimate than the others, although the confidence interval still includes the true density. The other models provide very similar estimates, though precision is slightly worse for the hazard-rate model (because more parameters fitted). Agreement between the estimate and the known true density is less good if you do not truncate the data, or do not truncate them sufficiently. Take home message: With care, we can get reliable estimates using the wrong model (the data were simulated using a half-normal detection function).</p>
+<p>Not surprisingly for these data (simulated from a half normal detection function with a broad shoulder), the negative exponential model gives a higher estimate than the others, although the confidence interval still includes the true density. The other models provide very similar estimates, though precision is slightly worse for the hazard-rate model (because more parameters fitted). Agreement between the estimate and the known true density is less good if you do not truncate the data, or do not truncate them sufficiently.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Take home message:
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>With care, we can get reliable estimates using the wrong model (the data were simulated using a half-normal detection function).</p>
+</div>
+</div>
+</div>
 <section id="additional-question" class="level2">
 <h2 class="anchored" data-anchor-id="additional-question">Additional question</h2>
-<p>2) These capercaillie data are reasonably well-behaved and different models that fit the data well should give similar results. Note the rounding in the distance data. This means that interval cutpoints for histograms and goodness-of-fit testing, and for the analysis of grouped data if this is required, should be chosen with care (i.e., distance bands ought to be sufficiently broad such that the ‘correct’ perpendicular distance is in the bands containing the rounded recorded value. e.g.&nbsp;0, 7.5, 17.5, 27.5, …</p>
+<p>The capercaillie data are reasonably well-behaved and different models that fit the data well should give similar results. Note the rounding in the distance data. This means that interval cutpoints for histograms and goodness-of-fit testing, and for the analysis of grouped data if this is required, should be chosen with care (i.e., distance bands ought to be sufficiently broad such that the ‘correct’ perpendicular distance is in the bands containing the rounded recorded value. e.g.&nbsp;0, 7.5, 17.5, 27.5, … )</p>
 <table class="table">
 <colgroup>
-<col style="width: 20%">
+<col style="width: 22%">
 <col style="width: 16%">
-<col style="width: 21%">
-<col style="width: 21%">
 <col style="width: 20%">
+<col style="width: 17%">
+<col style="width: 24%">
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><strong>Fitted model</strong></td>
-<td><img src="./media/image1.wmf" class="img-fluid"></td>
-<td><img src="./media/image1.wmf" class="img-fluid"> <strong>LCL</strong></td>
-<td><img src="./media/image1.wmf" class="img-fluid"> <strong>UCL</strong></td>
-<td><img src="./media/image1.wmf" class="img-fluid"> <strong>CV</strong></td>
+<td>Fitted model</td>
+<td><span class="math inline">\(\hat{D}\)</span></td>
+<td><span class="math inline">\(\hat{D}\)</span> LCB</td>
+<td><span class="math inline">\(\hat{D}\)</span> UCB</td>
+<td><span class="math inline">\(\hat{D}\)</span> CV</td>
 </tr>
 <tr class="even">
 <td>Half normal</td>
@@ -353,7 +421,6 @@ ul.task-list li input[type="checkbox"] {
 </table>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
