@@ -20,11 +20,11 @@ website:
     contents: 
       - section: "Introduction"
         contents: 
-          - 01-intro/introlanding.qmd
-          - href: 01-intro/Mod1-2023-intro.pdf
+          - href: 01-intro/introlanding.qmd
           - text: "Lecture slides (pdf)"
-          - href: https://youtu.be/_4RX6P4PB4k
+          - href: 01-intro/Mod1-2023-intro.pdf
           - text: "Lecture video"
+          - href: https://youtu.be/_4RX6P4PB4k
           
       - section: "Detection function modelling"
         contents: 
