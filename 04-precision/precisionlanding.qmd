@@ -82,11 +82,11 @@ There is a second data set that shares the same survey design (short transects i
 :::
 
 ::: instructions
-[Instructions](DistWin-prac/temp.qmd)
+[Instructions](DistWin-prac/Pr4-instructions-DistWin.qmd)
 :::
 
 ::: instructions
-[Solution and discussion](DistWin-prac/temp.qmd)
+[Solution and discussion](DistWin-prac/Pr4-solution-DistWin.qmd)
 :::
 
 ::: video

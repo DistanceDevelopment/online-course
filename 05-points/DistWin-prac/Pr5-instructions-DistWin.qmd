@@ -1,54 +1,47 @@
-# **Introduction to Distance Sampling**
+---
+title: Analysis of point transect survey data
+author: Centre for Research into Ecological and Environmental Modelling <br> **University of St Andrews**
+date-modified: "January 2024"
+date-format: "MMMM YYYY"
+bibliography: ../references.bib
+csl: ../../style/apa.csl
+---
 
-**Point transect exercises**
+:::{.callout-warning collapse=false appearance='default' icon=true}
+# Analysis of point transect survey data
+### Distance for Windows exercise
+:::
 
-1.  Simulated point transect data from 30 points are given in project
-    **PTExercise1.zip**. These data were generated from a half-normal
-    detection function, and true density was 79.6 animals / ha.
-    Experiment with keys other than the half-normal (uniform,
-    hazard-rate and negative exponential), to assess whether these data
-    can be satisfactorily analysed using the wrong model. For each key,
-    determine a suitable truncation point, and decide on whether, and
-    which, adjustments are needed. (Truncation points come under the
-    data filter.) How do bias and precision compare between models?
+## Simulated point transect data
 
-2.  The projects **Wren1.zip**, **Wren2.zip**, **Wren3.zip** and
-    **Wren4.zip** contain winter wren data, collected at Montrave,
-    Scotland in 2004. Each project corresponds to a different method of
-    data collection. Thirty-two points were defined through 33.2 ha of
-    parkland (Fig. 1), and detection distances were measured in metres
-    with the aid of a laser rangefinder. Three types of point transect
-    data were collected: 1. standard five-minute counts; 2. the
-    ‘snapshot’ method; and 3. a cue count method. In addition, line
-    transect data were collected (method 4), and territory mapping was
-    conducted, which gave an estimate of 43 wren territories (1.30
-    territories ha<sup>-1</sup>).
+1.  Simulated point transect data from 30 points are given in project [**PTExercise1.zip**](PTExercise1.zip). These data were generated from a half-normal detection function, and true density was 79.6 animals ha<sup>-1</sup>. 
 
-<!-- -->
+Download and analyse this data set. Experiment with keys other than the half-normal (uniform, hazard-rate and negative exponential), to assess whether these data can be satisfactorily analysed using the wrong model. For each key, determine a suitable truncation point, and decide on whether, and which, adjustments are needed. (Truncation points come under the data filter.) How do bias and precision compare between models?
 
-1)  Select a single model for exploratory data analysis. Experiment with
-    different truncation distances *w*, and select a suitable value for
-    each method. Do you see potential problems with any of the data
-    sets?
+## Winter wrens in Scotland
 
-2)  Try other models and other model options. Use plots, AIC values and
-    goodness-of-fit test statistics to determine an adequate model.
+2.  The following projects are available for download and analysis:
+- [**Wren1.zip**](Wren1-2023.zip), 
+- [**Wren2.zip**](Wren2-2023.zip), 
+- [**Wren3.zip**](Wren3-2023.zip) and
+- [**Wren4.zip**](Wren4-2023.zip).
 
-3)  ![](./media/image1.emf)Record your estimates of density for each
-    method. Record also the corresponding confidence intervals. Compare
-    your answers with those of others in the workshop.
+The projects contain winter wren data, collected at Montrave, Scotland in 2004, as described in [@buckland2006]. Each project corresponds to a different method of data collection. Thirty-two points were defined through 33.2 ha of parkland (Fig. 1), and detection distances were measured in metres with the aid of a laser rangefinder. Three types of point transect data were collected:
+- standard five-minute counts
+- the ‘snapshot’ method and 
+- a cue count method. 
+In addition, line transect data were collected (method 4), and territory mapping was conducted, which gave an estimate of 43 wren territories (1.30 territories ha<sup>-1</sup>).
 
-<!-- -->
+- Select a single model for exploratory data analysis. Experiment with  different truncation distances *w*, and select a suitable value for each method. Do you see potential problems with any of the data sets?
+- Try other models and other model options. Use plots, AIC values and goodness-of-fit test statistics to determine an adequate model.
+- Record your estimates of density for each  method. Record also the corresponding confidence intervals. 
 
-3.  The Sample Projects directory contains two point transect projects,
-    **Savannah Sparrow 1980.zip** and **Savannah Sparrow 1981.zip**.
-    These were part of a large data set collected in Arapaho National
-    Wildlife Refuge, Colorado. For both data sets, consider an
-    appropriate truncation distance, decide on a suitable model for the
-    detection function, and estimate density, both for each stratum
-    individually and for the whole study area. You should include in
-    your analysis an assessment of whether the detection function can be
-    estimated from data pooled across strata, or whether separate
-    estimates are needed per stratum. (This will be covered in the
-    lecture discussing stratification if you don’t already know how to
-    do it.)
+## Savannah sparrows in Colorado USA
+
+3.  Two additional point transect projects are available for download and analysis:
+- [**Savannah Sparrow 1980.zip**](Savannah Sparrow 1980.zip) and 
+- [**Savannah Sparrow 1981.zip**](Savannah Sparrow 1981.zip).
+
+These were part of a large data set collected in Arapaho National  Wildlife Refuge, Colorado. For both data sets, consider an  appropriate truncation distance, decide on a suitable model for the detection function, and estimate density, both for each stratum individually and for the whole study area. You should include in  your analysis an assessment of whether the detection function can be  estimated from data pooled across strata, or whether separate  estimates are needed per stratum. (This will be covered in the lecture discussing stratification if you don’t already know how to do it.)
+
+# References

@@ -82,11 +82,11 @@ After completing that main task, you also have the opportunity to analyse anothe
 :::
 
 ::: instructions
-[Instructions](DistWin-prac/temp.qmd)
+[Instructions](DistWin-prac/Pr3-instructions-DistWin.qmd)
 :::
 
 ::: instructions
-[Solution and discussion](DistWin-prac/temp.qmd)
+[Solution and discussion](DistWin-prac/Pr3-solution-DistWin.qmd)
 :::
 
 ::: video

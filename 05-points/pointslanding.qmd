@@ -82,11 +82,11 @@ Finally, there are two optional data sets of winter wrens collected by Prof. Buc
 :::
 
 ::: instructions
-[Instructions](DistWin-prac/temp.qmd)
+[Instructions](DistWin-prac/Pr5-instructions-DistWin.qmd)
 :::
 
 ::: instructions
-[Solution and discussion](DistWin-prac/temp.qmd)
+[Solution and discussion](DistWin-prac/Pr5-solution-DistWin.qmd)
 :::
 
 ::: video

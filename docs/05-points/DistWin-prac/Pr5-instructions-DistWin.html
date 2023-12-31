@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Centre for Research into Ecological and Environmental Modelling   University of St Andrews">
 
-<title>Introductory distance sampling training materials – pr5-instructions-distwin</title>
+<title>Introductory distance sampling training materials - Analysis of point transect survey data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +21,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -97,7 +117,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Analysis of point transect survey data</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -133,11 +153,23 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
           <li class="sidebar-item">
- <span class="menu-text">Lecture slides (pdf)</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="../../01-intro/Mod1-2023-intro.pdf" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture slides</span></a>
+  </div>
+</li>
           <li class="sidebar-item">
- <span class="menu-text">Lecture video</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="https://youtu.be/_4RX6P4PB4k" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture video</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../01-intro/introlanding.html#exercise-materials" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercise materials</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -218,37 +250,109 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction-to-distance-sampling" id="toc-introduction-to-distance-sampling" class="nav-link active" data-scroll-target="#introduction-to-distance-sampling"><strong>Introduction to Distance Sampling</strong></a></li>
+  <li><a href="#simulated-point-transect-data" id="toc-simulated-point-transect-data" class="nav-link active" data-scroll-target="#simulated-point-transect-data">Simulated point transect data</a></li>
+  <li><a href="#winter-wrens-in-scotland" id="toc-winter-wrens-in-scotland" class="nav-link" data-scroll-target="#winter-wrens-in-scotland">Winter wrens in Scotland</a></li>
+  <li><a href="#savannah-sparrows-in-colorado-usa" id="toc-savannah-sparrows-in-colorado-usa" class="nav-link" data-scroll-target="#savannah-sparrows-in-colorado-usa">Savannah sparrows in Colorado USA</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Analysis of point transect survey data</h1>
+</div>
 
 
-<section id="introduction-to-distance-sampling" class="level1">
-<h1><strong>Introduction to Distance Sampling</strong></h1>
-<p><strong>Point transect exercises</strong></p>
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Centre for Research into Ecological and Environmental Modelling <br> <strong>University of St Andrews</strong> </p>
+          </div>
+  </div>
+    
+  
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">January 2024</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Analysis of point transect survey data
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<section id="distance-for-windows-exercise" class="level3 callout-body-container callout-body">
+<h3 class="anchored" data-anchor-id="distance-for-windows-exercise">Distance for Windows exercise</h3>
+</section>
+</div>
+</div>
+<section id="simulated-point-transect-data" class="level2">
+<h2 class="anchored" data-anchor-id="simulated-point-transect-data">Simulated point transect data</h2>
 <ol type="1">
-<li><p>Simulated point transect data from 30 points are given in project <strong>PTExercise1.zip</strong>. These data were generated from a half-normal detection function, and true density was 79.6 animals / ha. Experiment with keys other than the half-normal (uniform, hazard-rate and negative exponential), to assess whether these data can be satisfactorily analysed using the wrong model. For each key, determine a suitable truncation point, and decide on whether, and which, adjustments are needed. (Truncation points come under the data filter.) How do bias and precision compare between models?</p></li>
-<li><p>The projects <strong>Wren1.zip</strong>, <strong>Wren2.zip</strong>, <strong>Wren3.zip</strong> and <strong>Wren4.zip</strong> contain winter wren data, collected at Montrave, Scotland in 2004. Each project corresponds to a different method of data collection. Thirty-two points were defined through 33.2 ha of parkland (Fig. 1), and detection distances were measured in metres with the aid of a laser rangefinder. Three types of point transect data were collected: 1. standard five-minute counts; 2. the ‘snapshot’ method; and 3. a cue count method. In addition, line transect data were collected (method 4), and territory mapping was conducted, which gave an estimate of 43 wren territories (1.30 territories ha<sup>-1</sup>).</p></li>
+<li>Simulated point transect data from 30 points are given in project <a href="PTExercise1.zip"><strong>PTExercise1.zip</strong></a>. These data were generated from a half-normal detection function, and true density was 79.6 animals ha<sup>-1</sup>.</li>
 </ol>
-<!-- -->
-<ol type="1">
-<li><p>Select a single model for exploratory data analysis. Experiment with different truncation distances <em>w</em>, and select a suitable value for each method. Do you see potential problems with any of the data sets?</p></li>
-<li><p>Try other models and other model options. Use plots, AIC values and goodness-of-fit test statistics to determine an adequate model.</p></li>
-<li><p><img src="./media/image1.emf" class="img-fluid">Record your estimates of density for each method. Record also the corresponding confidence intervals. Compare your answers with those of others in the workshop.</p></li>
+<p>Download and analyse this data set. Experiment with keys other than the half-normal (uniform, hazard-rate and negative exponential), to assess whether these data can be satisfactorily analysed using the wrong model. For each key, determine a suitable truncation point, and decide on whether, and which, adjustments are needed. (Truncation points come under the data filter.) How do bias and precision compare between models?</p>
+</section>
+<section id="winter-wrens-in-scotland" class="level2">
+<h2 class="anchored" data-anchor-id="winter-wrens-in-scotland">Winter wrens in Scotland</h2>
+<ol start="2" type="1">
+<li>The following projects are available for download and analysis:</li>
 </ol>
-<!-- -->
+<ul>
+<li><a href="Wren1-2023.zip"><strong>Wren1.zip</strong></a>,</li>
+<li><a href="Wren2-2023.zip"><strong>Wren2.zip</strong></a>,</li>
+<li><a href="Wren3-2023.zip"><strong>Wren3.zip</strong></a> and</li>
+<li><a href="Wren4-2023.zip"><strong>Wren4.zip</strong></a>.</li>
+</ul>
+<p>The projects contain winter wren data, collected at Montrave, Scotland in 2004, as described in <span class="citation" data-cites="buckland2006">(<a href="#ref-buckland2006" role="doc-biblioref">Buckland, 2006</a>)</span>. Each project corresponds to a different method of data collection. Thirty-two points were defined through 33.2 ha of parkland (Fig. 1), and detection distances were measured in metres with the aid of a laser rangefinder. Three types of point transect data were collected: - standard five-minute counts - the ‘snapshot’ method and - a cue count method. In addition, line transect data were collected (method 4), and territory mapping was conducted, which gave an estimate of 43 wren territories (1.30 territories ha<sup>-1</sup>).</p>
+<ul>
+<li>Select a single model for exploratory data analysis. Experiment with different truncation distances <em>w</em>, and select a suitable value for each method. Do you see potential problems with any of the data sets?</li>
+<li>Try other models and other model options. Use plots, AIC values and goodness-of-fit test statistics to determine an adequate model.</li>
+<li>Record your estimates of density for each method. Record also the corresponding confidence intervals.</li>
+</ul>
+</section>
+<section id="savannah-sparrows-in-colorado-usa" class="level2">
+<h2 class="anchored" data-anchor-id="savannah-sparrows-in-colorado-usa">Savannah sparrows in Colorado USA</h2>
 <ol start="3" type="1">
-<li>The Sample Projects directory contains two point transect projects, <strong>Savannah Sparrow 1980.zip</strong> and <strong>Savannah Sparrow 1981.zip</strong>. These were part of a large data set collected in Arapaho National Wildlife Refuge, Colorado. For both data sets, consider an appropriate truncation distance, decide on a suitable model for the detection function, and estimate density, both for each stratum individually and for the whole study area. You should include in your analysis an assessment of whether the detection function can be estimated from data pooled across strata, or whether separate estimates are needed per stratum. (This will be covered in the lecture discussing stratification if you don’t already know how to do it.)</li>
+<li>Two additional point transect projects are available for download and analysis:</li>
 </ol>
+<ul>
+<li><a href="Savannah Sparrow 1980.zip"><strong>Savannah Sparrow 1980.zip</strong></a> and</li>
+<li><a href="Savannah Sparrow 1981.zip"><strong>Savannah Sparrow 1981.zip</strong></a>.</li>
+</ul>
+<p>These were part of a large data set collected in Arapaho National Wildlife Refuge, Colorado. For both data sets, consider an appropriate truncation distance, decide on a suitable model for the detection function, and estimate density, both for each stratum individually and for the whole study area. You should include in your analysis an assessment of whether the detection function can be estimated from data pooled across strata, or whether separate estimates are needed per stratum. (This will be covered in the lecture discussing stratification if you don’t already know how to do it.)</p>
+</section>
+<section id="references" class="level1">
+
+
 
 
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list">
+<div id="ref-buckland2006" class="csl-entry" role="listitem">
+Buckland, S. T. (2006). Point-transect surveys for songbirds: Robust methodologies. <em>The Auk</em>, <em>123</em>(2), 345–357. <a href="https://doi.org/10.1642/0004-8038(2006)123[345:PSFSRM]2.0.CO;2">https://doi.org/10.1642/0004-8038(2006)123[345:PSFSRM]2.0.CO;2</a>
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
