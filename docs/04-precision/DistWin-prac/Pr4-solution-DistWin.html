@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Centre for Research into Ecological and Environmental Modelling   University of St Andrews">
 
-<title>Introductory distance sampling training materials – pr4-solution-distwin</title>
+<title>Introductory distance sampling training materials - Variance estimation for systematic designs</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +21,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -97,7 +117,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Variance estimation for systematic designs</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -133,11 +153,23 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
           <li class="sidebar-item">
- <span class="menu-text">Lecture slides (pdf)</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="../../01-intro/Mod1-2023-intro.pdf" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture slides</span></a>
+  </div>
+</li>
           <li class="sidebar-item">
- <span class="menu-text">Lecture video</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="https://youtu.be/_4RX6P4PB4k" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture video</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../01-intro/introlanding.html#exercise-materials" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercise materials</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -220,45 +252,90 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#basic-variance-estimation-with-bootstrapping" id="toc-basic-variance-estimation-with-bootstrapping" class="nav-link active" data-scroll-target="#basic-variance-estimation-with-bootstrapping">Basic variance estimation, with bootstrapping</a></li>
   <li><a href="#post-stratification-to-improve-variance-estimation" id="toc-post-stratification-to-improve-variance-estimation" class="nav-link" data-scroll-target="#post-stratification-to-improve-variance-estimation">Post-stratification to improve variance estimation</a></li>
-  <li><a href="#systematic-designs-where-post-stratification-is-not-needed" id="toc-systematic-designs-where-post-stratification-is-not-needed" class="nav-link" data-scroll-target="#systematic-designs-where-post-stratification-is-not-needed">Systematic designs where post-stratification is not needed</a></li>
+  <li><a href="#systematic-designs-where-post-stratification-is-not-needed" id="toc-systematic-designs-where-post-stratification-is-not-needed" class="nav-link" data-scroll-target="#systematic-designs-where-post-stratification-is-not-needed">Systematic designs where post-stratification is not needed</a>
+  <ul class="collapse">
+  <li><a href="#without-post-stratification-analytic-output" id="toc-without-post-stratification-analytic-output" class="nav-link" data-scroll-target="#without-post-stratification-analytic-output">Without post-stratification: analytic output</a></li>
+  <li><a href="#with-post-stratification-non-overlapping-analytic-output" id="toc-with-post-stratification-non-overlapping-analytic-output" class="nav-link" data-scroll-target="#with-post-stratification-non-overlapping-analytic-output">With post-stratification (non-overlapping): analytic output</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Variance estimation for systematic designs</h1>
+</div>
 
 
-<p><strong>Introduction to Distance Sampling</strong></p>
-<p><strong>Variance estimation for systematic designs - solutions</strong></p>
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Centre for Research into Ecological and Environmental Modelling <br> <strong>University of St Andrews</strong> </p>
+          </div>
+  </div>
+    
+  
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">January 2024</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Variance estimation for systematic designs
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<section id="distance-for-windows-exercise-solution" class="level3 callout-body-container callout-body">
+<h3 class="anchored" data-anchor-id="distance-for-windows-exercise-solution">Distance for Windows exercise Solution</h3>
+</section>
+</div>
+</div>
 <p>Recall the situation in which we have a strong gradient in animal density across our study region, and at the same time we also have a difference in the lengths of our transects; such that short transects are in areas of high animal density, and long transects are in areas of low animal density.</p>
-<p><img src="./media/image1.emf" class="img-fluid"></p>
+<p><img src="./media/syst2survey.png" class="img-fluid"></p>
 <section id="basic-variance-estimation-with-bootstrapping" class="level2">
 <h2 class="anchored" data-anchor-id="basic-variance-estimation-with-bootstrapping">Basic variance estimation, with bootstrapping</h2>
 <ol start="8" type="1">
 <li><p>The precision is very poor: estimated density ranges from about 1000 to 3600: a three-and-a half-fold difference over which we are uncertain. Given that our survey covered 40% of the triangle region, and had a good sample size (254 on 20 transects), this would be a very disappointing result in practice.</p></li>
 <li><p>Bootstrap output [your results may differ slightly as these are created from a random process]:</p></li>
 </ol>
-<blockquote class="blockquote">
-<p>Estimate %CV # df 95% Confidence Interval</p>
-<hr>
-<p>Half-normal/Cosine</p>
-<p>D 2129.2 27.40 999 20.74 1216.2 3727.5</p>
-<p>1164.0 3427.2</p>
-<p>Half-normal/Cosine</p>
-<p>N 1064.6 27.40 999 20.74 608.00 1864.0</p>
-<p>582.00 1714.0</p>
-<p>Note: Confidence interval 1 uses bootstrap SE and log-normal 95% intervals.</p>
-<p>Interval 2 is the 2.5% and 97.5% quantiles of the bootstrap estimates.</p>
-</blockquote>
+<pre><code>Estimate %CV \# df 95% Confidence Interval
+--------------------------------------------------------
+Half-normal/Cosine
+D 2129.2 27.40 999 20.74 1216.2 3727.5
+                         1164.0 3427.2
+
+Half-normal/Cosine
+N 1064.6 27.40 999 20.74 608.00 1864.0
+                         582.00 1714.0
+
+Note: Confidence interval 1 uses bootstrap SE and log-normal 95% intervals.
+Interval 2 is the 2.5% and 97.5% quantiles of the bootstrap estimates.</code></pre>
 <ol start="9" type="1">
-<li><p>The bootstrap results are very similar to the analytic results, as we would expect. In fact, this did not used to be the case in previous versions of Distance, as the old analytic variance estimator did not perform well when there were extreme trends in both density and line length. You can access the previous default estimator under the Advanced… tab on the Variance page of the Model Definition Properties (its estimator R3), and more details are given in Fewster et al.&nbsp;(2009).</p></li>
+<li><p>The bootstrap results are very similar to the analytic results, as we would expect. In fact, this did not used to be the case in previous versions of Distance, as the old analytic variance estimator did not perform well when there were extreme trends in both density and line length. You can access the previous default estimator under the Advanced… tab on the Variance page of the Model Definition Properties (its estimator R3), and more details are given in <span class="citation" data-cites="fewster2009">(<a href="#ref-fewster2009" role="doc-biblioref">Fewster et al., 2009</a>)</span>.</p></li>
 <li><p>The component percentages of variance are as follows:</p></li>
 </ol>
-<p>Component Percentages of Var(D)</p>
-<hr>
-<p>Detection probability : 4.3</p>
-<p>Encounter rate : 95.7</p>
+<pre><code>Component Percentages of Var(D)
+-------------------------------
+Detection probability : 4.3
+Encounter rate :       95.7</code></pre>
 <p>It should ring an alarm bell to see such a high contribution from Encounter rate. Generally we might expect encounter rate to be in the region of 70% to 80% for line transect surveys.</p>
 </section>
 <section id="post-stratification-to-improve-variance-estimation" class="level2">
@@ -266,62 +343,80 @@ ul.task-list li input[type="checkbox"] {
 <ol start="4" type="1">
 <li>The precision is now greatly improved:</li>
 </ol>
-<blockquote class="blockquote">
-<p>Estimate %CV df 95% Confidence Interval</p>
-<hr>
-<p>Half-normal/Cosine</p>
-<p>D 2044.6 8.64 31.41 1715.0 2437.5</p>
-<p>N 1022.0 8.64 31.41 858.00 1219.0</p>
-</blockquote>
+<pre><code>Estimate %CV df 95% Confidence Interval
+-----------------------------------------------------
+Half-normal/Cosine
+
+D 2044.6 8.64 31.41 1715.0 2437.5
+N 1022.0 8.64 31.41 858.00 1219.0</code></pre>
 <p>and a much smaller and more reasonable (considering the sample size and survey coverage) proportion of the variation comes from estimating encounter rate:</p>
-<p>Component Percentages of Var(D)</p>
-<hr>
-<p>Detection probability : 44.3</p>
-<p>Encounter rate : 55.7</p>
+<pre><code>Component Percentages of Var(D)
+-------------------------------
+Detection probability : 44.3
+Encounter rate :        55.7</code></pre>
 <ol start="5" type="1">
-<li>The CV is now even smaller, although it could have gone either way since this is an estimator of the same quantity as the last question – just a more precise estimator.</li>
+<li>The CV is now even smaller, although it could have gone either way because this is an estimator of the same quantity as the last question–just a more precise estimator.</li>
 </ol>
-<blockquote class="blockquote">
-<p>Estimate %CV df 95% Confidence Interval</p>
-<hr>
-<p>Half-normal/Cosine</p>
-<p>D 2044.6 7.97 75.87 1745.0 2395.6</p>
-<p>N 1022.0 7.97 75.87 872.00 1198.0</p>
-<p>The encounter rate degrees of freedom are now 19 (number of lines – 1) rather than 10 (number of post-strata) for the previous question – which is why this is a more precise estimator of the variance.</p>
-</blockquote>
-<p>It must be remembered that we have not made any change to our data by the post-stratification; we are just getting a <strong>better estimate of the variance</strong>. In this case, the increase in precision could make a fundamental difference to the utility of the survey: it might make the difference between being able to make a management decision or not. Usually, trends will not be extreme as they are in this example, and post-stratification will not make a great difference. Such an example is shown below.</p>
+<pre><code>Estimate %CV df 95% Confidence Interval
+-----------------------------------------------------
+
+Half-normal/Cosine
+
+D 2044.6 7.97 75.87 1745.0 2395.6
+N 1022.0 7.97 75.87 872.00 1198.0</code></pre>
+<p>The encounter rate degrees of freedom are now 19 (number of lines – 1) rather than 10 (number of post-strata) for the previous question–which is why this is a more precise estimator of the variance.</p>
+<p>Remember we have not made any change to our data by the post-stratification; we are just getting a <strong>better estimate of the variance</strong>. In this case, the increase in precision could make a fundamental difference to the utility of the survey: it might make the difference between being able to make a management decision or not. Usually, trends will not be extreme as they are in this example, and post-stratification will not make a great difference. Such an example is shown below.</p>
 </section>
 <section id="systematic-designs-where-post-stratification-is-not-needed" class="level2">
 <h2 class="anchored" data-anchor-id="systematic-designs-where-post-stratification-is-not-needed">Systematic designs where post-stratification is not needed</h2>
-<p><img src="./media/image2.emf" class="img-fluid">The following simulated population does not exhibit strong trends across the survey region. Otherwise, the strip dimensions and systematic design are the same as for the previous example.</p>
-<p><strong><u>Without post-stratification: analytic output</u></strong></p>
-<p>Estimate %CV df 95% Confidence Interval</p>
-<hr>
-<p>Half-normal/Cosine</p>
-<p>D 1954.0 8.22 50.60 1657.3 2303.9</p>
-<p>N 977.00 8.22 50.60 829.00 1152.0</p>
+<p><img src="./media/syst1survey.png" class="img-fluid"></p>
+<p>The following simulated population does not exhibit strong trends across the survey region. Otherwise, the strip dimensions and systematic design are the same as for the previous example.</p>
+<section id="without-post-stratification-analytic-output" class="level3">
+<h3 class="anchored" data-anchor-id="without-post-stratification-analytic-output">Without post-stratification: analytic output</h3>
+<pre><code>Estimate %CV df 95% Confidence Interval
+------------------------------------------------------
+
+Half-normal/Cosine
+
+D 1954.0 8.22 50.60 1657.3 2303.9
+N 977.00 8.22 50.60 829.00 1152.0</code></pre>
 <p><em>Note:</em> Your bootstrap results will differ slightly, as bootstrapping is a random procedure.</p>
-<p>Estimate %CV # df 95% Confidence Interval</p>
-<hr>
-<p>Half-normal/Cosine</p>
-<p>D 1947.4 10.03 999 50.60 1592.8 2380.8</p>
-<p>1565.0 2350.3</p>
-<p>Half-normal/Cosine</p>
-<p>N 973.69 10.03 999 50.60 796.00 1190.0</p>
-<p>782.00 1175.0</p>
-<p>Note: Confidence interval 1 uses bootstrap SE and log-normal 95% intervals.</p>
-<p>Interval 2 is the 2.5% and 97.5% quantiles of the bootstrap estimates.</p>
-<p><strong><u>With post-stratification (non-overlapping): analytic output</u></strong></p>
-<p>Estimate %CV df 95% Confidence Interval</p>
-<hr>
-<p>Half-normal/Cosine</p>
-<p>D 1954.0 8.38 25.80 1645.4 2320.6</p>
-<p>N 977.00 8.38 25.80 823.00 1160.0</p>
+<pre><code>Estimate %CV \# df 95% Confidence Interval
+--------------------------------------------------------
+
+Half-normal/Cosine
+
+D 1947.4 10.03 999 50.60 1592.8 2380.8
+                         1565.0 2350.3
+
+Half-normal/Cosine
+
+N 973.69 10.03 999 50.60 796.00 1190.0
+                         782.00 1175.0
+
+Note: Confidence interval 1 uses bootstrap SE and log-normal 95% intervals.
+Interval 2 is the 2.5% and 97.5% quantiles of the bootstrap estimates.</code></pre>
+</section>
+<section id="with-post-stratification-non-overlapping-analytic-output" class="level3">
+<h3 class="anchored" data-anchor-id="with-post-stratification-non-overlapping-analytic-output">With post-stratification (non-overlapping): analytic output</h3>
+<pre><code>Estimate %CV df 95% Confidence Interval
+------------------------------------------------------
+
+Half-normal/Cosine
+
+D 1954.0 8.38 25.80 1645.4 2320.6
+N 977.00 8.38 25.80 823.00 1160.0</code></pre>
+
 
 
 </section>
+</section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list">
+<div id="ref-fewster2009" class="csl-entry" role="listitem">
+Fewster, R. M., Buckland, S. T., Burnham, K. P., Borchers, D. L., Jupp, P. E., Laake, J. L., &amp; Thomas, L. (2009). Estimating the encounter rate variance in distance sampling. <em>Biometrics</em>, <em>65</em>(1), 225–236. <a href="https://doi.org/10.1111/j.1541-0420.2008.01018.x">https://doi.org/10.1111/j.1541-0420.2008.01018.x</a>
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

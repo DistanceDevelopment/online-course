@@ -8,7 +8,7 @@ csl: ../../style/apa.csl
 ---
 
 :::{.callout-warning collapse=false appearance='default' icon=true}
-# Mord detection function modelling and model criticism
+# More detection function modelling and model criticism
 ### Distance for Windows exercise Solution
 :::
 
