@@ -10,6 +10,16 @@ title: "Introductory distance sampling training materials"
 
 ::: {.column width="40%"}
 This is the landing page for the distance sampling training materials website.
+
+- Describe philosophy of lecture/exercise pairing.
+- differentiate the two exercise pathways
+- discuss role of video introduction/summary
+- if there are self-assessed tutorials, describe them
+- `giscus` if it exists [https://giscus.app/](https://giscus.app/)
 :::
 
 :::
+
+# Other sundries
+- mention distancesampling.org
+- mention "other workshops" if they exist

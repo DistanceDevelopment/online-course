@@ -23,7 +23,8 @@ nests.sum$"Distance band" <- c("0.0-0.3", "0.3-0.6", "0.6-0.9", "0.9-1.2", "1.2-
 nests.sum$Frequency <- c(74, 73, 79, 66, 78, 58, 52, 54)
 nests.sum <- data.frame(nests.sum)
 knitr::kable(nests.sum, format = "html",
-             caption="Frequency of duck nests detected in perpendicular distance bands (metres)") %>%
+             caption="Table 1. Frequency of duck nests detected in perpendicular distance bands (metres)",
+             table.attr = 'data-quarto-disable-processing="true"') %>%
   kableExtra::kable_styling(bootstrap_options = c("striped", "responsive"),
                             full_width = FALSE)
 ```

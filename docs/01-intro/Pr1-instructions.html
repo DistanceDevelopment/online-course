@@ -21,7 +21,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -273,55 +292,53 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>In this practical, we plot a histogram of line transect data and estimate a detection function. The data were collected during a line transect survey of duck nests in Monte Vista National Wildlife Refuge, Colorado, USA: twenty lines of 128.75 km were specified and a distance out to 2.4m was searched and the perpendicular distances of detected nests were recorded and summarised (Table 1).</p>
+<p>In this practical, we plot a histogram of line transect data and estimate a detection function. The data were collected during a line transect survey of duck nests in Monte Vista National Wildlife Refuge, Colorado, USA <span class="citation" data-cites="anderson1970">(<a href="#ref-anderson1970" role="doc-biblioref">Anderson &amp; Pospahala, 1970</a>)</span>. Twenty lines of 128.75 km were specified and a distance out to 2.4m was searched and the perpendicular distances of detected nests were recorded and summarised (Table 1).</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="table-responsive">
-<table class="table table-striped table-sm small" data-quarto-postprocess="true">
-<caption>Frequency of duck nests detected in perpendicular distance bands (metres)</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">Distance.band</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Frequency</th>
-</tr>
-</thead>
+
+<table data-quarto-disable-processing="true" class="table table-striped table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>Table 1. Frequency of duck nests detected in perpendicular distance bands (metres)</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Distance.band </th>
+   <th style="text-align:right;"> Frequency </th>
+  </tr>
+ </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;">0.0-0.3</td>
-<td style="text-align: right;">74</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.3-0.6</td>
-<td style="text-align: right;">73</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0.6-0.9</td>
-<td style="text-align: right;">79</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.9-1.2</td>
-<td style="text-align: right;">66</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">1.2-1.5</td>
-<td style="text-align: right;">78</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">1.5-1.8</td>
-<td style="text-align: right;">58</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">1.8-2.1</td>
-<td style="text-align: right;">52</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">2.1-2.4</td>
-<td style="text-align: right;">54</td>
-</tr>
+  <tr>
+   <td style="text-align:left;"> 0.0-0.3 </td>
+   <td style="text-align:right;"> 74 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.3-0.6 </td>
+   <td style="text-align:right;"> 73 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.6-0.9 </td>
+   <td style="text-align:right;"> 79 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0.9-1.2 </td>
+   <td style="text-align:right;"> 66 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 1.2-1.5 </td>
+   <td style="text-align:right;"> 78 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 1.5-1.8 </td>
+   <td style="text-align:right;"> 58 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 1.8-2.1 </td>
+   <td style="text-align:right;"> 52 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 2.1-2.4 </td>
+   <td style="text-align:right;"> 54 </td>
+  </tr>
 </tbody>
 </table>
-</div>
-
 
 </div>
 </div>
@@ -345,7 +362,8 @@ ul.task-list li input[type="checkbox"] {
 <ol start="4" type="1">
 <li>Estimate density (Note <span class="math inline">\(L = 20 \times 128.75 = 2575\)</span> km):</li>
 </ol>
-<p><span class="math display">\[\hat{D} = \frac{\hat{N}_a}{a} = \frac{\hat{N}_a}{2wL} = \]</span> <!--
+<p><span class="math display">\[\hat{D} = \frac{\hat{N}_a}{a} = \frac{\hat{N}_a}{2wL} = \]</span></p>
+<!--
 5. Now use your histogram to estimate the effective half-width of search distance, $\mu$. 
 
 $$ \hat \mu = $$
@@ -414,12 +432,17 @@ $$\hat{D} = \frac{n \hat f(0)}{2L} = \frac{534 \times (0.472 \times 1000)}{2 \ti
 
 Another way to estimate $f(0)$ is $f(0)=1/\mu$: using this method I'd get the same density estimate as in Part 5.
 
---></p>
+-->
+
 
 
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list">
+<div id="ref-anderson1970" class="csl-entry" role="listitem">
+Anderson, D. R., &amp; Pospahala, R. S. (1970). Correction of bias in belt transect studies of immotile objects. <em>The Journal of Wildlife Management</em>, <em>34</em>(1), 141–146. <a href="https://doi.org/10.2307/3799501">https://doi.org/10.2307/3799501</a>
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

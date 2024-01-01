@@ -3,24 +3,30 @@ title: Line transect detection function fitting
 author: Centre for Research into Ecological and Environmental Modelling <br> **University of St Andrews**
 date-modified: "January 2024"
 date-format: "MMMM YYYY"
+bibliography: references.bib
+csl: ../style/apa.csl
 ---
 
-In this practical, we plot a histogram of line transect data and estimate a detection function. The data were collected during a line transect survey of duck nests in Monte Vista National Wildlife Refuge, Colorado, USA: twenty lines of 128.75 km were specified and a distance out to 2.4m was searched and the perpendicular distances of detected nests were recorded and summarised (Table 1). 
+In this practical, we plot a histogram of line transect data and estimate a detection function. The data were collected during a line transect survey of duck nests in Monte Vista National Wildlife Refuge, Colorado, USA [@anderson1970]. Twenty lines of 128.75 km were specified and a distance out to 2.4m was searched and the perpendicular distances of detected nests were recorded and summarised (Table 1). 
 
 ```{r}
 #| echo = FALSE,
 #| message = FALSE,
 #| warning = FALSE
 library(tidyverse)
+library(knitr)
+library(kableExtra)
 nests.sum <- NULL
 nests.sum$"Distance band" <- c("0.0-0.3", "0.3-0.6", "0.6-0.9", "0.9-1.2", "1.2-1.5", "1.5-1.8", "1.8-2.1", "2.1-2.4")
 nests.sum$Frequency <- c(74, 73, 79, 66, 78, 58, 52, 54)
 nests.sum <- data.frame(nests.sum)
-knitr::kable(nests.sum, format = "html",
-             caption="Frequency of duck nests detected in perpendicular distance bands (metres)") %>%
-  kableExtra::kable_styling(bootstrap_options = c("striped", "responsive"),
+kable(nests.sum, format = "html",
+             caption="Table 1. Frequency of duck nests detected in perpendicular distance bands (metres)",
+      table.attr = 'data-quarto-disable-processing="true"') %>%
+  kable_styling(bootstrap_options = c("striped", "responsive"),
                             full_width = FALSE)
 ```
+
 
 # Objectives 
 
@@ -45,6 +51,7 @@ $$ \hat{N}_a = \frac{n}{\hat{P}_a} = $$
 4. Estimate density (Note $L = 20 \times 128.75 = 2575$ km):
 
 $$\hat{D} = \frac{\hat{N}_a}{a} = \frac{\hat{N}_a}{2wL} = $$
+
 <!--
 5. Now use your histogram to estimate the effective half-width of search distance, $\mu$. 
 

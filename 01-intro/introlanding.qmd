@@ -45,7 +45,9 @@ Subsequent calculations produce an estimate of the density of nests in the sampl
 ## Exercise materials
 
 ::: lab
-**But a single exercise**
+**Exercise**
+
+This exercise does not involve use of the computer. Instead, you will be graphing the distribution of perpendicular detection distances. You will fit (using nothing but your eye), a detection function curve to the histogram of detection distances.
 
 ::: video
 [Video introduction](https://youtu.be/_4RX6P4PB4k)
@@ -72,11 +74,9 @@ Subsequent calculations produce an estimate of the density of nests in the sampl
 
 ## Supplemental materials
 ::: homework
-**Nothing to add to first practical**
+**Nothing to add to first module**
 
 ::: instructions
 No supplement
 :::
 :::
-
-# References
