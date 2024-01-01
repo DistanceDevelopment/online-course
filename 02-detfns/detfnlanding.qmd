@@ -51,7 +51,7 @@ The estimated detection functions will be plotted and assessed for goodness of f
 **Using R package**
 
 ::: video
-[Video introduction](https://youtu.be/_4RX6P4PB4k)
+[Video introduction](https://youtu.be/zqAEpUZeQDQ)
 :::
 
 
@@ -64,7 +64,7 @@ The estimated detection functions will be plotted and assessed for goodness of f
 :::
 
 ::: video
-[Video summary](https://youtu.be/_4RX6P4PB4k)
+[Video summary](https://youtu.be/iWibaZL_LhU)
 :::
 
 
