@@ -38,7 +38,13 @@ The capercaillie data are reasonably well-behaved and different models that fit 
 |       |           |         |               |             |
 |-----------------|------------|---------------|-------------|------------------|
 | Fitted model              | $\hat{D}$ | $\hat{D}$ LCB | $\hat{D}$ UCB | $\hat{D}$ CV |
-| Half normal     | 4.76                    | 4.01    | 5.65        | 0.09           |
-| Uniform cosine  | 4.28                    | 3.22    | 5.68        | 0.14           |
-| Hazard rate     | 4.2                     | 3.6     | 4.9         | 0.08           |
-| Half normal with grouped data | 4.06      | 3.75    | 4.4         | 0.09           |
+| Half normal     | 4.76    | 4.01    | 5.65        | 0.09           |
+| Uniform cosine  | 4.28    | 3.22    | 5.68        | 0.14           |
+| Hazard rate     | 4.20    | 3.6     | 4.9         | 0.08           |
+| Half normal with grouped data | 4.52    | 3.81    | 5.36    | 0.09 |
+
+:::{.callout-note collapse=false appearance='default' icon=true}
+## Note regarding estimates in previous table
+I have reported the density estimates in the table above as numbers km<sup>-2</sup>, rather than numbers ha<sup>-1</sup> to make them easier to read. There are 100 hectares in a square kilometer.
+:::
+
