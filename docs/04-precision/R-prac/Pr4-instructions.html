@@ -369,8 +369,8 @@ div.csl-indent {
 <span id="cb2-5"><a href="#cb2-5"></a>sysvar2.hn <span class="ot">&lt;-</span> <span class="fu">ds</span>(<span class="at">data=</span>Systematic_variance_2, <span class="at">key=</span><span class="st">"hn"</span>, <span class="at">adjustment=</span><span class="cn">NULL</span>,</span>
 <span id="cb2-6"><a href="#cb2-6"></a>                 <span class="at">convert_units=</span>conversion.factor)</span>
 <span id="cb2-7"><a href="#cb2-7"></a><span class="co"># Summary</span></span>
-<span id="cb2-8"><a href="#cb2-8"></a>sysvar2.hn<span class="sc">$</span>dht<span class="sc">$</span>individuals<span class="sc">$</span>D</span>
-<span id="cb2-9"><a href="#cb2-9"></a>sysvar2.hn<span class="sc">$</span>dht<span class="sc">$</span>individuals<span class="sc">$</span>N</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-8"><a href="#cb2-8"></a><span class="fu">print</span>(sysvar2.hn<span class="sc">$</span>dht<span class="sc">$</span>individuals<span class="sc">$</span>D)</span>
+<span id="cb2-9"><a href="#cb2-9"></a><span class="fu">print</span>(sysvar2.hn<span class="sc">$</span>dht<span class="sc">$</span>individuals<span class="sc">$</span>N)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The true density and abundance are known (because the data were simulated): the true abundance in the survey region was <span class="math inline">\(N=1000\)</span> and <span class="math inline">\(D=2000 \textrm{ animals per km}^2\)</span> (i.e.&nbsp;1000 animals in an area of size <span class="math inline">\(A=0.5 \textrm{km}^2\)</span>). How do the point estimates compare with truth? What do you think about the precision of the estimates?</p>
 </section>
@@ -448,8 +448,8 @@ div.csl-indent {
 <span id="cb6-7"><a href="#cb6-7"></a>sysvar1.hn <span class="ot">&lt;-</span> <span class="fu">ds</span>(Systematic_variance_1, <span class="at">key=</span><span class="st">"hn"</span>, <span class="at">adjustment=</span><span class="cn">NULL</span>, </span>
 <span id="cb6-8"><a href="#cb6-8"></a>                 <span class="at">convert_units=</span>conversion.factor)</span>
 <span id="cb6-9"><a href="#cb6-9"></a><span class="co"># Obtain default estimates for comparison</span></span>
-<span id="cb6-10"><a href="#cb6-10"></a>sysvar1.hn<span class="sc">$</span>dht<span class="sc">$</span>individuals<span class="sc">$</span>D</span>
-<span id="cb6-11"><a href="#cb6-11"></a>sysvar1.hn<span class="sc">$</span>dht<span class="sc">$</span>individuals<span class="sc">$</span>N</span>
+<span id="cb6-10"><a href="#cb6-10"></a><span class="fu">print</span>(sysvar1.hn<span class="sc">$</span>dht<span class="sc">$</span>individuals<span class="sc">$</span>D)</span>
+<span id="cb6-11"><a href="#cb6-11"></a><span class="fu">print</span>(sysvar1.hn<span class="sc">$</span>dht<span class="sc">$</span>individuals<span class="sc">$</span>N)</span>
 <span id="cb6-12"><a href="#cb6-12"></a><span class="co"># Now use Fewster et al 2009, "O2" estimator </span></span>
 <span id="cb6-13"><a href="#cb6-13"></a>est1.O2 <span class="ot">&lt;-</span> <span class="fu">dht2</span>(sysvar1.hn, <span class="at">flatfile=</span>Systematic_variance_1, <span class="at">strat_formula=</span><span class="sc">~</span><span class="dv">1</span>, </span>
 <span id="cb6-14"><a href="#cb6-14"></a>                <span class="at">convert_units=</span>conversion.factor, <span class="at">er_est=</span><span class="st">"O2"</span>)</span>

@@ -62,8 +62,8 @@ conversion.factor <- convert_units("metre", "kilometre", "square kilometre")
 sysvar2.hn <- ds(data=Systematic_variance_2, key="hn", adjustment=NULL,
                  convert_units=conversion.factor)
 # Summary
-sysvar2.hn$dht$individuals$D
-sysvar2.hn$dht$individuals$N
+print(sysvar2.hn$dht$individuals$D)
+print(sysvar2.hn$dht$individuals$N)
 ```
 
 The true density and abundance are known (because the data were simulated): the true abundance in the survey region was $N=1000$ and $D=2000 \textrm{ animals per km}^2$ (i.e. 1000 animals in an area of size $A=0.5 \textrm{km}^2$). How do the point estimates compare with truth? What do you think about the precision of the estimates?
@@ -159,8 +159,8 @@ Systematic_variance_1$Sample.Label <- as.numeric(Systematic_variance_1$Sample.La
 sysvar1.hn <- ds(Systematic_variance_1, key="hn", adjustment=NULL, 
                  convert_units=conversion.factor)
 # Obtain default estimates for comparison
-sysvar1.hn$dht$individuals$D
-sysvar1.hn$dht$individuals$N
+print(sysvar1.hn$dht$individuals$D)
+print(sysvar1.hn$dht$individuals$N)
 # Now use Fewster et al 2009, "O2" estimator 
 est1.O2 <- dht2(sysvar1.hn, flatfile=Systematic_variance_1, strat_formula=~1, 
                 convert_units=conversion.factor, er_est="O2")
