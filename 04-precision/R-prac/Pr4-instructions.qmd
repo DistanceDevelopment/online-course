@@ -23,8 +23,8 @@ We begin with a population and survey shown below. The data used for this exerci
 ```{r}
 #| fig.height = 4,
 #| fig.cap = "An example of survey data where there is a strong
-#| trend in density. The systematically placed search strips are
-#| shaded. Axis units are in kilometres.",
+#|  trend in density. The systematically placed search strips are
+#|  shaded. Axis units are in kilometres.",
 #| echo = FALSE
 knitr::include_graphics("https://workshops.distancesampling.org/standrews-2019/intro/practicals/figures/Prac_4_Figure_1.png")
 ```
@@ -138,9 +138,9 @@ The simulated population shown in Figure 2 does not exhibit strong trends across
 
 ```{r}
 #| fig.height = 4,
-#| fig.cap = "An example of survey data that does **not** exhibit
-#| a trend in density. The systematically placed search strips are
-#| shaded. Axis units are in kilometres.",
+#| fig.cap = "An example of survey data that does **not** exhibit 
+#|  a trend in density. The systematically placed search strips are
+#|  shaded. Axis units are in kilometres.",
 #| echo = FALSE
 knitr::include_graphics("https://workshops.distancesampling.org/standrews-2019/intro/practicals/figures/Prac_4_Figure_2.png")
 ```
