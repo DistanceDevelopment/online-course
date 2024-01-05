@@ -102,7 +102,7 @@ Finally, there are two optional data sets of winter wrens collected by Prof. Buc
 
 ## Supplemental materials
 ::: homework
-**Uniformity assumption as spatial replicates increase**
+**No supplements**
 
 ::: instructions
 No supplemental material
