@@ -21,15 +21,17 @@ Download and analyse this data set. Experiment with keys other than the half-nor
 ## Winter wrens in Scotland
 
 2.  The following projects are available for download and analysis:
-- [**Wren1.zip**](Wren1-2023.zip), 
-- [**Wren2.zip**](Wren2-2023.zip), 
-- [**Wren3.zip**](Wren3-2023.zip) and
-- [**Wren4.zip**](Wren4-2023.zip).
+- [**Wren1.zip**](Wren1-2023.zip) *5min count*, 
+- [**Wren2.zip**](Wren2-2023.zip) *snapshot*, 
+- [**Wren3.zip**](Wren3-2023.zip) *cue count* and
+- [**Wren4.zip**](Wren4-2023.zip) *line transect*.
 
-The projects contain winter wren data, collected at Montrave, Scotland in 2004, as described in [@buckland2006]. Each project corresponds to a different method of data collection. Thirty-two points were defined through 33.2 ha of parkland (Fig. 1), and detection distances were measured in metres with the aid of a laser rangefinder. Three types of point transect data were collected:
+The projects contain winter wren data, collected at Montrave, Scotland in 2004, as described in [@buckland2006]. Each project corresponds to a different method of data collection. Thirty-two points were defined through 33.2 ha of parkland (Fig. 1), and detection distances were measured in meters with the aid of a laser rangefinder. Three types of point transect data were collected:
+
 - standard five-minute counts
 - the ‘snapshot’ method and 
 - a cue count method. 
+
 In addition, line transect data were collected (method 4), and territory mapping was conducted, which gave an estimate of 43 wren territories (1.30 territories ha<sup>-1</sup>).
 
 - Select a single model for exploratory data analysis. Experiment with  different truncation distances *w*, and select a suitable value for each method. Do you see potential problems with any of the data sets?
