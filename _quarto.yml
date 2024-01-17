@@ -40,6 +40,15 @@ website:
       - section: "Point transect analysis"
         contents: 
           - 05-points/pointslanding.qmd
+      - section: "Design of distance sampling surveys"
+        contents: 
+          - 06-design/designlanding.qmd
+      - section: "Analysis of stratified designs"
+        contents: 
+          - 07-stratify/stratifylanding.qmd
+      - section: "Covariates in the detection functions"
+        contents: 
+          - 08-covariates/covariateslanding.qmd
 
 format:
   html:
