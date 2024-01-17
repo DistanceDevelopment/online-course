@@ -8,7 +8,7 @@
 
 <meta name="author" content="Centre for Research into Ecological and Environmental Modelling   University of St Andrews">
 
-<title>Introductory distance sampling training materials - Analysis of stratified surveys</title>
+<title>Introductory distance sampling training materials - Analysis of stratified survey data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,25 +21,59 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -63,7 +97,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="https://kit.fontawesome.com/78ddb093ea.js" crossorigin="anonymous"></script>
 
 
-<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-sidebar docked nav-fixed">
@@ -73,7 +107,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Introductory distance sampling training materials</span>
     </a>
   </div>
@@ -98,7 +132,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Analysis of stratified surveys</li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Analysis of stratified survey data</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -129,13 +163,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../01-intro/introlanding.html" class="sidebar-item-text sidebar-link">
+  <a href="../../01-intro/introlanding.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Fundamentals of distance sampling</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../01-intro/Mod1-2023-intro.pdf" class="sidebar-item-text sidebar-link">
+  <a href="../../01-intro/Mod1-2023-intro.pdf" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture slides</span></a>
   </div>
 </li>
@@ -147,7 +181,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../01-intro/introlanding.html#exercise-materials" class="sidebar-item-text sidebar-link">
+  <a href="../../01-intro/introlanding.html#exercise-materials" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercise materials</span></a>
   </div>
 </li>
@@ -164,7 +198,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../02-detfns/detfnlanding.html" class="sidebar-item-text sidebar-link">
+  <a href="../../02-detfns/detfnlanding.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Fitting detection functions to line transect data</span></a>
   </div>
 </li>
@@ -181,7 +215,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../03-criticism/criticismlanding.html" class="sidebar-item-text sidebar-link">
+  <a href="../../03-criticism/criticismlanding.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Model criticism</span></a>
   </div>
 </li>
@@ -198,7 +232,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../04-precision/precisionlanding.html" class="sidebar-item-text sidebar-link">
+  <a href="../../04-precision/precisionlanding.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Precision of density estimates</span></a>
   </div>
 </li>
@@ -215,7 +249,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../05-points/pointslanding.html" class="sidebar-item-text sidebar-link">
+  <a href="../../05-points/pointslanding.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Analysis of point transect data</span></a>
   </div>
 </li>
@@ -231,11 +265,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#analysis-of-stratified-surveys" id="toc-analysis-of-stratified-surveys" class="nav-link active" data-scroll-target="#analysis-of-stratified-surveys">Analysis of stratified surveys</a></li>
-  <li><a href="#lecture-materials" id="toc-lecture-materials" class="nav-link" data-scroll-target="#lecture-materials">Lecture materials</a></li>
-  <li><a href="#exercise-materials" id="toc-exercise-materials" class="nav-link" data-scroll-target="#exercise-materials">Exercise materials</a></li>
-  <li><a href="#supplemental-materials" id="toc-supplemental-materials" class="nav-link" data-scroll-target="#supplemental-materials">Supplemental materials</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  <li><a href="#objectives" id="toc-objectives" class="nav-link active" data-scroll-target="#objectives">Objectives</a></li>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting started</a></li>
+  <li><a href="#full-geographical-stratification" id="toc-full-geographical-stratification" class="nav-link" data-scroll-target="#full-geographical-stratification">Full geographical stratification</a></li>
+  <li><a href="#fitting-a-pooled-detection-function" id="toc-fitting-a-pooled-detection-function" class="nav-link" data-scroll-target="#fitting-a-pooled-detection-function">Fitting a pooled detection function</a></li>
+  <li><a href="#stratification-options-using-dht2" id="toc-stratification-options-using-dht2" class="nav-link" data-scroll-target="#stratification-options-using-dht2">Stratification options using <code>dht2</code></a></li>
   </ul>
 </nav>
     </div>
@@ -244,7 +278,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Analysis of stratified surveys</h1>
+<h1 class="title">Analysis of stratified survey data</h1>
 </div>
 
 
@@ -271,79 +305,103 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="analysis-of-stratified-surveys" class="level2">
-<h2 class="anchored" data-anchor-id="analysis-of-stratified-surveys">Analysis of stratified surveys</h2>
-<div class="columns">
-<div class="column" style="width:60%;">
-<p>Carrying on from the discussion of survey design where stratification was introduced, this exercise describes multiple analyses of a single data set.</p>
-<p>Multiple analyses arise because it is an open question whether a single detection function is appropriate for different strata that might sharply contrast in their vegetation that might influence detectability.</p>
-<p>Employing an inappropriate detection function will invalidate population inferences; consequently it is important to have a decision framework that can be employed to determine the role stratification should play in the detection function.</p>
-</div><div class="column" style="width:40%;">
-<p><img src="strata-unsplash.jpg" class="img-fluid"></p>
-</div>
-</div>
+<p>For this exercise, we use data from a survey of Antarctic minke whales. The study region was divided into two strata (North and South) the two strata were surveyed by different vessels at the same time. The minkes tend to be found in high densities against the ice edge, where they feed, and so the density in the southern stratum is typically higher than in the northern stratum (Figure 1). This is the primary reason for using a stratified survey design. It is also the reason for covering the southern stratum more intensely: in the southern stratum the transect length per unit area is more than 2.5 times that of the northern stratum.</p>
+<p><img src="https://workshops.distancesampling.org/standrews-2019/intro/practicals/figures/Prac_7_Figure_1.png" class="img-fluid" style="width:48.0%"><img src="https://workshops.distancesampling.org/standrews-2019/intro/practicals/figures/Prac_7_Figure_2.png" class="img-fluid" style="width:42.0%" alt="An example of the sort of survey design used (left) and a typical minke density gradient (right). The irregular bottom border is the ice-edge. The ‘stepped’ black line defines the boundary between the strata; dotted lines are transects and dots are detections."></p>
+<p>Figure 1. An example of the sort of survey design used and a typical minke density gradient. The irregular bottom border is the ice-edge. The ‘stepped’ black line defines the boundary between the strata; dotted lines are transects and dots are detections.</p>
+<section id="objectives" class="level1">
+<h1>Objectives</h1>
+<p>The objectives of this exercise are to:</p>
+<ol type="1">
+<li>Create subsets of the data</li>
+<li>Decide whether to fit separate detection functions or a pooled detection function</li>
+<li>Specify different stratification options using the <code>dht2</code> function.</li>
+</ol>
 </section>
-<section id="lecture-materials" class="level2">
-<h2 class="anchored" data-anchor-id="lecture-materials">Lecture materials</h2>
-<div class="slide-deck">
-<p><strong>Lecture discussion</strong></p>
-<div class="slides">
-<p><a href="Mod7-2023-stratanalysis.pdf">Slides</a></p>
+<section id="getting-started" class="level1">
+<h1>Getting started</h1>
+<p>Begin by reading in the data. Distances are in kilometers and a truncation distance of 1.5km is specified and used in the following detection function fitting. Perpendicular distances, transect lengths and study area size are all measured in kilometers; hence <code>convert_units</code> argument to <code>ds</code> is 1 and has been omitted. To keep things simple, a hazard rate detection function with no adjustments is used for all detection functions.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(Distance)</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">data</span>(minke)</span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">head</span>(minke)</span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="co"># Specify truncation distance</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a>minke.trunc <span class="ot">&lt;-</span> <span class="fl">1.5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="video">
-<p><a href="https://youtu.be/A_NRZqWEhXs">Video</a></p>
-</div>
-</div>
+<p>You will see that these data contain a column called ‘Region.Label’: this contains values ‘North’ or ‘South’.</p>
 </section>
-<section id="exercise-materials" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-materials">Exercise materials</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="lab">
-<p><strong>Using R package</strong></p>
-<div class="video">
-<p><a href="https://youtu.be/6GGDkGzKZt4">Video introduction</a></p>
+<section id="full-geographical-stratification" class="level1">
+<h1>Full geographical stratification</h1>
+<p>First, we want to fit encounter rate and detection function separately in each strata. This is easily performed by splitting the data by region and using <code>ds</code> on each subset. The commands below do this for the southern region (note, there are alternative ways to select a subset of data).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># Create dataset for South </span></span>
+<span id="cb2-2"><a href="#cb2-2"></a>minke.S <span class="ot">&lt;-</span> minke[minke<span class="sc">$</span>Region.Label<span class="sc">==</span><span class="st">"South"</span>, ]</span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="co"># Fit df to south</span></span>
+<span id="cb2-4"><a href="#cb2-4"></a>minke.df.S.strat <span class="ot">&lt;-</span> <span class="fu">ds</span>(minke.S, <span class="at">key=</span><span class="st">"hr"</span>, <span class="at">adjustment=</span><span class="cn">NULL</span>, <span class="at">truncation=</span>minke.trunc)</span>
+<span id="cb2-5"><a href="#cb2-5"></a><span class="fu">summary</span>(minke.df.S.strat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="instructions">
-<p><a href="../07-stratify/R-prac/Pr7-instructions.html">Instructions</a></p>
-</div>
-<div class="instructions">
-<p><a href="../07-stratify/R-prac/Prac7_solution.html">Solution and discussion</a></p>
-</div>
-<div class="video">
-<p><a href="https://youtu.be/HiVKN8MuQHU">Video summary</a></p>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="lab">
-<p><strong>Using Distance for Windows</strong></p>
-<div class="video">
-<p><a href="https://youtu.be/xSXRnWysgEw">Video introduction</a></p>
-</div>
-<div class="instructions">
-<p><a href="DistWin-prac/Pr5-instructions-DistWin.qmd">Instructions</a></p>
-</div>
-<div class="instructions">
-<p><a href="DistWin-prac/Pr5-solution-DistWin.qmd">Solution and discussion</a></p>
-</div>
-<div class="video">
-<p><a href="https://youtu.be/w9_vjoniXTY">Video summary</a></p>
-</div>
-</div>
-</div>
-</div>
+<p>Make a note of the AIC. Perform a similar commands to obtain estimates for the northern region. What is the total AIC?</p>
+<p>Also make a note of the abundance in each region. What is the total abundance in the study region?</p>
 </section>
-<section id="supplemental-materials" class="level2">
-<h2 class="anchored" data-anchor-id="supplemental-materials">Supplemental materials</h2>
-<div class="homework">
-<p><strong>No supplements</strong></p>
-<div class="instructions">
-<p>No supplemental material</p>
+<section id="fitting-a-pooled-detection-function" class="level1">
+<h1>Fitting a pooled detection function</h1>
+<p>We want to compare the total AIC found previously with the AIC from fitting a detection function to all data combined. This is easy to obtain:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>minke.df.all <span class="ot">&lt;-</span> <span class="fu">ds</span>(minke, <span class="at">truncation=</span>minke.trunc, <span class="at">key=</span><span class="st">"hr"</span>, <span class="at">adjustment=</span><span class="cn">NULL</span>)</span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="fu">summary</span>(minke.df.all)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
+<p>Given the AIC value for the detection function from the pooled data, would you fit a separate detection function in each strata or not?</p>
 </section>
-<section id="references" class="level1">
-<h1>References</h1>
+<section id="stratification-options-using-dht2" class="level1">
+<h1>Stratification options using <code>dht2</code></h1>
+<p>The command <code>summary(minke.df.all)</code> will provide the abundance estimates for each region and the total and for this simple example, this is sufficient. However, if we want to consider different stratification options, then the <code>dht2</code> function is useful.</p>
+<p>After fitting a detection function, the <code>dht2</code> function, allows abundance estimates to be computed over some specified regions. In the command below, the pooled detection function is used to obtain estimates in each strata and over all (like the <code>summary</code> function previously used).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">dht2</span>(<span class="at">ddf=</span>minke.df.all, <span class="at">flatfile=</span>minke, <span class="at">strat_formula=</span><span class="sc">~</span>Region.Label, <span class="at">stratification=</span><span class="st">"geographical"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The arguments are:</p>
+<ul>
+<li><code>ddf</code>
+<ul>
+<li>the detection function (fitted by <code>ds</code>)</li>
+</ul></li>
+<li><code>flatfile</code>
+<ul>
+<li>the data object containing all the necessary information
+<ul>
+<li>Data is referred to as being in a <code>flatfile</code> format if it contains information on region, transects and observations. An alternative is to use a hierarchical structure and have region, transect and observation information in separate data files with links between them to ensure that transects are mapped to the relevant region and observations to the relevant transect. We’ve not used the hierarchical structure during this workshop.</li>
+</ul></li>
+</ul></li>
+<li><code>strat_formula=~Region.Label</code>
+<ul>
+<li>formula (hence the <code>~</code>) giving the stratification structure</li>
+</ul></li>
+<li><code>stratification="geographical"</code>
+<ul>
+<li>in this example, we specify that each strata (specified in <code>strat_formula</code>) represents a geographical region.</li>
+</ul></li>
+<li><code>convert_units</code>
+<ul>
+<li>getting units conversion correct, same purpose as the <code>convert_units</code> argument in <code>ds</code>. For the minke data all measurements are in the same units, so the argument is not needed in this case.</li>
+</ul></li>
+</ul>
+<p>Make a note the total abundance in the study region.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Failure to respect design during analysis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>What happens if we were to ignore the regions and treat the data as though it came from one large study region? This can (<strong>dangerously</strong>) be done by changing the stratification formula, as shown below.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">dht2</span>(<span class="at">ddf=</span>minke.df.all, <span class="at">flatfile=</span>minke, <span class="at">strat_formula=</span><span class="sc">~</span><span class="dv">1</span>, <span class="at">stratification=</span><span class="st">"geographical"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Has this changed the abundance estimate? Of course it has; the question is <em>why</em> has this changed the abundance estimate; which estimate is proper?</p>
+</div>
+</div>
 
 
 </section>
