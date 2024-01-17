@@ -8,7 +8,7 @@
 
 <meta name="author" content="Centre for Research into Ecological and Environmental Modelling   University of St Andrews">
 
-<title>Introductory distance sampling training materials - Analysis of point transect data</title>
+<title>Introductory distance sampling training materials - Including covariates in detection function modelling</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -98,7 +98,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Analysis of point transect data</li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Including covariates in detection function modelling</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -231,7 +231,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#analysis-of-point-transect-data" id="toc-analysis-of-point-transect-data" class="nav-link active" data-scroll-target="#analysis-of-point-transect-data">Analysis of point transect data</a></li>
+  <li><a href="#including-covariates-in-detection-function-modelling" id="toc-including-covariates-in-detection-function-modelling" class="nav-link active" data-scroll-target="#including-covariates-in-detection-function-modelling">Including covariates in detection function modelling</a></li>
   <li><a href="#lecture-materials" id="toc-lecture-materials" class="nav-link" data-scroll-target="#lecture-materials">Lecture materials</a></li>
   <li><a href="#exercise-materials" id="toc-exercise-materials" class="nav-link" data-scroll-target="#exercise-materials">Exercise materials</a></li>
   <li><a href="#supplemental-materials" id="toc-supplemental-materials" class="nav-link" data-scroll-target="#supplemental-materials">Supplemental materials</a></li>
@@ -244,7 +244,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Analysis of point transect data</h1>
+<h1 class="title">Including covariates in detection function modelling</h1>
 </div>
 
 
@@ -271,16 +271,15 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="analysis-of-point-transect-data" class="level2">
-<h2 class="anchored" data-anchor-id="analysis-of-point-transect-data">Analysis of point transect data</h2>
+<section id="including-covariates-in-detection-function-modelling" class="level2">
+<h2 class="anchored" data-anchor-id="including-covariates-in-detection-function-modelling">Including covariates in detection function modelling</h2>
 <div class="columns">
 <div class="column" style="width:60%;">
-<p>Having mastered analysis of line transect data, we move on to analysis of point transect data. These data are more difficult to model because the region of the curve where we wish to be most precise is the region where data are most scarce.</p>
-<p>Assessing fit to point transect data also represents a challenge. Consequently, we use plots of the probability density function to gain perspective regarding the influence of regions of the probability density function upon lack of fit.</p>
-<p>Two data sets are to be analysed: the first is a simulated data set in which both the true shape of the detection function as well as true animal density is known. Fit various detection functions to these data, also examining the effect of truncation (truncation for points is often more severe than for lines) upon estimates. Look for congruence in density estimates–as you did with a similar exercise performed on simulated line transect data in Practical 3.</p>
-<p>Finally, there are two optional data sets of winter wrens collected by Prof.&nbsp;Buckland. Same species and study area, but two different field protocols: one protocol used traditional 5-minute counts while the other protocol employed the “snapshot” method.</p>
+<p>It is not just distance from the transect that influences the detectability of animals. In most situations, inference regarding animal density is not hindered if additional causes of variation in detectability are unaccounted.</p>
+<p>There are some situations in which covariates in addition to distance can be added to models of the detection function. One example of this is animal group size. It is commonly the case that small groups at large distances are not detected and do not enter our sample that is used to estimate the average group size in the population. By failing to have the small groups in our sample, the sample is biased; we estimate that the average group size in the field is larger than it really is; producing biased estimates of population size. The use of group size as a covariate is the recommended way to remove that bias.</p>
+<p>This exercise presents three sets of data: Hawaiian amakihi point transect data collected by multiple observers at varying times during the morning. Eastern Tropical Pacific dolphin surveys where there were different types of vessels, sea state and widely varying dolphin school sizes. Finally, additional bird point transect data from Colorado where the study area was divided into geographic strata–we examine whether the geographic stratum effect can be modelled as a covariate.</p>
 </div><div class="column" style="width:40%;">
-<p><img src="points-unsplash.jpg" class="img-fluid"></p>
+<p><img src="covariates-unsplash.jpg" class="img-fluid"></p>
 </div>
 </div>
 </section>
@@ -289,7 +288,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="slide-deck">
 <p><strong>Lecture discussion</strong></p>
 <div class="slides">
-<p><a href="Mod5-2023-points.pdf">Slides</a></p>
+<p><a href="Mod8-2023-covariates.pdf">Slides</a></p>
 </div>
 <div class="video">
 <p><a href="https://youtu.be/A_NRZqWEhXs">Video</a></p>
@@ -306,10 +305,10 @@ ul.task-list li input[type="checkbox"] {
 <p><a href="https://youtu.be/6GGDkGzKZt4">Video introduction</a></p>
 </div>
 <div class="instructions">
-<p><a href="R-prac/Pr5-instructions.qmd">Instructions</a></p>
+<p><a href="R-prac/Pr8-instructions.qmd">Instructions</a></p>
 </div>
 <div class="instructions">
-<p><a href="R-prac/Prac5_solution.qmd">Solution and discussion</a></p>
+<p><a href="R-prac/Prac8_solution.qmd">Solution and discussion</a></p>
 </div>
 <div class="video">
 <p><a href="https://youtu.be/HiVKN8MuQHU">Video summary</a></p>
@@ -322,10 +321,10 @@ ul.task-list li input[type="checkbox"] {
 <p><a href="https://youtu.be/xSXRnWysgEw">Video introduction</a></p>
 </div>
 <div class="instructions">
-<p><a href="DistWin-prac/Pr5-instructions-DistWin.qmd">Instructions</a></p>
+<p><a href="DistWin-prac/Pr8-instructions-DistWin.qmd">Instructions</a></p>
 </div>
 <div class="instructions">
-<p><a href="DistWin-prac/Pr5-solution-DistWin.qmd">Solution and discussion</a></p>
+<p><a href="DistWin-prac/Pr8-solution-DistWin.qmd">Solution and discussion</a></p>
 </div>
 <div class="video">
 <p><a href="https://youtu.be/w9_vjoniXTY">Video summary</a></p>
