@@ -80,11 +80,11 @@ Employing an inappropriate detection function will invalidate population inferen
 :::
 
 ::: instructions
-[Instructions](DistWin-prac/Pr5-instructions-DistWin.qmd)
+[Instructions](DistWin-prac/Pr7-instructions-DistWin.qmd)
 :::
 
 ::: instructions
-[Solution and discussion](DistWin-prac/Pr5-solution-DistWin.qmd)
+[Solution and discussion](DistWin-prac/Pr7-solution-DistWin.qmd)
 :::
 
 ::: video
