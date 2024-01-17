@@ -1,13 +1,12 @@
 ---
-title: Analysis of data from stratified designs
+title: Design of distance sampling surveys
 author: Centre for Research into Ecological and Environmental Modelling <br> **University of St Andrews**
 date-modified: "January 2024"
 date-format: "MMMM YYYY"
 csl: ../style/apa.csl
 ---
 
-## Analysis of point transect data
-
+## Distance sampling survey design
 
 ::: columns
 
