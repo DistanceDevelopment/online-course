@@ -49,7 +49,15 @@ website:
       - section: "Covariates in the detection functions"
         contents: 
           - 08-covariates/covariateslanding.qmd
-
+      - section: "Animals detected in clusters"
+        contents: 
+          - 09-clusters/clusterslanding.qmd
+      - section: "Multipliers"
+        contents: 
+          - 10-multipliers/multiplierslanding.qmd          
+      - section: "Double platform data (the g(0) problem)"
+        contents: 
+          - 11-mrds/mrdslanding.qmd          
 format:
   html:
     css: styles.css
