@@ -1,28 +1,27 @@
 ---
-title: "Mark-Recapture Distance Sampling Exercises using Distance"
-author: "Centre for Research into Ecological and Environmental Modelling"
-output:
-  html_document:
-    df_print: paged
-  pdf_document:
-    number_sections: no
-  word_document: default
-subtitle: Workshop on Distance sampling when animals are missed at zero distance
-fontsize: 12pt
-classoption: a4paper
+title: Analysis of double-platform data
+author: Centre for Research into Ecological and Environmental Modelling <br> **University of St Andrews**
+date-modified: "January 2024"
+date-format: "MMMM YYYY"
+bibliography: ../references.bib
+csl: ../../style/apa.csl
 ---
 
-This version of the practical is for those who would like to conduct the analysis in R using the package `mrds` (Laake et al. 2019).  There is a separate version for conducting the analysis in Distance for Windows.
+:::{.callout-warning collapse=false appearance='default' icon=true}
+# Analysis of double-platform data
+:::
 
-The first part of this practical involves initial analysis of a survey of a known number of golf tees. This is intended mainly to familiarise you with the mrds function. We will do this during a short in-class break on the first day of class. 
+This version of the practical is for those who would like to conduct the analysis in R using the package `mrds` [@mrdspackage].  There is a separate version for conducting the analysis in Distance for Windows [@Thomas2010].
 
-The second part of the practical involves more detailed analysis of the golf tee data, and an exploration of the double-platform data structure.  We’ll do this after the first day of class and before the second.  
+The first part of this practical involves initial analysis of a survey of a known number of golf tees. This is intended mainly to familiarise you with the `mrds` function. 
 
-The third part of the practical involves analysis of the pack-ice seal survey data of Borchers et al. (2006) and Southwell et al. (2007).  We’ll do this after the first day of class and before the second.  
+The second part of the practical involves more detailed analysis of the golf tee data, and an exploration of the double-platform data structure.
 
-To help understand the terminology used in MRDS and the output produced by `mrds`, there is a guide available in the Teams file area 'Interpreting MRDS output'. 
+The third part of the practical involves analysis of the pack-ice seal survey data of [@Borchers2006] and [@Southwelll2007].  
 
-# 1. Golf tee survey - initial analysis during class on Day 1
+To help understand the terminology used in MRDS and the output produced by `mrds`, there is a guide available ['Interpreting MRDS output'](Supplement-interpretingoutput.qmd). 
+
+# 1. Golf tee survey - initial analysis
 
 ## Golf tee survey 
 
@@ -91,15 +90,10 @@ plot(detection.tables, which=1)
 The plot numbers are:
 
 1. Histograms of distances for detections by either, or both, observers. The shaded regions show the number for observer 1. 
-
 2. Histograms of distances for detections by either, or both, observers. The shaded regions show the number for observer 2. 
-
 3.	Histograms of distances for duplicates (detected by both observers).
-
 4. Histogram of distances for detections by either, or both, observers. Not shown for trial configuration. 
-
 5. Histograms of distances for observer 2. The shaded regions indicate the number of duplicates - for example, the shaded region is the number of clusters in each distance bin that were detected by Observer 1 given that they were also detected by Observer 2 (the "|" symbol in the plot legend means "given that"). 
-
 6. Histograms of distances for observer 1. The shaded regions indicate the number of duplicates as for plot 5. Not shown for trial configuration. 
 
 Note that if an independent observer configuration had been chosen, all plots would be available. 
@@ -310,7 +304,7 @@ summary(pi.mr.dist.ds.hn)
 
 Which of these models do you prefer? 
 
-If you have time, try a few models with covariates.  However, this is a large dataset and so fitting models and obtaining model summaries can take a long time with complicated models.  Given this and the fact that the exercise is just for practice, you may want to work with just a subset of the data -- which is where the `fold` column in the dataset comes in.  With this column, each observation is associated with a number from 1 to 10 (they are assigned systematically in order of the data, so the first observaton is given number 1, the second 2, ..., the 10th 10, the 11th 1 again, the 12th 2, etc).  So, for example, you could pick out just the first and fifth ``fold'' (i.e., just one fifth of the data) with
+If you have time, try a few models with covariates.  However, this is a large dataset and so fitting models and obtaining model summaries can take a long time with complicated models.  Given this and the fact that the exercise is just for practice, you may want to work with just a subset of the data -- which is where the `fold` column in the dataset comes in.  With this column, each observation is associated with a number from 1 to 10 (they are assigned systematically in order of the data, so the first observation is given number 1, the second 2, ..., the 10th 10, the 11th 1 again, the 12th 2, etc).  So, for example, you could pick out just the first and fifth ``fold'' (i.e., just one fifth of the data) with
 
 ```{r}
 crabseal15 <- crabseal[crabseal$fold %in% c(1, 5), ]
@@ -407,7 +401,7 @@ The code below fits the model without any covariates.
 
 ```{r, comment=NA}
 # Fit HN key function with no covars and no adjustments
-ds.nocov <- ds(crab.covar, key="hn", adjustment="NULL", truncation=700)
+ds.nocov <- ds(crab.covar, key="hn", adjustment=NULL, truncation=700)
 ```
 
 AIC score for model without covariates is `r options(scipen=11)` `r round(ds.nocov$ddf$criterion, 2)` and AIC score for model with _side_ as a covariate is  `r round(ds.side$ddf$criterion, 2)` so the model with _side_ as a covariate is preferred.  

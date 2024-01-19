@@ -1,0 +1,1575 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Centre for Research into Ecological and Environmental Modelling   University of St Andrews">
+
+<title>Introductory distance sampling training materials - Analysis of double-platform data</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://kit.fontawesome.com/78ddb093ea.js" crossorigin="anonymous"></script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Introductory distance sampling training materials</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://distancesampling.org" rel="" target="">
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Analysis of double-platform data</li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+ <span class="menu-text">Introduction</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../01-intro/introlanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fundamentals of distance sampling</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../01-intro/Mod1-2023-intro.pdf" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture slides</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://youtu.be/_4RX6P4PB4k" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture video</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../01-intro/introlanding.html#exercise-materials" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercise materials</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+ <span class="menu-text">Detection function modelling</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../02-detfns/detfnlanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fitting detection functions to line transect data</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+ <span class="menu-text">Model criticism</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../03-criticism/criticismlanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model criticism</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+ <span class="menu-text">Precision of density estimates</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../04-precision/precisionlanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Precision of density estimates</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+ <span class="menu-text">Point transect analysis</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../05-points/pointslanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Analysis of point transect data</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
+ <span class="menu-text">Design of distance sampling surveys</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../06-design/designlanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Design of distance sampling surveys</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false">
+ <span class="menu-text">Analysis of stratified designs</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../07-stratify/stratifylanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Analysis of stratified surveys</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false">
+ <span class="menu-text">Covariates in the detection functions</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../08-covariates/covariateslanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Including covariates in detection function modelling</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#golf-tee-survey---initial-analysis" id="toc-golf-tee-survey---initial-analysis" class="nav-link active" data-scroll-target="#golf-tee-survey---initial-analysis">1. Golf tee survey - initial analysis</a>
+  <ul class="collapse">
+  <li><a href="#golf-tee-survey" id="toc-golf-tee-survey" class="nav-link" data-scroll-target="#golf-tee-survey">Golf tee survey</a></li>
+  <li><a href="#golf-tee-survey-analyses" id="toc-golf-tee-survey-analyses" class="nav-link" data-scroll-target="#golf-tee-survey-analyses">Golf tee survey analyses</a>
+  <ul class="collapse">
+  <li><a href="#estimation-of-p-distance-only" id="toc-estimation-of-p-distance-only" class="nav-link" data-scroll-target="#estimation-of-p-distance-only">Estimation of p: distance only</a></li>
+  <li><a href="#estimation-of-p-distance-and-other-explanatory-variables" id="toc-estimation-of-p-distance-and-other-explanatory-variables" class="nav-link" data-scroll-target="#estimation-of-p-distance-and-other-explanatory-variables">Estimation of p: distance and other explanatory variables</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#golf-tee-survey---further-exploration-after-class-on-day-1" id="toc-golf-tee-survey---further-exploration-after-class-on-day-1" class="nav-link" data-scroll-target="#golf-tee-survey---further-exploration-after-class-on-day-1">2. Golf tee survey - Further exploration after class on Day 1</a>
+  <ul class="collapse">
+  <li><a href="#further-analyses-of-golf-tee-data" id="toc-further-analyses-of-golf-tee-data" class="nav-link" data-scroll-target="#further-analyses-of-golf-tee-data">Further analyses of golf tee data</a>
+  <ul class="collapse">
+  <li><a href="#estimation-of-p-distance-and-other-explanatory-variables-1" id="toc-estimation-of-p-distance-and-other-explanatory-variables-1" class="nav-link" data-scroll-target="#estimation-of-p-distance-and-other-explanatory-variables-1">Estimation of p: distance and other explanatory variables</a></li>
+  <li><a href="#point-independence" id="toc-point-independence" class="nav-link" data-scroll-target="#point-independence">Point independence</a></li>
+  </ul></li>
+  <li><a href="#data-structure" id="toc-data-structure" class="nav-link" data-scroll-target="#data-structure">Data structure</a></li>
+  </ul></li>
+  <li><a href="#crabeater-seal-survey---for-you-to-work-on-after-class-on-day-1-before-the-next-class" id="toc-crabeater-seal-survey---for-you-to-work-on-after-class-on-day-1-before-the-next-class" class="nav-link" data-scroll-target="#crabeater-seal-survey---for-you-to-work-on-after-class-on-day-1-before-the-next-class">3. Crabeater seal survey - For you to work on after class on Day 1, before the next class</a>
+  <ul class="collapse">
+  <li><a href="#crabeater-seal-data" id="toc-crabeater-seal-data" class="nav-link" data-scroll-target="#crabeater-seal-data">Crabeater seal data</a></li>
+  <li><a href="#crabeater-seal-analyses" id="toc-crabeater-seal-analyses" class="nav-link" data-scroll-target="#crabeater-seal-analyses">Crabeater seal analyses</a>
+  <ul class="collapse">
+  <li><a href="#crabeater-seals-with-mcds-optional" id="toc-crabeater-seals-with-mcds-optional" class="nav-link" data-scroll-target="#crabeater-seals-with-mcds-optional">Crabeater seals with MCDS (optional)</a></li>
+  </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Analysis of double-platform data</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Centre for Research into Ecological and Environmental Modelling <br> <strong>University of St Andrews</strong> </p>
+          </div>
+  </div>
+    
+  
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">January 2024</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Analysis of double-platform data
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+</div>
+<p>This version of the practical is for those who would like to conduct the analysis in R using the package <code>mrds</code> <span class="citation" data-cites="mrdspackage">(<a href="#ref-mrdspackage" role="doc-biblioref">Laake et al., 2023</a>)</span>. There is a separate version for conducting the analysis in Distance for Windows <span class="citation" data-cites="Thomas2010">(<a href="#ref-Thomas2010" role="doc-biblioref">Thomas et al., 2010</a>)</span>.</p>
+<p>The first part of this practical involves initial analysis of a survey of a known number of golf tees. This is intended mainly to familiarise you with the <code>mrds</code> function.</p>
+<p>The second part of the practical involves more detailed analysis of the golf tee data, and an exploration of the double-platform data structure.</p>
+<p>The third part of the practical involves analysis of the pack-ice seal survey data of <span class="citation" data-cites="Borchers2006">(<a href="#ref-Borchers2006" role="doc-biblioref">Borchers et al., 2006</a>)</span> and <span class="citation" data-cites="Southwelll2007">(<a href="#ref-Southwelll2007" role="doc-biblioref"><strong>Southwelll2007?</strong></a>)</span>.</p>
+<p>To help understand the terminology used in MRDS and the output produced by <code>mrds</code>, there is a guide available <a href="Supplement-interpretingoutput.qmd">‘Interpreting MRDS output’</a>.</p>
+<section id="golf-tee-survey---initial-analysis" class="level1">
+<h1>1. Golf tee survey - initial analysis</h1>
+<section id="golf-tee-survey" class="level2">
+<h2 class="anchored" data-anchor-id="golf-tee-survey">Golf tee survey</h2>
+<p>These data come from a survey of golf tees which conducted by statistics students at the University of St Andrews. The data were collected along transect lines, 210 metres in total. A distance of 4 metres out from the centre line was searched and, for the purposes of this exercise, we assume that this comprised the total study area, which was divided into two strata. There were 250 clusters of tees in total and 760 individual tees in total.</p>
+<p>The population was independently surveyed by two observer teams. The following data were recorded for each detected group: perpendicular distance, cluster size, observer (team 1 or 2), ‘sex’ (males are yellow and females are green and golf tees occur in single-sex clusters) and ‘exposure’. Exposure was a subjective judgment of whether the cluster was substantially obscured by grass (exposure=0) or not (exposure=1). The lengths of grass varied along the transect line and the grass was slightly more yellow along one part of the line compared to the rest.</p>
+<p>The golf tee dataset is provided as part of the <code>mrds</code> package.</p>
+<p>Open R and load the <code>mrds</code> package and golf tee dataset (called <code>book.tee.data</code>). The elements required for an MRDS analysis are contained within the object dataset. These data are in a hierarchical structure (rather than in a ‘flat file’ format) so that there are separate elements for observations, samples and regions. In the code below, each of these tables is extracted to avoid typing long names.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># Load libraries</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(knitr) <span class="co">#Used to knit this markdown document together</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">library</span>(mrds)</span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="co">#Note - the Distance package is also used in the Crabeater seal example, to access</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="co"># the checkdata function, and to do an MCDS analysis.</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a></span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="co"># Access the golf tee data</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="fu">data</span>(book.tee.data)</span>
+<span id="cb1-9"><a href="#cb1-9"></a></span>
+<span id="cb1-10"><a href="#cb1-10"></a><span class="co"># Extract the list elements from the dataset into easy-to-access objects</span></span>
+<span id="cb1-11"><a href="#cb1-11"></a>detections <span class="ot">&lt;-</span> book.tee.data<span class="sc">$</span>book.tee.dataframe <span class="co"># detection information</span></span>
+<span id="cb1-12"><a href="#cb1-12"></a>region <span class="ot">&lt;-</span> book.tee.data<span class="sc">$</span>book.tee.region <span class="co"># region info</span></span>
+<span id="cb1-13"><a href="#cb1-13"></a>samples <span class="ot">&lt;-</span> book.tee.data<span class="sc">$</span>book.tee.samples <span class="co"># transect info</span></span>
+<span id="cb1-14"><a href="#cb1-14"></a>obs <span class="ot">&lt;-</span> book.tee.data<span class="sc">$</span>book.tee.obs <span class="co"># links detections to transects and regions</span></span>
+<span id="cb1-15"><a href="#cb1-15"></a></span>
+<span id="cb1-16"><a href="#cb1-16"></a><span class="co"># In the detections data frame, define sex and exposure </span></span>
+<span id="cb1-17"><a href="#cb1-17"></a><span class="co"># as factor variables </span></span>
+<span id="cb1-18"><a href="#cb1-18"></a>detections<span class="sc">$</span>sex <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(detections<span class="sc">$</span>sex)</span>
+<span id="cb1-19"><a href="#cb1-19"></a>detections<span class="sc">$</span>exposure <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(detections<span class="sc">$</span>exposure)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="golf-tee-survey-analyses" class="level2">
+<h2 class="anchored" data-anchor-id="golf-tee-survey-analyses">Golf tee survey analyses</h2>
+<section id="estimation-of-p-distance-only" class="level3">
+<h3 class="anchored" data-anchor-id="estimation-of-p-distance-only">Estimation of p: distance only</h3>
+<p>We will start by analysing these data assuming that Observer 2 was generating trials for Observer 1 but not vice versa, i.e.&nbsp;trial configuration where Observer 1 is the primary and Observer 2 is the tracker. (The data could also be analysed in independent observer configuration - you are welcome to try this for yourself). We begin by assuming full independence (i.e.&nbsp;detections between observers are independent at all distances): this requires only a mark-recapture (MR) model and, to start with, perpendicular distance will be included as the only covariate.</p>
+<p>Remember that <code>?</code> or <code>help</code> can be used to find out more about any of the functions used – e.g., <code>?ddf</code> will tell you more about the ddf function.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># Fit trial configuration with full independence model</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a>fi.mr.dist <span class="ot">&lt;-</span> <span class="fu">ddf</span>(<span class="at">method=</span><span class="st">'trial.fi'</span>, <span class="at">mrmodel=</span><span class="sc">~</span><span class="fu">glm</span>(<span class="at">link=</span><span class="st">'logit'</span>,<span class="at">formula=</span><span class="sc">~</span>distance),</span>
+<span id="cb2-3"><a href="#cb2-3"></a>                  <span class="at">data=</span>detections, <span class="at">meta.data=</span><span class="fu">list</span>(<span class="at">width=</span><span class="dv">4</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="examining-mrds-output" class="level4">
+<h4 class="anchored" data-anchor-id="examining-mrds-output">Examining <code>mrds</code> output</h4>
+<p>Having fitted the model, we can create tables summarizing the detection data. In the commands below, the tables are created using the <code>det.tables</code> function and saved to <code>detection.tables</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># Create a set of tables summarizing the double observer data </span></span>
+<span id="cb3-2"><a href="#cb3-2"></a>detection.tables <span class="ot">&lt;-</span> <span class="fu">det.tables</span>(fi.mr.dist)</span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="co"># Print these detection tables</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a>detection.tables</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Observer 1 detections
+           Detected
+            Missed Detected
+  [0,0.4]        1       25
+  (0.4,0.8]      2       16
+  (0.8,1.2]      2       16
+  (1.2,1.6]      6       22
+  (1.6,2]        5        9
+  (2,2.4]        2       10
+  (2.4,2.8]      6       12
+  (2.8,3.2]      6        9
+  (3.2,3.6]      2        3
+  (3.6,4]        6        2
+
+Observer 2 detections
+           Detected
+            Missed Detected
+  [0,0.4]        4       22
+  (0.4,0.8]      1       17
+  (0.8,1.2]      0       18
+  (1.2,1.6]      2       26
+  (1.6,2]        1       13
+  (2,2.4]        2       10
+  (2.4,2.8]      3       15
+  (2.8,3.2]      4       11
+  (3.2,3.6]      2        3
+  (3.6,4]        1        7
+
+Duplicate detections
+
+  [0,0.4] (0.4,0.8] (0.8,1.2] (1.2,1.6]   (1.6,2]   (2,2.4] (2.4,2.8] (2.8,3.2] 
+       21        15        16        20         8         8         9         5 
+(3.2,3.6]   (3.6,4] 
+        1         1 
+
+Observer 1 detections of those seen by Observer 2
+          Missed Detected Prop. detected
+[0,0.4]        1       21      0.9545455
+(0.4,0.8]      2       15      0.8823529
+(0.8,1.2]      2       16      0.8888889
+(1.2,1.6]      6       20      0.7692308
+(1.6,2]        5        8      0.6153846
+(2,2.4]        2        8      0.8000000
+(2.4,2.8]      6        9      0.6000000
+(2.8,3.2]      6        5      0.4545455
+(3.2,3.6]      2        1      0.3333333
+(3.6,4]        6        1      0.1428571</code></pre>
+</div>
+</div>
+<p>The information in detection summary tables can be plotted, but, in the interest of space, only one (out of six possible plots) is shown below.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># Plot detection information, change number to see other plots</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">plot</span>(detection.tables, <span class="at">which=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Pr11-instructions-R_files/figure-html/dettabplot-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>The plot numbers are:</p>
+<ol type="1">
+<li>Histograms of distances for detections by either, or both, observers. The shaded regions show the number for observer 1.</li>
+<li>Histograms of distances for detections by either, or both, observers. The shaded regions show the number for observer 2.</li>
+<li>Histograms of distances for duplicates (detected by both observers).</li>
+<li>Histogram of distances for detections by either, or both, observers. Not shown for trial configuration.</li>
+<li>Histograms of distances for observer 2. The shaded regions indicate the number of duplicates - for example, the shaded region is the number of clusters in each distance bin that were detected by Observer 1 given that they were also detected by Observer 2 (the “|” symbol in the plot legend means “given that”).</li>
+<li>Histograms of distances for observer 1. The shaded regions indicate the number of duplicates as for plot 5. Not shown for trial configuration.</li>
+</ol>
+<p>Note that if an independent observer configuration had been chosen, all plots would be available.</p>
+<p>A summary of the detection function model is available using the <code>summary</code> function. The Q-Q plot has the same interpretation as a Q-Q plot in a conventional, single platform analysis.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># Produce a summary of the fitted detection function object</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="fu">summary</span>(fi.mr.dist)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Summary for trial.fi object 
+Number of observations               :  162 
+Number seen by primary               :  124 
+Number seen by secondary (trials)    :  142 
+Number seen by both (detected trials):  104 
+AIC                                  :  452.8094 
+
+
+Conditional detection function parameters:
+             estimate        se
+(Intercept)  2.900233 0.4876238
+distance    -1.058677 0.2235722
+
+                        Estimate          SE         CV
+Average p              0.6423252  0.04069410 0.06335435
+Average primary p(0)   0.9478579  0.06109656 0.06445750
+N in covered region  193.0486185 15.84826582 0.08209469</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># Produce goodness of fit statistics and a qq plot</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a>gof.result <span class="ot">&lt;-</span> <span class="fu">ddf.gof</span>(fi.mr.dist, </span>
+<span id="cb8-3"><a href="#cb8-3"></a>                      <span class="at">main=</span><span class="st">"Full independence, trial configuration</span><span class="sc">\n</span><span class="st">goodness of fit Golf tee data"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Pr11-instructions-R_files/figure-html/fi.summary-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>gof.result</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Goodness of fit results for ddf object
+
+Chi-square tests
+
+Distance sampling component:
+          [0,0.4] (0.4,0.8] (0.8,1.2] (1.2,1.6] (1.6,2] (2,2.4] (2.4,2.8]
+Observed   25.000    16.000    16.000    22.000   9.000  10.000    12.000
+Expected   18.068    17.479    16.650    15.527  14.079  12.327    10.361
+Chisquare   2.659     0.125     0.025     2.698   1.833   0.439     0.259
+          (2.8,3.2] (3.2,3.6] (3.6,4]   Total
+Observed      9.000     3.000   2.000 124.000
+Expected      8.335     6.419   4.753 124.000
+Chisquare     0.053     1.821   1.595  11.508
+
+No degrees of freedom for test
+
+Mark-recapture component:
+Capture History 01
+          [0,0.4] (0.4,0.8] (0.8,1.2] (1.2,1.6] (1.6,2] (2,2.4] (2.4,2.8]
+Observed        1         2         2         6       5       2         6
+Expected        1         2         3         5       4       4         7
+Chisquare       0         0         0         0       1       1         0
+          (2.8,3.2] (3.2,3.6] (3.6,4] Total
+Observed          6         2       6    38
+Expected          6         2       5    38
+Chisquare         0         0       0     2
+Capture History 11
+          [0,0.4] (0.4,0.8] (0.8,1.2] (1.2,1.6] (1.6,2] (2,2.4] (2.4,2.8]
+Observed       21        15        16        20       8       8         9
+Expected       21        15        15        21       9       6         8
+Chisquare       0         0         0         0       0       0         0
+          (2.8,3.2] (3.2,3.6] (3.6,4] Total
+Observed          5         1       1   104
+Expected          5         1       2   104
+Chisquare         0         0       0     1
+
+
+Total chi-square = 14.888  P = 0.60351 with 17 degrees of freedom
+
+Distance sampling Cramer-von Mises test (unweighted)
+Test statistic = 0.294564 p-value = 0.140034</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># Extract chi-square statistics for reporting in the text below (see Markdown file for how this is done).</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a>chi.distance <span class="ot">&lt;-</span> gof.result<span class="sc">$</span>chisquare<span class="sc">$</span>chi1<span class="sc">$</span>chisq</span>
+<span id="cb11-3"><a href="#cb11-3"></a>chi.markrecap <span class="ot">&lt;-</span> gof.result<span class="sc">$</span>chisquare<span class="sc">$</span>chi2<span class="sc">$</span>chisq</span>
+<span id="cb11-4"><a href="#cb11-4"></a>chi.total <span class="ot">&lt;-</span> gof.result<span class="sc">$</span>chisquare<span class="sc">$</span>pooled.chi</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The <span class="math inline">\(\chi^2\)</span> goodness-of-fit assessment shows the <span class="math inline">\(\chi^2\)</span> contribution from the distance sampling component to be 11.5 and the <span class="math inline">\(\chi^2\)</span> contribution from the mark-recapture component to be 3.4. The combination of these elements produces a total <span class="math inline">\(\chi^2\)</span> of 14.9 with 17 degrees of freedom, resulting in a <span class="math inline">\(p\)</span>-value of 0.604</p>
+<p>The mark-recapture model detection function can be plotted with the following code:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># Divide the plot region into 2 columns</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
+<span id="cb12-3"><a href="#cb12-3"></a><span class="co"># Plot detection functions</span></span>
+<span id="cb12-4"><a href="#cb12-4"></a><span class="fu">plot</span>(fi.mr.dist)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Pr11-instructions-R_files/figure-html/plotdf-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>The plot headed</p>
+<ul>
+<li><p>“Conditional detection probability” (the right hand plot) shows the proportion of Obs 2’s detections that were detected by Obs 1 (also see the detection tables). The fitted line is the estimated detection probability function for Obs 1 (given detection by Obs 2) - this is the MR model. Dots are estimated detection probabilities for each Obs 1 detection.</p></li>
+<li><p>“Observer=1 detections” (left hand plot) shows a histogram of Observer 1 detections with the estimated Observer 1 detection function (from the MR model) overlaid on it and adjusted for the estimated p(0). The dots show the estimated detection probability for all Observer 1 detections. Note that the MR model was not fitted to these data – it’s the conditional data (right hand plot) that was used to fit the model. This plot is just shown to help you diagnose any issues in the fit – as we discussed in class, if there is dependency between observer detections then we’d expect the detection function to decrease slower than the histograms.</p></li>
+</ul>
+<p>Is there evidence of unmodelled heterogeneity? What do these results tell you about the estimates of p (average detection probability) and p(0) (detection probability at 0 distance)?</p>
+</section>
+<section id="estimating-abundance" class="level4">
+<h4 class="anchored" data-anchor-id="estimating-abundance">Estimating abundance</h4>
+<p>Abundance is estimated using the <code>dht</code> function. In this function, we need to supply information about the transects and survey regions.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="co"># Calculate density estimates using the dht function</span></span>
+<span id="cb13-2"><a href="#cb13-2"></a>tee.abund <span class="ot">&lt;-</span> <span class="fu">dht</span>(<span class="at">model=</span>fi.mr.dist, <span class="at">region.table=</span>region, <span class="at">sample.table=</span>samples, </span>
+<span id="cb13-3"><a href="#cb13-3"></a>                 <span class="at">obs.table=</span>obs)</span>
+<span id="cb13-4"><a href="#cb13-4"></a></span>
+<span id="cb13-5"><a href="#cb13-5"></a><span class="co"># Print out results in a nice format</span></span>
+<span id="cb13-6"><a href="#cb13-6"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(tee.abund<span class="sc">$</span>individuals<span class="sc">$</span>summary, <span class="at">digits=</span><span class="dv">2</span>, </span>
+<span id="cb13-7"><a href="#cb13-7"></a>      <span class="at">caption=</span><span class="st">"Survey summary statistics for golftees"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<caption>Survey summary statistics for golftees</caption>
+<colgroup>
+<col style="width: 9%">
+<col style="width: 6%">
+<col style="width: 16%">
+<col style="width: 9%">
+<col style="width: 5%">
+<col style="width: 4%">
+<col style="width: 6%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 13%">
+<col style="width: 10%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Region</th>
+<th style="text-align: right;">Area</th>
+<th style="text-align: right;">CoveredArea</th>
+<th style="text-align: right;">Effort</th>
+<th style="text-align: right;">n</th>
+<th style="text-align: right;">k</th>
+<th style="text-align: right;">ER</th>
+<th style="text-align: right;">se.ER</th>
+<th style="text-align: right;">cv.ER</th>
+<th style="text-align: right;">mean.size</th>
+<th style="text-align: right;">se.mean</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">1040</td>
+<td style="text-align: right;">1040</td>
+<td style="text-align: right;">130</td>
+<td style="text-align: right;">229</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">1.76</td>
+<td style="text-align: right;">0.12</td>
+<td style="text-align: right;">0.07</td>
+<td style="text-align: right;">3.18</td>
+<td style="text-align: right;">0.21</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">640</td>
+<td style="text-align: right;">640</td>
+<td style="text-align: right;">80</td>
+<td style="text-align: right;">152</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">1.90</td>
+<td style="text-align: right;">0.33</td>
+<td style="text-align: right;">0.18</td>
+<td style="text-align: right;">2.92</td>
+<td style="text-align: right;">0.23</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Total</td>
+<td style="text-align: right;">1680</td>
+<td style="text-align: right;">1680</td>
+<td style="text-align: right;">210</td>
+<td style="text-align: right;">381</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">1.81</td>
+<td style="text-align: right;">0.15</td>
+<td style="text-align: right;">0.08</td>
+<td style="text-align: right;">3.07</td>
+<td style="text-align: right;">0.15</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(tee.abund<span class="sc">$</span>individuals<span class="sc">$</span>N, <span class="at">digits=</span><span class="dv">2</span>, </span>
+<span id="cb14-2"><a href="#cb14-2"></a>      <span class="at">caption=</span><span class="st">"Abundance estimates for golftee population with two strata"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<caption>Abundance estimates for golftee population with two strata</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Label</th>
+<th style="text-align: right;">Estimate</th>
+<th style="text-align: right;">se</th>
+<th style="text-align: right;">cv</th>
+<th style="text-align: right;">lcl</th>
+<th style="text-align: right;">ucl</th>
+<th style="text-align: right;">df</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">356.52</td>
+<td style="text-align: right;">32.35</td>
+<td style="text-align: right;">0.09</td>
+<td style="text-align: right;">294.54</td>
+<td style="text-align: right;">431.53</td>
+<td style="text-align: right;">17.13</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">236.64</td>
+<td style="text-align: right;">44.14</td>
+<td style="text-align: right;">0.19</td>
+<td style="text-align: right;">147.33</td>
+<td style="text-align: right;">380.09</td>
+<td style="text-align: right;">5.06</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Total</td>
+<td style="text-align: right;">593.16</td>
+<td style="text-align: right;">60.38</td>
+<td style="text-align: right;">0.10</td>
+<td style="text-align: right;">478.32</td>
+<td style="text-align: right;">735.57</td>
+<td style="text-align: right;">16.06</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+</section>
+<section id="estimation-of-p-distance-and-other-explanatory-variables" class="level3">
+<h3 class="anchored" data-anchor-id="estimation-of-p-distance-and-other-explanatory-variables">Estimation of p: distance and other explanatory variables</h3>
+<p>Below is a model that includes size, sex and exposure covariates. Please spend a bit of time examining the model coefficients, goodness of fit, plots of the fitted detection functions, etc (you’ll need to write your own code for this).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># Example of adding covariates to MR detection function</span></span>
+<span id="cb15-2"><a href="#cb15-2"></a>fi.mr.dist.size.sex.exposure <span class="ot">&lt;-</span> <span class="fu">ddf</span>(<span class="at">method=</span><span class="st">'trial.fi'</span>, </span>
+<span id="cb15-3"><a href="#cb15-3"></a>                      <span class="at">mrmodel=</span><span class="sc">~</span><span class="fu">glm</span>(<span class="at">link=</span><span class="st">'logit'</span>,<span class="at">formula=</span><span class="sc">~</span>distance<span class="sc">+</span>size<span class="sc">+</span>sex<span class="sc">+</span>exposure),</span>
+<span id="cb15-4"><a href="#cb15-4"></a>                      <span class="at">data=</span>detections, <span class="at">meta.data=</span><span class="fu">list</span>(<span class="at">width=</span><span class="dv">4</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We can use AIC to compare this with the previous model that just had distance as a covariate. The function <code>AIC</code> works on these objects:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">AIC</span>(fi.mr.dist, fi.mr.dist.size.sex.exposure)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                             df      AIC
+fi.mr.dist                    2 452.8094
+fi.mr.dist.size.sex.exposure  5 407.3974</code></pre>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="golf-tee-survey---further-exploration-after-class-on-day-1" class="level1">
+<h1>2. Golf tee survey - Further exploration after class on Day 1</h1>
+<section id="further-analyses-of-golf-tee-data" class="level2">
+<h2 class="anchored" data-anchor-id="further-analyses-of-golf-tee-data">Further analyses of golf tee data</h2>
+<section id="estimation-of-p-distance-and-other-explanatory-variables-1" class="level3">
+<h3 class="anchored" data-anchor-id="estimation-of-p-distance-and-other-explanatory-variables-1">Estimation of p: distance and other explanatory variables</h3>
+<p>The size covariate is the least significant of the covariates in the model <code>fi.mr.dist.size.sex.exposure</code> – its estimate is 0.078 with SE 0.183. So try creating a new model definition and analysis without this covariate. Does it have a lower AIC?</p>
+<p>You can also try some models with interaction terms - you can specify these in the usual way in the model foruma with a <code>*</code> symbol. Don’t spend too long on full independence models, but move on to the next section.</p>
+</section>
+<section id="point-independence" class="level3">
+<h3 class="anchored" data-anchor-id="point-independence">Point independence</h3>
+<p>A less restrictive assumption than full independence is point independence, which assumes that detections are only independent on the transect centre line i.e.&nbsp;at perpendicular distance zero.</p>
+<p>Let’s start by seeing if a simple point independence model is better than a simple full independence one. This requires that a distance sampling (DS) model is specified as well a MR model. Here we try a half-normal key function for the DS model.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="co"># Fit trial configuration with point independence model</span></span>
+<span id="cb18-2"><a href="#cb18-2"></a>pi.mr.dist <span class="ot">&lt;-</span> <span class="fu">ddf</span>(<span class="at">method=</span><span class="st">'trial'</span>, </span>
+<span id="cb18-3"><a href="#cb18-3"></a>                  <span class="at">mrmodel=</span><span class="sc">~</span><span class="fu">glm</span>(<span class="at">link=</span><span class="st">'logit'</span>, <span class="at">formula=</span><span class="sc">~</span>distance),</span>
+<span id="cb18-4"><a href="#cb18-4"></a>                  <span class="at">dsmodel=</span><span class="sc">~</span><span class="fu">cds</span>(<span class="at">key=</span><span class="st">'hn'</span>), </span>
+<span id="cb18-5"><a href="#cb18-5"></a>                  <span class="at">data=</span>detections, <span class="at">meta.data=</span><span class="fu">list</span>(<span class="at">width=</span><span class="dv">4</span>))</span>
+<span id="cb18-6"><a href="#cb18-6"></a></span>
+<span id="cb18-7"><a href="#cb18-7"></a><span class="co"># Summary pf the model </span></span>
+<span id="cb18-8"><a href="#cb18-8"></a><span class="fu">summary</span>(pi.mr.dist)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Summary for trial.fi object 
+Number of observations               :  162 
+Number seen by primary               :  124 
+Number seen by secondary (trials)    :  142 
+Number seen by both (detected trials):  104 
+AIC                                  :  140.8887 
+
+
+Conditional detection function parameters:
+             estimate        se
+(Intercept)  2.900233 0.4876238
+distance    -1.058677 0.2235722
+
+                      Estimate         SE         CV
+Average primary p(0) 0.9478579 0.02409996 0.02542571
+
+
+
+Summary for ds object
+Number of observations :  124 
+Distance range         :  0  -  4 
+AIC                    :  311.1385 
+Optimisation           :  mrds (nlminb) 
+
+Detection function:
+ Half-normal key function 
+
+Detection function parameters 
+Scale coefficient(s): 
+             estimate         se
+(Intercept) 0.6632435 0.09981249
+
+           Estimate         SE         CV
+Average p 0.5842744 0.04637627 0.07937412
+
+
+Summary for trial object
+
+Total AIC value =  452.0272 
+                       Estimate          SE         CV
+Average p             0.5538091  0.04615832 0.08334697
+N in covered region 223.9038534 22.99246338 0.10268900</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="co"># Produce goodness of fit statistics and a qq plot</span></span>
+<span id="cb20-2"><a href="#cb20-2"></a>gof.results <span class="ot">&lt;-</span> <span class="fu">ddf.gof</span>(pi.mr.dist, <span class="at">main=</span><span class="st">"Point independence, trial configuration</span><span class="sc">\n</span><span class="st"> goodness of fit Golftee data"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Pr11-instructions-R_files/figure-html/pit-nocovar-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Compare the results with the corresponding full independence model. Which has the lower AIC? Which has an estimate closer to known true abundance.</p>
+<section id="covariates-in-the-ds-model" class="level4">
+<h4 class="anchored" data-anchor-id="covariates-in-the-ds-model">Covariates in the DS model</h4>
+<p>To include covariates in the DS detection function, we need to specify an MCDS model as follows:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="co"># Fit the PI-trial model - DS sex and MR distance </span></span>
+<span id="cb21-2"><a href="#cb21-2"></a>pi.mr.dist.ds.sex <span class="ot">&lt;-</span> <span class="fu">ddf</span>(<span class="at">method=</span><span class="st">'trial'</span>, </span>
+<span id="cb21-3"><a href="#cb21-3"></a>                         <span class="at">mrmodel=</span><span class="sc">~</span><span class="fu">glm</span>(<span class="at">link=</span><span class="st">'logit'</span>,<span class="at">formula=</span><span class="sc">~</span>distance),</span>
+<span id="cb21-4"><a href="#cb21-4"></a>                         <span class="at">dsmodel=</span><span class="sc">~</span><span class="fu">mcds</span>(<span class="at">key=</span><span class="st">'hn'</span>,<span class="at">formula=</span><span class="sc">~</span>sex), </span>
+<span id="cb21-5"><a href="#cb21-5"></a>                         <span class="at">data=</span>detections, <span class="at">meta.data=</span><span class="fu">list</span>(<span class="at">width=</span><span class="dv">4</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Use the <code>summary</code> or <code>AIC</code> function to check the AIC and decide if you are going to include any additional covariates in the detection function.</p>
+<p>Now try a point independence model that has the preferred MR model from your full independence analyses. Which has the lower AIC and bias?</p>
+<p>Feel free to experiment some more with different models. What is your final best model? What is the estimate of p and p(0) for this model? Was all this modelling necessary in this instance, given the value of p(0)? How else could you have obtained a robust estimate of abundance?</p>
+</section>
+</section>
+</section>
+<section id="data-structure" class="level2">
+<h2 class="anchored" data-anchor-id="data-structure">Data structure</h2>
+<p>Before moving on to the second dataset, let’s have a look at the columns in the <code>detections</code> data because, for all mrds analyses, it needs to have a particular structure.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="co"># Check detections</span></span>
+<span id="cb22-2"><a href="#cb22-2"></a><span class="fu">head</span>(detections)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   object observer detected distance size sex exposure
+1       1        1        1     2.68    2   1        1
+21      1        2        0     2.68    2   1        1
+2       2        1        1     3.33    2   1        0
+22      2        2        0     3.33    2   1        0
+3       3        1        1     0.34    1   0        0
+23      3        2        0     0.34    1   0        0</code></pre>
+</div>
+</div>
+<p>The structure of the detection is as follows:</p>
+<ul>
+<li><p>each detected object (in this case the object was a group or cluster of golf tees) is given a unique number in the <code>object</code> column,</p></li>
+<li><p>each <code>object</code> occurs twice - once for observer 1 and once for observer 2,</p></li>
+<li><p>the <code>detected</code> column indicates whether the object was seen (<code>detected=1</code>) or not seen (<code>detected=0</code>) by the observer,</p></li>
+<li><p>perpendicular distance is in the <code>distance</code> column and cluster size is in the <code>size</code> column (the same default names as for the <code>ds</code> function).</p></li>
+</ul>
+<p>To ensure that the variables <code>sex</code> and <code>exposure</code> are treated correctly, we defined them as factor variables.</p>
+</section>
+</section>
+<section id="crabeater-seal-survey---for-you-to-work-on-after-class-on-day-1-before-the-next-class" class="level1">
+<h1>3. Crabeater seal survey - For you to work on after class on Day 1, before the next class</h1>
+<section id="crabeater-seal-data" class="level2">
+<h2 class="anchored" data-anchor-id="crabeater-seal-data">Crabeater seal data</h2>
+<p>This analysis is described in Borchers et al.&nbsp;(2006) and Southwell et al.&nbsp;(2007). These data come from a helicopter survey of crabeater seals conducted by the Australian Antarctic Division within the pack-ice seals programme. The helicopter could only operate within a relatively short distance from the ice-breaker ship which acted as its base. The ice-breaker could only go where the pack ice was thin enough and so the aerial transects could not be located at random. This means that design-based estimation was not a valid option and so, in the published analysis, abundance was estimated using density surface modelling. For the purposes of this exercise, we concentrate on detection function estimation and create an artificial region as a device to produce abundance estimates.</p>
+<p>There were four independent observers in the helicopter, two on each side (front and back). The front observers were considered to be one ‘team’ and the back observers were considered to be the other ‘team’. Various environmental factors were recorded. In addition to perpendicular distance, observer (1=front or 2=back) and cluster size, the following explanatory variables are available:</p>
+<ul>
+<li>side – the side of the helicopter from which seal were seen (L and R)</li>
+<li>exp – the experience (in survey hours) of the observer</li>
+<li>fatigue – the number of minutes the observer had been on duty on the current flight</li>
+<li>gscat – group size category (1, 2 and greater than or equal to 3)</li>
+<li>vis – visibility category (Poor, Good and Excellent)</li>
+<li>glare – whether there was glare (Yes or No)</li>
+<li>ssmi – a measure of ice cover</li>
+<li>altitude – the height of the aircraft in metres</li>
+<li>obsname – unique identifier of observer</li>
+</ul>
+<p>The data from the survey has been saved in a <code>.csv</code> file. This file is read into R using <code>read.csv</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a>crabseal <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"crabbieMRDS.csv"</span>)</span>
+<span id="cb24-2"><a href="#cb24-2"></a><span class="fu">str</span>(crabseal)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   3480 obs. of  20 variables:
+ $ Study.area  : chr  "Nominal_area" "Nominal_area" "Nominal_area" "Nominal_area" ...
+ $ Region.Label: int  1 1 1 1 1 1 1 1 1 1 ...
+ $ Area        : int  1000000 1000000 1000000 1000000 1000000 1000000 1000000 1000000 1000000 1000000 ...
+ $ Sample.Label: chr  "99A21" "99A21" "99A21" "99A21" ...
+ $ Effort      : num  59.7 59.7 59.7 59.7 59.7 ...
+ $ distance    : num  144 144 125 125 421 ...
+ $ size        : num  1 1 1 1 1 1 1 1 1 1 ...
+ $ object      : int  54464 54464 54465 54465 54466 54466 54467 54467 54468 54468 ...
+ $ observer    : int  1 2 1 2 1 2 1 2 1 2 ...
+ $ detected    : int  1 1 1 1 0 1 1 1 1 1 ...
+ $ side        : chr  "R" "R" "L" "L" ...
+ $ exp         : num  0 178 212 0 212 ...
+ $ fatigue     : num  61.9 61.9 62.6 62.6 62.9 ...
+ $ gscat       : int  1 1 1 1 1 1 1 1 1 1 ...
+ $ vis         : chr  "G" "G" "G" "G" ...
+ $ glare       : chr  "N" "N" "N" "N" ...
+ $ ssmi        : int  79 79 79 79 79 79 79 79 79 79 ...
+ $ altitude    : num  43.1 43.1 43.1 43.1 43.1 ...
+ $ obsname     : chr  "YH" "HZ" "MF" "MH" ...
+ $ fold        : int  1 1 2 2 3 3 4 4 5 5 ...</code></pre>
+</div>
+</div>
+<p>If you’ve used Distance for Windows you might recognize some of the column names from that - indeed the dataset has been exported from Distance for Windows into the <code>.csv</code> file. The first column can be ignored. <code>Region.Label</code> and <code>Area</code> relate to the strata (their names and area - there’s only one in this dataset). <code>Sample.Label</code> and <code>Effort</code> relate to the transects. The columns <code>distance</code> onwards relate to the observations. You can see there are columns for each explanatory variable above, plus one additional one called <code>fold</code> that will enable use to pick a subset of the data (see later on).</p>
+<p>First, one thing we should do is turn the explanatory variables that should be fitted as factor variables into factors.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a>crabseal<span class="sc">$</span>side <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(crabseal<span class="sc">$</span>side)</span>
+<span id="cb26-2"><a href="#cb26-2"></a>crabseal<span class="sc">$</span>vis <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(crabseal<span class="sc">$</span>vis)</span>
+<span id="cb26-3"><a href="#cb26-3"></a>crabseal<span class="sc">$</span>glare <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(crabseal<span class="sc">$</span>glare)</span>
+<span id="cb26-4"><a href="#cb26-4"></a>crabseal<span class="sc">$</span>observer <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(crabseal<span class="sc">$</span>observer)</span>
+<span id="cb26-5"><a href="#cb26-5"></a>crabseal<span class="sc">$</span>obsname <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(crabseal<span class="sc">$</span>obsname)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="crabeater-seal-analyses" class="level2">
+<h2 class="anchored" data-anchor-id="crabeater-seal-analyses">Crabeater seal analyses</h2>
+<p>The observer teams acted independently and so an ‘independent observer’ (IO) configuration can be specified. The code below fits simple models (i.e.&nbsp;distance only) with the full independence assumption and the point independence assumption. For each model, make a note of the estimated values for <span class="math inline">\(p(0)\)</span> for each observer and the observers combined. Check goodness-of-fit and plot the detection function.</p>
+<p>Fit an IO configuration assuming full independence:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="co"># IO configuration - full independence</span></span>
+<span id="cb27-2"><a href="#cb27-2"></a><span class="co"># MR model - distance only</span></span>
+<span id="cb27-3"><a href="#cb27-3"></a><span class="co"># Truncation 700m</span></span>
+<span id="cb27-4"><a href="#cb27-4"></a>fi.mr.dist <span class="ot">&lt;-</span> <span class="fu">ddf</span>(<span class="at">method=</span><span class="st">"io.fi"</span>, <span class="at">mrmodel=</span><span class="sc">~</span><span class="fu">glm</span>(<span class="at">link=</span><span class="st">"logit"</span>, <span class="at">formula=</span><span class="sc">~</span>distance),</span>
+<span id="cb27-5"><a href="#cb27-5"></a>                 <span class="at">data=</span>crabseal, <span class="at">meta.data=</span><span class="fu">list</span>(<span class="at">width=</span><span class="dv">700</span>))</span>
+<span id="cb27-6"><a href="#cb27-6"></a><span class="fu">summary</span>(fi.mr.dist)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Summary for io.fi object 
+Number of observations   :  1740 
+Number seen by primary   :  1394 
+Number seen by secondary :  1471 
+Number seen by both      :  1125 
+AIC                      :  25681.52 
+
+
+Conditional detection function parameters:
+                estimate           se
+(Intercept)  2.107762345 0.0994391199
+distance    -0.003087713 0.0003159216
+
+                           Estimate           SE          CV
+Average p                 0.9071952  0.009684936 0.010675692
+Average primary p(0)      0.8916554  0.007472286 0.008380240
+Average secondary p(0)    0.8916554  0.007472286 0.008380240
+Average combined p(0)     0.9882614  0.004402403 0.004454695
+N in covered region    1917.9995344 24.808749358 0.012934700</code></pre>
+</div>
+</div>
+<p>Next fit IO configuration assuming point independence. Specify a half-normal key function for the DS model; again only include perpendicular distance in the MR model.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="co"># IO configuration - point independence</span></span>
+<span id="cb29-2"><a href="#cb29-2"></a><span class="co"># MR model - distance only</span></span>
+<span id="cb29-3"><a href="#cb29-3"></a><span class="co"># DS model - half normal detection function, no additional covars</span></span>
+<span id="cb29-4"><a href="#cb29-4"></a><span class="co"># Truncation at 700m</span></span>
+<span id="cb29-5"><a href="#cb29-5"></a>pi.mr.dist.ds.hn <span class="ot">&lt;-</span> <span class="fu">ddf</span>(<span class="at">method=</span><span class="st">"io"</span>, <span class="at">dsmodel=</span><span class="sc">~</span><span class="fu">cds</span>(<span class="at">key=</span><span class="st">"hn"</span>),</span>
+<span id="cb29-6"><a href="#cb29-6"></a>                 <span class="at">mrmodel=</span><span class="sc">~</span><span class="fu">glm</span>(<span class="at">link=</span><span class="st">"logit"</span>, <span class="at">formula=</span><span class="sc">~</span>distance),</span>
+<span id="cb29-7"><a href="#cb29-7"></a>                 <span class="at">data=</span>crabseal, <span class="at">meta.data=</span><span class="fu">list</span>(<span class="at">width=</span><span class="dv">700</span>))</span>
+<span id="cb29-8"><a href="#cb29-8"></a><span class="fu">summary</span>(pi.mr.dist.ds.hn)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Summary for io.fi object 
+Number of observations   :  1740 
+Number seen by primary   :  1394 
+Number seen by secondary :  1471 
+Number seen by both      :  1125 
+AIC                      :  3011.463 
+
+
+Conditional detection function parameters:
+                estimate           se
+(Intercept)  2.107762345 0.0994391199
+distance    -0.003087713 0.0003159216
+
+                        Estimate          SE          CV
+Average primary p(0)   0.8916554 0.009606424 0.010773696
+Average secondary p(0) 0.8916554 0.009606424 0.010773696
+Average combined p(0)  0.9882614 0.002081609 0.002106335
+
+
+Summary for ds object
+Number of observations :  1740 
+Distance range         :  0  -  700 
+AIC                    :  22314.4 
+Optimisation           :  mrds (nlminb) 
+
+Detection function:
+ Half-normal key function 
+
+Detection function parameters 
+Scale coefficient(s): 
+            estimate         se
+(Intercept) 5.828703 0.02685781
+
+           Estimate         SE         CV
+Average p 0.5845871 0.01247826 0.02134542
+
+
+Summary for io object
+Total AIC value :  25325.86 
+
+                        Estimate          SE         CV
+Average p              0.5777249  0.01239167 0.02144909
+N in covered region 3011.8139214 79.84149372 0.02650944</code></pre>
+</div>
+</div>
+<p>Which of these models do you prefer?</p>
+<p>If you have time, try a few models with covariates. However, this is a large dataset and so fitting models and obtaining model summaries can take a long time with complicated models. Given this and the fact that the exercise is just for practice, you may want to work with just a subset of the data – which is where the <code>fold</code> column in the dataset comes in. With this column, each observation is associated with a number from 1 to 10 (they are assigned systematically in order of the data, so the first observation is given number 1, the second 2, …, the 10th 10, the 11th 1 again, the 12th 2, etc). So, for example, you could pick out just the first and fifth ``fold’’ (i.e., just one fifth of the data) with</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a>crabseal15 <span class="ot">&lt;-</span> crabseal[crabseal<span class="sc">$</span>fold <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">5</span>), ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>and then use this to investigate covariate selection - for example comparing point independence models where the mr model has just distance in it vs one with distance and observer:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>pi.mr.dist.ds.hn.fold15 <span class="ot">&lt;-</span> <span class="fu">ddf</span>(<span class="at">method=</span><span class="st">"io"</span>, <span class="at">dsmodel=</span><span class="sc">~</span><span class="fu">cds</span>(<span class="at">key=</span><span class="st">"hn"</span>),</span>
+<span id="cb32-2"><a href="#cb32-2"></a>                 <span class="at">mrmodel=</span><span class="sc">~</span><span class="fu">glm</span>(<span class="at">link=</span><span class="st">"logit"</span>, <span class="at">formula=</span><span class="sc">~</span>distance),</span>
+<span id="cb32-3"><a href="#cb32-3"></a>                 <span class="at">data=</span>crabseal15, <span class="at">meta.data=</span><span class="fu">list</span>(<span class="at">width=</span><span class="dv">700</span>))</span>
+<span id="cb32-4"><a href="#cb32-4"></a>pi.mr.dist.observer.ds.hn.fold15 <span class="ot">&lt;-</span> <span class="fu">ddf</span>(<span class="at">method=</span><span class="st">"io"</span>, <span class="at">dsmodel=</span><span class="sc">~</span><span class="fu">cds</span>(<span class="at">key=</span><span class="st">"hn"</span>),</span>
+<span id="cb32-5"><a href="#cb32-5"></a>                 <span class="at">mrmodel=</span><span class="sc">~</span><span class="fu">glm</span>(<span class="at">link=</span><span class="st">"logit"</span>, <span class="at">formula=</span><span class="sc">~</span>distance<span class="sc">+</span>observer),</span>
+<span id="cb32-6"><a href="#cb32-6"></a>                 <span class="at">data=</span>crabseal15, <span class="at">meta.data=</span><span class="fu">list</span>(<span class="at">width=</span><span class="dv">700</span>))</span>
+<span id="cb32-7"><a href="#cb32-7"></a><span class="fu">AIC</span>(pi.mr.dist.ds.hn.fold15, pi.mr.dist.observer.ds.hn.fold15)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                                 df      AIC
+pi.mr.dist.ds.hn.fold15           3 5068.746
+pi.mr.dist.observer.ds.hn.fold15  4 5065.830</code></pre>
+</div>
+</div>
+<section id="estimating-abundance-1" class="level4">
+<h4 class="anchored" data-anchor-id="estimating-abundance-1">Estimating abundance</h4>
+<p>Following model criticism and selection, the abundance can be estimated – below we use the simple point independence model on the full dataset. The estimates of abundance for the study area are arbitrary because inference of the study was restricted to the covered region, hence, the estimates of abundance here are artificial. Nevertheless, we illustrate the method to estimate abundance. We require tables of the region, transects and detections – these can easily be created from the data using the <code>checkdata</code> function in the <code>Distance</code> package (the <code>:::</code> is shorthand for accessing a function without loading a package). Using these tables, Horvitz-Thompson-like<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> estimators can be applied to produce estimates of <span class="math inline">\(\hat{N}\)</span>. The use of <code>convert.units=0.001</code> adjusts the units of perpendicular distance measurement (m) to units of transect effort (km).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="co"># Create tables for estimating abundance </span></span>
+<span id="cb34-2"><a href="#cb34-2"></a><span class="co"># Selecting observer==1 ensures that observations in the obs.table are unique </span></span>
+<span id="cb34-3"><a href="#cb34-3"></a>tables <span class="ot">&lt;-</span> Distance<span class="sc">:::</span><span class="fu">checkdata</span>(crabseal[crabseal<span class="sc">$</span>observer<span class="sc">==</span><span class="dv">1</span>, ])</span>
+<span id="cb34-4"><a href="#cb34-4"></a></span>
+<span id="cb34-5"><a href="#cb34-5"></a><span class="co"># Estimate abundance in covered region</span></span>
+<span id="cb34-6"><a href="#cb34-6"></a>pi.abund <span class="ot">&lt;-</span> <span class="fu">dht</span>(<span class="at">model=</span>pi.mr.dist.ds.hn,</span>
+<span id="cb34-7"><a href="#cb34-7"></a>                <span class="at">region=</span>tables<span class="sc">$</span>region.table, </span>
+<span id="cb34-8"><a href="#cb34-8"></a>                <span class="at">sample=</span>tables<span class="sc">$</span>sample.table, <span class="at">obs=</span>tables<span class="sc">$</span>obs.table,</span>
+<span id="cb34-9"><a href="#cb34-9"></a>                <span class="at">se=</span><span class="cn">TRUE</span>, <span class="at">options=</span><span class="fu">list</span>(<span class="at">convert.units=</span><span class="fl">0.001</span>))</span>
+<span id="cb34-10"><a href="#cb34-10"></a></span>
+<span id="cb34-11"><a href="#cb34-11"></a><span class="co"># Pretty tables of data summary</span></span>
+<span id="cb34-12"><a href="#cb34-12"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(pi.abund<span class="sc">$</span>individuals<span class="sc">$</span>summary, <span class="at">digits=</span><span class="dv">3</span>,</span>
+<span id="cb34-13"><a href="#cb34-13"></a>      <span class="at">caption=</span><span class="st">"Summary information from crabeater seal aerial survey."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<caption>Summary information from crabeater seal aerial survey.</caption>
+<colgroup>
+<col style="width: 8%">
+<col style="width: 7%">
+<col style="width: 15%">
+<col style="width: 10%">
+<col style="width: 6%">
+<col style="width: 5%">
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 12%">
+<col style="width: 10%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Region</th>
+<th style="text-align: right;">Area</th>
+<th style="text-align: right;">CoveredArea</th>
+<th style="text-align: right;">Effort</th>
+<th style="text-align: right;">n</th>
+<th style="text-align: right;">k</th>
+<th style="text-align: right;">ER</th>
+<th style="text-align: right;">se.ER</th>
+<th style="text-align: right;">cv.ER</th>
+<th style="text-align: right;">mean.size</th>
+<th style="text-align: right;">se.mean</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">1e+06</td>
+<td style="text-align: right;">8594.082</td>
+<td style="text-align: right;">6138.63</td>
+<td style="text-align: right;">2053</td>
+<td style="text-align: right;">118</td>
+<td style="text-align: right;">0.334</td>
+<td style="text-align: right;">0.033</td>
+<td style="text-align: right;">0.097</td>
+<td style="text-align: right;">1.18</td>
+<td style="text-align: right;">0.013</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="co"># Pretty tables of estimates of individual abundance</span></span>
+<span id="cb35-2"><a href="#cb35-2"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(pi.abund<span class="sc">$</span>individual<span class="sc">$</span>N, <span class="at">digits=</span><span class="dv">3</span>,</span>
+<span id="cb35-3"><a href="#cb35-3"></a>      <span class="at">caption=</span><span class="st">"Crabeater seal abundance estimates for study area of arbitrary size."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<caption>Crabeater seal abundance estimates for study area of arbitrary size.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Label</th>
+<th style="text-align: right;">Estimate</th>
+<th style="text-align: right;">se</th>
+<th style="text-align: right;">cv</th>
+<th style="text-align: right;">lcl</th>
+<th style="text-align: right;">ucl</th>
+<th style="text-align: right;">df</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Total</td>
+<td style="text-align: right;">413493.2</td>
+<td style="text-align: right;">41201.47</td>
+<td style="text-align: right;">0.1</td>
+<td style="text-align: right;">339670.9</td>
+<td style="text-align: right;">503359.5</td>
+<td style="text-align: right;">128.625</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="crabeater-seals-with-mcds-optional" class="level3">
+<h3 class="anchored" data-anchor-id="crabeater-seals-with-mcds-optional">Crabeater seals with MCDS (optional)</h3>
+<p>We can also analyse the crabeater seals data as if it were single platform data (i.e.&nbsp;ignoring that <span class="math inline">\(p(0)\)</span> is less than 1). These data are available in <code>crabbieMCDS.csv</code>.</p>
+<p>This short exercise guides you through the import of these data into R and fits a simple half-normal detection function examining the possible improvement of the model by incorporating <em>side of plane</em> and <em>visibility</em> covariates (using the full dataset).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a><span class="co"># Load Distance for MCDS </span></span>
+<span id="cb36-2"><a href="#cb36-2"></a><span class="fu">library</span>(Distance)</span>
+<span id="cb36-3"><a href="#cb36-3"></a><span class="co"># Read in data</span></span>
+<span id="cb36-4"><a href="#cb36-4"></a>crab.covar <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"crabbieMCDS.csv"</span>)</span>
+<span id="cb36-5"><a href="#cb36-5"></a><span class="co"># Check data imported OK</span></span>
+<span id="cb36-6"><a href="#cb36-6"></a><span class="fu">head</span>(crab.covar, <span class="at">n=</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    Study.area Region.Label    Area Sample.Label Effort distance size side
+1 Nominal_area            1 1000000        99A21  59.72   144.49    1    R
+2 Nominal_area            1 1000000        99A21  59.72   125.16    1    L
+3 Nominal_area            1 1000000        99A21  59.72   421.40    1    L
+    exp fatigue gscat vis glare ssmi altitude obsname fold
+1   0.0   61.90     1   G     N   79 43.05763      YH    1
+2 211.7   62.61     1   G     N   79 43.05763      MF    2
+3   0.0   62.86     1   G     N   79 43.05763      MH    3</code></pre>
+</div>
+</div>
+<p>After checking that the data have been read into <code>R</code> appropriately, we are ready to fit a detection function.</p>
+<p>As before, <em>side of plane</em> and <em>visibility</em> are assigned characters and so we need to tell R to treat them as factors.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a><span class="co"># Define factor variables</span></span>
+<span id="cb38-2"><a href="#cb38-2"></a>crab.covar<span class="sc">$</span>side <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(crab.covar<span class="sc">$</span>side)</span>
+<span id="cb38-3"><a href="#cb38-3"></a>crab.covar<span class="sc">$</span>vis <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(crab.covar<span class="sc">$</span>vis)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>With two potential explanatory variables, there are a number of possible models. We start by fitting a detection function with <em>side of plane</em> as a covariate using a half-normal key function.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a><span class="co"># Fit HN key function with side of plane</span></span>
+<span id="cb39-2"><a href="#cb39-2"></a>ds.side <span class="ot">&lt;-</span> <span class="fu">ds</span>(crab.covar, <span class="at">key=</span><span class="st">"hn"</span>, <span class="at">formula=</span><span class="sc">~</span>side, <span class="at">truncation=</span><span class="dv">700</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Model contains covariate term(s): no adjustment terms will be included.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fitting half-normal key function</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>AIC= 22304.742</code></pre>
+</div>
+</div>
+<p>We would now like to assess the fit of this function to our data. Two visual assessments are provided by the panels below: histogram and fitted function on the left and Q-Q plot on the right.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a><span class="co"># Divide plot region</span></span>
+<span id="cb43-2"><a href="#cb43-2"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span>
+<span id="cb43-3"><a href="#cb43-3"></a><span class="co"># Create a title for the plot</span></span>
+<span id="cb43-4"><a href="#cb43-4"></a>plot.title <span class="ot">&lt;-</span> <span class="st">"Two sets of points</span><span class="sc">\n</span><span class="st">one for each 'side' of plane"</span></span>
+<span id="cb43-5"><a href="#cb43-5"></a><span class="co"># Plot model</span></span>
+<span id="cb43-6"><a href="#cb43-6"></a><span class="fu">plot</span>(ds.side, <span class="at">pch=</span><span class="dv">19</span>, <span class="at">cex=</span><span class="fl">0.5</span>, <span class="at">main=</span>plot.title)</span>
+<span id="cb43-7"><a href="#cb43-7"></a><span class="co"># Plot qq plot</span></span>
+<span id="cb43-8"><a href="#cb43-8"></a>gof.result <span class="ot">&lt;-</span> <span class="fu">gof_ds</span>(ds.side, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">lty =</span> <span class="dv">1</span>, <span class="at">pch =</span> <span class="st">"."</span>, <span class="at">cex =</span> <span class="fl">0.5</span>)</span>
+<span id="cb43-9"><a href="#cb43-9"></a><span class="co"># Extract gof statistics</span></span>
+<span id="cb43-10"><a href="#cb43-10"></a>message <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="st">"CVM GOF p-value="</span>, <span class="fu">round</span>(gof.result<span class="sc">$</span>dsgof<span class="sc">$</span>CvM<span class="sc">$</span>p, <span class="dv">4</span>))</span>
+<span id="cb43-11"><a href="#cb43-11"></a><span class="co"># Add gof stats to plot</span></span>
+<span id="cb43-12"><a href="#cb43-12"></a><span class="fu">text</span>(<span class="fl">0.6</span>, <span class="fl">0.2</span>, message, <span class="at">cex=</span><span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Pr11-instructions-R_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Histogram and fitted half-normal detection function on left. Q-Q plot of detection function and data on right.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The code below fits the model without any covariates.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a><span class="co"># Fit HN key function with no covars and no adjustments</span></span>
+<span id="cb44-2"><a href="#cb44-2"></a>ds.nocov <span class="ot">&lt;-</span> <span class="fu">ds</span>(crab.covar, <span class="at">key=</span><span class="st">"hn"</span>, <span class="at">adjustment=</span><span class="cn">NULL</span>, <span class="at">truncation=</span><span class="dv">700</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fitting half-normal key function</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>AIC= 22314.398</code></pre>
+</div>
+</div>
+<p>AIC score for model without covariates is 22314.4 and AIC score for model with <em>side</em> as a covariate is 22304.74 so the model with <em>side</em> as a covariate is preferred.</p>
+<p>We could also fit further detection functions and contrast the resulting models:</p>
+<ul>
+<li>with <em>visibility</em> only</li>
+<li>with <em>side of plane</em> and <em>visibility</em> (excluding an interaction).</li>
+</ul>
+<p>Out of the four possible models which is to be preferred?</p>
+<p>Further modelling is possible. For example, we typically allow adjustment terms in CDS analyses (i.e., where there are not covariates), and it is also possible to include adjustment terms in MCDS analyses. Below is a model with half-normal key and AIC-based selection of cosine adjustments. How does the AIC of this model compare with those fitted previously?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a><span class="co"># Fit HN key function with no covars and no adjustments</span></span>
+<span id="cb47-2"><a href="#cb47-2"></a>ds.nocov.hncos <span class="ot">&lt;-</span> <span class="fu">ds</span>(crab.covar, <span class="at">key=</span><span class="st">"hn"</span>, <span class="at">adjustment=</span><span class="st">"cos"</span>, <span class="at">truncation=</span><span class="dv">700</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Starting AIC adjustment term selection.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fitting half-normal key function</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>AIC= 22314.398</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fitting half-normal key function with cosine(2) adjustments</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>AIC= 22308.645</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fitting half-normal key function with cosine(2,3) adjustments</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>AIC= 22304.015</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Fitting half-normal key function with cosine(2,3,4) adjustments</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>AIC= 22305.943</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Half-normal key function with cosine(2,3) adjustments selected.</code></pre>
+</div>
+</div>
+<p>We could go on to produce abundance estimates from our preferred model using the <code>dht</code> function if we had provided information about the size of the crabeater seal study area.</p>
+<p>Rather than fitting an MRDS model, as above, would an MCDS analyses have been adequate?</p>
+</section>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<p>Borchers DL, Laake JL, Southwell C and Paxton CGM (2006) Accommodating unmodeled heterogeneity in double-observer distance sampling surveys. Biometrics 62: 371-378</p>
+<p>Laake JL, Borchers DL, Thomas L, Miller DL and Bishop JRB (2019) mrds: Mark-Recapture Distance Sampling. R package version 2.2.1.</p>
+<p>Southwell C, Borchers DL, Paxton CGM, Burt ML and de la Mare W (2007) Estimation of detection probability in aerial surveys of Antarctic pack-ice seals. Journal of Agricultural, Biological and Environmental Statistics 12:41-54</p>
+<p>Thomas L, Buckland ST, Rexstad EA, Laake JL, Strindberg S, Hedley SL, Bishop JRB, Marques TA, and Burnham KP (2010) Distance software: design and analysis of distance sampling surveys for estimating population size. Journal of Applied Ecology 47: 5-14. DOI: 10.1111/j.1365-2664.2009.01737.x</p>
+
+
+
+</section>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list">
+<div id="ref-Borchers2006" class="csl-entry" role="listitem">
+Borchers, D. L., Laake, J. L., Southwell, C., &amp; Paxton, C. G. M. (2006). Accommodating unmodeled heterogeneity in double-observer distance sampling surveys. <em>Biometrics</em>, <em>62</em>, 372–378. <a href="https://doi.org/10.1111/j.1541-0420.2005.00493.x">https://doi.org/10.1111/j.1541-0420.2005.00493.x</a>
+</div>
+<div id="ref-mrdspackage" class="csl-entry" role="listitem">
+Laake, J., Borchers, D., Thomas, L., Miller, D., Bishop, J., &amp; McArthur, J. (2023). <em>Mrds: Mark-recapture distance sampling</em>. Retrieved from <a href="https://CRAN.R-project.org/package=mrds">https://CRAN.R-project.org/package=mrds</a>
+</div>
+<div id="ref-Thomas2010" class="csl-entry" role="listitem">
+Thomas, L., Buckland, S. T., Rexstad, E. A., Laake, J. L., Strindberg, S., Hedley, S. L., … Burnham, K. P. (2010). Distance software: Design and analysis of distance sampling surveys for estimating population size. <em>Journal of Applied Ecology</em>, <em>47</em>, 5–14. <a href="https://doi.org/10.1111/j.1365-2664.2009.01737.x">https://doi.org/10.1111/j.1365-2664.2009.01737.x</a>
+</div>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p><span class="math inline">\(\hat{N} = \sum_{i=1}^n \frac{1}{\pi_i \hat{p}_i}\)</span> where <span class="math inline">\(n\)</span> is the number of observations, <span class="math inline">\(\pi_i\)</span> is the “coverage probability”, i.e., the probability the object is covered by a transect, and <span class="math inline">\(\hat{p}_i\)</span> is the estimated detection probability, i.e., the probability the object is detected given it is covered by a transect.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">Centre for Research into Ecological and Environmental Modelling</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">University of St Andrews</div>
+  </div>
+</footer>
+
+
+
+</body></html>
