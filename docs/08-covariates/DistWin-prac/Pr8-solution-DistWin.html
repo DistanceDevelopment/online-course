@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Introductory distance sampling training materials – pr8-solution-distwin</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://kit.fontawesome.com/78ddb093ea.js" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Introductory distance sampling training materials</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://distancesampling.org" rel="" target="">
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+ <span class="menu-text">Introduction</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../01-intro/introlanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fundamentals of distance sampling</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../01-intro/Mod1-2023-intro.pdf" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture slides</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://youtu.be/_4RX6P4PB4k" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture video</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../01-intro/introlanding.html#exercise-materials" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercise materials</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+ <span class="menu-text">Detection function modelling</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../02-detfns/detfnlanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fitting detection functions to line transect data</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+ <span class="menu-text">Model criticism</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../03-criticism/criticismlanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model criticism</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+ <span class="menu-text">Precision of density estimates</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../04-precision/precisionlanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Precision of density estimates</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+ <span class="menu-text">Point transect analysis</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../05-points/pointslanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Analysis of point transect data</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
+ <span class="menu-text">Design of distance sampling surveys</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../06-design/designlanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Design of distance sampling surveys</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false">
+ <span class="menu-text">Analysis of stratified designs</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../07-stratify/stratifylanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Analysis of stratified surveys</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false">
+ <span class="menu-text">Covariates in the detection functions</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../08-covariates/covariateslanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Including covariates in detection function modelling</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+
+<p><strong>Introduction to Distance Sampling</strong></p>
+<p><strong>Covariates in the detection function<br>
+Outline Solutions</strong></p>
+<ol type="1">
+<li><strong>Simulated whale data</strong></li>
+</ol>
+<p>An example of the sort of analysis you might have performed is given in the archived project file CovarWhaleSim-solutions.zip. If you sort by date created or analysis ID, you can see the order I set up the analyses in. I first tried simple half-normal and hazard rate models without covariates, and found that the half-normal model had a lower AIC. I then tried the MSTDO covariate and hour covariates separately (as non-factor covariates). The analysis with MSTDO had a much lower AIC, but the analysis with hour actually had a higher AIC than the analysis without covariates. I tried an analysis with both MSTDO and hour, but this had a higher AIC than MSTDO alone (Table 1). I concluded that the MSTDO covariate was important, but the hour covariate was not.</p>
+<p>Although these data did not appear to need any truncation, I briefly confirmed that the same results were obtained with 10% truncation (analyses 7 and 8). Further analyses could look at the effect of adding adjustment terms to the detection function, although since no adjustments were selected with the half-normal without covariates it is likely that none will be required when the MSTDO covariate is used.</p>
+<p>Table 1. AIC values for the candidate models.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Model</th>
+<th>No truncation</th>
+<th>10% truncation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>HZ: simple model</td>
+<td>125.32</td>
+<td>82.46</td>
+</tr>
+<tr class="even">
+<td>HN: simple model</td>
+<td>123.28</td>
+<td>80.80</td>
+</tr>
+<tr class="odd">
+<td>HN: with MSTDO</td>
+<td>111.21</td>
+<td>76.06</td>
+</tr>
+<tr class="even">
+<td>HN: with HOUR</td>
+<td>125.03</td>
+<td>82.15</td>
+</tr>
+<tr class="odd">
+<td>HN: with HOUR + MSTDO</td>
+<td>113.14</td>
+<td>78.02</td>
+</tr>
+</tbody>
+</table>
+<ol start="2" type="1">
+<li><strong>Analysis of golf tee data</strong></li>
+</ol>
+<p>With three covariates there are eight possible detection function models (including perpendicular distance only). The AIC from the CDS model was 311.1 and the lowest AIC I found was 304.3 which included sex as the only additional covariate. You may have found a different model. Table 2 is a summary of the results from the CDS analysis and an MCDS analysis with my best model. The component of variance due to the detection function fitted as a CDS was 64.3% and this reduced to 54.2% when sex was included in the detection function.</p>
+<p>As part of an exploratory data analysis it is useful to analyse the data as a CDS but post stratify using the factor variables and fit separate components of the model for each factor level (as long as there are enough observations). The esw’s for females (factor level = 0) and males (factor level = 1) are 1.61 metres (%CV=13.0) and 2.65 metres (%CV=10.3), respectively. The esw’s for the exposure levels 0 and 1 are 2.41 (13.2) and 2.31 (10.0). The differences between males and females appear to be much larger than the difference between exposure levels indicating that sex would be the more useful covariate to include in the model. Notice how the abundance estimate for the CDS post-stratified by sex and the MCDS including sex are very similar, but the CV is smaller for the latter.</p>
+<p>Table 2. Parameter estimates from CDS models and MCDS model which included sex only. CV’s are given in parentheses</p>
+<table class="table">
+<colgroup>
+<col style="width: 29%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 25%">
+<col style="width: 11%">
+<col style="width: 11%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Parameter</td>
+<td>True value</td>
+<td>CDS</td>
+<td>CDS post stratified by sex</td>
+<td></td>
+<td>MCDS</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td>Female (0)</td>
+<td>Male (1)</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>AIC</td>
+<td></td>
+<td>311.14</td>
+<td>69.7</td>
+<td>234.7</td>
+<td>304.3</td>
+</tr>
+<tr class="even">
+<td>esw (m)</td>
+<td></td>
+<td>2.34 (7.9)</td>
+<td>1.61 (13.0)</td>
+<td>2.65 (10.3)</td>
+<td>2.24 (6.4)</td>
+</tr>
+<tr class="odd">
+<td>Ds (clusters per m<sup>2</sup>)</td>
+<td>0.15</td>
+<td>0.13 (7.9)</td>
+<td>0.05 (21.3)</td>
+<td>0.08 (10.3)</td>
+<td>0.13 (11.0)</td>
+</tr>
+<tr class="even">
+<td>E[S]</td>
+<td>3.04</td>
+<td>3.01 (5.9)</td>
+<td>2.80 (13.7)</td>
+<td>3.13 (6.5)</td>
+<td>3.01 (5.9)</td>
+</tr>
+<tr class="odd">
+<td>D (tees per m<sup>2</sup>)</td>
+<td>0.45</td>
+<td>0.38 (9.9)</td>
+<td>0.14 (18.9)</td>
+<td>0.25 (12.2)</td>
+<td>0.40 (8.8)</td>
+</tr>
+<tr class="even">
+<td>N</td>
+<td>760</td>
+<td>638 (9.9)</td>
+<td>243 (18.9)</td>
+<td>421 (12.2)</td>
+<td>666 (8.8)</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td>664 (22.5)</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>3 Analysis of dolphin sightings data</strong></p>
+<p>To obtain an overall impression of the data it is useful to fit a detection function histogram with many intervals (you may have problems fitting to the maximum number of 30, but 25 intervals should be OK). The spikes in the histogram suggest that the data has been rounded to zero and possibly other values. The q-q plot also indicates problems with the model at zero distances. To mitigate these problems, use the Intervals tab in the Data Filter to pool the data into a few intervals – 10 to 15 intervals work OK.</p>
+<p>For the MCDS analysis, cluster size was fitted as a continuous variable, whereas, month, Beaufort, cue and search position were fitted as factor variables. Table 3 summarises the results. The number of adjustment terms allowed was limited to a maximum of two. In most cases a half normal function was chosen with either no, or one, adjustment term.</p>
+<p>Table 3. Parameter estimates for the different models. Percentage CVs are given in parentheses. Note that CVs for the model containing cluster size are obtained by bootstrapping.</p>
+<table class="table">
+<colgroup>
+<col style="width: 29%">
+<col style="width: 11%">
+<col style="width: 12%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 12%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Parameter</td>
+<td>CDS</td>
+<td>Cluster size</td>
+<td>Month</td>
+<td>Beaufort</td>
+<td>Cue</td>
+<td>Search</td>
+</tr>
+<tr class="even">
+<td>AIC</td>
+<td>3365.9</td>
+<td>3359.5</td>
+<td>3362.6</td>
+<td>3366.9</td>
+<td>3368.3</td>
+<td>3339.8</td>
+</tr>
+<tr class="odd">
+<td>esw (nm)</td>
+<td>3.00 (4.5)</td>
+<td>3.08 (1.9)</td>
+<td>3.00 (1.9)</td>
+<td>3.00 (1.9)</td>
+<td>3.00 (1.9)</td>
+<td>2.93 (2.3)</td>
+</tr>
+<tr class="even">
+<td>Ds (clusters per nm<sup>2</sup>)</td>
+<td>181 (4.5)</td>
+<td>177</td>
+<td>181 (1.9)</td>
+<td>181 (1.9)</td>
+<td>181 (1.9)</td>
+<td>185 (2.3)</td>
+</tr>
+<tr class="odd">
+<td>E[S]</td>
+<td>507 (5.3)</td>
+<td>460</td>
+<td>529 (5.3)</td>
+<td>507 (5.3)</td>
+<td>495 (5.3)</td>
+<td>589 (5.3)</td>
+</tr>
+<tr class="even">
+<td>D (animals per nm<sup>2</sup>)</td>
+<td>91965 (7.0)</td>
+<td>81454</td>
+<td>96009 (5.7)</td>
+<td>91921 (5.6)</td>
+<td>89729 (5.6)</td>
+<td>109420 (5.8)</td>
+</tr>
+</tbody>
+</table>
+<p>Based on the AIC, it seems as though the model including search method is best, however, there were warning messages about the detection function fitting and cluster size estimation. Before going on and looking at models which include two covariates, it is worth looking at the search model in more detail. The detection functions have very different scale parameters, for example, the detection function for search method 3 (using a helicopter) has a very wide shoulder and so the scale parameter is very large. This suggests that the observers were seeing everything out to 5 nm and so detection does not decrease with distance as it does with the other methods. One assumption of MCDS is that the perpendicular distance distributions of the covariate factor levels have the same shape. It may be worth refitting the model ignoring the observations made by the helicopter. Data can easily be selected/ignored using the Data filter | Data selection tab. The selection criteria will be of the form ‘[Search method] IN (0,2,5)’</p>
+<p><strong>4 Hawaiian Passerines</strong></p>
+<p>We provide no sample solution to these data; consult the Marques et al. (2007) reprint.</p>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">Centre for Research into Ecological and Environmental Modelling</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">University of St Andrews</div>
+  </div>
+</footer>
+
+
+
+</body></html>

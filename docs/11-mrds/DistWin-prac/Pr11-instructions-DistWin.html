@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Introductory distance sampling training materials – pr11-instructions-distwin</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://kit.fontawesome.com/78ddb093ea.js" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Introductory distance sampling training materials</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://distancesampling.org" rel="" target="">
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+ <span class="menu-text">Introduction</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../01-intro/introlanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fundamentals of distance sampling</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../01-intro/Mod1-2023-intro.pdf" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture slides</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://youtu.be/_4RX6P4PB4k" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture video</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../01-intro/introlanding.html#exercise-materials" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercise materials</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+ <span class="menu-text">Detection function modelling</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../02-detfns/detfnlanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fitting detection functions to line transect data</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+ <span class="menu-text">Model criticism</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../03-criticism/criticismlanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model criticism</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+ <span class="menu-text">Precision of density estimates</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../04-precision/precisionlanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Precision of density estimates</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+ <span class="menu-text">Point transect analysis</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../05-points/pointslanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Analysis of point transect data</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
+ <span class="menu-text">Design of distance sampling surveys</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../06-design/designlanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Design of distance sampling surveys</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false">
+ <span class="menu-text">Analysis of stratified designs</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../07-stratify/stratifylanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Analysis of stratified surveys</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false">
+ <span class="menu-text">Covariates in the detection functions</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../08-covariates/covariateslanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Including covariates in detection function modelling</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#golf-tee-survey-initial-analysis-during-class-on-day-1" id="toc-golf-tee-survey-initial-analysis-during-class-on-day-1" class="nav-link active" data-scroll-target="#golf-tee-survey-initial-analysis-during-class-on-day-1">Golf Tee Survey – Initial analysis during class on Day 1</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
+  <li><a href="#the-golf-tee-data-and-distance-project" id="toc-the-golf-tee-data-and-distance-project" class="nav-link" data-scroll-target="#the-golf-tee-data-and-distance-project"><u>The Golf Tee Data and Distance Project</u></a></li>
+  <li><a href="#golf-tee-survey-analyses" id="toc-golf-tee-survey-analyses" class="nav-link" data-scroll-target="#golf-tee-survey-analyses"><u>Golf Tee Survey Analyses</u></a></li>
+  <li><a href="#golf-tee-survey-further-exploration-after-class-on-day-1" id="toc-golf-tee-survey-further-exploration-after-class-on-day-1" class="nav-link" data-scroll-target="#golf-tee-survey-further-exploration-after-class-on-day-1">Golf Tee Survey – Further exploration after class on Day 1</a></li>
+  <li><a href="#golf-tee-survey-analyses-continued" id="toc-golf-tee-survey-analyses-continued" class="nav-link" data-scroll-target="#golf-tee-survey-analyses-continued"><u>Golf Tee Survey Analyses (continued)</u></a></li>
+  <li><a href="#crabeater-seal-survey-for-you-to-work-on-after-class-on-day-1-before-the-next-class" id="toc-crabeater-seal-survey-for-you-to-work-on-after-class-on-day-1-before-the-next-class" class="nav-link" data-scroll-target="#crabeater-seal-survey-for-you-to-work-on-after-class-on-day-1-before-the-next-class">Crabeater Seal Survey – For you to work on after class on Day 1, before the next class</a></li>
+  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1"></a></li>
+  <li><a href="#the-crabeater-seal-data-and-distance-project" id="toc-the-crabeater-seal-data-and-distance-project" class="nav-link" data-scroll-target="#the-crabeater-seal-data-and-distance-project"><u>The Crabeater Seal Data and Distance Project</u></a></li>
+  <li><a href="#the-crabeater-seal-analyses" id="toc-the-crabeater-seal-analyses" class="nav-link" data-scroll-target="#the-crabeater-seal-analyses"><u>The Crabeater Seal Analyses</u></a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+
+<p>This version of the practical is for those who would like to conduct the analysis in Distance (Thomas <em>et al</em>. 2010). There is a separate version for conducting the analysis in R.</p>
+<p>The first part of this practical involves initial analysis of a survey of a known number of golf tees. This is intended mainly to familiarise you with the analysis features in Distance. We will do this during a short in-class break on the first day of class.</p>
+<p>The second part of the practical involves more detailed analysis of the golf tee data, and an exploration of the double-platform data structure and project setup. We’ll do this after the first day of class and before the second.</p>
+<p>The third part of the practical involves analysis of the pack-ice seal survey data of Borchers <em>et al</em>. (2006) and Southwell <em>et al</em>. (2007). We’ll do this after the first day of class and before the second.</p>
+<section id="golf-tee-survey-initial-analysis-during-class-on-day-1" class="level1">
+<h1>Golf Tee Survey – Initial analysis during class on Day 1</h1>
+</section>
+<section id="section" class="level1">
+<h1></h1>
+</section>
+<section id="the-golf-tee-data-and-distance-project" class="level1">
+<h1><u>The Golf Tee Data and Distance Project</u></h1>
+<p>The data come from a survey of clusters of golf tees in grass, conducted by 3<sup>rd</sup> and 4<sup>th</sup> year statistics students at the University of St Andrews. For the purposes of this exercise, we will assume that all the data were collected on one 210 metre long transect line out to a width of 4 metres (both sides), and that this comprises the study region. There were 250 clusters of tees in the study region and 760 individual tees in total.</p>
+<p>The population was independently surveyed by two observer teams. The following data were recorded for each detected group: perpendicular distance, cluster size, observer (team 1 or 2), “sex” (males are yellow, females green and golf tees occur in single-sex clusters), and “exposure”. Exposure was a subjective judgement of whether the cluster was substantially obscured by grass (exposure=0) or not (exposure=1). The lengths of grass varied along the transect line, and the grass was also slightly more yellow along one part of the line compared with the rest.</p>
+<p>The data are stored in the distance project <strong>GolfteesExercise.zip</strong>. Open the project within Distance, and click on the <strong>Analyses</strong> tab. Two Analyses have been set up for you:</p>
+<ol type="1">
+<li><p>“FI – MR dist” is a model with only perpendicular distance as a covariate in the mark recapture detection function model.</p></li>
+<li><p>“FI – MR dist + size + sex + exp” is a model with distance, cluster size, sex and exposure as covariates in the mark recapture detection function model.</p></li>
+</ol>
+<p>Have a look at the <strong>Properties</strong> of the <strong>Model Definition</strong> for each of these models, and familiarize yourself with the contents of each tab.</p>
+<ul>
+<li><p>Both specify trial configuration (see the Method button in the Detection Function tab) – team 2 setting up trials for team 1. That’s the configuration we’ll use throughout this exercise, but for this dataset an independent observer configuration would also be fine and you’re welcome to explore that yourself.</p></li>
+<li><p>Both are full independence models (we’ll try point independence models later in the exercise).</p></li>
+<li><p>The difference between the two is that they have different MR (mark recapture) models – see the MR Model button in the Detection Function tab. Notice that the names used in the model formulae are not the same as the field names in the Data tab – for example the “Perp distance” field is called “distance” in the formulae. (Recall from the lecture that some fields get renamed when the data are sent out to R for analysis. You can find out what renaming has been done in the Log tab once you’ve run an analysis – we’ll do this in a second.)</p></li>
+</ul>
+</section>
+<section id="golf-tee-survey-analyses" class="level1">
+<h1><u>Golf Tee Survey Analyses</u></h1>
+<ol type="1">
+<li><strong>Estimation of <em>p</em>: distance only</strong></li>
+</ol>
+<blockquote class="blockquote">
+<p>Run the “FI - MR dist” analysis. Once it is run, look in the <strong>Analysis Details Log</strong> tab, and find the part of the log where Distance tells you how it has renamed the fields. It’s useful to know where this is in case you need reminding of what names to use when specifying formulae. Now look in the <strong>Results</strong> tab. Does the fit of the model look good?</p>
+<p>Here’s what the plots are:</p>
+</blockquote>
+<ol type="1">
+<li><p>The plots on the pages headed “Summary 1” and “Summary 2” show the histograms of distances for detections by either, or both, observer. The shaded regions show the number for observer 1 and observer 2, respectively.</p></li>
+<li><p>The plot on the page ‘Summary 3’ shows the histograms of distances for duplicates (detected by both observers).</p></li>
+<li><p>The plot on page headed ‘Summary 4’ shows the histograms of distances for observer 2. The shaded regions indicate the number of duplicates – for example, the shaded region is the number of clusters in each distance bin that were detected by Observer 1 given that they were also detected by Observer 2 (the “|” symbol in the plot legend means “given that”). [Note that if an ‘io’ configuration had been chosen, there would also be a plot showing the duplicates overlaid onto distances detected by Observer 1; in a ‘trial’ configuration we are only interested in Observer 2 setting up trials.]</p></li>
+<li><p>Q-Q plot – this has exactly the same interpretation as a Q-Q plot in single platform analyses.</p></li>
+<li><p>The plot on the page headed “Detection probability 1” shows a histogram of Observer 1 detections with the estimated Observer 1 detection function overlaid on it. The dots show the estimated detection probability for all Observer 1 detections.</p></li>
+<li><p>The plot on the page headed “Detection probability 2” shows the proportion of Obs 2’s detections that were detected by Obs 1 (also see the “Summary” page). The fitted line is the estimated detection function for Obs 1 (given detection by Obs 2). Dots are estimated detection probabilities for each Obs 1 detection.</p></li>
+</ol>
+<blockquote class="blockquote">
+<p>Is there evidence of unmodelled heterogeneity? What do these results tell you about the estimates of p (average detection probability) and <em>p</em>(0) (detection probability at 0 distance)?</p>
+</blockquote>
+<ol start="2" type="1">
+<li><strong>Estimation of <em>p</em>: distance and other variables</strong></li>
+</ol>
+<blockquote class="blockquote">
+<p>Run “FI - MR dist+size+sex+exp”. Can you explain the differences between the estimates of p and the abundance estimates between the two models? Which model would you use to estimate abundance? To decide, look at the goodness-of-fit test and AIC values from each model.</p>
+<p>You’ve reached the end of the things we hope to achieve in our short in-class break! Don’t worry if you didn’t get this far during the class – feel free to pick things up after class, before moving on to parts II and III. If you did reach the end, and have time to spare, feel free to continue on with further analyses (see part II).</p>
+</blockquote>
+</section>
+<section id="golf-tee-survey-further-exploration-after-class-on-day-1" class="level1">
+<h1>Golf Tee Survey – Further exploration after class on Day 1</h1>
+</section>
+<section id="golf-tee-survey-analyses-continued" class="level1">
+<h1><u>Golf Tee Survey Analyses (continued)</u></h1>
+<ol start="3" type="1">
+<li><strong>Specifying new models</strong></li>
+</ol>
+<blockquote class="blockquote">
+<p>The size covariate is the least significant of the covariates in the model “FI – MR dist + size + sex + exp” – its estimate is 0.078 with SE 0.183. So try creating a new model definition and analysis without this covariate. Does it have a lower AIC?</p>
+<p>You can also try some models with interaction terms. For example, you would specify the interaction between sex and exposure as “sex:exposure”. If you also want both sex and exposure in as main effects (which you usually do) then the notation “sex*exposure” is shorthand for “sex + exposure + sex:exposure”. Don’t try too many of these models – leave time for the next part!</p>
+</blockquote>
+<ol start="4" type="1">
+<li><strong>Point independence</strong></li>
+</ol>
+<blockquote class="blockquote">
+<p>All the models we have tried so far assume full independence – i.e. that the detections are independent between platforms at all distances. A less restrictive assumption is point independence – that the detections are only independent on the line.</p>
+<p>Let’s start by seeing if a simple point independence model is better than a simple full independence one. Set up a new Analysis and Model Definition, and under Detection Function | Method, choose Trial, Point independence. For the MR (mark-recapture) model, specify distance as the only covariate. You now also need to specify a DS (distance sampling) model. Start with a half-normal key function and constant scale parameter (i.e.&nbsp;no covariates).</p>
+<p>Run this model, and compare it with the corresponding full independence model (i.e., the full independence model with the same MR model). Which has the lower AIC? Which has an estimate closer to the known true abundance?</p>
+<p>Now try a point independence model that has a MR model the same as the MR model from your full independence analyses. Which has the lower AIC and bias? Finally, try some models where you introduce covariates into the scale parameter of the DS model (for example, try sex as a covariate).</p>
+<p>What is your final best model? What is the estimate of <em>p</em> and <em>p(0)</em> for this model? Was all this modelling necessary in this instance, given the value of <em>p</em>(0)? How else could you have obtained a robust estimate of abundance?</p>
+</blockquote>
+<p><u>Golf Tee Survey Data exploration</u></p>
+<p>It’s worth having a look at how the data are stored for a double-observer project. Open the project, and click on the <strong>Data</strong> tab to see how the data are stored. Notice that each detected cluster appears twice in the observation layer – once for observer 1 and once for observer 2. There is a field “object” which gives a unique number to each cluster and another field “detected” which indicates whether the cluster was seen (=1) or missed (=0) by each observer. There are also fields for the other covariates: perpendicular distance, cluster size, sex and exposure. In general, covariates could also be stored in other data layers (e.g., stratum- or transect-level covariates such as habitat).</p>
+<p>Now click on the <strong>Survey</strong> tab and open the <strong>Survey details</strong> for “New survey”. Click on <strong>Properties</strong> to see the survey’s properties. Notice that the observer configuration is set to Double observer. We analysed these data assuming that Observer 2 was generating trials for Observer 1 but not <em>vice versa</em> – i.e., trial configuration, where Observer 1 is the primary and Observer 2 is the tracker. (As noted earlier, the data could also be analyzed in independent observer configuration – you are welcome to try this yourself!) Click on the <strong>Data fields</strong> tab, and notice that the Object, Observer and Detected roles are all filled by the appropriate fields – this is done by default when you are setting up a new project, if you tell Distance it is a double observer survey in the Setup Project Wizard.</p>
+</section>
+<section id="crabeater-seal-survey-for-you-to-work-on-after-class-on-day-1-before-the-next-class" class="level1">
+<h1>Crabeater Seal Survey – For you to work on after class on Day 1, before the next class</h1>
+</section>
+<section id="section-1" class="level1">
+<h1></h1>
+</section>
+<section id="the-crabeater-seal-data-and-distance-project" class="level1">
+<h1><u>The Crabeater Seal Data and Distance Project</u></h1>
+<p>These data come from a helicopter survey of crabeater seals within pack-ice in the Antarctic conducted by the Australian Antarctic Division as part of their pack-ice seals program. The helicopter can only operate within a relatively short distance from the icebreaker, which acts as its base, and the ice-breaker can only go where the pack-ice is thin enough, the aerial transects cannot be randomly located. This means that design-based abundance estimation was not a valid option – abundance was estimated using density surface modelling. In this exercise, we concentrate on detection function estimation.</p>
+<p>The data are stored in two distance projects: <strong>CrabbieMCDSExercise</strong> and <strong>CrabbieMRDSExercise</strong>. The first contains a multiple-covariate distances analysis of the data (assuming <em>p</em>(0)=1); the second contains mark-recapture distance sampling analyses of the same data.</p>
+<p>In addition to distance and cluster size, the following explanatory variables are available for modelling detection probability:</p>
+<p>side: the side of the helicopter from which the seals were seen</p>
+<p>exp: the experience (in survey hours) of the observer</p>
+<p>fatigue: the number of minutes the observer has been on duty on the current flight</p>
+<p>gscat: group size category (1/2/≥3)</p>
+<p>vis: visibility category (poor/good/excellent)</p>
+<p>glare: Yes or No, depending on whether there was glare or not</p>
+<p>ssmi: a measure of ice cover</p>
+<p>altitude: the height of the aircraft in metres</p>
+<p>obsname: individual observer identifier</p>
+<p>The distance projects are set up as if the transects were random and survey area was 1,000,000 hectares. This is just a device to get Distance to produce an abundance estimate, which we can treat as a relative index of abundance.</p>
+</section>
+<section id="the-crabeater-seal-analyses" class="level1">
+<h1><u>The Crabeater Seal Analyses</u></h1>
+<p>The analyses described in Borchers <em>et al</em>. (2006) and Southwell <em>et al</em>. (2007) use the point independence method. Use the analyses in the two projects to decide whether:</p>
+<p>(a) an MCDS analysis would have been adequate (and if so, why), and</p>
+<p>(b) a full-independence MRDS analysis would have been adequate (and if so, why).</p>
+<p>The projects contain the following analyses (which have already been run, since running them takes a while):</p>
+<ol type="1">
+<li><p>MCDS like paper: MCDS model used for the MCDS component of the analysis in the papers. This one is in the CrabbieMCDSExercise project</p></li>
+<li><p>PI dist only: Point independence model using only distance. This and the subsequent ones are in the CrabbieMRDSExercise project.</p></li>
+<li><p>FI like paper: Full independence model using the MRDS model used in the papers.</p></li>
+<li><p>PI as in paper: Point independence model using the same MCDS model and MRDS model as used in the papers.</p></li>
+</ol>
+<p>If you have time, you might want to try other models and see if you can do better than the model “PI as in paper”. (However, see Tip2, below, for a timesaver.)</p>
+<p>Tip1: remember in Distance for Windows you queue up multiple models to run one after the other (by clicking the Run button while another analysis is already running – the new model will get added to the queue), so you could always set up a series of candidate models and let them run while you do something else!</p>
+<p>Tip2: Because the dataset is large, analyses with lots of covariates take a long time to run – and so the dataset is not very conducive to rapid learning. Hence we’ve set up a data filter that selects just 1 in 5 of the observations (it’s called “trunc 700 folds 1 and 5” – the folds 1 and 5 comes from the fact that there is a column “fold” in the dataset that divides the data into 10 equal subsets (“folds”), so we can select 1/5<sup>th</sup> of the data through the Data Selection tab of the Data Filter by selecting “fold IN (1, 5)”).<br>
+If you look in the analysis set “Folds 1 and 5” you’ll see that we’ve run the three models using this subset of the data. You might want to do your further covariate selection using this subset also, just to speed up the runs. Of course, you might well find a different model is selected by AIC compared to that in the paper, since you’re now only working with 1/5<sup>th</sup> of the data!</p>
+<p><strong>References</strong></p>
+<p>Borchers, D.L., Laake, J.L., Southwell, C. and Paxton, C.G.M. (2006) Accommodating unmodeled heterogeneity in double-observer distance sampling surveys. <em>Biometrics</em> <strong>62</strong>: 372-378.</p>
+<p>Southwell, C., Borchers, D.L., Paxton, C.G.M., Burt, M.L., de la Mare, W. (2007) Estimation of detection probability in aerial surveys of Antarctic pack-ice seals. <em>Journal of Agricultural, Biological &amp; Environmental Statistics</em> <strong>12</strong>: 41-54.</p>
+<p>Thomas, L., Buckland, S.T. Rexstad, E.A. Laake, J. L., Strindberg, S., Hedley, S.L., Bishop, J. R.B., Marques, T. A. and Burnham, K. P. (2010)&nbsp; Distance software: design and analysis of <a href="mk:@MSITStore:C:\Program%20Files%20(x86)\Distance%207\Help\Distance.chm::/gloss_distancesampling.htm"><u>distance sampling</u></a> surveys for estimating population size.&nbsp; Journal of Applied Ecology 47: 5-14.&nbsp; DOI: 10.1111/j.1365-2664.2009.01737.x</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">Centre for Research into Ecological and Environmental Modelling</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">University of St Andrews</div>
+  </div>
+</footer>
+
+
+
+</body></html>

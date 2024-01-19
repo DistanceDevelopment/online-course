@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Introductory distance sampling training materials – pr6-instructions-distwin</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://kit.fontawesome.com/78ddb093ea.js" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Introductory distance sampling training materials</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://distancesampling.org" rel="" target="">
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+ <span class="menu-text">Introduction</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../01-intro/introlanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fundamentals of distance sampling</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../01-intro/Mod1-2023-intro.pdf" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture slides</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://youtu.be/_4RX6P4PB4k" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture video</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../01-intro/introlanding.html#exercise-materials" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercise materials</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+ <span class="menu-text">Detection function modelling</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../02-detfns/detfnlanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fitting detection functions to line transect data</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+ <span class="menu-text">Model criticism</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../03-criticism/criticismlanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model criticism</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+ <span class="menu-text">Precision of density estimates</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../04-precision/precisionlanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Precision of density estimates</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+ <span class="menu-text">Point transect analysis</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../05-points/pointslanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Analysis of point transect data</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
+ <span class="menu-text">Design of distance sampling surveys</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../06-design/designlanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Design of distance sampling surveys</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false">
+ <span class="menu-text">Analysis of stratified designs</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../07-stratify/stratifylanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Analysis of stratified surveys</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false">
+ <span class="menu-text">Covariates in the detection functions</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../08-covariates/covariateslanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Including covariates in detection function modelling</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction-to-distance-sampling" id="toc-introduction-to-distance-sampling" class="nav-link active" data-scroll-target="#introduction-to-distance-sampling">Introduction to Distance Sampling</a></li>
+  <li><a href="#automated-survey-design-exercises" id="toc-automated-survey-design-exercises" class="nav-link" data-scroll-target="#automated-survey-design-exercises">Automated Survey Design Exercises</a>
+  <ul class="collapse">
+  <li><a href="#point-transect-survey-of-north-eastern-mexico" id="toc-point-transect-survey-of-north-eastern-mexico" class="nav-link" data-scroll-target="#point-transect-survey-of-north-eastern-mexico">1. Point transect survey of North-eastern Mexico</a>
+  <ul class="collapse">
+  <li><a href="#reviewing-the-data" id="toc-reviewing-the-data" class="nav-link" data-scroll-target="#reviewing-the-data">Reviewing the data</a></li>
+  <li><a href="#creating-a-new-design" id="toc-creating-a-new-design" class="nav-link" data-scroll-target="#creating-a-new-design">Creating a new design</a></li>
+  <li><a href="#automated-generation-of-new-surveys" id="toc-automated-generation-of-new-surveys" class="nav-link" data-scroll-target="#automated-generation-of-new-surveys">Automated generation of new surveys</a></li>
+  <li><a href="#design-statistics" id="toc-design-statistics" class="nav-link" data-scroll-target="#design-statistics">Design statistics</a></li>
+  <li><a href="#working-with-projected-raw-data" id="toc-working-with-projected-raw-data" class="nav-link" data-scroll-target="#working-with-projected-raw-data">Working with projected raw data</a></li>
+  </ul></li>
+  <li><a href="#entering-geographic-data-into-distance-and-generating-coverage-grids" id="toc-entering-geographic-data-into-distance-and-generating-coverage-grids" class="nav-link" data-scroll-target="#entering-geographic-data-into-distance-and-generating-coverage-grids">2. Entering geographic data into Distance, and generating Coverage grids</a>
+  <ul class="collapse">
+  <li><a href="#create-a-new-project-and-enter-data" id="toc-create-a-new-project-and-enter-data" class="nav-link" data-scroll-target="#create-a-new-project-and-enter-data">Create a new project and enter data</a></li>
+  <li><a href="#generate-a-coverage-grid-layer" id="toc-generate-a-coverage-grid-layer" class="nav-link" data-scroll-target="#generate-a-coverage-grid-layer">Generate a coverage grid layer</a></li>
+  <li><a href="#creating-a-new-design-1" id="toc-creating-a-new-design-1" class="nav-link" data-scroll-target="#creating-a-new-design-1">Creating a new design</a></li>
+  <li><a href="#design-statistics-1" id="toc-design-statistics-1" class="nav-link" data-scroll-target="#design-statistics-1">Design statistics</a></li>
+  <li><a href="#additional-investigations" id="toc-additional-investigations" class="nav-link" data-scroll-target="#additional-investigations">Additional investigations</a></li>
+  </ul></li>
+  <li><a href="#systematic-parallel-line-aerial-survey-of-marine-mammals-in-st-andrews-bay" id="toc-systematic-parallel-line-aerial-survey-of-marine-mammals-in-st-andrews-bay" class="nav-link" data-scroll-target="#systematic-parallel-line-aerial-survey-of-marine-mammals-in-st-andrews-bay">3. Systematic parallel line aerial survey of marine mammals in St Andrews bay</a>
+  <ul class="collapse">
+  <li><a href="#reviewing-the-data-1" id="toc-reviewing-the-data-1" class="nav-link" data-scroll-target="#reviewing-the-data-1">Reviewing the data</a></li>
+  <li><a href="#generate-a-coverage-grid-layer-1" id="toc-generate-a-coverage-grid-layer-1" class="nav-link" data-scroll-target="#generate-a-coverage-grid-layer-1">Generate a coverage grid layer</a></li>
+  <li><a href="#creating-a-new-design-2" id="toc-creating-a-new-design-2" class="nav-link" data-scroll-target="#creating-a-new-design-2">Creating a new design</a></li>
+  <li><a href="#design-statistics-2" id="toc-design-statistics-2" class="nav-link" data-scroll-target="#design-statistics-2">Design statistics</a></li>
+  <li><a href="#automated-generation-of-new-surveys-1" id="toc-automated-generation-of-new-surveys-1" class="nav-link" data-scroll-target="#automated-generation-of-new-surveys-1">Automated generation of new surveys</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+
+<section id="introduction-to-distance-sampling" class="level1">
+<h1>Introduction to Distance Sampling</h1>
+</section>
+<section id="automated-survey-design-exercises" class="level1">
+<h1>Automated Survey Design Exercises</h1>
+<section id="point-transect-survey-of-north-eastern-mexico" class="level2">
+<h2 class="anchored" data-anchor-id="point-transect-survey-of-north-eastern-mexico">1. Point transect survey of North-eastern Mexico</h2>
+<section id="reviewing-the-data" class="level3">
+<h3 class="anchored" data-anchor-id="reviewing-the-data">Reviewing the data</h3>
+<p>Extract and open the project <strong>MexicoUnPrj</strong> from the archive <strong>MexicoUnPrj.zip</strong>. This project contains data from 4 states in North-eastern Mexico. Let’s begin by reviewing the data. On the top menu-bar select <strong>File</strong>, <strong>Project Properties</strong>. The <strong>General</strong> tab gives you information about the location of the project file and its associated data folder (MexicoUnPrj.dat). The <strong>Geographic</strong> tab gives you information about the default geo-coordinate system of the geographic data, and the default map projection. The geo-coordinate system is used to locate the geographic data (which is stored in decimal degrees of latitude and longitude) on the earth’s surface. The projection is used to convert these data from the curved surface of the earth into a flat plane that can be used for displaying maps and designing surveys. The resulting projection has linear units, such as metres or kilometres. If you are planning a survey that will take place over a small geographic area, and you are inputting your data by hand, then you don’t need to worry about geo-coordinate systems or projections and can set both these options to [None]. In this example, however, the survey area is quite large and the projection chosen will make some difference to the results. Click <strong>Cancel</strong> to close the Project Properties window without saving any changes you have made.</p>
+<p>Click on the <strong>Data</strong> tab of the <strong>Project Browser</strong> to view the <strong>Data Explorer.</strong>. In the left-hand pane, under Data Layers, you can see that there are four layers in the project: “Mex”, “MexStrat”, “Grid1” and “Grid2”. You can tell the layer types by looking at the icons beside the names: Mex is a Global layer, MexStrat is a Stratum layer and Grid1 and Grid2 are Coverage layers. When you open a new project, the Global layer is selected by default, so the layer Mex is now selected. Click on the <strong>Data Layer Properties</strong> button on this tab (7th button from left) to find out more about this layer. The <strong>Layer Properties</strong> window opens, and under the <strong>Geographic data</strong> tab, you can see that the geographic data is stored in a shapefile called Mex.shp in the data folder, and that the shapes in this layer are Polygons (i.e.&nbsp;solid shapes). Click <strong>Cancel</strong> to return to the Data Explorer.</p>
+<p>In the right-hand pane of the Data Explorer, you can see its fields: ID, Label, Area and Shape. There is one record, with ID = 1. The Shape field holds the geographic information for that record. Because this layer holds polygons, the shape record has the word “Polygon” in it. Double click on this word to open the <strong>Shape Properties</strong> window. This is where you edit the geographic information inside Distance (an alternative is to edit the shapefile Mex.shp from outside of distance, using a GIS package such as ArcGIS). Click <strong>Cancel</strong> to return to the Data Explorer.</p>
+<p>The coverage layers Grid1 and Grid2 contain a grid of points that will be used for determining probability of coverage for our survey designs. If you click on “Grid 1” in the left-hand pane of the Data Explorer, its records open in the right-hand pane, and you can see that it has 177 records. A better way to look at the grid points is to view them in a map. Click on the <strong>Maps</strong> tab in the <strong>Project Browser</strong>. Click on the <strong>New Map</strong> button (3rd button along) to create a new map. Double-click on the words “New Map” to edit the name of the map, and call it “Grid 1”. To view the map, click the <strong>View Map</strong> button (5th button along), or double click on the map’s ID. A <strong>Map Window</strong> opens.</p>
+<p>The map starts life blank. You add layers to the map by clicking the <strong>Add Layer to Map</strong> button (7th button along). Click this button and select “Mex” from the list of layers. Then click the button <strong>Add Layer</strong> button again and select “Grid 1” from the list. Now you can see the grid points.</p>
+<p>You could also add the points from Grid 2 to the same map. If you do this, you will see that the grid points for Grid 2 are much closer together than those for Grid 1. (Grid 2 was generated with a spacing of 20 km, while for Grid 1 the spacing was 50km.) The points for Grid 2 obscure those from Grid 1 – you can change the order of the map layers by clicking on a the legend “Grid 2” in the left-hand pane of the map and holding the mouse button down while you drag it down to below “Grid 1”. Click the [X] button in the top right corner of the Map Window to close the map. (Say “Yes” if it asks you to save changes.)</p>
+<p>In the <strong>Data Explorer</strong>, click on the MexStrat layer to see those data. You can see that there are 4 strata. If you want to see where they are, you could create a new map in the <strong>Maps</strong> tab and add the MexStrat layer to the map. If there are layers on the new map that you don’t want, you can remove them with the <strong>Delete Selected Layer</strong> button in the <strong>Map</strong> window.</p>
+<p>When you’ve finished exploring the data, move on to create a new design.</p>
+</section>
+<section id="creating-a-new-design" class="level3">
+<h3 class="anchored" data-anchor-id="creating-a-new-design">Creating a new design</h3>
+<p>Click on the <strong>Designs</strong> tab of the <strong>Project Browser</strong>. To create a new design, click the <strong>New Design</strong> button (1st one after the word “Design:”). A new record appears in the left-hand pane, called “New Design”. Double click on the name, and edit it to call the new design “150 random points”. If you need more room, click and drag to the right the vertical splitter that divides the Designs window into two. Click the <strong>Show Details</strong> button (3rd one after the word “Design”) to open the <strong>Design Details</strong> window. Look under “Type of design” to see the sampler and design class; the default sampler is “Point” and the default design class is “Simple Random Sampling”. Click the <strong>Properties</strong> button to set the properties for this design. The <strong>Design Properties</strong> window opens. The options you see on the design properties tabs depend on the type of design. In this example, choose the following options:</p>
+<ul>
+<li><p>Under Stratum layer, choose the stratum layer “MexStrat”.</p></li>
+<li><p>Under Design coordinate system, make sure the box “Same coordinate system as stratum” is unchecked. The projection should say “Plate Carree” and the units “Metre”.</p></li>
+<li><p>In the <strong>Effort Allocation</strong> tab, under Edge Sampling select the “Plus” option. Uncheck the box “Same effort for all strata”. A list of the four strata in the MexStrat layer appears. Under “Allocation by stratum”, click the “Percentage from” radio button, and enter “150” as the number of points. In this example, we will put most of our effort into the two Baja strata (perhaps because this is where we think most of the animals of interest live). Under “Effort %” enter 10 for Sinaloa, 10 for Sonora, 40 for Baja Sur (south) and 40 for Baja Norte (north).</p></li>
+<li><p>In the <strong>Sampler</strong> tab, select Kilometre for the point sampler radius units. Let’s imagine we’re surveying for a very vocal species and that our truncation distance will be 5km, so we enter 5 under radius (for this example we’ll assume same sampler properties for all strata).</p></li>
+<li><p>Lastly, in the <strong>Coverage Probability</strong> tab, click on “Estimate by simulation” and enter 100 as the number of simulations. This is far too few for an accurate simulation, but will do for the purposes of demonstration. Under grid layer, choose “Grid 2”, which is the one with the grid points closer together.</p></li>
+</ul>
+<p>Now click OK to close the <strong>Design Properties</strong> window. The properties window closes and we are back with the design details.</p>
+</section>
+<section id="automated-generation-of-new-surveys" class="level3">
+<h3 class="anchored" data-anchor-id="automated-generation-of-new-surveys">Automated generation of new surveys</h3>
+<p>Click the <strong>Run</strong> button on the <strong>Design Details</strong> window. A window pops up offering you two choices: (1) Calculate coverage probability statistics, and (2) Generate a new Survey. Choose the second option, and give the new Survey a useful name like “150 points survey” and the new layer a name like “150 points”. Then click OK. A <strong>Survey Details</strong> window opens, and the status bar at the top of the Distance window says “Running Survey”. At this point you have to be patient while the survey runs. Distance is creating a set of randomly located survey points, based on the design. When it is finished, the <strong>Survey Details Results</strong> tab opens, and you can review some statistics about the new survey. Click the “Next &gt;” button to see a map of the points – you should be able to see that there are more in the Western strata (Baja) than the eastern. Click “Next&gt;” again to see a list of the points, with latitude and longitude for each. (You could, for example, use this to make a survey plan to take into the field. To copy this text to another file, press the “Copy current window” button, 4<sup>th</sup> from the left on the top toolbar. Then open, say, a Word document and click Paste to copy it there. You can also copy the map of points by displaying the map and pressing the copy button, or choosing the menu item Survey – Results | Copy Map to Clipboard)</p>
+<p>Click on [X] to close the <strong>Survey Details</strong> window, and click on the <strong>Surveys</strong> tab of the project browser. You can see that your new survey has been added there. If you select it and click the “Show Details” button (3rd from left after the word “Survey”) you get back to the <strong>Survey Details</strong> window <strong>Results</strong> tab. Click on the <strong>Inputs</strong> tab and then <strong>Properties …</strong> button. Under <strong>Data Layers</strong>, you can see that the new Sample data layer “150 points” has been entered as the lowest sample layer. Close the <strong>Survey Properties</strong> and <strong>Survey Details</strong> windows, and click on the <strong>Data</strong> tab of the <strong>Project Browser</strong>. You can see that the new sample data layer “150 points” has been added below the “MexStrat” data layer.</p>
+</section>
+<section id="design-statistics" class="level3">
+<h3 class="anchored" data-anchor-id="design-statistics">Design statistics</h3>
+<p>Go back to the <strong>Design Details</strong> window for your design, and click <strong>Run</strong> again. This time, choose the top option (Calculate probability of coverage statistics) and click OK. You have to wait while Distance generates multiple simulated surveys and uses these to work out the probability that each grid point will be covered by the survey. When it has finished, you can see the results in the <strong>Results</strong> tab, and a map of coverage probability by pressing the “Next &gt;” button. In theory, this design should produce an even probability of coverage within stratum. However, you can see that there is considerable variation. Why is this? What would happen if you repeated the run with more simulation runs (say 500, or 1000)? (Before you spend a lot of time running simulations with this project, read the next section.)</p>
+</section>
+<section id="working-with-projected-raw-data" class="level3">
+<h3 class="anchored" data-anchor-id="working-with-projected-raw-data">Working with projected raw data</h3>
+<p>There is a technical problem with the way the geographic data are stored in MexicoUnPrj. Each time you view a map or run a survey design, the data have to be projected from the latitude and longitude format in which they are stored using the projection you have specified (Plate Caree in this case). This takes some computer time, so if you’re doing lots of survey design work there’s a trick to make things more efficient. The trick involves projecting the raw data files.</p>
+<p>We used ArcGIS to project the shapefiles in MexicoUnPrj using the Plate Caree projection, and stored this new data in the project MexicoPrj. So rather than being stored in latitude and longitude, the data in MexicoPrj is stored in meters. Run a second instance of Distance, and then extract and open the project <strong>MexicoPrj</strong>. Look under the <strong>Project Properties</strong>, and you will see that the GeoCoordinate system and Projection are both set to [None], and that the units are meters. So, we’ve projected the raw data, and so long as we project all the data layers the same way we don’t need to tell Distance anything about the coordinate systems used.</p>
+<p>As a check that the data really are projected, go the Data Explorer and double-click on the global layer’s Polygon record. The first value is something like x= -12594701 y=3230255 – this gives the number of meters of that point on the polygon from some reference point on the earth. If you do the same thing in the MexicoUnPrj project, you’ll see that the first value is something like x=-113 y=29, which is the latitude and longitude of that point.</p>
+<p>If you’re going to do lots of experimenting with the Mexico data this evening, or at home, it’s better to use the MexicoPrj project, as you’ll find the probability of coverage simulations run quite a bit faster. Meanwhile, move on to the next exercise.</p>
+</section>
+</section>
+<section id="entering-geographic-data-into-distance-and-generating-coverage-grids" class="level2">
+<h2 class="anchored" data-anchor-id="entering-geographic-data-into-distance-and-generating-coverage-grids">2. Entering geographic data into Distance, and generating Coverage grids</h2>
+<p>The purpose of this exercise is to show you how to enter geographic data by hand into Distance, and how to generate Coverage grid layers.</p>
+<section id="create-a-new-project-and-enter-data" class="level3">
+<h3 class="anchored" data-anchor-id="create-a-new-project-and-enter-data">Create a new project and enter data</h3>
+<p>On the top menu-bar select <strong>File</strong>, <strong>New Project</strong> (or click the toolbar button). In the <strong>Create New Project</strong> dialog box give it the File Name “Trapezium” and then click on <strong>Create</strong>. The new project setup wizard starts up. Under “I want to”, select the option to “design a new survey”, and click <strong>Next</strong>. Then click <strong>Finish</strong>.</p>
+<p>The <strong>Project Browser</strong> will open up, showing the <strong>Data</strong> tab. Click on the menu <strong>File | Project properties</strong>, and look under the <strong>Geographic</strong> tab to confirm that there is no geographic coordinate system for this project (i.e.&nbsp;non-earth referenced), and that the default units are metres. Click <strong>OK</strong> to close the <strong>Project Properties</strong> window.</p>
+<p>In the <strong>Data</strong> tab of the <strong>Project Browser</strong>, you can see that Distance has created a global data layer called Study Area, with default fields ID, Label and Shape. Double click on the word “Polygon” to open the <strong>Shape Properties</strong> window to edit the new survey region. Click on the <strong>Insert Point</strong> button 4 times and fill in the following (X,Y) coordinates: (0,0), (0,100), (120,20) and (120,0). Click <strong>OK</strong> to return to the Data Explorer.</p>
+</section>
+<section id="generate-a-coverage-grid-layer" class="level3">
+<h3 class="anchored" data-anchor-id="generate-a-coverage-grid-layer">Generate a coverage grid layer</h3>
+<p>To generate a coverage grid layer click on the <strong>Create New Data Layer</strong> button (5<sup>th</sup> from left) in the <strong>Data</strong> tab of the <strong>Project Browser</strong>. Enter “TrapGrid” as your Layer Name and set the Parent Layer to “Study Area” and the Layer Type to “Coverage”. You should now be able to click on the <strong>Properties…</strong> button. In the <strong>Grid Properties</strong> that pops up set the “Distance between grid points” to 2.5 and the “Units of distance” to “Metre”. Once you press <strong>OK</strong> you should proceed to add the grid points to the layer. This may take a few moments.</p>
+<p>Create a new map on the <strong>Map</strong> tab of the <strong>Project Browser</strong> and add your new global and coverage layers to take a look at them.</p>
+</section>
+<section id="creating-a-new-design-1" class="level3">
+<h3 class="anchored" data-anchor-id="creating-a-new-design-1">Creating a new design</h3>
+<p>Click on the <strong>Designs</strong> tab of the <strong>Project Browser</strong> and then the <strong>New Design</strong> button. Rename your design “equal angle zigzag” and then click the <strong>Show Details</strong> button to open the <strong>Design Details</strong> window. Select the “Line” sampler and set the design class to “Equal Angle Zigzag”. Click the <strong>Properties</strong> button to set the following properties for this design:</p>
+<ul>
+<li><p>As the Trapezium survey region is non-earth referenced you don’t need to make any changes on the <strong>General Properties</strong> tab.</p></li>
+<li><p>In the <strong>Effort Allocation</strong> tab, under “Effort determined by” select the Sampler angle option. In the “Allocation by stratum” section set the Line length units to be Metres. Make sure the “Update effort in real time” check box is ticked. As there is only one survey stratum it does not matter whether the “Same effort for all strata” check box is ticked or not. The “Absolute values” radio button is the only one available when effort is determined by sampler angle. Enter 75 in the “Angle” (measured in degrees) column of the table. The “Length” column should now read 463.644. The accuracy of this approximation of zigzag length depends on the shape of the survey region, but should be relatively accurate for convex survey regions.</p></li>
+<li><p>In the <strong>Sampler</strong> tab, set the width to 1 meter.</p></li>
+<li><p>Lastly, in the <strong>Coverage Probability</strong> tab, click on “Estimate by simulation” and enter 100 as the number of simulations. Under grid layer, choose previously created “TrapGrid”.</p></li>
+</ul>
+<p>Click OK to close the <strong>Design Properties</strong> window and return to the design details.</p>
+</section>
+<section id="design-statistics-1" class="level3">
+<h3 class="anchored" data-anchor-id="design-statistics-1">Design statistics</h3>
+<p>Run your design to work out the coverage probabilities - this design will take a while to run! In the second page of the <strong>Design Details Results</strong> tab that opens when its finished, take a look at the coverage probabilities map. Note how uneven these probabilities are and how they increase as the trapezium height decreases for the equal angle zigzag design.</p>
+</section>
+<section id="additional-investigations" class="level3">
+<h3 class="anchored" data-anchor-id="additional-investigations">Additional investigations</h3>
+<p>If you are particularly interested in zigzag surveying, you might want to come back to this exercise after completing exercise 3, and compare the coverage probabilities of the three different types of zigzag designs. You can do this when you get home. For now, skip ahead to exercise 3.</p>
+<p>For work on your own:</p>
+<p>Create two new designs - one for the equal spaced zigzag and one for the adjusted angle zigzag. To facilitate comparisons, you want to set properties for both that are somewhat equivalent to those for the equal angle design. You can see the mean trackline length for the equal angle design in its Results tab (about 460 metres). You can then set the effort allocation for the two new designs to be the same as this value. Make sure that the Coverage probability tab shows “Estimate by simulation” and that you have an appropriate Grid Field Name.</p>
+<p>Try creating a few surveys for each design, so you can see how they differ. Then run the coverage probability simulations. How do the coverage probabilities for the 3 designs differ? You may need more simulations to see a strong difference between the equal spacing and adjusted angle design.</p>
+</section>
+</section>
+<section id="systematic-parallel-line-aerial-survey-of-marine-mammals-in-st-andrews-bay" class="level2">
+<h2 class="anchored" data-anchor-id="systematic-parallel-line-aerial-survey-of-marine-mammals-in-st-andrews-bay">3. Systematic parallel line aerial survey of marine mammals in St Andrews bay</h2>
+<section id="reviewing-the-data-1" class="level3">
+<h3 class="anchored" data-anchor-id="reviewing-the-data-1">Reviewing the data</h3>
+<p><img src="./media/image1.jpeg" style="width:2.04306in;height:2.29792in" alt="File:Bell Rock Lighthouse.jpg">Open the project archived in <strong>StAndrews.zip</strong>. This project contains the survey region for an aerial survey of porpoise, common dolphins and seals in and around St Andrews bay. (For locals: the nearer St Andrews bay region has been extended in an easterly direction out past Bell Rock, as there are some pockets of deeper water out there that are of interest with regard to the distribution of cetaceans. The survey region has a chunk missing due to a no-fly zone around Buddo Ness, just below Carnoustie). To take a look at the survey region create a new map in the <strong>Maps</strong> tab and add the layer <strong>StAndrews</strong> to the map.</p>
+<p>The small survey plane permits a total flight time of approximately 250 km (excluding the flight time to and from the landing strip in Fife Ness, just down the coast). A systematic line sampling design is going to be used. The design should maximise the amount of on effort surveying time whilst ensuring that the constraint of 250 km total effort (including off effort transit time between sampler lines) is achieved. The aim of this exercise, therefore, is to decide on a systematic line spacing that gives about 200 km on-effort trackline with the total trackline length constrained to 250 km. To do this create a number of systematic line sampling designs with different line spacings, generate the design statistics for these designs and then the statistics for the total trackline length to the on-effort trackline length for different designs.</p>
+<p>Before proceeding to the design stage you need to generate a coverage grid layer, as this will be needed to generate design statistics.</p>
+</section>
+<section id="generate-a-coverage-grid-layer-1" class="level3">
+<h3 class="anchored" data-anchor-id="generate-a-coverage-grid-layer-1">Generate a coverage grid layer</h3>
+<p>To generate a coverage grid layer click on the <strong>Data</strong> tab of the <strong>Project Browser</strong> and then the <strong>Create New Data Layer</strong> button (5<sup>th</sup> from left). Enter “Grid5” as your Layer Name and set the Parent Layer to “StAndrews” and the Layer Type to “Coverage”. You should now be able to click on the <strong>Properties…</strong> button. In the <strong>Grid Properties</strong> that pops up set the “Distance between grid points” to 5 and the “Units of distance” to “Kilometre”. (This is too far apart for estimating probabiltiy of coverage, but we know coverage is even for this design, so choosing a wide spacing makes the simulations run faster.) Once you press <strong>OK</strong> you should proceed to add the grid points to the layer. This may take a few moments.</p>
+<p>Now create and generate a couple of designs with a spacing of your choice (some suggested spacings include 4.5, 5, 5.5 &amp; 6 km)</p>
+</section>
+<section id="creating-a-new-design-2" class="level3">
+<h3 class="anchored" data-anchor-id="creating-a-new-design-2">Creating a new design</h3>
+<p>Click on the <strong>Designs</strong> tab of the <strong>Project Browser</strong> and then the <strong>New Design</strong> button. Rename your “New Design” something like “systematic line test” and then click the <strong>Show Details</strong> button to open the <strong>Design Details</strong> window. Select the “Line” sampler and set the design class to “Systematic Random Sampling”. Click the <strong>Properties</strong> button to set the following properties for this design:</p>
+<ul>
+<li><p>On the <strong>General Properties</strong> tab under Stratum layer, the StAndrews stratum layer should be selected. Under Design coordinate system, the design coordinate system should be “Non-earth referenced”. (The data have already been projected from the OSGB 1936 geo-coordinate system using the transverse mercator projection – the same trick we used for the MexicoPrj project.)</p></li>
+<li><p>In the <strong>Effort Allocation</strong> tab, under Edge Sampling select the “Minus” option. In the “Allocation by stratum” section set the Line length units to be Kilometres. Make sure the “Update effort in real time” check box is ticked. As there is only one survey stratum it does not matter whether the “Same effort for all strata” check box is ticked or not. Click the “Systematic line spacing” radio button and enter the line spacing in the “Spacing” column of the table. When you enter a 5 km spacing for instance the “Length” column should then read 226.203 and the “Samplers” column 8. The accuracy of this approximation of on-effort line length and total number of line samplers depends on the shape of the survey region, but should at least give you some indication of what to expect.</p></li>
+<li><p>In the <strong>Sampler</strong> tab, select Kilometre for the line sampler width units. Set the truncation width to 2 km.</p></li>
+<li><p>Lastly, in the <strong>Coverage Probability</strong> tab, click on “Estimate by simulation” and enter 100 as the number of simulations. This is too few to give accurate coverage probabilities, but sufficient for the on-effort and total trackline length statistics. Under grid layer, choose previously created “Grid 5”. Make sure the Grid field name is the same as your design name.</p></li>
+</ul>
+<p>Click OK to close the <strong>Design Properties</strong> window and return to the design details.</p>
+</section>
+<section id="design-statistics-2" class="level3">
+<h3 class="anchored" data-anchor-id="design-statistics-2">Design statistics</h3>
+<p>For each design run Distance generates multiple simulated surveys and uses these to work out the statistics for on-effort and total trackline length. Run your designs and in the <strong>Design Details Results</strong> tab that opens review the statistics to decide on suitable systematic line spacing.</p>
+</section>
+<section id="automated-generation-of-new-surveys-1" class="level3">
+<h3 class="anchored" data-anchor-id="automated-generation-of-new-surveys-1">Automated generation of new surveys</h3>
+<p>To see an example survey, go back to the <strong>Design Details</strong> window for your selected design click <strong>Run</strong> again this time choosing the “Generate a new Survey” option. The second page of the survey results displays a map of the survey region with the systematic lines superimposed. You can add this map to the <strong>Map browser</strong> and manipulate it there by clicking on the 6<sup>th</sup> button on the Survey map results page.</p>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">Centre for Research into Ecological and Environmental Modelling</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">University of St Andrews</div>
+  </div>
+</footer>
+
+
+
+</body></html>
