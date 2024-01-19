@@ -15,7 +15,7 @@ csl: ../../style/apa.csl
 
 **Outline Solutions**
 
-Example analyses, which were used in getting these solutions, and which are referred to below, are in the project file “Stratify solutions.dst”.
+Example analyses, which were used in getting these solutions, and which are referred to below, are in the project file [Stratify solutions.zip](Stratify solutions.zip).
 
 1.  Relevant results are in Analysis “Full geog stratification”.
 
