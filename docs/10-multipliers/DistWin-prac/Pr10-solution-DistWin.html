@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Centre for Research into Ecological and Environmental Modelling   University of St Andrews">
 
-<title>Introductory distance sampling training materials – pr10-solution-distwin</title>
+<title>Introductory distance sampling training materials - Analysis with the use of multipliers</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -97,7 +98,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Analysis with the use of multipliers</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -271,6 +272,57 @@ ul.task-list li input[type="checkbox"] {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false">
+ <span class="menu-text">Animals detected in clusters</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../09-clusters/clusterslanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Analysis of point transect data</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false">
+ <span class="menu-text">Multipliers</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../10-multipliers/multiplierslanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Multipliers and indirect surveys</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="false">
+ <span class="menu-text">Double platform data (the g(0) problem)</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../11-mrds/mrdslanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Analysis of point transect data</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -281,27 +333,64 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction-to-distance-sampling" id="toc-introduction-to-distance-sampling" class="nav-link active" data-scroll-target="#introduction-to-distance-sampling">Introduction to Distance Sampling</a>
-  <ul class="collapse">
-  <li><a href="#analysis-with-the-use-of-multipliers" id="toc-analysis-with-the-use-of-multipliers" class="nav-link" data-scroll-target="#analysis-with-the-use-of-multipliers">Analysis with the use of multipliers</a></li>
-  </ul></li>
+  <li><a href="#solution-outline" id="toc-solution-outline" class="nav-link active" data-scroll-target="#solution-outline">Solution outline</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Analysis with the use of multipliers</h1>
+</div>
 
 
-<section id="introduction-to-distance-sampling" class="level1">
-<h1>Introduction to Distance Sampling</h1>
-<section id="analysis-with-the-use-of-multipliers" class="level2">
-<h2 class="anchored" data-anchor-id="analysis-with-the-use-of-multipliers">Analysis with the use of multipliers</h2>
-<p><strong>Solution outline</strong></p>
-<p>We did not perform a comprehensive examination of fitting a detection function to the pellet groups detected. However, as a general practice, we have truncated the most distant 10% pellet groups. Have a look at “Deer pellets solution.zip”</p>
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Centre for Research into Ecological and Environmental Modelling <br> <strong>University of St Andrews</strong> </p>
+          </div>
+  </div>
+    
+  
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">January 2024</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Analysis with the use of multipliers
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<section id="distance-for-windows-exercise-solution" class="level3 callout-body-container callout-body">
+<h3 class="anchored" data-anchor-id="distance-for-windows-exercise-solution">Distance for Windows exercise Solution</h3>
+</section>
+</div>
+</div>
+<section id="solution-outline" class="level2">
+<h2 class="anchored" data-anchor-id="solution-outline">Solution outline</h2>
+<p>We did not perform a comprehensive examination of fitting a detection function to the pellet groups detected. However, as a general practice, we have truncated the most distant 10% pellet groups. Have a look at <a href="Deer pellets solution.zip">Deer pellets solution.zip</a></p>
 <p>For management purposes, we would like to produce an estimate of the number of deer inhabiting each woodlot. In scrutinizing the data set, we see there is considerable variability in the number of pellet groups detected within each woodlot, and in some woodlots we detected as few as 4 pellet groups. Hence we cannot reliably estimate woodlot-specific detection functions. Consequently, we will pool data across woodlots to derive a global detection function. To produce woodlot-specific density estimates, we combine woodlot-specific encounter rates with the global detection function.</p>
 <p>The global detection function</p>
-<p><img src="./media/image1.emf" style="width:5.17083in;height:3.12847in">Encounter rate per kilometer by woodlot</p>
+<p><img src="detfn.png"></p>
 <p>Encounter rate CV(n/L)</p>
 <p>Block A 715.88 17.25</p>
 <p>Block B 360.00 22.99</p>
@@ -342,7 +431,6 @@ ul.task-list li input[type="checkbox"] {
 <p>By the same token, we are left to assume there is no variability in defecation rates between deer because we have no measure of uncertainty in this facet of our assessment of deer densities.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
