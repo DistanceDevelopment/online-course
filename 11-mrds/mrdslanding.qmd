@@ -1,13 +1,12 @@
 ---
-title: Analysis of point transect data
+title: Analysis of double platform data
 author: Centre for Research into Ecological and Environmental Modelling <br> **University of St Andrews**
 date-modified: "January 2024"
 date-format: "MMMM YYYY"
 csl: ../style/apa.csl
 ---
 
-## Analysis of point transect data
-
+## Analysis of double platform data
 
 ::: columns
 
@@ -61,7 +60,7 @@ Finally, there are two optional data sets of winter wrens collected by Prof. Buc
 :::
 
 ::: instructions
-[Solution and discussion](R-prac/Pr11-instructions-R.qmd) **Placeholder not correct**
+[Solution and discussion](R-prac/Pr11-solution-R.qmd) **Placeholder not correct**
 :::
 
 ::: video
