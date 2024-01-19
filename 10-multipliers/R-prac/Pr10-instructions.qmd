@@ -1,9 +1,10 @@
 ---
-title: Analyses using multipliers
+title: Analysis using multipliers
 author: Centre for Research into Ecological and Environmental Modelling <br> **University of St Andrews**
-date: "`r Sys.Date()`"
-bibliography: references.bib
-csl: apa.csl
+date-modified: "January 2024"
+date-format: "MMMM YYYY"
+bibliography: ../references.bib
+csl: ../../style/apa.csl
 ---
 
 ```{r}

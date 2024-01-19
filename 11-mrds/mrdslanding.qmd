@@ -34,7 +34,7 @@ Finally, there are two optional data sets of winter wrens collected by Prof. Buc
 
 
 ::: slides
-[Slides](Mod5-2023-points.pdf)
+[Slides](Mod5-2023-points.pdf) **Placeholder**
 :::
 
 
@@ -57,11 +57,11 @@ Finally, there are two optional data sets of winter wrens collected by Prof. Buc
 
 
 ::: instructions
-[Instructions](R-prac/Pr5-instructions.qmd)
+[Instructions](R-prac/Pr11-instructions-R.qmd)
 :::
 
 ::: instructions
-[Solution and discussion](R-prac/Prac5_solution.qmd)
+[Solution and discussion](R-prac/Pr11-instructions-R.qmd) **Placeholder not correct**
 :::
 
 ::: video
@@ -82,11 +82,11 @@ Finally, there are two optional data sets of winter wrens collected by Prof. Buc
 :::
 
 ::: instructions
-[Instructions](DistWin-prac/Pr5-instructions-DistWin.qmd)
+[Instructions](DistWin-prac/Pr11-instructions-DistWin.qmd)
 :::
 
 ::: instructions
-[Solution and discussion](DistWin-prac/Pr5-solution-DistWin.qmd)
+[Solution and discussion](DistWin-prac/Pr11-solution-DistWin.qmd)
 :::
 
 ::: video
