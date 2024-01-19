@@ -1,0 +1,90 @@
+# Introduction to Distance Sampling
+
+# Automated Survey Design Exercise Solutions
+
+## 1. Point transect survey of North-eastern Mexico
+
+The completed exercise is archived in the project
+MexicoUnPrjSolutions.zip
+
+## 2. Entering geographic data into Distance, and generating Coverage grids
+
+The completed exercise is archived in the project
+TrapeziumSolutions.zip.
+
+The first 3 designs show results for the equal angle, equal spaced and
+adjusted angle zigzag designs based on 100 simulations. Even from this
+small number of runs, it is clear that for the equal angle design
+coverage probability tends to increase as you move from the right of the
+survey area, where the trapezium is tall, to the left where the
+trapezium is shorter. It is easy to see why this is happening by looking
+at a survey generated using this design (survey 1). For the equal spaced
+and adjusted angle designs, there doesn't seem to be any pattern in the
+variation in estimated coverage probability. This variability is largely
+due to Monte-Carlo error, because we've only done 100 simulations, so
+before drawing conclusions about these designs, we repeated the exercise
+with more 10 000 simulations.
+
+These results are shown in designs 4-6. Design 4 is the equal angle
+zigzag and the pattern of increasing coverage with decreasing trapezium
+height is now very clear. What about the other two designs? The equal
+spaced design (Design 5) still looks pretty good, but if you look
+carefully, there is a hint that coverage is slightly lower on the left
+side and higher on the right. The coverage probability standard
+deviation is 0.011. Compare this with the standard deviation for the
+adjusted angle design (Design 6) – 0.007. Also look at the coverage
+probability map for the adjusted angle design – there is no evidence of
+any pattern in coverage probability. We conclude that the equal spaced
+design has close to even coverage probability, but that only the
+adjusted angle design has completely even coverage probability.
+
+Note that this result only applies for the adjusted angle design if the
+study area width is constant perpendicular to the design access. If you
+try repeating the exercise with a triangular-shaped study area, you will
+find out that even the adjusted angle design will not have even coverage
+probability.
+
+## 3. Systematic parallel line aerial survey of marine mammals in St Andrews bay
+
+I got the following results (yours will be slightly different because
+the survey locations in each simulation are selected at random). See
+also the project archived in StAndrewsSolutions.zip
+
+|                   |                            |       |           |                        |       |           |
+|-------------------|----------------------------|-------|-----------|------------------------|-------|-----------|
+| Trackline spacing | On effort trackline length |       |           | Total trackline length |       |           |
+|                   | Min                        | Max   | Mean      | Min                    | Max   | Mean      |
+| 4.5               | 206.6                      | 228.8 | 219.6     | 249.3                  | 275.3 | 264.7     |
+| 5.0               | 184.4                      | 205.6 | **198.2** | 220.5                  | 248.8 | **242.5** |
+| 5.5               | 169.7                      | 189.5 | 178.9     | 217.1                  | 245.3 | 224.7     |
+| 6.0               | 152.8                      | 176.1 | 162.1     | 183.7                  | 220.7 | 206.1     |
+
+Based on these, the 5.0km spacing seems to get us closest to our goal of
+200km on effort for 250km total trackline length. The maximum total
+trackline length didn't exceed 250km which is re-assuring if this is an
+absolute upper limit.
+
+I went ahead and generated one realization of this 5km design, which we
+will use as the survey plan. It gave me a total trackline of 226.2km,
+with 184.6km on effort (see StAndrewsSolutions project file). While this
+is rather less than I wanted, I can't validly throw this one away and
+generate another as we could no longer validly claim to have a random
+start point (I'd effectively only be choosing start points that lead to
+the amount of trackline length I want) and so would no longer have even
+coverage probability.
+
+As an aside, it is also interesting to look at the proportion of the
+total survey time spent on effort – reported in Distance as the
+proportion on effort/total effort:
+
+|                   |                               |
+|-------------------|-------------------------------|
+| Trackline spacing | Mean on effort / total effort |
+| 4.5               | 0.83                          |
+| 5.0               | 0.82                          |
+| 5.5               | 0.80                          |
+| 6.0               | 0.78                          |
+
+Not surprisingly, the greater the spacing between tracklines, the
+smaller the proportion of time we spend on effort as we have to spend
+time flying between the transect lines.

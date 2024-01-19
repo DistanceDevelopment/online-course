@@ -1,0 +1,23 @@
+In class exercise – true n is 64
+
+Class computer exercise:
+
+- More complex mrds model selected by AIC, had better goodness of fit.
+  Also less bias (although we only know that because we know the true
+  number)
+
+- Point independence even better.
+
+- Generally g0 is very high! – so is all this worth it?
+
+True number is 760.
+
+Next day
+
+- Ask about models people got – which was best.
+
+- Look through Distance results perhaps interpret?
+
+- Look at a PI model – best has sex as a covariate in det func.
+
+- Mention CDS model less biased.
