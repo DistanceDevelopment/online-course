@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Centre for Research into Ecological and Environmental Modelling   University of St Andrews">
 
-<title>Introductory distance sampling training materials – pr8-solution-distwin</title>
+<title>Introductory distance sampling training materials - Covariates in the detection function</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -97,7 +98,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Covariates in the detection function</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -282,147 +283,100 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Covariates in the detection function</h1>
+</div>
 
 
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Centre for Research into Ecological and Environmental Modelling <br> <strong>University of St Andrews</strong> </p>
+          </div>
+  </div>
+    
+  
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">January 2024</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Covariates in the detection function
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<section id="distance-for-windows-exercise-solution" class="level3 callout-body-container callout-body">
+<h3 class="anchored" data-anchor-id="distance-for-windows-exercise-solution">Distance for Windows exercise Solution</h3>
+</section>
+</div>
+</div>
 <p><strong>Introduction to Distance Sampling</strong></p>
-<p><strong>Covariates in the detection function<br>
-Outline Solutions</strong></p>
-<ol type="1">
-<li><strong>Simulated whale data</strong></li>
-</ol>
-<p>An example of the sort of analysis you might have performed is given in the archived project file CovarWhaleSim-solutions.zip. If you sort by date created or analysis ID, you can see the order I set up the analyses in. I first tried simple half-normal and hazard rate models without covariates, and found that the half-normal model had a lower AIC. I then tried the MSTDO covariate and hour covariates separately (as non-factor covariates). The analysis with MSTDO had a much lower AIC, but the analysis with hour actually had a higher AIC than the analysis without covariates. I tried an analysis with both MSTDO and hour, but this had a higher AIC than MSTDO alone (Table 1). I concluded that the MSTDO covariate was important, but the hour covariate was not.</p>
-<p>Although these data did not appear to need any truncation, I briefly confirmed that the same results were obtained with 10% truncation (analyses 7 and 8). Further analyses could look at the effect of adding adjustment terms to the detection function, although since no adjustments were selected with the half-normal without covariates it is likely that none will be required when the MSTDO covariate is used.</p>
-<p>Table 1. AIC values for the candidate models.</p>
-<table class="table">
-<thead>
-<tr class="header">
-<th>Model</th>
-<th>No truncation</th>
-<th>10% truncation</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>HZ: simple model</td>
-<td>125.32</td>
-<td>82.46</td>
-</tr>
-<tr class="even">
-<td>HN: simple model</td>
-<td>123.28</td>
-<td>80.80</td>
-</tr>
-<tr class="odd">
-<td>HN: with MSTDO</td>
-<td>111.21</td>
-<td>76.06</td>
-</tr>
-<tr class="even">
-<td>HN: with HOUR</td>
-<td>125.03</td>
-<td>82.15</td>
-</tr>
-<tr class="odd">
-<td>HN: with HOUR + MSTDO</td>
-<td>113.14</td>
-<td>78.02</td>
-</tr>
-</tbody>
-</table>
-<ol start="2" type="1">
-<li><strong>Analysis of golf tee data</strong></li>
-</ol>
-<p>With three covariates there are eight possible detection function models (including perpendicular distance only). The AIC from the CDS model was 311.1 and the lowest AIC I found was 304.3 which included sex as the only additional covariate. You may have found a different model. Table 2 is a summary of the results from the CDS analysis and an MCDS analysis with my best model. The component of variance due to the detection function fitted as a CDS was 64.3% and this reduced to 54.2% when sex was included in the detection function.</p>
-<p>As part of an exploratory data analysis it is useful to analyse the data as a CDS but post stratify using the factor variables and fit separate components of the model for each factor level (as long as there are enough observations). The esw’s for females (factor level = 0) and males (factor level = 1) are 1.61 metres (%CV=13.0) and 2.65 metres (%CV=10.3), respectively. The esw’s for the exposure levels 0 and 1 are 2.41 (13.2) and 2.31 (10.0). The differences between males and females appear to be much larger than the difference between exposure levels indicating that sex would be the more useful covariate to include in the model. Notice how the abundance estimate for the CDS post-stratified by sex and the MCDS including sex are very similar, but the CV is smaller for the latter.</p>
-<p>Table 2. Parameter estimates from CDS models and MCDS model which included sex only. CV’s are given in parentheses</p>
-<table class="table">
-<colgroup>
-<col style="width: 29%">
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 25%">
-<col style="width: 11%">
-<col style="width: 11%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td>Parameter</td>
-<td>True value</td>
-<td>CDS</td>
-<td>CDS post stratified by sex</td>
-<td></td>
-<td>MCDS</td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td>Female (0)</td>
-<td>Male (1)</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>AIC</td>
-<td></td>
-<td>311.14</td>
-<td>69.7</td>
-<td>234.7</td>
-<td>304.3</td>
-</tr>
-<tr class="even">
-<td>esw (m)</td>
-<td></td>
-<td>2.34 (7.9)</td>
-<td>1.61 (13.0)</td>
-<td>2.65 (10.3)</td>
-<td>2.24 (6.4)</td>
-</tr>
-<tr class="odd">
-<td>Ds (clusters per m<sup>2</sup>)</td>
-<td>0.15</td>
-<td>0.13 (7.9)</td>
-<td>0.05 (21.3)</td>
-<td>0.08 (10.3)</td>
-<td>0.13 (11.0)</td>
-</tr>
-<tr class="even">
-<td>E[S]</td>
-<td>3.04</td>
-<td>3.01 (5.9)</td>
-<td>2.80 (13.7)</td>
-<td>3.13 (6.5)</td>
-<td>3.01 (5.9)</td>
-</tr>
-<tr class="odd">
-<td>D (tees per m<sup>2</sup>)</td>
-<td>0.45</td>
-<td>0.38 (9.9)</td>
-<td>0.14 (18.9)</td>
-<td>0.25 (12.2)</td>
-<td>0.40 (8.8)</td>
-</tr>
-<tr class="even">
-<td>N</td>
-<td>760</td>
-<td>638 (9.9)</td>
-<td>243 (18.9)</td>
-<td>421 (12.2)</td>
-<td>666 (8.8)</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td>664 (22.5)</td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p><strong>3 Analysis of dolphin sightings data</strong></p>
+
+<!--
+2.  **Analysis of golf tee data**
+
+With three covariates there are eight possible detection function models
+(including perpendicular distance only). The AIC from the CDS model was
+311.1 and the lowest AIC I found was 304.3 which included sex as the
+only additional covariate. You may have found a different model. Table 2
+is a summary of the results from the CDS analysis and an MCDS analysis
+with my best model. The component of variance due to the detection
+function fitted as a CDS was 64.3% and this reduced to 54.2% when sex
+was included in the detection function.
+
+As part of an exploratory data analysis it is useful to analyse the data
+as a CDS but post stratify using the factor variables and fit separate
+components of the model for each factor level (as long as there are
+enough observations). The esw’s for females (factor level = 0) and males
+(factor level = 1) are 1.61 metres (%CV=13.0) and 2.65 metres
+(%CV=10.3), respectively. The esw’s for the exposure levels 0 and 1 are
+2.41 (13.2) and 2.31 (10.0). The differences between males and females
+appear to be much larger than the difference between exposure levels
+indicating that sex would be the more useful covariate to include in the
+model. Notice how the abundance estimate for the CDS post-stratified by
+sex and the MCDS including sex are very similar, but the CV is smaller
+for the latter.
+
+Table 2. Parameter estimates from CDS models and MCDS model which
+included sex only. CV’s are given in parentheses
+
+|                                 |            |            |                            |             |             |
+|---------------------------------|------------|------------|----------------------------|-------------|-------------|
+| Parameter                       | True value | CDS        | CDS post stratified by sex |             | MCDS        |
+|                                 |            |            | Female (0)                 | Male (1)    |             |
+| AIC                             |            | 311.14     | 69.7                       | 234.7       | 304.3       |
+| esw (m)                         |            | 2.34 (7.9) | 1.61 (13.0)                | 2.65 (10.3) | 2.24 (6.4)  |
+| Ds (clusters per m<sup>2</sup>) | 0.15       | 0.13 (7.9) | 0.05 (21.3)                | 0.08 (10.3) | 0.13 (11.0) |
+| E\[S\]                          | 3.04       | 3.01 (5.9) | 2.80 (13.7)                | 3.13 (6.5)  | 3.01 (5.9)  |
+| D (tees per m<sup>2</sup>)      | 0.45       | 0.38 (9.9) | 0.14 (18.9)                | 0.25 (12.2) | 0.40 (8.8)  |
+| N                               | 760        | 638 (9.9)  | 243 (18.9)                 | 421 (12.2)  | 666 (8.8)   |
+|                                 |            |            | 664 (22.5)                 |             |             |
+
+-->
+<p><strong>1 Hawaiian Passerines</strong></p>
+<p>We provide no sample solution to these data; consult the Marques et al.&nbsp;(2007) reprint.</p>
+<p><strong>2 Analysis of dolphin sightings data</strong></p>
 <p>To obtain an overall impression of the data it is useful to fit a detection function histogram with many intervals (you may have problems fitting to the maximum number of 30, but 25 intervals should be OK). The spikes in the histogram suggest that the data has been rounded to zero and possibly other values. The q-q plot also indicates problems with the model at zero distances. To mitigate these problems, use the Intervals tab in the Data Filter to pool the data into a few intervals – 10 to 15 intervals work OK.</p>
 <p>For the MCDS analysis, cluster size was fitted as a continuous variable, whereas, month, Beaufort, cue and search position were fitted as factor variables. Table 3 summarises the results. The number of adjustment terms allowed was limited to a maximum of two. In most cases a half normal function was chosen with either no, or one, adjustment term.</p>
-<p>Table 3. Parameter estimates for the different models. Percentage CVs are given in parentheses. Note that CVs for the model containing cluster size are obtained by bootstrapping.</p>
+<p>Table 1. Parameter estimates for the different models. Percentage CVs are given in parentheses. Note that CVs for the model containing cluster size are obtained by bootstrapping.</p>
 <table class="table">
 <colgroup>
 <col style="width: 29%">
@@ -491,8 +445,6 @@ Outline Solutions</strong></p>
 </tbody>
 </table>
 <p>Based on the AIC, it seems as though the model including search method is best, however, there were warning messages about the detection function fitting and cluster size estimation. Before going on and looking at models which include two covariates, it is worth looking at the search model in more detail. The detection functions have very different scale parameters, for example, the detection function for search method 3 (using a helicopter) has a very wide shoulder and so the scale parameter is very large. This suggests that the observers were seeing everything out to 5 nm and so detection does not decrease with distance as it does with the other methods. One assumption of MCDS is that the perpendicular distance distributions of the covariate factor levels have the same shape. It may be worth refitting the model ignoring the observations made by the helicopter. Data can easily be selected/ignored using the Data filter | Data selection tab. The selection criteria will be of the form ‘[Search method] IN (0,2,5)’</p>
-<p><strong>4 Hawaiian Passerines</strong></p>
-<p>We provide no sample solution to these data; consult the Marques et al. (2007) reprint.</p>
 
 
 
