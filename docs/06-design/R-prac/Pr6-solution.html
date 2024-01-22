@@ -352,7 +352,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../11-mrds/mrdslanding.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Analysis of point transect data</span></a>
+ <span class="menu-text">Analysis of double platform data</span></a>
   </div>
 </li>
       </ul>
@@ -367,7 +367,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#systematic-parallel-line-aerial-survey-of-marine-mammals-in-st-andrews-bay" id="toc-systematic-parallel-line-aerial-survey-of-marine-mammals-in-st-andrews-bay" class="nav-link active" data-scroll-target="#systematic-parallel-line-aerial-survey-of-marine-mammals-in-st-andrews-bay">Systematic parallel line aerial survey of marine mammals in St Andrews bay</a>
+  <li><a href="#aerial-survey-of-marine-mammals-in-st-andrews-bay" id="toc-aerial-survey-of-marine-mammals-in-st-andrews-bay" class="nav-link active" data-scroll-target="#aerial-survey-of-marine-mammals-in-st-andrews-bay">Aerial survey of marine mammals in St Andrews Bay</a>
   <ul class="collapse">
   <li><a href="#systematic-parallel-line-design" id="toc-systematic-parallel-line-design" class="nav-link" data-scroll-target="#systematic-parallel-line-design">Systematic Parallel Line Design</a></li>
   <li><a href="#equal-spaced-zigzag-design" id="toc-equal-spaced-zigzag-design" class="nav-link" data-scroll-target="#equal-spaced-zigzag-design">Equal Spaced Zigzag Design</a></li>
@@ -431,8 +431,8 @@ Solution
 <pre><code>Linking to GEOS 3.11.2, GDAL 3.7.2, PROJ 9.3.0; sf_use_s2() is TRUE</code></pre>
 </div>
 </div>
-<section id="systematic-parallel-line-aerial-survey-of-marine-mammals-in-st-andrews-bay" class="level1">
-<h1>Systematic parallel line aerial survey of marine mammals in St Andrews bay</h1>
+<section id="aerial-survey-of-marine-mammals-in-st-andrews-bay" class="level1">
+<h1>Aerial survey of marine mammals in St Andrews Bay</h1>
 <section id="systematic-parallel-line-design" class="level2">
 <h2 class="anchored" data-anchor-id="systematic-parallel-line-design">Systematic Parallel Line Design</h2>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -447,10 +447,7 @@ Answers
 <div class="callout-body-container callout-body">
 <p><em>What spacing would you select for this design? What is the maximum trackline length for the design you have selected? What on-effort line length are we likely to achieve?</em></p>
 <blockquote class="blockquote">
-<p>The spacing chosen by <code>dssd</code> of 4937.5m to generate a line length of 200km resulted in a maximum trackline length of around 261km (each exact answer will vary due to the random generate of surveys). If we choose this design then it is possible that when we randomly generate our survey we may not be able to complete it with the effort we have available.</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>We should therefore increase the spacing between the transects and re-run the coverage simulations. A spacing of 5000m gave a maximum trackline length of around 249km (see summary table of Trackline length in the output below) so we can be fairly confident that we will be able to complete any survey which we randomly generate from this design. This spacing should allow us to achieve an on-effort line length of 199km (see Line length section of design summary below). The minimum line length we would expect to achieve is 184km and the maximum is 206km. [Note your values might differ to those below]</p>
+<p>The spacing chosen by <code>dssd</code> of 4937.5m to generate a line length of 200km resulted in a maximum trackline length of around 261km (each exact answer will vary due to the random generate of surveys). If we choose this design then it is possible that when we randomly generate our survey we may not be able to complete it with the effort we have available. We should therefore increase the spacing between the transects and re-run the coverage simulations. A spacing of 5000m gave a maximum trackline length of around 249km (see summary table of Trackline length in the output below) so we can be fairly confident that we will be able to complete any survey which we randomly generate from this design. This spacing should allow us to achieve an on-effort line length of 199km (see Line length section of design summary below). The minimum line length we would expect to achieve is 184km and the maximum is 206km. [Note your values might differ to those below]</p>
 </blockquote>
 </div>
 </div>
@@ -510,56 +507,56 @@ sd                 0.3   0.3
     Covered area:
     
         St Andrews Bay     Total
-Minimum      726180337 726180337
-Mean         761093599 761093599
-Median       765999414 765999414
-Maximum      778652596 778652596
-sd            15705252  15705252
+Minimum      726191995 726191995
+Mean         760573054 760573054
+Median       765784380 765784380
+Maximum      778645737 778645737
+sd            15282001  15282001
 
     % of region covered:
     
         St Andrews Bay Total
 Minimum          73.54 73.54
-Mean             77.07 77.07
-Median           77.57 77.57
+Mean             77.02 77.02
+Median           77.55 77.55
 Maximum          78.85 78.85
-sd                1.59  1.59
+sd                1.55  1.55
 
     Line length:
     
         St Andrews Bay     Total
-Minimum      184430.58 184430.58
-Mean         197288.19 197288.19
-Median       198816.62 198816.62
-Maximum      205721.42 205721.42
-sd             5785.08   5785.08
+Minimum      184498.85 184498.85
+Mean         197432.07 197432.07
+Median       198767.27 198767.27
+Maximum      205767.17 205767.17
+sd             5716.97   5716.97
 
     Trackline length:
     
-        St Andrews Bay     Total
-Minimum      220527.26 220527.26
-Mean         242353.58 242353.58
-Median       246182.86 246182.86
-Maximum      248792.02 248792.02
-sd             8096.27   8096.27
+        St Andrews Bay    Total
+Minimum       220590.5 220590.5
+Mean          242318.5 242318.5
+Median        246190.0 246190.0
+Maximum       248769.1 248769.1
+sd              7969.5   7969.5
 
     Cyclic trackline length:
     
         St Andrews Bay     Total
-Minimum      251937.20 251937.20
-Mean         279103.95 279103.95
-Median       283611.23 283611.23
-Maximum      285978.40 285978.40
-sd             9517.29   9517.29
+Minimum      252042.47 252042.47
+Mean         279152.58 279152.58
+Median       283598.13 283598.13
+Maximum      285955.40 285955.40
+sd             9268.38   9268.38
 
     Coverage Score Summary:
     
         St Andrews Bay      Total
-Minimum     0.34000000 0.34000000
-Mean        0.77085074 0.77085074
-Median      0.79600000 0.79600000
-Maximum     0.84800000 0.84800000
-sd          0.08652212 0.08652212</code></pre>
+Minimum     0.36800000 0.36800000
+Mean        0.77028972 0.77028972
+Median      0.79200000 0.79200000
+Maximum     0.83600000 0.83600000
+sd          0.08669107 0.08669107</code></pre>
 </div>
 </div>
 </section>
@@ -696,29 +693,29 @@ GEOGCRS["WGS 84",
    __________________
 Design:  systematically spaced transects
 Spacing:  751.2295
-Number of samplers:  27
+Number of samplers:  24
 Design angle:  0
 Edge protocol:  minus
-Covered area:  809112.7
-Strata coverage: 5.73%
+Covered area:  741060.7
+Strata coverage: 5.25%
 Strata area:  14108643
 
    Strata Morton Lochs:
    _____________________
 Design:  systematically spaced transects
 Spacing:  218.3674
-Number of samplers:  16
+Number of samplers:  14
 Design angle:  0
 Edge protocol:  minus
-Covered area:  439602.1
-Strata coverage: 61.46%
+Covered area:  389559.8
+Strata coverage: 54.46%
 Strata area:  715264.9
 
    Study Area Totals:
    _________________
-Number of samplers:  43
-Covered area:  1248715
-Average coverage: 8.42%</code></pre>
+Number of samplers:  38
+Covered area:  1130620
+Average coverage: 7.63%</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -765,38 +762,38 @@ Coverage Simulation repetitions:  250
     Number of samplers:
     
         Main Area Morton Lochs Total
-Minimum      22.0         13.0  35.0
-Mean         25.0         15.1  40.0
-Median       25.0         15.0  40.0
-Maximum      27.0         18.0  44.0
-sd            1.1          1.1   1.6
+Minimum        22         13.0  36.0
+Mean           25         15.0  40.0
+Median         25         15.0  40.0
+Maximum        27         18.0  44.0
+sd              1          1.2   1.5
 
     Covered area:
     
         Main Area Morton Lochs      Total
-Minimum 674616.69    362527.25 1053937.52
-Mean    763390.19    417894.15 1181284.35
-Median  763158.12    417260.48 1180703.63
-Maximum 818565.57    466990.94 1277134.12
-sd       29957.82     25293.55   39129.07
+Minimum 677904.95    358502.13 1057177.98
+Mean    765127.29    416339.45 1181466.74
+Median  769428.76    415786.44 1183008.96
+Maximum 820887.04    469124.73 1267166.90
+sd       29037.62     25024.68   36980.17
 
     % of region covered:
     
         Main Area Morton Lochs Total
-Minimum      4.78        50.68  7.11
-Mean         5.41        58.43  7.97
-Median       5.41        58.34  7.96
-Maximum      5.80        65.29  8.62
-sd           0.21         3.54  0.26
+Minimum      4.80        50.12  7.13
+Mean         5.42        58.21  7.97
+Median       5.45        58.13  7.98
+Maximum      5.82        65.59  8.55
+sd           0.21         3.50  0.25
 
     Coverage Score Summary:
     
          Main Area Morton Lochs      Total
-Minimum 0.00800000    0.2680000 0.00800000
-Mean    0.05408743    0.5864333 0.07965026
-Median  0.05200000    0.6280000 0.05200000
-Maximum 0.12000000    0.7200000 0.72000000
-sd      0.01562491    0.1084115 0.11726869</code></pre>
+Minimum 0.00800000    0.2600000 0.00800000
+Mean    0.05424380    0.5828000 0.07962465
+Median  0.05600000    0.6320000 0.05600000
+Maximum 0.10000000    0.7120000 0.71200000
+sd      0.01213169    0.1127412 0.11628247</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">

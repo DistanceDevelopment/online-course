@@ -20,7 +20,7 @@ library(dssd)
 library(sf)
 ```
 
-# Systematic parallel line aerial survey of marine mammals in St Andrews bay
+# Aerial survey of marine mammals in St Andrews Bay
 
 ## Systematic Parallel Line Design
 
@@ -31,7 +31,6 @@ library(sf)
 *What spacing would you select for this design? What is the maximum trackline length for the design you have selected? What on-effort line length are we likely to achieve?*
 
 > The spacing chosen by `dssd` of 4937.5m to generate a line length of 200km resulted in a maximum trackline length of around 261km (each exact answer will vary due to the random generate of surveys). If we choose this design then it is possible that when we randomly generate our survey we may not be able to complete it with the effort we have available.
-
 > We should therefore increase the spacing between the transects and re-run the coverage simulations. A spacing of 5000m gave a maximum trackline length of around 249km (see summary table of Trackline length in the output below) so we can be fairly confident that we will be able to complete any survey which we randomly generate from this design. This spacing should allow us to achieve an on-effort line length of 199km (see Line length section of design summary below). The minimum line length we would expect to achieve is 184km and the maximum is 206km. [Note your values might differ to those below]
 
 :::
