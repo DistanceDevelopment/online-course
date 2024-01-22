@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Centre for Research into Ecological and Environmental Modelling   University of St Andrews">
 
-<title>Introductory distance sampling training materials – pr6-solution-distwin</title>
+<title>Introductory distance sampling training materials - Design of distance sampling surveys</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -97,7 +98,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Design of distance sampling surveys</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -317,7 +318,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../11-mrds/mrdslanding.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Analysis of point transect data</span></a>
+ <span class="menu-text">Analysis of double platform data</span></a>
   </div>
 </li>
       </ul>
@@ -332,40 +333,61 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction-to-distance-sampling" id="toc-introduction-to-distance-sampling" class="nav-link active" data-scroll-target="#introduction-to-distance-sampling">Introduction to Distance Sampling</a></li>
-  <li><a href="#automated-survey-design-exercise-solutions" id="toc-automated-survey-design-exercise-solutions" class="nav-link" data-scroll-target="#automated-survey-design-exercise-solutions">Automated Survey Design Exercise Solutions</a>
-  <ul class="collapse">
-  <li><a href="#point-transect-survey-of-north-eastern-mexico" id="toc-point-transect-survey-of-north-eastern-mexico" class="nav-link" data-scroll-target="#point-transect-survey-of-north-eastern-mexico">1. Point transect survey of North-eastern Mexico</a></li>
-  <li><a href="#entering-geographic-data-into-distance-and-generating-coverage-grids" id="toc-entering-geographic-data-into-distance-and-generating-coverage-grids" class="nav-link" data-scroll-target="#entering-geographic-data-into-distance-and-generating-coverage-grids">2. Entering geographic data into Distance, and generating Coverage grids</a></li>
-  <li><a href="#systematic-parallel-line-aerial-survey-of-marine-mammals-in-st-andrews-bay" id="toc-systematic-parallel-line-aerial-survey-of-marine-mammals-in-st-andrews-bay" class="nav-link" data-scroll-target="#systematic-parallel-line-aerial-survey-of-marine-mammals-in-st-andrews-bay">3. Systematic parallel line aerial survey of marine mammals in St Andrews bay</a></li>
-  </ul></li>
+  <li><a href="#systematic-parallel-line-aerial-survey-of-marine-mammals-in-st-andrews-bay" id="toc-systematic-parallel-line-aerial-survey-of-marine-mammals-in-st-andrews-bay" class="nav-link active" data-scroll-target="#systematic-parallel-line-aerial-survey-of-marine-mammals-in-st-andrews-bay">Systematic parallel line aerial survey of marine mammals in St Andrews bay</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Design of distance sampling surveys</h1>
+</div>
 
 
-<section id="introduction-to-distance-sampling" class="level1">
-<h1>Introduction to Distance Sampling</h1>
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Centre for Research into Ecological and Environmental Modelling <br> <strong>University of St Andrews</strong> </p>
+          </div>
+  </div>
+    
+  
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">January 2024</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Design of distance sampling surveys
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<section id="distance-for-windows-exercise-solution" class="level3 callout-body-container callout-body">
+<h3 class="anchored" data-anchor-id="distance-for-windows-exercise-solution">Distance for Windows exercise Solution</h3>
 </section>
-<section id="automated-survey-design-exercise-solutions" class="level1">
-<h1>Automated Survey Design Exercise Solutions</h1>
-<section id="point-transect-survey-of-north-eastern-mexico" class="level2">
-<h2 class="anchored" data-anchor-id="point-transect-survey-of-north-eastern-mexico">1. Point transect survey of North-eastern Mexico</h2>
-<p>The completed exercise is archived in the project MexicoUnPrjSolutions.zip</p>
-</section>
-<section id="entering-geographic-data-into-distance-and-generating-coverage-grids" class="level2">
-<h2 class="anchored" data-anchor-id="entering-geographic-data-into-distance-and-generating-coverage-grids">2. Entering geographic data into Distance, and generating Coverage grids</h2>
-<p>The completed exercise is archived in the project TrapeziumSolutions.zip.</p>
-<p>The first 3 designs show results for the equal angle, equal spaced and adjusted angle zigzag designs based on 100 simulations. Even from this small number of runs, it is clear that for the equal angle design coverage probability tends to increase as you move from the right of the survey area, where the trapezium is tall, to the left where the trapezium is shorter. It is easy to see why this is happening by looking at a survey generated using this design (survey 1). For the equal spaced and adjusted angle designs, there doesn’t seem to be any pattern in the variation in estimated coverage probability. This variability is largely due to Monte-Carlo error, because we’ve only done 100 simulations, so before drawing conclusions about these designs, we repeated the exercise with more 10 000 simulations.</p>
-<p>These results are shown in designs 4-6. Design 4 is the equal angle zigzag and the pattern of increasing coverage with decreasing trapezium height is now very clear. What about the other two designs? The equal spaced design (Design 5) still looks pretty good, but if you look carefully, there is a hint that coverage is slightly lower on the left side and higher on the right. The coverage probability standard deviation is 0.011. Compare this with the standard deviation for the adjusted angle design (Design 6) – 0.007. Also look at the coverage probability map for the adjusted angle design – there is no evidence of any pattern in coverage probability. We conclude that the equal spaced design has close to even coverage probability, but that only the adjusted angle design has completely even coverage probability.</p>
-<p>Note that this result only applies for the adjusted angle design if the study area width is constant perpendicular to the design access. If you try repeating the exercise with a triangular-shaped study area, you will find out that even the adjusted angle design will not have even coverage probability.</p>
-</section>
+</div>
+</div>
 <section id="systematic-parallel-line-aerial-survey-of-marine-mammals-in-st-andrews-bay" class="level2">
-<h2 class="anchored" data-anchor-id="systematic-parallel-line-aerial-survey-of-marine-mammals-in-st-andrews-bay">3. Systematic parallel line aerial survey of marine mammals in St Andrews bay</h2>
-<p>I got the following results (yours will be slightly different because the survey locations in each simulation are selected at random). See also the project archived in StAndrewsSolutions.zip</p>
+<h2 class="anchored" data-anchor-id="systematic-parallel-line-aerial-survey-of-marine-mammals-in-st-andrews-bay">Systematic parallel line aerial survey of marine mammals in St Andrews bay</h2>
+<p>I derived the following results (yours will be slightly different because the survey locations in each simulation are selected at random). See also the project archived in <a href="StAndrewsSolutions.zip">StAndrewsSolutions.zip</a></p>
 <table class="table">
 <colgroup>
 <col style="width: 17%">
@@ -376,25 +398,18 @@ ul.task-list li input[type="checkbox"] {
 <col style="width: 6%">
 <col style="width: 10%">
 </colgroup>
+<thead>
+<tr class="header">
+<th>Trackline spacing</th>
+<th>On effort trackline length (min)</th>
+<th>max</th>
+<th>mean</th>
+<th>Total trackline length (min)</th>
+<th>max</th>
+<th>mean</th>
+</tr>
+</thead>
 <tbody>
-<tr class="odd">
-<td>Trackline spacing</td>
-<td>On effort trackline length</td>
-<td></td>
-<td></td>
-<td>Total trackline length</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Min</td>
-<td>Max</td>
-<td>Mean</td>
-<td>Min</td>
-<td>Max</td>
-<td>Mean</td>
-</tr>
 <tr class="odd">
 <td>4.5</td>
 <td>206.6</td>
@@ -433,28 +448,30 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
-<p>Based on these, the 5.0km spacing seems to get us closest to our goal of 200km on effort for 250km total trackline length. The maximum total trackline length didn’t exceed 250km which is re-assuring if this is an absolute upper limit.</p>
-<p>I went ahead and generated one realization of this 5km design, which we will use as the survey plan. It gave me a total trackline of 226.2km, with 184.6km on effort (see StAndrewsSolutions project file). While this is rather less than I wanted, I can’t validly throw this one away and generate another as we could no longer validly claim to have a random start point (I’d effectively only be choosing start points that lead to the amount of trackline length I want) and so would no longer have even coverage probability.</p>
+<p>Based on these, the 5.0km spacing seems to get us closest to our goal of 200km on effort for 250km total trackline length. The maximum total trackline length did not exceed 250km which is re-assuring if this is an absolute upper limit.</p>
+<p>I generated one realization of this 5km design, which we will use as the survey plan. It gave me a total trackline of 226.2km, with 184.6km on effort (see <a href="StAndrewsSolutions.zip">StAndrewsSolutions.zip</a> project file). While this is rather less than I wanted, I can not validly throw this one away and generate another as we could no longer validly claim to have a random start point (I would effectively only be choosing start points that lead to the amount of trackline length I want) and so would no longer have even coverage probability.</p>
 <p>As an aside, it is also interesting to look at the proportion of the total survey time spent on effort – reported in Distance as the proportion on effort/total effort:</p>
 <table class="table">
+<thead>
+<tr class="header">
+<th>Trackline spacing</th>
+<th>Mean on effort / total effort</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
-<td>Trackline spacing</td>
-<td>Mean on effort / total effort</td>
-</tr>
-<tr class="even">
 <td>4.5</td>
 <td>0.83</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>5.0</td>
 <td>0.82</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>5.5</td>
 <td>0.80</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>6.0</td>
 <td>0.78</td>
 </tr>
@@ -463,7 +480,6 @@ ul.task-list li input[type="checkbox"] {
 <p>Not surprisingly, the greater the spacing between tracklines, the smaller the proportion of time we spend on effort as we have to spend time flying between the transect lines.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
