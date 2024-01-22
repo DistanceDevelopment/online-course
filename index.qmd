@@ -15,7 +15,6 @@ This is the landing page for the distance sampling training materials website.
 - differentiate the two exercise pathways
 - discuss role of video introduction/summary
 - if there are self-assessed tutorials, describe them
-- `giscus` if it exists [https://giscus.app/](https://giscus.app/)
 :::
 
 :::
