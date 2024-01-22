@@ -31,11 +31,13 @@ library(sf)
 *What spacing would you select for this design? What is the maximum trackline length for the design you have selected? What on-effort line length are we likely to achieve?*
 
 > The spacing chosen by `dssd` of 4937.5m to generate a line length of 200km resulted in a maximum trackline length of around 261km (each exact answer will vary due to the random generate of surveys). If we choose this design then it is possible that when we randomly generate our survey we may not be able to complete it with the effort we have available.
+>
 > We should therefore increase the spacing between the transects and re-run the coverage simulations. A spacing of 5000m gave a maximum trackline length of around 249km (see summary table of Trackline length in the output below) so we can be fairly confident that we will be able to complete any survey which we randomly generate from this design. This spacing should allow us to achieve an on-effort line length of 199km (see Line length section of design summary below). The minimum line length we would expect to achieve is 184km and the maximum is 206km. [Note your values might differ to those below]
 
 :::
 
 ```{r}
+#| label: 5ksystematic
 shapefile.name <- system.file("extdata", "StAndrew.shp", package = "dssd")
 region.sab <- make.region(region.name = "St Andrews Bay",
                       units = "m",
@@ -52,12 +54,14 @@ design.spacing5km <- make.design(region = region.sab,
 ```
 
 ```{r}
+#| label: 5ksystematicplot
 #| fig.cap: Coverage grid plot for parallel design of St Andrews Bay.
 design.spacing5km <- run.coverage(design.spacing5km, reps = 250, quiet=TRUE)
 plot(design.spacing5km)
 ```
 
 ```{r}
+#| label: stats5k
 print(design.spacing5km)
 ```
 ## Equal Spaced Zigzag Design
@@ -71,6 +75,7 @@ print(design.spacing5km)
 :::
 
 ```{r}
+#| label: 45zigzag
 design.zz.4500 <- make.design(region = region.sab,
                       transect.type = "line",
                       design = "eszigzag",
@@ -83,9 +88,9 @@ design.zz.4500 <- make.design(region = region.sab,
 ```
 
 ```{r}
+#| label: 45zigzagplot
 #| fig.cap: Coverage grid plot for zigzag design of St Andrews Bay.
 design.zz.4500 <- run.coverage(design.zz.4500, reps = 250, quiet=TRUE)
-# Plot coverage
 plot(design.zz.4500)
 ```
 
@@ -93,7 +98,9 @@ plot(design.zz.4500)
 ## Answers
 *Do you think the coverage scores look uniform across the study region? Where are they higher/lower? Why do you think this is?*
 
-> You were finally asked to look at the coverage scores across the survey region to see if this design has even coverage. There are some points with lower coverage around the survey region boundary. This is actually down to the fact we are using a minus sampling strategy. If we plotted coverage scores from a systematic parallel design we would see a similar pattern. Usually edge effects from minus sampling are minor unless we have a very long survey region boundary containing a small study area. If the fact that we are using a zigzag design was causing us issues with coverage we would expect to see higher coverage at the very top or very bottom of the survey region (as our design angle is 0). We do not see this. The survey region boundaries at the top and bottom are both quite wide and perpendicular to the design angle, in this situation zigzag designs perform well with regard to even coverage.
+> You were finally asked to look at the coverage scores across the survey region to see if this design has even coverage. There are some points with lower coverage around the survey region boundary. This is actually down to the fact we are using a minus sampling strategy. If we plotted coverage scores from a systematic parallel design we would see a similar pattern. 
+>
+> Usually edge effects from minus sampling are minor unless we have a very long survey region boundary containing a small study area. If using a zigzag design was causing us issues with coverage we would expect to see higher coverage at the very top or very bottom of the survey region (as our design angle is 0). We do not see this. The survey region boundaries at the top and bottom are both quite wide and perpendicular to the design angle, in this situation zigzag designs perform well with regard to even coverage.
 
 :::
 
@@ -104,7 +111,7 @@ plot(design.zz.4500)
 
 *What are the analysis implications of a design with unequal coverage?*
 
-> As our two strata have different coverage we should analyse them separately. We therefore need to make sure that we have sufficient transects in each strata to perform an analysis - ideally 20. There are two reasons that we should analyse them separately. Firstly, our covered area will not be representative of the study area as a whole. If density is higher or lower in one strata than the other we will get a biased estimate of abundance for the area as a whole using the standard distance sampling estimators. Secondly, pooling robustness between the two strata will no longer apply and it may be the case that detection functions differ between the two strata. We will no longer have a representative sample of observations across the entire study region either.
+> As our two strata have different coverage we should analyse them separately. We therefore need to make sure that we have sufficient transects in each strata to perform an analysis - ideally 20. There are two reasons that we should analyse them separately. Our covered area will not be representative of the study area as a whole. If density is higher or lower in one strata than the other we will get a biased estimate of abundance for the area as a whole using the standard distance sampling estimators. Pooling robustness between the two strata will no longer apply and it may be the case that detection functions differ between the two strata. We will also no longer have a representative sample of observations across the entire study region.
 
 :::
 
@@ -112,6 +119,7 @@ plot(design.zz.4500)
 
 Organise the study area shape file.
 ```{r}
+#| label: tentsshape
 shapefile.name <- system.file("extdata", "TentsmuirUnproj.shp", 
                               package = "dssd")
 sf.shape <- read_sf(shapefile.name)
@@ -126,6 +134,7 @@ region.tm <- make.region(region.name = "Tentsmuir",
 
 Create the coverage grid.
 ```{r}
+#| label: tentsdesign
 cover.tm <- make.coverage(region.tm, n.grid.points = 5000)
 design.tm <- make.design(region = region.tm,
                          transect.type = "point",
@@ -139,6 +148,7 @@ survey.tentsmuir <- generate.transects(design.tm)
 ```
 
 ```{r}
+#| label: tentsstats
 print(survey.tentsmuir)
 ```
 
@@ -152,6 +162,7 @@ print(survey.tentsmuir)
 :::
 
 ```{r}
+#| label: tentscoverage
 coverage.tentsmuir <- run.coverage(design.tm, reps=250, quiet=TRUE)
 print(coverage.tentsmuir)
 ```
@@ -160,11 +171,14 @@ print(coverage.tentsmuir)
 ## Answers
 *View the design statistics. What is the minimum number of samplers you will achieve in each strata? Is this sufficient to complete separate analyses in each stratum?*
 
-> My design statistics indicated I should achieve between 22 and 27 transects in the main stratum and between 12 and 18 in the Morton Lochs stratum. I might be a bit concerned about the possibility of only achieving 12 transects in the Morton Lochs stratum (remember I cannot just discard a survey due to the number of transects and generate another as it will affect my coverage properties) but whether this is sufficient will depend on a number of things… what are the objectives of the study? how many detections are you likely to get from each transect? etc. Information from a pilot study would be useful to help decide how many transects are required as a minimum.
+> My design statistics indicated I should achieve between 22 and 27 transects in the main stratum and between 12 and 18 in the Morton Lochs stratum. I might be a bit concerned about the possibility of only achieving 12 transects in the Morton Lochs stratum (remember I cannot just discard a survey due to the number of transects and generate another as it will affect my coverage properties). 
+>
+> Whether this is sufficient will depend on a number of things such as a) objectives of the study, b) number of detections per transect etc. Information from a pilot study would be useful to help decide how many transects are required as a minimum.
 
 :::
 
 ```{r}
+#| label: tentscoverstrat
 #| layout-ncol: 2
 #| fig.cap: 
 #|   - Coverage scores main stratum Tentsmuir Forest. 
