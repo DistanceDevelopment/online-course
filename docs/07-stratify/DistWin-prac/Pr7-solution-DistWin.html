@@ -320,7 +320,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../11-mrds/mrdslanding.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Analysis of point transect data</span></a>
+ <span class="menu-text">Analysis of double platform data</span></a>
   </div>
 </li>
       </ul>
@@ -331,7 +331,15 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#relevant-results-are-in-analysis-full-geog-stratification" id="toc-relevant-results-are-in-analysis-full-geog-stratification" class="nav-link active" data-scroll-target="#relevant-results-are-in-analysis-full-geog-stratification">Relevant results are in Analysis <em>Full geog stratification</em></a></li>
+  <li><a href="#relevant-results-are-in-analysis-pooled-f0" id="toc-relevant-results-are-in-analysis-pooled-f0" class="nav-link" data-scroll-target="#relevant-results-are-in-analysis-pooled-f0">Relevant results are in Analysis <em>Pooled f(0)</em></a></li>
+  <li><a href="#relevant-results-are-in-analysis-no-stratification." id="toc-relevant-results-are-in-analysis-no-stratification." class="nav-link" data-scroll-target="#relevant-results-are-in-analysis-no-stratification.">Relevant results are in Analysis “No stratification”.</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -383,23 +391,37 @@ Analysis of stratified data
 </div>
 <p><strong>Outline Solutions</strong></p>
 <p>Example analyses, which were used in getting these solutions, and which are referred to below, are in the project file <a href="Stratify solutions.zip">Stratify solutions.zip</a>.</p>
-<ol type="1">
-<li>Relevant results are in Analysis “Full geog stratification”.</li>
-</ol>
+<section id="relevant-results-are-in-analysis-full-geog-stratification" class="level2">
+<h2 class="anchored" data-anchor-id="relevant-results-are-in-analysis-full-geog-stratification">Relevant results are in Analysis <em>Full geog stratification</em></h2>
 <p>The AICs are 127.90 for the southern stratum and 187.90 for the northern stratum. Detection function model fits are adequate visually and by goodness-of-fit test. Sample sizes are relatively small but not alarmingly so. The southern stratum appears to have a much narrower effective strip width.</p>
-<ol start="2" type="1">
-<li>Relevant results are in Analysis “Pooled f(0)”.</li>
-</ol>
+</section>
+<section id="relevant-results-are-in-analysis-pooled-f0" class="level2">
+<h2 class="anchored" data-anchor-id="relevant-results-are-in-analysis-pooled-f0">Relevant results are in Analysis <em>Pooled f(0)</em></h2>
 <p>The AIC for the pooled detection function fit is 318.72. The detection function model fit is adequate visually and by goodness-of-fit test. Because</p>
 <p><span class="math display">\[318.72 &gt; (127.9+187.9=315.8)\]</span></p>
 <p>estimation of separate detection function in each stratum is preferable.</p>
-<ol start="3" type="1">
-<li>Relevant results are in Analysis “No stratification”.</li>
-</ol>
-<p>The whale density estimate from the unstratified analysis is around 25% larger than the corresponding estimates from 1. and 2. above. The reason is that the survey design was geographically stratified, with less survey effort in the north stratum, and this is being ignored in the unstratified analysis.</p>
-<p>What is <strong>not included in this project</strong> are cluster sizes of the observed minke whale groups (we didn’t want to clutter the analysis with that detail). However, there is a bit of a story in geographic variation in cluster sizes. Cluster densities are higher in the southern stratum, but transects from both strata are being treated as if they are representative of the whole survey region. This results in a positively biased cluster density for the region as a whole. In addition, cluster sizes are higher in the South stratum. The estimate of E(s) from the unstratified analysis is a positively biased estimate of E(s) for the North stratum and a negatively biased estimate of E(s) for the South stratum. When it is applied to both strata, it results in a positively biased estimate of whale abundance because the North stratum is much larger and contains roughly twice as many whales as the south stratum.</p>
-<div class="callout callout-style-default callout-warning callout-titled">
+</section>
+<section id="relevant-results-are-in-analysis-no-stratification." class="level2">
+<h2 class="anchored" data-anchor-id="relevant-results-are-in-analysis-no-stratification.">Relevant results are in Analysis “No stratification”.</h2>
+<p>The whale density estimate from the unstratified analysis is around 25% larger than the corresponding estimates from <em>Full geog stratification</em> and <em>Pooled f(0)</em> above. The reason is that the survey design was geographically stratified, with less survey effort in the north stratum, and this is being ignored in the unstratified analysis.</p>
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Cluster size differences between strata
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>What is <strong>not included in this project</strong> are cluster sizes of the observed minke whale groups (we didn’t want to clutter the analysis with that detail). However, there is a bit of a story in geographic variation in cluster sizes. Cluster densities are higher in the southern stratum, but transects from both strata are being treated as if they are representative of the whole survey region. This results in a positively biased cluster density for the region as a whole. In addition, cluster sizes are higher in the South stratum. The estimate of E(s) from the unstratified analysis is a positively biased estimate of E(s) for the North stratum and a negatively biased estimate of E(s) for the South stratum. When it is applied to both strata, it results in a positively biased estimate of whale abundance because the North stratum is much larger and contains roughly twice as many whales as the south stratum.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -408,7 +430,7 @@ Moral
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>Do not perform analyses without taking the survey design into account.</p>
 </div>
@@ -416,6 +438,7 @@ Moral
 </div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

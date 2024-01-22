@@ -172,7 +172,7 @@
     "href": "06-design/DistWin-prac/Pr6-instructions-DistWin.html",
     "title": "Design of distance sampling surveys",
     "section": "",
-    "text": "Design of distance sampling surveys\nSystematic parallel line aerial survey of marine mammals in St Andrews Bay"
+    "text": "Design of distance sampling surveys"
   },
   {
     "objectID": "06-design/DistWin-prac/Pr6-instructions-DistWin.html#reviewing-the-data",
@@ -222,5 +222,96 @@
     "title": "Design of distance sampling surveys",
     "section": "Systematic parallel line aerial survey of marine mammals in St Andrews bay",
     "text": "Systematic parallel line aerial survey of marine mammals in St Andrews bay\nI derived the following results (yours will be slightly different because the survey locations in each simulation are selected at random). See also the project archived in StAndrewsSolutions.zip\n\n\n\n\n\n\n\n\n\n\n\n\nTrackline spacing\nOn effort trackline length (min)\nmax\nmean\nTotal trackline length (min)\nmax\nmean\n\n\n\n\n4.5\n206.6\n228.8\n219.6\n249.3\n275.3\n264.7\n\n\n5.0\n184.4\n205.6\n198.2\n220.5\n248.8\n242.5\n\n\n5.5\n169.7\n189.5\n178.9\n217.1\n245.3\n224.7\n\n\n6.0\n152.8\n176.1\n162.1\n183.7\n220.7\n206.1\n\n\n\nBased on these, the 5.0km spacing seems to get us closest to our goal of 200km on effort for 250km total trackline length. The maximum total trackline length did not exceed 250km which is re-assuring if this is an absolute upper limit.\nI generated one realization of this 5km design, which we will use as the survey plan. It gave me a total trackline of 226.2km, with 184.6km on effort (see StAndrewsSolutions.zip project file). While this is rather less than I wanted, I can not validly throw this one away and generate another as we could no longer validly claim to have a random start point (I would effectively only be choosing start points that lead to the amount of trackline length I want) and so would no longer have even coverage probability.\nAs an aside, it is also interesting to look at the proportion of the total survey time spent on effort – reported in Distance as the proportion on effort/total effort:\n\n\n\nTrackline spacing\nMean on effort / total effort\n\n\n\n\n4.5\n0.83\n\n\n5.0\n0.82\n\n\n5.5\n0.80\n\n\n6.0\n0.78\n\n\n\nNot surprisingly, the greater the spacing between tracklines, the smaller the proportion of time we spend on effort as we have to spend time flying between the transect lines."
+  },
+  {
+    "objectID": "07-stratify/DistWin-prac/Pr7-instructions-DistWin.html",
+    "href": "07-stratify/DistWin-prac/Pr7-instructions-DistWin.html",
+    "title": "Analysis of stratified data",
+    "section": "",
+    "text": "Analysis of stratified data"
+  },
+  {
+    "objectID": "07-stratify/DistWin-prac/Pr7-instructions-DistWin.html#the-data",
+    "href": "07-stratify/DistWin-prac/Pr7-instructions-DistWin.html#the-data",
+    "title": "Analysis of stratified data",
+    "section": "The Data",
+    "text": "The Data\nThe Distance project Stratify exercise.zip contains data from a stratified survey of Antarctic minke whales. The data are “exact” insofar as they are calculated directly from the estimates of radial distance and angle recorded by the observers. While angle boards and reticle binoculars were used for estimation of angles and distances when possible, the transitory nature of cues (usually blows) and the pitch and roll of the vessel, among other things, leads to in errors in estimating angles and distances. Angular errors are typically of the order of a degree or two; the coefficient of variation of distance estimation errors is typically of the order of 10%.\nThe two strata were surveyed by different vessels at the same time. Because the whales tend to be found in high densities against the ice edge, where they feed, densities in southern strata are typically higher than those in northern strata. In fact this is the primary reason for using a stratified survey design. It is also the reason for covering the southern strata more intensely; in this survey the transect length per unit area in the southern stratum, is more than 2.5 times that in the northern stratum.\nHere are pictures of the sort of design used and a typical density gradient. The irregular bottom border is the ice-edge; the “steps” define the boundary between southern and northern strata; dotted lines are transects; solid dots are detections."
+  },
+  {
+    "objectID": "07-stratify/DistWin-prac/Pr7-instructions-DistWin.html#analysis-exercises",
+    "href": "07-stratify/DistWin-prac/Pr7-instructions-DistWin.html#analysis-exercises",
+    "title": "Analysis of stratified data",
+    "section": "Analysis Exercises",
+    "text": "Analysis Exercises\nOpen the project from its archive Stratify exercise.zip. The project contains one analysis specification, called Full geog stratification. This is a fully stratified analysis of the data. Seven equal perpendicular distance intervals, truncation at 1.5 nautical miles (nm), and a hazard rate detection function form with no adjustment terms are used to estimate the detection function. As the focus of these exercises is stratification, do not investigate other perpendicular distance intervals and detection function forms; the given models are adequate. Use the Analysis browser to familiarise yourself with the details of this analysis specification.\n\nHaving done that, run the analysis Full geog stratification. Look at the results, and note the AIC statistics from each detection function fit.\nTo stratify \\(f(0)\\) or not: Create a new analysis identical to Full geog stratification by clicking the New Analysis icon in the Analysis tab of the Project browser after selecting the existing analysis. The new analysis will be a copy of the existing one.\n\nCreate a new model definition for this new analysis by going to the Inputs tab and highlighting the “haz rate+no adj full strat” model, then clicking the New tab. This will copy the existing model definition – modify the new model definition so that f(0) is to be estimated from the pooled strata (click the Detection function x Global cell of the table on the Estimate tab of the Model Definition Properties window you get after clicking New). Give this new model definition the name Pooled detection fn and then click OK.\nRun the new analysis and look at the output. By comparing the AIC from this analysis with the sum of the AICs from the analysis Full geog stratification, and considering the fits of each detection function, decide whether or not to pool strata for estimation of f(0).\n\n\n\n\n\n\nIf you have time, here’s a more difficult question.\n\n\n\n\n\nCreate an analysis without any stratification (No stratification) and estimate density using it. Why is the density estimate so much higher than those from Full geog stratification and Pooled detection fn above?"
+  },
+  {
+    "objectID": "07-stratify/DistWin-prac/Pr7-solution-DistWin.html",
+    "href": "07-stratify/DistWin-prac/Pr7-solution-DistWin.html",
+    "title": "Analysis of stratified data",
+    "section": "",
+    "text": "Analysis of stratified data\nOutline Solutions\nExample analyses, which were used in getting these solutions, and which are referred to below, are in the project file Stratify solutions.zip."
+  },
+  {
+    "objectID": "07-stratify/DistWin-prac/Pr7-solution-DistWin.html#relevant-results-are-in-analysis-full-geog-stratification",
+    "href": "07-stratify/DistWin-prac/Pr7-solution-DistWin.html#relevant-results-are-in-analysis-full-geog-stratification",
+    "title": "Analysis of stratified data",
+    "section": "Relevant results are in Analysis Full geog stratification",
+    "text": "Relevant results are in Analysis Full geog stratification\nThe AICs are 127.90 for the southern stratum and 187.90 for the northern stratum. Detection function model fits are adequate visually and by goodness-of-fit test. Sample sizes are relatively small but not alarmingly so. The southern stratum appears to have a much narrower effective strip width."
+  },
+  {
+    "objectID": "07-stratify/DistWin-prac/Pr7-solution-DistWin.html#relevant-results-are-in-analysis-pooled-f0",
+    "href": "07-stratify/DistWin-prac/Pr7-solution-DistWin.html#relevant-results-are-in-analysis-pooled-f0",
+    "title": "Analysis of stratified data",
+    "section": "Relevant results are in Analysis Pooled f(0)",
+    "text": "Relevant results are in Analysis Pooled f(0)\nThe AIC for the pooled detection function fit is 318.72. The detection function model fit is adequate visually and by goodness-of-fit test. Because\n\\[318.72 &gt; (127.9+187.9=315.8)\\]\nestimation of separate detection function in each stratum is preferable."
+  },
+  {
+    "objectID": "07-stratify/DistWin-prac/Pr7-solution-DistWin.html#relevant-results-are-in-analysis-no-stratification.",
+    "href": "07-stratify/DistWin-prac/Pr7-solution-DistWin.html#relevant-results-are-in-analysis-no-stratification.",
+    "title": "Analysis of stratified data",
+    "section": "Relevant results are in Analysis “No stratification”.",
+    "text": "Relevant results are in Analysis “No stratification”.\nThe whale density estimate from the unstratified analysis is around 25% larger than the corresponding estimates from Full geog stratification and Pooled f(0) above. The reason is that the survey design was geographically stratified, with less survey effort in the north stratum, and this is being ignored in the unstratified analysis.\n\n\n\n\n\n\nCluster size differences between strata\n\n\n\n\n\nWhat is not included in this project are cluster sizes of the observed minke whale groups (we didn’t want to clutter the analysis with that detail). However, there is a bit of a story in geographic variation in cluster sizes. Cluster densities are higher in the southern stratum, but transects from both strata are being treated as if they are representative of the whole survey region. This results in a positively biased cluster density for the region as a whole. In addition, cluster sizes are higher in the South stratum. The estimate of E(s) from the unstratified analysis is a positively biased estimate of E(s) for the North stratum and a negatively biased estimate of E(s) for the South stratum. When it is applied to both strata, it results in a positively biased estimate of whale abundance because the North stratum is much larger and contains roughly twice as many whales as the south stratum.\n\n\n\n\n\n\n\n\n\nMoral\n\n\n\n\n\nDo not perform analyses without taking the survey design into account."
+  },
+  {
+    "objectID": "06-design/DistWin-prac/Pr6-instructions-DistWin.html#projecting-your-study-region",
+    "href": "06-design/DistWin-prac/Pr6-instructions-DistWin.html#projecting-your-study-region",
+    "title": "Design of distance sampling surveys",
+    "section": "Projecting your Study Region",
+    "text": "Projecting your Study Region\nThis exercise demonstrates how to deal with unprojected shapefiles. Study areas should always be projected onto a flat plane before you use them to design your survey. This is because in most parts of the world one degree latitude is not the same in distance as one degree longitude. If we didn’t project, our study region and any surveys generated in it, would be distorted possibly leading to non-uniform coverage.\nLoad the study region and project it onto a flat plane using an Albers Equal Area Conical projection. As we have to project the shapefile we load the shape object separately instead of directly into a region object.\n\n#Load the unprojected shapefile\nshapefile.name &lt;- system.file(\"extdata\", \"TentsmuirUnproj.shp\", package = \"dssd\")\nsf.shape &lt;- read_sf(shapefile.name)\n# Check current coordinate reference system\nst_crs(sf.shape)\n# Define a European Albers Equal Area projection\nproj4string &lt;- \"+proj=aea +lat_1=56 +lat_2=62 +lat_0=50 +lon_0=-3 +x_0=0 \n                +y_0=0 +ellps=intl +units=m\"\n# Project the study area on to a flat plane\nprojected.shape &lt;- st_transform(sf.shape, crs = proj4string)\n\nPlot it to check what it looks like."
+  },
+  {
+    "objectID": "06-design/DistWin-prac/Pr6-instructions-DistWin.html#coverage",
+    "href": "06-design/DistWin-prac/Pr6-instructions-DistWin.html#coverage",
+    "title": "Design of distance sampling surveys",
+    "section": "Coverage",
+    "text": "Coverage\nSet up a coverage grid. A coverage grid is a grid of regularly spaced points and is used to assess whether each point in the survey region is equally likely to sampled. The coverage grid needs to be created before the coverage can be evaluated\nTo generate a coverage grid layer click on the Data tab of the Project Browser and then the Create New Data Layer button (5th from left). Enter “covergae” as your Layer Name and set the Parent Layer to “Study Area” and the Layer Type to “Coverage”. You should now be able to click on the Properties… button. In the Grid Properties specify the approximate number of grid points to be 1000 Once you press OK you should proceed to add the grid points to the layer. This may take a few moments."
+  },
+  {
+    "objectID": "06-design/DistWin-prac/Pr6-instructions-DistWin.html#design",
+    "href": "06-design/DistWin-prac/Pr6-instructions-DistWin.html#design",
+    "title": "Design of distance sampling surveys",
+    "section": "Design",
+    "text": "Design\nSet up a systematic point transect design. We will assume that we have sufficient resources to survey 40 point transects. As the Morton Lochs stratum is of special interest we will give it higher coverage. We will therefore explicitly allocate 25 samplers to the main stratum and 15 to the Morton Lochs stratum (note that the area of the Morton Lochs stratum is much small than the main stratum). If we wanted to allocate the same effort to both stratum we could provide the samplers argument with the single value of 40 and it would divide the effort equally between the strata. We will leave the design angle as 0 and set the truncation distance to 100 m. We will use minus sampling at the edges.\nClick on the Designs tab of the Project Browser and then the New Design button. Rename your “New Design” something like “systematic line test” and then click the Show Details button to open the Design Details window. Select the “Point” sampler and set the design class to “Systematic Grid Sampling”. Click the Properties button to set the following properties for this design:\n\nOn the General Properties tab under Stratum layer, the Region stratum layer should be selected. Under Design coordinate system, you will see the study area has been projected using Albers Equal Angle projection.\nIn the Effort Allocation tab, under Edge Sampling select the “Minus” option. In the “Allocation by stratum”, you will specify your unequal coverage design, which will produce a greater proportional coverage of the Morton Lochs stratum compared to the Main Stratum.\n\nEnsure the “Same effort for all strata” is not checked\nRequest 25 of the 40 point transects be placed in the “Main” stratum and the remaining 15 transects in the relatively small (but important) Morton Lochs stratum.\n\nIn the “Sampler” tab, specify a detection radius of 100 in units of Meter\nMove to “Coverage Probability” tab and specify that coverage probability is to be “estimated by simulation”. Specify 1000 replicates of the survey design for the purpose of assessing coverage probabilities.\nThat concludes specification of the design. Press the “Run” button to generate the coverage probability statistics.\n\n\n\n\n\n\n\nQuestion:\n\n\n\n\nWhat are the analysis implications of a design with unequal coverage?"
+  },
+  {
+    "objectID": "06-design/DistWin-prac/Pr6-instructions-DistWin.html#generate-a-survey",
+    "href": "06-design/DistWin-prac/Pr6-instructions-DistWin.html#generate-a-survey",
+    "title": "Design of distance sampling surveys",
+    "section": "Generate a Survey",
+    "text": "Generate a Survey\nHaving completed your assessment of coverage properties of your design, generate a single survey from this design and plot it inside the survey region to check what it looks like.\n Return to the design you generated, and again press the “Run” button. However, this time when presented with the dialogue box at right, choose the second option “Create new Survey and generate a new sample data layer”\nExamine the survey information.\n\n\n\n\n\n\nQuestions:\n\n\n\n\nWhat spacing was used in each strata to try and achieve the desired number of samplers?\nDid your survey achieve exactly the number of samplers you requested?\nHow much does coverage differ between the two strata for this realisation?\n\n\n\n\nSave coordinates to a file\nIf this survey is to be conducted in the field, you will want the coordinates that you can load into a handheld GPS. The function write.transects() can write waypoints of the survey (in this case the point transect stations) to text, comma-separated value or GPX files.\n\nwrite.transects(survey.tm,\n                dsn = \"tentsmuir-points.gpx\",\n                layer = \"points\",\n                dataset.options = \"GPX_USE_EXTENSIONS=yes\",\n                proj4string=sf::st_crs(sf.shape))"
+  },
+  {
+    "objectID": "06-design/DistWin-prac/Pr6-instructions-DistWin.html#assessing-coverage-and-design-statistics",
+    "href": "06-design/DistWin-prac/Pr6-instructions-DistWin.html#assessing-coverage-and-design-statistics",
+    "title": "Design of distance sampling surveys",
+    "section": "Assessing Coverage and Design Statistics",
+    "text": "Assessing Coverage and Design Statistics\nExamining the output from the coverage simulation you just created, assess how - variable the number of samplers and average coverage between replicate surveys and - coverage varies spatially to assess the magnitude of edge effects.\n\n\n\n\n\n\nQuestions:\n\n\n\n\nWhat is the minimum number of samplers you will achieve in each strata?\nIs this sufficient to complete separate analyses in each stratum?\n\n\n\n\n\n\n\n\n\nQuestions:\n\n\n\n\nDoes it appear that there is even coverage within each strata?\n\nAs there is such a difference in the range of coverage scores between strata you may need to plot each strata individually."
+  },
+  {
+    "objectID": "06-design/DistWin-prac/Pr6-instructions-DistWin.html#the-distance-for-windows-project",
+    "href": "06-design/DistWin-prac/Pr6-instructions-DistWin.html#the-distance-for-windows-project",
+    "title": "Design of distance sampling surveys",
+    "section": "The Distance for Windows project",
+    "text": "The Distance for Windows project\nA shapefile of the study area has been inserted into the project Tentsmuir-points.zip. Your task is to design a survey that places point transect effort into the two strata. Download and open the project and create a map of the study area using the Maps tab adding the Region layer; see if you can locate the boundary between the strata."
   }
 ]

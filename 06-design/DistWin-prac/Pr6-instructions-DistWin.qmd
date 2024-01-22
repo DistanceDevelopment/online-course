@@ -8,11 +8,10 @@ csl: ../../style/apa.csl
 ---
 
 :::{.callout-warning collapse=false appearance='default' icon=true}
-# Design of distance sampling surveys
+## Design of distance sampling surveys
 :::
 
-
-Systematic parallel line aerial survey of marine mammals in St Andrews Bay
+# Systematic parallel line aerial survey of marine mammals in St Andrews Bay
 
 ## Reviewing the data
 
@@ -34,7 +33,7 @@ Now create and generate a couple of designs with a spacing of your choice (some 
 
 Click on the **Designs** tab of the **Project Browser** and then the **New Design** button. Rename your "New Design" something like "systematic line test" and then click the **Show Details** button to open the **Design Details** window. Select the “Line” sampler and set the design class to "Systematic Random Sampling". Click the **Properties** button to set the following properties for this design:
 
-- On the **General Properties** tab under Stratum layer, the StAndrews   stratum layer should be selected. Under Design coordinate system, the   design coordinate system should be “Non-earth referenced”. (The data  have already been projected from the OSGB 1936 geo-coordinate system using the transverse mercator projection)
+- On the **General Properties** tab under Stratum layer, the StAndrews stratum layer should be selected. Under Design coordinate system, the design coordinate system should be “Non-earth referenced”. (The data  have already been projected from the OSGB 1936 geo-coordinate system using the transverse mercator projection)
 - In the **Effort Allocation** tab, under Edge Sampling select the “Minus” option. In the “Allocation by stratum” section set the Line  length units to be Kilometres. Make sure the “Update effort in real time” check box is ticked. As there is only one survey stratum it does not matter whether the "Same effort for all strata" check box is  ticked or not. Click the "Systematic line spacing" radio button and enter the line spacing in the “Spacing” column of the table. When you enter a 5 km spacing for instance the “Length” column should then read 226.203 and the “Samplers” column 8. The accuracy of this approximation of on-effort line length and total number of line samplers depends on the shape of the survey region, but should at least give you some indication of what to expect.
 - In the **Sampler** tab, select Kilometre for the line sampler width units. Set the truncation width to 2 km.
 - Lastly, in the **Coverage Probability** tab, click on "Estimate by simulation" and enter 100 as the number of simulations. This is too few to give accurate coverage probabilities, but sufficient for the on-effort and total trackline length statistics. Under grid layer, choose previously created "Grid 5". Make sure the Grid field name is the same as your design name.
@@ -49,3 +48,104 @@ opens review the statistics to decide on suitable systematic line spacing.
 ## Automated generation of new surveys
 
 To see an example survey, go back to the **Design Details** window for your selected design click **Run** again this time choosing the “Generate a new Survey” option. The second page of the survey results displays a map of the survey region with the systematic lines superimposed. You can add this map to the **Map browser** and manipulate it there by clicking on the 6<sup>th</sup> button on the Survey map results page.
+
+# Point Transect Bird Survey in Tentsmuir Forest
+
+::: {.callout-note}
+## Exericse objective
+
+Design a point transect survey looking at songbird abundance in Tentsmuir Forest so that separate estimates of abundance can be obtained for the two strata.
+:::
+
+Tenstsmuir Forest is a mature pine forest located on the east coast of Scotland ~10km north of St Andrews. The western area of Tentsmuir around Morton Lochs is of special interest in this study as this part of the forest forms part of the Tentsmuir National Nature Reserve. This study region has therefore been divided into two stratum, the first is the main part of the forest and the second is the area of forest adjacent to Morton Lochs.
+
+
+## The Distance for Windows project
+
+A shapefile of the study area has been inserted into the project [Tentsmuir-points.zip](Tentsmuir-points.zip). Your task is to design a survey that places point transect effort into the two strata. Download and open the project and create a map of the study area using the **Maps** tab adding the **Region** layer; see if you can locate the boundary between the strata.
+
+
+## Coverage
+
+Set up a coverage grid. A coverage grid is a grid of regularly spaced points and is used to assess whether each point in the survey region is equally likely to sampled. The coverage grid needs to be created before the coverage can be evaluated
+
+To generate a coverage grid layer click on the **Data** tab of the **Project Browser** and then the **Create New Data Layer** button (5<sup>th</sup> from left). Enter “covergae” as your Layer Name and set the Parent Layer to “Study Area” and the Layer Type to “Coverage”. You should now be able to click on the **Properties…** button. In the **Grid Properties** specify the approximate number of grid points to be **1000** Once you press **OK** you should proceed to add the grid points to the layer. This may take a few moments.
+
+
+## Design
+
+Set up a systematic point transect design. We will assume that we have sufficient resources to survey 40 point transects. As the Morton Lochs stratum is of special interest we will give it higher coverage. We will therefore explicitly allocate 25 samplers to the main stratum and 15 to the Morton Lochs stratum (note that the area of the Morton Lochs stratum is much small than the main stratum). If we wanted to allocate the same effort to both stratum we could provide the samplers argument with the single value of 40 and it would divide the effort equally between the strata. We will leave the design angle as 0 and set the truncation distance to 100 m. We will use minus sampling  at the edges.
+
+Click on the **Designs** tab of the **Project Browser** and then the **New Design** button. Rename your "New Design" something like "systematic line test" and then click the **Show Details** button to open the **Design Details** window. Select the “Point” sampler and set the design class to "Systematic Grid Sampling". Click the **Properties** button to set the following properties for this design:
+
+- On the **General Properties** tab under Stratum layer, the Region stratum layer should be selected. Under Design coordinate system, you will see the study area has been projected using Albers Equal Angle projection.
+- In the **Effort Allocation** tab, under Edge Sampling select the “Minus” option. In the “Allocation by stratum”, you will specify your unequal coverage design, which will produce a greater proportional coverage of the Morton Lochs stratum compared to the Main Stratum.
+  - Ensure the "Same effort for all strata" is **not** checked
+  - Request 25 of the 40 point transects be placed in the "Main" stratum and the remaining 15 transects in the relatively small (but important) Morton Lochs stratum.
+- In the "Sampler" tab, specify a detection radius of **100** in units of **Meter**
+- Move to "Coverage Probability" tab and specify that coverage probability is to be "estimated by simulation". Specify **1000** replicates of the survey design for the purpose of assessing coverage probabilities.
+- That concludes specification of the design. Press the "Run" button to generate the coverage probability statistics.
+
+::: {.callout-important}
+## Question:
+
+- What are the analysis implications of a design with unequal coverage?
+:::
+
+## Assessing Coverage and Design Statistics
+
+Examining the output from the coverage simulation you just created, assess how
+- variable the number of samplers and average coverage between replicate surveys and
+- coverage varies spatially to assess the magnitude of edge effects.
+
+
+::: {.callout-important}
+## Questions:
+
+- What is the minimum number of samplers you will achieve in each strata? 
+- Is this sufficient to complete separate analyses in each stratum?
+:::
+
+::: {.callout-important}
+## Questions:
+
+- Does it appear that there is even coverage within each strata?
+  - As there is such a difference in the range of coverage scores between strata you may need to plot each strata individually.
+:::
+
+
+## Generate a Survey
+
+Having completed your assessment of coverage properties of your design, generate a single survey from this design and plot it inside the survey region to check what it looks like. 
+
+<img src="create-survey.png" align="right">
+Return to the design you generated, and again press the "Run" button. However, this time
+when presented with the dialogue box at right, choose the second option "Create new Survey and generate a new sample data layer"
+
+Examine the survey information. 
+
+::: {.callout-important}
+## Questions:
+
+- What spacing was used in each strata to try and achieve the desired number of samplers? 
+- Did your survey achieve exactly the number of samplers you requested? 
+- How much does coverage differ between the two strata for this realisation?
+:::
+
+
+### Save coordinates to a file
+
+If this survey is to be conducted in the field, you will want the coordinates that you can load into a handheld GPS.  The function `write.transects()` can write waypoints of the survey (in this case the point transect stations) to text, comma-separated value or GPX files.
+
+```{r}
+#| warning = FALSE,
+#| eval = FALSE,
+#| label = "makegpx"
+write.transects(survey.tm,
+                dsn = "tentsmuir-points.gpx",
+                layer = "points",
+                dataset.options = "GPX_USE_EXTENSIONS=yes",
+                proj4string=sf::st_crs(sf.shape))
+```
+
+

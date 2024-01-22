@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -333,11 +367,25 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#reviewing-the-data" id="toc-reviewing-the-data" class="nav-link active" data-scroll-target="#reviewing-the-data">Reviewing the data</a></li>
+  <li><a href="#systematic-parallel-line-aerial-survey-of-marine-mammals-in-st-andrews-bay" id="toc-systematic-parallel-line-aerial-survey-of-marine-mammals-in-st-andrews-bay" class="nav-link active" data-scroll-target="#systematic-parallel-line-aerial-survey-of-marine-mammals-in-st-andrews-bay">Systematic parallel line aerial survey of marine mammals in St Andrews Bay</a>
+  <ul class="collapse">
+  <li><a href="#reviewing-the-data" id="toc-reviewing-the-data" class="nav-link" data-scroll-target="#reviewing-the-data">Reviewing the data</a></li>
   <li><a href="#generate-a-coverage-grid-layer" id="toc-generate-a-coverage-grid-layer" class="nav-link" data-scroll-target="#generate-a-coverage-grid-layer">Generate a coverage grid layer</a></li>
   <li><a href="#creating-a-new-design" id="toc-creating-a-new-design" class="nav-link" data-scroll-target="#creating-a-new-design">Creating a new design</a></li>
   <li><a href="#design-statistics" id="toc-design-statistics" class="nav-link" data-scroll-target="#design-statistics">Design statistics</a></li>
   <li><a href="#automated-generation-of-new-surveys" id="toc-automated-generation-of-new-surveys" class="nav-link" data-scroll-target="#automated-generation-of-new-surveys">Automated generation of new surveys</a></li>
+  </ul></li>
+  <li><a href="#point-transect-bird-survey-in-tentsmuir-forest" id="toc-point-transect-bird-survey-in-tentsmuir-forest" class="nav-link" data-scroll-target="#point-transect-bird-survey-in-tentsmuir-forest">Point Transect Bird Survey in Tentsmuir Forest</a>
+  <ul class="collapse">
+  <li><a href="#the-distance-for-windows-project" id="toc-the-distance-for-windows-project" class="nav-link" data-scroll-target="#the-distance-for-windows-project">The Distance for Windows project</a></li>
+  <li><a href="#coverage" id="toc-coverage" class="nav-link" data-scroll-target="#coverage">Coverage</a></li>
+  <li><a href="#design" id="toc-design" class="nav-link" data-scroll-target="#design">Design</a></li>
+  <li><a href="#assessing-coverage-and-design-statistics" id="toc-assessing-coverage-and-design-statistics" class="nav-link" data-scroll-target="#assessing-coverage-and-design-statistics">Assessing Coverage and Design Statistics</a></li>
+  <li><a href="#generate-a-survey" id="toc-generate-a-survey" class="nav-link" data-scroll-target="#generate-a-survey">Generate a Survey</a>
+  <ul class="collapse">
+  <li><a href="#save-coordinates-to-a-file" id="toc-save-coordinates-to-a-file" class="nav-link" data-scroll-target="#save-coordinates-to-a-file">Save coordinates to a file</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -389,7 +437,8 @@ Design of distance sampling surveys
 </div>
 </div>
 </div>
-<p>Systematic parallel line aerial survey of marine mammals in St Andrews Bay</p>
+<section id="systematic-parallel-line-aerial-survey-of-marine-mammals-in-st-andrews-bay" class="level1">
+<h1>Systematic parallel line aerial survey of marine mammals in St Andrews Bay</h1>
 <section id="reviewing-the-data" class="level2">
 <h2 class="anchored" data-anchor-id="reviewing-the-data">Reviewing the data</h2>
 <p><img src="image1.jpeg" style="width:2.04306in;height:2.29792in" alt="File:Bell Rock Lighthouse.jpg" align="left"> Open the project archived in <a href="StAndrews.zip">StAndrews.zip</a>. This project contains the survey region for an aerial survey of porpoise, common dolphins and seals in and around St Andrews bay. (For locals: the nearer St Andrews bay region has been extended in an easterly direction out past Bell Rock, as there are some pockets of deeper water out there that are of interest with regard to the distribution of cetaceans. The survey region has a chunk missing due to a no-fly zone around Buddo Ness, just below Carnoustie). To take a look at the survey region create a new map in the <strong>Maps</strong> tab and add the layer <strong>StAndrews</strong> to the map.</p>
@@ -419,8 +468,138 @@ Design of distance sampling surveys
 <section id="automated-generation-of-new-surveys" class="level2">
 <h2 class="anchored" data-anchor-id="automated-generation-of-new-surveys">Automated generation of new surveys</h2>
 <p>To see an example survey, go back to the <strong>Design Details</strong> window for your selected design click <strong>Run</strong> again this time choosing the “Generate a new Survey” option. The second page of the survey results displays a map of the survey region with the systematic lines superimposed. You can add this map to the <strong>Map browser</strong> and manipulate it there by clicking on the 6<sup>th</sup> button on the Survey map results page.</p>
+</section>
+</section>
+<section id="point-transect-bird-survey-in-tentsmuir-forest" class="level1">
+<h1>Point Transect Bird Survey in Tentsmuir Forest</h1>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exericse objective
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Design a point transect survey looking at songbird abundance in Tentsmuir Forest so that separate estimates of abundance can be obtained for the two strata.</p>
+</div>
+</div>
+<p>Tenstsmuir Forest is a mature pine forest located on the east coast of Scotland ~10km north of St Andrews. The western area of Tentsmuir around Morton Lochs is of special interest in this study as this part of the forest forms part of the Tentsmuir National Nature Reserve. This study region has therefore been divided into two stratum, the first is the main part of the forest and the second is the area of forest adjacent to Morton Lochs.</p>
+<section id="the-distance-for-windows-project" class="level2">
+<h2 class="anchored" data-anchor-id="the-distance-for-windows-project">The Distance for Windows project</h2>
+<p>A shapefile of the study area has been inserted into the project <a href="Tentsmuir-points.zip">Tentsmuir-points.zip</a>. Your task is to design a survey that places point transect effort into the two strata. Download and open the project and create a map of the study area using the <strong>Maps</strong> tab adding the <strong>Region</strong> layer; see if you can locate the boundary between the strata.</p>
+</section>
+<section id="coverage" class="level2">
+<h2 class="anchored" data-anchor-id="coverage">Coverage</h2>
+<p>Set up a coverage grid. A coverage grid is a grid of regularly spaced points and is used to assess whether each point in the survey region is equally likely to sampled. The coverage grid needs to be created before the coverage can be evaluated</p>
+<p>To generate a coverage grid layer click on the <strong>Data</strong> tab of the <strong>Project Browser</strong> and then the <strong>Create New Data Layer</strong> button (5<sup>th</sup> from left). Enter “covergae” as your Layer Name and set the Parent Layer to “Study Area” and the Layer Type to “Coverage”. You should now be able to click on the <strong>Properties…</strong> button. In the <strong>Grid Properties</strong> specify the approximate number of grid points to be <strong>1000</strong> Once you press <strong>OK</strong> you should proceed to add the grid points to the layer. This may take a few moments.</p>
+</section>
+<section id="design" class="level2">
+<h2 class="anchored" data-anchor-id="design">Design</h2>
+<p>Set up a systematic point transect design. We will assume that we have sufficient resources to survey 40 point transects. As the Morton Lochs stratum is of special interest we will give it higher coverage. We will therefore explicitly allocate 25 samplers to the main stratum and 15 to the Morton Lochs stratum (note that the area of the Morton Lochs stratum is much small than the main stratum). If we wanted to allocate the same effort to both stratum we could provide the samplers argument with the single value of 40 and it would divide the effort equally between the strata. We will leave the design angle as 0 and set the truncation distance to 100 m. We will use minus sampling at the edges.</p>
+<p>Click on the <strong>Designs</strong> tab of the <strong>Project Browser</strong> and then the <strong>New Design</strong> button. Rename your “New Design” something like “systematic line test” and then click the <strong>Show Details</strong> button to open the <strong>Design Details</strong> window. Select the “Point” sampler and set the design class to “Systematic Grid Sampling”. Click the <strong>Properties</strong> button to set the following properties for this design:</p>
+<ul>
+<li>On the <strong>General Properties</strong> tab under Stratum layer, the Region stratum layer should be selected. Under Design coordinate system, you will see the study area has been projected using Albers Equal Angle projection.</li>
+<li>In the <strong>Effort Allocation</strong> tab, under Edge Sampling select the “Minus” option. In the “Allocation by stratum”, you will specify your unequal coverage design, which will produce a greater proportional coverage of the Morton Lochs stratum compared to the Main Stratum.
+<ul>
+<li>Ensure the “Same effort for all strata” is <strong>not</strong> checked</li>
+<li>Request 25 of the 40 point transects be placed in the “Main” stratum and the remaining 15 transects in the relatively small (but important) Morton Lochs stratum.</li>
+</ul></li>
+<li>In the “Sampler” tab, specify a detection radius of <strong>100</strong> in units of <strong>Meter</strong></li>
+<li>Move to “Coverage Probability” tab and specify that coverage probability is to be “estimated by simulation”. Specify <strong>1000</strong> replicates of the survey design for the purpose of assessing coverage probabilities.</li>
+<li>That concludes specification of the design. Press the “Run” button to generate the coverage probability statistics.</li>
+</ul>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Question:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>What are the analysis implications of a design with unequal coverage?</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="assessing-coverage-and-design-statistics" class="level2">
+<h2 class="anchored" data-anchor-id="assessing-coverage-and-design-statistics">Assessing Coverage and Design Statistics</h2>
+<p>Examining the output from the coverage simulation you just created, assess how - variable the number of samplers and average coverage between replicate surveys and - coverage varies spatially to assess the magnitude of edge effects.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Questions:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>What is the minimum number of samplers you will achieve in each strata?</li>
+<li>Is this sufficient to complete separate analyses in each stratum?</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Questions:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Does it appear that there is even coverage within each strata?
+<ul>
+<li>As there is such a difference in the range of coverage scores between strata you may need to plot each strata individually.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="generate-a-survey" class="level2">
+<h2 class="anchored" data-anchor-id="generate-a-survey">Generate a Survey</h2>
+<p>Having completed your assessment of coverage properties of your design, generate a single survey from this design and plot it inside the survey region to check what it looks like.</p>
+<p><img src="create-survey.png" align="right"> Return to the design you generated, and again press the “Run” button. However, this time when presented with the dialogue box at right, choose the second option “Create new Survey and generate a new sample data layer”</p>
+<p>Examine the survey information.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Questions:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>What spacing was used in each strata to try and achieve the desired number of samplers?</li>
+<li>Did your survey achieve exactly the number of samplers you requested?</li>
+<li>How much does coverage differ between the two strata for this realisation?</li>
+</ul>
+</div>
+</div>
+<section id="save-coordinates-to-a-file" class="level3">
+<h3 class="anchored" data-anchor-id="save-coordinates-to-a-file">Save coordinates to a file</h3>
+<p>If this survey is to be conducted in the field, you will want the coordinates that you can load into a handheld GPS. The function <code>write.transects()</code> can write waypoints of the survey (in this case the point transect stations) to text, comma-separated value or GPX files.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">write.transects</span>(survey.tm,</span>
+<span id="cb1-2"><a href="#cb1-2"></a>                <span class="at">dsn =</span> <span class="st">"tentsmuir-points.gpx"</span>,</span>
+<span id="cb1-3"><a href="#cb1-3"></a>                <span class="at">layer =</span> <span class="st">"points"</span>,</span>
+<span id="cb1-4"><a href="#cb1-4"></a>                <span class="at">dataset.options =</span> <span class="st">"GPX_USE_EXTENSIONS=yes"</span>,</span>
+<span id="cb1-5"><a href="#cb1-5"></a>                <span class="at">proj4string=</span>sf<span class="sc">::</span><span class="fu">st_crs</span>(sf.shape))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->

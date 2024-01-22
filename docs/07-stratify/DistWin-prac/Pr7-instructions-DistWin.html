@@ -320,7 +320,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../11-mrds/mrdslanding.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Analysis of point transect data</span></a>
+ <span class="menu-text">Analysis of double platform data</span></a>
   </div>
 </li>
       </ul>
@@ -331,7 +331,14 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#the-data" id="toc-the-data" class="nav-link active" data-scroll-target="#the-data">The Data</a></li>
+  <li><a href="#analysis-exercises" id="toc-analysis-exercises" class="nav-link" data-scroll-target="#analysis-exercises">Analysis Exercises</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -381,19 +388,22 @@ Analysis of stratified data
 </div>
 </div>
 </div>
-<p><strong>The Data</strong></p>
+<section id="the-data" class="level2">
+<h2 class="anchored" data-anchor-id="the-data">The Data</h2>
 <p>The Distance project <a href="Stratify exercise.zip">Stratify exercise.zip</a> contains data from a stratified survey of Antarctic minke whales. The data are “exact” insofar as they are calculated directly from the estimates of radial distance and angle recorded by the observers. While angle boards and reticle binoculars were used for estimation of angles and distances when possible, the transitory nature of cues (usually blows) and the pitch and roll of the vessel, among other things, leads to in errors in estimating angles and distances. Angular errors are typically of the order of a degree or two; the coefficient of variation of distance estimation errors is typically of the order of 10%.</p>
 <p>The two strata were surveyed by different vessels at the same time. Because the whales tend to be found in high densities against the ice edge, where they feed, densities in southern strata are typically higher than those in northern strata. In fact this is the primary reason for using a stratified survey design. It is also the reason for covering the southern strata more intensely; in this survey the transect length per unit area in the southern stratum, is more than 2.5 times that in the northern stratum.</p>
 <p>Here are pictures of the sort of design used and a typical density gradient. The irregular bottom border is the ice-edge; the “steps” define the boundary between southern and northern strata; dotted lines are transects; solid dots are detections.</p>
 <p><img src="image1.png" style="width:2.74861in;height:2.49792in"> <img src="image2.png" style="width:2.54236in;height:2.37431in"></p>
-<p><strong>Analysis Exercises</strong></p>
-<p>Open the project from its archive <strong>Stratify exercise.zip</strong>. The project contains one analysis specification, called “Full geog stratification”. This is a fully stratified analysis of the data. Seven equal perpendicular distance intervals, truncation at 1.5 nautical miles (nm), and a hazard rate detection function form with no adjustment terms are used to estimate the detection function. As the focus of these exercises is stratification, do not investigate other perpendicular distance intervals and detection function forms; the given models are adequate. Use the <strong>Analysis browser</strong> to familiarise yourself with the details of this analysis specification.</p>
+</section>
+<section id="analysis-exercises" class="level2">
+<h2 class="anchored" data-anchor-id="analysis-exercises">Analysis Exercises</h2>
+<p>Open the project from its archive <a href="Stratify exercise.zip">Stratify exercise.zip</a>. The project contains one analysis specification, called <em>Full geog stratification</em>. This is a fully stratified analysis of the data. Seven equal perpendicular distance intervals, truncation at 1.5 nautical miles (nm), and a hazard rate detection function form with no adjustment terms are used to estimate the detection function. As the focus of these exercises is stratification, do not investigate other perpendicular distance intervals and detection function forms; the given models are adequate. Use the <strong>Analysis browser</strong> to familiarise yourself with the details of this analysis specification.</p>
 <ul>
-<li>Having done that, run the analysis “Full geog stratification”. Look at the results, and note the AIC statistics from each detection function fit.</li>
-<li>To stratify <span class="math inline">\(f(0)\)</span> or not: Create a new analysis identical to “Full geog stratification” by clicking the <strong>New Analysis</strong> icon in the <strong>Analysis</strong> tab of the <strong>Project browser</strong> after selecting the existing analysis. The new analysis will be a copy of the existing one.</li>
+<li>Having done that, run the analysis <em>Full geog stratification</em>. Look at the results, and note the AIC statistics from each detection function fit.</li>
+<li>To stratify <span class="math inline">\(f(0)\)</span> or not: Create a new analysis identical to <em>Full geog stratification</em> by clicking the <strong>New Analysis</strong> icon in the <strong>Analysis</strong> tab of the <strong>Project browser</strong> after selecting the existing analysis. The new analysis will be a copy of the existing one.</li>
 </ul>
-<p>Create a new model definition for this new analysis by going to the <strong>Inputs</strong> tab and highlighting the “haz rate+no adj full strat” model, then clicking the <strong>New</strong> tab. This will copy the existing model definition – modify the new model definition so that f(0) is to be estimated from the pooled strata (click the <strong>Detection function</strong> x <strong>Global</strong> cell of the table on the <strong>Estimate</strong> tab of the <strong>Model Definition Properties</strong> window you get after clicking <strong>New</strong>). Give this new model definition a suitable name and then click <strong>OK</strong>.</p>
-<p>Run the new analysis and look at the output. By comparing the AIC from this analysis with the sum of the AICs from the analysis “Full geog stratification”, and considering the fits of each detection function, decide whether or not to pool strata for estimation of <em>f</em>(0).</p>
+<p>Create a new model definition for this new analysis by going to the <strong>Inputs</strong> tab and highlighting the “haz rate+no adj full strat” model, then clicking the <strong>New</strong> tab. This will copy the existing model definition – modify the new model definition so that f(0) is to be estimated from the pooled strata (click the <strong>Detection function</strong> x <strong>Global</strong> cell of the table on the <strong>Estimate</strong> tab of the <strong>Model Definition Properties</strong> window you get after clicking <strong>New</strong>). Give this new model definition the name <em>Pooled detection fn</em> and then click <strong>OK</strong>.</p>
+<p>Run the new analysis and look at the output. By comparing the AIC from this analysis with the sum of the AICs from the analysis <em>Full geog stratification</em>, and considering the fits of each detection function, decide whether or not to pool strata for estimation of <em>f</em>(0).</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -406,12 +416,13 @@ If you have time, here’s a more difficult question.
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
-<p>Create an analysis without any stratification and estimate density using it. Why is the density estimate so much higher than those from 1. and 2. above?</p>
+<p>Create an analysis without any stratification (<em>No stratification</em>) and estimate density using it. Why is the density estimate so much higher than those from <em>Full geog stratification</em> and <em>Pooled detection fn</em> above?</p>
 </div>
 </div>
 </div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
