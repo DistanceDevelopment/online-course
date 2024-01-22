@@ -69,7 +69,7 @@ A shapefile of the study area has been inserted into the project [Tentsmuir-poin
 
 Set up a coverage grid. A coverage grid is a grid of regularly spaced points and is used to assess whether each point in the survey region is equally likely to sampled. The coverage grid needs to be created before the coverage can be evaluated
 
-To generate a coverage grid layer click on the **Data** tab of the **Project Browser** and then the **Create New Data Layer** button (5<sup>th</sup> from left). Enter “covergae” as your Layer Name and set the Parent Layer to “Study Area” and the Layer Type to “Coverage”. You should now be able to click on the **Properties…** button. In the **Grid Properties** specify the approximate number of grid points to be **1000** Once you press **OK** you should proceed to add the grid points to the layer. This may take a few moments.
+To generate a coverage grid layer click on the **Data** tab of the **Project Browser** and then the **Create New Data Layer** button (5<sup>th</sup> from left). Enter “coverage” as your Layer Name and set the Parent Layer to “Study Area” and the Layer Type to “Coverage”. You should now be able to click on the **Properties…** button. In the **Grid Properties** specify the approximate number of grid points to be **1000** Once you press **OK** you should proceed to add the grid points to the layer. This may take a few moments.
 
 
 ## Design
@@ -116,9 +116,9 @@ Examining the output from the coverage simulation you just created, assess how
 
 ## Generate a Survey
 
+<img src="create-survey.png" align="right">
 Having completed your assessment of coverage properties of your design, generate a single survey from this design and plot it inside the survey region to check what it looks like. 
 
-<img src="create-survey.png" align="right">
 Return to the design you generated, and again press the "Run" button. However, this time
 when presented with the dialogue box at right, choose the second option "Create new Survey and generate a new sample data layer"
 
