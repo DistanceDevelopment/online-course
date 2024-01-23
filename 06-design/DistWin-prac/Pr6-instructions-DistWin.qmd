@@ -117,12 +117,15 @@ Examining the output from the coverage simulation you just created, assess how
 ## Generate a Survey
 
 <img src="create-survey.png" align="right">
-Having completed your assessment of coverage properties of your design, generate a single survey from this design and plot it inside the survey region to check what it looks like. 
+Having completed your assessment of coverage properties of your design and determining the coverage is suitable for your study objectives, generate a single survey from this design and plot it inside the survey region to check what it looks like. 
 
-Return to the design you generated, and again press the "Run" button. However, this time
-when presented with the dialogue box at right, choose the second option "Create new Survey and generate a new sample data layer"
+Return to the design you generated, and again press the "Run" button. However, this time when presented with the dialogue box at right, choose the second option "Create new Survey and generate a new sample data layer"
 
-Examine the survey information. 
+Examine the survey information, viewing the green tab. 
+
+For both strata `Main` and `Morton Lochs` you will see the number of point transects placed, the vertical and horizontal spacing between points and the proportion of the strata receiving sampling effort (based upon 100m truncation distance at each point).
+
+The final two pages of output show the placement of point transects for the given survey realisation in map form and also the coordinates (in degrees latitude/longitude) of the point stations. These values can be downloaded into handheld GPS units for the field crew to navigate to each station.
 
 ::: {.callout-important}
 ## Questions:
@@ -131,21 +134,4 @@ Examine the survey information.
 - Did your survey achieve exactly the number of samplers you requested? 
 - How much does coverage differ between the two strata for this realisation?
 :::
-
-
-### Save coordinates to a file
-
-If this survey is to be conducted in the field, you will want the coordinates that you can load into a handheld GPS.  The function `write.transects()` can write waypoints of the survey (in this case the point transect stations) to text, comma-separated value or GPX files.
-
-```{r}
-#| warning = FALSE,
-#| eval = FALSE,
-#| label = "makegpx"
-write.transects(survey.tm,
-                dsn = "tentsmuir-points.gpx",
-                layer = "points",
-                dataset.options = "GPX_USE_EXTENSIONS=yes",
-                proj4string=sf::st_crs(sf.shape))
-```
-
 

@@ -334,6 +334,7 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#systematic-parallel-line-aerial-survey-of-marine-mammals-in-st-andrews-bay" id="toc-systematic-parallel-line-aerial-survey-of-marine-mammals-in-st-andrews-bay" class="nav-link active" data-scroll-target="#systematic-parallel-line-aerial-survey-of-marine-mammals-in-st-andrews-bay">Systematic parallel line aerial survey of marine mammals in St Andrews bay</a></li>
+  <li><a href="#point-transect-bird-survey-in-tentsmuir-forest" id="toc-point-transect-bird-survey-in-tentsmuir-forest" class="nav-link" data-scroll-target="#point-transect-bird-survey-in-tentsmuir-forest">Point Transect Bird Survey in Tentsmuir Forest</a></li>
   </ul>
 </nav>
     </div>
@@ -478,6 +479,77 @@ Design of distance sampling surveys
 </tbody>
 </table>
 <p>Not surprisingly, the greater the spacing between tracklines, the smaller the proportion of time we spend on effort as we have to spend time flying between the transect lines.</p>
+</section>
+<section id="point-transect-bird-survey-in-tentsmuir-forest" class="level1">
+<h1>Point Transect Bird Survey in Tentsmuir Forest</h1>
+<p>The answers to the questions posed in the instructions steer you to be cautious in the unequal allocation of effort between strata.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answers
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><em>What are the analysis implications of a design with unequal coverage?</em></p>
+<blockquote class="blockquote">
+<p>As our two strata have different coverage we should analyse them separately. We therefore need to make sure that we have sufficient transects in each strata to perform an analysis - ideally 20. There are two reasons that we should analyse them separately. Our covered area will not be representative of the study area as a whole. If density is higher or lower in one strata than the other we will get a biased estimate of abundance for the area as a whole using the standard distance sampling estimators. Pooling robustness between the two strata will no longer apply and it may be the case that detection functions differ between the two strata. We will also no longer have a representative sample of observations across the entire study region.</p>
+</blockquote>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answers
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><em>What spacing was used in each strata to try and achieve the desired number of samplers? Did your survey achieve exactly the number of samplers you requested? How much does coverage differ between the two strata for this realisation?</em></p>
+<blockquote class="blockquote">
+<p>A spacing of 751m was used in the main stratum and 218m in the Morton Lochs stratum - these values are calculated based on the stratum areas and should not vary between surveys generated from the same design. You may or may not have achieved the number of transects you requested, this will depend on the random start point calculated for your particular survey. There will also be some variability in coverage, my survey achieved a coverage of 5.7% in the main strata and 64.8% in the Morton Loch strata.</p>
+<p>This is an extreme example of unequal coverage between the strata.</p>
+</blockquote>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answers
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><em>View the design statistics. What is the minimum number of samplers you will achieve in each strata? Is this sufficient to complete separate analyses in each stratum?</em></p>
+<blockquote class="blockquote">
+<p>My design statistics indicated I should achieve between 22 and 27 transects in the main stratum and between 12 and 18 in the Morton Lochs stratum. I might be a bit concerned about the possibility of only achieving 12 transects in the Morton Lochs stratum (remember I cannot just discard a survey due to the number of transects and generate another as it will affect my coverage properties).</p>
+<p>Whether this is sufficient will depend on a number of things such as a) objectives of the study, b) number of detections per transect etc. Information from a pilot study would be useful to help decide how many transects are required as a minimum.</p>
+</blockquote>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answers
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><em>Does it appear that you that there is even coverage within strata?</em></p>
+<blockquote class="blockquote">
+<p>The main strata looks to have fairly uniform coverage. The values appear to have such small levels of variability that the variability that is seen will be down to stochasticity as it is seen across the entire strata. The Morton Lochs strata we can see has areas of lower coverage around the edge of the study region. Because of the smaller area of this stratum the perimeter to area ratio for Morton Lochs is large; creating the potential for edge effects to manifest themselves. This grid is a bit too coarse to allow us to properly judge how much of an issue edge effects will be in this strata. It may be wise to re-run the coverage simulation with a finer coverage grid and more repetitions too. Edge effects could potentially be problematic in such small areas.</p>
+</blockquote>
+</div>
+</div>
+<p>A completed version of the Tentsmuir survey design project can be found in <a href="TentsmuirSolution.zip">TentsmuirSolution.zip</a>.</p>
 
 
 </section>

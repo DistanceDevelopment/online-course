@@ -21,40 +21,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -381,10 +347,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#coverage" id="toc-coverage" class="nav-link" data-scroll-target="#coverage">Coverage</a></li>
   <li><a href="#design" id="toc-design" class="nav-link" data-scroll-target="#design">Design</a></li>
   <li><a href="#assessing-coverage-and-design-statistics" id="toc-assessing-coverage-and-design-statistics" class="nav-link" data-scroll-target="#assessing-coverage-and-design-statistics">Assessing Coverage and Design Statistics</a></li>
-  <li><a href="#generate-a-survey" id="toc-generate-a-survey" class="nav-link" data-scroll-target="#generate-a-survey">Generate a Survey</a>
-  <ul class="collapse">
-  <li><a href="#save-coordinates-to-a-file" id="toc-save-coordinates-to-a-file" class="nav-link" data-scroll-target="#save-coordinates-to-a-file">Save coordinates to a file</a></li>
-  </ul></li>
+  <li><a href="#generate-a-survey" id="toc-generate-a-survey" class="nav-link" data-scroll-target="#generate-a-survey">Generate a Survey</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -566,9 +529,11 @@ Questions:
 </section>
 <section id="generate-a-survey" class="level2">
 <h2 class="anchored" data-anchor-id="generate-a-survey">Generate a Survey</h2>
-<p><img src="create-survey.png" align="right"> Having completed your assessment of coverage properties of your design, generate a single survey from this design and plot it inside the survey region to check what it looks like.</p>
+<p><img src="create-survey.png" align="right"> Having completed your assessment of coverage properties of your design and determining the coverage is suitable for your study objectives, generate a single survey from this design and plot it inside the survey region to check what it looks like.</p>
 <p>Return to the design you generated, and again press the “Run” button. However, this time when presented with the dialogue box at right, choose the second option “Create new Survey and generate a new sample data layer”</p>
-<p>Examine the survey information.</p>
+<p>Examine the survey information, viewing the green tab.</p>
+<p>For both strata <code>Main</code> and <code>Morton Lochs</code> you will see the number of point transects placed, the vertical and horizontal spacing between points and the proportion of the strata receiving sampling effort (based upon 100m truncation distance at each point).</p>
+<p>The final two pages of output show the placement of point transects for the given survey realisation in map form and also the coordinates (in degrees latitude/longitude) of the point stations. These values can be downloaded into handheld GPS units for the field crew to navigate to each station.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -586,19 +551,8 @@ Questions:
 </ul>
 </div>
 </div>
-<section id="save-coordinates-to-a-file" class="level3">
-<h3 class="anchored" data-anchor-id="save-coordinates-to-a-file">Save coordinates to a file</h3>
-<p>If this survey is to be conducted in the field, you will want the coordinates that you can load into a handheld GPS. The function <code>write.transects()</code> can write waypoints of the survey (in this case the point transect stations) to text, comma-separated value or GPX files.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">write.transects</span>(survey.tm,</span>
-<span id="cb1-2"><a href="#cb1-2"></a>                <span class="at">dsn =</span> <span class="st">"tentsmuir-points.gpx"</span>,</span>
-<span id="cb1-3"><a href="#cb1-3"></a>                <span class="at">layer =</span> <span class="st">"points"</span>,</span>
-<span id="cb1-4"><a href="#cb1-4"></a>                <span class="at">dataset.options =</span> <span class="st">"GPX_USE_EXTENSIONS=yes"</span>,</span>
-<span id="cb1-5"><a href="#cb1-5"></a>                <span class="at">proj4string=</span>sf<span class="sc">::</span><span class="fu">st_crs</span>(sf.shape))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 
 
-</section>
 </section>
 </section>
 
