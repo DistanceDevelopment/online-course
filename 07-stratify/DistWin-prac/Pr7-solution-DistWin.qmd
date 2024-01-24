@@ -31,7 +31,14 @@ estimation of separate detection function in each stratum is preferable.
 
 ## Relevant results are in Analysis “No stratification”.
 
-The whale density estimate from the unstratified analysis is around 25% larger than the corresponding estimates from *Full geog stratification* and *Pooled f(0)* above. The reason is that the survey design was geographically stratified, with less survey effort in the north stratum, and this is being ignored in the unstratified analysis.  
+The whale density estimate from the unstratified analysis is 15-25% larger than the corresponding estimates from *Full geog stratification* and *Pooled f(0)* above. See table of study area abundance estimates below. The reason is that the survey design was geographically stratified, with less survey effort in the north stratum, and this is being ignored in the unstratified analysis.  
+
+| **Model**                	| **Num parameters** 	| **N** 	| **N LCL** 	| **N UCL** 	|
+|--------------------------	|-------------------:	|-------	|----------:	|-----------	|
+| Full geog stratification 	|                  4 	| 14954 	|      8420 	| 26559     	|
+| Pooled f(0)              	|                  2 	| 16333 	|      8619 	| 30949     	|
+| No stratification        	|                  2 	| 18868 	|     11164 	| 31888     	|
+
 
 :::{.callout-note collapse=false appearance='default' icon=true}
 ## Cluster size differences between strata
