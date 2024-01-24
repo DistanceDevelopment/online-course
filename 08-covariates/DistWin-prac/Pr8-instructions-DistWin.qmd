@@ -56,21 +56,20 @@ Once you have decided on the best model, make a note of the estimated abundance,
 -->
 
 
-## 1 Passerine data from @Marques2007
+## Passerine data from @Marques2007
 
 The data from the Auk paper by [@Marques2007] is also available. It is zipped as the project [fTAMAUK07.zip](fTAMAUK07.zip). See if you can produce results comparable to those presented in the manuscript.
 
 
-## 2 Dolphin Sightings Data 
+## Dolphin Sightings Data 
 
-In this exercise there are several potential covariates and no ‘right’ answers!
+In this exercise there are several potential covariates and no ‘right’ answers. Begin your investigation by downloading the archived Distance for Windows project [Dolphin.zip](Dolphin.zip) and opening it using the Distance for Windows software.
 
-### 3.1 Reviewing the data 
+### Reviewing the data 
 
-In this example we have a sample of eastern tropical Pacific (ETP) offshore spotted dolphin sightings data, collected by observers placed on board tuna vessels (the data were kindly made available to us by the Inter-American Tropical Tuna Commission – IATTC). In the ETP, schools of yellow fin tuna commonly associate with schools of certain species of dolphins, and so vessels fishing for tuna often search for dolphins in the hopes of also locating tuna. For each school detected by the tuna vessels, the observer records the species, sighting angle and distance (later converted to perpendicular distance and truncated at 5 nautical miles), school size, and a number of covariates associated with each detected school. Many of these covariates potentially affect the detection function, as they reflect how the search was being carried out.
+In this example we have a sample of eastern tropical Pacific (ETP) offshore spotted dolphin sightings data, collected by observers placed on board tuna vessels (the data were kindly made available to us by the Inter-American Tropical Tuna Commission – IATTC). A full description of the analysis of these data can be found in @FMARBUC03. In the ETP, schools of yellow fin tuna commonly associate with schools of certain species of dolphins, and so vessels fishing for tuna often search for dolphins in the hopes of also locating tuna. For each school detected by the tuna vessels, the observer records the species, sighting angle and distance (later converted to perpendicular distance and truncated at 5 nautical miles), school size, and a number of covariates associated with each detected school. Many of these covariates potentially affect the detection function, as they reflect how the search was being carried out.
 
-A variety of search methods are used to find the dolphins, but currently the most commonly used are 20x binoculars from the crow’s nest, 20x binoculars from another location on the vessel, from a helicopter, or through “bird radar” (high power radars which are able to detect seabirds flying above the dolphin schools). In the example dataset these are coded as 0, 2, 3, and 5, respectively. Some of these methods may have a wider range of search than the others, and so it is possible that
-the effective strip width varies according to the method being used.
+A variety of search methods are used to find the dolphins, but currently the most commonly used are 20x binoculars from the crow’s nest, 20x binoculars from another location on the vessel, from a helicopter, or through “bird radar” (high power radars which are able to detect seabirds flying above the dolphin schools). In the example dataset these are coded as 0, 2, 3, and 5, respectively. Some of these methods may have a wider range of search than the others, and so it is possible that the effective strip width varies according to the method being used.
 
 For each sighting the initial cue type is recorded. This may be birds flying above the school, splashes on the water, floating objects such as logs, or some other unspecified cue. In the example they have been coded as 1, 2, 4 and 3, respectively.
 
@@ -80,7 +79,7 @@ The sample data encompasses sightings made over a three month period: June, July
 
 Begin by extracting and opening the project from the archive [Dolphin.zip](Dolphin.zip). Once it is open, you will see the **Project Browser**, from which you can have a look at the data (**Data** tab).
 
-### 3.2 Analysis of Dolphin Sightings data
+### Analysis of Dolphin Sightings data
 
 Start by running a set of conventional distance analyses. Are there any problems in the data and if so how might you mitigate them? (Hint – check out the q-q plot, and also try dividing the data into a large number of intervals in the Model Definition \| Detection Function \| Diagnostics.)
 
