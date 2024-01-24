@@ -1,0 +1,128 @@
+---
+title: Supplement, covariate coefficient interpretation
+author: Centre for Research into Ecological and Environmental Modelling <br> **University of St Andrews**
+date-modified: "January 2024"
+date-format: "MMMM YYYY"
+bibliography: references.bib
+csl: ../style/apa.csl
+---
+
+:::{.callout-tip collapse=false appearance='default' icon=true}
+## Covariate analysis of point transects: Savannah sparrow
+- Further investigation of a single covariate (pasture) upon detectability of the Savannah Sparrow data set. The analysis is done in **R**, but the understanding of the covariates is relevant whatever software is used.
+:::
+
+Recall, these are data from Colorado, described by @knopf1988.  The question here was whether to include pasture as a covariate in the detection function.  The biological question being, "does detectability of Savannah sparrows differ between the pastures in which the survey was conducted."
+
+```{r}
+#| label: organisedata
+#| message: false
+library(Distance)
+data(Savannah_sparrow_1980)
+head(Savannah_sparrow_1980, n=3)
+hist(Savannah_sparrow_1980$distance, 
+     nclass=20, xlab="Distance (m)",
+     main="Savannah sparrow radial distances '80")
+conversion.factor <- convert_units("meter", NULL, "hectare")
+```
+
+A truncation distance of 55m was chosen. The half normal and hazard rate functions were tried in turn, allowing AIC selection of cosine adjustment terms, then pasture was included as a covariate in the detection function.
+
+```{r}
+#| eval = TRUE,
+#| message = FALSE,
+#| warning = FALSE
+Savannah_sparrow_1980.hn <- ds(data=Savannah_sparrow_1980, key="hn",
+                               adjustment="cos", truncation=55,
+                               transect="point", 
+                               convert_units=conversion.factor)
+Savannah_sparrow_1980.hr <- ds(data=Savannah_sparrow_1980, key="hr",
+                               adjustment="cos", truncation=55,
+                               transect="point", 
+                               convert_units=conversion.factor)
+Savannah_sparrow_1980.hn.region <- ds(data=Savannah_sparrow_1980, key="hn",
+                                      truncation=55,
+                                      transect="point",
+                                      convert_units=conversion.factor,
+                                      formula=~Region.Label)
+Savannah_sparrow_1980.hr.region <- ds(data=Savannah_sparrow_1980, key="hr", truncation=55,
+                                      transect="point", convert_units=conversion.factor,
+                                      formula=~Region.Label)
+AIC(Savannah_sparrow_1980.hn, Savannah_sparrow_1980.hr, 
+    Savannah_sparrow_1980.hn.region, Savannah_sparrow_1980.hr.region)
+```
+
+The half normal model with pasture as a covariate had a marginally smaller AIC than the half normal model without pasture. The plots and estimates are shown below.
+
+```{r}
+#| fig.cap = "Note different PDF shapes caused by the pasture covariate."
+plot(Savannah_sparrow_1980.hn.region, pch=".", pdf=TRUE)
+```
+
+```{r}
+summary(Savannah_sparrow_1980.hn.region)
+```
+
+A similar process was conducted for the 1981 data: a truncation distance of 55m was again used.
+
+```{r}
+data(Savannah_sparrow_1981)
+conversion.factor <- convert_units("meter", NULL, "hectare")
+```
+
+```{r}
+#| eval = T,
+#| message = FALSE,
+#| warning = FALSE
+Savannah_sparrow_1981.hn <- ds(data=Savannah_sparrow_1981, key="hn", 
+                               adjustment="cos", truncation=55,
+                               transect="point", convert_units=conversion.factor)
+Savannah_sparrow_1981.hr <- ds(data=Savannah_sparrow_1981, key="hr", 
+                               adjustment="cos", truncation=55,
+                               transect="point", convert_units=conversion.factor)
+Savannah_sparrow_1981.hn.region <- ds(data=Savannah_sparrow_1981, 
+                                      key="hn", truncation=55, transect="point",
+                                      convert_units=conversion.factor,
+                                      formula=~Region.Label)
+Savannah_sparrow_1981.hr.region <- ds(data=Savannah_sparrow_1981, key="hr", 
+                                      truncation=55, transect="point",
+                                      convert_units=conversion.factor,
+                                      formula=~Region.Label)
+AIC(Savannah_sparrow_1981.hn, Savannah_sparrow_1981.hr, 
+    Savannah_sparrow_1981.hn.region, Savannah_sparrow_1981.hr.region)
+```
+
+For 1981, there was a clear preference for including pasture as a covariate in the detection function but little to choose from between the half normal and hazard rate key function. For comparability with 1980, the plots and results below are for the half normal model although AIC showed a slight preference for the hazard rate model. The differences in detection between pastures can easily be seen and this is reflected in the estimated densities (birds per hectare).
+
+```{r}
+#| fig.height = 6,
+#| fig.width = 8,
+#| fig.cap = "Stronger influence of pasture covariate seen here."
+pastures <- unique(Savannah_sparrow_1981$Region.Label)
+plot(Savannah_sparrow_1981.hn.region, showpoints=FALSE, 
+     main="Savannah sparrows with pasture covariate", pdf=TRUE)
+k <- 1
+for (i in pastures) {
+  k <- k+1
+  add_df_covar_line(Savannah_sparrow_1981.hn.region, 
+                    data=data.frame(Region.Label=as.character(i)),
+                    lty=1, col=k, lwd=3, pdf=TRUE)
+}
+legend("topright", legend=tolower(as.character(pastures)), 
+       col=2:k, lwd=2, title = "Pastures")
+text(-2,0.038, cex=0.9, pos=4,
+     expression(widehat(sigma[p])==plain(exp)(widehat(beta[0]) + widehat(beta[1]) * p[1] + widehat(beta[2]) * p[2] + widehat(beta[3]) * p[3])))
+library(plotrix)
+parms <- data.frame(est=c(2.944, 0.736, 0.166, 0.271),
+                    se=c(0.111, 0.373, 0.153, 0.179))
+rownames(parms) <- c("b0", "b1", "b2", "b3")
+addtable2plot(2, 0.027, parms, bty="o",
+              display.rownames=TRUE,hlines=TRUE, cex=0.8,
+              xpad=0.4, vlines=FALSE,title="Parameter estimates")
+```
+
+```{r}
+summary(Savannah_sparrow_1981.hn.region)
+```
+
+In these models, the detection functions have been fitted to all the detections within the study region (for each year). An alternative would be to fit separate detection functions within each pasture (specified in `Region.Label`), provided there are enough detections. This would allow different shape detection functions to be fitted in each pasture (providing this is a reasonable thing to do).

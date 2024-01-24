@@ -162,6 +162,7 @@ For this data set, the effort expended in discriminating between models with one
 We have not provided a comprehensive analysis of these data but have highlighted a few general feature of these data.  A more complete analysis can be found in @FMARBUC03.
 
 ```{r}
+#| label = "ETPstructure"
 data(ETP_Dolphin)
 head(ETP_Dolphin, n=3)
 ETP_Dolphin_units[,1:2]
@@ -172,6 +173,7 @@ Notice that effort and perpendicular distances are both measured in nautical mil
 To obtain an overall impression of the data, it is useful to fit a histogram with many intervals.
 
 ```{r}
+#| label = "ETPhist"
 hist(ETP_Dolphin$distance, nclass=50, xlab="Distance (nm)",
      main="Tropical Pacific dolphin survey perpendicular distances")
 ```
@@ -179,6 +181,7 @@ hist(ETP_Dolphin$distance, nclass=50, xlab="Distance (nm)",
 The spikes in the histogram suggest that distances have been rounded to zero and possibly other values. To mitigate these problems, the distances could be binned although we do not do so in the analysis below. The distances have already been truncated at 5 nm and so we will not truncate distances further.
 
 ```{r}
+#| label: "ETPboxplot"
 #| layout-ncol: 2
 #| fig-cap: 
 #|   - "Search method as possible covariate"
@@ -196,6 +199,7 @@ boxplot(ETP_Dolphin$distance~ETP_Dolphin$Month, xlab="Month", ylab="Distance (nm
 To decide whether to fit a half normal or a hazard rate key function, each of these is tried in turn.
 
 ```{r}
+#| label = "ETPkey",
 #| message = FALSE
 etp.hn <- ds(ETP_Dolphin, key="hn", adjustment=NULL)
 etp.hr <- ds(ETP_Dolphin, key="hr", adjustment=NULL)
@@ -206,14 +210,15 @@ knitr::kable(as.data.frame(AIC(etp.hn, etp.hr))) %>%
 The AIC values suggest that hazard rate key function is preferable to the half normal and so this will be used as the key function in the MCDS models. Each covariate is introduced in turn.
 
 ```{r}
+#| label = "ETPcovar",
 #| message = FALSE
 etp.hr.search <- ds(ETP_Dolphin, key="hr", formula=~factor(Search.method))
 etp.hr.cue <- ds(ETP_Dolphin, key="hr", formula=~factor(Cue.type))
 etp.hr.bf <- ds(ETP_Dolphin, key="hr", formula=~factor(Beauf.class))
 etp.hr.month <- ds(ETP_Dolphin, key="hr", formula=~factor(Month))
 knitr::kable(summarize_ds_models(etp.hr, etp.hr.search, etp.hr.cue, etp.hr.bf, etp.hr.month,
-                                 output="latex")[,2:7], row.names = FALSE,
-               caption="ETP dolphin model selection.", digits=3) %>%
+                                 output="plain")[,2:7], row.names = FALSE,
+             caption="ETP dolphin model selection.", digits=3) %>%
        kable_styling(bootstrap_options = "condensed", full_width = F)  
 ```
 
@@ -227,7 +232,6 @@ we see that the estimated scale coefficient for search method 3 is substantially
 
 ```{r}
 #| fig.height = 4
-# Plot search method detection function
 plot(etp.hr.search, pch=".")
 ```
 
@@ -241,113 +245,18 @@ Just an example of using the function `add_df_covar_line` to visually explore co
 #| label = "colourful",
 #| fig.cap = "Detection function with cue type as covariate."
 plot(etp.hr.cue, main="ETP dolphin survey", showpoints=FALSE)
-add_df_covar_line(etp.hr.cue, data = data.frame(Cue.type=1), col='red', lwd=2, lty=1)
-add_df_covar_line(etp.hr.cue, data = data.frame(Cue.type=2), col='blue', lwd=2, lty=1)
-add_df_covar_line(etp.hr.cue, data = data.frame(Cue.type=3), col='green', lwd=2, lty=1)
-add_df_covar_line(etp.hr.cue, data = data.frame(Cue.type=4), col='purple', lwd=2, lty=1)
-legend("topright", legend=c("Birds","Splashes","Unspecified","Floating objects"),
+add_df_covar_line(etp.hr.cue, data = data.frame(Cue.type=1), 
+                  col='red', lwd=2, lty=1)
+add_df_covar_line(etp.hr.cue, data = data.frame(Cue.type=2), 
+                  col='blue', lwd=2, lty=1)
+add_df_covar_line(etp.hr.cue, data = data.frame(Cue.type=3), 
+                  col='green', lwd=2, lty=1)
+add_df_covar_line(etp.hr.cue, data = data.frame(Cue.type=4), 
+                  col='purple', lwd=2, lty=1)
+legend("topright", 
+       legend=c("Birds","Splashes","Unspecified","Floating objects"),
        col=c("red", "blue", "green", "purple"), lwd=2, title = "Cue type")
 ```
 
-# More MCDS with point transects: Savannah sparrow (optional)
-
-Recall, these are data from Colorado, described by @knopf1988.  The question here was whether to include pasture as a covariate in the detection function.  The biological question being, "does detectability of Savannah sparrows differ between the pastures in which the survey was conducted."
-
-```{r}
-data(Savannah_sparrow_1980)
-head(Savannah_sparrow_1980, n=3)
-hist(Savannah_sparrow_1980$distance, nclass=20, xlab="Distance (m)",
-     main="Savannah sparrow radial distances '80")
-conversion.factor <- convert_units("meter", NULL, "hectare")
-```
-
-A truncation distance of 55m was chosen. The half normal and hazard rate functions were tried in turn, allowing AIC selection of cosine adjustment terms, then pasture was included as a covariate in the detection function.
-
-```{r}
-#| eval = TRUE,
-#| message = FALSE,
-#| warning = FALSE
-Savannah_sparrow_1980.hn <- ds(data=Savannah_sparrow_1980, key="hn", adjustment="cos", truncation=55,
-                 transect="point", convert_units=conversion.factor)
-Savannah_sparrow_1980.hr <- ds(data=Savannah_sparrow_1980, key="hr", adjustment="cos", truncation=55,
-                 transect="point", convert_units=conversion.factor)
-Savannah_sparrow_1980.hn.region <- ds(data=Savannah_sparrow_1980, key="hn", truncation=55,
-                        transect="point", convert_units=conversion.factor,
-                        formula=~Region.Label)
-Savannah_sparrow_1980.hr.region <- ds(data=Savannah_sparrow_1980, key="hr", truncation=55,
-                        transect="point", convert_units=conversion.factor,
-                        formula=~Region.Label)
-AIC(Savannah_sparrow_1980.hn, Savannah_sparrow_1980.hr, Savannah_sparrow_1980.hn.region, Savannah_sparrow_1980.hr.region)
-```
-
-The half normal model with pasture as a covariate had a marginally smaller AIC than the half normal model without pasture. The plots and estimates are shown below.
-
-```{r}
-#| fig.cap = "Note different PDF shapes caused by the pasture covariate."
-plot(Savannah_sparrow_1980.hn.region, pch=".", pdf=TRUE)
-```
-
-```{r}
-summary(Savannah_sparrow_1980.hn.region)
-```
-
-A similar process was conducted for the 1981 data: a truncation distance of 55m was again used.
-
-```{r}
-data(Savannah_sparrow_1981)
-conversion.factor <- convert_units("meter", NULL, "hectare")
-```
-
-```{r}
-#| eval = T,
-#| message = FALSE,
-#| warning = FALSE
-Savannah_sparrow_1981.hn <- ds(data=Savannah_sparrow_1981, key="hn", adjustment="cos", truncation=55,
-                 transect="point", convert_units=conversion.factor)
-Savannah_sparrow_1981.hr <- ds(data=Savannah_sparrow_1981, key="hr", adjustment="cos", truncation=55,
-                 transect="point", convert_units=conversion.factor)
-Savannah_sparrow_1981.hn.region <- ds(data=Savannah_sparrow_1981, key="hn", truncation=55,
-                        transect="point", convert_units=conversion.factor,
-                        formula=~Region.Label)
-Savannah_sparrow_1981.hr.region <- ds(data=Savannah_sparrow_1981, key="hr", truncation=55,
-                        transect="point", convert_units=conversion.factor,
-                        formula=~Region.Label)
-AIC(Savannah_sparrow_1981.hn, Savannah_sparrow_1981.hr, Savannah_sparrow_1981.hn.region, Savannah_sparrow_1981.hr.region)
-```
-
-For 1981, there was a clear preference for including pasture as a covariate in the detection function but little to choose from between the half normal and hazard rate key function. For comparability with 1980, the plots and results below are for the half normal model although AIC showed a slight preference for the hazard rate model. The differences in detection between pastures can easily be seen and this is reflected in the estimated densities (birds per hectare).
-
-```{r}
-#| fig.height = 6,
-#| fig.width = 8,
-#| fig.cap = "Stronger influence of pasture covariate seen here."
-pastures <- unique(Savannah_sparrow_1981$Region.Label)
-plot(Savannah_sparrow_1981.hn.region, showpoints=FALSE, 
-     main="Savannah sparrows with pasture covariate", pdf=TRUE)
-k <- 1
-for (i in pastures) {
-  k <- k+1
-  add_df_covar_line(Savannah_sparrow_1981.hn.region, 
-                    data=data.frame(Region.Label=as.character(i)),
-                    lty=1, col=k, lwd=3, pdf=TRUE)
-}
-legend("topright", legend=tolower(as.character(pastures)), 
-       col=2:k, lwd=2, title = "Pastures")
-text(-2,0.038, cex=0.9, pos=4,
-     expression(widehat(sigma[p])==plain(exp)(widehat(beta[0]) + widehat(beta[1]) * p[1] + widehat(beta[2]) * p[2] + widehat(beta[3]) * p[3])))
-library(plotrix)
-parms <- data.frame(est=c(2.944, 0.736, 0.166, 0.271),
-                    se=c(0.111, 0.373, 0.153, 0.179))
-rownames(parms) <- c("b0", "b1", "b2", "b3")
-addtable2plot(2, 0.027, parms, bty="o",
-              display.rownames=TRUE,hlines=TRUE, cex=0.8,
-              xpad=0.4, vlines=FALSE,title="Parameter estimates")
-```
-
-```{r}
-summary(Savannah_sparrow_1981.hn.region)
-```
-
-In these models, the detection functions have been fitted to all the detections within the study region (for each year). An alternative would be to fit separate detection functions within each pasture (specified in `Region.Label`), provided there are enough detections. This would allow different shape detection functions to be fitted in each pasture (providing this is a reasonable thing to do).
 
 # References

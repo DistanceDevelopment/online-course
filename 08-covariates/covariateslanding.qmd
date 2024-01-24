@@ -100,10 +100,10 @@ This exercise presents three sets of data:  Hawaiian amakihi point transect data
 
 ## Supplemental materials
 ::: homework
-**No supplements**
+Interpreting covariate coefficient estimates
 
 ::: instructions
-No supplemental material
+[Pasture type as covariate in detection function](sparrow-supplement.qmd)
 :::
 :::
 

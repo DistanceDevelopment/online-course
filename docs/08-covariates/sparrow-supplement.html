@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Centre for Research into Ecological and Environmental Modelling   University of St Andrews">
+
+<title>Introductory distance sampling training materials - Supplement, covariate coefficient interpretation</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://kit.fontawesome.com/78ddb093ea.js" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Introductory distance sampling training materials</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://distancesampling.org" rel="" target="">
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Supplement, covariate coefficient interpretation</li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+ <span class="menu-text">Introduction</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01-intro/introlanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fundamentals of distance sampling</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01-intro/Mod1-2023-intro.pdf" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture slides</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://youtu.be/_4RX6P4PB4k" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture video</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01-intro/introlanding.html#exercise-materials" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercise materials</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+ <span class="menu-text">Detection function modelling</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../02-detfns/detfnlanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fitting detection functions to line transect data</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+ <span class="menu-text">Model criticism</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../03-criticism/criticismlanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model criticism</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+ <span class="menu-text">Precision of density estimates</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../04-precision/precisionlanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Precision of density estimates</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+ <span class="menu-text">Point transect analysis</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../05-points/pointslanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Analysis of point transect data</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
+ <span class="menu-text">Design of distance sampling surveys</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../06-design/designlanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Design of distance sampling surveys</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false">
+ <span class="menu-text">Analysis of stratified designs</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../07-stratify/stratifylanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Analysis of stratified surveys</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false">
+ <span class="menu-text">Covariates in the detection functions</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../08-covariates/covariateslanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Including covariates in detection function modelling</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false">
+ <span class="menu-text">Animals detected in clusters</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../09-clusters/clusterslanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Analysis of point transect data</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false">
+ <span class="menu-text">Multipliers</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../10-multipliers/multiplierslanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Multipliers and indirect surveys</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="false">
+ <span class="menu-text">Double platform data (the g(0) problem)</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../11-mrds/mrdslanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Analysis of double platform data</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Supplement, covariate coefficient interpretation</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Centre for Research into Ecological and Environmental Modelling <br> <strong>University of St Andrews</strong> </p>
+          </div>
+  </div>
+    
+  
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">January 2024</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Covariate analysis of point transects: Savannah sparrow
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<ul>
+<li>Further investigation of a single covariate (pasture) upon detectability of the Savannah Sparrow data set. The analysis is done in <strong>R</strong>, but the understanding of the covariates is relevant whatever software is used.</li>
+</ul>
+</div>
+</div>
+</div>
+<p>Recall, these are data from Colorado, described by <span class="citation" data-cites="knopf1988">Knopf et al. (<a href="#ref-knopf1988" role="doc-biblioref">1988</a>)</span>. The question here was whether to include pasture as a covariate in the detection function. The biological question being, “does detectability of Savannah sparrows differ between the pastures in which the survey was conducted.”</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(Distance)</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">data</span>(Savannah_sparrow_1980)</span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">head</span>(Savannah_sparrow_1980, <span class="at">n=</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Region.Label Area Sample.Label Effort object distance Study.Area
+1    PASTURE 1    1    POINT   1      1     NA       NA  SASP 1980
+2    PASTURE 1    1    POINT   2      1     NA       NA  SASP 1980
+3    PASTURE 1    1    POINT   3      1     NA       NA  SASP 1980</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">hist</span>(Savannah_sparrow_1980<span class="sc">$</span>distance, </span>
+<span id="cb3-2"><a href="#cb3-2"></a>     <span class="at">nclass=</span><span class="dv">20</span>, <span class="at">xlab=</span><span class="st">"Distance (m)"</span>,</span>
+<span id="cb3-3"><a href="#cb3-3"></a>     <span class="at">main=</span><span class="st">"Savannah sparrow radial distances '80"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="sparrow-supplement_files/figure-html/organisedata-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>conversion.factor <span class="ot">&lt;-</span> <span class="fu">convert_units</span>(<span class="st">"meter"</span>, <span class="cn">NULL</span>, <span class="st">"hectare"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>A truncation distance of 55m was chosen. The half normal and hazard rate functions were tried in turn, allowing AIC selection of cosine adjustment terms, then pasture was included as a covariate in the detection function.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>Savannah_sparrow_1980.hn <span class="ot">&lt;-</span> <span class="fu">ds</span>(<span class="at">data=</span>Savannah_sparrow_1980, <span class="at">key=</span><span class="st">"hn"</span>,</span>
+<span id="cb5-2"><a href="#cb5-2"></a>                               <span class="at">adjustment=</span><span class="st">"cos"</span>, <span class="at">truncation=</span><span class="dv">55</span>,</span>
+<span id="cb5-3"><a href="#cb5-3"></a>                               <span class="at">transect=</span><span class="st">"point"</span>, </span>
+<span id="cb5-4"><a href="#cb5-4"></a>                               <span class="at">convert_units=</span>conversion.factor)</span>
+<span id="cb5-5"><a href="#cb5-5"></a>Savannah_sparrow_1980.hr <span class="ot">&lt;-</span> <span class="fu">ds</span>(<span class="at">data=</span>Savannah_sparrow_1980, <span class="at">key=</span><span class="st">"hr"</span>,</span>
+<span id="cb5-6"><a href="#cb5-6"></a>                               <span class="at">adjustment=</span><span class="st">"cos"</span>, <span class="at">truncation=</span><span class="dv">55</span>,</span>
+<span id="cb5-7"><a href="#cb5-7"></a>                               <span class="at">transect=</span><span class="st">"point"</span>, </span>
+<span id="cb5-8"><a href="#cb5-8"></a>                               <span class="at">convert_units=</span>conversion.factor)</span>
+<span id="cb5-9"><a href="#cb5-9"></a>Savannah_sparrow_1980.hn.region <span class="ot">&lt;-</span> <span class="fu">ds</span>(<span class="at">data=</span>Savannah_sparrow_1980, <span class="at">key=</span><span class="st">"hn"</span>,</span>
+<span id="cb5-10"><a href="#cb5-10"></a>                                      <span class="at">truncation=</span><span class="dv">55</span>,</span>
+<span id="cb5-11"><a href="#cb5-11"></a>                                      <span class="at">transect=</span><span class="st">"point"</span>,</span>
+<span id="cb5-12"><a href="#cb5-12"></a>                                      <span class="at">convert_units=</span>conversion.factor,</span>
+<span id="cb5-13"><a href="#cb5-13"></a>                                      <span class="at">formula=</span><span class="sc">~</span>Region.Label)</span>
+<span id="cb5-14"><a href="#cb5-14"></a>Savannah_sparrow_1980.hr.region <span class="ot">&lt;-</span> <span class="fu">ds</span>(<span class="at">data=</span>Savannah_sparrow_1980, <span class="at">key=</span><span class="st">"hr"</span>, <span class="at">truncation=</span><span class="dv">55</span>,</span>
+<span id="cb5-15"><a href="#cb5-15"></a>                                      <span class="at">transect=</span><span class="st">"point"</span>, <span class="at">convert_units=</span>conversion.factor,</span>
+<span id="cb5-16"><a href="#cb5-16"></a>                                      <span class="at">formula=</span><span class="sc">~</span>Region.Label)</span>
+<span id="cb5-17"><a href="#cb5-17"></a><span class="fu">AIC</span>(Savannah_sparrow_1980.hn, Savannah_sparrow_1980.hr, </span>
+<span id="cb5-18"><a href="#cb5-18"></a>    Savannah_sparrow_1980.hn.region, Savannah_sparrow_1980.hr.region)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                                df      AIC
+Savannah_sparrow_1980.hn         2 2126.228
+Savannah_sparrow_1980.hr         3 2127.883
+Savannah_sparrow_1980.hn.region  3 2125.033
+Savannah_sparrow_1980.hr.region  4 2130.447</code></pre>
+</div>
+</div>
+<p>The half normal model with pasture as a covariate had a marginally smaller AIC than the half normal model without pasture. The plots and estimates are shown below.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">plot</span>(Savannah_sparrow_1980.hn.region, <span class="at">pch=</span><span class="st">"."</span>, <span class="at">pdf=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="sparrow-supplement_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Note different PDF shapes caused by the pasture covariate.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">summary</span>(Savannah_sparrow_1980.hn.region)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Summary for distance analysis 
+Number of observations :  271 
+Distance range         :  0  -  55 
+
+Model       : Half-normal key function 
+AIC         :  2125.033 
+Optimisation:  mrds (nlminb) 
+
+Detection function parameters
+Scale coefficient(s):  
+                         estimate         se
+(Intercept)            3.17237666 0.09850468
+Region.LabelPASTURE 2 -0.20459862 0.11098924
+Region.LabelPASTURE 3 -0.03286901 0.12333031
+
+                       Estimate          SE         CV
+Average p             0.2896553  0.01973518 0.06813332
+N in covered region 935.5946771 79.89055349 0.08539013
+
+Summary statistics:
+     Region Area CoveredArea Effort   n   k        ER      se.ER      cv.ER
+1 PASTURE 1    1    117.8411    124  59 124 0.4758065 0.07009015 0.14730811
+2 PASTURE 2    1    119.7418    126 121 126 0.9603175 0.09521957 0.09915427
+3 PASTURE 3    1    116.8908    123  91 123 0.7398374 0.07467322 0.10093193
+4     Total    3    354.4738    373 271 373 0.7253204 0.04661364 0.06426628
+
+Abundance:
+      Label Estimate        se         cv       lcl      ucl       df
+1 PASTURE 1 1.430170 0.3084008 0.21563923 0.9403572 2.175117 353.1228
+2 PASTURE 2 4.116182 0.5642114 0.13707154 3.1472623 5.383394 329.1061
+3 PASTURE 3 2.345631 0.3717609 0.15849077 1.7208931 3.197169 374.9983
+4     Total 7.891983 0.7427326 0.09411229 6.5625680 9.490706 537.6070
+
+Density:
+      Label Estimate        se         cv       lcl      ucl       df
+1 PASTURE 1 1.430170 0.3084008 0.21563923 0.9403572 2.175117 353.1228
+2 PASTURE 2 4.116182 0.5642114 0.13707154 3.1472623 5.383394 329.1061
+3 PASTURE 3 2.345631 0.3717609 0.15849077 1.7208931 3.197169 374.9983
+4     Total 2.630661 0.2475775 0.09411229 2.1875227 3.163569 537.6070</code></pre>
+</div>
+</div>
+<p>A similar process was conducted for the 1981 data: a truncation distance of 55m was again used.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">data</span>(Savannah_sparrow_1981)</span>
+<span id="cb10-2"><a href="#cb10-2"></a>conversion.factor <span class="ot">&lt;-</span> <span class="fu">convert_units</span>(<span class="st">"meter"</span>, <span class="cn">NULL</span>, <span class="st">"hectare"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>Savannah_sparrow_1981.hn <span class="ot">&lt;-</span> <span class="fu">ds</span>(<span class="at">data=</span>Savannah_sparrow_1981, <span class="at">key=</span><span class="st">"hn"</span>, </span>
+<span id="cb11-2"><a href="#cb11-2"></a>                               <span class="at">adjustment=</span><span class="st">"cos"</span>, <span class="at">truncation=</span><span class="dv">55</span>,</span>
+<span id="cb11-3"><a href="#cb11-3"></a>                               <span class="at">transect=</span><span class="st">"point"</span>, <span class="at">convert_units=</span>conversion.factor)</span>
+<span id="cb11-4"><a href="#cb11-4"></a>Savannah_sparrow_1981.hr <span class="ot">&lt;-</span> <span class="fu">ds</span>(<span class="at">data=</span>Savannah_sparrow_1981, <span class="at">key=</span><span class="st">"hr"</span>, </span>
+<span id="cb11-5"><a href="#cb11-5"></a>                               <span class="at">adjustment=</span><span class="st">"cos"</span>, <span class="at">truncation=</span><span class="dv">55</span>,</span>
+<span id="cb11-6"><a href="#cb11-6"></a>                               <span class="at">transect=</span><span class="st">"point"</span>, <span class="at">convert_units=</span>conversion.factor)</span>
+<span id="cb11-7"><a href="#cb11-7"></a>Savannah_sparrow_1981.hn.region <span class="ot">&lt;-</span> <span class="fu">ds</span>(<span class="at">data=</span>Savannah_sparrow_1981, </span>
+<span id="cb11-8"><a href="#cb11-8"></a>                                      <span class="at">key=</span><span class="st">"hn"</span>, <span class="at">truncation=</span><span class="dv">55</span>, <span class="at">transect=</span><span class="st">"point"</span>,</span>
+<span id="cb11-9"><a href="#cb11-9"></a>                                      <span class="at">convert_units=</span>conversion.factor,</span>
+<span id="cb11-10"><a href="#cb11-10"></a>                                      <span class="at">formula=</span><span class="sc">~</span>Region.Label)</span>
+<span id="cb11-11"><a href="#cb11-11"></a>Savannah_sparrow_1981.hr.region <span class="ot">&lt;-</span> <span class="fu">ds</span>(<span class="at">data=</span>Savannah_sparrow_1981, <span class="at">key=</span><span class="st">"hr"</span>, </span>
+<span id="cb11-12"><a href="#cb11-12"></a>                                      <span class="at">truncation=</span><span class="dv">55</span>, <span class="at">transect=</span><span class="st">"point"</span>,</span>
+<span id="cb11-13"><a href="#cb11-13"></a>                                      <span class="at">convert_units=</span>conversion.factor,</span>
+<span id="cb11-14"><a href="#cb11-14"></a>                                      <span class="at">formula=</span><span class="sc">~</span>Region.Label)</span>
+<span id="cb11-15"><a href="#cb11-15"></a><span class="fu">AIC</span>(Savannah_sparrow_1981.hn, Savannah_sparrow_1981.hr, </span>
+<span id="cb11-16"><a href="#cb11-16"></a>    Savannah_sparrow_1981.hn.region, Savannah_sparrow_1981.hr.region)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                                df      AIC
+Savannah_sparrow_1981.hn         1 1266.358
+Savannah_sparrow_1981.hr         2 1267.335
+Savannah_sparrow_1981.hn.region  4 1261.684
+Savannah_sparrow_1981.hr.region  5 1260.638</code></pre>
+</div>
+</div>
+<p>For 1981, there was a clear preference for including pasture as a covariate in the detection function but little to choose from between the half normal and hazard rate key function. For comparability with 1980, the plots and results below are for the half normal model although AIC showed a slight preference for the hazard rate model. The differences in detection between pastures can easily be seen and this is reflected in the estimated densities (birds per hectare).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>pastures <span class="ot">&lt;-</span> <span class="fu">unique</span>(Savannah_sparrow_1981<span class="sc">$</span>Region.Label)</span>
+<span id="cb13-2"><a href="#cb13-2"></a><span class="fu">plot</span>(Savannah_sparrow_1981.hn.region, <span class="at">showpoints=</span><span class="cn">FALSE</span>, </span>
+<span id="cb13-3"><a href="#cb13-3"></a>     <span class="at">main=</span><span class="st">"Savannah sparrows with pasture covariate"</span>, <span class="at">pdf=</span><span class="cn">TRUE</span>)</span>
+<span id="cb13-4"><a href="#cb13-4"></a>k <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb13-5"><a href="#cb13-5"></a><span class="cf">for</span> (i <span class="cf">in</span> pastures) {</span>
+<span id="cb13-6"><a href="#cb13-6"></a>  k <span class="ot">&lt;-</span> k<span class="sc">+</span><span class="dv">1</span></span>
+<span id="cb13-7"><a href="#cb13-7"></a>  <span class="fu">add_df_covar_line</span>(Savannah_sparrow_1981.hn.region, </span>
+<span id="cb13-8"><a href="#cb13-8"></a>                    <span class="at">data=</span><span class="fu">data.frame</span>(<span class="at">Region.Label=</span><span class="fu">as.character</span>(i)),</span>
+<span id="cb13-9"><a href="#cb13-9"></a>                    <span class="at">lty=</span><span class="dv">1</span>, <span class="at">col=</span>k, <span class="at">lwd=</span><span class="dv">3</span>, <span class="at">pdf=</span><span class="cn">TRUE</span>)</span>
+<span id="cb13-10"><a href="#cb13-10"></a>}</span>
+<span id="cb13-11"><a href="#cb13-11"></a><span class="fu">legend</span>(<span class="st">"topright"</span>, <span class="at">legend=</span><span class="fu">tolower</span>(<span class="fu">as.character</span>(pastures)), </span>
+<span id="cb13-12"><a href="#cb13-12"></a>       <span class="at">col=</span><span class="dv">2</span><span class="sc">:</span>k, <span class="at">lwd=</span><span class="dv">2</span>, <span class="at">title =</span> <span class="st">"Pastures"</span>)</span>
+<span id="cb13-13"><a href="#cb13-13"></a><span class="fu">text</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="fl">0.038</span>, <span class="at">cex=</span><span class="fl">0.9</span>, <span class="at">pos=</span><span class="dv">4</span>,</span>
+<span id="cb13-14"><a href="#cb13-14"></a>     <span class="fu">expression</span>(<span class="fu">widehat</span>(sigma[p])<span class="sc">==</span><span class="fu">plain</span>(exp)(<span class="fu">widehat</span>(beta[<span class="dv">0</span>]) <span class="sc">+</span> <span class="fu">widehat</span>(beta[<span class="dv">1</span>]) <span class="sc">*</span> p[<span class="dv">1</span>] <span class="sc">+</span> <span class="fu">widehat</span>(beta[<span class="dv">2</span>]) <span class="sc">*</span> p[<span class="dv">2</span>] <span class="sc">+</span> <span class="fu">widehat</span>(beta[<span class="dv">3</span>]) <span class="sc">*</span> p[<span class="dv">3</span>])))</span>
+<span id="cb13-15"><a href="#cb13-15"></a><span class="fu">library</span>(plotrix)</span>
+<span id="cb13-16"><a href="#cb13-16"></a>parms <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">est=</span><span class="fu">c</span>(<span class="fl">2.944</span>, <span class="fl">0.736</span>, <span class="fl">0.166</span>, <span class="fl">0.271</span>),</span>
+<span id="cb13-17"><a href="#cb13-17"></a>                    <span class="at">se=</span><span class="fu">c</span>(<span class="fl">0.111</span>, <span class="fl">0.373</span>, <span class="fl">0.153</span>, <span class="fl">0.179</span>))</span>
+<span id="cb13-18"><a href="#cb13-18"></a><span class="fu">rownames</span>(parms) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"b0"</span>, <span class="st">"b1"</span>, <span class="st">"b2"</span>, <span class="st">"b3"</span>)</span>
+<span id="cb13-19"><a href="#cb13-19"></a><span class="fu">addtable2plot</span>(<span class="dv">2</span>, <span class="fl">0.027</span>, parms, <span class="at">bty=</span><span class="st">"o"</span>,</span>
+<span id="cb13-20"><a href="#cb13-20"></a>              <span class="at">display.rownames=</span><span class="cn">TRUE</span>,<span class="at">hlines=</span><span class="cn">TRUE</span>, <span class="at">cex=</span><span class="fl">0.8</span>,</span>
+<span id="cb13-21"><a href="#cb13-21"></a>              <span class="at">xpad=</span><span class="fl">0.4</span>, <span class="at">vlines=</span><span class="cn">FALSE</span>,<span class="at">title=</span><span class="st">"Parameter estimates"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="sparrow-supplement_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="768"></p>
+<figcaption class="figure-caption">Stronger influence of pasture covariate seen here.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">summary</span>(Savannah_sparrow_1981.hn.region)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Summary for distance analysis 
+Number of observations :  162 
+Distance range         :  0  -  55 
+
+Model       : Half-normal key function 
+AIC         :  1261.684 
+Optimisation:  mrds (nlminb) 
+
+Detection function parameters
+Scale coefficient(s):  
+                       estimate        se
+(Intercept)           2.9440471 0.1110272
+Region.LabelPASTURE 1 0.7362681 0.3726357
+Region.LabelPASTURE 2 0.1660949 0.1524426
+Region.LabelPASTURE 3 0.2703034 0.1790810
+
+                       Estimate          SE        CV
+Average p             0.3435487  0.03715842 0.1081606
+N in covered region 471.5489313 59.62606186 0.1264472
+
+Summary statistics:
+     Region Area CoveredArea Effort   n   k    ER      se.ER      cv.ER
+1 PASTURE 0    1    95.03318    100  31 100 0.310 0.05448566 0.17576019
+2 PASTURE 1    1    95.03318    100  32 100 0.320 0.06175874 0.19299605
+3 PASTURE 2    1    95.03318    100  51 100 0.510 0.08225975 0.16129363
+4 PASTURE 3    1    95.03318    100  48 100 0.480 0.07174590 0.14947063
+5     Total    4   380.13271    400 162 400 0.405 0.03418422 0.08440547
+
+Abundance:
+      Label  Estimate        se        cv       lcl      ucl       df
+1 PASTURE 0 1.3887466 0.3779428 0.2721467 0.8203808 2.350880 255.9017
+2 PASTURE 1 0.5241867 0.1817587 0.3467442 0.2699503 1.017861 250.9726
+3 PASTURE 2 1.6980708 0.4057104 0.2389243 1.0676527 2.700732 251.7139
+4 PASTURE 3 1.3509360 0.3544528 0.2623757 0.8127396 2.245526 253.0658
+5     Total 4.9619401 0.6827259 0.1375925 3.7903971 6.495586 357.0057
+
+Density:
+      Label  Estimate        se        cv       lcl      ucl       df
+1 PASTURE 0 1.3887466 0.3779428 0.2721467 0.8203808 2.350880 255.9017
+2 PASTURE 1 0.5241867 0.1817587 0.3467442 0.2699503 1.017861 250.9726
+3 PASTURE 2 1.6980708 0.4057104 0.2389243 1.0676527 2.700732 251.7139
+4 PASTURE 3 1.3509360 0.3544528 0.2623757 0.8127396 2.245526 253.0658
+5     Total 1.2404850 0.1706815 0.1375925 0.9475993 1.623896 357.0057</code></pre>
+</div>
+</div>
+<p>In these models, the detection functions have been fitted to all the detections within the study region (for each year). An alternative would be to fit separate detection functions within each pasture (specified in <code>Region.Label</code>), provided there are enough detections. This would allow different shape detection functions to be fitted in each pasture (providing this is a reasonable thing to do).</p>
+
+
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list">
+<div id="ref-knopf1988" class="csl-entry" role="listitem">
+Knopf, F. L., Sedgwick, J. A., &amp; Cannon, R. W. (1988). Guild structure of a riparian avifauna relative to seasonal cattle grazing. <em>The Journal of Wildlife Management</em>, <em>52</em>(2), 280–290. <a href="https://doi.org/10.2307/3801235">https://doi.org/10.2307/3801235</a>
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">Centre for Research into Ecological and Environmental Modelling</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">University of St Andrews</div>
+  </div>
+</footer>
+
+
+
+</body></html>
