@@ -83,9 +83,19 @@ Begin by extracting and opening the project from the archive [Dolphin.zip](Dolph
 
 Start by running a set of conventional distance analyses. Are there any problems in the data and if so how might you mitigate them? (Hint – check out the q-q plot, and also try dividing the data into a large number of intervals in the Model Definition \| Detection Function \| Diagnostics.)
 
-As there are a number of potential covariates to be used in this example, try fitting models with different covariates and combinations of the covariates. All of the covariates in this example are factor covariates except cluster size.
+Because of a surplus of detections at perpendicular distance 0, it is best to convert the distances to binned distances, using say, 15 equal width bins before fitting models to the data.
 
-Keep in mind that this is a large dataset (\> 1000 observations), and hence estimation may take a while, particularly if you are allowing up to 5 adjustment terms to be fitted. It will be generally more efficient to start fitting models without any adjustment terms, and then adding one at a time if appropriate. Consider also whether to standardize by *w* or by σ (or try both!).
+As there are a number of potential covariates to be used in this example, try fitting models with different covariates and combinations of the covariates. All of the covariates in this example are factor covariates except cluster size. We suggest that you not explore detection functions with cluster size, simply because we will revisit this data set again in the module where we discuss cluster size.
+
+Keep in mind that this is a large dataset (\> 1000 observations), and hence estimation may take a while, particularly if you are allowing several adjustment terms to be fitted. It will be generally more efficient to start fitting models without any adjustment terms, and then adding one at a time if appropriate. Consider also whether to standardize by *w* or by σ (or try both).
 
 You will likely end up with quite a few models, so think about how you are going to name and organize them in the Project Browser (for analyses) and Analysis Components window (for model definitions).
+
+:::{.callout-warning collapse=false appearance='default' icon=true}
+## Caution regarding the hazard rate key function with covariates for these data)
+- Model convergence problems arise when using the hazard rate model particularly in association with the `sea state` covariate, `month` covariate and the `cue type` covariate. 
+- Run some of these models and see if you can diagnose the source of these problems.
+- To circumvent the problems, perhaps restrict your candidate model set to the half normal key function along with covariates.
+:::
+
 

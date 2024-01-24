@@ -318,7 +318,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../11-mrds/mrdslanding.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Analysis of point transect data</span></a>
+ <span class="menu-text">Analysis of double platform data</span></a>
   </div>
 </li>
       </ul>
@@ -329,7 +329,14 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#hawaiian-amakihi" id="toc-hawaiian-amakihi" class="nav-link active" data-scroll-target="#hawaiian-amakihi">Hawaiian Amakihi</a></li>
+  <li><a href="#analysis-of-dolphin-sightings-data" id="toc-analysis-of-dolphin-sightings-data" class="nav-link" data-scroll-target="#analysis-of-dolphin-sightings-data">Analysis of dolphin sightings data</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -380,53 +387,14 @@ Covariates in the detection function
 </div>
 </div>
 <p><strong>Introduction to Distance Sampling</strong></p>
-
-<!--
-2.  **Analysis of golf tee data**
-
-With three covariates there are eight possible detection function models
-(including perpendicular distance only). The AIC from the CDS model was
-311.1 and the lowest AIC I found was 304.3 which included sex as the
-only additional covariate. You may have found a different model. Table 2
-is a summary of the results from the CDS analysis and an MCDS analysis
-with my best model. The component of variance due to the detection
-function fitted as a CDS was 64.3% and this reduced to 54.2% when sex
-was included in the detection function.
-
-As part of an exploratory data analysis it is useful to analyse the data
-as a CDS but post stratify using the factor variables and fit separate
-components of the model for each factor level (as long as there are
-enough observations). The esw’s for females (factor level = 0) and males
-(factor level = 1) are 1.61 metres (%CV=13.0) and 2.65 metres
-(%CV=10.3), respectively. The esw’s for the exposure levels 0 and 1 are
-2.41 (13.2) and 2.31 (10.0). The differences between males and females
-appear to be much larger than the difference between exposure levels
-indicating that sex would be the more useful covariate to include in the
-model. Notice how the abundance estimate for the CDS post-stratified by
-sex and the MCDS including sex are very similar, but the CV is smaller
-for the latter.
-
-Table 2. Parameter estimates from CDS models and MCDS model which
-included sex only. CV’s are given in parentheses
-
-|                                 |            |            |                            |             |             |
-|---------------------------------|------------|------------|----------------------------|-------------|-------------|
-| Parameter                       | True value | CDS        | CDS post stratified by sex |             | MCDS        |
-|                                 |            |            | Female (0)                 | Male (1)    |             |
-| AIC                             |            | 311.14     | 69.7                       | 234.7       | 304.3       |
-| esw (m)                         |            | 2.34 (7.9) | 1.61 (13.0)                | 2.65 (10.3) | 2.24 (6.4)  |
-| Ds (clusters per m<sup>2</sup>) | 0.15       | 0.13 (7.9) | 0.05 (21.3)                | 0.08 (10.3) | 0.13 (11.0) |
-| E\[S\]                          | 3.04       | 3.01 (5.9) | 2.80 (13.7)                | 3.13 (6.5)  | 3.01 (5.9)  |
-| D (tees per m<sup>2</sup>)      | 0.45       | 0.38 (9.9) | 0.14 (18.9)                | 0.25 (12.2) | 0.40 (8.8)  |
-| N                               | 760        | 638 (9.9)  | 243 (18.9)                 | 421 (12.2)  | 666 (8.8)   |
-|                                 |            |            | 664 (22.5)                 |             |             |
-
--->
-<p><strong>1 Hawaiian Passerines</strong></p>
+<section id="hawaiian-amakihi" class="level2">
+<h2 class="anchored" data-anchor-id="hawaiian-amakihi">Hawaiian Amakihi</h2>
 <p>We provide no sample solution to these data; consult the Marques et al.&nbsp;(2007) reprint.</p>
-<p><strong>2 Analysis of dolphin sightings data</strong></p>
+</section>
+<section id="analysis-of-dolphin-sightings-data" class="level2">
+<h2 class="anchored" data-anchor-id="analysis-of-dolphin-sightings-data">Analysis of dolphin sightings data</h2>
 <p>To obtain an overall impression of the data it is useful to fit a detection function histogram with many intervals (you may have problems fitting to the maximum number of 30, but 25 intervals should be OK). The spikes in the histogram suggest that the data has been rounded to zero and possibly other values. The q-q plot also indicates problems with the model at zero distances. To mitigate these problems, use the Intervals tab in the Data Filter to pool the data into a few intervals – 10 to 15 intervals work OK.</p>
-<p>For the MCDS analysis, cluster size was fitted as a continuous variable, whereas, month, Beaufort, cue and search position were fitted as factor variables. Table 3 summarises the results. The number of adjustment terms allowed was limited to a maximum of two. In most cases a half normal function was chosen with either no, or one, adjustment term.</p>
+<p>For the MCDS analysis, cluster size was fitted as a continuous variable, whereas, month, Beaufort, cue and search position were fitted as factor variables. Table 1 summarises the results. The number of adjustment terms allowed was limited to a maximum of two. In most cases a half normal function was chosen with either no, or one, adjustment term.</p>
 <p>Table 1. Parameter estimates for the different models. Percentage CVs are given in parentheses. Note that CVs for the model containing cluster size are obtained by bootstrapping.</p>
 <table class="table">
 <colgroup>
@@ -498,6 +466,7 @@ included sex only. CV’s are given in parentheses
 <p>Based on the AIC, it seems as though the model including search method is best, however, there were warning messages about the detection function fitting and cluster size estimation. Before going on and looking at models which include two covariates, it is worth looking at the search model in more detail. The detection functions have very different scale parameters, for example, the detection function for search method 3 (using a helicopter) has a very wide shoulder and so the scale parameter is very large. This suggests that the observers were seeing everything out to 5 nm and so detection does not decrease with distance as it does with the other methods. One assumption of MCDS is that the perpendicular distance distributions of the covariate factor levels have the same shape. It may be worth refitting the model ignoring the observations made by the helicopter. Data can easily be selected/ignored using the Data filter | Data selection tab. The selection criteria will be of the form ‘[Search method] IN (0,2,5)’</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

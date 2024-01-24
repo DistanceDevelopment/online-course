@@ -470,9 +470,30 @@ Once you have decided on the best model, make a note of the estimated abundance,
 <section id="analysis-of-dolphin-sightings-data" class="level3">
 <h3 class="anchored" data-anchor-id="analysis-of-dolphin-sightings-data">Analysis of Dolphin Sightings data</h3>
 <p>Start by running a set of conventional distance analyses. Are there any problems in the data and if so how might you mitigate them? (Hint – check out the q-q plot, and also try dividing the data into a large number of intervals in the Model Definition | Detection Function | Diagnostics.)</p>
-<p>As there are a number of potential covariates to be used in this example, try fitting models with different covariates and combinations of the covariates. All of the covariates in this example are factor covariates except cluster size.</p>
-<p>Keep in mind that this is a large dataset (&gt; 1000 observations), and hence estimation may take a while, particularly if you are allowing up to 5 adjustment terms to be fitted. It will be generally more efficient to start fitting models without any adjustment terms, and then adding one at a time if appropriate. Consider also whether to standardize by <em>w</em> or by σ (or try both!).</p>
+<p>Because of a surplus of detections at perpendicular distance 0, it is best to convert the distances to binned distances, using say, 15 equal width bins before fitting models to the data.</p>
+<p>As there are a number of potential covariates to be used in this example, try fitting models with different covariates and combinations of the covariates. All of the covariates in this example are factor covariates except cluster size. We suggest that you not explore detection functions with cluster size, simply because we will revisit this data set again in the module where we discuss cluster size.</p>
+<p>Keep in mind that this is a large dataset (&gt; 1000 observations), and hence estimation may take a while, particularly if you are allowing several adjustment terms to be fitted. It will be generally more efficient to start fitting models without any adjustment terms, and then adding one at a time if appropriate. Consider also whether to standardize by <em>w</em> or by σ (or try both).</p>
 <p>You will likely end up with quite a few models, so think about how you are going to name and organize them in the Project Browser (for analyses) and Analysis Components window (for model definitions).</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Caution regarding the hazard rate key function with covariates for these data)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<ul>
+<li>Model convergence problems arise when using the hazard rate model particularly in association with the <code>sea state</code> covariate, <code>month</code> covariate and the <code>cue type</code> covariate.</li>
+<li>Run some of these models and see if you can diagnose the source of these problems.</li>
+<li>To circumvent the problems, perhaps restrict your candidate model set to the half normal key function along with covariates.</li>
+</ul>
+</div>
+</div>
+</div>
 
 
 
