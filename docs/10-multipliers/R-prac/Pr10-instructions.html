@@ -373,7 +373,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../11-mrds/mrdslanding.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Analysis of point transect data</span></a>
+ <span class="menu-text">Analysis of double platform data</span></a>
   </div>
 </li>
       </ul>
@@ -395,9 +395,7 @@ div.csl-indent {
   <li><a href="#fit-detection-function-to-dung-pellets" id="toc-fit-detection-function-to-dung-pellets" class="nav-link" data-scroll-target="#fit-detection-function-to-dung-pellets">Fit detection function to dung pellets</a></li>
   <li><a href="#multipliers" id="toc-multipliers" class="nav-link" data-scroll-target="#multipliers">Multipliers</a></li>
   </ul></li>
-  <li><a href="#cue-counting-survey-of-whales" id="toc-cue-counting-survey-of-whales" class="nav-link" data-scroll-target="#cue-counting-survey-of-whales">Cue counting survey of whales</a></li>
-  <li><a href="#cue-counting-of-songbirds-optional" id="toc-cue-counting-of-songbirds-optional" class="nav-link" data-scroll-target="#cue-counting-of-songbirds-optional">Cue counting of songbirds optional</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  <li><a href="#cue-counting-of-songbirds" id="toc-cue-counting-of-songbirds" class="nav-link" data-scroll-target="#cue-counting-of-songbirds">Cue counting of songbirds</a></li>
   </ul>
 </nav>
     </div>
@@ -433,7 +431,7 @@ div.csl-indent {
 
 </header>
 
-<p>We consider indirect methods to estimate abundance and hence include multipliers in the abundance calculations. The first problem uses data from a dung survey of deer and there are two levels of multipliers that need to be accounted for (dung production rate and dung decay rate). Data sets <a href="#cue-counting-survey-of-whales">2</a> and <a href="#cue-counting-of-songbirds-optional">3</a> deal with instantaneous cues and so only cue rate needs to be taken into account.</p>
+<p>We consider indirect methods to estimate abundance and hence include multipliers in the abundance calculations. The first problem uses data from a dung survey of deer and there are two levels of multipliers that need to be accounted for (dung production rate and dung decay rate). The <a href="#cue-counting-of-songbirds">songbird data set</a> deals with instantaneous cues and so only cue rate needs to be taken into account.</p>
 <section id="objectives" class="level1">
 <h1>Objectives</h1>
 <p>The objectives of this exercise are to</p>
@@ -454,12 +452,12 @@ div.csl-indent {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://workshops.distancesampling.org/standrews-2019/intro/practicals/figures/Prac_9_Figure_1.png" class="img-fluid figure-img" style="width:50.0%"></p>
-<figcaption class="figure-caption">Location of sika deer survey in southern Scotlandand the survey design (from Marques <em>et al.</em> (2001). Note thediffering amounts of effort in different woodlands based oninformation derived from pilot surveys.</figcaption>
+<figcaption class="figure-caption">Location of sika deer survey in southern Scotland and the survey design (from Marques <em>et al.</em> (2001). Note the differing amounts of effort in different woodlands based on information derived from pilot surveys.</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>In addition to these data, we also require estimates of the production rate. From a literature search, we learn that sika deer produce 25 pellet groups daily but this source did not provide a measure of variability of this estimate. During the course of our surveys we also followed the fate of some marked pellet groups to estimate the decay (disappearance) rates of a pellet group. A thorough discussion of methods useful for estimating decay rates and associated measures of precision can be found in Laing <em>et al.</em> <span class="citation" data-cites="Laietal03">(<a href="#ref-Laietal03" role="doc-biblioref">2003</a>)</span>.</p>
+<p>In addition to these data, we also require estimates of the production rate. From a literature search, we learn that sika deer produce 25 pellet groups daily but this source did not provide a measure of variability of this estimate. During the course of our surveys we also followed the fate of some marked pellet groups to estimate the decay (disappearance) rates of a pellet group. A thorough discussion of methods useful for estimating decay rates and associated measures of precision can be found in <span class="citation" data-cites="Laietal03">Laing et al. (<a href="#ref-Laietal03" role="doc-biblioref">2003</a>)</span>.</p>
 <p>There are many factors that might influence both production and decay rates, and for purposes of this exercise we will make the simplifying assumption that decay rate is homogeneous across these woodlands; with their mean time to decay of 163 days and a standard error of 13 days. (If you were to conduct a survey such as this, you would want to investigate this assumption more thoroughly.)</p>
 <section id="getting-started" class="level2">
 <h2 class="anchored" data-anchor-id="getting-started">Getting started</h2>
@@ -489,38 +487,39 @@ div.csl-indent {
 <span id="cb2-7"><a href="#cb2-7"></a><span class="co">#  Output: point estimate, standard error and CV of mean persistence time</span></span>
 <span id="cb2-8"><a href="#cb2-8"></a><span class="co">#</span></span>
 <span id="cb2-9"><a href="#cb2-9"></a><span class="co">#  Attribution: code from Mike Meredith website: </span></span>
-<span id="cb2-10"><a href="#cb2-10"></a><span class="co">#      http://www.mikemeredith.net/blog/2017/Sign_persistence.htm</span></span>
-<span id="cb2-11"><a href="#cb2-11"></a><span class="co">#   Citing: CITES elephant protocol</span></span>
-<span id="cb2-12"><a href="#cb2-12"></a><span class="co">#      https://cites.org/sites/default/files/common/prog/mike/survey/dung_standards.pdf</span></span>
-<span id="cb2-13"><a href="#cb2-13"></a>  </span>
-<span id="cb2-14"><a href="#cb2-14"></a>  <span class="do">##   Fit logistic regression model to STATE on DAYS, extract coefficients</span></span>
-<span id="cb2-15"><a href="#cb2-15"></a>  dung.glm <span class="ot">&lt;-</span> <span class="fu">glm</span>(STATE <span class="sc">~</span> DAYS, <span class="at">data=</span>DATA, <span class="at">family=</span><span class="fu">binomial</span>(<span class="at">link =</span> <span class="st">"logit"</span>))</span>
-<span id="cb2-16"><a href="#cb2-16"></a>  betas <span class="ot">&lt;-</span> <span class="fu">coefficients</span>(dung.glm)</span>
-<span id="cb2-17"><a href="#cb2-17"></a>  <span class="do">##   Calculate mean persistence time</span></span>
-<span id="cb2-18"><a href="#cb2-18"></a>  mean.decay <span class="ot">&lt;-</span> <span class="sc">-</span>(<span class="dv">1</span><span class="sc">+</span><span class="fu">exp</span>(<span class="sc">-</span>betas[<span class="dv">1</span>])) <span class="sc">*</span> <span class="fu">log</span>(<span class="dv">1</span><span class="sc">+</span><span class="fu">exp</span>(betas[<span class="dv">1</span>])) <span class="sc">/</span> betas[<span class="dv">2</span>]</span>
-<span id="cb2-19"><a href="#cb2-19"></a>  <span class="do">## Calculate the variance of the estimate</span></span>
-<span id="cb2-20"><a href="#cb2-20"></a>  vcovar <span class="ot">&lt;-</span> <span class="fu">vcov</span>(dung.glm)</span>
-<span id="cb2-21"><a href="#cb2-21"></a>  var0 <span class="ot">&lt;-</span> vcovar[<span class="dv">1</span>,<span class="dv">1</span>]  <span class="co"># variance of beta0</span></span>
-<span id="cb2-22"><a href="#cb2-22"></a>  var1 <span class="ot">&lt;-</span> vcovar[<span class="dv">2</span>,<span class="dv">2</span>]  <span class="co"># variance of beta1</span></span>
-<span id="cb2-23"><a href="#cb2-23"></a>  covar <span class="ot">&lt;-</span> vcovar[<span class="dv">2</span>,<span class="dv">1</span>] <span class="co"># covariance</span></span>
-<span id="cb2-24"><a href="#cb2-24"></a>  deriv0 <span class="ot">&lt;-</span> <span class="sc">-</span>(<span class="dv">1</span><span class="sc">-</span><span class="fu">exp</span>(<span class="sc">-</span>betas[<span class="dv">1</span>]) <span class="sc">*</span> <span class="fu">log</span>(<span class="dv">1</span><span class="sc">+</span><span class="fu">exp</span>(betas[<span class="dv">1</span>])))<span class="sc">/</span>betas[<span class="dv">2</span>]</span>
-<span id="cb2-25"><a href="#cb2-25"></a>  deriv1 <span class="ot">&lt;-</span> <span class="sc">-</span>mean.decay<span class="sc">/</span>betas[<span class="dv">2</span>]</span>
-<span id="cb2-26"><a href="#cb2-26"></a>  var.mean <span class="ot">&lt;-</span> var0<span class="sc">*</span>deriv0<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> <span class="dv">2</span><span class="sc">*</span>covar<span class="sc">*</span>deriv0<span class="sc">*</span>deriv1 <span class="sc">+</span> var1<span class="sc">*</span>deriv1<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb2-27"><a href="#cb2-27"></a>  <span class="do">## Calculate the SE and CV and return</span></span>
-<span id="cb2-28"><a href="#cb2-28"></a>  se.mean <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(var.mean)</span>
-<span id="cb2-29"><a href="#cb2-29"></a>  cv.mean <span class="ot">&lt;-</span> se.mean<span class="sc">/</span>mean.decay</span>
-<span id="cb2-30"><a href="#cb2-30"></a>  out <span class="ot">&lt;-</span> <span class="fu">c</span>(mean.decay, se.mean, <span class="dv">100</span><span class="sc">*</span>cv.mean)</span>
-<span id="cb2-31"><a href="#cb2-31"></a>  <span class="fu">names</span>(out) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Mean persistence time"</span>, <span class="st">"SE"</span>, <span class="st">"%CV"</span>)</span>
-<span id="cb2-32"><a href="#cb2-32"></a>  <span class="fu">plot</span>(decay<span class="sc">$</span>DAYS, <span class="fu">jitter</span>(decay<span class="sc">$</span>STATE, <span class="at">amount=</span><span class="fl">0.10</span>), <span class="at">xlab=</span><span class="st">"Days since initiation"</span>,</span>
-<span id="cb2-33"><a href="#cb2-33"></a>       <span class="at">ylab=</span><span class="st">"Dung persists (yes=1)"</span>,</span>
-<span id="cb2-34"><a href="#cb2-34"></a>       <span class="at">main=</span><span class="st">"Eight dung piles revisited over time"</span>)</span>
-<span id="cb2-35"><a href="#cb2-35"></a>  <span class="fu">curve</span>(<span class="fu">predict</span>(dung.glm, <span class="fu">data.frame</span>(<span class="at">DAYS=</span>x), <span class="at">type=</span><span class="st">"resp"</span>), <span class="at">add=</span><span class="cn">TRUE</span>)</span>
-<span id="cb2-36"><a href="#cb2-36"></a>  <span class="fu">abline</span>(<span class="at">v=</span>mean.decay, <span class="at">lwd=</span><span class="dv">2</span>, <span class="at">lty=</span><span class="dv">3</span>)</span>
-<span id="cb2-37"><a href="#cb2-37"></a>  <span class="fu">return</span>(out)</span>
-<span id="cb2-38"><a href="#cb2-38"></a>}</span>
-<span id="cb2-39"><a href="#cb2-39"></a>decay <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://raw.githubusercontent.com/erex/Oct-Quarto/main/Pr9/IntroDS_9.1.csv"</span>)</span>
-<span id="cb2-40"><a href="#cb2-40"></a>persistence.time <span class="ot">&lt;-</span> <span class="fu">MIKE.persistence</span>(decay)</span>
-<span id="cb2-41"><a href="#cb2-41"></a><span class="fu">print</span>(persistence.time)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-10"><a href="#cb2-10"></a><span class="co">#      http://www.mikemeredith.net/blog/2017/Sign_persistence.htm </span></span>
+<span id="cb2-11"><a href="#cb2-11"></a><span class="co">#        (site no longer maintained)</span></span>
+<span id="cb2-12"><a href="#cb2-12"></a><span class="co">#   Citing: CITES elephant protocol</span></span>
+<span id="cb2-13"><a href="#cb2-13"></a><span class="co">#      https://cites.org/sites/default/files/common/prog/mike/survey/dung_standards.pdf</span></span>
+<span id="cb2-14"><a href="#cb2-14"></a>  </span>
+<span id="cb2-15"><a href="#cb2-15"></a>  <span class="do">##   Fit logistic regression model to STATE on DAYS, extract coefficients</span></span>
+<span id="cb2-16"><a href="#cb2-16"></a>  dung.glm <span class="ot">&lt;-</span> <span class="fu">glm</span>(STATE <span class="sc">~</span> DAYS, <span class="at">data=</span>DATA, <span class="at">family=</span><span class="fu">binomial</span>(<span class="at">link =</span> <span class="st">"logit"</span>))</span>
+<span id="cb2-17"><a href="#cb2-17"></a>  betas <span class="ot">&lt;-</span> <span class="fu">coefficients</span>(dung.glm)</span>
+<span id="cb2-18"><a href="#cb2-18"></a>  <span class="do">##   Calculate mean persistence time</span></span>
+<span id="cb2-19"><a href="#cb2-19"></a>  mean.decay <span class="ot">&lt;-</span> <span class="sc">-</span>(<span class="dv">1</span><span class="sc">+</span><span class="fu">exp</span>(<span class="sc">-</span>betas[<span class="dv">1</span>])) <span class="sc">*</span> <span class="fu">log</span>(<span class="dv">1</span><span class="sc">+</span><span class="fu">exp</span>(betas[<span class="dv">1</span>])) <span class="sc">/</span> betas[<span class="dv">2</span>]</span>
+<span id="cb2-20"><a href="#cb2-20"></a>  <span class="do">## Calculate the variance of the estimate</span></span>
+<span id="cb2-21"><a href="#cb2-21"></a>  vcovar <span class="ot">&lt;-</span> <span class="fu">vcov</span>(dung.glm)</span>
+<span id="cb2-22"><a href="#cb2-22"></a>  var0 <span class="ot">&lt;-</span> vcovar[<span class="dv">1</span>,<span class="dv">1</span>]  <span class="co"># variance of beta0</span></span>
+<span id="cb2-23"><a href="#cb2-23"></a>  var1 <span class="ot">&lt;-</span> vcovar[<span class="dv">2</span>,<span class="dv">2</span>]  <span class="co"># variance of beta1</span></span>
+<span id="cb2-24"><a href="#cb2-24"></a>  covar <span class="ot">&lt;-</span> vcovar[<span class="dv">2</span>,<span class="dv">1</span>] <span class="co"># covariance</span></span>
+<span id="cb2-25"><a href="#cb2-25"></a>  deriv0 <span class="ot">&lt;-</span> <span class="sc">-</span>(<span class="dv">1</span><span class="sc">-</span><span class="fu">exp</span>(<span class="sc">-</span>betas[<span class="dv">1</span>]) <span class="sc">*</span> <span class="fu">log</span>(<span class="dv">1</span><span class="sc">+</span><span class="fu">exp</span>(betas[<span class="dv">1</span>])))<span class="sc">/</span>betas[<span class="dv">2</span>]</span>
+<span id="cb2-26"><a href="#cb2-26"></a>  deriv1 <span class="ot">&lt;-</span> <span class="sc">-</span>mean.decay<span class="sc">/</span>betas[<span class="dv">2</span>]</span>
+<span id="cb2-27"><a href="#cb2-27"></a>  var.mean <span class="ot">&lt;-</span> var0<span class="sc">*</span>deriv0<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> <span class="dv">2</span><span class="sc">*</span>covar<span class="sc">*</span>deriv0<span class="sc">*</span>deriv1 <span class="sc">+</span> var1<span class="sc">*</span>deriv1<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb2-28"><a href="#cb2-28"></a>  <span class="do">## Calculate the SE and CV and return</span></span>
+<span id="cb2-29"><a href="#cb2-29"></a>  se.mean <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(var.mean)</span>
+<span id="cb2-30"><a href="#cb2-30"></a>  cv.mean <span class="ot">&lt;-</span> se.mean<span class="sc">/</span>mean.decay</span>
+<span id="cb2-31"><a href="#cb2-31"></a>  out <span class="ot">&lt;-</span> <span class="fu">c</span>(mean.decay, se.mean, <span class="dv">100</span><span class="sc">*</span>cv.mean)</span>
+<span id="cb2-32"><a href="#cb2-32"></a>  <span class="fu">names</span>(out) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Mean persistence time"</span>, <span class="st">"SE"</span>, <span class="st">"%CV"</span>)</span>
+<span id="cb2-33"><a href="#cb2-33"></a>  <span class="fu">plot</span>(decay<span class="sc">$</span>DAYS, <span class="fu">jitter</span>(decay<span class="sc">$</span>STATE, <span class="at">amount=</span><span class="fl">0.10</span>), <span class="at">xlab=</span><span class="st">"Days since initiation"</span>,</span>
+<span id="cb2-34"><a href="#cb2-34"></a>       <span class="at">ylab=</span><span class="st">"Dung persists (yes=1)"</span>,</span>
+<span id="cb2-35"><a href="#cb2-35"></a>       <span class="at">main=</span><span class="st">"Eight dung piles revisited over time"</span>)</span>
+<span id="cb2-36"><a href="#cb2-36"></a>  <span class="fu">curve</span>(<span class="fu">predict</span>(dung.glm, <span class="fu">data.frame</span>(<span class="at">DAYS=</span>x), <span class="at">type=</span><span class="st">"resp"</span>), <span class="at">add=</span><span class="cn">TRUE</span>)</span>
+<span id="cb2-37"><a href="#cb2-37"></a>  <span class="fu">abline</span>(<span class="at">v=</span>mean.decay, <span class="at">lwd=</span><span class="dv">2</span>, <span class="at">lty=</span><span class="dv">3</span>)</span>
+<span id="cb2-38"><a href="#cb2-38"></a>  <span class="fu">return</span>(out)</span>
+<span id="cb2-39"><a href="#cb2-39"></a>}</span>
+<span id="cb2-40"><a href="#cb2-40"></a>decay <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://raw.githubusercontent.com/distanceworkshops/async2024-2/10-multipliers/R-prac/IntroDS_9.1.csv"</span>)</span>
+<span id="cb2-41"><a href="#cb2-41"></a>persistence.time <span class="ot">&lt;-</span> <span class="fu">MIKE.persistence</span>(decay)</span>
+<span id="cb2-42"><a href="#cb2-42"></a><span class="fu">print</span>(persistence.time)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Running the above command should have produced a plot of dung persistence versus days since produced and fitted a logistic regression (this is like a simple linear regression but restricts the response to taking values between 0 and 1). Note the points can in reality only take values between 0 and 1 but for the purposes of plotting have been ‘jittered’ to avoid over-plotting.</p>
 <p>An estimate of mean persistence time and measure of variability are also provided - make a note of these as they will be required below.</p>
@@ -551,42 +550,9 @@ div.csl-indent {
 <p>The function <code>dht2</code> also provides information on the components of variance. Make a note of the these (contribution of detection function, encounter rate, decay rate and what happened to production rate component?) in each strata.</p>
 </section>
 </section>
-<section id="cue-counting-survey-of-whales" class="level1">
-<h1>Cue counting survey of whales</h1>
-<p>This exercise involves analysing an aerial cue counting survey of whales in the Atlantic and the species in this exercise tend to occur singly. An estimate of mean cue rate and its coefficient of variation have been obtained from tagging studies on a number of whales in the region.</p>
-<p>The sample size is relatively small for a cue counting survey (which require larger sample sizes for reliable estimation of the detection function than line transect surveys), but this was the sample that was generated by the (expensive) survey, so carry on as usual. A stratified design was used (note different values of <code>Region.Label</code>), but we won’t conduct a stratified analysis, so attention can be focused upon the cue counting aspect of this analysis.</p>
-<p>The data are stored in the <code>Distance</code> package under <code>CueCountingExample</code>. In the command below, the data object is renamed to a shorter name. In these data, there is a column called search time - this information is copied to a column called <code>Effort</code> - this is needed by <code>ds</code>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">data</span>(CueCountingExample)</span>
-<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">head</span>(CueCountingExample, <span class="at">n=</span><span class="dv">3</span>)</span>
-<span id="cb5-3"><a href="#cb5-3"></a><span class="co"># Create effort column</span></span>
-<span id="cb5-4"><a href="#cb5-4"></a>CueCountingExample<span class="sc">$</span>Effort <span class="ot">&lt;-</span> CueCountingExample<span class="sc">$</span>Search.time</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>You can see that these data contain columns containing cue rate information - what is the cue rate and standard error? This information needs to be in a list format for the <code>dht2</code> function: this object can be created in a similar way to the <code>mult</code> object in problem 1 but here, we create this object from the survey data. Note, there is only one multiplier (for cue rate) required in this problem.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># Obtain the cue rates from the survey data</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a><span class="co"># Select relevant columns</span></span>
-<span id="cb6-3"><a href="#cb6-3"></a>cuerates <span class="ot">&lt;-</span> CueCountingExample[ ,<span class="fu">c</span>(<span class="st">"Cue.rate"</span>, <span class="st">"Cue.rate.SE"</span>, <span class="st">"Cue.rate.df"</span>)]</span>
-<span id="cb6-4"><a href="#cb6-4"></a><span class="co"># Only save unique values</span></span>
-<span id="cb6-5"><a href="#cb6-5"></a>cuerates <span class="ot">&lt;-</span> <span class="fu">unique</span>(cuerates)</span>
-<span id="cb6-6"><a href="#cb6-6"></a><span class="co"># Rename columns </span></span>
-<span id="cb6-7"><a href="#cb6-7"></a><span class="fu">names</span>(cuerates) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"rate"</span>, <span class="st">"SE"</span>, <span class="st">"df"</span>)</span>
-<span id="cb6-8"><a href="#cb6-8"></a><span class="co"># Create multiplier object</span></span>
-<span id="cb6-9"><a href="#cb6-9"></a>mult <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">creation=</span>cuerates)</span>
-<span id="cb6-10"><a href="#cb6-10"></a><span class="fu">print</span>(mult)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Decide on a truncation distance and fit a suitable detection function to these data: call your selected model <code>whale.df</code>. Remember that these data are treated as coming from a point transect.</p>
-<p>Use the <code>dht2</code> function to estimate whale abundance in the survey region, together with a 95% confidence interval. As well as specifying the multipliers, the sampling fraction argument (<code>sample_fraction=</code>) also needs to be specified - in this case, half the circle was searched and so what do you think the sampling fraction should be? In the command below, density estimates are obtained unstratified (i.e.&nbsp;ignoring the survey regions).</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># Estimate density - what is the sampling fraction?</span></span>
-<span id="cb7-2"><a href="#cb7-2"></a>whale.est <span class="ot">&lt;-</span> <span class="fu">dht2</span>(whale.df, <span class="at">flatfile=</span>CueCountingExample, <span class="at">strat_formula=</span><span class="sc">~</span><span class="dv">1</span>,</span>
-<span id="cb7-3"><a href="#cb7-3"></a>                  <span class="at">multipliers=</span>mult, <span class="at">sample_fraction=</span>?)</span>
-<span id="cb7-4"><a href="#cb7-4"></a><span class="fu">print</span>(whale.est)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="cue-counting-of-songbirds-optional" class="level1">
-<h1>Cue counting of songbirds optional</h1>
-<p>Remember the wren data that was introduced in the point transect exercises (Exercise 5): another data collection method that was used was cue counting. In this case, the cue was a song burst. These data are stored in <code>wren_cuecount</code> in the <code>Distance</code> package. The data arose from the point transect survey of songbirds described in <span class="citation" data-cites="buckland2006">Buckland (<a href="#ref-buckland2006" role="doc-biblioref">2006</a>)</span>.</p>
+<section id="cue-counting-of-songbirds" class="level1">
+<h1>Cue counting of songbirds</h1>
+<p>Remember the wren data that was introduced in the point transect exercises (<a href="../../05-points/R-prac/Pr5-instructions.html">Module 5</a>, point transects): another data collection method that was used was cue counting. In this case, the cue was a song burst. These data are stored in <code>wren_cuecount</code> in the <code>Distance</code> package. The data arose from the point transect survey of songbirds described in <span class="citation" data-cites="buckland2006">Buckland (<a href="#ref-buckland2006" role="doc-biblioref">2006</a>)</span>.</p>
 <p>Following a similar approach to that of the whale data, estimate a detection function of songs, create a multipliers object and include this in the <code>dht2</code> function to estimate wren density. Call this <code>w3.est</code>). There are a few things that will be useful to know:</p>
 <ul>
 <li>search effort (measured in time) was 2 visits each lasting 5 minutes,</li>
@@ -596,18 +562,15 @@ div.csl-indent {
 </ul>
 <p>What do you think the sampling fraction will be for these point transects?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">data</span>(<span class="st">"wren_cuecount"</span>)</span>
-<span id="cb8-2"><a href="#cb8-2"></a>conversion.factor <span class="ot">&lt;-</span> <span class="fu">convert_units</span>(<span class="st">"meter"</span>, <span class="cn">NULL</span>, <span class="st">"hectare"</span>)</span>
-<span id="cb8-3"><a href="#cb8-3"></a>w3.est <span class="ot">&lt;-</span> <span class="fu">dht2</span>(w3.hr, <span class="at">flatfile=</span>wren_cuecount, <span class="at">strat_formula=</span><span class="sc">~</span><span class="dv">1</span>,</span>
-<span id="cb8-4"><a href="#cb8-4"></a>               <span class="at">multipliers=</span>mult, <span class="at">convert_units=</span>conversion.factor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">data</span>(<span class="st">"wren_cuecount"</span>)</span>
+<span id="cb5-2"><a href="#cb5-2"></a>conversion.factor <span class="ot">&lt;-</span> <span class="fu">convert_units</span>(<span class="st">"meter"</span>, <span class="cn">NULL</span>, <span class="st">"hectare"</span>)</span>
+<span id="cb5-3"><a href="#cb5-3"></a>w3.est <span class="ot">&lt;-</span> <span class="fu">dht2</span>(w3.hr, <span class="at">flatfile=</span>wren_cuecount, <span class="at">strat_formula=</span><span class="sc">~</span><span class="dv">1</span>,</span>
+<span id="cb5-4"><a href="#cb5-4"></a>               <span class="at">multipliers=</span>mult, <span class="at">convert_units=</span>conversion.factor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>To obtain density (rather than abundance) use the following command:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">print</span>(w3.est, <span class="at">report=</span><span class="st">"density"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">print</span>(w3.est, <span class="at">report=</span><span class="st">"density"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="references" class="level1">
-
 
 
 
@@ -624,7 +587,7 @@ Laing, S. E., Buckland, S. T., Burn, R. W., Lambie, D., &amp; Amphlett, A. (2003
 Marques, F. F. C., Buckland, S. T., Goffin, D., Dixon, C. E., Borchers, D. L., Mayle, B. A., &amp; Peace, A. J. (2001). Estimating deer abundance from line transect surveys of dung: sika deer in southern Scotland. <em>Journal of Applied Ecology</em>, <em>38</em>(2), 349–363. <a href="https://doi.org/10.1046/j.1365-2664.2001.00584.x">https://doi.org/10.1046/j.1365-2664.2001.00584.x</a>
 </div>
 <div id="ref-Meredith2017" class="csl-entry" role="listitem">
-Meredith, M. (2017). <em>How long do animal signs remain visible?</em> Retrieved from <a href="http://www.mikemeredith.net/blog/2017/Sign_persistence.htm">http://www.mikemeredith.net/blog/2017/Sign_persistence.htm</a>
+Meredith, M. (2017). <em>How long do animal signs remain visible?</em> Retrieved from <a href="https://website no longer available">website no longer available</a>
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

@@ -13,7 +13,7 @@ csl: ../../style/apa.csl
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-We consider indirect methods to estimate abundance and hence include multipliers in the abundance calculations. The first problem uses data from a dung survey of deer and there are two levels of multipliers that need to be accounted for (dung production rate and dung decay rate). Data sets [2](#cue-counting-survey-of-whales) and [3](#cue-counting-of-songbirds-optional) deal with instantaneous cues and so only cue rate needs to be taken into account.
+We consider indirect methods to estimate abundance and hence include multipliers in the abundance calculations. The first problem uses data from a dung survey of deer and there are two levels of multipliers that need to be accounted for (dung production rate and dung decay rate). The [songbird data set](#cue-counting-of-songbirds) deals with instantaneous cues and so only cue rate needs to be taken into account.
 
 # Objectives
 
@@ -34,17 +34,17 @@ $$ \textrm{dung deposited daily} = \frac{\hat D_{\textrm{pellet groups}}}{\textr
 Data from 9 woodlands (labelled A-H and J) were collected according to the survey design (Figure 1) but note that data from block D were not included in this exercise.
 
 ```{r}
-#| label = "montrave",
-#| echo = FALSE,
-#| fig.cap = "Location of sika deer survey in southern Scotland
+#| label: montrave
+#| echo: FALSE
+#| fig.cap: "Location of sika deer survey in southern Scotland
 #| and the survey design (from Marques *et al.* (2001). Note the
 #| differing amounts of effort in different woodlands based on
-#| information derived from pilot surveys.",
-#| out.width = "50%"
+#| information derived from pilot surveys."
+#| out-width: 50%
 knitr::include_graphics("https://workshops.distancesampling.org/standrews-2019/intro/practicals/figures/Prac_9_Figure_1.png")
 ```
 
-In addition to these data, we also require estimates of the production rate. From a literature search, we learn that sika deer produce 25 pellet groups daily but this source did not provide a measure of variability of this estimate. During the course of our surveys we also followed the fate of some marked pellet groups to estimate the decay (disappearance) rates of a pellet group. A thorough discussion of methods useful for estimating decay rates and associated measures of precision can be found in Laing *et al.* [-@Laietal03].
+In addition to these data, we also require estimates of the production rate. From a literature search, we learn that sika deer produce 25 pellet groups daily but this source did not provide a measure of variability of this estimate. During the course of our surveys we also followed the fate of some marked pellet groups to estimate the decay (disappearance) rates of a pellet group. A thorough discussion of methods useful for estimating decay rates and associated measures of precision can be found in @Laietal03.
 
 There are many factors that might influence both production and decay rates, and for purposes of this exercise we will make the simplifying assumption that decay rate is homogeneous across these woodlands; with their mean time to decay of 163 days and a standard error of 13 days. (If you were to conduct a survey such as this, you would want to investigate this assumption more thoroughly.)
 
@@ -73,7 +73,8 @@ The next step is to create an object which contains the multipliers we wish to u
 Data to calculate this has been collected in the file `IntroDS_9.1.csv` that can be read from the Github internet repository. Following code comes from @Meredith2017.
 
 ```{r}
-#| eval = F
+#| label: meredith 
+#| eval: FALSE
 MIKE.persistence <- function(DATA) {
   
 #  Purpose: calculate mean persistence time (mean time to decay) for dung/nest data 
@@ -83,7 +84,8 @@ MIKE.persistence <- function(DATA) {
 #  Output: point estimate, standard error and CV of mean persistence time
 #
 #  Attribution: code from Mike Meredith website: 
-#      http://www.mikemeredith.net/blog/2017/Sign_persistence.htm
+#      http://www.mikemeredith.net/blog/2017/Sign_persistence.htm 
+#        (site no longer maintained)
 #   Citing: CITES elephant protocol
 #      https://cites.org/sites/default/files/common/prog/mike/survey/dung_standards.pdf
   
@@ -112,7 +114,7 @@ MIKE.persistence <- function(DATA) {
   abline(v=mean.decay, lwd=2, lty=3)
   return(out)
 }
-decay <- read.csv("https://raw.githubusercontent.com/erex/Oct-Quarto/main/Pr9/IntroDS_9.1.csv")
+decay <- read.csv("https://raw.githubusercontent.com/distanceworkshops/async2024-2/10-multipliers/R-prac/IntroDS_9.1.csv")
 persistence.time <- MIKE.persistence(decay)
 print(persistence.time)
 ```
@@ -127,8 +129,9 @@ As stated above, we want an object which contains information on the dung produc
 -   `decay` contains the dung decay rate and associated standard error where `XX` and `YY` are the estimates you obtained from the dung decay rate analysis.
 
 ```{r}
-#| echo = T,
-#| eval = F
+#| label: lists
+#| echo: TRUE
+#| eval: FALSE
 # Create list of multipliers
 mult <- list(creation = data.frame(rate=25, SE=0),
 #             decay    = data.frame(rate=XX, SE=YY))
@@ -142,6 +145,7 @@ The final step is to use these multipliers to convert $\hat D_{\textrm{pellet gr
 -   `deer.df` is the detection function you have fitted.
 
 ```{r}
+#| label: dht2
 #| eval: false
 # Weight by effort because we have repeats
 deer.ests <- dht2(deer.df, flatfile=sikadeer, strat_formula=~Region.Label,
@@ -152,56 +156,9 @@ print(deer.ests)
 
 The function `dht2` also provides information on the components of variance. Make a note of the these (contribution of detection function, encounter rate, decay rate and what happened to production rate component?) in each strata.
 
-# Cue counting survey of whales {#cue-counting-survey-of-whales}
+# Cue counting of songbirds {#cue-counting-of-songbirds}
 
-This exercise involves analysing an aerial cue counting survey of whales in the Atlantic and the species in this exercise tend to occur singly. An estimate of mean cue rate and its coefficient of variation have been obtained from tagging studies on a number of whales in the region.
-
-The sample size is relatively small for a cue counting survey (which require larger sample sizes for reliable estimation of the detection function than line transect surveys), but this was the sample that was generated by the (expensive) survey, so carry on as usual. A stratified design was used (note different values of `Region.Label`), but we won't conduct a stratified analysis, so attention can be focused upon the cue counting aspect of this analysis.
-
-The data are stored in the `Distance` package under `CueCountingExample`. In the command below, the data object is renamed to a shorter name. In these data, there is a column called search time - this information is copied to a column called `Effort` - this is needed by `ds`.
-
-```{r}
-#| echo = T,
-#| eval = F
-data(CueCountingExample)
-head(CueCountingExample, n=3)
-# Create effort column
-CueCountingExample$Effort <- CueCountingExample$Search.time
-```
-
-You can see that these data contain columns containing cue rate information - what is the cue rate and standard error? This information needs to be in a list format for the `dht2` function: this object can be created in a similar way to the `mult` object in problem 1 but here, we create this object from the survey data. Note, there is only one multiplier (for cue rate) required in this problem.
-
-```{r}
-#| echo = T,
-#| eval = F
-# Obtain the cue rates from the survey data
-# Select relevant columns
-cuerates <- CueCountingExample[ ,c("Cue.rate", "Cue.rate.SE", "Cue.rate.df")]
-# Only save unique values
-cuerates <- unique(cuerates)
-# Rename columns 
-names(cuerates) <- c("rate", "SE", "df")
-# Create multiplier object
-mult <- list(creation=cuerates)
-print(mult)
-```
-
-Decide on a truncation distance and fit a suitable detection function to these data: call your selected model `whale.df`. Remember that these data are treated as coming from a point transect.
-
-Use the `dht2` function to estimate whale abundance in the survey region, together with a 95% confidence interval. As well as specifying the multipliers, the sampling fraction argument (`sample_fraction=`) also needs to be specified - in this case, half the circle was searched and so what do you think the sampling fraction should be? In the command below, density estimates are obtained unstratified (i.e. ignoring the survey regions).
-
-```{r}
-#| echo = T,
-#| eval = F
-# Estimate density - what is the sampling fraction?
-whale.est <- dht2(whale.df, flatfile=CueCountingExample, strat_formula=~1,
-                  multipliers=mult, sample_fraction=?)
-print(whale.est)
-```
-
-# Cue counting of songbirds optional {#cue-counting-of-songbirds-optional}
-
-Remember the wren data that was introduced in the point transect exercises (Exercise 5): another data collection method that was used was cue counting. In this case, the cue was a song burst. These data are stored in `wren_cuecount` in the `Distance` package. The data arose from the point transect survey of songbirds described in @buckland2006.
+Remember the wren data that was introduced in the point transect exercises ([Module 5](../../05-points/R-prac/Pr5-instructions.qmd), point transects): another data collection method that was used was cue counting. In this case, the cue was a song burst. These data are stored in `wren_cuecount` in the `Distance` package. The data arose from the point transect survey of songbirds described in @buckland2006.
 
 Following a similar approach to that of the whale data, estimate a detection function of songs, create a multipliers object and include this in the `dht2` function to estimate wren density. Call this `w3.est`). There are a few things that will be useful to know:
 
@@ -213,8 +170,8 @@ Following a similar approach to that of the whale data, estimate a detection fun
 What do you think the sampling fraction will be for these point transects?
 
 ```{r}
-#| eval = FALSE,
-#| echo = TRUE
+#| eval: FALSE
+#| echo: TRUE
 data("wren_cuecount")
 conversion.factor <- convert_units("meter", NULL, "hectare")
 w3.est <- dht2(w3.hr, flatfile=wren_cuecount, strat_formula=~1,
@@ -227,5 +184,3 @@ To obtain density (rather than abundance) use the following command:
 #| eval = F
 print(w3.est, report="density")
 ```
-
-# References
