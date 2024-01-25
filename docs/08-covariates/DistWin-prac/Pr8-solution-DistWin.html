@@ -21,7 +21,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -389,7 +408,213 @@ Covariates in the detection function
 <p><strong>Introduction to Distance Sampling</strong></p>
 <section id="hawaiian-amakihi" class="level2">
 <h2 class="anchored" data-anchor-id="hawaiian-amakihi">Hawaiian Amakihi</h2>
-<p>We provide no sample solution to these data; consult the Marques et al.&nbsp;(2007) reprint.</p>
+<p>Here is the Results Browser table of the models described in <span class="citation" data-cites="Marques2007">Marques et al. (<a href="#ref-Marques2007" role="doc-biblioref">2007</a>)</span>, with strata (“strat”) representing the repeated surveys performed. The project containing these results can be found in <a href="fTAMAUK07.zip">fTAMAUK07.zip</a>.</p>
+<table class="table">
+<colgroup>
+<col style="width: 31%">
+<col style="width: 8%">
+<col style="width: 9%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 9%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th># params</th>
+<th>Delta AIC</th>
+<th>AIC</th>
+<th>ESW/EDR</th>
+<th>D</th>
+<th>D LCL</th>
+<th>D UCL</th>
+<th>D CV</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>g7 - HR OBS MAS w82.5</td>
+<td>5</td>
+<td>0</td>
+<td>10777.72</td>
+<td>45.54432</td>
+<td>7.172463</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>h8 - HR OBS w82.5</td>
+<td>4</td>
+<td>1.730469</td>
+<td>10779.45</td>
+<td>45.30368</td>
+<td>7.229559</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>k11 - HRpol OBS HAS w82.5</td>
+<td>9</td>
+<td>5.620117</td>
+<td>10783.34</td>
+<td>46.01192</td>
+<td>7.025928</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>l12 - HN OBS w82.5</td>
+<td>6</td>
+<td>7.120117</td>
+<td>10784.84</td>
+<td>41.97314</td>
+<td>8.493949</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>d4 - Unicos by strat w82.5</td>
+<td>12</td>
+<td>13.5</td>
+<td>10791.22</td>
+<td></td>
+<td>7.334418</td>
+<td>6.801114</td>
+<td>7.90954</td>
+<td>0.03848917</td>
+</tr>
+<tr class="even">
+<td>i9 - HN Obs HAS by strat 82.5m</td>
+<td>9</td>
+<td>14.18066</td>
+<td>10791.9</td>
+<td>43.4998</td>
+<td>7.922717</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>j10 - HN OBS MAS w82.5</td>
+<td>5</td>
+<td>15.52051</td>
+<td>10793.24</td>
+<td>43.38829</td>
+<td>7.97246</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>e5 - HR by strat w82.5</td>
+<td>14</td>
+<td>18.58984</td>
+<td>10796.31</td>
+<td></td>
+<td>6.821746</td>
+<td>5.990242</td>
+<td>7.768671</td>
+<td>0.06631405</td>
+</tr>
+<tr class="odd">
+<td>a1 - HN by strat f0 pooled w82.5</td>
+<td>5</td>
+<td>21.40039</td>
+<td>10799.12</td>
+<td>43.85356</td>
+<td>7.824244</td>
+<td>6.029662</td>
+<td>10.15294</td>
+<td>0.1333881</td>
+</tr>
+<tr class="even">
+<td>g6 - HN by strat w82.5</td>
+<td>15</td>
+<td>22.87012</td>
+<td>10800.59</td>
+<td></td>
+<td>7.998222</td>
+<td>6.889873</td>
+<td>9.284867</td>
+<td>0.07605652</td>
+</tr>
+<tr class="odd">
+<td>b2 - Unicos by strat f0 pooled w82.5</td>
+<td>2</td>
+<td>25.11035</td>
+<td>10802.83</td>
+<td>44.30367</td>
+<td>7.666068</td>
+<td>7.002776</td>
+<td>8.392186</td>
+<td>0.04615532</td>
+</tr>
+<tr class="even">
+<td>o15 - HR MAS w82.5</td>
+<td>3</td>
+<td>29.18066</td>
+<td>10806.9</td>
+<td>47.91844</td>
+<td>6.575671</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>c3 - HR by strat f0 pooled w82.5</td>
+<td>2</td>
+<td>29.90039</td>
+<td>10807.62</td>
+<td>47.27633</td>
+<td>6.732318</td>
+<td>5.960572</td>
+<td>7.603986</td>
+<td>0.06212176</td>
+</tr>
+<tr class="even">
+<td>p16 - HRpol HAS w82.5</td>
+<td>7</td>
+<td>31.62012</td>
+<td>10809.34</td>
+<td>47.79588</td>
+<td>6.599619</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>n14 - HN HAS by strat 82.5m</td>
+<td>7</td>
+<td>34.73047</td>
+<td>10812.45</td>
+<td>43.3067</td>
+<td>8.042932</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>m13 - HN MAS w82.5</td>
+<td>3</td>
+<td>35.36035</td>
+<td>10813.08</td>
+<td>43.28159</td>
+<td>8.061954</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><img src="distwinwarning.png" align="right"></p>
+<p>You will note there are no measures of precision associated with the density estimates when a single detection function (across strata) is used to estimate density. Do you understand why this is the case? If not, carefully read the message included in the Distance for Windows output for one of these models.</p>
 </section>
 <section id="analysis-of-dolphin-sightings-data" class="level2">
 <h2 class="anchored" data-anchor-id="analysis-of-dolphin-sightings-data">Analysis of dolphin sightings data</h2>
@@ -466,9 +691,14 @@ Covariates in the detection function
 <p>Based on the AIC, it seems as though the model including search method is best, however, there were warning messages about the detection function fitting and cluster size estimation. Before going on and looking at models which include two covariates, it is worth looking at the search model in more detail. The detection functions have very different scale parameters, for example, the detection function for search method 3 (using a helicopter) has a very wide shoulder and so the scale parameter is very large. This suggests that the observers were seeing everything out to 5 nm and so detection does not decrease with distance as it does with the other methods. One assumption of MCDS is that the perpendicular distance distributions of the covariate factor levels have the same shape. It may be worth refitting the model ignoring the observations made by the helicopter. Data can easily be selected/ignored using the Data filter | Data selection tab. The selection criteria will be of the form ‘[Search method] IN (0,2,5)’</p>
 
 
+
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list">
+<div id="ref-Marques2007" class="csl-entry" role="listitem">
+Marques, T. A., Thomas, L., Fancy, S. G., &amp; Buckland, S. T. (2007). Improving estimates of bird density using multiple covariate distance sampling. <em>The Auk</em>, <em>127</em>, 1229–1243. <a href="https://doi.org/10.1642/0004-8038(2007)124[1229:ieobdu]2.0.co;2">https://doi.org/10.1642/0004-8038(2007)124[1229:ieobdu]2.0.co;2</a>
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

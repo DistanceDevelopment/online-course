@@ -18,8 +18,31 @@ csl: ../../style/apa.csl
 
 ## Hawaiian Amakihi
 
-We provide no sample solution to these data; consult the Marques et al. (2007) reprint.
+Here is the Results Browser table of the models described in @Marques2007, with strata ("strat") representing the repeated surveys performed. The project containing these results can be found in [fTAMAUK07.zip](fTAMAUK07.zip).
 
+
+| Name                                 	| # params 	| Delta AIC 	| AIC      	| ESW/EDR  	| D        	| D LCL    	| D UCL    	| D CV       	|
+|--------------------------------------	|----------	|-----------	|----------	|----------	|----------	|----------	|----------	|------------	|
+| g7 - HR OBS MAS w82.5                	| 5        	| 0         	| 10777.72 	| 45.54432 	| 7.172463 	|          	|          	|            	|
+| h8 - HR OBS w82.5                    	| 4        	| 1.730469  	| 10779.45 	| 45.30368 	| 7.229559 	|          	|          	|            	|
+| k11 - HRpol OBS HAS w82.5            	| 9        	| 5.620117  	| 10783.34 	| 46.01192 	| 7.025928 	|          	|          	|            	|
+| l12 - HN OBS w82.5                   	| 6        	| 7.120117  	| 10784.84 	| 41.97314 	| 8.493949 	|          	|          	|            	|
+| d4 - Unicos by strat w82.5           	| 12       	| 13.5      	| 10791.22 	|          	| 7.334418 	| 6.801114 	| 7.90954  	| 0.03848917 	|
+| i9 - HN Obs HAS by strat 82.5m       	| 9        	| 14.18066  	| 10791.9  	| 43.4998  	| 7.922717 	|          	|          	|            	|
+| j10 - HN OBS MAS w82.5               	| 5        	| 15.52051  	| 10793.24 	| 43.38829 	| 7.97246  	|          	|          	|            	|
+| e5 - HR by strat w82.5               	| 14       	| 18.58984  	| 10796.31 	|          	| 6.821746 	| 5.990242 	| 7.768671 	| 0.06631405 	|
+| a1 - HN by strat f0 pooled w82.5     	| 5        	| 21.40039  	| 10799.12 	| 43.85356 	| 7.824244 	| 6.029662 	| 10.15294 	| 0.1333881  	|
+| g6 - HN by strat w82.5               	| 15       	| 22.87012  	| 10800.59 	|          	| 7.998222 	| 6.889873 	| 9.284867 	| 0.07605652 	|
+| b2 - Unicos by strat f0 pooled w82.5 	| 2        	| 25.11035  	| 10802.83 	| 44.30367 	| 7.666068 	| 7.002776 	| 8.392186 	| 0.04615532 	|
+| o15 - HR MAS w82.5                   	| 3        	| 29.18066  	| 10806.9  	| 47.91844 	| 6.575671 	|          	|          	|            	|
+| c3 - HR by strat f0 pooled w82.5     	| 2        	| 29.90039  	| 10807.62 	| 47.27633 	| 6.732318 	| 5.960572 	| 7.603986 	| 0.06212176 	|
+| p16 - HRpol HAS w82.5                	| 7        	| 31.62012  	| 10809.34 	| 47.79588 	| 6.599619 	|          	|          	|            	|
+| n14 - HN HAS by strat 82.5m          	| 7        	| 34.73047  	| 10812.45 	| 43.3067  	| 8.042932 	|          	|          	|            	|
+| m13 - HN MAS w82.5                   	| 3        	| 35.36035  	| 10813.08 	| 43.28159 	| 8.061954 	|          	|          	|            	|
+
+<img src="distwinwarning.png" align="right">
+
+You will note there are no measures of precision associated with the density estimates when a single detection function (across strata) is used to estimate density. Do you understand why this is the case? If not, carefully read the message included in the Distance for Windows output for one of these models.
 
 ## Analysis of dolphin sightings data
 
