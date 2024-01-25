@@ -409,51 +409,17 @@ Covariates in the detection function
 </section>
 </div>
 </div>
-<p>This exercise consists of two datasets of increasing difficulty. The first will show you the rudiments of conducting an analysis, while the remaining analyses take you deeper into the heart of understanding multiple covariates. Feel free to complete as many as you like.</p>
-
-<!--
-
-## 2 Golf tees Data 
-
-# 2.1 The data and distance project
-
-The data come from a survey of clusters of golf tees in grass, conducted by statistics undergraduate students at the University of St Andrews. It was conducted as a double platform survey; double-platform methods are covered in Module 11 – we will just just use data for one observer (or platform) for the purposes of this exercise.
-
-Assume that all the data were collected on one 210 metre long transect line, and that this comprises the study area. There were 250 clusters of tees in the study area and 760 individual tees in total.
-
-The population was independently surveyed by two observer teams, of which we will use the data recorded by observer 1. The following data were recorded for each detected group: perpendicular distance, cluster size, observer (team 1 or 2), “sex” (males are yellow=1, females green=0 and golf tees occur in single-sex clusters), and “exposure”. Exposure was a subjective judgment of whether the cluster was substantially obscured by grass (exposure=0) or not (exposure=1). The lengths of grass varied along the transect line, and the grass was also slightly more yellow along one part of the line compared with the rest.
-
-The data are stored in the archived distance project **GolfteesExercise**. Open the project. Notice that there are already some data filters and model definitions set up. If you look in the **Analysis** tab and then at the **Set:** drop down list, you will see there are two sets of analyses already set up – named “CDS and MCDS analyses” and “MRDS analyses” (see below).
-
-<img src="media/image2.png"
-style="width:5.90625in;height:3.33333in" />
-
-We will be working in the CDS and MCDS analyses set, using only the data recorded by observer 1.
-
-**2.2 CDS analysis of the golf tee data**
-
-A CDS analysis has been created already. Have a look at the **Data Filter** for this analysis. Notice that it uses data selection (the **Data Selection** tab) to select only observations from Observer 1 and with Detected=1 (i.e., observations detected by observer 1). (If you are curious, feel free to have a look in the **Data** tab of the **Project Browser** to see how double-platform data are set up.) Check the **Model Definition** for this analysis – it should specify a standard
-half-normal key function with automated selection of cosine adjustments. Run this analysis.
-
-Look at the results (in the **Analysis** details, **Results** tab). Don’t worry about the warning – this is because there is only one transect and so the encounter rate variance is estimated assuming that the observations are from a Poisson distribution so that $\widehat{var}(n)=n$ rather than from inter-transect variation. Make a note of the estimated abundance and associated coefficient of variation (CV). Also have a look at the percentage of variance that was due to the detection function.
-
-**2.3 MCDS analysis of the golf tee data**
-
-Create a new analysis and a new model definition. This time choose the MCDS analysis engine.
-
-Check that under the **Detection function** tab, the selected key function is half normal and under the Adjustment terms button we have manual selection of zero adjustment terms. MCDS analyses are much harder for the analysis engine to fit than single covariate ones (and a different algorithm is used). In general, it is better to avoid automated selection of adjustment terms and use manual selection instead. Start with zero adjustments terms, and gradually build up 1, 2 etc. checking AIC or one of the other criteria to see if this gives a better fit. It is also a good idea to tick the option in the **Misc.** tab to ‘Report results for each iteration of detection function fitting routine’ (it is ticked by default for the MCDS engine) – this will help you to diagnose any problems that may occur during fitting.
-
-There were 3 additional covariates recorded along with perpendicular distance; cluster size, sex and exposure. Obviously, sex and exposure are factor variables. Sometimes cluster size can be treated as both a factor variable or as a continuous variable: if there are only a few cluster sizes then it can be treated as a factor; however, if cluster size ranged over a large number of values it would have to be treated as a continuous variable. In this data, cluster sizes ranged from 1 to 8 and it is debatable as to whether you would want to treat it as a factor variable as there are very few large clusters detected. When including cluster size don’t forget to tick the cluster size box on the **Covariates** tab – this tells Distance that this covariate is the cluster size covariate. When cluster size is included as a covariate, Distance uses a ‘Horvitz-Thompson-like’ estimator of abundance (this will have been covered in lectures). In this case, Distance changes a number of options in the **Estimate** and **Cluster size** tabs. In **Estimate**, it changes the ‘Sample definition’ option and doesn’t allow stratification and in **Cluster size** it removes all the options.
-
-Select each of these terms in turn and also in combination on the **Covariates** tab. After running a model, look at the results. The presentation of results is like that in CDS analyses, with a **Log** tab where any warnings or error messages are written, and the **Results** tab which contains details of the analysis. Make a note of the AIC value and look at the detection function plots – notice the difference in the detection function plots when the covariate is specified as a factor
-variable or a continuous variable.
-
-Once you have decided on the best model, make a note of the estimated abundance, associated CV and percentage of variance accounted for by the detection function. How has this changed?
-
--->
+<p>This exercise consists of two datasets of increasing difficulty. They take you deeper into the heart of understanding multiple covariates. Feel free to complete as many as you like.</p>
 <section id="passerine-data-from-marques2007" class="level2">
 <h2 class="anchored" data-anchor-id="passerine-data-from-marques2007">Passerine data from <span class="citation" data-cites="Marques2007">T. A. Marques et al. (<a href="#ref-Marques2007" role="doc-biblioref">2007</a>)</span></h2>
-<p>The data from the Auk paper by <span class="citation" data-cites="Marques2007">(<a href="#ref-Marques2007" role="doc-biblioref">T. A. Marques et al., 2007</a>)</span> is also available. It is zipped as the project <a href="fTAMAUK07.zip">fTAMAUK07.zip</a>. See if you can produce results comparable to those presented in the manuscript.</p>
+<p>The data from the Auk paper by <span class="citation" data-cites="Marques2007">(<a href="#ref-Marques2007" role="doc-biblioref">T. A. Marques et al., 2007</a>)</span> is also available. It is zipped as the project <a href="fTAMAUK07.zip">fTAMAUK07.zip</a>.</p>
+<p>The survey information in this project is from seven surveys carried out in Hawaii 1992-1995 of the <em>Hawaiʻi ʻamakihi</em> <em>(Chlorodrepanis virens)</em>. In addition to standard distance sampling information, the project contains four observation-level covariates:</p>
+<ul>
+<li>initials of the observation making the detection (factor),</li>
+<li>hours after sunrise (continuous) and</li>
+<li>minutes after sunrise (continuous).</li>
+</ul>
+<p>There is no area measure associated with the surveys so abundance estimates will not be produced. Construct models with the covariates to build the best model for these data.</p>
 </section>
 <section id="dolphin-sightings-data" class="level2">
 <h2 class="anchored" data-anchor-id="dolphin-sightings-data">Dolphin Sightings Data</h2>
@@ -469,6 +435,7 @@ Once you have decided on the best model, make a note of the estimated abundance,
 </section>
 <section id="analysis-of-dolphin-sightings-data" class="level3">
 <h3 class="anchored" data-anchor-id="analysis-of-dolphin-sightings-data">Analysis of Dolphin Sightings data</h3>
+<p><img src="nodensityestimate.png" align="right"> The data in the project is only a portion of the data for the survey; for example there is only a single transect depicted and it is of unknown length. Nor is the size of the study area provided. Because of this, estimates of abundance and density will not be meaningful. The focus of the exercise is upon exploring covariates in the detection function. Consequently, it might be simplest to specify that estimates of density and abundance are not of interest; this is done using the configuration of <em>Model Definition Properties</em> shown in the screen shot at right.</p>
 <p>Start by running a set of conventional distance analyses. Are there any problems in the data and if so how might you mitigate them? (Hint – check out the q-q plot, and also try dividing the data into a large number of intervals in the Model Definition | Detection Function | Diagnostics.)</p>
 <p>Because of a surplus of detections at perpendicular distance 0, it is best to convert the distances to binned distances, using say, 15 equal width bins before fitting models to the data.</p>
 <p>As there are a number of potential covariates to be used in this example, try fitting models with different covariates and combinations of the covariates. All of the covariates in this example are factor covariates except cluster size. We suggest that you not explore detection functions with cluster size, simply because we will revisit this data set again in the module where we discuss cluster size.</p>
