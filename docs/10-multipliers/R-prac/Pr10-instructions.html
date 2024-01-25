@@ -517,9 +517,12 @@ div.csl-indent {
 <span id="cb2-37"><a href="#cb2-37"></a>  <span class="fu">abline</span>(<span class="at">v=</span>mean.decay, <span class="at">lwd=</span><span class="dv">2</span>, <span class="at">lty=</span><span class="dv">3</span>)</span>
 <span id="cb2-38"><a href="#cb2-38"></a>  <span class="fu">return</span>(out)</span>
 <span id="cb2-39"><a href="#cb2-39"></a>}</span>
-<span id="cb2-40"><a href="#cb2-40"></a>decay <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://raw.githubusercontent.com/distanceworkshops/async2024-2/10-multipliers/R-prac/IntroDS_9.1.csv"</span>)</span>
-<span id="cb2-41"><a href="#cb2-41"></a>persistence.time <span class="ot">&lt;-</span> <span class="fu">MIKE.persistence</span>(decay)</span>
-<span id="cb2-42"><a href="#cb2-42"></a><span class="fu">print</span>(persistence.time)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-40"><a href="#cb2-40"></a>github <span class="ot">&lt;-</span> <span class="st">"https://raw.githubusercontent.com/"</span></span>
+<span id="cb2-41"><a href="#cb2-41"></a>repo <span class="ot">&lt;-</span> <span class="st">"distanceworkshops/async2024-2/main/"</span></span>
+<span id="cb2-42"><a href="#cb2-42"></a>filename <span class="ot">&lt;-</span> <span class="st">"10-multipliers/R-prac/IntroDS_9.1.csv"</span></span>
+<span id="cb2-43"><a href="#cb2-43"></a>decay <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">paste0</span>(github, repo, filename))</span>
+<span id="cb2-44"><a href="#cb2-44"></a>persistence.time <span class="ot">&lt;-</span> <span class="fu">MIKE.persistence</span>(decay)</span>
+<span id="cb2-45"><a href="#cb2-45"></a><span class="fu">print</span>(persistence.time)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Running the above command should have produced a plot of dung persistence versus days since produced and fitted a logistic regression (this is like a simple linear regression but restricts the response to taking values between 0 and 1). Note the points can in reality only take values between 0 and 1 but for the purposes of plotting have been ‘jittered’ to avoid over-plotting.</p>
 <p>An estimate of mean persistence time and measure of variability are also provided - make a note of these as they will be required below.</p>

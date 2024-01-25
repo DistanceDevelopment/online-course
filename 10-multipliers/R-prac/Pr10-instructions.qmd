@@ -114,7 +114,10 @@ MIKE.persistence <- function(DATA) {
   abline(v=mean.decay, lwd=2, lty=3)
   return(out)
 }
-decay <- read.csv("https://raw.githubusercontent.com/distanceworkshops/async2024-2/10-multipliers/R-prac/IntroDS_9.1.csv")
+github <- "https://raw.githubusercontent.com/"
+repo <- "distanceworkshops/async2024-2/main/"
+filename <- "10-multipliers/R-prac/IntroDS_9.1.csv"
+decay <- read.csv(paste0(github, repo, filename))
 persistence.time <- MIKE.persistence(decay)
 print(persistence.time)
 ```

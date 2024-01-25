@@ -22,12 +22,13 @@ Analysis with multipliers
 
 # Dung survey of deer
 
-Returning to the data described in [@marques2001], the following code loads the relevant packages and data. The perpendicular distances are measured in centimetres, effort along the transects measured in kilometres and areas in square kilometres.
+Returning to the data described in @marques2001, the following code loads the relevant packages and data. The perpendicular distances are measured in centimetres, effort along the transects measured in kilometres and areas in square kilometres.
 
 ```{r}
 library(Distance)
 data(sikadeer)
-conversion.factor <- convert_units("centimeter", "kilometer", "square kilometer")
+conversion.factor <- convert_units("centimeter", "kilometer", 
+                                   "square kilometer")
 ```
 
 Here we did not perform a comprehensive examination of fitting a detection function to the detected pellet groups, however, as a general guideline, we truncated the longest 10% perpendicular distances.
@@ -92,7 +93,10 @@ MIKE.persistence <- function(DATA) {
   abline(v=mean.decay, lwd=2, lty=3)
   return(out)
 }
-decay <- read.csv(file="https://raw.githubusercontent.com/erex/Oct-Quarto/main/Pr9/IntroDS_9.1.csv")
+github <- "https://raw.githubusercontent.com/"
+repo <- "distanceworkshops/async2024-2/main/"
+filename <- "10-multipliers/R-prac/IntroDS_9.1.csv"
+decay <- read.csv(paste0(github, repo, filename))
 persistence.time <- MIKE.persistence(decay)
 print(persistence.time)
 ```
@@ -125,64 +129,7 @@ In woodland F only a single transect was placed and the CV of density of 9% was 
 
 By the same token, we are left to assume there is no variability in production rates between deer because we have not included a measure of uncertainty in this facet of our analysis.
 
-# Cue counting survey of whales
-
-```{r}
-data(CueCountingExample)
-head(CueCountingExample, n=3)
-CueCountingExample$Effort <- CueCountingExample$Search.time
-cuerates <- CueCountingExample[ ,c("Cue.rate", "Cue.rate.SE", "Cue.rate.df")]
-cuerates <- unique(cuerates)
-names(cuerates) <- c("rate", "SE", "df")
-mult <- list(creation=cuerates)
-print(mult)
-```
-
-The estimated cue rate, $\hat \nu$, is 25 cues per unit time (per hour in this case). Its standard error is 5, therefore the CV of cue rate is $5/25 = 0.2$ (20%).
-
-```{r}
-# Tidy up data by removing surplus columns
-CueCountingExample[ ,c("Cue.rate", "Cue.rate.SE", "Cue.rate.df", "Sample.Fraction", 
-                       "Sample.Fraction.SE")] <- list(NULL)
-trunc <- 1.2
-whale.df.hn <- ds(CueCountingExample, key="hn", transect="point", adjustment=NULL,
-                  truncation=trunc)
-whale.df.hr <- ds(CueCountingExample, key="hr", transect="point", adjustment=NULL,
-                  truncation=trunc)
-knitr::kable(summarize_ds_models(whale.df.hn, whale.df.hr), digits = 3)
-```
-
-Half the circle (point transect) was searched and so the sampling fraction $\phi /2\pi = 0.5$. Therefore, $\phi = \pi$ ($\phi$ must be in radians).
-
-The following commands obtain density estimates assuming no stratification (`strat_formula=~1`).
-
-```{r}
-whale.est.hn <- dht2(whale.df.hn, flatfile=CueCountingExample, strat_formula=~1, 
-                     multipliers=mult, sample_fraction=0.5)
-print(whale.est.hn, report="abundance")
-whale.est.hr <- dht2(whale.df.hr, flatfile=CueCountingExample, strat_formula=~1, 
-                     multipliers=mult, sample_fraction=0.5)
-print(whale.est.hr, report="abundance")
-```
-
-A half normal detection function was chosen and whale abundance was estimated to be 13,654 whales with a 95% confidence interval (6,112: 30,500).
-
-Note the large difference between the half normal estimate and the estimate from the hazard rate model, which is 11,590 whales, with 95% confidence interval (5,017; 26773). Remember that the key parameter in a cue counting analysis is $h(0)$, the slope of the fitted pdf to the observed data at distance zero. The difference between the estimates for the different key function is the difference between these slopes for the two models (Fig. 2):
-
-```{r}
-#| layout-ncol: 2
-#| fig.cap: 
-#|   - "Half normal PDF"
-#|   - "Hazard rate PDF"
-plot(whale.df.hn, pdf=TRUE, main="Half normal")
-plot(whale.df.hr, pdf=TRUE, main="Hazard rate")
-```
-
-Cue counting estimates of detection probability are more volatile than those from line transect surveys, because on a cue counting survey you have few data where you need it most to estimate $h(0)$ - namely at distances close to zero. As a consequence, cue-counting surveys require higher cue sample size for reliable estimation than samples of animals for line transect surveys.
-
-Don't worry too much about the apparent lack of fit in the first interval, or two, in Figure 2 - remember the sample size is very small in these intervals. Use the plot above and the goodness-of-fit statistics to guide you about the fit of your model.
-
-# Cue counting survey of songbirds (optional)
+# Cue counting survey of songbirds
 
 Analysis of the cue count data of winter wrens described by @buckland2006.
 
@@ -215,5 +162,3 @@ Note the large proportion of the uncertainty in winter wren density stems from v
 plot(w3.hr, pdf=TRUE, main="Cue distances of winter wren.")
 gof_ds(w3.hr)
 ```
-
-# References
