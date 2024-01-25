@@ -46,21 +46,24 @@ You will note there are no measures of precision associated with the density est
 
 ## Analysis of dolphin sightings data
 
-To obtain an overall impression of the data it is useful to fit a detection function histogram with many intervals (you may have problems fitting to the maximum number of 30, but 25 intervals should be OK). The spikes in the histogram suggest that the data has been rounded to zero and possibly other values. The q-q plot also indicates problems with the model at zero distances. To mitigate these problems, use the Intervals tab in the Data Filter to pool the data into a few intervals – 10 to 15 intervals work OK.
+To obtain an overall impression of the data it is useful to fit a detection function histogram with many intervals (you may have problems fitting to the maximum number of 30, but 25 intervals should be OK). The spikes in the histogram suggest that the data has been rounded to zero and possibly other values. The q-q plot also indicates problems with the model at zero distances. To mitigate these problems, use the Intervals tab in the Data Filter to pool the data into a few intervals – 10 to 15 intervals work. For reasons described in the instructions (lacking information regarding effort and study area size), we restrict our interest in the analysis to the fitting of the detection function, measured in the table below by effective strip width (ESW). 
 
-For the MCDS analysis, cluster size was fitted as a continuous variable, whereas, month, Beaufort, cue and search position were fitted as factor variables. Table 1 summarises the results. The number of adjustment terms allowed was limited to a maximum of two. In most cases a half normal function was chosen with either no, or one, adjustment term.
+For the MCDS analysis, cluster size was fitted as a continuous variable, whereas, month, Beaufort, cue and search position were fitted as factor variables. Table 1 summarises the results. 
 
-Table 1. Parameter estimates for the different models. Percentage CVs are given in parentheses. Note that CVs for the model containing cluster size are obtained by bootstrapping.
+Table 1. Effective strip width estimates for the different models. 
+| Name                      	| # params 	| Delta AIC 	| AIC      	| ESW/EDR  	| ESW/EDR CV 	|
+|---------------------------	|----------	|-----------	|----------	|----------	|------------	|
+| interval hn search method 	|        4 	|         0 	| 5743.476 	| 3.388467 	| 0.01766289 	|
+| interval hn log cluster   	|        2 	|  11.13477 	| 5754.611 	| 3.423404 	| 0.01740193 	|
+| interval hn cos           	|        2 	|  16.72412 	|   5760.2 	| 3.024034 	| 0.04587239 	|
+| interval hn cluster       	|        2 	|  17.22998 	| 5760.706 	| 3.506682 	| 0.01725098 	|
+| interval hn month         	|        3 	|    22.125 	| 5765.601 	|  3.44452 	|  0.0171129 	|
+| interval hn sea state     	|        2 	|  26.37891 	| 5769.855 	| 3.454254 	| 0.01689994 	|
+| interval hn cue type      	|        4 	|  27.23877 	| 5770.715 	| 3.449551 	| 0.01703152 	|
 
-|                                  |             |              |             |             |             |              |
-|----------------------------------|-------------|--------------|-------------|-------------|-------------|--------------|
-| Parameter                        | CDS         | Cluster size | Month       | Beaufort    | Cue         | Search       |
-| AIC                              | 3365.9      | 3359.5       | 3362.6      | 3366.9      | 3368.3      | 3339.8       |
-| esw (nm)                         | 3.00 (4.5)  | 3.08 (1.9)   | 3.00 (1.9)  | 3.00 (1.9)  | 3.00 (1.9)  | 2.93 (2.3)   |
-| Ds (clusters per nm<sup>2</sup>) | 181 (4.5)   | 177          | 181 (1.9)   | 181 (1.9)   | 181 (1.9)   | 185 (2.3)    |
-| E\[S\]                           | 507 (5.3)   | 460          | 529 (5.3)   | 507 (5.3)   | 495 (5.3)   | 589 (5.3)    |
-| D (animals per nm<sup>2</sup>)   | 91965 (7.0) | 81454        | 96009 (5.7) | 91921 (5.6) | 89729 (5.6) | 109420 (5.8) |
+<img src="method3detfn.png" align="right" width=600px>
 
-Based on the AIC, it seems as though the model including search method is best, however, there were warning messages about the detection function fitting and cluster size estimation. Before going on and looking at models which include two covariates, it is worth looking at the search model in more detail. The detection functions have very different scale parameters, for example, the detection function for search method 3 (using a helicopter) has a very wide shoulder and so the scale parameter is very large. This suggests that the observers were seeing everything out to 5 nm and so detection does not decrease with distance as it does with the other methods. One assumption of MCDS is that the perpendicular distance distributions of the covariate factor levels have the same shape. It may be worth refitting the model ignoring
-the observations made by the helicopter. Data can easily be selected/ignored using the Data filter \| Data selection tab. The selection criteria will be of the form ‘\[Search method\] IN (0,2,5)’
+Based on the AIC, it seems as though the model including search method is best, however, there were warning messages about the detection function fitting and cluster size estimation. Before going on and looking at models which include two covariates, it is worth looking at the search model in more detail. The detection functions have very different scale parameters, for example, the detection function for search method 3 (using a helicopter) has a very wide shoulder and so the scale parameter is very large. See figure at right.
+
+This suggests that the observers were seeing everything out to 5 nm and so detection does not decrease with distance as it does with the other methods. One assumption of MCDS is that the perpendicular distance distributions of the covariate factor levels have the same shape. It may be worth refitting the model ignoring the observations made by the helicopter. Data can easily be selected/ignored using the Data filter \| Data selection tab. The selection criteria will be of the form ‘\[Search method\] IN (0,2,5)’
 
