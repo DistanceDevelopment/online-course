@@ -495,5 +495,26 @@
     "title": "Analysis with the use of multipliers",
     "section": "The Data",
     "text": "The Data\n Data from 9 woodlands were collected and reside in the Distance for Windows project Deer pellets.zip The design of the survey is shown at right (note differing amounts of effort in different woodlands based on information derived from pilot surveys).\nIn addition to these data, we also require estimates of the defecation rate. From a consultation with the literature, we learn that sika deer deposit 25 pellet groups daily. The literature source did not provide a measure of variability of this estimate. During the course of our surveys we also followed the fate of some marked pellet groups to estimate the disappearance (decay) rates of a group. A thorough discussion of methods useful for estimating decay rates and associated measures of precision can be found in Laing et al. (2003).\nThere are many factors that might influence both deposition and decay rates, and for purposes of this exercise we will make the simplifying assumption that decay rate is homogeneous across these woodlands; with their mean time to decay of 163 days and a standard error of 13 days. However if you were to conduct a survey such as this, you would want to investigate this assumption more thoroughly."
+  },
+  {
+    "objectID": "10-multipliers/DistWin-prac/Pr10-solution-DistWin.html",
+    "href": "10-multipliers/DistWin-prac/Pr10-solution-DistWin.html",
+    "title": "Analysis with the use of multipliers",
+    "section": "",
+    "text": "Analysis with the use of multipliers"
+  },
+  {
+    "objectID": "10-multipliers/DistWin-prac/Pr10-solution-DistWin.html#component-percentages-of-vard",
+    "href": "10-multipliers/DistWin-prac/Pr10-solution-DistWin.html#component-percentages-of-vard",
+    "title": "Analysis with the use of multipliers",
+    "section": "Component Percentages of Var(D)",
+    "text": "Component Percentages of Var(D)\n\n\n\nDetection probability\nEncounter rate\nDecay rate\n\n\n\n\n4.0\n79.1\n16.9\n\n\n\nwhereas woodlot E had 5 transects, but only 30 detections overall (resulting in a CV of 48%)\n\n\n\nDetection probability\nEncounter rate\nDecay rate\n\n\n\n\n0.6\n96.9\n2.5\n\n\n\nIn woodlot F, were only a single transect was placed, the CV of density was 8.9% with the allocation being\n\n\n\nDetection probability\nEncounter rate\nDecay rate\n\n\n\n\n19.1\n0.0\n80.9\n\n\n\nDo you trust this assessment of uncertainty in the density of deer in this woodlot? We are missing a component of variation because we were negligent in placing only a single transect in this woodlot, and so are left to assume there is no variability in encounter rate in this woodlot.\nBy the same token, we are left to assume there is no variability in defecation rates between deer because we have no measure of uncertainty in this facet of our assessment of deer densities."
+  },
+  {
+    "objectID": "10-multipliers/DistWin-prac/Pr10-solution-DistWin.html#results",
+    "href": "10-multipliers/DistWin-prac/Pr10-solution-DistWin.html#results",
+    "title": "Analysis with the use of multipliers",
+    "section": "Results",
+    "text": "Results\nProduce an overall estimate of density as mean of woodland-specific densities weighted by the effort allocated within each woodlot.\n\nWith considerable effort allocated in woodlot A, where deer density is high, the overall estimate of density is between the estimated density in woodlot A of 74 deer per km-2 and the lower densities in the remaining woodlots.\n\nMake special note of the components of variance (contribution of detection function, encounter rate, decay rate, and what happened to defecation rate component?) in each of the strata.\n\nBecause we now have uncertainty associated not only with the detection function and encounter rate, but also decay rate we are presented with these component of variability for each of the strata for which we requested estimates of density.\n\nIn woodlot A, there were 13 transects on which over 1200 pellet groups were detected; uncertainty in the estimated density was 19.0% and the variance components were apportioned as\nComponent Percentages of Var(D)\n\n\n\nDetection probability\nEncounter rate\nDecay rate\n\n\n\n\n4.0\n79.1\n16.9\n\n\n\nwhereas woodlot E had 5 transects, but only 30 detections overall (resulting in a CV of 48%)\n\n\n\nDetection probability\nEncounter rate\nDecay rate\n\n\n\n\n0.6\n96.9\n2.5\n\n\n\nIn woodlot F, were only a single transect was placed, the CV of density was 8.9% with the allocation being\n\n\n\nDetection probability\nEncounter rate\nDecay rate\n\n\n\n\n19.1\n0.0\n80.9\n\n\n\nDo you trust this assessment of uncertainty in the density of deer in this woodlot? We are missing a component of variation because we were negligent in placing only a single transect in this woodlot, and so are left to assume there is no variability in encounter rate in this woodlot.\nBy the same token, we are left to assume there is no variability in defecation rates between deer because we have no measure of uncertainty in this facet of our assessment of deer densities."
   }
 ]

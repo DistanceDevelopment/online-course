@@ -50,6 +50,6 @@ Effort for cue count surveys is recorded in time units. For Buckland's survey ea
 The project [Wren3-2023.zip](Wren3-2023.zip) contains the detections as well as the rate at which birds produce songbursts (1.4558 bursts min<sup>-1</sup>) with a standard error of 0.2428. This standard error is a measure of variability between individual wrens. Note the cue production rate multiplier is stored in the Distance for Windows project in the *Global Layer* of the data sheet (right).
 
 <img src="multiplier-screen.png" align="left" width=300px>
-Your task is to fit detection function models to the wren point transect data and appropriately apply the multiplier to convert song density into wren density. See screen shot of *Multipliers* tab of the *Model Definition Properties* (left).
+Your task is to fit detection function models to the wren point transect data and appropriately apply the multiplier to convert song density into wren density. Prof Buckland in his paper [@buckland2006] used a truncation distance for this data set of 92.5m. See screen shot of *Multipliers* tab of the *Model Definition Properties* (left).
 
 Note the goodness of fit of your chosen model.
