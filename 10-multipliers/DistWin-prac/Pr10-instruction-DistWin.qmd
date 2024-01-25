@@ -44,6 +44,8 @@ Use the Distance project [Deer pellets.zip](Deer pellets.zip) for the following 
 
 As part of the songbird survey conducted by Prof. Buckland [@buckland2006], he carried out a cue count survey for the species of interest. In this exercise, you will use the radial distances to detections of wren songs *(Troglodytes troglodytes)*, from the 32 point count stations, in conjunction with Prof. Buckland's estimate of cue production rate to estimate density and abundance of wrens in his 33ha study area.
 
+Effort for cue count surveys is recorded in time units. For Buckland's survey each visit to a point was 5 minutes in duration, but each point was visited twice. Hence the field *Search effort* associated with each point records 10 minutes of effort. The measurement of cue production rate (next paragraph) must also respect the units of measure of effort.
+
 <img src="global-layer.png" align="right">
 The project [Wren3-2023.zip](Wren3-2023.zip) contains the detections as well as the rate at which birds produce songbursts (1.4558 bursts min<sup>-1</sup>) with a standard error of 0.2428. This standard error is a measure of variability between individual wrens. Note the cue production rate multiplier is stored in the Distance for Windows project in the *Global Layer* of the data sheet (right).
 
