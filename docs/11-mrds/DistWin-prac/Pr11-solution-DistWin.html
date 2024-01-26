@@ -339,7 +339,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../11-mrds/mrdslanding.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Analysis of point transect data</span></a>
+ <span class="menu-text">Analysis of double platform data</span></a>
   </div>
 </li>
       </ul>
@@ -354,7 +354,20 @@ div.csl-indent {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#and-2.-estimation-of-p-fi---mr-dist-and-fi---mr-distsizesexexp" id="toc-and-2.-estimation-of-p-fi---mr-dist-and-fi---mr-distsizesexexp" class="nav-link active" data-scroll-target="#and-2.-estimation-of-p-fi---mr-dist-and-fi---mr-distsizesexexp">1. and 2. Estimation of <em>p</em>; FI - MR dist and FI - MR dist+size+sex+exp</a></li>
+  <li><a href="#golf-tee-survey" id="toc-golf-tee-survey" class="nav-link active" data-scroll-target="#golf-tee-survey">Golf Tee Survey</a>
+  <ul class="collapse">
+  <li><a href="#estimation-of-p-fi---mr-dist-and-fi---mr-distsizesexexp" id="toc-estimation-of-p-fi---mr-dist-and-fi---mr-distsizesexexp" class="nav-link" data-scroll-target="#estimation-of-p-fi---mr-dist-and-fi---mr-distsizesexexp">Estimation of <em>p</em>; FI - MR dist and FI - MR dist+size+sex+exp</a></li>
+  <li><a href="#specifying-new-models" id="toc-specifying-new-models" class="nav-link" data-scroll-target="#specifying-new-models">Specifying new models</a></li>
+  <li><a href="#point-independence" id="toc-point-independence" class="nav-link" data-scroll-target="#point-independence">Point independence</a></li>
+  </ul></li>
+  <li><a href="#crabeater-seal-survey" id="toc-crabeater-seal-survey" class="nav-link" data-scroll-target="#crabeater-seal-survey">Crabeater Seal Survey</a>
+  <ul class="collapse">
+  <li><a href="#distance-for-windows" id="toc-distance-for-windows" class="nav-link" data-scroll-target="#distance-for-windows">Distance for Windows</a></li>
+  <li><a href="#distance-package-in-r" id="toc-distance-package-in-r" class="nav-link" data-scroll-target="#distance-package-in-r"><code>Distance</code> package in R</a>
+  <ul class="collapse">
+  <li><a href="#crabeater-seals-with-mcds" id="toc-crabeater-seals-with-mcds" class="nav-link" data-scroll-target="#crabeater-seals-with-mcds">Crabeater seals with MCDS</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -401,135 +414,119 @@ Analysis of double platform data
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse show">
-<section id="distance-for-windows-exercise-solution" class="level3 callout-body-container callout-body">
-<h3 class="anchored" data-anchor-id="distance-for-windows-exercise-solution">Distance for Windows exercise Solution</h3>
+<section id="exercise-solution-for-both-software-platforms" class="level3 callout-body-container callout-body">
+<h3 class="anchored" data-anchor-id="exercise-solution-for-both-software-platforms">Exercise solution for both software platforms</h3>
 </section>
 </div>
 </div>
-<p>These solutions are applicable to both the Distance in Windows and mrds R versions.</p>
-<p><strong>I. Golf Tee Survey</strong></p>
-<p>This example dataset is discussed in Chapter 6 of <span class="citation" data-cites="BUC04">(<a href="#ref-BUC04" role="doc-biblioref">Buckland et al., 2004</a>)</span> and results for the trial setup are given in Table 6.5 (page 160). Results are also available in the Distance windows project <a href="GolfteesSolutions.zip">GolfteesSolutions.zip</a>.</p>
-<p>(Note that there are differences in the measures of precision between the Distance in Windows version and the <code>mrds</code> in R version because the number of transect lines (samples) differed between the two sets of data. Other statistics are the same.)</p>
-<section id="and-2.-estimation-of-p-fi---mr-dist-and-fi---mr-distsizesexexp" class="level2">
-<h2 class="anchored" data-anchor-id="and-2.-estimation-of-p-fi---mr-dist-and-fi---mr-distsizesexexp">1. and 2. Estimation of <em>p</em>; FI - MR dist and FI - MR dist+size+sex+exp</h2>
-<blockquote class="blockquote">
+<p>These solutions are applicable to both the Distance for Windows and <code>mrds</code> R versions.</p>
+<section id="golf-tee-survey" class="level1">
+<h1>Golf Tee Survey</h1>
+<p>This example dataset is discussed in Chapter 6 of <span class="citation" data-cites="BUC04">Buckland et al. (<a href="#ref-BUC04" role="doc-biblioref">2004</a>)</span> and results for the trial setup are given in Table 6.5 (page 160). Results are also available in the Distance windows project <a href="GolfteesSolutions.zip">GolfteesSolutions.zip</a>.</p>
+<p>(Note that there are differences in the measures of precision between the Distance for Windows version and the <code>mrds</code> in R version because the number of transect lines (samples) differed between the two sets of data. Other statistics are the same.)</p>
+<section id="estimation-of-p-fi---mr-dist-and-fi---mr-distsizesexexp" class="level2">
+<h2 class="anchored" data-anchor-id="estimation-of-p-fi---mr-dist-and-fi---mr-distsizesexexp">Estimation of <em>p</em>; FI - MR dist and FI - MR dist+size+sex+exp</h2>
 <p>The model with more covariates is modelling more of the heterogeneity in detection probability and so should be less biased. This seems to be the case: the estimated N for the model “FI – MR dist + size + sex + exp” is closer to truth than the “FI – MR dist” (recall that there were really 760 individual tees).</p>
-</blockquote>
-<blockquote class="blockquote">
 <p>There is some evidence of unmodelled heterogeneity in both cases (noticeably more so with the ‘FI – MR dist’ in that the fitted detection function for observer 1 declines slower than the histogram as distance increases (Figure 1). This is less the case for the ‘FI – MR dist + size + sex + exp’ model – not surprisingly, because it models the effect of more variables causing the heterogeneity.</p>
-</blockquote>
-<blockquote class="blockquote">
 <p>Both are still somewhat negatively biased, but the 95% confidence intervals do include the true value<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. Both models are reasonable fits to the data (non-significant chi-squares, Cramer-von Mises and KS tests) – although the fit is noticeably worse in the case of the ‘FI – MR dist’ model. The ‘dist + size + sex + exp’ model has a much lower AIC and so is to be preferred on that basis.</p>
-</blockquote>
-<ol start="3" type="1">
-<li><strong>Specifying new models</strong></li>
-</ol>
-<blockquote class="blockquote">
+</section>
+<section id="specifying-new-models" class="level2">
+<h2 class="anchored" data-anchor-id="specifying-new-models">Specifying new models</h2>
 <p>I tried two models with interaction terms (although many other models could have been tried) – one with a sex times exposure interaction (‘FI – MR dist + sex x exp’) and one with a three-way interaction between distance, sex and exposure (‘FI – MR dist x sex x exp’). The former had a slightly lower AIC than the model with the 3-way interaction. The estimated N from this model was also closer to truth (Table 1).</p>
-</blockquote>
-<ol start="4" type="1">
-<li><strong>Point independence</strong></li>
-</ol>
-<blockquote class="blockquote">
+</section>
+<section id="point-independence" class="level2">
+<h2 class="anchored" data-anchor-id="point-independence">Point independence</h2>
 <p>The point independence model with just Distance in the MR model (‘PI – MR dist DS hn’) had a slightly lower AIC than the corresponding full independence model (‘FI – MR dist’), however, the abundance estimate is much closer to truth (Table 1). We can expect the bias to be smaller for the point independence model because the assumption of independence only on the trackline is weaker than assuming independence everywhere.</p>
-</blockquote>
-<blockquote class="blockquote">
 <p>Comparing the previous best FI model (‘FI – MR dist + sex x exp’) with the equivalent PI model with no covariates in the DS part (‘PI – MR dist + sex x exp DS hn’), the former had a lower AIC, and similarly for a model with no interactions in the MR model (model ‘PI – MR dist + sex + exp DS hn’). The difference in bias between FI and PI models is less for these models with more covariates, as there is less unmodelled heterogeneity that can contribute to non-independence away from the trackline (i.e., violation of the independence assumption of the FI model).</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>Adding sex as a covariate into the DS model (‘PI – MR dist + sex + exp DS hn sex’) produced a model with the lowest AIC yet, and also the closest estimate (695) to true N. This model was found to have lowest AIC in a comparison of 40 models in Chapter 6 of Buckland <em>et al</em>. (2004, Table 6.5). The estimate is still less than the true N indicating, perhaps, some unmodelled heterogeneity on the trackline (or perhaps just bad luck – remember that this is only one survey).</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>Was this complex modelling worthwhile? In this case, the estimated <em>p</em>(0) for the best model was 0.96. If we ran a conventional distance sampling analysis (i.e.&nbsp;single platform), pooling the data from the two observers, we should get a very robust estimate of N. We did this in the final analysis in the solutions Distance project (GolfteeSolutions.zip). (To do this, we selected only records where Observer = 1 regardless of whether they were seen by that observer or not – i.e.&nbsp;we use data from both observers combined, who will have a higher <em>p</em>(0) than either of them on their own.) The estimate of N from the CDS analysis is 706 – slightly closer to truth than our best MRDS model. (You can do the same thing in the mrds package in R, by specifying in the ddf function method = “ds”. Once you have a fitted detection function you can then pass this into the dht function to get an abundance estimate. The resulting estimate of abundance of clusters is identical (assuming you used the same half-normal key function we used in the Distance project; the estimate of abundance of individual is slightly different because Distance for Windows uses cluster size regression by default, while ddf does not – feel free to ask about this if you’re interested!)</p>
+<p>Adding sex as a covariate into the DS model (‘PI – MR dist + sex + exp DS hn sex’) produced a model with the lowest AIC yet, and also the closest estimate (695) to true N. This model was found to have lowest AIC in a comparison of 40 models in Chapter 6 <span class="citation" data-cites="BUC04">(<a href="#ref-BUC04" role="doc-biblioref">Buckland et al., 2004</a>, Table 6.5)</span>. The estimate is still less than the true N indicating, perhaps, some unmodelled heterogeneity on the trackline (or perhaps just bad luck – remember that this is only one survey).</p>
+<p><em>Was this complex modelling worthwhile?</em> In this case, the estimated <em>p</em>(0) for the best model was 0.96. If we ran a conventional distance sampling analysis (i.e.&nbsp;single platform), pooling the data from the two observers, we should get a very robust estimate of N. We did this in the final analysis in the solutions Distance project <a href="GolfteeSolutions.zip">GolfteeSolutions.zip</a>.</p>
+<ul>
+<li>To do this, we selected only records where Observer = 1 regardless of whether they were seen by that observer or not – i.e.&nbsp;we use data from both observers combined, who will have a higher <em>p</em>(0) than either of them on their own.</li>
+</ul>
+<p>The estimate of N from the CDS analysis is 706 – slightly closer to truth than our best MRDS model. (You can do the same thing in the <code>mrds</code> package in R, by specifying in the <code>ddf</code> function method = “ds”. Once you have a fitted detection function you can then pass this into the <code>dht</code> function to get an abundance estimate. The resulting estimate of abundance of clusters is identical.</p>
+<ul>
+<li>assuming you used the same half-normal key function we used in the Distance project; the estimate of abundance of individual is slightly different because Distance for Windows uses cluster size regression by default, while <code>ddf</code> does not.</li>
+</ul>
 <p>Table 1 Summary of the fitted models, AIC and estimated individual abundance, N.</p>
-</blockquote>
 <table class="table">
 <thead>
 <tr class="header">
 <th><strong>Model name</strong></th>
 <th><strong>AIC</strong></th>
-<th><strong>Estimated N</strong></th>
+<th style="text-align: right;"><strong>Estimated N</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>FI-MR dist</td>
 <td>452.81</td>
-<td>593</td>
+<td style="text-align: right;">593</td>
 </tr>
 <tr class="even">
 <td>FI-MR dist + size + sex + exp</td>
 <td>407.40</td>
-<td>642</td>
+<td style="text-align: right;">642</td>
 </tr>
 <tr class="odd">
 <td>FI-MR dist + sex * exp</td>
 <td>403.80</td>
-<td>682</td>
+<td style="text-align: right;">682</td>
 </tr>
 <tr class="even">
 <td>FI-MR dist * sex * exp</td>
 <td>404.46</td>
-<td>679</td>
+<td style="text-align: right;">679</td>
 </tr>
 <tr class="odd">
 <td>PI-MR dist DS hn</td>
 <td>452.03</td>
-<td>688</td>
+<td style="text-align: right;">688</td>
 </tr>
 <tr class="even">
 <td>PI-MR dist + sex * exp DS hn</td>
 <td>406.34</td>
-<td>675</td>
+<td style="text-align: right;">675</td>
 </tr>
 <tr class="odd">
 <td>PI-MR dist + sex + exp DS hn</td>
 <td>406.04</td>
-<td>666</td>
+<td style="text-align: right;">666</td>
 </tr>
 <tr class="even">
 <td>PI-MR dist + sex + exp DS hn sex</td>
 <td>399.26</td>
-<td>695</td>
+<td style="text-align: right;">695</td>
 </tr>
 </tbody>
 </table>
-<blockquote class="blockquote">
 <p>Figure 1 Fitted detection function using the models ‘FI-MR dist’ (left plot) and ‘FI-MR dist+size+sex+exp’ (right plot).</p>
-</blockquote>
 <p><img src="image1.png" style="width:3.14961in;height:2.8937in"> <img src="image2.png" style="width:3.14961in;height:2.8937in"></p>
-<p><strong>II. Crabeater Seal Survey</strong></p>
-<p>The solution is divided into Distance in windows and Distance in R section.</p>
-<p><strong>Distance in Windows</strong></p>
+</section>
+</section>
+<section id="crabeater-seal-survey" class="level1">
+<h1>Crabeater Seal Survey</h1>
+<p>The solution is divided into Distance for Windows and the R package <code>Distance</code> sections.</p>
+<section id="distance-for-windows" class="level2">
+<h2 class="anchored" data-anchor-id="distance-for-windows">Distance for Windows</h2>
 <ol type="1">
 <li>The MCDS goodness-of-fit statistics all indicate adequate fit (none are significant at the 5% level) and the abundance estimate is not far from that for the PI model used in the paper: 3,820 with CI (3,168; 4,606) vs 3,969 with CI (3,274; 4,812) from the MRDS model. Use of an MCDS model results in an estimate only 4% lower than that from the MRDS model and the CVs for the two models are very similar - so the MCDS model seems pretty adequate.</li>
 </ol>
-<blockquote class="blockquote">
-<p>Why is this? It is because the MRDS estimate of <em>p</em>(0) for both platforms combined is 0.988 – i.e.&nbsp;the conventional distance sampling assumption that <em>p</em>(0) is 1 is very nearly satisfied.</p>
-</blockquote>
+<p><em>Why is this? It is because the MRDS estimate of <em>p</em>(0) for both platforms combined is 0.988 – i.e.&nbsp;the conventional distance sampling assumption that <em>p</em>(0) is 1 is very nearly satisfied.</em></p>
 <ol start="2" type="1">
 <li>The full-independence (FI) MRDS analysis is not adequate. The very poor fit to the combined distance data is clear from the plots headed “Detection Probability 1”, “Detection Probability 2” and “Detection Probability 3”, which show the distribution of Obs1, Obs2 and combined Obs detections, with the Obs 1, Obs 2 and combined detection functions overlaid. It can also be clearly seen from the Q-Q plot and the Kolmogorov-Smirnov goodness-of-fit test statistic.</li>
 </ol>
-<blockquote class="blockquote">
 <p>The plot headed “Detection Probability 4” shows the duplicates and the duplicated detection function. The plots headed “Detection Probability 5” and “Detection Probability 6” are the conditional detection functions for each observer overlaid on the respective duplicate proportions.</p>
-</blockquote>
-<blockquote class="blockquote">
 <p>Notice that the conditional detection function fits are pretty good. So the model seems adequate for modelling the conditional probability of one observer detecting a group, given the other observer detected it, but not for the unconditional probability of detecting a group (which is what we want to estimate). This implies that there is something about detected groups that tends to make them more detectable than other groups (i.e., some unmodelled heterogeneity). So treating the conditional detection functions as if they applied to undetected groups will lead to positive bias in estimating their detection probability and negative bias in estimating abundance.</p>
-</blockquote>
-<blockquote class="blockquote">
 <p>The severe negative bias in the abundance estimate is apparent from a comparison of the FI and PI estimates: the former is 2,509 with CI (2,070; 3,041), which is substantially lower than even the MCDS estimate, while the latter is 3,969 with CI (3,274; 4,812).</p>
-</blockquote>
-<blockquote class="blockquote">
 <p>Note that PI estimators cannot be lower than the corresponding CDS or MCDS estimators.</p>
-</blockquote>
-<blockquote class="blockquote">
 <p>One final note: FI abundance estimates will not in general be lower than MCDS estimates, even when the FI assumption fails, as it has here. In particular, when <em>p</em>(0) is low, the FI estimator is likely to be less biased than the MCDS estimator. In this example, <em>p</em>(0) is very close to 1, so the MCDS estimator has small bias.</p>
-</blockquote>
-<p><strong>Distance in R</strong></p>
-<p>Fitting a simple MRDS model (i.e.&nbsp;DS half-normal key with MR model distance only) gives an</p>
-<p>MRDS estimate of <em>p</em>(0) for both platforms combined of 0.988. The <span class="math inline">\(p(0)\)</span> for each observer team was 0.89. Note that the estimate is the same for each team because ‘observer’ was not included in the MR model.</p>
-<p><strong>Crabeater seals with MCDS</strong></p>
-<p>The detection function model with the lowest AIC includes <em>side of plane</em> and <em>visibility</em> – this is the distance sampling model used in <span class="citation" data-cites="Borchers2006">(<a href="#ref-Borchers2006" role="doc-biblioref">Borchers et al., 2006</a>)</span> and <span class="citation" data-cites="Southwell2007">(<a href="#ref-Southwell2007" role="doc-biblioref">Southwell et al., 2007</a>)</span>.</p>
+</section>
+<section id="distance-package-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="distance-package-in-r"><code>Distance</code> package in R</h2>
+<p>Fitting a simple MRDS model (i.e.&nbsp;DS half-normal key with MR model distance only) gives an MRDS estimate of <em>p</em>(0) for both platforms combined of 0.988. The <span class="math inline">\(p(0)\)</span> for each observer team was 0.89. Note that the estimate is the same for each team because <em>observer</em> was not included in the MR model.</p>
+<section id="crabeater-seals-with-mcds" class="level3">
+<h3 class="anchored" data-anchor-id="crabeater-seals-with-mcds">Crabeater seals with MCDS</h3>
+<p>The detection function model with the lowest AIC includes <em>side of plane</em> and <em>visibility</em> – this is the distance sampling model used in <span class="citation" data-cites="Borchers2006">Borchers et al. (<a href="#ref-Borchers2006" role="doc-biblioref">2006</a>)</span> and <span class="citation" data-cites="Southwell2007">Southwell et al. (<a href="#ref-Southwell2007" role="doc-biblioref">2007</a>)</span>.</p>
 <table class="table">
 <thead>
 <tr class="header">
@@ -557,13 +554,11 @@ Analysis of double platform data
 </tbody>
 </table>
 <p>From the simple MRDS analyses, we see that the conventional distance sampling assumption, that <em>p</em>(0) is 1, is very nearly satisfied – and so in this case an MCDS analysis may have been adequate. However, a double platform survey and analysis were required to establish this.</p>
-<p><strong>References</strong></p>
-<p>Buckland ST, Anderson DR, Burnham KP, Laake JL, Borchers DL and Thomas L (2004) Advanced Distance Sampling. Oxford University Press, UK</p>
-<p>Borchers, D.L., Laake, J.L., Southwell, C. and Paxton, C.G.M. (2006) Accommodating unmodeled heterogeneity in double-observer distance sampling surveys. <em>Biometrics</em> <strong>62</strong>: 372-378.</p>
-<p>Southwell, C., Borchers, D.L., Paxton, C.G.M., Burt, M.L., de la Mare, W. (2007) Estimation of detection probability in aerial surveys of Antarctic pack-ice seals. <em>Journal of Agricultural, Biological &amp; Environmental Statistics</em> <strong>12</strong>: 41-54.</p>
 
 
 
+</section>
+</section>
 </section>
 
 
