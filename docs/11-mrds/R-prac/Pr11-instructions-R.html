@@ -373,7 +373,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../11-mrds/mrdslanding.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Analysis of point transect data</span></a>
+ <span class="menu-text">Analysis of double platform data</span></a>
   </div>
 </li>
       </ul>
@@ -388,7 +388,7 @@ div.csl-indent {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#golf-tee-survey---initial-analysis" id="toc-golf-tee-survey---initial-analysis" class="nav-link active" data-scroll-target="#golf-tee-survey---initial-analysis">1. Golf tee survey - initial analysis</a>
+  <li><a href="#golf-tee-survey---initial-analysis" id="toc-golf-tee-survey---initial-analysis" class="nav-link active" data-scroll-target="#golf-tee-survey---initial-analysis">Golf tee survey - initial analysis</a>
   <ul class="collapse">
   <li><a href="#golf-tee-survey" id="toc-golf-tee-survey" class="nav-link" data-scroll-target="#golf-tee-survey">Golf tee survey</a></li>
   <li><a href="#golf-tee-survey-analyses" id="toc-golf-tee-survey-analyses" class="nav-link" data-scroll-target="#golf-tee-survey-analyses">Golf tee survey analyses</a>
@@ -397,7 +397,7 @@ div.csl-indent {
   <li><a href="#estimation-of-p-distance-and-other-explanatory-variables" id="toc-estimation-of-p-distance-and-other-explanatory-variables" class="nav-link" data-scroll-target="#estimation-of-p-distance-and-other-explanatory-variables">Estimation of p: distance and other explanatory variables</a></li>
   </ul></li>
   </ul></li>
-  <li><a href="#golf-tee-survey---further-exploration-after-class-on-day-1" id="toc-golf-tee-survey---further-exploration-after-class-on-day-1" class="nav-link" data-scroll-target="#golf-tee-survey---further-exploration-after-class-on-day-1">2. Golf tee survey - Further exploration after class on Day 1</a>
+  <li><a href="#golf-tee-survey-1" id="toc-golf-tee-survey-1" class="nav-link" data-scroll-target="#golf-tee-survey-1">Golf tee survey</a>
   <ul class="collapse">
   <li><a href="#further-analyses-of-golf-tee-data" id="toc-further-analyses-of-golf-tee-data" class="nav-link" data-scroll-target="#further-analyses-of-golf-tee-data">Further analyses of golf tee data</a>
   <ul class="collapse">
@@ -406,14 +406,13 @@ div.csl-indent {
   </ul></li>
   <li><a href="#data-structure" id="toc-data-structure" class="nav-link" data-scroll-target="#data-structure">Data structure</a></li>
   </ul></li>
-  <li><a href="#crabeater-seal-survey---for-you-to-work-on-after-class-on-day-1-before-the-next-class" id="toc-crabeater-seal-survey---for-you-to-work-on-after-class-on-day-1-before-the-next-class" class="nav-link" data-scroll-target="#crabeater-seal-survey---for-you-to-work-on-after-class-on-day-1-before-the-next-class">3. Crabeater seal survey - For you to work on after class on Day 1, before the next class</a>
+  <li><a href="#crabeater-seal-survey" id="toc-crabeater-seal-survey" class="nav-link" data-scroll-target="#crabeater-seal-survey">Crabeater seal survey</a>
   <ul class="collapse">
   <li><a href="#crabeater-seal-data" id="toc-crabeater-seal-data" class="nav-link" data-scroll-target="#crabeater-seal-data">Crabeater seal data</a></li>
   <li><a href="#crabeater-seal-analyses" id="toc-crabeater-seal-analyses" class="nav-link" data-scroll-target="#crabeater-seal-analyses">Crabeater seal analyses</a>
   <ul class="collapse">
   <li><a href="#crabeater-seals-with-mcds-optional" id="toc-crabeater-seals-with-mcds-optional" class="nav-link" data-scroll-target="#crabeater-seals-with-mcds-optional">Crabeater seals with MCDS (optional)</a></li>
   </ul></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -469,10 +468,10 @@ Analysis of double-platform data
 <p>This version of the practical is for those who would like to conduct the analysis in R using the package <code>mrds</code> <span class="citation" data-cites="mrdspackage">(<a href="#ref-mrdspackage" role="doc-biblioref">Laake et al., 2023</a>)</span>. There is a separate version for conducting the analysis in Distance for Windows <span class="citation" data-cites="Thomas2010">(<a href="#ref-Thomas2010" role="doc-biblioref">Thomas et al., 2010</a>)</span>.</p>
 <p>The first part of this practical involves initial analysis of a survey of a known number of golf tees. This is intended mainly to familiarise you with the <code>mrds</code> function.</p>
 <p>The second part of the practical involves more detailed analysis of the golf tee data, and an exploration of the double-platform data structure.</p>
-<p>The third part of the practical involves analysis of the pack-ice seal survey data of <span class="citation" data-cites="Borchers2006">(<a href="#ref-Borchers2006" role="doc-biblioref">Borchers et al., 2006</a>)</span> and <span class="citation" data-cites="Southwelll2007">(<a href="#ref-Southwelll2007" role="doc-biblioref"><strong>Southwelll2007?</strong></a>)</span>.</p>
-<p>To help understand the terminology used in MRDS and the output produced by <code>mrds</code>, there is a guide available <a href="Supplement-interpretingoutput.qmd">‘Interpreting MRDS output’</a>.</p>
+<p>The third part of the practical involves analysis of the pack-ice seal survey data of <span class="citation" data-cites="Borchers2006">Borchers et al. (<a href="#ref-Borchers2006" role="doc-biblioref">2006</a>)</span> and <span class="citation" data-cites="Southwell2007">Southwell et al. (<a href="#ref-Southwell2007" role="doc-biblioref">2007</a>)</span>.</p>
+<p>To help understand the terminology used in MRDS and the output produced by <code>mrds</code>, there is a guide available <a href="../../11-mrds/DistWin-prac/Supplement-interpretingoutput.html">‘Interpreting MRDS output’</a>.</p>
 <section id="golf-tee-survey---initial-analysis" class="level1">
-<h1>1. Golf tee survey - initial analysis</h1>
+<h1>Golf tee survey - initial analysis</h1>
 <section id="golf-tee-survey" class="level2">
 <h2 class="anchored" data-anchor-id="golf-tee-survey">Golf tee survey</h2>
 <p>These data come from a survey of golf tees which conducted by statistics students at the University of St Andrews. The data were collected along transect lines, 210 metres in total. A distance of 4 metres out from the centre line was searched and, for the purposes of this exercise, we assume that this comprised the total study area, which was divided into two strata. There were 250 clusters of tees in total and 760 individual tees in total.</p>
@@ -495,10 +494,9 @@ Analysis of double-platform data
 <span id="cb1-13"><a href="#cb1-13"></a>samples <span class="ot">&lt;-</span> book.tee.data<span class="sc">$</span>book.tee.samples <span class="co"># transect info</span></span>
 <span id="cb1-14"><a href="#cb1-14"></a>obs <span class="ot">&lt;-</span> book.tee.data<span class="sc">$</span>book.tee.obs <span class="co"># links detections to transects and regions</span></span>
 <span id="cb1-15"><a href="#cb1-15"></a></span>
-<span id="cb1-16"><a href="#cb1-16"></a><span class="co"># In the detections data frame, define sex and exposure </span></span>
-<span id="cb1-17"><a href="#cb1-17"></a><span class="co"># as factor variables </span></span>
-<span id="cb1-18"><a href="#cb1-18"></a>detections<span class="sc">$</span>sex <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(detections<span class="sc">$</span>sex)</span>
-<span id="cb1-19"><a href="#cb1-19"></a>detections<span class="sc">$</span>exposure <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(detections<span class="sc">$</span>exposure)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-16"><a href="#cb1-16"></a><span class="co"># In the detections data frame, define sex and exposure as factor variables </span></span>
+<span id="cb1-17"><a href="#cb1-17"></a>detections<span class="sc">$</span>sex <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(detections<span class="sc">$</span>sex)</span>
+<span id="cb1-18"><a href="#cb1-18"></a>detections<span class="sc">$</span>exposure <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(detections<span class="sc">$</span>exposure)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="golf-tee-survey-analyses" class="level2">
@@ -680,12 +678,14 @@ Test statistic = 0.294564 p-value = 0.140034</code></pre>
 <p><img src="Pr11-instructions-R_files/figure-html/plotdf-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p>The plot headed</p>
+<section id="the-plot-headed" class="level5">
+<h5 class="anchored" data-anchor-id="the-plot-headed">The plot headed</h5>
 <ul>
-<li><p>“Conditional detection probability” (the right hand plot) shows the proportion of Obs 2’s detections that were detected by Obs 1 (also see the detection tables). The fitted line is the estimated detection probability function for Obs 1 (given detection by Obs 2) - this is the MR model. Dots are estimated detection probabilities for each Obs 1 detection.</p></li>
-<li><p>“Observer=1 detections” (left hand plot) shows a histogram of Observer 1 detections with the estimated Observer 1 detection function (from the MR model) overlaid on it and adjusted for the estimated p(0). The dots show the estimated detection probability for all Observer 1 detections. Note that the MR model was not fitted to these data – it’s the conditional data (right hand plot) that was used to fit the model. This plot is just shown to help you diagnose any issues in the fit – as we discussed in class, if there is dependency between observer detections then we’d expect the detection function to decrease slower than the histograms.</p></li>
+<li>“Conditional detection probability” (the right hand plot) shows the proportion of Obs 2’s detections that were detected by Obs 1 (also see the detection tables). The fitted line is the estimated detection probability function for Obs 1 (given detection by Obs 2) - this is the MR model. Dots are estimated detection probabilities for each Obs 1 detection.</li>
+<li>“Observer=1 detections” (left hand plot) shows a histogram of Observer 1 detections with the estimated Observer 1 detection function (from the MR model) overlaid on it and adjusted for the estimated p(0). The dots show the estimated detection probability for all Observer 1 detections. Note that the MR model was not fitted to these data – it is the conditional data (right hand plot) that was used to fit the model. This plot is just shown to help you diagnose any issues in the fit – if there is dependency between observer detections then we’d expect the detection function to decrease slower than the histograms.</li>
 </ul>
 <p>Is there evidence of unmodelled heterogeneity? What do these results tell you about the estimates of p (average detection probability) and p(0) (detection probability at 0 distance)?</p>
+</section>
 </section>
 <section id="estimating-abundance" class="level4">
 <h4 class="anchored" data-anchor-id="estimating-abundance">Estimating abundance</h4>
@@ -843,8 +843,8 @@ fi.mr.dist.size.sex.exposure  5 407.3974</code></pre>
 </section>
 </section>
 </section>
-<section id="golf-tee-survey---further-exploration-after-class-on-day-1" class="level1">
-<h1>2. Golf tee survey - Further exploration after class on Day 1</h1>
+<section id="golf-tee-survey-1" class="level1">
+<h1>Golf tee survey</h1>
 <section id="further-analyses-of-golf-tee-data" class="level2">
 <h2 class="anchored" data-anchor-id="further-analyses-of-golf-tee-data">Further analyses of golf tee data</h2>
 <section id="estimation-of-p-distance-and-other-explanatory-variables-1" class="level3">
@@ -935,7 +935,7 @@ N in covered region 223.9038534 22.99246338 0.10268900</code></pre>
 </section>
 <section id="data-structure" class="level2">
 <h2 class="anchored" data-anchor-id="data-structure">Data structure</h2>
-<p>Before moving on to the second dataset, let’s have a look at the columns in the <code>detections</code> data because, for all mrds analyses, it needs to have a particular structure.</p>
+<p>Before moving on to the second dataset, let’s have a look at the columns in the <code>detections</code> data because, for all <code>mrds</code> analyses, it needs to have a particular structure.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="co"># Check detections</span></span>
 <span id="cb22-2"><a href="#cb22-2"></a><span class="fu">head</span>(detections)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -951,19 +951,19 @@ N in covered region 223.9038534 22.99246338 0.10268900</code></pre>
 </div>
 <p>The structure of the detection is as follows:</p>
 <ul>
-<li><p>each detected object (in this case the object was a group or cluster of golf tees) is given a unique number in the <code>object</code> column,</p></li>
-<li><p>each <code>object</code> occurs twice - once for observer 1 and once for observer 2,</p></li>
-<li><p>the <code>detected</code> column indicates whether the object was seen (<code>detected=1</code>) or not seen (<code>detected=0</code>) by the observer,</p></li>
-<li><p>perpendicular distance is in the <code>distance</code> column and cluster size is in the <code>size</code> column (the same default names as for the <code>ds</code> function).</p></li>
+<li>each detected object (in this case the object was a group or cluster of golf tees) is given a unique number in the <code>object</code> column,</li>
+<li>each <code>object</code> occurs twice - once for observer 1 and once for observer 2,</li>
+<li>the <code>detected</code> column indicates whether the object was seen (<code>detected=1</code>) or not seen (<code>detected=0</code>) by the observer,</li>
+<li>perpendicular distance is in the <code>distance</code> column and cluster size is in the <code>size</code> column (the same default names as for the <code>ds</code> function).</li>
 </ul>
 <p>To ensure that the variables <code>sex</code> and <code>exposure</code> are treated correctly, we defined them as factor variables.</p>
 </section>
 </section>
-<section id="crabeater-seal-survey---for-you-to-work-on-after-class-on-day-1-before-the-next-class" class="level1">
-<h1>3. Crabeater seal survey - For you to work on after class on Day 1, before the next class</h1>
+<section id="crabeater-seal-survey" class="level1">
+<h1>Crabeater seal survey</h1>
 <section id="crabeater-seal-data" class="level2">
 <h2 class="anchored" data-anchor-id="crabeater-seal-data">Crabeater seal data</h2>
-<p>This analysis is described in Borchers et al.&nbsp;(2006) and Southwell et al.&nbsp;(2007). These data come from a helicopter survey of crabeater seals conducted by the Australian Antarctic Division within the pack-ice seals programme. The helicopter could only operate within a relatively short distance from the ice-breaker ship which acted as its base. The ice-breaker could only go where the pack ice was thin enough and so the aerial transects could not be located at random. This means that design-based estimation was not a valid option and so, in the published analysis, abundance was estimated using density surface modelling. For the purposes of this exercise, we concentrate on detection function estimation and create an artificial region as a device to produce abundance estimates.</p>
+<p>This analysis is described in <span class="citation" data-cites="Borchers2006">Borchers et al. (<a href="#ref-Borchers2006" role="doc-biblioref">2006</a>)</span> and <span class="citation" data-cites="Southwell2007">Southwell et al. (<a href="#ref-Southwell2007" role="doc-biblioref">2007</a>)</span>. These data come from a helicopter survey of crabeater seals conducted by the Australian Antarctic Division within the pack-ice seals programme. The helicopter could only operate within a relatively short distance from the ice-breaker ship which acted as its base. The ice-breaker could only go where the pack ice was thin enough and so the aerial transects could not be located at random. This means that design-based estimation was not a valid option and so, in the published analysis, abundance was estimated using density surface modelling. For the purposes of this exercise, we concentrate on detection function estimation and create an artificial region as a device to produce abundance estimates.</p>
 <p>There were four independent observers in the helicopter, two on each side (front and back). The front observers were considered to be one ‘team’ and the back observers were considered to be the other ‘team’. Various environmental factors were recorded. In addition to perpendicular distance, observer (1=front or 2=back) and cluster size, the following explanatory variables are available:</p>
 <ul>
 <li>side – the side of the helicopter from which seal were seen (L and R)</li>
@@ -1005,7 +1005,7 @@ N in covered region 223.9038534 22.99246338 0.10268900</code></pre>
 </div>
 </div>
 <p>If you’ve used Distance for Windows you might recognize some of the column names from that - indeed the dataset has been exported from Distance for Windows into the <code>.csv</code> file. The first column can be ignored. <code>Region.Label</code> and <code>Area</code> relate to the strata (their names and area - there’s only one in this dataset). <code>Sample.Label</code> and <code>Effort</code> relate to the transects. The columns <code>distance</code> onwards relate to the observations. You can see there are columns for each explanatory variable above, plus one additional one called <code>fold</code> that will enable use to pick a subset of the data (see later on).</p>
-<p>First, one thing we should do is turn the explanatory variables that should be fitted as factor variables into factors.</p>
+<p>Convert the explanatory variables that should be fitted as factor variables into factors.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a>crabseal<span class="sc">$</span>side <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(crabseal<span class="sc">$</span>side)</span>
 <span id="cb26-2"><a href="#cb26-2"></a>crabseal<span class="sc">$</span>vis <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(crabseal<span class="sc">$</span>vis)</span>
@@ -1105,7 +1105,7 @@ Average p              0.5777249  0.01239167 0.02144909
 N in covered region 3011.8139214 79.84149372 0.02650944</code></pre>
 </div>
 </div>
-<p>Which of these models do you prefer?</p>
+<p><em>Which of these models do you prefer? </em></p>
 <p>If you have time, try a few models with covariates. However, this is a large dataset and so fitting models and obtaining model summaries can take a long time with complicated models. Given this and the fact that the exercise is just for practice, you may want to work with just a subset of the data – which is where the <code>fold</code> column in the dataset comes in. With this column, each observation is associated with a number from 1 to 10 (they are assigned systematically in order of the data, so the first observation is given number 1, the second 2, …, the 10th 10, the 11th 1 again, the 12th 2, etc). So, for example, you could pick out just the first and fifth ``fold’’ (i.e., just one fifth of the data) with</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a>crabseal15 <span class="ot">&lt;-</span> crabseal[crabseal<span class="sc">$</span>fold <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">5</span>), ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1226,7 +1226,7 @@ pi.mr.dist.observer.ds.hn.fold15  4 5065.830</code></pre>
 </section>
 <section id="crabeater-seals-with-mcds-optional" class="level3">
 <h3 class="anchored" data-anchor-id="crabeater-seals-with-mcds-optional">Crabeater seals with MCDS (optional)</h3>
-<p>We can also analyse the crabeater seals data as if it were single platform data (i.e.&nbsp;ignoring that <span class="math inline">\(p(0)\)</span> is less than 1). These data are available in <code>crabbieMCDS.csv</code>.</p>
+<p>We can also analyse the crabeater seals data as if it were single platform data (i.e.&nbsp;ignoring that <span class="math inline">\(p(0)\)</span> is less than 1). These data are available in <a href="crabbieMCDS.csv`"><code>crabbieMCDS.csv</code></a>.</p>
 <p>This short exercise guides you through the import of these data into R and fits a simple half-normal detection function examining the possible improvement of the model by incorporating <em>side of plane</em> and <em>visibility</em> covariates (using the full dataset).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a><span class="co"># Load Distance for MCDS </span></span>
@@ -1307,7 +1307,7 @@ pi.mr.dist.observer.ds.hn.fold15  4 5065.830</code></pre>
 <li>with <em>visibility</em> only</li>
 <li>with <em>side of plane</em> and <em>visibility</em> (excluding an interaction).</li>
 </ul>
-<p>Out of the four possible models which is to be preferred?</p>
+<p><em>Out of the four possible models which is to be preferred?</em></p>
 <p>Further modelling is possible. For example, we typically allow adjustment terms in CDS analyses (i.e., where there are not covariates), and it is also possible to include adjustment terms in MCDS analyses. Below is a model with half-normal key and AIC-based selection of cosine adjustments. How does the AIC of this model compare with those fitted previously?</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a><span class="co"># Fit HN key function with no covars and no adjustments</span></span>
@@ -1345,18 +1345,11 @@ Half-normal key function with cosine(2,3) adjustments selected.</code></pre>
 </div>
 </div>
 <p>We could go on to produce abundance estimates from our preferred model using the <code>dht</code> function if we had provided information about the size of the crabeater seal study area.</p>
-<p>Rather than fitting an MRDS model, as above, would an MCDS analyses have been adequate?</p>
+<p><em>Rather than fitting an MRDS model, as above, would an MCDS analyses have been adequate?</em></p>
+
+
+
 </section>
-</section>
-<section id="references" class="level2">
-<h2 class="anchored" data-anchor-id="references">References</h2>
-<p>Borchers DL, Laake JL, Southwell C and Paxton CGM (2006) Accommodating unmodeled heterogeneity in double-observer distance sampling surveys. Biometrics 62: 371-378</p>
-<p>Laake JL, Borchers DL, Thomas L, Miller DL and Bishop JRB (2019) mrds: Mark-Recapture Distance Sampling. R package version 2.2.1.</p>
-<p>Southwell C, Borchers DL, Paxton CGM, Burt ML and de la Mare W (2007) Estimation of detection probability in aerial surveys of Antarctic pack-ice seals. Journal of Agricultural, Biological and Environmental Statistics 12:41-54</p>
-<p>Thomas L, Buckland ST, Rexstad EA, Laake JL, Strindberg S, Hedley SL, Bishop JRB, Marques TA, and Burnham KP (2010) Distance software: design and analysis of distance sampling surveys for estimating population size. Journal of Applied Ecology 47: 5-14. DOI: 10.1111/j.1365-2664.2009.01737.x</p>
-
-
-
 </section>
 </section>
 
@@ -1367,6 +1360,9 @@ Borchers, D. L., Laake, J. L., Southwell, C., &amp; Paxton, C. G. M. (2006). Acc
 </div>
 <div id="ref-mrdspackage" class="csl-entry" role="listitem">
 Laake, J., Borchers, D., Thomas, L., Miller, D., Bishop, J., &amp; McArthur, J. (2023). <em>Mrds: Mark-recapture distance sampling</em>. Retrieved from <a href="https://CRAN.R-project.org/package=mrds">https://CRAN.R-project.org/package=mrds</a>
+</div>
+<div id="ref-Southwell2007" class="csl-entry" role="listitem">
+Southwell, C., Borchers, D., de la Mare, B., Paxton, C. G. M., Burt, L., &amp; de la Mare, W. (2007). Estimation of detection probability on aerial surveys of <span>Antarctic</span> pack-ice seals. <em>Journal of Agricultural, Biological, and Environmental Statistics</em>, <em>12</em>, 1–14. <a href="https://doi.org/10.1198/108571107X162920">https://doi.org/10.1198/108571107X162920</a>
 </div>
 <div id="ref-Thomas2010" class="csl-entry" role="listitem">
 Thomas, L., Buckland, S. T., Rexstad, E. A., Laake, J. L., Strindberg, S., Hedley, S. L., … Burnham, K. P. (2010). Distance software: Design and analysis of distance sampling surveys for estimating population size. <em>Journal of Applied Ecology</em>, <em>47</em>, 5–14. <a href="https://doi.org/10.1111/j.1365-2664.2009.01737.x">https://doi.org/10.1111/j.1365-2664.2009.01737.x</a>

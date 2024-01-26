@@ -17,11 +17,11 @@ The first part of this practical involves initial analysis of a survey of a know
 
 The second part of the practical involves more detailed analysis of the golf tee data, and an exploration of the double-platform data structure.
 
-The third part of the practical involves analysis of the pack-ice seal survey data of [@Borchers2006] and [@Southwelll2007].  
+The third part of the practical involves analysis of the pack-ice seal survey data of @Borchers2006 and @Southwell2007.  
 
-To help understand the terminology used in MRDS and the output produced by `mrds`, there is a guide available ['Interpreting MRDS output'](Supplement-interpretingoutput.qmd). 
+To help understand the terminology used in MRDS and the output produced by `mrds`, there is a guide available ['Interpreting MRDS output'](../DistWin-prac/Supplement-interpretingoutput.qmd). 
 
-# 1. Golf tee survey - initial analysis
+# Golf tee survey - initial analysis
 
 ## Golf tee survey 
 
@@ -49,8 +49,7 @@ region <- book.tee.data$book.tee.region # region info
 samples <- book.tee.data$book.tee.samples # transect info
 obs <- book.tee.data$book.tee.obs # links detections to transects and regions
 
-# In the detections data frame, define sex and exposure 
-# as factor variables 
+# In the detections data frame, define sex and exposure as factor variables 
 detections$sex <- as.factor(detections$sex)
 detections$exposure <- as.factor(detections$exposure)
 ```
@@ -126,11 +125,10 @@ par(mfrow=c(1,2))
 plot(fi.mr.dist)
 ```
 
-The plot headed 
+##### The plot headed 
 
 + "Conditional detection probability" (the right hand plot) shows the proportion of Obs 2's detections that were detected by Obs 1 (also see the detection tables). The fitted line is the estimated detection probability function for Obs 1 (given detection by Obs 2) - this is the MR model. Dots are estimated detection probabilities for each Obs 1 detection.
-
-+ "Observer=1 detections" (left hand plot) shows a histogram of Observer 1 detections with the estimated Observer 1 detection function (from the MR model) overlaid on it and adjusted for the estimated p(0). The dots show the estimated detection probability for all Observer 1 detections.  Note that the MR model was not fitted to these data -- it's the conditional data (right hand plot) that was used to fit the model.  This plot is just shown to help you diagnose any issues in the fit -- as we discussed in class, if there is dependency between observer detections then we'd expect the detection function to decrease slower than the histograms.
++ "Observer=1 detections" (left hand plot) shows a histogram of Observer 1 detections with the estimated Observer 1 detection function (from the MR model) overlaid on it and adjusted for the estimated p(0). The dots show the estimated detection probability for all Observer 1 detections.  Note that the MR model was not fitted to these data -- it is the conditional data (right hand plot) that was used to fit the model.  This plot is just shown to help you diagnose any issues in the fit -- if there is dependency between observer detections then we'd expect the detection function to decrease slower than the histograms.
 
 Is there evidence of unmodelled heterogeneity? What do these results tell you about the estimates of p (average detection probability) and p(0) (detection probability at 0 distance)?
 
@@ -167,7 +165,7 @@ We can use AIC to compare this with the previous model that just had distance as
 AIC(fi.mr.dist, fi.mr.dist.size.sex.exposure)
 ```
 
-# 2. Golf tee survey - Further exploration after class on Day 1
+#  Golf tee survey
 
 ## Further analyses of golf tee data
 
@@ -219,7 +217,7 @@ Feel free to experiment some more with different models.  What is your final bes
 
 ## Data structure
 
-Before moving on to the second dataset, let's have a look at the columns in the `detections` data because, for all mrds analyses, it needs to have a particular structure.
+Before moving on to the second dataset, let's have a look at the columns in the `detections` data because, for all `mrds` analyses, it needs to have a particular structure.
 
 ```{r headdet, echo=T}
 # Check detections
@@ -228,32 +226,29 @@ head(detections)
 The structure of the detection is as follows:
 
 + each detected object (in this case the object was a group or cluster of golf tees) is given a unique number in the `object` column, 
-
 + each `object` occurs twice - once for observer 1 and once for observer 2, 
-
 + the `detected` column indicates whether the object was seen (`detected=1`) or not seen (`detected=0`) by the observer,
-
 + perpendicular distance is in the `distance` column and cluster size is in the `size` column (the same default names as for the `ds` function). 
 
 To ensure that the variables `sex` and `exposure` are treated correctly, we defined them as factor variables.
 
-# 3. Crabeater seal survey - For you to work on after class on Day 1, before the next class
+# Crabeater seal survey 
 
 ## Crabeater seal data 
 
-This analysis is described in Borchers et al. (2006) and Southwell et al. (2007). These data come from a helicopter survey of crabeater seals conducted by the Australian Antarctic Division within the pack-ice seals programme. The helicopter could only operate within a relatively short distance from the ice-breaker ship which acted as its base. The ice-breaker could only go where the pack ice was thin enough and so the aerial transects could not be located at random. This means that design-based estimation was not a valid option and so, in the published analysis, abundance was estimated using density surface modelling. For the purposes of this exercise, we concentrate on detection function estimation and create an artificial region as a device to produce abundance estimates. 
+This analysis is described in @Borchers2006 and @Southwell2007. These data come from a helicopter survey of crabeater seals conducted by the Australian Antarctic Division within the pack-ice seals programme. The helicopter could only operate within a relatively short distance from the ice-breaker ship which acted as its base. The ice-breaker could only go where the pack ice was thin enough and so the aerial transects could not be located at random. This means that design-based estimation was not a valid option and so, in the published analysis, abundance was estimated using density surface modelling. For the purposes of this exercise, we concentrate on detection function estimation and create an artificial region as a device to produce abundance estimates. 
 
 There were four independent observers in the helicopter, two on each side (front and back). The front observers were considered to be one 'team' and the back observers were considered to be the other 'team'. Various environmental factors were recorded. In addition to perpendicular distance, observer (1=front or 2=back) and cluster size, the following explanatory variables are available:
 
-* side -- the side of the helicopter from which seal were seen (L and R)
-* exp -- the experience (in survey hours) of the observer
-* fatigue -- the number of minutes the observer had been on duty on the current flight
-* gscat -- group size category (1, 2 and greater than or equal to 3)
-* vis -- visibility category (Poor, Good and Excellent)
-* glare -- whether there was glare (Yes or No)
-* ssmi -- a measure of ice cover
-* altitude -- the height of the aircraft in metres
-* obsname -- unique identifier of observer
+- side -- the side of the helicopter from which seal were seen (L and R)
+- exp -- the experience (in survey hours) of the observer
+- fatigue -- the number of minutes the observer had been on duty on the current flight
+- gscat -- group size category (1, 2 and greater than or equal to 3)
+- vis -- visibility category (Poor, Good and Excellent)
+- glare -- whether there was glare (Yes or No)
+- ssmi -- a measure of ice cover
+- altitude -- the height of the aircraft in metres
+- obsname -- unique identifier of observer
 
 The data from the survey has been saved in a `.csv` file. This file is read into R using `read.csv`.
 
@@ -264,7 +259,7 @@ str(crabseal)
 
 If you've used Distance for Windows you might recognize some of the column names from that - indeed the dataset has been exported from Distance for Windows into the `.csv` file.  The first column can be ignored.  `Region.Label` and `Area` relate to the strata (their names and area - there's only one in this dataset).  `Sample.Label` and `Effort` relate to the transects.  The columns `distance` onwards relate to the observations.  You can see there are columns for each explanatory variable above, plus one additional one called `fold` that will enable use to pick a subset of the data (see later on).
 
-First, one thing we should do is turn the explanatory variables that should be fitted as factor variables into factors.
+Convert the explanatory variables that should be fitted as factor variables into factors.
 
 ```{r}
 crabseal$side <- as.factor(crabseal$side)
@@ -302,7 +297,7 @@ pi.mr.dist.ds.hn <- ddf(method="io", dsmodel=~cds(key="hn"),
 summary(pi.mr.dist.ds.hn)
 ```
 
-Which of these models do you prefer? 
+*Which of these models do you prefer? *
 
 If you have time, try a few models with covariates.  However, this is a large dataset and so fitting models and obtaining model summaries can take a long time with complicated models.  Given this and the fact that the exercise is just for practice, you may want to work with just a subset of the data -- which is where the `fold` column in the dataset comes in.  With this column, each observation is associated with a number from 1 to 10 (they are assigned systematically in order of the data, so the first observation is given number 1, the second 2, ..., the 10th 10, the 11th 1 again, the 12th 2, etc).  So, for example, you could pick out just the first and fifth ``fold'' (i.e., just one fifth of the data) with
 
@@ -350,7 +345,7 @@ knitr::kable(pi.abund$individual$N, digits=3,
 
 ### Crabeater seals with MCDS (optional)
 
-We can also analyse the crabeater seals data as if it were single platform data (i.e. ignoring that $p(0)$ is less than 1). These data are available in `crabbieMCDS.csv`.
+We can also analyse the crabeater seals data as if it were single platform data (i.e. ignoring that $p(0)$ is less than 1). These data are available in [`crabbieMCDS.csv`](crabbieMCDS.csv`).
 
 This short exercise guides you through the import of these data into R and fits a simple half-normal detection function examining the possible improvement of the model by incorporating _side of plane_ and _visibility_ covariates (using the full dataset).
 
@@ -408,10 +403,10 @@ AIC score for model without covariates is `r options(scipen=11)` `r round(ds.noc
 
 We could also fit further detection functions and contrast the resulting models:
 
-* with _visibility_ only
-* with _side of plane_ and _visibility_ (excluding an interaction). 
+- with _visibility_ only
+- with _side of plane_ and _visibility_ (excluding an interaction). 
 
-Out of the four possible models which is to be preferred?
+*Out of the four possible models which is to be preferred?*
 
 Further modelling is possible.  For example, we typically allow adjustment terms in CDS analyses (i.e., where there are not covariates), and it is also possible to include adjustment terms in MCDS analyses.  Below is a model with half-normal key and AIC-based selection of cosine adjustments.  How does the AIC of this model compare with those fitted previously?
 
@@ -420,17 +415,6 @@ Further modelling is possible.  For example, we typically allow adjustment terms
 ds.nocov.hncos <- ds(crab.covar, key="hn", adjustment="cos", truncation=700)
 ```
 
-
 We could go on to produce abundance estimates from our preferred model using the `dht` function if we had provided information about the size of the crabeater seal study area.
 
-Rather than fitting an MRDS model, as above, would an MCDS analyses have been adequate? 
-
-## References
-
-Borchers DL, Laake JL, Southwell C and Paxton CGM (2006) Accommodating unmodeled heterogeneity in double-observer distance sampling surveys. Biometrics 62: 371-378
-
-Laake JL, Borchers DL, Thomas L, Miller DL and Bishop JRB (2019) mrds: Mark-Recapture Distance Sampling. R package version 2.2.1.
-
-Southwell C, Borchers DL, Paxton CGM, Burt ML and de la Mare W (2007) Estimation of detection probability in aerial surveys of Antarctic pack-ice seals. Journal of Agricultural, Biological and Environmental Statistics 12:41-54
-
-Thomas L, Buckland ST, Rexstad EA, Laake JL, Strindberg S, Hedley SL, Bishop JRB, Marques TA, and Burnham KP (2010)  Distance software: design and analysis of distance sampling surveys for estimating population size. Journal of Applied Ecology 47: 5-14.  DOI: 10.1111/j.1365-2664.2009.01737.x
+*Rather than fitting an MRDS model, as above, would an MCDS analyses have been adequate?*

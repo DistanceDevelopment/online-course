@@ -18,12 +18,12 @@ The first part of this practical involves initial analysis of a survey of a know
 
 The second part of the practical involves more detailed analysis of the golf tee data, and an exploration of the double-platform data structure and project setup. 
 
-The third part of the practical involves analysis of the pack-ice seal survey data of [@Borchers2006] and [@Southwell2007].
+The third part of the practical involves analysis of the pack-ice seal survey data of @Borchers2006 and @Southwell2007.
 
 
 # Golf Tee Survey – Initial analysis 
 
-# <u>The Golf Tee Data and Distance Project</u>
+## The Golf Tee Data and Distance Project
 
 The data come from a survey of clusters of golf tees in grass, conducted by undergraduate statistics students at the University of St Andrews. For the purposes of this exercise, we will assume that all the data were collected on one 210 metre long transect line out to a width of 4 metres (both sides), and that this comprises the study region. There were 250 clusters of tees in the study region and 760 individual tees in total.
 
@@ -40,13 +40,13 @@ Have a look at the **Properties** of the **Model Definition** for each of these 
 - Both are full independence models (we’ll try point independence models later in the exercise).
 - The difference between the two is that they have different MR (mark recapture) models – see the MR Model button in the Detection Function tab. Notice that the names used in the model formulae are not the same as the field names in the Data tab – for example the “Perp distance” field is called “distance” in the formulae. (Recall from the lecture that some fields get renamed when the data are sent out to R for analysis. You can find out what renaming has been done in the Log tab once you’ve run an analysis – we’ll do this in a second.)
 
-# <u>Golf Tee Survey Analyses</u>
+## Golf Tee Survey Analyses
 
-1.  **Estimation of *p*: distance only**
+### Estimation of *p*: distance only
 
-> Run the “FI - MR dist” analysis. Once it is run, look in the **Analysis Details Log** tab, and find the part of the log where Distance tells you how it has renamed the fields. It’s useful to know where this is in case you need reminding of what names to use when specifying formulae. Now look in the **Results** tab. Does the fit of the model look good?
+Run the “FI - MR dist” analysis. Once it is run, look in the **Analysis Details Log** tab, and find the part of the log where Distance tells you how it has renamed the fields. It’s useful to know where this is in case you need reminding of what names to use when specifying formulae. Now look in the **Results** tab. _Does the fit of the model look good?_
 
-> Here’s what the plots are:
+Here’s what the plots are:
 
 1.  The plots on the pages headed “Summary 1” and “Summary 2” show the histograms of distances for detections by either, or both, observer. The shaded regions show the number for observer 1 and observer 2, respectively.
 2.  The plot on the page ‘Summary 3’ shows the histograms of distances for duplicates (detected by both observers).
@@ -55,36 +55,35 @@ Have a look at the **Properties** of the **Model Definition** for each of these 
 5.  The plot on the page headed “Detection probability 1” shows a histogram of Observer 1 detections with the estimated Observer 1 detection function overlaid on it. The dots show the estimated detection probability for all Observer 1 detections.
 6.  The plot on the page headed “Detection probability 2” shows the proportion of Obs 2’s detections that were detected by Obs 1 (also see the “Summary” page). The fitted line is the estimated detection function for Obs 1 (given detection by Obs 2). Dots are estimated detection probabilities for each Obs 1 detection.
 
-> Is there evidence of unmodelled heterogeneity? What do these results tell you about the estimates of p (average detection probability) and *p*(0) (detection probability at 0 distance)?
+_Is there evidence of unmodelled heterogeneity? What do these results tell you about the estimates of p (average detection probability) and *p*(0) (detection probability at 0 distance)?_
 
-2.  **Estimation of *p*: distance and other variables**
+### Estimation of *p*: distance and other variables
 
-> Run “FI - MR dist+size+sex+exp”. Can you explain the differences between the estimates of p and the abundance estimates between the two models? Which model would you use to estimate abundance? To decide, look at the goodness-of-fit test and AIC values from each model.
-
+Run “FI - MR dist+size+sex+exp”. _Can you explain the differences between the estimates of p and the abundance estimates between the two models? Which model would you use to estimate abundance? To decide, look at the goodness-of-fit test and AIC values from each model._
 
 # Golf Tee Survey – Further exploration 
 
-# <u>Golf Tee Survey Analyses (continued)</u>
+## Golf Tee Survey Analyses
 
-3.  **Specifying new models**
+### Specifying new models
 
-> The size covariate is the least significant of the covariates in the model “FI – MR dist + size + sex + exp” – its estimate is 0.078 with SE 0.183. So try creating a new model definition and analysis without this covariate. Does it have a lower AIC?
+The size covariate is the least significant of the covariates in the model “FI – MR dist + size + sex + exp” – its estimate is 0.078 with SE 0.183. Create a new model definition and analysis without this covariate. *Does it have a lower AIC?*
 
-> You can also try some models with interaction terms. For example, you would specify the interaction between sex and exposure as “sex:exposure”. If you also want both sex and exposure in as main effects (which you usually do) then the notation “sex\*exposure” is shorthand for “sex + exposure + sex:exposure”. Don’t try too many of these models – leave time for the next part!
+You can also try some models with interaction terms. For example, you would specify the interaction between sex and exposure as “sex:exposure”. If you also want both sex and exposure in as main effects (which you usually do) then the notation “sex\*exposure” is shorthand for “sex + exposure + sex:exposure”. Don’t try too many of these models – leave time for the next part.
 
-4.  **Point independence**
+### Point independence
 
-> All the models we have tried so far assume full independence – i.e. that the detections are independent between platforms at all distances. A less restrictive assumption is point independence – that the detections are only independent on the line.
+All the models we have tried so far assume full independence – i.e. that the detections are independent between platforms at all distances. A less restrictive assumption is point independence – that the detections are only independent on the line.
 
-> Let’s start by seeing if a simple point independence model is better than a simple full independence one. Set up a new Analysis and Model Definition, and under Detection Function \| Method, choose Trial, Point independence. For the MR (mark-recapture) model, specify distance as the only covariate. You now also need to specify a DS (distance sampling) model. Start with a half-normal key function and constant scale parameter (i.e. no covariates).
->
-> Run this model, and compare it with the corresponding full independence model (i.e., the full independence model with the same MR model). Which has the lower AIC? Which has an estimate closer to the known true abundance?
+Determine whether a simple point independence model is better than a simple full independence one. Set up a new Analysis and Model Definition, and under Detection Function \| Method, choose Trial, Point independence. For the MR (mark-recapture) model, specify distance as the only covariate. You now also need to specify a DS (distance sampling) model. Start with a half-normal key function and constant scale parameter (i.e. no covariates).
 
-> Now try a point independence model that has a MR model the same as the MR model from your full independence analyses. Which has the lower AIC and bias? Finally, try some models where you introduce covariates into the scale parameter of the DS model (for example, try sex as a covariate).
+Run this model, and compare it with the corresponding full independence model (i.e., the full independence model with the same MR model). Which has the lower AIC? Which has an estimate closer to the known true abundance?
 
-> What is your final best model? What is the estimate of *p* and *p(0)* for this model? Was all this modelling necessary in this instance, given the value of *p*(0)? How else could you have obtained a robust estimate of abundance?
+Try a point independence model that has a MR model the same as the MR model from your full independence analyses. Which has the lower AIC and bias? Finally, try some models where you introduce covariates into the scale parameter of the DS model (for example, try sex as a covariate).
 
-<u>Golf Tee Survey Data exploration</u>
+_What is your final best model? What is the estimate of *p* and *p(0)* for this model? Was all this modelling necessary in this instance, given the value of *p*(0)? How else could you have obtained a robust estimate of abundance?_
+
+### Golf Tee Survey Data exploration
 
 It’s worth having a look at how the data are stored for a double-observer project. Open the project, and click on the **Data** tab to see how the data are stored. Notice that each detected cluster appears twice in the observation layer – once for observer 1 and once for observer 2. There is a field “object” which gives a unique number to each cluster and another field “detected” which indicates whether the cluster was seen (=1) or missed (=0) by each observer. There are also fields for the other covariates: perpendicular distance, cluster size, sex and exposure. In general, covariates could also be stored in other data layers (e.g., stratum- or transect-level covariates such as habitat).
 
@@ -92,11 +91,11 @@ Now click on the **Survey** tab and open the **Survey details** for “New surve
 
 # Crabeater Seal Survey 
 
-# <u>The Crabeater Seal Data and Distance Project</u>
+## The Crabeater Seal Data and Distance Project
 
 These data come from a helicopter survey of crabeater seals within pack-ice in the Antarctic conducted by the Australian Antarctic Division as part of their pack-ice seals program. The helicopter can only operate within a relatively short distance from the icebreaker, which acts as its base, and the ice-breaker can only go where the pack-ice is thin enough, the aerial transects cannot be randomly located. This means that design-based abundance estimation was not a valid option – abundance was estimated using density surface modelling. In this exercise, we concentrate on detection function estimation.
 
-The data are stored in two distance projects: **CrabbieMCDSExercise** and **CrabbieMRDSExercise**. The first contains a multiple-covariate distances analysis of the data (assuming *p*(0)=1); the second contains mark-recapture distance sampling analyses of the same data.
+The data are stored in two distance projects: [**CrabbieMCDSExercise**](CrabbieMCDSExercise.zip) and [**CrabbieMRDSExercise**](CrabbieMRDSExercise.zip). The first contains a multiple-covariate distances analysis of the data (assuming *p*(0)=1); the second contains mark-recapture distance sampling analyses of the same data.
 
 In addition to distance and cluster size, the following explanatory variables are available for modelling detection probability:
 
@@ -112,9 +111,9 @@ In addition to distance and cluster size, the following explanatory variables ar
 
 The distance projects are set up as if the transects were random and survey area was 1,000,000 hectares. This is just a device to get Distance to produce an abundance estimate, which we can treat as a relative index of abundance.
 
-# <u>The Crabeater Seal Analyses</u>
+## The Crabeater Seal Analyses
 
-The analyses described in [@Borchers2006] and [@Southwell2007] use the point independence method. Use the analyses in the two projects to decide whether:
+The analyses described in @Borchers2006 and @Southwell2007 use the point independence method. Use the analyses in the two projects to decide whether:
 
 - an MCDS analysis would have been adequate (and if so, why), and
 - a full-independence MRDS analysis would have been adequate (and if so, why).
@@ -122,11 +121,8 @@ The analyses described in [@Borchers2006] and [@Southwell2007] use the point ind
 The projects contain the following analyses (which have already been run, since running them takes a while):
 
 1.  MCDS like paper: MCDS model used for the MCDS component of the analysis in the papers. This one is in the [CrabbieMCDSExercise](CrabbieMCDSExercise.zip) project
-
 2.  PI dist only: Point independence model using only distance. This and the subsequent ones are in the [CrabbieMRDSExercise](CrabbieMRDSExercise.zip) project.
-
 3.  FI like paper: Full independence model using the MRDS model used in the papers.
-
 4.  PI as in paper: Point independence model using the same MCDS model and MRDS model as used in the papers.
 
 If you have time, you might want to try other models and see if you can do better than the model "PI as in paper". (However, see Tip2, below, for a timesaver.)
