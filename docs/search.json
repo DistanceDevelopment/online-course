@@ -663,5 +663,40 @@
     "title": "Analysis of double platform data",
     "section": "Distance package in R",
     "text": "Distance package in R\nFitting a simple MRDS model (i.e. DS half-normal key with MR model distance only) gives an MRDS estimate of p(0) for both platforms combined of 0.988. The \\(p(0)\\) for each observer team was 0.89. Note that the estimate is the same for each team because observer was not included in the MR model.\n\nCrabeater seals with MCDS\nThe detection function model with the lowest AIC includes side of plane and visibility – this is the distance sampling model used in Borchers et al. (2006) and Southwell et al. (2007).\n\n\n\nFormula\nAIC\n\n\n\n\nNo covars\n22304.01\n\n\nside\n22304.74\n\n\nvis\n22311.34\n\n\nside + vis\n22300.13\n\n\n\nFrom the simple MRDS analyses, we see that the conventional distance sampling assumption, that p(0) is 1, is very nearly satisfied – and so in this case an MCDS analysis may have been adequate. However, a double platform survey and analysis were required to establish this."
+  },
+  {
+    "objectID": "09-clusters/clusterslanding.html",
+    "href": "09-clusters/clusterslanding.html",
+    "title": "Analysis of animals in groups",
+    "section": "",
+    "text": "Some species travel in groups. The detection of these species is often made of a group. It is standard practice to record the perpendicular distance to the centre of the group and the number of individuals in the group. Conventional distance sampling could then be applied to produce an estimate of the number of groups in the study area.\nConverting that estimate of group abundance into an estimate of abundance of individuals creates a challenge. Simply multiplying the estimated abundance of groups by the average size of the detected groups produces biased estimates of abundance of individuals. As the following lecture describes, there is a problem of size bias. The average size of the detected groups is a positively biased estimate of the average size of groups in the population, leading to estimates of individual abundance that is too large.\nThe practicals in this model address this situation. You are to analyse data from a survey of Risso’s dolphins (Grampus griseus) in the eastern Atlantic Ocean. Not only will you produce estimates of group abundance, but also estimates of abundance of individuals. To prevent bias in the estimates of abundance of individuals, you will apply methods that avoid the size bias problem.\n\n Photo by Wynand Uys on Unsplash"
+  },
+  {
+    "objectID": "09-clusters/clusterslanding.html#analysis-of-animals-in-groups",
+    "href": "09-clusters/clusterslanding.html#analysis-of-animals-in-groups",
+    "title": "Analysis of animals in groups",
+    "section": "",
+    "text": "Some species travel in groups. The detection of these species is often made of a group. It is standard practice to record the perpendicular distance to the centre of the group and the number of individuals in the group. Conventional distance sampling could then be applied to produce an estimate of the number of groups in the study area.\nConverting that estimate of group abundance into an estimate of abundance of individuals creates a challenge. Simply multiplying the estimated abundance of groups by the average size of the detected groups produces biased estimates of abundance of individuals. As the following lecture describes, there is a problem of size bias. The average size of the detected groups is a positively biased estimate of the average size of groups in the population, leading to estimates of individual abundance that is too large.\nThe practicals in this model address this situation. You are to analyse data from a survey of Risso’s dolphins (Grampus griseus) in the eastern Atlantic Ocean. Not only will you produce estimates of group abundance, but also estimates of abundance of individuals. To prevent bias in the estimates of abundance of individuals, you will apply methods that avoid the size bias problem.\n\n Photo by Wynand Uys on Unsplash"
+  },
+  {
+    "objectID": "09-clusters/clusterslanding.html#lecture-materials",
+    "href": "09-clusters/clusterslanding.html#lecture-materials",
+    "title": "Analysis of animals in groups",
+    "section": "Lecture materials",
+    "text": "Lecture materials\n\nLecture discussion\n\nSlides\n\n\nVideo"
+  },
+  {
+    "objectID": "09-clusters/clusterslanding.html#exercise-materials",
+    "href": "09-clusters/clusterslanding.html#exercise-materials",
+    "title": "Analysis of animals in groups",
+    "section": "Exercise materials",
+    "text": "Exercise materials\n\n\n\nUsing R package\n\nVideo introduction\n\n\nInstructions\n\n\nSolution and discussion\n\n\nVideo summary\n\n\n\n\nUsing Distance for Windows\n\nVideo introduction\n\n\nInstructions\n\n\nSolution and discussion\n\n\nVideo summary"
+  },
+  {
+    "objectID": "09-clusters/clusterslanding.html#supplemental-materials",
+    "href": "09-clusters/clusterslanding.html#supplemental-materials",
+    "title": "Analysis of animals in groups",
+    "section": "Supplemental materials",
+    "text": "Supplemental materials\n\nNo supplements\n\nNo supplemental material"
   }
 ]
