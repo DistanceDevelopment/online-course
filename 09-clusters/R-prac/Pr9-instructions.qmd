@@ -15,3 +15,16 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Analysis of animals that occur in groups
 
+## Description of survey
+
+
+
+# Read in the data
+```{r}
+#| label: getdata
+risso <- read.csv("Risso_survey.csv")
+head(risso)
+```
+
+## Data organisation
+
