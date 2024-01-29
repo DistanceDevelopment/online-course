@@ -54,7 +54,7 @@ Text needed to describe double platform data and analysis.
 :::
 
 ::: instructions
-[Solution and discussion](R-prac/Pr11-solution-R.qmd) **Placeholder not correct**
+[Solution and discussion](DistWin-prac/Pr11-solution-DistWin.qmd)
 :::
 
 ::: video
