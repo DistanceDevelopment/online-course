@@ -1,0 +1,25 @@
+---
+title: Analysis of animals that occur in groups **solution**
+author: Centre for Research into Ecological and Environmental Modelling <br> **University of St Andrews**
+date-modified: "January 2024"
+date-format: "MMMM YYYY"
+bibliography: ../references.bib
+csl: ../../style/apa.csl
+---
+
+```{r}
+#| label = "setup",
+#| include = FALSE
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+library(knitr)
+library(kableExtra)
+```
+
+
+:::{.callout-tip}
+## Solution
+
+Analysis of animals that occur in groups
+:::
+
+# Risso's dolphin survey analysis

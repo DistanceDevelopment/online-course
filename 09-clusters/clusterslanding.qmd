@@ -57,11 +57,11 @@ The practicals in this model address this situation. You are to analyse data fro
 
 
 ::: instructions
-[Instructions](R-prac/Pr5-instructions.qmd)
+[Instructions](R-prac/Pr9-instructions.qmd)
 :::
 
 ::: instructions
-[Solution and discussion](R-prac/Prac5_solution.qmd)
+[Solution and discussion](R-prac/Prac9_solution.qmd)
 :::
 
 ::: video

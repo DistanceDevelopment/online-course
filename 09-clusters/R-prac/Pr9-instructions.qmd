@@ -1,0 +1,17 @@
+---
+title: Analysis of animals that occur in groups
+author: Centre for Research into Ecological and Environmental Modelling <br> **University of St Andrews**
+date-modified: "January 2024"
+date-format: "MMMM YYYY"
+bibliography: ../references.bib
+csl: ../../style/apa.csl
+---
+
+```{r}
+#| include = FALSE,
+#| message = FALSE
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Analysis of animals that occur in groups
+
