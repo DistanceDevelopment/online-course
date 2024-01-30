@@ -82,7 +82,7 @@ The practicals in this model address this situation. You are to analyse data fro
 :::
 
 ::: instructions
-[Instructions](DistWin-prac/Pr5-instructions-DistWin.qmd)
+[Instructions](DistWin-prac/Pr9-instructions-DistWin.qmd)
 :::
 
 ::: instructions
