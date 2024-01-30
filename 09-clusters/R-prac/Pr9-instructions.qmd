@@ -23,8 +23,73 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r}
 #| label: getdata
 risso <- read.csv("Risso_survey.csv")
-head(risso)
+head(risso, n=3)
 ```
 
 ## Data organisation
 
+
+## Focus on group size
+
+Risso's dolphins (and many other species), travel in aggregations. Explore the distribution of observed group sizes in this data set.
+
+```{r}
+#| label: groupdist
+
+aveobs.size <- round(mean(risso$size),2)
+histlabel <- paste0("Observed group sizes of Risso's dolphins\n",
+                    "Mean observed size= ", aveobs.size)
+hist(risso$size, nc=15, main=histlabel, xlab="Observed group size")
+```
+
+It is important to note that the mean size of detected groups is `r aveobs.size`, because we know the mean size of groups in the population was 6.
+
+We can explore the possible reason for this difference between mean size in the population and mean size in our sample by creating this diagnostic plot. This plot should be a standard part of any analysis that involves detection of animals in groups.
+
+```{r}
+#| label: fig-moreEDA
+#| fig-cap: "Diagnostic plot for existance of size bias in group size estimates."
+with(risso,scatter.smooth(distance, size, pch=20,
+                          lwd=2, xlab="Detection distance",
+                          ylab="Size of detected group",
+                          main="Risso's survey\nDiagnostic plot"))
+```
+
+Note in @fig-moreEDA the absence of small groups at distances beyond ~2nm. Beyond ~4nm, not groups are detected that are smaller than 6. This pattern is indicative of bias in the estimated size of the average group. We will see the consequence of this bias in average group size when we perform a naive analysis.
+
+# Analysis of survey data
+## Naive analysis
+
+If we apply distance sampling to the perpendicular distances recorded to the centre of the detected groups, we will estimate the abundance of groups ($\widehat{N_s}$), corrected for imperfect detectability. To convert abundance of groups ($\widehat{N_s}$) to abundance of individuals ($\widehat{N}$), we multiply:
+
+$$\widehat{N_s} \times \bar{s} = \widehat{N}$$
+where \bar{s} is the average size of groups in the population [@Buckland2015, Section 6.3.1.3]. We do not know the average size of groups in the population, but rather we estimate it by using the average size of our detected groups.
+
+Because there exists a field named `size` in the `risso` data frame, the `ds` software knows observations were of groups. Output from `ds` will create estimates both of $\widehat{N_s}$ and $\widehat{N}$ (if study region `Area` is also provided), and companion estimates $\widehat{D_s}$ and $\widehat{D}$.
+
+Fit the three key function detection models to the data in the usual manner and perform model selection to choose a most appropriate model (also perform absolute goodness of fit, courtesy of `summarize_ds_models).
+
+```{r}
+#| label: naivemodels
+#| message: false
+library(Distance)
+naive.uniform <- ds(data=risso, key="unif", adjustment="cos")
+naive.hn <- ds(data=risso, key="hn", adjustment = NULL) # no adjustments for simplicity
+naive.hr <- ds(data=risso, key="hr", adjustment = NULL) 
+knitr::kable(summarize_ds_models(naive.uniform, naive.hn, naive.hr, output="plain"),
+             digits=3, caption="Model selection for models not considering size bias.")
+```
+
+Perform visual inspection of best model fit.
+
+```{r}
+#| label: naivehrplot
+plot(naive.hr, nc=40, main="Hazard rate model with no adjustments")
+```
+
+Examine the model output before moving on to examine the estimates. Details of the fitted detection model is found in the `$ddf` component of the `naive.hr` model object. 
+
+```{r}
+#| label: naivehrddf
+naive.hr$ddf
+```

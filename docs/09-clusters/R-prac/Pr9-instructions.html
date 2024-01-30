@@ -8,7 +8,7 @@
 
 <meta name="author" content="Centre for Research into Ecological and Environmental Modelling   University of St Andrews">
 
-<title>Introductory distance sampling training materials - Analysis of animals in groups</title>
+<title>Introductory distance sampling training materials - Analysis of animals that occur in groups</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,25 +21,78 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -62,8 +115,10 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <script src="https://kit.fontawesome.com/78ddb093ea.js" crossorigin="anonymous"></script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-sidebar docked nav-fixed">
@@ -73,7 +128,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Introductory distance sampling training materials</span>
     </a>
   </div>
@@ -98,7 +153,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../09-clusters/clusterslanding.html">Animals detected in clusters</a></li><li class="breadcrumb-item"><a href="../09-clusters/clusterslanding.html">Analysis of animals in groups</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Analysis of animals that occur in groups</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -129,13 +184,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../01-intro/introlanding.html" class="sidebar-item-text sidebar-link">
+  <a href="../../01-intro/introlanding.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Fundamentals of distance sampling</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../01-intro/Mod1-2023-intro.pdf" class="sidebar-item-text sidebar-link">
+  <a href="../../01-intro/Mod1-2023-intro.pdf" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture slides</span></a>
   </div>
 </li>
@@ -147,7 +202,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../01-intro/introlanding.html#exercise-materials" class="sidebar-item-text sidebar-link">
+  <a href="../../01-intro/introlanding.html#exercise-materials" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercise materials</span></a>
   </div>
 </li>
@@ -164,7 +219,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../02-detfns/detfnlanding.html" class="sidebar-item-text sidebar-link">
+  <a href="../../02-detfns/detfnlanding.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Fitting detection functions to line transect data</span></a>
   </div>
 </li>
@@ -181,7 +236,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../03-criticism/criticismlanding.html" class="sidebar-item-text sidebar-link">
+  <a href="../../03-criticism/criticismlanding.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Model criticism</span></a>
   </div>
 </li>
@@ -198,7 +253,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../04-precision/precisionlanding.html" class="sidebar-item-text sidebar-link">
+  <a href="../../04-precision/precisionlanding.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Precision of density estimates</span></a>
   </div>
 </li>
@@ -215,7 +270,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../05-points/pointslanding.html" class="sidebar-item-text sidebar-link">
+  <a href="../../05-points/pointslanding.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Analysis of point transect data</span></a>
   </div>
 </li>
@@ -232,7 +287,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../06-design/designlanding.html" class="sidebar-item-text sidebar-link">
+  <a href="../../06-design/designlanding.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Design of distance sampling surveys</span></a>
   </div>
 </li>
@@ -249,7 +304,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../07-stratify/stratifylanding.html" class="sidebar-item-text sidebar-link">
+  <a href="../../07-stratify/stratifylanding.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Analysis of stratified surveys</span></a>
   </div>
 </li>
@@ -266,7 +321,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../08-covariates/covariateslanding.html" class="sidebar-item-text sidebar-link">
+  <a href="../../08-covariates/covariateslanding.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Including covariates in detection function modelling</span></a>
   </div>
 </li>
@@ -274,16 +329,16 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false">
  <span class="menu-text">Animals detected in clusters</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../09-clusters/clusterslanding.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../09-clusters/clusterslanding.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Analysis of animals in groups</span></a>
   </div>
 </li>
@@ -300,7 +355,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../10-multipliers/multiplierslanding.html" class="sidebar-item-text sidebar-link">
+  <a href="../../10-multipliers/multiplierslanding.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Multipliers and indirect surveys</span></a>
   </div>
 </li>
@@ -317,7 +372,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../11-mrds/mrdslanding.html" class="sidebar-item-text sidebar-link">
+  <a href="../../11-mrds/mrdslanding.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Analysis of double platform data</span></a>
   </div>
 </li>
@@ -333,11 +388,19 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#analysis-of-animals-in-groups" id="toc-analysis-of-animals-in-groups" class="nav-link active" data-scroll-target="#analysis-of-animals-in-groups">Analysis of animals in groups</a></li>
-  <li><a href="#lecture-materials" id="toc-lecture-materials" class="nav-link" data-scroll-target="#lecture-materials">Lecture materials</a></li>
-  <li><a href="#exercise-materials" id="toc-exercise-materials" class="nav-link" data-scroll-target="#exercise-materials">Exercise materials</a></li>
-  <li><a href="#supplemental-materials" id="toc-supplemental-materials" class="nav-link" data-scroll-target="#supplemental-materials">Supplemental materials</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  <li><a href="#analysis-of-animals-that-occur-in-groups" id="toc-analysis-of-animals-that-occur-in-groups" class="nav-link active" data-scroll-target="#analysis-of-animals-that-occur-in-groups">Analysis of animals that occur in groups</a>
+  <ul class="collapse">
+  <li><a href="#description-of-survey" id="toc-description-of-survey" class="nav-link" data-scroll-target="#description-of-survey">Description of survey</a></li>
+  </ul></li>
+  <li><a href="#read-in-the-data" id="toc-read-in-the-data" class="nav-link" data-scroll-target="#read-in-the-data">Read in the data</a>
+  <ul class="collapse">
+  <li><a href="#data-organisation" id="toc-data-organisation" class="nav-link" data-scroll-target="#data-organisation">Data organisation</a></li>
+  <li><a href="#focus-on-group-size" id="toc-focus-on-group-size" class="nav-link" data-scroll-target="#focus-on-group-size">Focus on group size</a></li>
+  </ul></li>
+  <li><a href="#analysis-of-survey-data" id="toc-analysis-of-survey-data" class="nav-link" data-scroll-target="#analysis-of-survey-data">Analysis of survey data</a>
+  <ul class="collapse">
+  <li><a href="#naive-analysis" id="toc-naive-analysis" class="nav-link" data-scroll-target="#naive-analysis">Naive analysis</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -346,7 +409,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Analysis of animals in groups</h1>
+<h1 class="title">Analysis of animals that occur in groups</h1>
 </div>
 
 
@@ -373,84 +436,195 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="analysis-of-animals-in-groups" class="level2">
-<h2 class="anchored" data-anchor-id="analysis-of-animals-in-groups">Analysis of animals in groups</h2>
-<div class="columns">
-<div class="column" style="width:60%;">
-<p>Some species travel in groups. The detection of these species is often made of a group. It is standard practice to record the perpendicular distance to the centre of the group and the number of individuals in the group. Conventional distance sampling could then be applied to produce an estimate of the number of groups in the study area.</p>
-<p>Converting that estimate of group abundance into an estimate of abundance of individuals creates a challenge. Simply multiplying the estimated abundance of groups by the average size of the detected groups produces biased estimates of abundance of individuals. As the following lecture describes, there is a problem of <em>size bias</em>. The average size of the detected groups is a positively biased estimate of the average size of groups in the population, leading to estimates of individual abundance that is too large.</p>
-<p>The practicals in this model address this situation. You are to analyse data from a survey of Risso’s dolphins <em>(Grampus griseus)</em> in the eastern Atlantic Ocean. Not only will you produce estimates of group abundance, but also estimates of abundance of individuals. To prevent bias in the estimates of abundance of individuals, you will apply methods that avoid the <em>size bias</em> problem.</p>
-</div><div class="column" style="width:40%;">
-<p><img src="dolphins-unsplash.jpg" class="img-fluid"> <font size="-2">Photo by <a href="https://unsplash.com/@wynand_uys?utm_content=creditCopyText&amp;utm_medium=referral&amp;utm_source=unsplash">Wynand Uys</a> on <a href="https://unsplash.com/photos/six-dolphins-at-calm-water-0_32AIxy1Hk?utm_content=creditCopyText&amp;utm_medium=referral&amp;utm_source=unsplash">Unsplash</a></font></p>
-</div>
-</div>
+<section id="analysis-of-animals-that-occur-in-groups" class="level1">
+<h1>Analysis of animals that occur in groups</h1>
+<section id="description-of-survey" class="level2">
+<h2 class="anchored" data-anchor-id="description-of-survey">Description of survey</h2>
 </section>
-<section id="lecture-materials" class="level2">
-<h2 class="anchored" data-anchor-id="lecture-materials">Lecture materials</h2>
-<div class="slide-deck">
-<p><strong>Lecture discussion</strong></p>
-<div class="slides">
-<p><a href="Mod9-2023-clusters.pdf">Slides</a></p>
-</div>
-<div class="video">
-<p><a href="https://youtu.be/A_NRZqWEhXs">Video</a></p>
-</div>
-</div>
 </section>
-<section id="exercise-materials" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-materials">Exercise materials</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="lab">
-<p><strong>Using R package</strong></p>
-<div class="video">
-<p><a href="https://youtu.be/6GGDkGzKZt4">Video introduction</a></p>
-</div>
-<div class="instructions">
-<p><a href="../09-clusters/R-prac/Pr9-instructions.html">Instructions</a></p>
-</div>
-<div class="instructions">
-<p><a href="../09-clusters/R-prac/Prac9_solution.html">Solution and discussion</a></p>
-</div>
-<div class="video">
-<p><a href="https://youtu.be/HiVKN8MuQHU">Video summary</a></p>
+<section id="read-in-the-data" class="level1">
+<h1>Read in the data</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>risso <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"Risso_survey.csv"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">head</span>(risso, <span class="at">n=</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Region.Label    Area Sample.Label Effort distance size
+1       region 1300000            1   1300    0.129    3
+2       region 1300000            1   1300    1.464    4
+3       region 1300000            1   1300    0.386    5</code></pre>
 </div>
 </div>
-</div><div class="column" style="width:50%;">
-<div class="lab">
-<p><strong>Using Distance for Windows</strong></p>
-<div class="video">
-<p><a href="https://youtu.be/xSXRnWysgEw">Video introduction</a></p>
-</div>
-<div class="instructions">
-<p><a href="DistWin-prac/Pr5-instructions-DistWin.qmd">Instructions</a></p>
-</div>
-<div class="instructions">
-<p><a href="DistWin-prac/Pr5-solution-DistWin.qmd">Solution and discussion</a></p>
-</div>
-<div class="video">
-<p><a href="https://youtu.be/w9_vjoniXTY">Video summary</a></p>
-</div>
-</div>
-</div>
-</div>
+<section id="data-organisation" class="level2">
+<h2 class="anchored" data-anchor-id="data-organisation">Data organisation</h2>
 </section>
-<section id="supplemental-materials" class="level2">
-<h2 class="anchored" data-anchor-id="supplemental-materials">Supplemental materials</h2>
-<div class="homework">
-<p><strong>No supplements</strong></p>
-<div class="instructions">
-<p>No supplemental material</p>
+<section id="focus-on-group-size" class="level2">
+<h2 class="anchored" data-anchor-id="focus-on-group-size">Focus on group size</h2>
+<p>Risso’s dolphins (and many other species), travel in aggregations. Explore the distribution of observed group sizes in this data set.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>aveobs.size <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">mean</span>(risso<span class="sc">$</span>size),<span class="dv">2</span>)</span>
+<span id="cb3-2"><a href="#cb3-2"></a>histlabel <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"Observed group sizes of Risso's dolphins</span><span class="sc">\n</span><span class="st">"</span>,</span>
+<span id="cb3-3"><a href="#cb3-3"></a>                    <span class="st">"Mean observed size= "</span>, aveobs.size)</span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="fu">hist</span>(risso<span class="sc">$</span>size, <span class="at">nc=</span><span class="dv">15</span>, <span class="at">main=</span>histlabel, <span class="at">xlab=</span><span class="st">"Observed group size"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Pr9-instructions_files/figure-html/groupdist-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
+<p>It is important to note that the mean size of detected groups is 7.21, because we know the mean size of groups in the population was 6.</p>
+<p>We can explore the possible reason for this difference between mean size in the population and mean size in our sample by creating this diagnostic plot. This plot should be a standard part of any analysis that involves detection of animals in groups.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">with</span>(risso,<span class="fu">scatter.smooth</span>(distance, size, <span class="at">pch=</span><span class="dv">20</span>,</span>
+<span id="cb4-2"><a href="#cb4-2"></a>                          <span class="at">lwd=</span><span class="dv">2</span>, <span class="at">xlab=</span><span class="st">"Detection distance"</span>,</span>
+<span id="cb4-3"><a href="#cb4-3"></a>                          <span class="at">ylab=</span><span class="st">"Size of detected group"</span>,</span>
+<span id="cb4-4"><a href="#cb4-4"></a>                          <span class="at">main=</span><span class="st">"Risso's survey</span><span class="sc">\n</span><span class="st">Diagnostic plot"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-moreEDA" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="Pr9-instructions_files/figure-html/fig-moreEDA-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Figure&nbsp;1: Diagnostic plot for existance of size bias in group size estimates.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Note in <a href="#fig-moreEDA">Figure&nbsp;1</a> the absence of small groups at distances beyond ~2nm. Beyond ~4nm, not groups are detected that are smaller than 6. This pattern is indicative of bias in the estimated size of the average group. We will see the consequence of this bias in average group size when we perform a naive analysis.</p>
 </section>
-<section id="references" class="level1">
-<h1>References</h1>
+</section>
+<section id="analysis-of-survey-data" class="level1">
+<h1>Analysis of survey data</h1>
+<section id="naive-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="naive-analysis">Naive analysis</h2>
+<p>If we apply distance sampling to the perpendicular distances recorded to the centre of the detected groups, we will estimate the abundance of groups (<span class="math inline">\(\widehat{N_s}\)</span>), corrected for imperfect detectability. To convert abundance of groups (<span class="math inline">\(\widehat{N_s}\)</span>) to abundance of individuals (<span class="math inline">\(\widehat{N}\)</span>), we multiply:</p>
+<p><span class="math display">\[\widehat{N_s} \times \bar{s} = \widehat{N}\]</span> where {s} is the average size of groups in the population <span class="citation" data-cites="Buckland2015">(<a href="#ref-Buckland2015" role="doc-biblioref">Buckland et al., 2015, sec. 6.3.1.3</a>)</span>. We do not know the average size of groups in the population, but rather we estimate it by using the average size of our detected groups.</p>
+<p>Because there exists a field named <code>size</code> in the <code>risso</code> data frame, the <code>ds</code> software knows observations were of groups. Output from <code>ds</code> will create estimates both of <span class="math inline">\(\widehat{N_s}\)</span> and <span class="math inline">\(\widehat{N}\)</span> (if study region <code>Area</code> is also provided), and companion estimates <span class="math inline">\(\widehat{D_s}\)</span> and <span class="math inline">\(\widehat{D}\)</span>.</p>
+<p>Fit the three key function detection models to the data in the usual manner and perform model selection to choose a most appropriate model (also perform absolute goodness of fit, courtesy of `summarize_ds_models).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">library</span>(Distance)</span>
+<span id="cb5-2"><a href="#cb5-2"></a>naive.uniform <span class="ot">&lt;-</span> <span class="fu">ds</span>(<span class="at">data=</span>risso, <span class="at">key=</span><span class="st">"unif"</span>, <span class="at">adjustment=</span><span class="st">"cos"</span>)</span>
+<span id="cb5-3"><a href="#cb5-3"></a>naive.hn <span class="ot">&lt;-</span> <span class="fu">ds</span>(<span class="at">data=</span>risso, <span class="at">key=</span><span class="st">"hn"</span>, <span class="at">adjustment =</span> <span class="cn">NULL</span>) <span class="co"># no adjustments for simplicity</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a>naive.hr <span class="ot">&lt;-</span> <span class="fu">ds</span>(<span class="at">data=</span>risso, <span class="at">key=</span><span class="st">"hr"</span>, <span class="at">adjustment =</span> <span class="cn">NULL</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in ddf.ds(dsmodel = dsmodel, data = data, meta.data = meta.data, :
+Estimated hazard-rate scale parameter close to 0 (on log scale). Possible
+problem in data (e.g., spike near zero distance).
+
+Warning in ddf.ds(dsmodel = dsmodel, data = data, meta.data = meta.data, :
+Estimated hazard-rate scale parameter close to 0 (on log scale). Possible
+problem in data (e.g., spike near zero distance).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in ds(data = risso, key = "hr", adjustment = NULL): Estimated
+hazard-rate scale parameter close to 0 (on log scale). Possible problem in data
+(e.g., spike near zero distance).</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">summarize_ds_models</span>(naive.uniform, naive.hn, naive.hr, <span class="at">output=</span><span class="st">"plain"</span>),</span>
+<span id="cb8-2"><a href="#cb8-2"></a>             <span class="at">digits=</span><span class="dv">3</span>, <span class="at">caption=</span><span class="st">"Model selection for models not considering size bias."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<caption>Model selection for models not considering size bias.</caption>
+<colgroup>
+<col style="width: 2%">
+<col style="width: 9%">
+<col style="width: 33%">
+<col style="width: 5%">
+<col style="width: 10%">
+<col style="width: 14%">
+<col style="width: 17%">
+<col style="width: 6%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: left;">Model</th>
+<th style="text-align: left;">Key function</th>
+<th style="text-align: left;">Formula</th>
+<th style="text-align: right;">C-vM <span class="math inline">\(p\)</span>-value</th>
+<th style="text-align: right;">Average detectability</th>
+<th style="text-align: right;">se(Average detectability)</th>
+<th style="text-align: right;">Delta AIC</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">naive.hr</td>
+<td style="text-align: left;">Hazard-rate</td>
+<td style="text-align: left;">~1</td>
+<td style="text-align: right;">0.981</td>
+<td style="text-align: right;">0.531</td>
+<td style="text-align: right;">0.070</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">naive.uniform</td>
+<td style="text-align: left;">Uniform with cosine adjustment terms of order 1,2</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">0.902</td>
+<td style="text-align: right;">0.581</td>
+<td style="text-align: right;">0.044</td>
+<td style="text-align: right;">1.233</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">naive.hn</td>
+<td style="text-align: left;">Half-normal</td>
+<td style="text-align: left;">~1</td>
+<td style="text-align: right;">0.251</td>
+<td style="text-align: right;">0.649</td>
+<td style="text-align: right;">0.034</td>
+<td style="text-align: right;">1.646</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Perform visual inspection of best model fit.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">plot</span>(naive.hr, <span class="at">nc=</span><span class="dv">40</span>, <span class="at">main=</span><span class="st">"Hazard rate model with no adjustments"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Pr9-instructions_files/figure-html/naivehrplot-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Examine the model output before moving on to examine the estimates. Details of the fitted detection model is found in the <code>$ddf</code> component of the <code>naive.hr</code> model object.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>naive.hr<span class="sc">$</span>ddf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Distance sampling analysis object
+
+Summary for ds object
+Number of observations :  265 
+Distance range         :  0  -  4.588 
+AIC                    :  761.0671 
+Optimisation           :  mrds (nlminb) 
+
+Detection function:
+ Hazard-rate key function 
+
+Detection function parameters 
+Scale coefficient(s): 
+             estimate        se
+(Intercept) 0.3202963 0.3280018
+
+Shape coefficient(s):  
+            estimate        se
+(Intercept)        0 0.2552387
+
+                       Estimate          SE        CV
+Average p             0.5311085  0.07044929 0.1326458
+N in covered region 498.9564525 69.43262361 0.1391557</code></pre>
+</div>
+</div>
 
 
+
+</section>
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list">
+<div id="ref-Buckland2015" class="csl-entry" role="listitem">
+Buckland, S. T., Rexstad, E. A., Marques, T. A., &amp; Oedekoven, C. S. (2015). <em>Distance sampling: Methods and applications</em>. <span>Springer</span>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
