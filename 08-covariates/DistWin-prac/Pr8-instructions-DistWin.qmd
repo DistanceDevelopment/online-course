@@ -14,8 +14,6 @@ csl: ../../style/apa.csl
 
 This exercise consists of two datasets of increasing difficulty. They take you deeper into the heart of understanding multiple covariates. Feel free to complete as many as you like.
 
-
-
 ## Passerine data from @Marques2007
 
 The data from the Auk paper by [@Marques2007] is also available. It is zipped as the project [fTAMAUK07.zip](fTAMAUK07.zip). 

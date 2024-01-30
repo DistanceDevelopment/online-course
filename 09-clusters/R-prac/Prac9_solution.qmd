@@ -11,8 +11,7 @@ csl: ../../style/apa.csl
 #| label = "setup",
 #| include = FALSE
 knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
-library(knitr)
-library(kableExtra)
+solution <- TRUE
 ```
 
 
@@ -22,4 +21,147 @@ library(kableExtra)
 Analysis of animals that occur in groups
 :::
 
-# Risso's dolphin survey analysis
+# Analysis of Risso's dolphin survey data
+## Naive analysis
+
+If we apply distance sampling to the perpendicular distances recorded to the centre of the detected groups, we will estimate the abundance of groups ($\widehat{N_s}$), corrected for imperfect detectability. To convert abundance of groups ($\widehat{N_s}$) to abundance of individuals ($\widehat{N}$), we multiply:
+
+$$\widehat{N_s} \times \bar{s} = \widehat{N}$$
+where \bar{s} is the average size of groups in the population [@Buckland2015, Section 6.3.1.3]. We do not know the average size of groups in the population, but rather we estimate it by using the average size of our detected groups.
+
+Because there exists a field named `size` in the `risso` data frame, the `ds` software knows observations were of groups. Output from `ds` will create estimates both of $\widehat{N_s}$ and $\widehat{N}$ (if study region `Area` is also provided), and companion estimates $\widehat{D_s}$ and $\widehat{D}$.
+
+Fit the three key function detection models to the data in the usual manner and perform model selection to choose a most appropriate model (also perform absolute goodness of fit, courtesy of `summarize_ds_models`).
+
+```{r}
+#| label: naivemodels
+#| message: false
+#| eval: !expr solution
+rissogithub <- "https://raw.githubusercontent.com/distanceworkshops/async2024-2/main/09-clusters/R-prac/Risso_survey.csv"
+risso <- read.csv(rissogithub)
+aveobs.size <- round(mean(risso$size),2)
+library(Distance)
+naive.uniform <- ds(data=risso, key="unif", adjustment="cos")
+naive.hn <- ds(data=risso, key="hn", adjustment = "cos") 
+naive.hr <- ds(data=risso, key="hr", adjustment = NULL) # no adjustments for simplicity
+knitr::kable(summarize_ds_models(naive.uniform, naive.hn, naive.hr, output="plain"),
+             digits=3, caption="Model selection for models not considering size bias.")
+```
+
+All three models fit. It is a close AIC contest between the unadjusted hazard rate and the half normal with one adjustment. For our purposes, let's focus upon the hazard rate model, although the inference will be virtually identical were we to use the half normal model for our inference.
+
+```{r}
+#| label: naivehrplot
+#| eval: !expr solution
+plot(naive.hr, nc=40, main="Hazard rate model with no adjustments")
+```
+
+A brief look at the data summary coming from the fitted model. Evaluate the number of detections and numbers of replicate transects. 
+
+```{r}
+#| label: datasummary
+#| eval: !expr solution
+knitr::kable(naive.hr$dht$clusters$summary)
+```
+
+Examine the estimates of abundance of clusters ($\widehat{N_s}$) from the hazard rate model. Note how the following code carefully extracts estimates only for clusters. We could do the same for the estimated density of clusters, but omit that here.
+
+```{r}
+#| label: estimatens
+#| eval: !expr solution
+knitr::kable(naive.hr$dht$clusters$N)
+```
+
+Compare this estimate against the number of clusters (4333) in the population we simulated.
+
+How well did this model estimate the number of individuals ($\widehat{N}$) in the population?
+
+```{r}
+#| label: estimaten
+#| eval: !expr solution
+knitr::kable(naive.hr$dht$individuals$N)
+```
+
+Compare this estimate against the number of individuals in the population (26000). The reason for this lies in the estimation of average group size in the population, also estimated in the model object by the average size of detected groups:
+
+```{r}
+#| label: estimatesbar
+#| eval: !expr solution
+knitr::kable(naive.hr$dht$Expected.S)
+```
+
+Compare this estimate against  the estimate we produced during our exploratory data analysis plotting the histogram of sizes of observed groups: `r aveobs.size`.
+
+## Analysis adjusting for size bias problem
+
+Because we recognize that the size of clusters influences probability of their inclusion in our sample, we can incorporate this concept in the detection function model we construct. As introduced in [Module 8](../../08-covariates/covariateslanding.qmd), we can add covariates in addition to perpendicular distance into our detection function models. This is what we will do to perhaps overcome the size bias problem.
+
+:::{.callout-note collapse=false appearance='default' icon=true}
+## Aside: average group size as derived parameter
+
+- When using group size as a covariate we no longer estimate average group size directly from observed group sizes. Instead, the `ds` function uses something called Horwitz-Thompson-like estimators to first estimate the abundance of groups. Then, using the same estimation approach, `ds` estimates the abundance of individuals. 
+- After the two estimates $\widehat{N_s}$ and $\widehat{N}$ are produced, their ratio is computed. This ratio is a less biased estimate of average group size in the population.
+- See the next-to-last slide in [Module 8 lecture](../../08-covariates/Mod8-2023-covariates.pdf)
+:::
+
+```{r}
+#| label: clevermodels
+#| eval: !expr solution
+clever.hn <- ds(data=risso, key="hn", formula = ~size) 
+clever.hr <- ds(data=risso, key="hr", formula = ~size)
+```
+
+Contrast AIC scores between hazard rate and half normal models with and without the `size` covariate.
+
+```{r}
+#| label: AICscores
+#| eval: !expr solution
+AIC(naive.hn, naive.hr, clever.hn, clever.hr)
+```
+
+Compare relative and absolute fit of hazard rate and half normal key functions that include the `size` covariate.
+
+```{r}
+#| label: sumtable
+#| eval: !expr solution
+knitr::kable(summarize_ds_models(clever.hn, clever.hr, output="plain"), digits=3,
+             caption = "Comparison of hazard rate and half normal models incorporating group size as covariate.")
+```
+
+Using the best model based upon AIC, repeat the model output interrogation you conducted (above) with the naive models: examine the estimates of $\widehat{N_s}$, $\widehat{N}$ and $E(s)$ (defined as the expected value of group size in the population):
+
+```{r}
+#| label: cleverns
+#| eval: !expr solution
+knitr::kable(clever.hr$dht$clusters$N)
+```
+
+Compare this estimate against the number of clusters (4333) in the population we simulated.
+
+How well did this model estimate the number of individuals ($\widehat{N}$) in the population?
+
+```{r}
+#| label: clevern
+#| eval: !expr solution
+knitr::kable(clever.hr$dht$individuals$N)
+```
+
+Compare this estimate against the number of individuals in the population (26000). The reason for this lies in the estimation of average group size in the population, also estimated in the model object by the average size of detected groups:
+
+```{r}
+#| label: cleversbar
+#| eval: !expr solution
+knitr::kable(clever.hr$dht$Expected.S)
+```
+
+:::{.callout-important collapse=false appearance='default' icon=true}
+## Conclusion
+- Estimation of number of clusters ($\widehat{N_s}$) is close to the truth when not including cluster size as a covariate.
+- However, average size of clusters in the sample is an over-estimate of the average size of groups in the population.
+  - This is because small groups at great distances are not detected, hence not included in the sample.
+- Because of this bias in estimate average cluster size, the estimate of number of individuals in the population ($\widehat{N}$) is positively biased.
+- This size bias can be reduced by incorporating cluster size as a covariate in the detection function.
+  - When this was done, the estimated number of individuals in the population ($\widehat{N}$) was closer to the true population size.
+- In general, the effect of size bias is magnified as the variability of cluster sizes in the population increases.
+- There is another way of dealing with size bias, regressing ln(cluster size) against estimated detection probability for the detection distance $\widehat{g(x)}$. This method is [implemented in the Distance for Windows software](../DistWin-prac/Pr9-instructions-DistWin.qmd).
+:::

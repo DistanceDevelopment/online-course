@@ -20,17 +20,30 @@ solution <- FALSE
 
 The data for this practical is simulated (so we can compare estimates derived from our analysis with truth), but the simulation is based upon a series of surveys conducted in the eastern Atlantic 2010-2019 by the U.S. National Marine Fisheries Service for a programme called Atlantic Marine Assessment Program for Protected Species [@AtlanticMarineAssessment2017].  Estimates of abundance of Risso's dolphins *(Grampus griseus)* were derived from these survey data and reported in @roberts2022.
 
+Because the data are simulated, we know the following characteristics of the population we are studying:
 
+| Attribute | true value |
+| --------- | ----------:|
+| Number of groups | 4333 |
+| Average group size | 6 |
+| Number of individuals | 26000 |
+
+You will contrast the estimates you derive from your analyses against these known values.
 
 # Read in the data
+
+In contrast to other data sets associated with R practicals, this data set is not included in the `Distance` R package. The code in the next chunk reads the CSV file directly from the workshop training materials website. Copy the code exactly, alternatively, you can download the data file from [this link](Risso_survey.csv)
+
 ```{r}
 #| label: getdata
-risso <- read.csv("Risso_survey.csv")
+rissogithub <- "https://raw.githubusercontent.com/distanceworkshops/async2024-2/main/09-clusters/R-prac/Risso_survey.csv"
+risso <- read.csv(rissogithub)
 head(risso, n=3)
 ```
 
 ## Data organisation
 
+From the first few lines of the Risso's data frame that organising the data for animals detected in groups is very similar to animals detected individually. There remains `Region.Label`, `Area`, `Sample.Label`, `Effort` and `distance` fields. To this is added the field `size` for each detection, representing the size of the detected group.
 
 ## Focus on group size
 
