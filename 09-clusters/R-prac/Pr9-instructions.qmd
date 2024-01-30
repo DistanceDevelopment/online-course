@@ -11,11 +11,14 @@ csl: ../../style/apa.csl
 #| include = FALSE,
 #| message = FALSE
 knitr::opts_chunk$set(echo = TRUE)
+solution <- FALSE
 ```
 
 # Analysis of animals that occur in groups
 
 ## Description of survey
+
+The data for this practical is simulated (so we can compare estimates derived from our analysis with truth), but the simulation is based upon a series of surveys conducted in the eastern Atlantic 2010-2019 by the U.S. National Marine Fisheries Service for a programme called Atlantic Marine Assessment Program for Protected Species [@AtlanticMarineAssessment2017].  Estimates of abundance of Risso's dolphins *(Grampus griseus)* were derived from these survey data and reported in @roberts2022.
 
 
 
@@ -35,7 +38,6 @@ Risso's dolphins (and many other species), travel in aggregations. Explore the d
 
 ```{r}
 #| label: groupdist
-
 aveobs.size <- round(mean(risso$size),2)
 histlabel <- paste0("Observed group sizes of Risso's dolphins\n",
                     "Mean observed size= ", aveobs.size)
@@ -72,24 +74,118 @@ Fit the three key function detection models to the data in the usual manner and 
 ```{r}
 #| label: naivemodels
 #| message: false
+#| eval: !expr solution
 library(Distance)
 naive.uniform <- ds(data=risso, key="unif", adjustment="cos")
-naive.hn <- ds(data=risso, key="hn", adjustment = NULL) # no adjustments for simplicity
-naive.hr <- ds(data=risso, key="hr", adjustment = NULL) 
+naive.hn <- ds(data=risso, key="hn", adjustment = "cos") 
+naive.hr <- ds(data=risso, key="hr", adjustment = NULL) # no adjustments for simplicity
 knitr::kable(summarize_ds_models(naive.uniform, naive.hn, naive.hr, output="plain"),
              digits=3, caption="Model selection for models not considering size bias.")
 ```
 
-Perform visual inspection of best model fit.
+All three models fit. It is a close AIC contest between the unadjusted hazard rate and the half normal with one adjustment. For our purposes, let's focus upon the hazard rate model, although the inference will be virtually identical were we to use the half normal model for our inference.
 
 ```{r}
 #| label: naivehrplot
+#| eval: !expr solution
 plot(naive.hr, nc=40, main="Hazard rate model with no adjustments")
 ```
 
-Examine the model output before moving on to examine the estimates. Details of the fitted detection model is found in the `$ddf` component of the `naive.hr` model object. 
+A brief look at the data summary coming from the fitted model. Evaluate the number of detections and numbers of replicate transects. 
 
 ```{r}
-#| label: naivehrddf
-naive.hr$ddf
+#| label: datasummary
+#| eval: !expr solution
+knitr::kable(naive.hr$dht$clusters$summary)
 ```
+
+Examine the estimates of abundance of clusters ($\widehat{N_s}$) from the hazard rate model. Note how the following code carefully extracts estimates only for clusters. We could do the same for the estimated density of clusters, but omit that here.
+
+```{r}
+#| label: estimatens
+#| eval: !expr solution
+knitr::kable(naive.hr$dht$clusters$N)
+```
+
+Compare this estimate against the number of clusters (4333) in the population we simulated.
+
+How well did this model estimate the number of individuals ($\widehat{N}$) in the population?
+
+```{r}
+#| label: estimaten
+#| eval: !expr solution
+knitr::kable(naive.hr$dht$individuals$N)
+```
+
+Compare this estimate against the number of individuals in the population (26000). The reason for this lies in the estimation of average group size in the population, also estimated in the model object by the average size of detected groups:
+
+```{r}
+#| label: estimatesbar
+#| eval: !expr solution
+knitr::kable(naive.hr$dht$Expected.S)
+```
+
+Compare this estimate against  the estimate we produced during our exploratory data analysis plotting the histogram of sizes of observed groups: `r aveobs.size`.
+
+## Analysis adjusting for size bias problem
+
+Because we recognize that the size of clusters influences probability of their inclusion in our sample, we can incorporate this concept in the detection function model we construct. As introduced in [Module 8](../../08-covariates/covariateslanding.qmd), we can add covariates in addition to perpendicular distance into our detection function models. This is what we will do to perhaps overcome the size bias problem.
+
+:::{.callout-note collapse=false appearance='default' icon=true}
+## Aside: average group size as derived parameter
+
+- When using group size as a covariate we no longer estimate average group size directly from observed group sizes. Instead, the `ds` function uses something called Horwitz-Thompson-like estimators to first estimate the abundance of groups. Then, using the same estimation approach, `ds` estimates the abundance of individuals. 
+- After the two estimates $\widehat{N_s}$ and $\widehat{N}$ are produced, their ratio is computed. This ratio is a less biased estimate of average group size in the population.
+- See the next-to-last slide in [Module 8 lecture](../../08-covariates/Mod8-2023-covariates.pdf)
+:::
+
+```{r}
+#| label: clevermodels
+#| eval: !expr solution
+clever.hn <- ds(data=risso, key="hn", formula = ~size) 
+clever.hr <- ds(data=risso, key="hr", formula = ~size)
+```
+
+Contrast AIC scores between hazard rate and half normal models with and without the `size` covariate.
+
+```{r}
+#| label: AICscores
+#| eval: !expr solution
+AIC(naive.hn, naive.hr, clever.hn, clever.hr)
+```
+
+Compare relative and absolute fit of hazard rate and half normal key functions that include the `size` covariate.
+
+```{r}
+#| label: sumtable
+#| eval: !expr solution
+knitr::kable(summarize_ds_models(clever.hn, clever.hr, output="plain"), digits=3,
+             caption = "Comparison of hazard rate and half normal models incorporating group size as covariate.")
+```
+
+Using the best model based upon AIC, repeat the model output interrogation you conducted (above) with the naive models: examine the estimates of $\widehat{N_s}$, $\widehat{N}$ and $E(s)$ (defined as the expected value of group size in the population):
+
+```{r}
+#| label: cleverns
+#| eval: !expr solution
+knitr::kable(clever.hr$dht$clusters$N)
+```
+
+Compare this estimate against the number of clusters (4333) in the population we simulated.
+
+How well did this model estimate the number of individuals ($\widehat{N}$) in the population?
+
+```{r}
+#| label: clevern
+#| eval: !expr solution
+knitr::kable(clever.hr$dht$individuals$N)
+```
+
+Compare this estimate against the number of individuals in the population (26000). The reason for this lies in the estimation of average group size in the population, also estimated in the model object by the average size of detected groups:
+
+```{r}
+#| label: cleversbar
+#| eval: !expr solution
+knitr::kable(clever.hr$dht$Expected.S)
+```
+

@@ -400,6 +400,7 @@ div.csl-indent {
   <li><a href="#analysis-of-survey-data" id="toc-analysis-of-survey-data" class="nav-link" data-scroll-target="#analysis-of-survey-data">Analysis of survey data</a>
   <ul class="collapse">
   <li><a href="#naive-analysis" id="toc-naive-analysis" class="nav-link" data-scroll-target="#naive-analysis">Naive analysis</a></li>
+  <li><a href="#analysis-adjusting-for-size-bias-problem" id="toc-analysis-adjusting-for-size-bias-problem" class="nav-link" data-scroll-target="#analysis-adjusting-for-size-bias-problem">Analysis adjusting for size bias problem</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -440,6 +441,7 @@ div.csl-indent {
 <h1>Analysis of animals that occur in groups</h1>
 <section id="description-of-survey" class="level2">
 <h2 class="anchored" data-anchor-id="description-of-survey">Description of survey</h2>
+<p>The data for this practical is simulated (so we can compare estimates derived from our analysis with truth), but the simulation is based upon a series of surveys conducted in the eastern Atlantic 2010-2019 by the U.S. National Marine Fisheries Service for a programme called Atlantic Marine Assessment Program for Protected Species <span class="citation" data-cites="AtlanticMarineAssessment2017">(<a href="#ref-AtlanticMarineAssessment2017" role="doc-biblioref">Palka et al., 2017</a>)</span>. Estimates of abundance of Risso’s dolphins <em>(Grampus griseus)</em> were derived from these survey data and reported in <span class="citation" data-cites="roberts2022">Roberts et al. (<a href="#ref-roberts2022" role="doc-biblioref">2022</a>)</span>.</p>
 </section>
 </section>
 <section id="read-in-the-data" class="level1">
@@ -499,120 +501,82 @@ div.csl-indent {
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">library</span>(Distance)</span>
 <span id="cb5-2"><a href="#cb5-2"></a>naive.uniform <span class="ot">&lt;-</span> <span class="fu">ds</span>(<span class="at">data=</span>risso, <span class="at">key=</span><span class="st">"unif"</span>, <span class="at">adjustment=</span><span class="st">"cos"</span>)</span>
-<span id="cb5-3"><a href="#cb5-3"></a>naive.hn <span class="ot">&lt;-</span> <span class="fu">ds</span>(<span class="at">data=</span>risso, <span class="at">key=</span><span class="st">"hn"</span>, <span class="at">adjustment =</span> <span class="cn">NULL</span>) <span class="co"># no adjustments for simplicity</span></span>
-<span id="cb5-4"><a href="#cb5-4"></a>naive.hr <span class="ot">&lt;-</span> <span class="fu">ds</span>(<span class="at">data=</span>risso, <span class="at">key=</span><span class="st">"hr"</span>, <span class="at">adjustment =</span> <span class="cn">NULL</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in ddf.ds(dsmodel = dsmodel, data = data, meta.data = meta.data, :
-Estimated hazard-rate scale parameter close to 0 (on log scale). Possible
-problem in data (e.g., spike near zero distance).
-
-Warning in ddf.ds(dsmodel = dsmodel, data = data, meta.data = meta.data, :
-Estimated hazard-rate scale parameter close to 0 (on log scale). Possible
-problem in data (e.g., spike near zero distance).</code></pre>
+<span id="cb5-3"><a href="#cb5-3"></a>naive.hn <span class="ot">&lt;-</span> <span class="fu">ds</span>(<span class="at">data=</span>risso, <span class="at">key=</span><span class="st">"hn"</span>, <span class="at">adjustment =</span> <span class="st">"cos"</span>) </span>
+<span id="cb5-4"><a href="#cb5-4"></a>naive.hr <span class="ot">&lt;-</span> <span class="fu">ds</span>(<span class="at">data=</span>risso, <span class="at">key=</span><span class="st">"hr"</span>, <span class="at">adjustment =</span> <span class="cn">NULL</span>) <span class="co"># no adjustments for simplicity</span></span>
+<span id="cb5-5"><a href="#cb5-5"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">summarize_ds_models</span>(naive.uniform, naive.hn, naive.hr, <span class="at">output=</span><span class="st">"plain"</span>),</span>
+<span id="cb5-6"><a href="#cb5-6"></a>             <span class="at">digits=</span><span class="dv">3</span>, <span class="at">caption=</span><span class="st">"Model selection for models not considering size bias."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in ds(data = risso, key = "hr", adjustment = NULL): Estimated
-hazard-rate scale parameter close to 0 (on log scale). Possible problem in data
-(e.g., spike near zero distance).</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">summarize_ds_models</span>(naive.uniform, naive.hn, naive.hr, <span class="at">output=</span><span class="st">"plain"</span>),</span>
-<span id="cb8-2"><a href="#cb8-2"></a>             <span class="at">digits=</span><span class="dv">3</span>, <span class="at">caption=</span><span class="st">"Model selection for models not considering size bias."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<table class="table table-sm table-striped small">
-<caption>Model selection for models not considering size bias.</caption>
-<colgroup>
-<col style="width: 2%">
-<col style="width: 9%">
-<col style="width: 33%">
-<col style="width: 5%">
-<col style="width: 10%">
-<col style="width: 14%">
-<col style="width: 17%">
-<col style="width: 6%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;"></th>
-<th style="text-align: left;">Model</th>
-<th style="text-align: left;">Key function</th>
-<th style="text-align: left;">Formula</th>
-<th style="text-align: right;">C-vM <span class="math inline">\(p\)</span>-value</th>
-<th style="text-align: right;">Average detectability</th>
-<th style="text-align: right;">se(Average detectability)</th>
-<th style="text-align: right;">Delta AIC</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">3</td>
-<td style="text-align: left;">naive.hr</td>
-<td style="text-align: left;">Hazard-rate</td>
-<td style="text-align: left;">~1</td>
-<td style="text-align: right;">0.981</td>
-<td style="text-align: right;">0.531</td>
-<td style="text-align: right;">0.070</td>
-<td style="text-align: right;">0.000</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">naive.uniform</td>
-<td style="text-align: left;">Uniform with cosine adjustment terms of order 1,2</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: right;">0.902</td>
-<td style="text-align: right;">0.581</td>
-<td style="text-align: right;">0.044</td>
-<td style="text-align: right;">1.233</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">2</td>
-<td style="text-align: left;">naive.hn</td>
-<td style="text-align: left;">Half-normal</td>
-<td style="text-align: left;">~1</td>
-<td style="text-align: right;">0.251</td>
-<td style="text-align: right;">0.649</td>
-<td style="text-align: right;">0.034</td>
-<td style="text-align: right;">1.646</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p>Perform visual inspection of best model fit.</p>
+<p>All three models fit. It is a close AIC contest between the unadjusted hazard rate and the half normal with one adjustment. For our purposes, let’s focus upon the hazard rate model, although the inference will be virtually identical were we to use the half normal model for our inference.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">plot</span>(naive.hr, <span class="at">nc=</span><span class="dv">40</span>, <span class="at">main=</span><span class="st">"Hazard rate model with no adjustments"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="Pr9-instructions_files/figure-html/naivehrplot-1.png" class="img-fluid" width="672"></p>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">plot</span>(naive.hr, <span class="at">nc=</span><span class="dv">40</span>, <span class="at">main=</span><span class="st">"Hazard rate model with no adjustments"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-<p>Examine the model output before moving on to examine the estimates. Details of the fitted detection model is found in the <code>$ddf</code> component of the <code>naive.hr</code> model object.</p>
+<p>A brief look at the data summary coming from the fitted model. Evaluate the number of detections and numbers of replicate transects.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>naive.hr<span class="sc">$</span>ddf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-Distance sampling analysis object
-
-Summary for ds object
-Number of observations :  265 
-Distance range         :  0  -  4.588 
-AIC                    :  761.0671 
-Optimisation           :  mrds (nlminb) 
-
-Detection function:
- Hazard-rate key function 
-
-Detection function parameters 
-Scale coefficient(s): 
-             estimate        se
-(Intercept) 0.3202963 0.3280018
-
-Shape coefficient(s):  
-            estimate        se
-(Intercept)        0 0.2552387
-
-                       Estimate          SE        CV
-Average p             0.5311085  0.07044929 0.1326458
-N in covered region 498.9564525 69.43262361 0.1391557</code></pre>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(naive.hr<span class="sc">$</span>dht<span class="sc">$</span>clusters<span class="sc">$</span>summary)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>Examine the estimates of abundance of clusters (<span class="math inline">\(\widehat{N_s}\)</span>) from the hazard rate model. Note how the following code carefully extracts estimates only for clusters. We could do the same for the estimated density of clusters, but omit that here.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(naive.hr<span class="sc">$</span>dht<span class="sc">$</span>clusters<span class="sc">$</span>N)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Compare this estimate against the number of clusters (4333) in the population we simulated.</p>
+<p>How well did this model estimate the number of individuals (<span class="math inline">\(\widehat{N}\)</span>) in the population?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(naive.hr<span class="sc">$</span>dht<span class="sc">$</span>individuals<span class="sc">$</span>N)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Compare this estimate against the number of individuals in the population (26000). The reason for this lies in the estimation of average group size in the population, also estimated in the model object by the average size of detected groups:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(naive.hr<span class="sc">$</span>dht<span class="sc">$</span>Expected.S)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Compare this estimate against the estimate we produced during our exploratory data analysis plotting the histogram of sizes of observed groups: 7.21.</p>
+</section>
+<section id="analysis-adjusting-for-size-bias-problem" class="level2">
+<h2 class="anchored" data-anchor-id="analysis-adjusting-for-size-bias-problem">Analysis adjusting for size bias problem</h2>
+<p>Because we recognize that the size of clusters influences probability of their inclusion in our sample, we can incorporate this concept in the detection function model we construct. As introduced in <a href="../../08-covariates/covariateslanding.html">Module 8</a>, we can add covariates in addition to perpendicular distance into our detection function models. This is what we will do to perhaps overcome the size bias problem.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Aside: average group size as derived parameter
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<ul>
+<li>When using group size as a covariate we no longer estimate average group size directly from observed group sizes. Instead, the <code>ds</code> function uses something called Horwitz-Thompson-like estimators to first estimate the abundance of groups. Then, using the same estimation approach, <code>ds</code> estimates the abundance of individuals.</li>
+<li>After the two estimates <span class="math inline">\(\widehat{N_s}\)</span> and <span class="math inline">\(\widehat{N}\)</span> are produced, their ratio is computed. This ratio is a less biased estimate of average group size in the population.</li>
+<li>See the next-to-last slide in <a href="../../08-covariates/Mod8-2023-covariates.pdf">Module 8 lecture</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>clever.hn <span class="ot">&lt;-</span> <span class="fu">ds</span>(<span class="at">data=</span>risso, <span class="at">key=</span><span class="st">"hn"</span>, <span class="at">formula =</span> <span class="sc">~</span>size) </span>
+<span id="cb11-2"><a href="#cb11-2"></a>clever.hr <span class="ot">&lt;-</span> <span class="fu">ds</span>(<span class="at">data=</span>risso, <span class="at">key=</span><span class="st">"hr"</span>, <span class="at">formula =</span> <span class="sc">~</span>size)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Contrast AIC scores between hazard rate and half normal models with and without the <code>size</code> covariate.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">AIC</span>(naive.hn, naive.hr, clever.hn, clever.hr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Compare relative and absolute fit of hazard rate and half normal key functions that include the <code>size</code> covariate.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">summarize_ds_models</span>(clever.hn, clever.hr, <span class="at">output=</span><span class="st">"plain"</span>), <span class="at">digits=</span><span class="dv">3</span>,</span>
+<span id="cb13-2"><a href="#cb13-2"></a>             <span class="at">caption =</span> <span class="st">"Comparison of hazard rate and half normal models incorporating group size as covariate."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Using the best model based upon AIC, repeat the model output interrogation you conducted (above) with the naive models: examine the estimates of <span class="math inline">\(\widehat{N_s}\)</span>, <span class="math inline">\(\widehat{N}\)</span> and <span class="math inline">\(E(s)\)</span> (defined as the expected value of group size in the population):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(clever.hr<span class="sc">$</span>dht<span class="sc">$</span>clusters<span class="sc">$</span>N)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Compare this estimate against the number of clusters (4333) in the population we simulated.</p>
+<p>How well did this model estimate the number of individuals (<span class="math inline">\(\widehat{N}\)</span>) in the population?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(clever.hr<span class="sc">$</span>dht<span class="sc">$</span>individuals<span class="sc">$</span>N)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Compare this estimate against the number of individuals in the population (26000). The reason for this lies in the estimation of average group size in the population, also estimated in the model object by the average size of detected groups:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(clever.hr<span class="sc">$</span>dht<span class="sc">$</span>Expected.S)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
@@ -623,6 +587,12 @@ N in covered region 498.9564525 69.43262361 0.1391557</code></pre>
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list">
 <div id="ref-Buckland2015" class="csl-entry" role="listitem">
 Buckland, S. T., Rexstad, E. A., Marques, T. A., &amp; Oedekoven, C. S. (2015). <em>Distance sampling: Methods and applications</em>. <span>Springer</span>.
+</div>
+<div id="ref-AtlanticMarineAssessment2017" class="csl-entry" role="listitem">
+Palka, D. L., Chavez-Rosales, S., Josephson, E., Cholewiak, D., Haas, H. L., Garrison, L., … Orphanides, C. (2017). <em>Atlantic <span>Marine Assessment Program</span> for <span>Protected Species</span>: 2010-2014; <span>Supplement</span> to <span>Final Report Boem</span> 2017-071; <span>Appendix I</span></em>. <span>Bureau of Ocean Energy Management</span>.
+</div>
+<div id="ref-roberts2022" class="csl-entry" role="listitem">
+Roberts, J. J., Yack, T. M., Cañadas, A., Fujioka, E., Halpin, P. N., Barco, S. G., … Zoidis, A. M. (2022). <em>Density model for <span class="nocase">Risso’s</span> dolphin (<span>Grampus</span> griseus) for the <span>U.S. East Coast</span>, version 5.1, 2023-05-27, and supplementary report</em>. Durham North Carolina: Marine Geospatial Ecology Laboratory, Duke University.
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
