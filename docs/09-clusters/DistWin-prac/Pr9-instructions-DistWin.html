@@ -81,6 +81,8 @@ div.csl-indent {
 }</script>
 <script src="https://kit.fontawesome.com/78ddb093ea.js" crossorigin="anonymous"></script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -354,6 +356,10 @@ div.csl-indent {
   <ul>
   <li><a href="#description-of-survey" id="toc-description-of-survey" class="nav-link active" data-scroll-target="#description-of-survey">Description of survey</a></li>
   <li><a href="#import-data-into-distance-for-windows" id="toc-import-data-into-distance-for-windows" class="nav-link" data-scroll-target="#import-data-into-distance-for-windows">Import data into Distance for Windows</a></li>
+  <li><a href="#modelling-strategy" id="toc-modelling-strategy" class="nav-link" data-scroll-target="#modelling-strategy">Modelling strategy</a>
+  <ul class="collapse">
+  <li><a href="#construct-models" id="toc-construct-models" class="nav-link" data-scroll-target="#construct-models">Construct models</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -511,12 +517,53 @@ Analysis of animals that occur in groups
 <li>The next screen asks for definition of each field to be imported into DistWin. As a time-saving feature, the fields in the <code>.csv</code> file are in the order expected by DistWin: stratum fields, sample fields and observation fields. Ticking the box at top left identifies all fields for import (<code>import file structure</code> above).</li>
 <li>The final screen shows the status of rows of the data file coming into the DistWin project (<code>import finalise</code> above).</li>
 </ul>
+</section>
+<section id="modelling-strategy" class="level1">
+<h1>Modelling strategy</h1>
+<p>With animals that occur in groups, care needs to be taken with regard to the size bias problem described in <a href="../Mod9-2023-clusters.pdf">cluster size lecture</a>. There are three general approaches in the estimation of cluster size when analysing distance sampling surveys of animals in groups. - use average size of detected groups as an estimate of the average size of groups in the population, - adjust average size of detected groups by regressing ln(group size) on estimated probability of detection at the distance of each observed group <span class="citation" data-cites="BUC01">(<a href="#ref-BUC01" role="doc-biblioref">Buckland et al., 2001, sec. 3.5.4</a>)</span>, or - including cluster size as a covariate in the detection function <span class="citation" data-cites="BUC01">(<a href="#ref-BUC01" role="doc-biblioref">Buckland et al., 2001, sec. 3.5.5</a>)</span>. - This approach makes use of Horvitz-Thompson-Like estimators that estimate abundance of individuals (<span class="math inline">\(\hat{N}\)</span>) and estimate abundance of groups (<span class="math inline">\(\hat{N_s}\)</span>). The mean cluster size in the population is estimated as the ratio of those estimates <span class="citation" data-cites="Buckland2015">(<a href="#ref-Buckland2015" role="doc-biblioref">Buckland et al., 2015, sec. 6.4.3.3</a>)</span>.</p>
+<section id="construct-models" class="level2">
+<h2 class="anchored" data-anchor-id="construct-models">Construct models</h2>
+<p><img src="twogroupsizes.png" align="right" width="400px"> While the focus of this practical is not examining different key function models, start with the basic idea of fitting three key function models to the Risso’s data set. For each of the three key function models, estimate the average cluster size in the population using the first two methods described above (a) as mean size of observed groups and b) using the regression approach). Specification of these two approaches is determined by the radio buttons chosen (figure at right).</p>
+<p>In addition, employ the third method (adding group size to the detection function model). This method cannot be applied to models with a uniform key function because that model lacks a scale parameter (see <a href="../../08-covariates/Mod8-2023-covariates.pdf">covariate lecture</a> for a reminder). When constructing the detection function models using the <code>Cluster size</code> covariate, it is simplest to turn off adjustment terms. <img src="noadjustments.png" width="300px"></p>
+<p>You will construct 8 models with which to analyse the Risso’s dolphin survey: - uniform key - average size of detected clusters - size bias regression estimate of population average cluster size - half normal key - average size of detected clusters - size bias regression estimate of population average cluster size - <code>Cluster size</code> as a covariate in the detection function and no adjustments - hazard rate key - average size of detected clusters - size bias regression estimate of population average cluster size - <code>Cluster size</code> as a covariate in the detection function and no adjustments</p>
+<p>To make comparison among models easier, adjust the Project Browser to remove estimates of density and add additional columns to the Project Browser table for <code>Size bias cluster size</code> (and CV), <code>Abundance of individuals</code> (and confidence interval bounds) as well as <code>bootstrap confidence interval bounds</code> of estimated abundance of individuals. This is because when cluster size is a covariate in the detection function precision of estimated individual abundance can only be determined in DistWin through use of the bootstrap.</p>
+<p>When all 8 analyses have been completed, pay particular attention to the confidence intervals on estimated individual abundance, recalling the true abundance of individuals is 26000 in this simulated population.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Issues to consider
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<ul>
+<li>Note the difference in AIC among models with and without cluster size in the detection function</li>
+<li>Contrast the estimates of cluster size in the population among the three forms of analysis</li>
+<li>Are there confidence intervals on estimates of individual abundance that <em>nearly</em> fail to include the true value of 26000?
+<ul>
+<li>What method of population average cluster size estimation do those have in common?</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
 
 
 
 </section>
+</section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list">
+<div id="ref-BUC01" class="csl-entry" role="listitem">
+Buckland, S. T., Anderson, D. R., Burnham, K. P., Laake, J. L., Borchers, D. L., &amp; Thomas, L. (2001). <em>Introduction to distance sampling: Estimating abundance of biological populations</em>. <span>Oxford</span>: <span>Oxford University Press</span>.
+</div>
+<div id="ref-Buckland2015" class="csl-entry" role="listitem">
+Buckland, S. T., Rexstad, E. A., Marques, T. A., &amp; Oedekoven, C. S. (2015). <em>Distance sampling: Methods and applications</em>. <span>Springer</span>.
+</div>
 <div id="ref-AtlanticMarineAssessment2017" class="csl-entry" role="listitem">
 Palka, D. L., Chavez-Rosales, S., Josephson, E., Cholewiak, D., Haas, H. L., Garrison, L., … Orphanides, C. (2017). <em>Atlantic <span>Marine Assessment Program</span> for <span>Protected Species</span>: 2010-2014; <span>Supplement</span> to <span>Final Report Boem</span> 2017-071; <span>Appendix I</span></em>. <span>Bureau of Ocean Energy Management</span>.
 </div>

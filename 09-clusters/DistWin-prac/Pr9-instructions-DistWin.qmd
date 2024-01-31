@@ -55,3 +55,43 @@ Previous DistWin practicals have provided you with a DistWin project in archive 
 - The next screen asks for definition of each field to be imported into DistWin. As a time-saving feature, the fields in the `.csv` file are in the order expected by DistWin: stratum fields, sample fields and observation fields. Ticking the box at top left identifies all fields for import (`import file structure` above).
 - The final screen shows the status of rows of the data file coming into the DistWin project (`import finalise` above).
 
+# Modelling strategy
+
+With animals that occur in groups, care needs to be taken with regard to the size bias problem described in [cluster size lecture](../Mod9-2023-clusters.pdf). There are three general approaches in the estimation of cluster size when analysing distance sampling surveys of animals in groups.
+- use average size of detected groups as an estimate of the average size of groups in the population,
+- adjust average size of detected groups by regressing ln(group size) on estimated  probability of detection at the distance of each observed group [@BUC01, Section 3.5.4], or
+- including cluster size as a covariate in the detection function [@BUC01, Section 3.5.5].
+  - This approach makes use of Horvitz-Thompson-Like estimators that estimate abundance of individuals ($\hat{N}$) and estimate abundance of groups ($\hat{N_s}$). The mean cluster size in the population is estimated as the ratio of those estimates [@Buckland2015, Section 6.4.3.3].
+  
+## Construct models 
+
+<img src="twogroupsizes.png" align="right" width=400px>
+While the focus of this practical is not examining different key function models, start with the basic idea of fitting three key function models to the Risso's data set. For each of the three key function models, estimate the average cluster size in the population using the first two methods described above (a) as mean size of observed groups and b) using the regression approach). Specification of these two approaches is determined by the radio buttons chosen (figure at right). 
+
+In addition, employ the third method (adding group size to the detection function model). This method cannot be applied to models with a uniform key function because that model lacks a scale parameter (see [covariate lecture](../../08-covariates/Mod8-2023-covariates.pdf) for a reminder). When constructing the detection function models using the `Cluster size` covariate, it is simplest to turn off adjustment terms. <img src="noadjustments.png" width=300px>
+
+You will construct 8 models with which to analyse the Risso's dolphin survey:
+- uniform key
+  - average size of detected clusters
+  - size bias regression estimate of population average cluster size
+- half normal key
+  - average size of detected clusters
+  - size bias regression estimate of population average cluster size
+  - `Cluster size` as a covariate in the detection function and no adjustments
+- hazard rate key
+  - average size of detected clusters
+  - size bias regression estimate of population average cluster size
+  - `Cluster size` as a covariate in the detection function and no adjustments
+
+To make comparison among models easier, adjust the Project Browser to remove estimates of density and add additional columns to the Project Browser table for `Size bias cluster size` (and CV), `Abundance of individuals` (and confidence interval bounds) as well as `bootstrap confidence interval bounds` of estimated abundance of individuals. This is because when cluster size is a covariate in the detection function precision of estimated individual abundance can only be determined in DistWin through use of the bootstrap.
+
+When all 8 analyses have been completed, pay particular attention to the confidence intervals on estimated individual abundance, recalling the true abundance of individuals is 26000 in this simulated population.
+
+:::{.callout-important collapse=false appearance='default' icon=true}
+## Issues to consider
+- Note the difference in AIC among models with and without cluster size in the detection function
+- Contrast the estimates of cluster size in the population among the three forms of analysis
+- Are there confidence intervals on estimates of individual abundance that *nearly* fail to include the true value of 26000?
+  - What method of population average cluster size estimation do those have in common?
+:::
+
