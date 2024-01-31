@@ -795,6 +795,20 @@
     "href": "09-clusters/DistWin-prac/Pr9-solution-DistWin.html",
     "title": "Analysis of animals that occur in groups",
     "section": "",
-    "text": "Analysis of animals that occur in groups\n\n\n\n\n\nDistance for Windows exercise Solution\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\n# params\nDelta AIC\nESW/EDR\nSz Bias CS\nSz Bias CS CV\nN\nN LCL\nN UCL\n\n\n\n\n\nhn cos average group size\n2\n22.4\n2.51\n\n\n31655\n25889\n38705\n\n\n\nunif cos size regression\n2\n24.9\n2.66\n6.3\n0.026\n26106\n21665\n31457\n\n\n\nhr poly size regression\n2\n23.9\n2.43\n6.1\n0.026\n27749\n20917\n36813\n\n\n\nhn size bootstrap\n2\n3.3\n2.81\n6.5\n0.020\n25448.62\n22786.55\n27868.41\nbootstrap\n\n\nhr size bootstrap\n3\n0\n2.27\n5.7\n0.183\n27704.15\n23342.76\n34598.29\nbootstrap\n\n\nhr poly average size\n2\n23.7\n2.43\n\n\n32673\n24666\n43278\n\n\n\nhn cos group size regression\n2\n22.4\n2.51\n6.2\n0.026\n27142\n22150\n33258\n\n\n\nunif cos average size\n2\n24.9\n2.66\n\n\n29858\n24837\n35893"
+    "text": "Analysis of animals that occur in groups"
+  },
+  {
+    "objectID": "09-clusters/DistWin-prac/Pr9-solution-DistWin.html#interval-estimates-of-abundance",
+    "href": "09-clusters/DistWin-prac/Pr9-solution-DistWin.html#interval-estimates-of-abundance",
+    "title": "Analysis of animals that occur in groups",
+    "section": "Interval estimates of abundance",
+    "text": "Interval estimates of abundance\nAll confidence intervals for estimates of individual abundance include the true value, however, each of the estimates using the average cluster size of detected clusters as an estimate of average cluster size in the population are positively biased. Positively biased to the extent that the lower confidence limits only just include the true value of 26000."
+  },
+  {
+    "objectID": "09-clusters/DistWin-prac/Pr9-solution-DistWin.html#for-further-experimentation",
+    "href": "09-clusters/DistWin-prac/Pr9-solution-DistWin.html#for-further-experimentation",
+    "title": "Analysis of animals that occur in groups",
+    "section": "For further experimentation",
+    "text": "For further experimentation\nA DistWin project with the 8 completed analyses is available for download if you wish to further explore the data set and conduct additional analyses."
   }
 ]

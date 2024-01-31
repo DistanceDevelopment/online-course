@@ -12,16 +12,36 @@ csl: ../../style/apa.csl
 ### Distance for Windows exercise Solution
 :::
 
+# Project Browser results
 
+Below is an abbreviated set of Project Browser results of the 8 fitted models.
 
+Striking features from the Results Browser is the strong preference (in $\Delta$AIC score) for models that contain `cluster size` in the detection function model. Contrast the adjusted cluster size estimates (whether by regression or by use of `cluster size` as a detection function covariate) with the average size of detected clusters of 7.2. Observe the knock-on effect of the estimate average group sizes upon the estimates of abundance of individuals.
 
-| Name                         	| # params 	| Delta AIC 	| ESW/EDR 	| Sz Bias CS 	| Sz Bias CS CV 	| N        	| N LCL    	| N UCL    	|           	|
-|------------------------------	|----------	|-----------	|---------	|------------	|---------------	|----------	|----------	|----------	|-----------	|
-| hn cos average group size    	|        2 	|      22.4 	|    2.51 	|            	|               	|    31655 	|    25889 	|    38705 	|           	|
-| unif cos size regression     	|        2 	|      24.9 	|    2.66 	|        6.3 	|         0.026 	|    26106 	|    21665 	|    31457 	|           	|
-| hr poly size regression      	|        2 	|      23.9 	|    2.43 	|        6.1 	|         0.026 	|    27749 	|    20917 	|    36813 	|           	|
-| hn size bootstrap            	|        2 	|       3.3 	|    2.81 	|        6.5 	|         0.020 	| 25448.62 	| 22786.55 	| 27868.41 	| bootstrap 	|
-| hr size bootstrap            	|        3 	|         0 	|    2.27 	|        5.7 	|         0.183 	| 27704.15 	| 23342.76 	| 34598.29 	| bootstrap 	|
-| hr poly average size         	|        2 	|      23.7 	|    2.43 	|            	|               	|    32673 	|    24666 	|    43278 	|           	|
-| hn cos group size regression 	|        2 	|      22.4 	|    2.51 	|        6.2 	|         0.026 	|    27142 	|    22150 	|    33258 	|           	|
-| unif cos average size        	|        2 	|      24.9 	|    2.66 	|            	|               	|    29858 	|    24837 	|    35893 	|           	|
+```{r}
+#| label: browsertable
+#| echo: false
+browsertab <- read.csv("clustersize.csv")
+browsertab <- browsertab[, -c(4,5)]
+colnames(browsertab) <- c("Analysis", "Num par", "Delta AIC", "Adjusted ClusSize",
+                          "Adjusted CS CV", "N(indiv)", "N(indiv) LCL", "N(indiv) UCL", "Bootstrap")
+knitr::kable(browsertab, digits=c(0,0,1,1,3,0,0,0))
+```
+
+## Interval estimates of abundance
+
+All confidence intervals for estimates of individual abundance include the true value, however, each of the estimates using the average cluster size of detected clusters as an estimate of average cluster size in the population are positively biased. Positively biased to the extent that the lower confidence limits only just include the true value of 26000.
+
+```{r}
+#| echo: false
+library(plotrix)
+plotCI(x=1:8, y=browsertab[,6], li=browsertab[,7], ui=browsertab[,8], 
+       xaxt='n', xlab="Analysis", ylab="Estimated abundance of individuals")
+
+axis(side=1, at=1:8, labels=substr(browsertab[1:8,1], 1, 12), cex.axis=0.65)
+abline(h=26000, lty=3)
+```
+
+## For further experimentation
+
+A DistWin project with the 8 completed analyses is available for [download](risso-survey.zip) if you wish to further explore the data set and conduct additional analyses.
