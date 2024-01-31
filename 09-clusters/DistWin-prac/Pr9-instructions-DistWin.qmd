@@ -11,3 +11,47 @@ csl: ../../style/apa.csl
 # Analysis of animals that occur in groups
 ### Distance for Windows exercise
 :::
+
+## Description of survey
+
+The data for this practical is simulated (so we can compare estimates derived from our analysis with truth), but the simulation is based upon a series of surveys conducted in the eastern Atlantic 2010-2019 by the U.S. National Marine Fisheries Service for a programme called Atlantic Marine Assessment Program for Protected Species [@AtlanticMarineAssessment2017].  Estimates of abundance of Risso's dolphins *(Grampus griseus)* were derived from these survey data and reported in @roberts2022.
+
+Because the data are simulated, we know the following characteristics of the population we are studying:
+
+| Attribute | true value |
+| --------- | ----------:|
+| Number of groups | 4333 |
+| Average group size | 6 |
+| Number of individuals | 26000 |
+
+You will contrast the estimates you derive from your analyses against these known values.
+
+## Import data into Distance for Windows
+
+Previous DistWin practicals have provided you with a DistWin project in archive (.zip) format. For this practical, the survey data exist as a comma delimited file (CSV). Before you begin analysis, you will import the file into DistWin. Download the `.csv` file onto your computer by following  [this link](../R-prac/Risso_survey.csv) and save it into a directory you can easily relocate.
+
+::: {layout-nrow=4}
+![Setup methods](importsurvey.png)
+
+![Setup units](importunits.png)
+
+
+![Import source](importsource.png)
+
+![Import destination](importwhat.png)
+
+![Import file format](importfields.png)
+
+![Import file structure](importorder.png)
+
+![Import finalise](importfinal.png)
+:::
+
+- Open Distance for Windows, indicate you want to start a new project, specify the project will analyse data from a survey already completed. You will then indicate it is a line transect survey, with a single observer. The `.csv` file contains perpendicular distance measurements of clusters of Risso's dolphins (`setup methods` above).
+- Indicate perpendicular distances and transect lengths are measured in kilometers and study region size is specified in square kilometers (`setup units` above).
+- Skip the next (multipliers) project setup screen. Move to the *Data Import Wizard*. Specify the `.csv` file location you downloaded to your computer previously (`import source` above).
+- The `.csv` file contains information about the Stratum layer, Sample layer and Observation layer, just as is indicated in the default data import screen as shown (`import destination` above).
+- Specify the use of the *comma* as delimiter between fields and that the first row of the `.csv` file contains field names and not data, therefore the first row should not be imported (`import file format` above).
+- The next screen asks for definition of each field to be imported into DistWin. As a time-saving feature, the fields in the `.csv` file are in the order expected by DistWin: stratum fields, sample fields and observation fields. Ticking the box at top left identifies all fields for import (`import file structure` above).
+- The final screen shows the status of rows of the data file coming into the DistWin project (`import finalise` above).
+

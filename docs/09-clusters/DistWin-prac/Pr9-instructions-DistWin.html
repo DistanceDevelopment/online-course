@@ -21,7 +21,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -329,7 +348,14 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#description-of-survey" id="toc-description-of-survey" class="nav-link active" data-scroll-target="#description-of-survey">Description of survey</a></li>
+  <li><a href="#import-data-into-distance-for-windows" id="toc-import-data-into-distance-for-windows" class="nav-link" data-scroll-target="#import-data-into-distance-for-windows">Import data into Distance for Windows</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -379,10 +405,125 @@ Analysis of animals that occur in groups
 </section>
 </div>
 </div>
+<section id="description-of-survey" class="level2">
+<h2 class="anchored" data-anchor-id="description-of-survey">Description of survey</h2>
+<p>The data for this practical is simulated (so we can compare estimates derived from our analysis with truth), but the simulation is based upon a series of surveys conducted in the eastern Atlantic 2010-2019 by the U.S. National Marine Fisheries Service for a programme called Atlantic Marine Assessment Program for Protected Species <span class="citation" data-cites="AtlanticMarineAssessment2017">(<a href="#ref-AtlanticMarineAssessment2017" role="doc-biblioref">Palka et al., 2017</a>)</span>. Estimates of abundance of Risso’s dolphins <em>(Grampus griseus)</em> were derived from these survey data and reported in <span class="citation" data-cites="roberts2022">Roberts et al. (<a href="#ref-roberts2022" role="doc-biblioref">2022</a>)</span>.</p>
+<p>Because the data are simulated, we know the following characteristics of the population we are studying:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Attribute</th>
+<th style="text-align: right;">true value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Number of groups</td>
+<td style="text-align: right;">4333</td>
+</tr>
+<tr class="even">
+<td>Average group size</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr class="odd">
+<td>Number of individuals</td>
+<td style="text-align: right;">26000</td>
+</tr>
+</tbody>
+</table>
+<p>You will contrast the estimates you derive from your analyses against these known values.</p>
+</section>
+<section id="import-data-into-distance-for-windows" class="level2">
+<h2 class="anchored" data-anchor-id="import-data-into-distance-for-windows">Import data into Distance for Windows</h2>
+<p>Previous DistWin practicals have provided you with a DistWin project in archive (.zip) format. For this practical, the survey data exist as a comma delimited file (CSV). Before you begin analysis, you will import the file into DistWin. Download the <code>.csv</code> file onto your computer by following <a href="../R-prac/Risso_survey.csv">this link</a> and save it into a directory you can easily relocate.</p>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="importsurvey.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Setup methods</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="importunits.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Setup units</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="importsource.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Import source</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="importwhat.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Import destination</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="importfields.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Import file format</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="importorder.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Import file structure</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="importfinal.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Import finalise</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<ul>
+<li>Open Distance for Windows, indicate you want to start a new project, specify the project will analyse data from a survey already completed. You will then indicate it is a line transect survey, with a single observer. The <code>.csv</code> file contains perpendicular distance measurements of clusters of Risso’s dolphins (<code>setup methods</code> above).</li>
+<li>Indicate perpendicular distances and transect lengths are measured in kilometers and study region size is specified in square kilometers (<code>setup units</code> above).</li>
+<li>Skip the next (multipliers) project setup screen. Move to the <em>Data Import Wizard</em>. Specify the <code>.csv</code> file location you downloaded to your computer previously (<code>import source</code> above).</li>
+<li>The <code>.csv</code> file contains information about the Stratum layer, Sample layer and Observation layer, just as is indicated in the default data import screen as shown (<code>import destination</code> above).</li>
+<li>Specify the use of the <em>comma</em> as delimiter between fields and that the first row of the <code>.csv</code> file contains field names and not data, therefore the first row should not be imported (<code>import file format</code> above).</li>
+<li>The next screen asks for definition of each field to be imported into DistWin. As a time-saving feature, the fields in the <code>.csv</code> file are in the order expected by DistWin: stratum fields, sample fields and observation fields. Ticking the box at top left identifies all fields for import (<code>import file structure</code> above).</li>
+<li>The final screen shows the status of rows of the data file coming into the DistWin project (<code>import finalise</code> above).</li>
+</ul>
 
 
 
-</main> <!-- /main -->
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list">
+<div id="ref-AtlanticMarineAssessment2017" class="csl-entry" role="listitem">
+Palka, D. L., Chavez-Rosales, S., Josephson, E., Cholewiak, D., Haas, H. L., Garrison, L., … Orphanides, C. (2017). <em>Atlantic <span>Marine Assessment Program</span> for <span>Protected Species</span>: 2010-2014; <span>Supplement</span> to <span>Final Report Boem</span> 2017-071; <span>Appendix I</span></em>. <span>Bureau of Ocean Energy Management</span>.
+</div>
+<div id="ref-roberts2022" class="csl-entry" role="listitem">
+Roberts, J. J., Yack, T. M., Cañadas, A., Fujioka, E., Halpin, P. N., Barco, S. G., … Zoidis, A. M. (2022). <em>Density model for <span class="nocase">Risso’s</span> dolphin (<span>Grampus</span> griseus) for the <span>U.S. East Coast</span>, version 5.1, 2023-05-27, and supplementary report</em>. Durham North Carolina: Marine Geospatial Ecology Laboratory, Duke University.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
