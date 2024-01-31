@@ -8,7 +8,7 @@
 
 <meta name="author" content="Centre for Research into Ecological and Environmental Modelling   University of St Andrews">
 
-<title>Introductory distance sampling training materials - Covariates in the detection function</title>
+<title>Introductory distance sampling training materials - Analysis of animals that occur in groups</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,26 +21,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -117,7 +98,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Covariates in the detection function</li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Analysis of animals that occur in groups</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -348,21 +329,14 @@ div.csl-indent {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#hawaiian-amakihi" id="toc-hawaiian-amakihi" class="nav-link active" data-scroll-target="#hawaiian-amakihi">Hawaiian Amakihi</a></li>
-  <li><a href="#analysis-of-dolphin-sightings-data" id="toc-analysis-of-dolphin-sightings-data" class="nav-link" data-scroll-target="#analysis-of-dolphin-sightings-data">Analysis of dolphin sightings data</a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Covariates in the detection function</h1>
+<h1 class="title">Analysis of animals that occur in groups</h1>
 </div>
 
 
@@ -395,7 +369,7 @@ div.csl-indent {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Covariates in the detection function
+Analysis of animals that occur in groups
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -405,234 +379,136 @@ Covariates in the detection function
 </section>
 </div>
 </div>
-<section id="hawaiian-amakihi" class="level2">
-<h2 class="anchored" data-anchor-id="hawaiian-amakihi">Hawaiian Amakihi</h2>
-<p>Here is the Results Browser table of the models described in <span class="citation" data-cites="Marques2007">Marques et al. (<a href="#ref-Marques2007" role="doc-biblioref">2007</a>)</span>, with strata (“strat”) representing the repeated surveys performed. The project containing these results can be found in <a href="fTAMAUK07.zip">fTAMAUK07.zip</a>.</p>
 <table class="table">
 <colgroup>
-<col style="width: 31%">
+<col style="width: 23%">
+<col style="width: 7%">
 <col style="width: 8%">
+<col style="width: 7%">
 <col style="width: 9%">
+<col style="width: 11%">
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 7%">
 <col style="width: 8%">
-<col style="width: 8%">
-<col style="width: 8%">
-<col style="width: 8%">
-<col style="width: 8%">
-<col style="width: 9%">
 </colgroup>
 <thead>
 <tr class="header">
 <th>Name</th>
 <th># params</th>
 <th>Delta AIC</th>
-<th>AIC</th>
 <th>ESW/EDR</th>
-<th>D</th>
-<th>D LCL</th>
-<th>D UCL</th>
-<th>D CV</th>
+<th>Sz Bias CS</th>
+<th>Sz Bias CS CV</th>
+<th>N</th>
+<th>N LCL</th>
+<th>N UCL</th>
+<th></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>g7 - HR OBS MAS w82.5</td>
-<td>5</td>
+<td>hn cos average group size</td>
+<td>2</td>
+<td>22.4</td>
+<td>2.51</td>
+<td></td>
+<td></td>
+<td>31655</td>
+<td>25889</td>
+<td>38705</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>unif cos size regression</td>
+<td>2</td>
+<td>24.9</td>
+<td>2.66</td>
+<td>6.3</td>
+<td>0.026</td>
+<td>26106</td>
+<td>21665</td>
+<td>31457</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>hr poly size regression</td>
+<td>2</td>
+<td>23.9</td>
+<td>2.43</td>
+<td>6.1</td>
+<td>0.026</td>
+<td>27749</td>
+<td>20917</td>
+<td>36813</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>hn size bootstrap</td>
+<td>2</td>
+<td>3.3</td>
+<td>2.81</td>
+<td>6.5</td>
+<td>0.020</td>
+<td>25448.62</td>
+<td>22786.55</td>
+<td>27868.41</td>
+<td>bootstrap</td>
+</tr>
+<tr class="odd">
+<td>hr size bootstrap</td>
+<td>3</td>
 <td>0</td>
-<td>10777.72</td>
-<td>45.54432</td>
-<td>7.172463</td>
-<td></td>
-<td></td>
-<td></td>
+<td>2.27</td>
+<td>5.7</td>
+<td>0.183</td>
+<td>27704.15</td>
+<td>23342.76</td>
+<td>34598.29</td>
+<td>bootstrap</td>
 </tr>
 <tr class="even">
-<td>h8 - HR OBS w82.5</td>
-<td>4</td>
-<td>1.730469</td>
-<td>10779.45</td>
-<td>45.30368</td>
-<td>7.229559</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>k11 - HRpol OBS HAS w82.5</td>
-<td>9</td>
-<td>5.620117</td>
-<td>10783.34</td>
-<td>46.01192</td>
-<td>7.025928</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>l12 - HN OBS w82.5</td>
-<td>6</td>
-<td>7.120117</td>
-<td>10784.84</td>
-<td>41.97314</td>
-<td>8.493949</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>d4 - Unicos by strat w82.5</td>
-<td>12</td>
-<td>13.5</td>
-<td>10791.22</td>
-<td></td>
-<td>7.334418</td>
-<td>6.801114</td>
-<td>7.90954</td>
-<td>0.03848917</td>
-</tr>
-<tr class="even">
-<td>i9 - HN Obs HAS by strat 82.5m</td>
-<td>9</td>
-<td>14.18066</td>
-<td>10791.9</td>
-<td>43.4998</td>
-<td>7.922717</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>j10 - HN OBS MAS w82.5</td>
-<td>5</td>
-<td>15.52051</td>
-<td>10793.24</td>
-<td>43.38829</td>
-<td>7.97246</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>e5 - HR by strat w82.5</td>
-<td>14</td>
-<td>18.58984</td>
-<td>10796.31</td>
-<td></td>
-<td>6.821746</td>
-<td>5.990242</td>
-<td>7.768671</td>
-<td>0.06631405</td>
-</tr>
-<tr class="odd">
-<td>a1 - HN by strat f0 pooled w82.5</td>
-<td>5</td>
-<td>21.40039</td>
-<td>10799.12</td>
-<td>43.85356</td>
-<td>7.824244</td>
-<td>6.029662</td>
-<td>10.15294</td>
-<td>0.1333881</td>
-</tr>
-<tr class="even">
-<td>g6 - HN by strat w82.5</td>
-<td>15</td>
-<td>22.87012</td>
-<td>10800.59</td>
-<td></td>
-<td>7.998222</td>
-<td>6.889873</td>
-<td>9.284867</td>
-<td>0.07605652</td>
-</tr>
-<tr class="odd">
-<td>b2 - Unicos by strat f0 pooled w82.5</td>
+<td>hr poly average size</td>
 <td>2</td>
-<td>25.11035</td>
-<td>10802.83</td>
-<td>44.30367</td>
-<td>7.666068</td>
-<td>7.002776</td>
-<td>8.392186</td>
-<td>0.04615532</td>
-</tr>
-<tr class="even">
-<td>o15 - HR MAS w82.5</td>
-<td>3</td>
-<td>29.18066</td>
-<td>10806.9</td>
-<td>47.91844</td>
-<td>6.575671</td>
+<td>23.7</td>
+<td>2.43</td>
 <td></td>
 <td></td>
+<td>32673</td>
+<td>24666</td>
+<td>43278</td>
 <td></td>
 </tr>
 <tr class="odd">
-<td>c3 - HR by strat f0 pooled w82.5</td>
+<td>hn cos group size regression</td>
 <td>2</td>
-<td>29.90039</td>
-<td>10807.62</td>
-<td>47.27633</td>
-<td>6.732318</td>
-<td>5.960572</td>
-<td>7.603986</td>
-<td>0.06212176</td>
-</tr>
-<tr class="even">
-<td>p16 - HRpol HAS w82.5</td>
-<td>7</td>
-<td>31.62012</td>
-<td>10809.34</td>
-<td>47.79588</td>
-<td>6.599619</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>n14 - HN HAS by strat 82.5m</td>
-<td>7</td>
-<td>34.73047</td>
-<td>10812.45</td>
-<td>43.3067</td>
-<td>8.042932</td>
-<td></td>
-<td></td>
+<td>22.4</td>
+<td>2.51</td>
+<td>6.2</td>
+<td>0.026</td>
+<td>27142</td>
+<td>22150</td>
+<td>33258</td>
 <td></td>
 </tr>
 <tr class="even">
-<td>m13 - HN MAS w82.5</td>
-<td>3</td>
-<td>35.36035</td>
-<td>10813.08</td>
-<td>43.28159</td>
-<td>8.061954</td>
+<td>unif cos average size</td>
+<td>2</td>
+<td>24.9</td>
+<td>2.66</td>
 <td></td>
 <td></td>
+<td>29858</td>
+<td>24837</td>
+<td>35893</td>
 <td></td>
 </tr>
 </tbody>
 </table>
-<p><img src="distwinwarning.png" align="right"></p>
-<p>You will note there are no measures of precision associated with the density estimates when a single detection function (across strata) is used to estimate density. Do you understand why this is the case? If not, carefully read the message included in the Distance for Windows output for one of these models.</p>
-</section>
-<section id="analysis-of-dolphin-sightings-data" class="level2">
-<h2 class="anchored" data-anchor-id="analysis-of-dolphin-sightings-data">Analysis of dolphin sightings data</h2>
-<p>To obtain an overall impression of the data it is useful to fit a detection function histogram with many intervals (you may have problems fitting to the maximum number of 30, but 25 intervals should be OK). The spikes in the histogram suggest that the data has been rounded to zero and possibly other values. The q-q plot also indicates problems with the model at zero distances. To mitigate these problems, use the Intervals tab in the Data Filter to pool the data into a few intervals – 10 to 15 intervals work. For reasons described in the instructions (lacking information regarding effort and study area size), we restrict our interest in the analysis to the fitting of the detection function, measured in the table below by effective strip width (ESW).</p>
-<p>For the MCDS analysis, cluster size was fitted as a continuous variable, whereas, month, Beaufort, cue and search position were fitted as factor variables. Table 1 summarises the results.</p>
-<p>Table 1. Effective strip width estimates for the different models. | Name | # params | Delta AIC | AIC | ESW/EDR | ESW/EDR CV | |————————— |———- |———– |———- |———- |———— | | interval hn search method | 4 | 0 | 5743.476 | 3.388467 | 0.01766289 | | interval hn log cluster | 2 | 11.13477 | 5754.611 | 3.423404 | 0.01740193 | | interval hn cos | 2 | 16.72412 | 5760.2 | 3.024034 | 0.04587239 | | interval hn cluster | 2 | 17.22998 | 5760.706 | 3.506682 | 0.01725098 | | interval hn month | 3 | 22.125 | 5765.601 | 3.44452 | 0.0171129 | | interval hn sea state | 2 | 26.37891 | 5769.855 | 3.454254 | 0.01689994 | | interval hn cue type | 4 | 27.23877 | 5770.715 | 3.449551 | 0.01703152 |</p>
-<p><img src="method3detfn.png" align="right" width="600px"></p>
-<p>Based on the AIC, it seems as though the model including search method is best, however, there were warning messages about the detection function fitting and cluster size estimation. Before going on and looking at models which include two covariates, it is worth looking at the search model in more detail. The detection functions have very different scale parameters, for example, the detection function for search method 3 (using a helicopter) has a very wide shoulder and so the scale parameter is very large. See figure at right.</p>
-<p>This suggests that the observers were seeing everything out to 5 nm and so detection does not decrease with distance as it does with the other methods. One assumption of MCDS is that the perpendicular distance distributions of the covariate factor levels have the same shape. It may be worth refitting the model ignoring the observations made by the helicopter. Data can easily be selected/ignored using the Data filter | Data selection tab. The selection criteria will be of the form ‘[Search method] IN (0,2,5)’</p>
 
 
 
-</section>
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list">
-<div id="ref-Marques2007" class="csl-entry" role="listitem">
-Marques, T. A., Thomas, L., Fancy, S. G., &amp; Buckland, S. T. (2007). Improving estimates of bird density using multiple covariate distance sampling. <em>The Auk</em>, <em>127</em>, 1229–1243. <a href="https://doi.org/10.1642/0004-8038(2007)124[1229:ieobdu]2.0.co;2">https://doi.org/10.1642/0004-8038(2007)124[1229:ieobdu]2.0.co;2</a>
-</div>
-</div></section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

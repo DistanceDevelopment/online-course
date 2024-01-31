@@ -86,7 +86,7 @@ The practicals in this model address this situation. You are to analyse data fro
 :::
 
 ::: instructions
-[Solution and discussion](DistWin-prac/Pr5-solution-DistWin.qmd)
+[Solution and discussion](DistWin-prac/Pr9-solution-DistWin.qmd)
 :::
 
 ::: video

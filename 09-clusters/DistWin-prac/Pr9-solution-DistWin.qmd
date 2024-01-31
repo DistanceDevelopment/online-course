@@ -1,0 +1,27 @@
+---
+title: Analysis of animals that occur in groups
+author: Centre for Research into Ecological and Environmental Modelling <br> **University of St Andrews**
+date-modified: "January 2024"
+date-format: "MMMM YYYY"
+bibliography: ../references.bib
+csl: ../../style/apa.csl
+---
+
+:::{.callout-warning collapse=false appearance='default' icon=true}
+# Analysis of animals that occur in groups
+### Distance for Windows exercise Solution
+:::
+
+
+
+
+| Name                         	| # params 	| Delta AIC 	| ESW/EDR 	| Sz Bias CS 	| Sz Bias CS CV 	| N        	| N LCL    	| N UCL    	|           	|
+|------------------------------	|----------	|-----------	|---------	|------------	|---------------	|----------	|----------	|----------	|-----------	|
+| hn cos average group size    	|        2 	|      22.4 	|    2.51 	|            	|               	|    31655 	|    25889 	|    38705 	|           	|
+| unif cos size regression     	|        2 	|      24.9 	|    2.66 	|        6.3 	|         0.026 	|    26106 	|    21665 	|    31457 	|           	|
+| hr poly size regression      	|        2 	|      23.9 	|    2.43 	|        6.1 	|         0.026 	|    27749 	|    20917 	|    36813 	|           	|
+| hn size bootstrap            	|        2 	|       3.3 	|    2.81 	|        6.5 	|         0.020 	| 25448.62 	| 22786.55 	| 27868.41 	| bootstrap 	|
+| hr size bootstrap            	|        3 	|         0 	|    2.27 	|        5.7 	|         0.183 	| 27704.15 	| 23342.76 	| 34598.29 	| bootstrap 	|
+| hr poly average size         	|        2 	|      23.7 	|    2.43 	|            	|               	|    32673 	|    24666 	|    43278 	|           	|
+| hn cos group size regression 	|        2 	|      22.4 	|    2.51 	|        6.2 	|         0.026 	|    27142 	|    22150 	|    33258 	|           	|
+| unif cos average size        	|        2 	|      24.9 	|    2.66 	|            	|               	|    29858 	|    24837 	|    35893 	|           	|

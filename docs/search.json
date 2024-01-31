@@ -396,7 +396,7 @@
     "href": "08-covariates/DistWin-prac/Pr8-solution-DistWin.html",
     "title": "Covariates in the detection function",
     "section": "",
-    "text": "Covariates in the detection function\nIntroduction to Distance Sampling"
+    "text": "Covariates in the detection function"
   },
   {
     "objectID": "08-covariates/DistWin-prac/Pr8-solution-DistWin.html#hawaiian-amakihi",
@@ -789,5 +789,12 @@
     "title": "Analysis of animals that occur in groups",
     "section": "Construct models",
     "text": "Construct models\n While the focus of this practical is not examining different key function models, start with the basic idea of fitting three key function models to the Risso’s data set. For each of the three key function models, estimate the average cluster size in the population using the first two methods described above (a) as mean size of observed groups and b) using the regression approach). Specification of these two approaches is determined by the radio buttons chosen (figure at right).\nIn addition, employ the third method (adding group size to the detection function model). This method cannot be applied to models with a uniform key function because that model lacks a scale parameter (see covariate lecture for a reminder). When constructing the detection function models using the Cluster size covariate, it is simplest to turn off adjustment terms. \nYou will construct 8 models with which to analyse the Risso’s dolphin survey: - uniform key - average size of detected clusters - size bias regression estimate of population average cluster size - half normal key - average size of detected clusters - size bias regression estimate of population average cluster size - Cluster size as a covariate in the detection function and no adjustments - hazard rate key - average size of detected clusters - size bias regression estimate of population average cluster size - Cluster size as a covariate in the detection function and no adjustments\nTo make comparison among models easier, adjust the Project Browser to remove estimates of density and add additional columns to the Project Browser table for Size bias cluster size (and CV), Abundance of individuals (and confidence interval bounds) as well as bootstrap confidence interval bounds of estimated abundance of individuals. This is because when cluster size is a covariate in the detection function precision of estimated individual abundance can only be determined in DistWin through use of the bootstrap.\nWhen all 8 analyses have been completed, pay particular attention to the confidence intervals on estimated individual abundance, recalling the true abundance of individuals is 26000 in this simulated population.\n\n\n\n\n\n\nIssues to consider\n\n\n\n\n\n\nNote the difference in AIC among models with and without cluster size in the detection function\nContrast the estimates of cluster size in the population among the three forms of analysis\nAre there confidence intervals on estimates of individual abundance that nearly fail to include the true value of 26000?\n\nWhat method of population average cluster size estimation do those have in common?"
+  },
+  {
+    "objectID": "09-clusters/DistWin-prac/Pr9-solution-DistWin.html",
+    "href": "09-clusters/DistWin-prac/Pr9-solution-DistWin.html",
+    "title": "Analysis of animals that occur in groups",
+    "section": "",
+    "text": "Analysis of animals that occur in groups\n\n\n\n\n\nDistance for Windows exercise Solution\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\n# params\nDelta AIC\nESW/EDR\nSz Bias CS\nSz Bias CS CV\nN\nN LCL\nN UCL\n\n\n\n\n\nhn cos average group size\n2\n22.4\n2.51\n\n\n31655\n25889\n38705\n\n\n\nunif cos size regression\n2\n24.9\n2.66\n6.3\n0.026\n26106\n21665\n31457\n\n\n\nhr poly size regression\n2\n23.9\n2.43\n6.1\n0.026\n27749\n20917\n36813\n\n\n\nhn size bootstrap\n2\n3.3\n2.81\n6.5\n0.020\n25448.62\n22786.55\n27868.41\nbootstrap\n\n\nhr size bootstrap\n3\n0\n2.27\n5.7\n0.183\n27704.15\n23342.76\n34598.29\nbootstrap\n\n\nhr poly average size\n2\n23.7\n2.43\n\n\n32673\n24666\n43278\n\n\n\nhn cos group size regression\n2\n22.4\n2.51\n6.2\n0.026\n27142\n22150\n33258\n\n\n\nunif cos average size\n2\n24.9\n2.66\n\n\n29858\n24837\n35893"
   }
 ]

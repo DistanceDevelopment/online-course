@@ -12,9 +12,6 @@ csl: ../../style/apa.csl
 ### Distance for Windows exercise Solution
 :::
 
-**Introduction to Distance Sampling**
-
-
 
 ## Hawaiian Amakihi
 
