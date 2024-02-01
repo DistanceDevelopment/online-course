@@ -30,6 +30,8 @@ You will contrast the estimates you derive from your analyses against these know
 
 Previous DistWin practicals have provided you with a DistWin project in archive (.zip) format. For this practical, the survey data exist as a comma delimited file (CSV). Before you begin analysis, you will import the file into DistWin. Download the `.csv` file onto your computer by following  [this link](../R-prac/Risso_survey.csv) and save it into a directory you can easily relocate.
 
+The screen-grabs below (and accompanying narrative) describe the sequence of steps to import the Risso's survey data into Distwin.
+
 ::: {layout-nrow=4}
 ![Setup methods](importsurvey.png)
 
@@ -58,6 +60,7 @@ Previous DistWin practicals have provided you with a DistWin project in archive 
 # Modelling strategy
 
 With animals that occur in groups, care needs to be taken with regard to the size bias problem described in [cluster size lecture](../Mod9-2023-clusters.pdf). There are three general approaches in the estimation of cluster size when analysing distance sampling surveys of animals in groups.
+
 - use average size of detected groups as an estimate of the average size of groups in the population,
 - adjust average size of detected groups by regressing ln(group size) on estimated  probability of detection at the distance of each observed group [@BUC01, Section 3.5.4], or
 - including cluster size as a covariate in the detection function [@BUC01, Section 3.5.5].
@@ -71,6 +74,7 @@ While the focus of this practical is not examining different key function models
 In addition, employ the third method (adding group size to the detection function model). This method cannot be applied to models with a uniform key function because that model lacks a scale parameter (see [covariate lecture](../../08-covariates/Mod8-2023-covariates.pdf) for a reminder). When constructing the detection function models using the `Cluster size` covariate, it is simplest to turn off adjustment terms. <img src="noadjustments.png" width=300px>
 
 You will construct 8 models with which to analyse the Risso's dolphin survey:
+
 - uniform key
   - average size of detected clusters
   - size bias regression estimate of population average cluster size

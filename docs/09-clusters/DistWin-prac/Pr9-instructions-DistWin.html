@@ -442,6 +442,7 @@ Analysis of animals that occur in groups
 <section id="import-data-into-distance-for-windows" class="level2">
 <h2 class="anchored" data-anchor-id="import-data-into-distance-for-windows">Import data into Distance for Windows</h2>
 <p>Previous DistWin practicals have provided you with a DistWin project in archive (.zip) format. For this practical, the survey data exist as a comma delimited file (CSV). Before you begin analysis, you will import the file into DistWin. Download the <code>.csv</code> file onto your computer by following <a href="../R-prac/Risso_survey.csv">this link</a> and save it into a directory you can easily relocate.</p>
+<p>The screen-grabs below (and accompanying narrative) describe the sequence of steps to import the Risso’s survey data into Distwin.</p>
 <div class="quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
@@ -520,12 +521,39 @@ Analysis of animals that occur in groups
 </section>
 <section id="modelling-strategy" class="level1">
 <h1>Modelling strategy</h1>
-<p>With animals that occur in groups, care needs to be taken with regard to the size bias problem described in <a href="../Mod9-2023-clusters.pdf">cluster size lecture</a>. There are three general approaches in the estimation of cluster size when analysing distance sampling surveys of animals in groups. - use average size of detected groups as an estimate of the average size of groups in the population, - adjust average size of detected groups by regressing ln(group size) on estimated probability of detection at the distance of each observed group <span class="citation" data-cites="BUC01">(<a href="#ref-BUC01" role="doc-biblioref">Buckland et al., 2001, sec. 3.5.4</a>)</span>, or - including cluster size as a covariate in the detection function <span class="citation" data-cites="BUC01">(<a href="#ref-BUC01" role="doc-biblioref">Buckland et al., 2001, sec. 3.5.5</a>)</span>. - This approach makes use of Horvitz-Thompson-Like estimators that estimate abundance of individuals (<span class="math inline">\(\hat{N}\)</span>) and estimate abundance of groups (<span class="math inline">\(\hat{N_s}\)</span>). The mean cluster size in the population is estimated as the ratio of those estimates <span class="citation" data-cites="Buckland2015">(<a href="#ref-Buckland2015" role="doc-biblioref">Buckland et al., 2015, sec. 6.4.3.3</a>)</span>.</p>
+<p>With animals that occur in groups, care needs to be taken with regard to the size bias problem described in <a href="../Mod9-2023-clusters.pdf">cluster size lecture</a>. There are three general approaches in the estimation of cluster size when analysing distance sampling surveys of animals in groups.</p>
+<ul>
+<li>use average size of detected groups as an estimate of the average size of groups in the population,</li>
+<li>adjust average size of detected groups by regressing ln(group size) on estimated probability of detection at the distance of each observed group <span class="citation" data-cites="BUC01">(<a href="#ref-BUC01" role="doc-biblioref">Buckland et al., 2001, sec. 3.5.4</a>)</span>, or</li>
+<li>including cluster size as a covariate in the detection function <span class="citation" data-cites="BUC01">(<a href="#ref-BUC01" role="doc-biblioref">Buckland et al., 2001, sec. 3.5.5</a>)</span>.
+<ul>
+<li>This approach makes use of Horvitz-Thompson-Like estimators that estimate abundance of individuals (<span class="math inline">\(\hat{N}\)</span>) and estimate abundance of groups (<span class="math inline">\(\hat{N_s}\)</span>). The mean cluster size in the population is estimated as the ratio of those estimates <span class="citation" data-cites="Buckland2015">(<a href="#ref-Buckland2015" role="doc-biblioref">Buckland et al., 2015, sec. 6.4.3.3</a>)</span>.</li>
+</ul></li>
+</ul>
 <section id="construct-models" class="level2">
 <h2 class="anchored" data-anchor-id="construct-models">Construct models</h2>
 <p><img src="twogroupsizes.png" align="right" width="400px"> While the focus of this practical is not examining different key function models, start with the basic idea of fitting three key function models to the Risso’s data set. For each of the three key function models, estimate the average cluster size in the population using the first two methods described above (a) as mean size of observed groups and b) using the regression approach). Specification of these two approaches is determined by the radio buttons chosen (figure at right).</p>
 <p>In addition, employ the third method (adding group size to the detection function model). This method cannot be applied to models with a uniform key function because that model lacks a scale parameter (see <a href="../../08-covariates/Mod8-2023-covariates.pdf">covariate lecture</a> for a reminder). When constructing the detection function models using the <code>Cluster size</code> covariate, it is simplest to turn off adjustment terms. <img src="noadjustments.png" width="300px"></p>
-<p>You will construct 8 models with which to analyse the Risso’s dolphin survey: - uniform key - average size of detected clusters - size bias regression estimate of population average cluster size - half normal key - average size of detected clusters - size bias regression estimate of population average cluster size - <code>Cluster size</code> as a covariate in the detection function and no adjustments - hazard rate key - average size of detected clusters - size bias regression estimate of population average cluster size - <code>Cluster size</code> as a covariate in the detection function and no adjustments</p>
+<p>You will construct 8 models with which to analyse the Risso’s dolphin survey:</p>
+<ul>
+<li>uniform key
+<ul>
+<li>average size of detected clusters</li>
+<li>size bias regression estimate of population average cluster size</li>
+</ul></li>
+<li>half normal key
+<ul>
+<li>average size of detected clusters</li>
+<li>size bias regression estimate of population average cluster size</li>
+<li><code>Cluster size</code> as a covariate in the detection function and no adjustments</li>
+</ul></li>
+<li>hazard rate key
+<ul>
+<li>average size of detected clusters</li>
+<li>size bias regression estimate of population average cluster size</li>
+<li><code>Cluster size</code> as a covariate in the detection function and no adjustments</li>
+</ul></li>
+</ul>
 <p>To make comparison among models easier, adjust the Project Browser to remove estimates of density and add additional columns to the Project Browser table for <code>Size bias cluster size</code> (and CV), <code>Abundance of individuals</code> (and confidence interval bounds) as well as <code>bootstrap confidence interval bounds</code> of estimated abundance of individuals. This is because when cluster size is a covariate in the detection function precision of estimated individual abundance can only be determined in DistWin through use of the bootstrap.</p>
 <p>When all 8 analyses have been completed, pay particular attention to the confidence intervals on estimated individual abundance, recalling the true abundance of individuals is 26000 in this simulated population.</p>
 <div class="callout callout-style-default callout-important callout-titled">
