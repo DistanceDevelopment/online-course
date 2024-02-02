@@ -12,22 +12,21 @@ csl: ../../style/apa.csl
 ### Distance for Windows exercise Solution
 :::
 
-
 **Outline Solutions**
 
 Example analyses, which were used in getting these solutions, and which are referred to below, are in the project file [Stratify solutions.zip](Stratify solutions.zip).
 
 ## Relevant results are in Analysis *Full geog stratification*
 
-The AICs are 127.90 for the southern stratum and 187.90 for the northern stratum. Detection function model fits are adequate visually and by goodness-of-fit test. Sample sizes are relatively small but not alarmingly so. The southern stratum appears to have a much narrower effective strip width.
+The AICs are 127.9 for the southern stratum and 187.9 for the northern stratum. Detection function model fits are adequate visually and by goodness-of-fit test. Sample sizes are relatively small but not alarmingly so. The southern stratum appears to have a much narrower effective strip width.
 
 ## Relevant results are in Analysis *Pooled f(0)*
 
 The AIC for the pooled detection function fit is 318.72. The detection function model fit is adequate visually and by goodness-of-fit test. Because
 
-$$318.72 > (127.9+187.9=315.8)$$
+$$\text{AIC for pooled f(0)=}318.72 > (127.9+187.9=315.8)$$
 
-estimation of separate detection function in each stratum is preferable.
+estimation of separate detection functions for each stratum is preferable, given the observed data.
 
 ## Relevant results are in Analysis “No stratification”.
 

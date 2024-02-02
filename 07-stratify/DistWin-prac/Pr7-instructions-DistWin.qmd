@@ -30,12 +30,11 @@ Open the project from its archive [Stratify exercise.zip](Stratify exercise.zip)
 
 - Having done that, run the analysis *Full geog stratification*. Look at the results, and note the AIC statistics from each detection function fit.
 - To stratify $f(0)$ or not: Create a new analysis identical to *Full geog stratification* by clicking the **New Analysis** icon in the **Analysis** tab of the **Project browser** after selecting the existing analysis. The new analysis will be a copy of the existing one.
-
-Create a new model definition for this new analysis by going to the **Inputs** tab and highlighting the “haz rate+no adj full strat” model, then clicking the **New** tab. This will copy the existing model definition – modify the new model definition so that f(0) is to be estimated from the pooled strata (click the **Detection function** x **Global** cell of the table on the **Estimate** tab of the **Model Definition Properties** window you get after clicking **New**). Give this new model definition the name *Pooled detection fn* and then click **OK**.
-
-Run the new analysis and look at the output. By comparing the AIC from this analysis with the sum of the AICs from the analysis *Full geog stratification*, and considering the fits of each detection function, decide whether or not to pool strata for estimation of *f*(0).
+- Create a new model definition for this new analysis by going to the **Inputs** tab and highlighting the “haz rate+no adj full strat” model, then clicking the **New** tab. This will copy the existing model definition – modify the new model definition so that f(0) is to be estimated from the pooled strata (click the **Detection function** x **Global** cell of the table on the **Estimate** tab of the **Model Definition Properties** window you get after clicking **New**). Give this new model definition the name *Pooled detection fn* and then click **OK**.
+- Run the new analysis and look at the output. By comparing the AIC from this analysis with the sum of the AICs from the analysis *Full geog stratification*, and considering the fits of each detection function, decide whether or not to pool strata for estimation of *f*(0).
 
 :::{.callout-tip collapse=false appearance='default' icon=true}
 ## If you have time, here’s a more difficult question.
-Create an analysis without any stratification (*No stratification*) and estimate density using it. Why is the density estimate so much higher than those from *Full geog stratification* and *Pooled detection fn* above?
+- Create an analysis without any stratification (*No stratification*) and estimate density using it. 
+- Why is the density estimate so much higher than those from *Full geog stratification* and *Pooled detection fn* above?
 :::
