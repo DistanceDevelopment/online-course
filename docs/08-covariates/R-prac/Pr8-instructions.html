@@ -339,7 +339,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../09-clusters/clusterslanding.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Analysis of point transect data</span></a>
+ <span class="menu-text">Analysis of animals in groups</span></a>
   </div>
 </li>
       </ul>
@@ -373,7 +373,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../11-mrds/mrdslanding.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Analysis of point transect data</span></a>
+ <span class="menu-text">Analysis of double platform data</span></a>
   </div>
 </li>
       </ul>
@@ -399,7 +399,6 @@ div.csl-indent {
   <ul class="collapse">
   <li><a href="#analysis" id="toc-analysis" class="nav-link" data-scroll-target="#analysis">Analysis</a></li>
   </ul></li>
-  <li><a href="#more-mcds-with-point-transects-savannah-sparrow" id="toc-more-mcds-with-point-transects-savannah-sparrow" class="nav-link" data-scroll-target="#more-mcds-with-point-transects-savannah-sparrow">More MCDS with point transects: Savannah sparrow</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
@@ -436,7 +435,7 @@ div.csl-indent {
 
 </header>
 
-<p>This exercise consists of three data sets of increasing difficulty. The first problem, MCDS with point transects, is complicated and (using the functionality available in <code>R</code>) also includes some basic exploratory analysis of the covariates. Section <a href="#more-mcds-with-line-transects-etp-dolphins">2</a> and <a href="#more-mcds-with-point-transects-savannah-sparrow">3</a> are optional but will take you deeper into the heart of understanding multiple covariates.</p>
+<p>This exercise consists of three data sets of increasing difficulty. The first problem, MCDS with point transects, is complicated and (using the functionality available in <code>R</code>) also includes some basic exploratory analysis of the covariates. A <a href="#more-mcds-with-line-transects-etp-dolphins">second data set</a> takes you deeper into the heart of understanding multiple covariates.</p>
 <section id="objectives" class="level1">
 <h1>Objectives</h1>
 <p>The objectives of this exercise are to</p>
@@ -597,27 +596,6 @@ div.csl-indent {
 <p>Keep in mind that this is a large dataset (&gt; 1000 observations), and hence estimation may take a while. You will likely end up with quite a few models as there are several potential covariates and no ‘right’ answers. Discuss your choice of final model (or models) with your colleagues - did you make the same choices?</p>
 </section>
 </section>
-<section id="more-mcds-with-point-transects-savannah-sparrow" class="level1">
-<h1>More MCDS with point transects: Savannah sparrow</h1>
-<p>Point transect surveys were conducted in Arapaho National Wildlife Refuge, Colorado, USA, in 1980 and 1981 <span class="citation" data-cites="knopf1988">(<a href="#ref-knopf1988" role="doc-biblioref">Knopf et al., 1988</a>)</span> and this exercise concerns the data collected on Savannah sparrows. The study area was divided into smaller regions (called ‘pastures’). The data are available in the <code>Distance</code> package.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="fu">data</span>(Savannah_sparrow_1980)</span>
-<span id="cb13-2"><a href="#cb13-2"></a><span class="fu">data</span>(Savannah_sparrow_1981)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Distances were recorded in metres and area in hectares.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>conversion.factor <span class="ot">&lt;-</span> <span class="fu">convert_units</span>(<span class="st">"meter"</span>, <span class="cn">NULL</span>, <span class="st">"hectare"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>For each data set,</p>
-<ol type="1">
-<li>consider an appropriate truncation distance,</li>
-<li>fit a detection function with out any covariates</li>
-<li>include ‘pasture’ (<code>Region.Label</code>) as a covariate in the detection function</li>
-<li>use AIC to select a model, and</li>
-<li>estimate density (in birds per hectare) for your selected model.</li>
-</ol>
-<p>What would be an alternative to including pasture as a covariate in the detection function to analyse these data?</p>
-</section>
 <section id="references" class="level1">
 
 
@@ -628,9 +606,6 @@ div.csl-indent {
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list">
 <div id="ref-buckland2015" class="csl-entry" role="listitem">
 Buckland, S. T., Rexstad, E. A., Marques, T. A., &amp; Oedekoven, C. S. (2015). <em>Distance Sampling: Methods and Applications</em>. <a href="https://doi.org/10.1007/978-3-319-19219-2_1">https://doi.org/10.1007/978-3-319-19219-2_1</a>
-</div>
-<div id="ref-knopf1988" class="csl-entry" role="listitem">
-Knopf, F. L., Sedgwick, J. A., &amp; Cannon, R. W. (1988). Guild structure of a riparian avifauna relative to seasonal cattle grazing. <em>The Journal of Wildlife Management</em>, <em>52</em>(2), 280–290. <a href="https://doi.org/10.2307/3801235">https://doi.org/10.2307/3801235</a>
 </div>
 <div id="ref-FMARBUC03" class="csl-entry" role="listitem">
 Marques, F. F. C., &amp; Buckland, S. T. (2003). Incorporating covariates into standard line transect analyses. <em>Biometrics</em>, <em>59</em>, 924–935. <a href="https://doi.org/10.1111/j.0006-341x.2003.00107.x">https://doi.org/10.1111/j.0006-341x.2003.00107.x</a>

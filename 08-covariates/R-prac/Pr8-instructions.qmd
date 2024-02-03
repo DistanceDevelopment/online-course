@@ -13,7 +13,7 @@ csl: ../../style/apa.csl
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-This exercise consists of three data sets of increasing difficulty. The first problem, MCDS with point transects, is complicated and (using the functionality available in `R`) also includes some basic exploratory analysis of the covariates. Section [2](#more-mcds-with-line-transects-etp-dolphins) and [3](#more-mcds-with-point-transects-savannah-sparrow) are optional but will take you deeper into the heart of understanding multiple covariates.
+This exercise consists of three data sets of increasing difficulty. The first problem, MCDS with point transects, is complicated and (using the functionality available in `R`) also includes some basic exploratory analysis of the covariates. A [second data set](#more-mcds-with-line-transects-etp-dolphins) takes you deeper into the heart of understanding multiple covariates.
 
 # Objectives
 
@@ -228,33 +228,5 @@ As there are a number of potential covariates to be used in this example (i.e. s
 Note that both distances and transect lengths were recorded in nautical miles and area in nautical miles squared and so the argument `convert_units` does not need to be specified.
 
 Keep in mind that this is a large dataset (\> 1000 observations), and hence estimation may take a while. You will likely end up with quite a few models as there are several potential covariates and no 'right' answers. Discuss your choice of final model (or models) with your colleagues - did you make the same choices?
-
-# More MCDS with point transects: Savannah sparrow {#more-mcds-with-point-transects-savannah-sparrow}
-
-Point transect surveys were conducted in Arapaho National Wildlife Refuge, Colorado, USA, in 1980 and 1981 [@knopf1988] and this exercise concerns the data collected on Savannah sparrows. The study area was divided into smaller regions (called 'pastures'). The data are available in the `Distance` package.
-
-```{r}
-#| eval = F
-data(Savannah_sparrow_1980)
-data(Savannah_sparrow_1981)
-```
-
-Distances were recorded in metres and area in hectares.
-
-```{r}
-#| eval = FALSE,
-#| echo = TRUE
-conversion.factor <- convert_units("meter", NULL, "hectare")
-```
-
-For each data set,
-
-1.  consider an appropriate truncation distance,
-2.  fit a detection function with out any covariates
-3.  include 'pasture' (`Region.Label`) as a covariate in the detection function
-4.  use AIC to select a model, and
-5.  estimate density (in birds per hectare) for your selected model.
-
-What would be an alternative to including pasture as a covariate in the detection function to analyse these data?
 
 # References
