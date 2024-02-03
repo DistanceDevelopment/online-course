@@ -19,27 +19,27 @@ Here is the Results Browser table of the models described in @Marques2007, with 
 
 
 | Name                                 	| # params 	| Delta AIC 	| AIC      	| ESW/EDR  	| D        	| D LCL    	| D UCL    	| D CV       	|
-|--------------------------------------	|----------	|-----------	|----------	|----------	|----------	|----------	|----------	|------------	|
-| g7 - HR OBS MAS w82.5                	| 5        	| 0         	| 10777.72 	| 45.54432 	| 7.172463 	|          	|          	|            	|
-| h8 - HR OBS w82.5                    	| 4        	| 1.730469  	| 10779.45 	| 45.30368 	| 7.229559 	|          	|          	|            	|
-| k11 - HRpol OBS HAS w82.5            	| 9        	| 5.620117  	| 10783.34 	| 46.01192 	| 7.025928 	|          	|          	|            	|
-| l12 - HN OBS w82.5                   	| 6        	| 7.120117  	| 10784.84 	| 41.97314 	| 8.493949 	|          	|          	|            	|
-| d4 - Unicos by strat w82.5           	| 12       	| 13.5      	| 10791.22 	|          	| 7.334418 	| 6.801114 	| 7.90954  	| 0.03848917 	|
-| i9 - HN Obs HAS by strat 82.5m       	| 9        	| 14.18066  	| 10791.9  	| 43.4998  	| 7.922717 	|          	|          	|            	|
-| j10 - HN OBS MAS w82.5               	| 5        	| 15.52051  	| 10793.24 	| 43.38829 	| 7.97246  	|          	|          	|            	|
-| e5 - HR by strat w82.5               	| 14       	| 18.58984  	| 10796.31 	|          	| 6.821746 	| 5.990242 	| 7.768671 	| 0.06631405 	|
-| a1 - HN by strat f0 pooled w82.5     	| 5        	| 21.40039  	| 10799.12 	| 43.85356 	| 7.824244 	| 6.029662 	| 10.15294 	| 0.1333881  	|
-| g6 - HN by strat w82.5               	| 15       	| 22.87012  	| 10800.59 	|          	| 7.998222 	| 6.889873 	| 9.284867 	| 0.07605652 	|
-| b2 - Unicos by strat f0 pooled w82.5 	| 2        	| 25.11035  	| 10802.83 	| 44.30367 	| 7.666068 	| 7.002776 	| 8.392186 	| 0.04615532 	|
-| o15 - HR MAS w82.5                   	| 3        	| 29.18066  	| 10806.9  	| 47.91844 	| 6.575671 	|          	|          	|            	|
-| c3 - HR by strat f0 pooled w82.5     	| 2        	| 29.90039  	| 10807.62 	| 47.27633 	| 6.732318 	| 5.960572 	| 7.603986 	| 0.06212176 	|
-| p16 - HRpol HAS w82.5                	| 7        	| 31.62012  	| 10809.34 	| 47.79588 	| 6.599619 	|          	|          	|            	|
-| n14 - HN HAS by strat 82.5m          	| 7        	| 34.73047  	| 10812.45 	| 43.3067  	| 8.042932 	|          	|          	|            	|
-| m13 - HN MAS w82.5                   	| 3        	| 35.36035  	| 10813.08 	| 43.28159 	| 8.061954 	|          	|          	|            	|
+|--------------------------------------	|----------:|-----------:|----------:|----------:|----------:|----------:|----------:|------------:|
+| HR OBS MAS w82.5                	| 5        	| 0         	| 10777.72 	| 45.5 	| 7.17 	|          	|          	|            	|
+| HR OBS w82.5                    	| 4        	| 1.73  	| 10779.45 	| 45.3 	| 7.23 	|          	|          	|            	|
+| HRpool OBS HAS w82.5            	| 9        	| 5.62  	| 10783.34 	| 46.0 	| 7.02 	|          	|          	|            	|
+| HN OBS w82.5                   	| 6        	| 7.12  	| 10784.84 	| 41.9 	| 8.49 	|          	|          	|            	|
+| Unicos by strat w82.5           	| 12       	| 13.5      	| 10791.22 	|          	| 7.33 	| 6.80 	| 7.91  	| 0.038 	|
+| HN Obs HAS by strat 82.5m       	| 9        	| 14.18  	| 10791.9  	| 43.5  	| 7.92 	|          	|          	|            	|
+| HN OBS MAS w82.5               	| 5        	| 15.52  	| 10793.24 	| 43.4 	| 7.97  	|          	|          	|            	|
+| HR by strat w82.5               	| 14       	| 18.58  	| 10796.31 	|          	| 6.82 	| 5.99 	| 7.77 	| 0.066 	|
+| HN by strat f0 pooled w82.5     	| 5        	| 21.40  	| 10799.12 	| 43.9 	| 7.82 	| 6.03 	| 10.15 	| 0.133  	|
+| HN by strat w82.5               	| 15       	| 22.87  	| 10800.59 	|          	| 8.00 	| 6.89 	| 9.28 	| 0.076 	|
+| Unicos by strat f0 pooled w82.5 	| 2        	| 25.11  	| 10802.83 	| 44.3 	| 7.67 	| 7.00 	| 8.39 	| 0.046 	|
+| HR MAS w82.5                   	| 3        	| 29.18  	| 10806.9  	| 47.9 	| 6.57 	|          	|          	|            	|
+| HR by strat f0 pooled w82.5     	| 2        	| 29.90  	| 10807.62 	| 47.3 	| 6.73 	| 5.96 	| 7.60 	| 0.062 	|
+| HRpo0l HAS w82.5                	| 7        	| 31.62  	| 10809.34 	| 47.8 	| 6.60 	|          	|          	|            	|
+| HN HAS by strat 82.5m          	| 7        	| 34.73  	| 10812.45 	| 43.3  	| 8.04 	|          	|          	|            	|
+| HN MAS w82.5                   	| 3        	| 35.36  	| 10813.08 	| 43.3 	| 8.06 	|          	|          	|            	|
 
 <img src="distwinwarning.png" align="right">
 
-You will note there are no measures of precision associated with the density estimates when a single detection function (across strata) is used to estimate density. Do you understand why this is the case? If not, carefully read the message included in the Distance for Windows output for one of these models.
+You will note there are no measures of precision associated with the density estimates when a single detection function (across strata) is used to estimate density. Do you understand why this is the case? If not, carefully read the message included in the Distance for Windows output at right associated with output from one of these models.
 
 ## Analysis of dolphin sightings data
 
@@ -48,19 +48,20 @@ To obtain an overall impression of the data it is useful to fit a detection func
 For the MCDS analysis, cluster size was fitted as a continuous variable, whereas, month, Beaufort, cue and search position were fitted as factor variables. Table 1 summarises the results. 
 
 Table 1. Effective strip width estimates for the different models. 
+
 | Name                      	| # params 	| Delta AIC 	| AIC      	| ESW/EDR  	| ESW/EDR CV 	|
-|---------------------------	|----------	|-----------	|----------	|----------	|------------	|
-| interval hn search method 	|        4 	|         0 	| 5743.476 	| 3.388467 	| 0.01766289 	|
-| interval hn log cluster   	|        2 	|  11.13477 	| 5754.611 	| 3.423404 	| 0.01740193 	|
-| interval hn cos           	|        2 	|  16.72412 	|   5760.2 	| 3.024034 	| 0.04587239 	|
-| interval hn cluster       	|        2 	|  17.22998 	| 5760.706 	| 3.506682 	| 0.01725098 	|
-| interval hn month         	|        3 	|    22.125 	| 5765.601 	|  3.44452 	|  0.0171129 	|
-| interval hn sea state     	|        2 	|  26.37891 	| 5769.855 	| 3.454254 	| 0.01689994 	|
-| interval hn cue type      	|        4 	|  27.23877 	| 5770.715 	| 3.449551 	| 0.01703152 	|
+|---------------------------	|----------:|-----------:|----------:|----------:|------------:|
+| interval hn search method 	|        4 	|         0 	| 5743.4 	| 3.38 	| 0.017 	|
+| interval hn log cluster   	|        2 	|  11.13 	| 5754.6 	| 3.42 	| 0.017 	|
+| interval hn cos           	|        2 	|  16.72 	|   5760.2 	| 3.02 	| 0.045 	|
+| interval hn cluster       	|        2 	|  17.22 	| 5760.7 	| 3.50 	| 0.017 	|
+| interval hn month         	|        3 	|    22.12 	| 5765.6 	|  3.44 	|  0.017 	|
+| interval hn sea state     	|        2 	|  26.37 	| 5769.8 	| 3.45 	| 0.017 	|
+| interval hn cue type      	|        4 	|  27.23 	| 5770.7 	| 3.44 	| 0.017 	|
 
 <img src="method3detfn.png" align="right" width=600px>
 
 Based on the AIC, it seems as though the model including search method is best, however, there were warning messages about the detection function fitting and cluster size estimation. Before going on and looking at models which include two covariates, it is worth looking at the search model in more detail. The detection functions have very different scale parameters, for example, the detection function for search method 3 (using a helicopter) has a very wide shoulder and so the scale parameter is very large. See figure at right.
 
-This suggests that the observers were seeing everything out to 5 nm and so detection does not decrease with distance as it does with the other methods. One assumption of MCDS is that the perpendicular distance distributions of the covariate factor levels have the same shape. It may be worth refitting the model ignoring the observations made by the helicopter. Data can easily be selected/ignored using the Data filter \| Data selection tab. The selection criteria will be of the form ‘\[Search method\] IN (0,2,5)’
+This suggests that the observers were seeing everything out to 5 nm and so detection does not decrease with distance as it does with the other methods. One assumption of MCDS is that the perpendicular distance distributions of the covariate factor levels have the same shape. It may be worth refitting the model ignoring the observations made by the helicopter. Data can easily be selected/ignored using the *Data filter \| Data selection tab*. The selection criteria will be of the form `‘[Search method] IN (0,2,5)’`
 
