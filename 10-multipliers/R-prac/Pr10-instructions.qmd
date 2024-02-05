@@ -153,7 +153,7 @@ The final step is to use these multipliers to convert $\hat D_{\textrm{pellet gr
 # Weight by effort because we have repeats
 deer.ests <- dht2(deer.df, flatfile=sikadeer, strat_formula=~Region.Label,
                  convert_units=conversion.factor, multipliers=mult, 
-                 stratification="effort_sum", total_area=13.9)
+                 stratification="effort_sum", total_area=100)
 print(deer.ests)
 ```
 

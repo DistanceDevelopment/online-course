@@ -547,7 +547,7 @@ div.csl-indent {
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># Weight by effort because we have repeats</span></span>
 <span id="cb4-2"><a href="#cb4-2"></a>deer.ests <span class="ot">&lt;-</span> <span class="fu">dht2</span>(deer.df, <span class="at">flatfile=</span>sikadeer, <span class="at">strat_formula=</span><span class="sc">~</span>Region.Label,</span>
 <span id="cb4-3"><a href="#cb4-3"></a>                 <span class="at">convert_units=</span>conversion.factor, <span class="at">multipliers=</span>mult, </span>
-<span id="cb4-4"><a href="#cb4-4"></a>                 <span class="at">stratification=</span><span class="st">"effort_sum"</span>, <span class="at">total_area=</span><span class="fl">13.9</span>)</span>
+<span id="cb4-4"><a href="#cb4-4"></a>                 <span class="at">stratification=</span><span class="st">"effort_sum"</span>, <span class="at">total_area=</span><span class="dv">100</span>)</span>
 <span id="cb4-5"><a href="#cb4-5"></a><span class="fu">print</span>(deer.ests)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The function <code>dht2</code> also provides information on the components of variance. Make a note of the these (contribution of detection function, encounter rate, decay rate and what happened to production rate component?) in each strata.</p>
