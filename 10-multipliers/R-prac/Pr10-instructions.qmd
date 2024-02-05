@@ -37,16 +37,16 @@ Data from 9 woodlands (labelled A-H and J) were collected according to the surve
 #| label: montrave
 #| echo: FALSE
 #| fig.cap: "Location of sika deer survey in southern Scotland
-#| and the survey design (from Marques *et al.* (2001). Note the
+#| and the survey design @marques2001. Note the
 #| differing amounts of effort in different woodlands based on
 #| information derived from pilot surveys."
 #| out-width: 50%
 knitr::include_graphics("https://workshops.distancesampling.org/standrews-2019/intro/practicals/figures/Prac_9_Figure_1.png")
 ```
 
-In addition to these data, we also require estimates of the production rate. From a literature search, we learn that sika deer produce 25 pellet groups daily but this source did not provide a measure of variability of this estimate. During the course of our surveys we also followed the fate of some marked pellet groups to estimate the decay (disappearance) rates of a pellet group. A thorough discussion of methods useful for estimating decay rates and associated measures of precision can be found in @Laietal03.
+In addition to these data, we also require estimates of the production rate. From a literature search, we learn that sika deer produce **25 pellet groups daily** but this source did not provide a measure of variability of this estimate. During the course of our surveys we also followed the fate of some marked pellet groups to estimate the decay (disappearance) rates of a pellet group. A thorough discussion of methods useful for estimating decay rates and associated measures of precision can be found in @Laietal03.
 
-There are many factors that might influence both production and decay rates, and for purposes of this exercise we will make the simplifying assumption that decay rate is homogeneous across these woodlands; with their mean time to decay of 163 days and a standard error of 13 days. (If you were to conduct a survey such as this, you would want to investigate this assumption more thoroughly.)
+There are many factors that might influence both production and decay rates, and for purposes of this exercise we will make the simplifying assumption that decay rate is homogeneous across these woodlands. A study to estimate the mean time for pellet groups to decay was conducted (see [Multipliers section](#multipliers) below), with decay rate from that study presumed to be representative of the study area. If you were to conduct a survey such as this, you would want to investigate this assumption more thoroughly.
 
 ## Getting started
 
