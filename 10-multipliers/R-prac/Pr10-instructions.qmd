@@ -163,7 +163,7 @@ The function `dht2` also provides information on the components of variance. Mak
 
 Remember the wren data that was introduced in the point transect exercises ([Module 5](../../05-points/R-prac/Pr5-instructions.qmd), point transects): another data collection method that was used was cue counting. In this case, the cue was a song burst. These data are stored in `wren_cuecount` in the `Distance` package. The data arose from the point transect survey of songbirds described in @buckland2006.
 
-Following a similar approach to that of the whale data, estimate a detection function of songs, create a multipliers object and include this in the `dht2` function to estimate wren density. Call this `w3.est`). There are a few things that will be useful to know:
+Following a similar approach to that of the whale data, estimate a detection function of songs, create a multipliers object and include this in the `dht2` function to estimate wren density. Call this `wren3.est`). There are a few things that will be useful to know:
 
 -   search effort (measured in time) was 2 visits each lasting 5 minutes,
 -   effort will need to be properly specified before fitting the detection function with `ds`
@@ -177,13 +177,14 @@ What do you think the sampling fraction will be for these point transects?
 #| echo: TRUE
 data("wren_cuecount")
 conversion.factor <- convert_units("meter", NULL, "hectare")
-w3.est <- dht2(w3.hr, flatfile=wren_cuecount, strat_formula=~1,
+wren3.est <- dht2(wren3.hr, flatfile=wren_cuecount, strat_formula=~1,
                multipliers=mult, convert_units=conversion.factor)
+print(wren3.est, report="abundance")
 ```
 
 To obtain density (rather than abundance) use the following command:
 
 ```{r}
-#| eval = F
-print(w3.est, report="density")
+#| eval: FALSE
+print(wren3.est, report="density")
 ```

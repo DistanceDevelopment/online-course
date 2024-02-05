@@ -556,7 +556,7 @@ div.csl-indent {
 <section id="cue-counting-of-songbirds" class="level1">
 <h1>Cue counting of songbirds</h1>
 <p>Remember the wren data that was introduced in the point transect exercises (<a href="../../05-points/R-prac/Pr5-instructions.html">Module 5</a>, point transects): another data collection method that was used was cue counting. In this case, the cue was a song burst. These data are stored in <code>wren_cuecount</code> in the <code>Distance</code> package. The data arose from the point transect survey of songbirds described in <span class="citation" data-cites="buckland2006">Buckland (<a href="#ref-buckland2006" role="doc-biblioref">2006</a>)</span>.</p>
-<p>Following a similar approach to that of the whale data, estimate a detection function of songs, create a multipliers object and include this in the <code>dht2</code> function to estimate wren density. Call this <code>w3.est</code>). There are a few things that will be useful to know:</p>
+<p>Following a similar approach to that of the whale data, estimate a detection function of songs, create a multipliers object and include this in the <code>dht2</code> function to estimate wren density. Call this <code>wren3.est</code>). There are a few things that will be useful to know:</p>
 <ul>
 <li>search effort (measured in time) was 2 visits each lasting 5 minutes,</li>
 <li>effort will need to be properly specified before fitting the detection function with <code>ds</code></li>
@@ -567,12 +567,13 @@ div.csl-indent {
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">data</span>(<span class="st">"wren_cuecount"</span>)</span>
 <span id="cb5-2"><a href="#cb5-2"></a>conversion.factor <span class="ot">&lt;-</span> <span class="fu">convert_units</span>(<span class="st">"meter"</span>, <span class="cn">NULL</span>, <span class="st">"hectare"</span>)</span>
-<span id="cb5-3"><a href="#cb5-3"></a>w3.est <span class="ot">&lt;-</span> <span class="fu">dht2</span>(w3.hr, <span class="at">flatfile=</span>wren_cuecount, <span class="at">strat_formula=</span><span class="sc">~</span><span class="dv">1</span>,</span>
-<span id="cb5-4"><a href="#cb5-4"></a>               <span class="at">multipliers=</span>mult, <span class="at">convert_units=</span>conversion.factor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-3"><a href="#cb5-3"></a>wren3.est <span class="ot">&lt;-</span> <span class="fu">dht2</span>(wren3.hr, <span class="at">flatfile=</span>wren_cuecount, <span class="at">strat_formula=</span><span class="sc">~</span><span class="dv">1</span>,</span>
+<span id="cb5-4"><a href="#cb5-4"></a>               <span class="at">multipliers=</span>mult, <span class="at">convert_units=</span>conversion.factor)</span>
+<span id="cb5-5"><a href="#cb5-5"></a><span class="fu">print</span>(wren3.est, <span class="at">report=</span><span class="st">"abundance"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>To obtain density (rather than abundance) use the following command:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">print</span>(w3.est, <span class="at">report=</span><span class="st">"density"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">print</span>(wren3.est, <span class="at">report=</span><span class="st">"density"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
