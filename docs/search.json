@@ -431,7 +431,7 @@
     "href": "10-multipliers/R-prac/Pr10-instructions.html#fit-detection-function-to-dung-pellets",
     "title": "Analysis using multipliers",
     "section": "Fit detection function to dung pellets",
-    "text": "Fit detection function to dung pellets\nFit the usual series of models (i.e. half normal, hazard rate, uniform) models to the distances to pellet groups and decide on a detection function (don’t spend too long on this). Call your model deer.df. This detection function will be used to obtain \\(\\hat D_{\\textrm{pellet groups}}\\).\nHave a look at the Summary statistics for this model - what do you notice about the allocation of search effort in each woodland?"
+    "text": "Fit detection function to dung pellets\nFit the usual series of models (i.e. half normal, hazard rate, uniform) models to the distances to pellet groups and decide on a detection function (don’t spend too long on this). Call the fitted model object deer.df (abbreviation for deer detection function). This detection function will be used to obtain \\(\\hat D_{\\textrm{pellet groups}}\\).\nHave a look at the Summary statistics for this model - what do you notice about the allocation of search effort in each woodland?"
   },
   {
     "objectID": "10-multipliers/R-prac/Pr10-instructions.html#multipliers",
