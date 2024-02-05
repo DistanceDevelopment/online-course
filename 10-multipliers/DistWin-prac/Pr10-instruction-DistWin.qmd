@@ -27,13 +27,15 @@ Data from 9 woodlands were collected and reside in the Distance for Windows proj
 
 In addition to these data, we also require estimates of the defecation rate. From a consultation with the literature, we learn that sika deer deposit 25 pellet groups daily. The literature source did not provide a measure of variability of this estimate. During the course of our surveys we also followed the fate of some marked pellet groups to estimate the disappearance (decay) rates of a group. A thorough discussion of methods useful for estimating decay rates and associated measures of precision can be found in @Laietal03.
 
-There are many factors that might influence both deposition and decay rates, and for purposes of this exercise we will make the simplifying assumption that decay rate is homogeneous across these woodlands; with their mean time to decay of 163 days and a standard error of 13 days. However if you were to conduct a survey such as this, you would want to investigate this assumption more thoroughly.
+There are many factors that might influence both deposition and decay rates, and for purposes of this exercise we will make the simplifying assumption that decay rate is homogeneous across these woodlands; with their **mean time to decay of 163 days** and a **standard error of 13 days**. However if you were to conduct a survey such as this, you would want to investigate this assumption more thoroughly.
 
 ## Analysis Exercises
 
 Use the Distance project [Deer pellets.zip](Deer pellets.zip) for the following analyses.
 
-1.  Adjust the multipliers in the project (replacing the place-holders in the project, with values provided in the previous section of this exercise).
+<img src=multiplier-values.png align="right" width=450px>
+
+1.  Adjust the multipliers in the project found in the Global layer of the data tab (see screen capture at right). Replace the place-holders in the project, with values provided in the previous section of this exercise.
 2.  Fit the usual series of models (uniform, half normal, and hazard rate) models to the data.
 3.  Select the Multipliers button in the Model Definition Properties to specify the layer and the field in the project database for the multipliers you wish to employ (along with their measure of precision).
 4.  Produce estimates using the woodland as strata, pooling data across strata for fitting the detection function, but using woodland-specific encounter rate to produce woodland-specific estimates of density.

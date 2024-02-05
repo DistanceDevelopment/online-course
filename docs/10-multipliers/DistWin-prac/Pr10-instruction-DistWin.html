@@ -305,7 +305,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../09-clusters/clusterslanding.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Analysis of point transect data</span></a>
+ <span class="menu-text">Analysis of animals in groups</span></a>
   </div>
 </li>
       </ul>
@@ -420,13 +420,14 @@ Analysis with the use of multipliers
 <h2 class="anchored" data-anchor-id="the-data">The Data</h2>
 <p><img src="studyarea.png" align="right" width="350px"> Data from 9 woodlands were collected and reside in the Distance for Windows project <a href="Deer pellets.zip">Deer pellets.zip</a> The design of the survey is shown at right (note differing amounts of effort in different woodlands based on information derived from pilot surveys).</p>
 <p>In addition to these data, we also require estimates of the defecation rate. From a consultation with the literature, we learn that sika deer deposit 25 pellet groups daily. The literature source did not provide a measure of variability of this estimate. During the course of our surveys we also followed the fate of some marked pellet groups to estimate the disappearance (decay) rates of a group. A thorough discussion of methods useful for estimating decay rates and associated measures of precision can be found in <span class="citation" data-cites="Laietal03">Laing et al. (<a href="#ref-Laietal03" role="doc-biblioref">2003</a>)</span>.</p>
-<p>There are many factors that might influence both deposition and decay rates, and for purposes of this exercise we will make the simplifying assumption that decay rate is homogeneous across these woodlands; with their mean time to decay of 163 days and a standard error of 13 days. However if you were to conduct a survey such as this, you would want to investigate this assumption more thoroughly.</p>
+<p>There are many factors that might influence both deposition and decay rates, and for purposes of this exercise we will make the simplifying assumption that decay rate is homogeneous across these woodlands; with their <strong>mean time to decay of 163 days</strong> and a <strong>standard error of 13 days</strong>. However if you were to conduct a survey such as this, you would want to investigate this assumption more thoroughly.</p>
 </section>
 <section id="analysis-exercises" class="level2">
 <h2 class="anchored" data-anchor-id="analysis-exercises">Analysis Exercises</h2>
 <p>Use the Distance project <a href="Deer pellets.zip">Deer pellets.zip</a> for the following analyses.</p>
+<p><img src="multiplier-values.png" align="right" width="450px"></p>
 <ol type="1">
-<li>Adjust the multipliers in the project (replacing the place-holders in the project, with values provided in the previous section of this exercise).</li>
+<li>Adjust the multipliers in the project found in the Global layer of the data tab (see screen capture at right). Replace the place-holders in the project, with values provided in the previous section of this exercise.</li>
 <li>Fit the usual series of models (uniform, half normal, and hazard rate) models to the data.</li>
 <li>Select the Multipliers button in the Model Definition Properties to specify the layer and the field in the project database for the multipliers you wish to employ (along with their measure of precision).</li>
 <li>Produce estimates using the woodland as strata, pooling data across strata for fitting the detection function, but using woodland-specific encounter rate to produce woodland-specific estimates of density.</li>
