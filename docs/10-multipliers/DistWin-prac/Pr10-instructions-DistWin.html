@@ -8,7 +8,7 @@
 
 <meta name="author" content="Centre for Research into Ecological and Environmental Modelling   University of St Andrews">
 
-<title>Introductory distance sampling training materials - Multipliers and indirect surveys</title>
+<title>Introductory distance sampling training materials - Analysis with the use of multipliers</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,25 +21,44 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -62,8 +81,10 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <script src="https://kit.fontawesome.com/78ddb093ea.js" crossorigin="anonymous"></script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-sidebar docked nav-fixed">
@@ -73,7 +94,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Introductory distance sampling training materials</span>
     </a>
   </div>
@@ -98,7 +119,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../10-multipliers/multiplierslanding.html">Multipliers</a></li><li class="breadcrumb-item"><a href="../10-multipliers/multiplierslanding.html">Multipliers and indirect surveys</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Analysis with the use of multipliers</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -129,13 +150,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../01-intro/introlanding.html" class="sidebar-item-text sidebar-link">
+  <a href="../../01-intro/introlanding.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Fundamentals of distance sampling</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../01-intro/Mod1-2023-intro.pdf" class="sidebar-item-text sidebar-link">
+  <a href="../../01-intro/Mod1-2023-intro.pdf" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture slides</span></a>
   </div>
 </li>
@@ -147,7 +168,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../01-intro/introlanding.html#exercise-materials" class="sidebar-item-text sidebar-link">
+  <a href="../../01-intro/introlanding.html#exercise-materials" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercise materials</span></a>
   </div>
 </li>
@@ -164,7 +185,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../02-detfns/detfnlanding.html" class="sidebar-item-text sidebar-link">
+  <a href="../../02-detfns/detfnlanding.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Fitting detection functions to line transect data</span></a>
   </div>
 </li>
@@ -181,7 +202,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../03-criticism/criticismlanding.html" class="sidebar-item-text sidebar-link">
+  <a href="../../03-criticism/criticismlanding.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Model criticism</span></a>
   </div>
 </li>
@@ -198,7 +219,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../04-precision/precisionlanding.html" class="sidebar-item-text sidebar-link">
+  <a href="../../04-precision/precisionlanding.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Precision of density estimates</span></a>
   </div>
 </li>
@@ -215,7 +236,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../05-points/pointslanding.html" class="sidebar-item-text sidebar-link">
+  <a href="../../05-points/pointslanding.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Analysis of point transect data</span></a>
   </div>
 </li>
@@ -232,7 +253,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../06-design/designlanding.html" class="sidebar-item-text sidebar-link">
+  <a href="../../06-design/designlanding.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Design of distance sampling surveys</span></a>
   </div>
 </li>
@@ -249,7 +270,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../07-stratify/stratifylanding.html" class="sidebar-item-text sidebar-link">
+  <a href="../../07-stratify/stratifylanding.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Analysis of stratified surveys</span></a>
   </div>
 </li>
@@ -266,7 +287,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../08-covariates/covariateslanding.html" class="sidebar-item-text sidebar-link">
+  <a href="../../08-covariates/covariateslanding.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Including covariates in detection function modelling</span></a>
   </div>
 </li>
@@ -283,7 +304,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../09-clusters/clusterslanding.html" class="sidebar-item-text sidebar-link">
+  <a href="../../09-clusters/clusterslanding.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Analysis of animals in groups</span></a>
   </div>
 </li>
@@ -291,16 +312,16 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false">
  <span class="menu-text">Multipliers</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../10-multipliers/multiplierslanding.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../10-multipliers/multiplierslanding.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Multipliers and indirect surveys</span></a>
   </div>
 </li>
@@ -317,7 +338,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../11-mrds/mrdslanding.html" class="sidebar-item-text sidebar-link">
+  <a href="../../11-mrds/mrdslanding.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Analysis of double platform data</span></a>
   </div>
 </li>
@@ -333,11 +354,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#multipliers-and-indirect-surveys" id="toc-multipliers-and-indirect-surveys" class="nav-link active" data-scroll-target="#multipliers-and-indirect-surveys">Multipliers and indirect surveys</a></li>
-  <li><a href="#lecture-materials" id="toc-lecture-materials" class="nav-link" data-scroll-target="#lecture-materials">Lecture materials</a></li>
-  <li><a href="#exercise-materials" id="toc-exercise-materials" class="nav-link" data-scroll-target="#exercise-materials">Exercise materials</a></li>
-  <li><a href="#supplemental-materials" id="toc-supplemental-materials" class="nav-link" data-scroll-target="#supplemental-materials">Supplemental materials</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  <li><a href="#sika-deer-survey" id="toc-sika-deer-survey" class="nav-link active" data-scroll-target="#sika-deer-survey">Sika deer survey</a>
+  <ul class="collapse">
+  <li><a href="#the-data" id="toc-the-data" class="nav-link" data-scroll-target="#the-data">The Data</a></li>
+  <li><a href="#analysis-exercises" id="toc-analysis-exercises" class="nav-link" data-scroll-target="#analysis-exercises">Analysis Exercises</a></li>
+  </ul></li>
+  <li><a href="#bucklands-wren-cue-count" id="toc-bucklands-wren-cue-count" class="nav-link" data-scroll-target="#bucklands-wren-cue-count">Buckland’s wren cue count</a></li>
   </ul>
 </nav>
     </div>
@@ -346,7 +368,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Multipliers and indirect surveys</h1>
+<h1 class="title">Analysis with the use of multipliers</h1>
 </div>
 
 
@@ -373,83 +395,70 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="multipliers-and-indirect-surveys" class="level2">
-<h2 class="anchored" data-anchor-id="multipliers-and-indirect-surveys">Multipliers and indirect surveys</h2>
-<div class="columns">
-<div class="column" style="width:60%;">
-<p>It is potentially easier to estimate the density of things produced by animals (songs, dung, nests) than to estimate density of animals. In this situation, the calculated density of animal cues needs to be transformed into an estimate of animal density. This requires companion field investigations to estimate cue production rate and possibly, cue disappearance rate. Those rates are termed multipliers.</p>
-<p>This exercise presents data on a Sika deer dung study in southern Scotland, where data on dung disappearance needs to be analysed via logistic regression to produce the disappearance rate multiplier. We return to the Montrave Estate study of Prof Buckland to estimate density of winter wrens via detections of song; necessitated because of evasive movement of winter wrens in the field.</p>
-</div><div class="column" style="width:40%;">
-<p><img src="multipliers-unsplash.jpg" class="img-fluid"></p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
+<div class="callout-title-container flex-fill">
+Analysis with the use of multipliers
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<section id="distance-for-windows-exercise" class="level3 callout-body-container callout-body">
+<h3 class="anchored" data-anchor-id="distance-for-windows-exercise">Distance for Windows exercise</h3>
 </section>
-<section id="lecture-materials" class="level2">
-<h2 class="anchored" data-anchor-id="lecture-materials">Lecture materials</h2>
-<div class="slide-deck">
-<p><strong>Lecture discussion</strong></p>
-<div class="slides">
-<p><a href="Mod10-2023-multipliers.pdf">Slides</a></p>
-</div>
-<div class="video">
-<p><a href="https://youtu.be/A_NRZqWEhXs">Video</a></p>
 </div>
 </div>
+<section id="sika-deer-survey" class="level1">
+<h1>Sika deer survey</h1>
+<p>The question is how to estimate of the density of sika deer <em>(Cervus nippon)</em> in a number of woodlands in the Scottish Borders. These animals are quite shy and often will be alert to the presence of an observer before the observer detects them, making surveys of the deer challenging. As a consequence, indirect estimation methods have been applied to this problem. In this manner, an estimate of density is produced for some sign generated by deer (faecal pellets) and this estimate is transformed to density of deer by</p>
+<p><span class="math display">\[\hat{D}_{\text{deer}} = \frac{\frac{\hat{D}_{{\text{pellet group}}}}{\text{mean time to decay}}}{\text{dung production rate (per animal)}} = \frac{\text{dung deposited daily}}{\text{dung production rate}}\]</span></p>
+<p>We will produce a pellet group density estimate, then adjust it accordingly to account for the deposition and decay processes operating during the time the data are being acquired. We will also take uncertainty in the production and decay rates into account in our final estimate of deer density. The complete study is described in <span class="citation" data-cites="marques2001">Marques et al. (<a href="#ref-marques2001" role="doc-biblioref">2001</a>)</span>.</p>
+<section id="the-data" class="level2">
+<h2 class="anchored" data-anchor-id="the-data">The Data</h2>
+<p><img src="studyarea.png" align="right" width="350px"> Data from 9 woodlands were collected and reside in the Distance for Windows project <a href="Deer pellets.zip">Deer pellets.zip</a> The design of the survey is shown at right (note differing amounts of effort in different woodlands based on information derived from pilot surveys).</p>
+<p>In addition to these data, we also require estimates of the defecation rate. From a consultation with the literature, we learn that sika deer deposit 25 pellet groups daily. The literature source did not provide a measure of variability of this estimate. During the course of our surveys we also followed the fate of some marked pellet groups to estimate the disappearance (decay) rates of a group. A thorough discussion of methods useful for estimating decay rates and associated measures of precision can be found in <span class="citation" data-cites="Laietal03">Laing et al. (<a href="#ref-Laietal03" role="doc-biblioref">2003</a>)</span>.</p>
+<p>There are many factors that might influence both deposition and decay rates, and for purposes of this exercise we will make the simplifying assumption that decay rate is homogeneous across these woodlands; with their <strong>mean time to decay of 163 days</strong> and a <strong>standard error of 13 days</strong>. However if you were to conduct a survey such as this, you would want to investigate this assumption more thoroughly.</p>
 </section>
-<section id="exercise-materials" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-materials">Exercise materials</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="lab">
-<p><strong>Using R package</strong></p>
-<div class="video">
-<p><a href="https://youtu.be/6GGDkGzKZt4">Video introduction</a></p>
-</div>
-<div class="instructions">
-<p><a href="../10-multipliers/R-prac/Pr10-instructions.html">Instructions</a></p>
-</div>
-<div class="instructions">
-<p><a href="../10-multipliers/R-prac/Prac10_solution.html">Solution and discussion</a></p>
-</div>
-<div class="video">
-<p><a href="https://youtu.be/HiVKN8MuQHU">Video summary</a></p>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="lab">
-<p><strong>Using Distance for Windows</strong></p>
-<div class="video">
-<p><a href="https://youtu.be/xSXRnWysgEw">Video introduction</a></p>
-</div>
-<div class="instructions">
-<p><a href="../10-multipliers/DistWin-prac/Pr10-instructions-DistWin.html">Instructions</a></p>
-</div>
-<div class="instructions">
-<p><a href="../10-multipliers/DistWin-prac/Pr10-solution-DistWin.html">Solution and discussion</a></p>
-</div>
-<div class="video">
-<p><a href="https://youtu.be/w9_vjoniXTY">Video summary</a></p>
-</div>
-</div>
-</div>
-</div>
+<section id="analysis-exercises" class="level2">
+<h2 class="anchored" data-anchor-id="analysis-exercises">Analysis Exercises</h2>
+<p>Use the Distance project <a href="Deer pellets.zip">Deer pellets.zip</a> for the following analyses.</p>
+<p><img src="multiplier-values.png" align="right" width="450px"></p>
+<ol type="1">
+<li>Adjust the multipliers in the project found in the Global layer of the data tab (see screen capture at right). Replace the place-holders in the project, with values provided in the previous section of this exercise.</li>
+<li>Fit the usual series of models (uniform, half normal, and hazard rate) models to the data.</li>
+<li>Select the Multipliers button in the Model Definition Properties to specify the layer and the field in the project database for the multipliers you wish to employ (along with their measure of precision).</li>
+<li>Produce estimates using the woodland as strata, pooling data across strata for fitting the detection function, but using woodland-specific encounter rate to produce woodland-specific estimates of density.</li>
+<li>Produce an overall estimate of density as mean of woodland-specific densities weighted by the effort allocated within each woodlot.</li>
+<li>Make special note of the components of variance (contribution of detection function, encounter rate, decay rate, and what happened to defecation rate component?) in each of the strata.</li>
+</ol>
 </section>
-<section id="supplemental-materials" class="level2">
-<h2 class="anchored" data-anchor-id="supplemental-materials">Supplemental materials</h2>
-<div class="homework">
-<p><strong>No supplements</strong></p>
-<div class="instructions">
-<p>No supplemental material</p>
-</div>
-</div>
 </section>
-<section id="references" class="level1">
-<h1>References</h1>
+<section id="bucklands-wren-cue-count" class="level1">
+<h1>Buckland’s wren cue count</h1>
+<p>As part of the songbird survey conducted by Prof.&nbsp;Buckland <span class="citation" data-cites="buckland2006">(<a href="#ref-buckland2006" role="doc-biblioref">Buckland, 2006</a>)</span>, he carried out a cue count survey for the species of interest. In this exercise, you will use the radial distances to detections of wren songs <em>(Troglodytes troglodytes)</em>, from the 32 point count stations, in conjunction with Prof.&nbsp;Buckland’s estimate of cue production rate to estimate density and abundance of wrens in his 33ha study area.</p>
+<p>Effort for cue count surveys is recorded in time units. For Buckland’s survey each visit to a point was 5 minutes in duration, but each point was visited twice. Hence the field <em>Search effort</em> associated with each point records 10 minutes of effort. The measurement of cue production rate (next paragraph) must also respect the units of measure of effort.</p>
+<p><img src="global-layer.png" align="right"> The project <a href="Wren3-2023.zip">Wren3-2023.zip</a> contains the detections as well as the rate at which birds produce songbursts (1.4558 bursts min<sup>-1</sup>) with a standard error of 0.2428. This standard error is a measure of variability between individual wrens. Note the cue production rate multiplier is stored in the Distance for Windows project in the <em>Global Layer</em> of the data sheet (right).</p>
+<p><img src="multiplier-screen.png" align="left" width="300px"> Your task is to fit detection function models to the wren point transect data and appropriately apply the multiplier to convert song density into wren density. Prof Buckland in his paper <span class="citation" data-cites="buckland2006">(<a href="#ref-buckland2006" role="doc-biblioref">Buckland, 2006</a>)</span> used a truncation distance for this data set of 92.5m. See screen shot of <em>Multipliers</em> tab of the <em>Model Definition Properties</em> (left).</p>
+<p>Note the goodness of fit of your chosen model.</p>
+
 
 
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list">
+<div id="ref-buckland2006" class="csl-entry" role="listitem">
+Buckland, S. T. (2006). Point-transect surveys for songbirds: Robust methodologies. <em>The Auk</em>, <em>123</em>(2), 345–357. <a href="https://doi.org/10.1642/0004-8038(2006)123[345:PSFSRM]2.0.CO;2">https://doi.org/10.1642/0004-8038(2006)123[345:PSFSRM]2.0.CO;2</a>
+</div>
+<div id="ref-Laietal03" class="csl-entry" role="listitem">
+Laing, S. E., Buckland, S. T., Burn, R. W., Lambie, D., &amp; Amphlett, A. (2003). Dung and nest surveys: Estimating decay rate. <em>Journal of Applied Ecology</em>, <em>40</em>, 1102–1111. <a href="https://doi.org/10.1111/j.1365-2664.2003.00861.x">https://doi.org/10.1111/j.1365-2664.2003.00861.x</a>
+</div>
+<div id="ref-marques2001" class="csl-entry" role="listitem">
+Marques, F. F. C., Buckland, S. T., Goffin, D., Dixon, C. E., Borchers, D. L., Mayle, B. A., &amp; Peace, A. J. (2001). Estimating deer abundance from line transect surveys of dung: sika deer in southern Scotland. <em>Journal of Applied Ecology</em>, <em>38</em>(2), 349–363. <a href="https://doi.org/10.1046/j.1365-2664.2001.00584.x">https://doi.org/10.1046/j.1365-2664.2001.00584.x</a>
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

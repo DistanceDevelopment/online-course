@@ -845,5 +845,61 @@
     "title": "Covariates in detection function model",
     "section": "Analysis",
     "text": "Analysis\nThe data are available in the Distance package:\n\ndata(ETP_Dolphin)\nhead(ETP_Dolphin, n=3)\n\nStart by running a set of conventional distance analyses. Are there any problems in the data and if so how might you mitigate them? (Hint - try dividing the histogram of distances into a large number of intervals.)\nAs there are a number of potential covariates to be used in this example (i.e. search method, cue, Beaufort class and month), try fitting models with different covariates and combinations of the covariates. All of the covariates in this example are factor covariates except group size and because they have numeric codes, use the factor function to let R know to treat them as factors.\nNote that both distances and transect lengths were recorded in nautical miles and area in nautical miles squared and so the argument convert_units does not need to be specified.\nKeep in mind that this is a large dataset (&gt; 1000 observations), and hence estimation may take a while. You will likely end up with quite a few models as there are several potential covariates and no ‘right’ answers. Discuss your choice of final model (or models) with your colleagues - did you make the same choices?"
+  },
+  {
+    "objectID": "10-multipliers/multiplierslanding.html",
+    "href": "10-multipliers/multiplierslanding.html",
+    "title": "Multipliers and indirect surveys",
+    "section": "",
+    "text": "It is potentially easier to estimate the density of things produced by animals (songs, dung, nests) than to estimate density of animals. In this situation, the calculated density of animal cues needs to be transformed into an estimate of animal density. This requires companion field investigations to estimate cue production rate and possibly, cue disappearance rate. Those rates are termed multipliers.\nThis exercise presents data on a Sika deer dung study in southern Scotland, where data on dung disappearance needs to be analysed via logistic regression to produce the disappearance rate multiplier. We return to the Montrave Estate study of Prof Buckland to estimate density of winter wrens via detections of song; necessitated because of evasive movement of winter wrens in the field."
+  },
+  {
+    "objectID": "10-multipliers/multiplierslanding.html#multipliers-and-indirect-surveys",
+    "href": "10-multipliers/multiplierslanding.html#multipliers-and-indirect-surveys",
+    "title": "Multipliers and indirect surveys",
+    "section": "",
+    "text": "It is potentially easier to estimate the density of things produced by animals (songs, dung, nests) than to estimate density of animals. In this situation, the calculated density of animal cues needs to be transformed into an estimate of animal density. This requires companion field investigations to estimate cue production rate and possibly, cue disappearance rate. Those rates are termed multipliers.\nThis exercise presents data on a Sika deer dung study in southern Scotland, where data on dung disappearance needs to be analysed via logistic regression to produce the disappearance rate multiplier. We return to the Montrave Estate study of Prof Buckland to estimate density of winter wrens via detections of song; necessitated because of evasive movement of winter wrens in the field."
+  },
+  {
+    "objectID": "10-multipliers/multiplierslanding.html#lecture-materials",
+    "href": "10-multipliers/multiplierslanding.html#lecture-materials",
+    "title": "Multipliers and indirect surveys",
+    "section": "Lecture materials",
+    "text": "Lecture materials\n\nLecture discussion\n\nSlides\n\n\nVideo"
+  },
+  {
+    "objectID": "10-multipliers/multiplierslanding.html#exercise-materials",
+    "href": "10-multipliers/multiplierslanding.html#exercise-materials",
+    "title": "Multipliers and indirect surveys",
+    "section": "Exercise materials",
+    "text": "Exercise materials\n\n\n\nUsing R package\n\nVideo introduction\n\n\nInstructions\n\n\nSolution and discussion\n\n\nVideo summary\n\n\n\n\nUsing Distance for Windows\n\nVideo introduction\n\n\nInstructions\n\n\nSolution and discussion\n\n\nVideo summary"
+  },
+  {
+    "objectID": "10-multipliers/multiplierslanding.html#supplemental-materials",
+    "href": "10-multipliers/multiplierslanding.html#supplemental-materials",
+    "title": "Multipliers and indirect surveys",
+    "section": "Supplemental materials",
+    "text": "Supplemental materials\n\nNo supplements\n\nNo supplemental material"
+  },
+  {
+    "objectID": "10-multipliers/DistWin-prac/Pr10-instructions-DistWin.html",
+    "href": "10-multipliers/DistWin-prac/Pr10-instructions-DistWin.html",
+    "title": "Analysis with the use of multipliers",
+    "section": "",
+    "text": "Analysis with the use of multipliers"
+  },
+  {
+    "objectID": "10-multipliers/DistWin-prac/Pr10-instructions-DistWin.html#the-data",
+    "href": "10-multipliers/DistWin-prac/Pr10-instructions-DistWin.html#the-data",
+    "title": "Analysis with the use of multipliers",
+    "section": "The Data",
+    "text": "The Data\n Data from 9 woodlands were collected and reside in the Distance for Windows project Deer pellets.zip The design of the survey is shown at right (note differing amounts of effort in different woodlands based on information derived from pilot surveys).\nIn addition to these data, we also require estimates of the defecation rate. From a consultation with the literature, we learn that sika deer deposit 25 pellet groups daily. The literature source did not provide a measure of variability of this estimate. During the course of our surveys we also followed the fate of some marked pellet groups to estimate the disappearance (decay) rates of a group. A thorough discussion of methods useful for estimating decay rates and associated measures of precision can be found in Laing et al. (2003).\nThere are many factors that might influence both deposition and decay rates, and for purposes of this exercise we will make the simplifying assumption that decay rate is homogeneous across these woodlands; with their mean time to decay of 163 days and a standard error of 13 days. However if you were to conduct a survey such as this, you would want to investigate this assumption more thoroughly."
+  },
+  {
+    "objectID": "10-multipliers/DistWin-prac/Pr10-instructions-DistWin.html#analysis-exercises",
+    "href": "10-multipliers/DistWin-prac/Pr10-instructions-DistWin.html#analysis-exercises",
+    "title": "Analysis with the use of multipliers",
+    "section": "Analysis Exercises",
+    "text": "Analysis Exercises\nUse the Distance project Deer pellets.zip for the following analyses.\n\n\nAdjust the multipliers in the project found in the Global layer of the data tab (see screen capture at right). Replace the place-holders in the project, with values provided in the previous section of this exercise.\nFit the usual series of models (uniform, half normal, and hazard rate) models to the data.\nSelect the Multipliers button in the Model Definition Properties to specify the layer and the field in the project database for the multipliers you wish to employ (along with their measure of precision).\nProduce estimates using the woodland as strata, pooling data across strata for fitting the detection function, but using woodland-specific encounter rate to produce woodland-specific estimates of density.\nProduce an overall estimate of density as mean of woodland-specific densities weighted by the effort allocated within each woodlot.\nMake special note of the components of variance (contribution of detection function, encounter rate, decay rate, and what happened to defecation rate component?) in each of the strata."
   }
 ]
