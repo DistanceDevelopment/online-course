@@ -4,21 +4,34 @@ title: "Introductory distance sampling training materials"
 
 ::: columns
 
-::: {.column width="55%"}
+::: {.column width="35%"}
 ![](D60generic.jpg)
 :::
 
-::: {.column width="40%"}
-This is the landing page for the distance sampling training materials website.
+::: {.column width="60%"}
+## Distance sampling training materials
 
-- Describe philosophy of lecture/exercise pairing.
-- differentiate the two exercise pathways
-- discuss role of video introduction/summary
-- if there are self-assessed tutorials, describe them
+These materials have been prepared by staff at the Centre for Research into Ecological and Environmental Modelling (CREEM) at the Univ of St Andrews. Members of CREEM have been developing analytical methods for distance sampling data over the past 30 years. In addition to developing methods, CREEM has also been creating software to implement those analytical methods. A comprehensive set of training materials have been developed to bring together best practices in designing, conducting and analysing distance sampling surveys. The aim of materials at this website is to help you produce the most defensible inference from your distance sampling surveys.
 :::
 
 :::
 
-# Other sundries
-- mention distancesampling.org
-- mention "other workshops" if they exist
+## Philosophy
+The training philosophy involves lecture materials paired with computer exercises to cement concepts described in the lectures. The practical exercises are fundamental to proper analysis of distance sampling data. The purpose of preparing the exercises is to offer you the opportunity to experiment with the software and analytical methods. It is better to experiment (and make mistakes) with data we provide to you, than to make mistakes in the analysis and inference of your own data.
+
+Each of the lectures has both slides (for you to download) and narrated video. Likewise each computer exercise has a video introduction, describing the concepts being addresses and well as a video summary, emphasising both key steps when using the software as well as important "take home messages" arising in each practical.
+
+Distance sampling software has undergone an evolution over the >25 years since development began at CREEM. In these training materials, we provide exercises based around both of our software platforms: 
+
+- Distance for Windows (a standalone) Windows-based programme with a graphical user interface
+  - The installation package for this software can be downloaded [from this website](http://distancesampling.org/)
+- an R package `Distance`. 
+  - The R language and environment can be downloaded from [CRAN](https://cran.r-project.org/) as well as the [`Distance` package itself](https://cran.r-project.org/web/packages/Distance/index.html).
+  - Practicals based around the R package assume you have fundamental knowledge of the R language.
+
+
+## Other distance sampling resources
+
+- A "one stop" resources for distance sampling materials developed by CREEM can be found at [https://distancesampling.org](https://distancesampling.org)
+- If you wish to receive training in distance sampling with a "live" instructor, CREEM offers workshops carried out online. Offerings of these training opportunities can be found on our [workshop web site](http://workshops.distancesampling.org/)
+- Examples of distance sampling analyses conducted using the `Distance` R package can be found on our [examples](https://examples.distancesampling.org/) web site.

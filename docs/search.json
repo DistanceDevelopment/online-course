@@ -74,7 +74,7 @@
     "href": "index.html",
     "title": "Introductory distance sampling training materials",
     "section": "",
-    "text": "This is the landing page for the distance sampling training materials website.\n\nDescribe philosophy of lecture/exercise pairing.\ndifferentiate the two exercise pathways\ndiscuss role of video introduction/summary\nif there are self-assessed tutorials, describe them\n\n\n\n\nOther sundries\n\nmention distancesampling.org\nmention “other workshops” if they exist"
+    "text": "These materials have been prepared by staff at the Centre for Research into Ecological and Environmental Modelling (CREEM) at the Univ of St Andrews. Members of CREEM have been developing analytical methods for distance sampling data over the past 30 years. In addition to developing methods, CREEM has also been creating software to implement those analytical methods. A comprehensive set of training materials have been developed to bring together best practices in designing, conducting and analysing distance sampling surveys. The aim of materials at this website is to help you produce the most defensible inference from your distance sampling surveys."
   },
   {
     "objectID": "06-design/R-prac/Pr6-solution.html",
@@ -901,5 +901,26 @@
     "title": "Analysis with the use of multipliers",
     "section": "Analysis Exercises",
     "text": "Analysis Exercises\nUse the Distance project Deer pellets.zip for the following analyses.\n\n\nAdjust the multipliers in the project found in the Global layer of the data tab (see screen capture at right). Replace the place-holders in the project, with values provided in the previous section of this exercise.\nFit the usual series of models (uniform, half normal, and hazard rate) models to the data.\nSelect the Multipliers button in the Model Definition Properties to specify the layer and the field in the project database for the multipliers you wish to employ (along with their measure of precision).\nProduce estimates using the woodland as strata, pooling data across strata for fitting the detection function, but using woodland-specific encounter rate to produce woodland-specific estimates of density.\nProduce an overall estimate of density as mean of woodland-specific densities weighted by the effort allocated within each woodlot.\nMake special note of the components of variance (contribution of detection function, encounter rate, decay rate, and what happened to defecation rate component?) in each of the strata."
+  },
+  {
+    "objectID": "index.html#distance-sampling-training-materials",
+    "href": "index.html#distance-sampling-training-materials",
+    "title": "Introductory distance sampling training materials",
+    "section": "",
+    "text": "These materials have been prepared by staff at the Centre for Research into Ecological and Environmental Modelling (CREEM) at the Univ of St Andrews. Members of CREEM have been developing analytical methods for distance sampling data over the past 30 years. In addition to developing methods, CREEM has also been creating software to implement those analytical methods. A comprehensive set of training materials have been developed to bring together best practices in designing, conducting and analysing distance sampling surveys. The aim of materials at this website is to help you produce the most defensible inference from your distance sampling surveys."
+  },
+  {
+    "objectID": "index.html#other-distance-sampling-resources",
+    "href": "index.html#other-distance-sampling-resources",
+    "title": "Introductory distance sampling training materials",
+    "section": "Other distance sampling resources",
+    "text": "Other distance sampling resources\n\nA “one stop” resources for distance sampling materials developed by CREEM can be found at https://distancesampling.org\nIf you wish to receive training in distance sampling with a “live” instructor, CREEM offers workshops carried out online. Offerings of these training opportunities can be found on our workshop web site\nExamples of distance sampling analyses conducted using the Distance R package can be found on our examples web site."
+  },
+  {
+    "objectID": "index.html#philosophy",
+    "href": "index.html#philosophy",
+    "title": "Introductory distance sampling training materials",
+    "section": "Philosophy",
+    "text": "Philosophy\nThe training philosophy involves lecture materials paired with computer exercises to cement concepts described in the lectures. The practical exercises are fundamental to proper analysis of distance sampling data. The purpose of preparing the exercises is to offer you the opportunity to experiment with the software and analytical methods. It is better to experiment (and make mistakes) with data we provide to you, than to make mistakes in the analysis and inference of your own data.\nEach of the lectures has both slides (for you to download) and narrated video. Likewise each computer exercise has a video introduction, describing the concepts being addresses and well as a video summary, emphasising both key steps when using the software as well as important “take home messages” arising in each practical.\nDistance sampling software has undergone an evolution over the &gt;25 years since development began at CREEM. In these training materials, we provide exercises based around both of our software platforms:\n\nDistance for Windows (a standalone) Windows-based programme with a graphical user interface\n\nThe installation package for this software can be downloaded from this website\n\nan R package Distance.\n\nThe R language and environment can be downloaded from CRAN as well as the Distance package itself.\nPracticals based around the R package assume you have fundamental knowledge of the R language."
   }
 ]
