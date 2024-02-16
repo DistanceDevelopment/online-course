@@ -39,7 +39,7 @@ There is a second data set that shares the same survey design (short transects i
 
 
 ::: video
-[Video](https://youtu.be/G8-b_Uz6WlY)
+[Video](https://youtu.be/LgDKSXi24to)
 :::
 :::
 
@@ -52,7 +52,7 @@ There is a second data set that shares the same survey design (short transects i
 **Using R package**
 
 ::: video
-[Video introduction](https://youtu.be/u1xH2jkc5QU)
+[Video introduction](https://youtu.be/NpdFAN79MrE)
 :::
 
 
@@ -65,7 +65,7 @@ There is a second data set that shares the same survey design (short transects i
 :::
 
 ::: video
-[Video summary](https://youtu.be/q0gFtojZ47s)
+[Video summary](https://youtu.be/jy_Q9ZuaF6A)
 :::
 
 
@@ -78,7 +78,7 @@ There is a second data set that shares the same survey design (short transects i
 **Using Distance for Windows**
 
 ::: video
-[Video introduction](https://youtu.be/oidBShpsTVM)
+[Video introduction](https://youtu.be/mETZAAsqB9A)
 :::
 
 ::: instructions
@@ -90,7 +90,7 @@ There is a second data set that shares the same survey design (short transects i
 :::
 
 ::: video
-[Video summary](https://youtu.be/y0rd5bRTz64)
+[Video summary](https://youtu.be/cvoqGnqD4Ms)
 :::
 
 :::

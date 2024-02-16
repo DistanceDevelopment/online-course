@@ -922,5 +922,243 @@
     "title": "Introductory distance sampling training materials",
     "section": "Philosophy",
     "text": "Philosophy\nThe training philosophy involves lecture materials paired with computer exercises to cement concepts described in the lectures. The practical exercises are fundamental to proper analysis of distance sampling data. The purpose of preparing the exercises is to offer you the opportunity to experiment with the software and analytical methods. It is better to experiment (and make mistakes) with data we provide to you, than to make mistakes in the analysis and inference of your own data.\nEach of the lectures has both slides (for you to download) and narrated video. Likewise each computer exercise has a video introduction, describing the concepts being addresses and well as a video summary, emphasising both key steps when using the software as well as important “take home messages” arising in each practical.\nDistance sampling software has undergone an evolution over the &gt;25 years since development began at CREEM. In these training materials, we provide exercises based around both of our software platforms:\n\nDistance for Windows (a standalone) Windows-based programme with a graphical user interface\n\nThe installation package for this software can be downloaded from this website\n\nan R package Distance.\n\nThe R language and environment can be downloaded from CRAN as well as the Distance package itself.\nPracticals based around the R package assume you have fundamental knowledge of the R language."
+  },
+  {
+    "objectID": "12-field/fieldlanding.html",
+    "href": "12-field/fieldlanding.html",
+    "title": "Field methods and summary",
+    "section": "",
+    "text": "Understanding the principles of robust data analysis of distance sampling data, we return to data gathering. Rather than fostering tension between field biologists and statisticians, they can work together to produce the most defensible estimates of animal abundance.\n\n\n\n\nIn this discussion, we suggest ways in which data collection methods can be designed to conform with the principles of distance sampling, namely:\n\nmaking detection probability on the transect \\((g(0))\\) close to 1,\navoiding animal movement prior to detection,\naccurately recording distances from animal to transect and\nsuggestions for dealing with special circumstances."
+  },
+  {
+    "objectID": "12-field/fieldlanding.html#field-methods-and-summary",
+    "href": "12-field/fieldlanding.html#field-methods-and-summary",
+    "title": "Field methods and summary",
+    "section": "",
+    "text": "Understanding the principles of robust data analysis of distance sampling data, we return to data gathering. Rather than fostering tension between field biologists and statisticians, they can work together to produce the most defensible estimates of animal abundance.\n\n\n\n\nIn this discussion, we suggest ways in which data collection methods can be designed to conform with the principles of distance sampling, namely:\n\nmaking detection probability on the transect \\((g(0))\\) close to 1,\navoiding animal movement prior to detection,\naccurately recording distances from animal to transect and\nsuggestions for dealing with special circumstances."
+  },
+  {
+    "objectID": "12-field/fieldlanding.html#lecture-materials",
+    "href": "12-field/fieldlanding.html#lecture-materials",
+    "title": "Field methods and summary",
+    "section": "Lecture materials",
+    "text": "Lecture materials\n\nLecture discussion\n\nSlides\n\n\nVideo"
+  },
+  {
+    "objectID": "12-field/fieldlanding.html#there-are-no-exercise-materials-for-this-module",
+    "href": "12-field/fieldlanding.html#there-are-no-exercise-materials-for-this-module",
+    "title": "Field methods and summary",
+    "section": "There are no exercise materials for this module",
+    "text": "There are no exercise materials for this module"
+  },
+  {
+    "objectID": "04-precision/precisionlanding.html",
+    "href": "04-precision/precisionlanding.html",
+    "title": "Precision of density estimates",
+    "section": "",
+    "text": "This exercise examines the ability to precisely estimate density from line transect data.\nThe data are again simulated and there are two data sets. The first data set you will analyse has transects of varying lengths; increasing from west to east in the study area. In addition to this change in transect lengths, there is an accompanying gradient in animal density, decreasing from west to east. In combination, this leads to transects with very high encounter rates in the west and transects with very low encounter rates in the east.\nYou are to analyse these data in several ways, focusing your attention on the precision associated with each estimation method.\nThere is a second data set that shares the same survey design (short transects in the west, long transects in the east). But in this second data set, there in no accompanying animal density gradient. Perform similar analyses with this data set."
+  },
+  {
+    "objectID": "04-precision/precisionlanding.html#precision-of-density-estimates",
+    "href": "04-precision/precisionlanding.html#precision-of-density-estimates",
+    "title": "Precision of density estimates",
+    "section": "",
+    "text": "This exercise examines the ability to precisely estimate density from line transect data.\nThe data are again simulated and there are two data sets. The first data set you will analyse has transects of varying lengths; increasing from west to east in the study area. In addition to this change in transect lengths, there is an accompanying gradient in animal density, decreasing from west to east. In combination, this leads to transects with very high encounter rates in the west and transects with very low encounter rates in the east.\nYou are to analyse these data in several ways, focusing your attention on the precision associated with each estimation method.\nThere is a second data set that shares the same survey design (short transects in the west, long transects in the east). But in this second data set, there in no accompanying animal density gradient. Perform similar analyses with this data set."
+  },
+  {
+    "objectID": "04-precision/precisionlanding.html#lecture-materials",
+    "href": "04-precision/precisionlanding.html#lecture-materials",
+    "title": "Precision of density estimates",
+    "section": "Lecture materials",
+    "text": "Lecture materials\n\nLecture discussion\n\nSlides\n\n\nVideo"
+  },
+  {
+    "objectID": "04-precision/precisionlanding.html#exercise-materials",
+    "href": "04-precision/precisionlanding.html#exercise-materials",
+    "title": "Precision of density estimates",
+    "section": "Exercise materials",
+    "text": "Exercise materials\n\n\n\nUsing R package\n\nVideo introduction\n\n\nInstructions\n\n\nSolution and discussion\n\n\nVideo summary\n\n\n\n\nUsing Distance for Windows\n\nVideo introduction\n\n\nInstructions\n\n\nSolution and discussion\n\n\nVideo summary"
+  },
+  {
+    "objectID": "04-precision/precisionlanding.html#supplemental-materials",
+    "href": "04-precision/precisionlanding.html#supplemental-materials",
+    "title": "Precision of density estimates",
+    "section": "Supplemental materials",
+    "text": "Supplemental materials\n\nCould use left-truncation\n\nThere is no supplemental material"
+  },
+  {
+    "objectID": "02-detfns/detfnlanding.html",
+    "href": "02-detfns/detfnlanding.html",
+    "title": "Fitting detection functions to line transect data",
+    "section": "",
+    "text": "The data are the famous “ducknest” data similar to those data described in (Anderson & Pospahala, 1970). Data exist within the Distance package, so emphasis will be upon performing analysis rather than acquiring data.\nYou will do some exploratory analysis of the detection distances, then use the function ds() to fit detection functions to the data. You’ll also use the function convert_units() for properly dealing with different units of measure in the data.\nThe estimated detection functions will be plotted and assessed for goodness of fit."
+  },
+  {
+    "objectID": "02-detfns/detfnlanding.html#estimating-density-of-duck-nests",
+    "href": "02-detfns/detfnlanding.html#estimating-density-of-duck-nests",
+    "title": "Fitting detection functions to line transect data",
+    "section": "",
+    "text": "The data are the famous “ducknest” data similar to those data described in (Anderson & Pospahala, 1970). Data exist within the Distance package, so emphasis will be upon performing analysis rather than acquiring data.\nYou will do some exploratory analysis of the detection distances, then use the function ds() to fit detection functions to the data. You’ll also use the function convert_units() for properly dealing with different units of measure in the data.\nThe estimated detection functions will be plotted and assessed for goodness of fit."
+  },
+  {
+    "objectID": "02-detfns/detfnlanding.html#lecture-materials",
+    "href": "02-detfns/detfnlanding.html#lecture-materials",
+    "title": "Fitting detection functions to line transect data",
+    "section": "Lecture materials",
+    "text": "Lecture materials\n\nLecture discussion\n\nSlides\n\n\nVideo"
+  },
+  {
+    "objectID": "02-detfns/detfnlanding.html#exercise-materials",
+    "href": "02-detfns/detfnlanding.html#exercise-materials",
+    "title": "Fitting detection functions to line transect data",
+    "section": "Exercise materials",
+    "text": "Exercise materials\n\n\n\nUsing R package\n\nVideo introduction\n\n\nInstructions\n\n\nSolution and discussion\n\n\nVideo summary\n\n\n\n\nUsing Distance for Windows\n\nVideo introduction\n\n\nInstructions\n\n\nSolution and discussion\n\n\nVideo summary"
+  },
+  {
+    "objectID": "02-detfns/detfnlanding.html#supplemental-materials",
+    "href": "02-detfns/detfnlanding.html#supplemental-materials",
+    "title": "Fitting detection functions to line transect data",
+    "section": "Supplemental materials",
+    "text": "Supplemental materials\n\nEffect of truncation upon density estimates\n\nDemonstration of changing truncation distance"
+  },
+  {
+    "objectID": "01-intro/introlanding.html",
+    "href": "01-intro/introlanding.html",
+    "title": "Fundamentals of distance sampling",
+    "section": "",
+    "text": "This exercise is to familiarise you with distribution of perpendicular distances measured in a distance sampling survey. You will complete a histogram from tablular data provided.\nRather than using a computer, use your eye to fit a smooth function to the distribution depicted in the histogram. This forms the basis for estimating \\(\\widehat{P_a}\\); computed as the ratio of the area under the fitted detection function to the area of the rectangle.\nSubsequent calculations produce an estimate of the density of nests in the sampled region."
+  },
+  {
+    "objectID": "01-intro/introlanding.html#estimating-widehatp_a-with-a-pencil",
+    "href": "01-intro/introlanding.html#estimating-widehatp_a-with-a-pencil",
+    "title": "Fundamentals of distance sampling",
+    "section": "",
+    "text": "This exercise is to familiarise you with distribution of perpendicular distances measured in a distance sampling survey. You will complete a histogram from tablular data provided.\nRather than using a computer, use your eye to fit a smooth function to the distribution depicted in the histogram. This forms the basis for estimating \\(\\widehat{P_a}\\); computed as the ratio of the area under the fitted detection function to the area of the rectangle.\nSubsequent calculations produce an estimate of the density of nests in the sampled region."
+  },
+  {
+    "objectID": "01-intro/introlanding.html#lecture-materials",
+    "href": "01-intro/introlanding.html#lecture-materials",
+    "title": "Fundamentals of distance sampling",
+    "section": "Lecture materials",
+    "text": "Lecture materials\n\nLecture discussion\n\nSlides\n\n\nVideo"
+  },
+  {
+    "objectID": "01-intro/introlanding.html#exercise-materials",
+    "href": "01-intro/introlanding.html#exercise-materials",
+    "title": "Fundamentals of distance sampling",
+    "section": "Exercise materials",
+    "text": "Exercise materials\n\nExercise\nThis exercise does not involve use of the computer. Instead, you will be graphing the distribution of perpendicular detection distances. You will fit (using nothing but your eye), a detection function curve to the histogram of detection distances.\n\nVideo introduction\n\n\nInstructions\n\n\nSolution and discussion\n\n\nVideo summary"
+  },
+  {
+    "objectID": "01-intro/introlanding.html#supplemental-materials",
+    "href": "01-intro/introlanding.html#supplemental-materials",
+    "title": "Fundamentals of distance sampling",
+    "section": "Supplemental materials",
+    "text": "Supplemental materials\n\nNothing to add to first module\n\nNo supplement"
+  },
+  {
+    "objectID": "03-criticism/criticismlanding.html",
+    "href": "03-criticism/criticismlanding.html",
+    "title": "Model criticism",
+    "section": "",
+    "text": "This practical continues the theme of fitting detection functions to line transect distance sampling data. Follow along with the R code inside the Quarto (.qmd) instructions.\nYou will proceed to fit a number of key function/adjustment term combinations to the data. You will also experiment with setting truncation distances.\nThe data you are analysing are simulated, where the true density and the true detection function is known. You will see how well your analyses perform in producing confidence intervals that include the true density. Also examine how much variability there is between different detection functions in their density estimates.\nAfter completing that main task, you also have the opportunity to analyse another line transect data set of capercaillie, a native Scottish bird."
+  },
+  {
+    "objectID": "03-criticism/criticismlanding.html#absolute-and-relative-fit-of-detection-function-models",
+    "href": "03-criticism/criticismlanding.html#absolute-and-relative-fit-of-detection-function-models",
+    "title": "Model criticism",
+    "section": "",
+    "text": "This practical continues the theme of fitting detection functions to line transect distance sampling data. Follow along with the R code inside the Quarto (.qmd) instructions.\nYou will proceed to fit a number of key function/adjustment term combinations to the data. You will also experiment with setting truncation distances.\nThe data you are analysing are simulated, where the true density and the true detection function is known. You will see how well your analyses perform in producing confidence intervals that include the true density. Also examine how much variability there is between different detection functions in their density estimates.\nAfter completing that main task, you also have the opportunity to analyse another line transect data set of capercaillie, a native Scottish bird."
+  },
+  {
+    "objectID": "03-criticism/criticismlanding.html#lecture-materials",
+    "href": "03-criticism/criticismlanding.html#lecture-materials",
+    "title": "Model criticism",
+    "section": "Lecture materials",
+    "text": "Lecture materials\n\nLecture discussion\n\nSlides\n\n\nVideo"
+  },
+  {
+    "objectID": "03-criticism/criticismlanding.html#exercise-materials",
+    "href": "03-criticism/criticismlanding.html#exercise-materials",
+    "title": "Model criticism",
+    "section": "Exercise materials",
+    "text": "Exercise materials\n\n\n\nUsing R package\n\nVideo introduction\n\n\nInstructions\n\n\nSolution and discussion\n\n\nVideo summary\n\n\n\n\nUsing Distance for Windows\n\nVideo introduction\n\n\nInstructions\n\n\nSolution and discussion\n\n\nVideo summary"
+  },
+  {
+    "objectID": "03-criticism/criticismlanding.html#supplemental-materials",
+    "href": "03-criticism/criticismlanding.html#supplemental-materials",
+    "title": "Model criticism",
+    "section": "Supplemental materials",
+    "text": "Supplemental materials\n\nA detailed look at model selection\n\nThe two stages of model selection"
+  },
+  {
+    "objectID": "05-points/pointslanding.html",
+    "href": "05-points/pointslanding.html",
+    "title": "Analysis of point transect data",
+    "section": "",
+    "text": "Having mastered analysis of line transect data, we move on to analysis of point transect data. These data are more difficult to model because the region of the curve where we wish to be most precise is the region where data are most scarce.\nAssessing fit to point transect data also represents a challenge. Consequently, we use plots of the probability density function to gain perspective regarding the influence of regions of the probability density function upon lack of fit.\nTwo data sets are to be analysed: the first is a simulated data set in which both the true shape of the detection function as well as true animal density is known. Fit various detection functions to these data, also examining the effect of truncation (truncation for points is often more severe than for lines) upon estimates. Look for congruence in density estimates–as you did with a similar exercise performed on simulated line transect data in Practical 3.\nFinally, there are two optional data sets of winter wrens collected by Prof. Buckland. Same species and study area, but two different field protocols: one protocol used traditional 5-minute counts while the other protocol employed the “snapshot” method."
+  },
+  {
+    "objectID": "05-points/pointslanding.html#analysis-of-point-transect-data",
+    "href": "05-points/pointslanding.html#analysis-of-point-transect-data",
+    "title": "Analysis of point transect data",
+    "section": "",
+    "text": "Having mastered analysis of line transect data, we move on to analysis of point transect data. These data are more difficult to model because the region of the curve where we wish to be most precise is the region where data are most scarce.\nAssessing fit to point transect data also represents a challenge. Consequently, we use plots of the probability density function to gain perspective regarding the influence of regions of the probability density function upon lack of fit.\nTwo data sets are to be analysed: the first is a simulated data set in which both the true shape of the detection function as well as true animal density is known. Fit various detection functions to these data, also examining the effect of truncation (truncation for points is often more severe than for lines) upon estimates. Look for congruence in density estimates–as you did with a similar exercise performed on simulated line transect data in Practical 3.\nFinally, there are two optional data sets of winter wrens collected by Prof. Buckland. Same species and study area, but two different field protocols: one protocol used traditional 5-minute counts while the other protocol employed the “snapshot” method."
+  },
+  {
+    "objectID": "05-points/pointslanding.html#lecture-materials",
+    "href": "05-points/pointslanding.html#lecture-materials",
+    "title": "Analysis of point transect data",
+    "section": "Lecture materials",
+    "text": "Lecture materials\n\nLecture discussion\n\nSlides\n\n\nVideo"
+  },
+  {
+    "objectID": "05-points/pointslanding.html#exercise-materials",
+    "href": "05-points/pointslanding.html#exercise-materials",
+    "title": "Analysis of point transect data",
+    "section": "Exercise materials",
+    "text": "Exercise materials\n\n\n\nUsing R package\n\nVideo introduction\n\n\nInstructions\n\n\nSolution and discussion\n\n\nVideo summary\n\n\n\n\nUsing Distance for Windows\n\nVideo introduction\n\n\nInstructions\n\n\nSolution and discussion\n\n\nVideo summary"
+  },
+  {
+    "objectID": "05-points/pointslanding.html#supplemental-materials",
+    "href": "05-points/pointslanding.html#supplemental-materials",
+    "title": "Analysis of point transect data",
+    "section": "Supplemental materials",
+    "text": "Supplemental materials\n\nNo supplements\n\nNo supplemental material"
+  },
+  {
+    "objectID": "07-stratify/stratifylanding.html",
+    "href": "07-stratify/stratifylanding.html",
+    "title": "Analysis of stratified surveys",
+    "section": "",
+    "text": "Carrying on from the discussion of survey design where stratification was introduced, this exercise describes multiple analyses of a single data set.\nMultiple analyses arise because it is an open question whether a single detection function is appropriate for different strata that might sharply contrast in their vegetation that might influence detectability.\nEmploying an inappropriate detection function will invalidate population inferences; consequently it is important to have a decision framework that can be employed to determine the role stratification should play in the detection function."
+  },
+  {
+    "objectID": "07-stratify/stratifylanding.html#analysis-of-stratified-surveys",
+    "href": "07-stratify/stratifylanding.html#analysis-of-stratified-surveys",
+    "title": "Analysis of stratified surveys",
+    "section": "",
+    "text": "Carrying on from the discussion of survey design where stratification was introduced, this exercise describes multiple analyses of a single data set.\nMultiple analyses arise because it is an open question whether a single detection function is appropriate for different strata that might sharply contrast in their vegetation that might influence detectability.\nEmploying an inappropriate detection function will invalidate population inferences; consequently it is important to have a decision framework that can be employed to determine the role stratification should play in the detection function."
+  },
+  {
+    "objectID": "07-stratify/stratifylanding.html#lecture-materials",
+    "href": "07-stratify/stratifylanding.html#lecture-materials",
+    "title": "Analysis of stratified surveys",
+    "section": "Lecture materials",
+    "text": "Lecture materials\n\nLecture discussion\n\nSlides\n\n\nVideo"
+  },
+  {
+    "objectID": "07-stratify/stratifylanding.html#exercise-materials",
+    "href": "07-stratify/stratifylanding.html#exercise-materials",
+    "title": "Analysis of stratified surveys",
+    "section": "Exercise materials",
+    "text": "Exercise materials\n\n\n\nUsing R package\n\nVideo introduction\n\n\nInstructions\n\n\nSolution and discussion\n\n\nVideo summary\n\n\n\n\nUsing Distance for Windows\n\nVideo introduction\n\n\nInstructions\n\n\nSolution and discussion\n\n\nVideo summary"
+  },
+  {
+    "objectID": "07-stratify/stratifylanding.html#supplemental-materials",
+    "href": "07-stratify/stratifylanding.html#supplemental-materials",
+    "title": "Analysis of stratified surveys",
+    "section": "Supplemental materials",
+    "text": "Supplemental materials\n\nNo supplements\n\nNo supplemental material"
   }
 ]

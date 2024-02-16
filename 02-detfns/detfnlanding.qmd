@@ -38,7 +38,7 @@ The estimated detection functions will be plotted and assessed for goodness of f
 
 
 ::: video
-[Video](https://youtu.be/_4RX6P4PB4k)
+[Video](https://youtu.be/6uac8nZRElc)
 :::
 :::
 
@@ -51,7 +51,7 @@ The estimated detection functions will be plotted and assessed for goodness of f
 **Using R package**
 
 ::: video
-[Video introduction](https://youtu.be/zqAEpUZeQDQ)
+[Video introduction](https://youtu.be/BCDqJ4xx1T4)
 :::
 
 
@@ -64,7 +64,7 @@ The estimated detection functions will be plotted and assessed for goodness of f
 :::
 
 ::: video
-[Video summary](https://youtu.be/iWibaZL_LhU)
+[Video summary](https://youtu.be/pJKeXtPvuAI)
 :::
 
 
@@ -77,7 +77,7 @@ The estimated detection functions will be plotted and assessed for goodness of f
 **Using Distance for Windows**
 
 ::: video
-[Video introduction](https://youtu.be/acAYzN_kmms)
+[Video introduction](https://youtu.be/MjMHAiV0ZYM)
 :::
 
 ::: instructions
@@ -89,7 +89,7 @@ The estimated detection functions will be plotted and assessed for goodness of f
 :::
 
 ::: video
-[Video summary](https://youtu.be/iyqJ30_x7zw)
+[Video summary](https://youtu.be/IEGWzXNgTm8)
 :::
 
 :::

@@ -1,0 +1,52 @@
+---
+title: Field methods and summary
+author: Centre for Research into Ecological and Environmental Modelling <br> **University of St Andrews**
+date-modified: "January 2024"
+date-format: "MMMM YYYY"
+csl: ../style/apa.csl
+---
+
+## Field methods and summary
+
+
+::: columns
+
+::: {.column width="60%"}
+Understanding the principles of robust data analysis of distance sampling data, we return to data gathering. Rather than fostering tension between field biologists and statisticians, they can work together to produce the most defensible estimates of animal abundance.
+
+:::
+
+::: {.column width="40%"}
+![](fieldwork-unsplash.jpg)
+
+:::
+
+:::
+
+In this discussion, we suggest ways in which data collection methods can be designed to conform with the principles of distance sampling, namely:
+
+- making detection probability on the transect $(g(0))$ close to 1,
+- avoiding animal movement prior to detection, 
+- accurately recording distances from animal to transect and
+- suggestions for dealing with special circumstances.
+
+## Lecture materials
+::: slide-deck
+**Lecture discussion**
+
+
+::: slides
+[Slides](Mod12-2023-field.pdf)
+:::
+
+
+::: video
+[Video](https://youtu.be/2P8aYO0GsUA)
+:::
+:::
+
+## There are no exercise materials for this module
+
+<!--
+Photo by <a href="https://unsplash.com/@hollymandarich?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Holly Mandarich</a> on <a href="https://unsplash.com/photos/person-carrying-yellow-and-black-backpack-walking-between-green-plants-UVyOfX3v0Ls?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+-->  

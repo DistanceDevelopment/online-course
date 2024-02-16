@@ -35,7 +35,7 @@ This exercise presents data on a Sika deer dung study in southern Scotland, wher
 
 
 ::: video
-[Video](https://youtu.be/A_NRZqWEhXs)
+[Video](https://youtu.be/laEJWp-zASU)
 :::
 :::
 
@@ -48,7 +48,7 @@ This exercise presents data on a Sika deer dung study in southern Scotland, wher
 **Using R package**
 
 ::: video
-[Video introduction](https://youtu.be/6GGDkGzKZt4)
+[Video introduction](https://youtu.be/AyaMj5ZB2xY)
 :::
 
 
@@ -61,7 +61,7 @@ This exercise presents data on a Sika deer dung study in southern Scotland, wher
 :::
 
 ::: video
-[Video summary](https://youtu.be/HiVKN8MuQHU)
+[Video summary](https://youtu.be/w9ek18_Dc0c)
 :::
 
 
@@ -74,7 +74,7 @@ This exercise presents data on a Sika deer dung study in southern Scotland, wher
 **Using Distance for Windows**
 
 ::: video
-[Video introduction](https://youtu.be/xSXRnWysgEw)
+[Video introduction](https://youtu.be/bU-p-xnd2mc)
 :::
 
 ::: instructions
@@ -86,7 +86,7 @@ This exercise presents data on a Sika deer dung study in southern Scotland, wher
 :::
 
 ::: video
-[Video summary](https://youtu.be/w9_vjoniXTY)
+[Video summary](https://youtu.be/gY5N-283TPo)
 :::
 
 :::

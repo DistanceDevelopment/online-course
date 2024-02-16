@@ -39,7 +39,7 @@ Finally, there are two optional data sets of winter wrens collected by Prof. Buc
 
 
 ::: video
-[Video](https://youtu.be/A_NRZqWEhXs)
+[Video](https://youtu.be/4hfGSqzXGHI)
 :::
 :::
 
@@ -52,7 +52,7 @@ Finally, there are two optional data sets of winter wrens collected by Prof. Buc
 **Using R package**
 
 ::: video
-[Video introduction](https://youtu.be/6GGDkGzKZt4)
+[Video introduction](https://youtu.be/KvHXifoIcFY)
 :::
 
 
@@ -65,7 +65,7 @@ Finally, there are two optional data sets of winter wrens collected by Prof. Buc
 :::
 
 ::: video
-[Video summary](https://youtu.be/HiVKN8MuQHU)
+[Video summary](https://youtu.be/2ZKLQzMFGSY)
 :::
 
 
@@ -78,7 +78,7 @@ Finally, there are two optional data sets of winter wrens collected by Prof. Buc
 **Using Distance for Windows**
 
 ::: video
-[Video introduction](https://youtu.be/xSXRnWysgEw)
+[Video introduction](https://youtu.be/Mc04tkWnaNs)
 :::
 
 ::: instructions
@@ -90,7 +90,7 @@ Finally, there are two optional data sets of winter wrens collected by Prof. Buc
 :::
 
 ::: video
-[Video summary](https://youtu.be/w9_vjoniXTY)
+[Video summary](https://youtu.be/hHTUFk-Blu0)
 :::
 
 :::

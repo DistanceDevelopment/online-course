@@ -36,7 +36,7 @@ You have the opportunity to use shape files from two locations near St Andrews, 
 
 
 ::: video
-[Video](https://youtu.be/A_NRZqWEhXs)
+[Video](https://youtu.be/ph_tShUTnYY)
 :::
 :::
 
@@ -49,7 +49,7 @@ You have the opportunity to use shape files from two locations near St Andrews, 
 **Using R package**
 
 ::: video
-[Video introduction](https://youtu.be/6GGDkGzKZt4)
+[Video introduction](https://youtu.be/z30NvvUvvvw)
 :::
 
 
@@ -62,7 +62,7 @@ You have the opportunity to use shape files from two locations near St Andrews, 
 :::
 
 ::: video
-[Video summary](https://youtu.be/HiVKN8MuQHU)
+[Video summary](https://youtu.be/C9Gl1RNclAs)
 :::
 
 
@@ -75,7 +75,7 @@ You have the opportunity to use shape files from two locations near St Andrews, 
 **Using Distance for Windows**
 
 ::: video
-[Video introduction](https://youtu.be/xSXRnWysgEw)
+[Video introduction](https://youtu.be/r5IN-UJDPL4)
 :::
 
 ::: instructions
@@ -87,7 +87,7 @@ You have the opportunity to use shape files from two locations near St Andrews, 
 :::
 
 ::: video
-[Video summary](https://youtu.be/w9_vjoniXTY)
+[Video summary](https://youtu.be/G1JF4kjOEMs)
 :::
 
 :::

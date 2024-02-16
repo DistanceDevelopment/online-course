@@ -5,7 +5,7 @@ title: "Introductory distance sampling training materials"
 ::: columns
 
 ::: {.column width="35%"}
-![](D60generic.jpg)
+![](D60generic.jpg){width="90%"}
 :::
 
 ::: {.column width="60%"}

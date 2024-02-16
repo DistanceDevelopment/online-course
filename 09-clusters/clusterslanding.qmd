@@ -39,7 +39,7 @@ The practicals in this model address this situation. You are to analyse data fro
 
 
 ::: video
-[Video](https://youtu.be/A_NRZqWEhXs)
+[Video](https://youtu.be/UOmdK6hrOwc)
 :::
 :::
 
@@ -52,7 +52,7 @@ The practicals in this model address this situation. You are to analyse data fro
 **Using R package**
 
 ::: video
-[Video introduction](https://youtu.be/6GGDkGzKZt4)
+[Video introduction](https://youtu.be/rAtfUb08xLw)
 :::
 
 
@@ -65,7 +65,7 @@ The practicals in this model address this situation. You are to analyse data fro
 :::
 
 ::: video
-[Video summary](https://youtu.be/HiVKN8MuQHU)
+[Video summary](https://youtu.be/xVaeDjIhmgU)
 :::
 
 
@@ -78,7 +78,7 @@ The practicals in this model address this situation. You are to analyse data fro
 **Using Distance for Windows**
 
 ::: video
-[Video introduction](https://youtu.be/xSXRnWysgEw)
+[Video introduction](https://youtu.be/3Jl7B_zhWd8)
 :::
 
 ::: instructions
@@ -90,7 +90,7 @@ The practicals in this model address this situation. You are to analyse data fro
 :::
 
 ::: video
-[Video summary](https://youtu.be/w9_vjoniXTY)
+[Video summary](https://youtu.be/5ACJPzKcIUY)
 :::
 
 :::

@@ -58,6 +58,9 @@ website:
       - section: "Double platform data (the g(0) problem)"
         contents: 
           - 11-mrds/mrdslanding.qmd          
+      - section: "Field methods"
+        contents: 
+          - 12-field/fieldlanding.qmd  
 format:
   html:
     css: styles.css

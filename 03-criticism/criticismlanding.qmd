@@ -39,7 +39,7 @@ After completing that main task, you also have the opportunity to analyse anothe
 
 
 ::: video
-[Video](https://youtu.be/HMiQ9rDZoEg)
+[Video](https://youtu.be/BL6gkewVAik)
 :::
 :::
 
@@ -52,7 +52,7 @@ After completing that main task, you also have the opportunity to analyse anothe
 **Using R package**
 
 ::: video
-[Video introduction](https://youtu.be/qpKyCnm190k)
+[Video introduction](https://youtu.be/emWCWUDwK2I)
 :::
 
 
@@ -65,7 +65,7 @@ After completing that main task, you also have the opportunity to analyse anothe
 :::
 
 ::: video
-[Video summary](https://youtu.be/_Wddke1Z-NU)
+[Video summary](https://youtu.be/ZZt8WmzA1hE)
 :::
 
 
@@ -78,7 +78,7 @@ After completing that main task, you also have the opportunity to analyse anothe
 **Using Distance for Windows**
 
 ::: video
-[Video introduction](https://youtu.be/ztZ0TzckJGs)
+[Video introduction](https://youtu.be/VuQ-pwVg3dk)
 :::
 
 ::: instructions
@@ -90,7 +90,7 @@ After completing that main task, you also have the opportunity to analyse anothe
 :::
 
 ::: video
-[Video summary](https://youtu.be/eFAK_9m69Lg)
+[Video summary](https://youtu.be/PaB9p47dUCY)
 :::
 
 :::

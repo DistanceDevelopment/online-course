@@ -37,7 +37,7 @@ This exercise presents two data sets:  Hawaiian amakihi point transect data coll
 
 
 ::: video
-[Video](https://youtu.be/A_NRZqWEhXs)
+[Video](https://youtu.be/AaaqxTtvzV4)
 :::
 :::
 
@@ -50,7 +50,7 @@ This exercise presents two data sets:  Hawaiian amakihi point transect data coll
 **Using R package**
 
 ::: video
-[Video introduction](https://youtu.be/6GGDkGzKZt4)
+[Video introduction](https://youtu.be/oM6FFDfRHp8)
 :::
 
 
@@ -63,7 +63,7 @@ This exercise presents two data sets:  Hawaiian amakihi point transect data coll
 :::
 
 ::: video
-[Video summary](https://youtu.be/HiVKN8MuQHU)
+[Video summary](https://youtu.be/tS5MoL_7PTw)
 :::
 
 
@@ -76,7 +76,7 @@ This exercise presents two data sets:  Hawaiian amakihi point transect data coll
 **Using Distance for Windows**
 
 ::: video
-[Video introduction](https://youtu.be/xSXRnWysgEw)
+[Video introduction](https://youtu.be/17DheoAg7YM)
 :::
 
 ::: instructions
@@ -88,7 +88,7 @@ This exercise presents two data sets:  Hawaiian amakihi point transect data coll
 :::
 
 ::: video
-[Video summary](https://youtu.be/w9_vjoniXTY)
+[Video summary](https://youtu.be/WBDmj6fD_NI)
 :::
 
 :::

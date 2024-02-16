@@ -37,7 +37,7 @@ Employing an inappropriate detection function will invalidate population inferen
 
 
 ::: video
-[Video](https://youtu.be/A_NRZqWEhXs)
+[Video](https://youtu.be/cXAEF_uOF8o)
 :::
 :::
 
@@ -50,7 +50,7 @@ Employing an inappropriate detection function will invalidate population inferen
 **Using R package**
 
 ::: video
-[Video introduction](https://youtu.be/6GGDkGzKZt4)
+[Video introduction](https://youtu.be/Zkug1FThfQ4)
 :::
 
 
@@ -63,7 +63,7 @@ Employing an inappropriate detection function will invalidate population inferen
 :::
 
 ::: video
-[Video summary](https://youtu.be/HiVKN8MuQHU)
+[Video summary](https://youtu.be/x3tbFZkQnUo)
 :::
 
 
@@ -76,7 +76,7 @@ Employing an inappropriate detection function will invalidate population inferen
 **Using Distance for Windows**
 
 ::: video
-[Video introduction](https://youtu.be/xSXRnWysgEw)
+[Video introduction](https://youtu.be/q3Er-7jewL4)
 :::
 
 ::: instructions
@@ -88,7 +88,7 @@ Employing an inappropriate detection function will invalidate population inferen
 :::
 
 ::: video
-[Video summary](https://youtu.be/w9_vjoniXTY)
+[Video summary](https://youtu.be/y6YXSK0kSN8)
 :::
 
 :::
