@@ -82,4 +82,4 @@ The answers to the questions posed in the instructions steer you to be cautious 
 
 :::
 
-A completed version of the Tentsmuir survey design project can be found in [TentsmuirSolution.zip](TentsmuirSolution.zip).
+A completed version of the Tentsmuir survey design project can be found in [tentspoints-solution.zip](tentspoints-solution.zip).

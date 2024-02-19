@@ -312,7 +312,7 @@
     "href": "06-design/DistWin-prac/Pr6-instructions-DistWin.html#the-distance-for-windows-project",
     "title": "Design of distance sampling surveys",
     "section": "The Distance for Windows project",
-    "text": "The Distance for Windows project\nA shapefile of the study area has been inserted into the project Tentsmuir.zip. Your task is to design a survey that places point transect effort into the two strata. Download and open the project and create a map of the study area using the Maps tab adding the Region layer; see if you can locate the boundary between the strata."
+    "text": "The Distance for Windows project\nA shapefile of the study area has been inserted into the project tentspoints.zip. Your task is to design a survey that places point transect effort into the two strata. Download and open the project and create a map of the study area using the Maps tab adding the Region layer; see if you can locate the boundary between the strata."
   },
   {
     "objectID": "08-covariates/sparrow-supplement.html",
