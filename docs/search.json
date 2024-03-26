@@ -1051,70 +1051,120 @@
     "href": "01-intro/introlanding.html",
     "title": "Fundamentals of distance sampling",
     "section": "",
-    "text": "This exercise is to familiarise you with distribution of perpendicular distances measured in a distance sampling survey. You will complete a histogram from tablular data provided.\nRather than using a computer, use your eye to fit a smooth function to the distribution depicted in the histogram. This forms the basis for estimating \\(\\widehat{P_a}\\); computed as the ratio of the area under the fitted detection function to the area of the rectangle.\nSubsequent calculations produce an estimate of the density of nests in the sampled region."
+    "text": "This exercise is to familiarise you with distribution of perpendicular distances measured in a distance sampling survey. You will complete a histogram from tablular data provided.\nRather than using a computer, use your eye to fit a smooth function to the distribution depicted in the histogram. This forms the basis for estimating \\(\\widehat{P_a}\\); computed as the ratio of the area under the fitted detection function to the area of the rectangle.\nSubsequent calculations produce an estimate of the density of nests in the sampled region.",
+    "crumbs": [
+      "https://distancesampling.org",
+      "Introduction",
+      "Fundamentals of distance sampling"
+    ]
   },
   {
     "objectID": "01-intro/introlanding.html#estimating-widehatp_a-with-a-pencil",
     "href": "01-intro/introlanding.html#estimating-widehatp_a-with-a-pencil",
     "title": "Fundamentals of distance sampling",
     "section": "",
-    "text": "This exercise is to familiarise you with distribution of perpendicular distances measured in a distance sampling survey. You will complete a histogram from tablular data provided.\nRather than using a computer, use your eye to fit a smooth function to the distribution depicted in the histogram. This forms the basis for estimating \\(\\widehat{P_a}\\); computed as the ratio of the area under the fitted detection function to the area of the rectangle.\nSubsequent calculations produce an estimate of the density of nests in the sampled region."
+    "text": "This exercise is to familiarise you with distribution of perpendicular distances measured in a distance sampling survey. You will complete a histogram from tablular data provided.\nRather than using a computer, use your eye to fit a smooth function to the distribution depicted in the histogram. This forms the basis for estimating \\(\\widehat{P_a}\\); computed as the ratio of the area under the fitted detection function to the area of the rectangle.\nSubsequent calculations produce an estimate of the density of nests in the sampled region.",
+    "crumbs": [
+      "https://distancesampling.org",
+      "Introduction",
+      "Fundamentals of distance sampling"
+    ]
   },
   {
     "objectID": "01-intro/introlanding.html#lecture-materials",
     "href": "01-intro/introlanding.html#lecture-materials",
     "title": "Fundamentals of distance sampling",
     "section": "Lecture materials",
-    "text": "Lecture materials\n\nLecture discussion\n\nSlides\n\n\nVideo"
+    "text": "Lecture materials\n\nLecture discussion\n\nSlides\n\n\nVideo",
+    "crumbs": [
+      "https://distancesampling.org",
+      "Introduction",
+      "Fundamentals of distance sampling"
+    ]
   },
   {
     "objectID": "01-intro/introlanding.html#exercise-materials",
     "href": "01-intro/introlanding.html#exercise-materials",
     "title": "Fundamentals of distance sampling",
     "section": "Exercise materials",
-    "text": "Exercise materials\n\nExercise\nThis exercise does not involve use of the computer. Instead, you will be graphing the distribution of perpendicular detection distances. You will fit (using nothing but your eye), a detection function curve to the histogram of detection distances.\n\nVideo introduction\n\n\nInstructions\n\n\nSolution and discussion\n\n\nVideo summary"
+    "text": "Exercise materials\n\nExercise\nThis exercise does not involve use of the computer. Instead, you will be graphing the distribution of perpendicular detection distances. You will fit (using nothing but your eye), a detection function curve to the histogram of detection distances.\n\nVideo introduction\n\n\nInstructions\n\n\nSolution and discussion\n\n\nVideo summary",
+    "crumbs": [
+      "https://distancesampling.org",
+      "Introduction",
+      "Fundamentals of distance sampling"
+    ]
   },
   {
     "objectID": "01-intro/introlanding.html#supplemental-materials",
     "href": "01-intro/introlanding.html#supplemental-materials",
     "title": "Fundamentals of distance sampling",
     "section": "Supplemental materials",
-    "text": "Supplemental materials\n\nNothing to add to first module\n\nNo supplement"
+    "text": "Supplemental materials\n\nNothing to add to first module\n\nNo supplement",
+    "crumbs": [
+      "https://distancesampling.org",
+      "Introduction",
+      "Fundamentals of distance sampling"
+    ]
   },
   {
     "objectID": "03-criticism/criticismlanding.html",
     "href": "03-criticism/criticismlanding.html",
     "title": "Model criticism",
     "section": "",
-    "text": "This practical continues the theme of fitting detection functions to line transect distance sampling data. Follow along with the R code inside the Quarto (.qmd) instructions.\nYou will proceed to fit a number of key function/adjustment term combinations to the data. You will also experiment with setting truncation distances.\nThe data you are analysing are simulated, where the true density and the true detection function is known. You will see how well your analyses perform in producing confidence intervals that include the true density. Also examine how much variability there is between different detection functions in their density estimates.\nAfter completing that main task, you also have the opportunity to analyse another line transect data set of capercaillie, a native Scottish bird."
+    "text": "This practical continues the theme of fitting detection functions to line transect distance sampling data. Follow along with the R code inside the Quarto (.qmd) instructions.\nYou will proceed to fit a number of key function/adjustment term combinations to the data. You will also experiment with setting truncation distances.\nThe data you are analysing are simulated, where the true density and the true detection function is known. You will see how well your analyses perform in producing confidence intervals that include the true density. Also examine how much variability there is between different detection functions in their density estimates.\nAfter completing that main task, you also have the opportunity to analyse another line transect data set of capercaillie, a native Scottish bird.",
+    "crumbs": [
+      "https://distancesampling.org",
+      "Model criticism",
+      "Model criticism"
+    ]
   },
   {
     "objectID": "03-criticism/criticismlanding.html#absolute-and-relative-fit-of-detection-function-models",
     "href": "03-criticism/criticismlanding.html#absolute-and-relative-fit-of-detection-function-models",
     "title": "Model criticism",
     "section": "",
-    "text": "This practical continues the theme of fitting detection functions to line transect distance sampling data. Follow along with the R code inside the Quarto (.qmd) instructions.\nYou will proceed to fit a number of key function/adjustment term combinations to the data. You will also experiment with setting truncation distances.\nThe data you are analysing are simulated, where the true density and the true detection function is known. You will see how well your analyses perform in producing confidence intervals that include the true density. Also examine how much variability there is between different detection functions in their density estimates.\nAfter completing that main task, you also have the opportunity to analyse another line transect data set of capercaillie, a native Scottish bird."
+    "text": "This practical continues the theme of fitting detection functions to line transect distance sampling data. Follow along with the R code inside the Quarto (.qmd) instructions.\nYou will proceed to fit a number of key function/adjustment term combinations to the data. You will also experiment with setting truncation distances.\nThe data you are analysing are simulated, where the true density and the true detection function is known. You will see how well your analyses perform in producing confidence intervals that include the true density. Also examine how much variability there is between different detection functions in their density estimates.\nAfter completing that main task, you also have the opportunity to analyse another line transect data set of capercaillie, a native Scottish bird.",
+    "crumbs": [
+      "https://distancesampling.org",
+      "Model criticism",
+      "Model criticism"
+    ]
   },
   {
     "objectID": "03-criticism/criticismlanding.html#lecture-materials",
     "href": "03-criticism/criticismlanding.html#lecture-materials",
     "title": "Model criticism",
     "section": "Lecture materials",
-    "text": "Lecture materials\n\nLecture discussion\n\nSlides\n\n\nVideo"
+    "text": "Lecture materials\n\nLecture discussion\n\nSlides\n\n\nVideo",
+    "crumbs": [
+      "https://distancesampling.org",
+      "Model criticism",
+      "Model criticism"
+    ]
   },
   {
     "objectID": "03-criticism/criticismlanding.html#exercise-materials",
     "href": "03-criticism/criticismlanding.html#exercise-materials",
     "title": "Model criticism",
     "section": "Exercise materials",
-    "text": "Exercise materials\n\n\n\nUsing R package\n\nVideo introduction\n\n\nInstructions\n\n\nSolution and discussion\n\n\nVideo summary\n\n\n\n\nUsing Distance for Windows\n\nVideo introduction\n\n\nInstructions\n\n\nSolution and discussion\n\n\nVideo summary"
+    "text": "Exercise materials\n\n\n\nUsing R package\n\nVideo introduction\n\n\nInstructions\n\n\nSolution and discussion\n\n\nVideo summary\n\n\n\n\nUsing Distance for Windows\n\nVideo introduction\n\n\nInstructions\n\n\nSolution and discussion\n\n\nVideo summary",
+    "crumbs": [
+      "https://distancesampling.org",
+      "Model criticism",
+      "Model criticism"
+    ]
   },
   {
     "objectID": "03-criticism/criticismlanding.html#supplemental-materials",
     "href": "03-criticism/criticismlanding.html#supplemental-materials",
     "title": "Model criticism",
     "section": "Supplemental materials",
-    "text": "Supplemental materials\n\nA detailed look at model selection\n\nThe two stages of model selection"
+    "text": "Supplemental materials\n\nA detailed look at model selection\n\nThe two stages of model selection",
+    "crumbs": [
+      "https://distancesampling.org",
+      "Model criticism",
+      "Model criticism"
+    ]
   },
   {
     "objectID": "05-points/pointslanding.html",
