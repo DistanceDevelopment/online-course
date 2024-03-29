@@ -67,6 +67,8 @@ format:
     toc: true
     code-copy: true
     code-line-numbers: true
-    include-in-header: "style/fontawesome.html"
+    include-in-header: 
+      - file: style/fontawesome.html
+      - file: clarity.txt
 
 
