@@ -1016,35 +1016,60 @@
     "href": "02-detfns/detfnlanding.html",
     "title": "Fitting detection functions to line transect data",
     "section": "",
-    "text": "The data are the famous “ducknest” data similar to those data described in (Anderson & Pospahala, 1970). Data exist within the Distance package, so emphasis will be upon performing analysis rather than acquiring data.\nYou will do some exploratory analysis of the detection distances, then use the function ds() to fit detection functions to the data. You’ll also use the function convert_units() for properly dealing with different units of measure in the data.\nThe estimated detection functions will be plotted and assessed for goodness of fit."
+    "text": "The data are the famous “ducknest” data similar to those data described in (Anderson & Pospahala, 1970). Data exist within the Distance package, so emphasis will be upon performing analysis rather than acquiring data.\nYou will do some exploratory analysis of the detection distances, then use the function ds() to fit detection functions to the data. You’ll also use the function convert_units() for properly dealing with different units of measure in the data.\nThe estimated detection functions will be plotted and assessed for goodness of fit.",
+    "crumbs": [
+      "https://distancesampling.org",
+      "Detection function modelling",
+      "Fitting detection functions to line transect data"
+    ]
   },
   {
     "objectID": "02-detfns/detfnlanding.html#estimating-density-of-duck-nests",
     "href": "02-detfns/detfnlanding.html#estimating-density-of-duck-nests",
     "title": "Fitting detection functions to line transect data",
     "section": "",
-    "text": "The data are the famous “ducknest” data similar to those data described in (Anderson & Pospahala, 1970). Data exist within the Distance package, so emphasis will be upon performing analysis rather than acquiring data.\nYou will do some exploratory analysis of the detection distances, then use the function ds() to fit detection functions to the data. You’ll also use the function convert_units() for properly dealing with different units of measure in the data.\nThe estimated detection functions will be plotted and assessed for goodness of fit."
+    "text": "The data are the famous “ducknest” data similar to those data described in (Anderson & Pospahala, 1970). Data exist within the Distance package, so emphasis will be upon performing analysis rather than acquiring data.\nYou will do some exploratory analysis of the detection distances, then use the function ds() to fit detection functions to the data. You’ll also use the function convert_units() for properly dealing with different units of measure in the data.\nThe estimated detection functions will be plotted and assessed for goodness of fit.",
+    "crumbs": [
+      "https://distancesampling.org",
+      "Detection function modelling",
+      "Fitting detection functions to line transect data"
+    ]
   },
   {
     "objectID": "02-detfns/detfnlanding.html#lecture-materials",
     "href": "02-detfns/detfnlanding.html#lecture-materials",
     "title": "Fitting detection functions to line transect data",
     "section": "Lecture materials",
-    "text": "Lecture materials\n\nLecture discussion\n\nSlides\n\n\nVideo"
+    "text": "Lecture materials\n\nLecture discussion\n\nSlides\n\n\nVideo",
+    "crumbs": [
+      "https://distancesampling.org",
+      "Detection function modelling",
+      "Fitting detection functions to line transect data"
+    ]
   },
   {
     "objectID": "02-detfns/detfnlanding.html#exercise-materials",
     "href": "02-detfns/detfnlanding.html#exercise-materials",
     "title": "Fitting detection functions to line transect data",
     "section": "Exercise materials",
-    "text": "Exercise materials\n\n\n\nUsing R package\n\nVideo introduction\n\n\nInstructions\n\n\nSolution and discussion\n\n\nVideo summary\n\n\n\n\nUsing Distance for Windows\n\nVideo introduction\n\n\nInstructions\n\n\nSolution and discussion\n\n\nVideo summary"
+    "text": "Exercise materials\n\n\n\nUsing R package\n\nVideo introduction\n\n\nInstructions\n\n\nSolution and discussion\n\n\nVideo summary\n\n\n\n\nUsing Distance for Windows\n\nVideo introduction\n\n\nInstructions\n\n\nSolution and discussion\n\n\nVideo summary",
+    "crumbs": [
+      "https://distancesampling.org",
+      "Detection function modelling",
+      "Fitting detection functions to line transect data"
+    ]
   },
   {
     "objectID": "02-detfns/detfnlanding.html#supplemental-materials",
     "href": "02-detfns/detfnlanding.html#supplemental-materials",
     "title": "Fitting detection functions to line transect data",
     "section": "Supplemental materials",
-    "text": "Supplemental materials\n\nEffect of truncation upon density estimates\n\nDemonstration of changing truncation distance"
+    "text": "Supplemental materials\n\nEffect of truncation upon density estimates\n\nDemonstration of changing truncation distance",
+    "crumbs": [
+      "https://distancesampling.org",
+      "Detection function modelling",
+      "Fitting detection functions to line transect data"
+    ]
   },
   {
     "objectID": "01-intro/introlanding.html",
@@ -1235,5 +1260,54 @@
     "title": "Analysis of stratified surveys",
     "section": "Supplemental materials",
     "text": "Supplemental materials\n\nNo supplements\n\nNo supplemental material"
+  },
+  {
+    "objectID": "02-detfns/DistWin-prac/Pr2-instructions-DistWin.html",
+    "href": "02-detfns/DistWin-prac/Pr2-instructions-DistWin.html",
+    "title": "Line transect estimation using Distance for Windows software",
+    "section": "",
+    "text": "Introduction to Distance Sampling with duck nest data"
+  },
+  {
+    "objectID": "02-detfns/DistWin-prac/Pr2-instructions-DistWin.html#working-on-the-computer",
+    "href": "02-detfns/DistWin-prac/Pr2-instructions-DistWin.html#working-on-the-computer",
+    "title": "Line transect estimation using Distance for Windows software",
+    "section": "Working on the computer",
+    "text": "Working on the computer\n\nInstall the Distance software:\n\nDownload and install the Distance software from http://distancesampling.org/Distance/distance75download.html, if you have not already.\n\nAcquire the Distance project for this exercise:\n\nClick on this link to access data to be used in this exercise. You will be asked to save this file to your local computer. Remember the location where you saved the file, as you will be opening it in the next step.\n\nWe are going to work with a project called “Ducknest exercise”. It contains the same data you previously analysed by hand. Open the Distance software and select File followed by Open project. Under “Files of type” choose Zip archive files (*.zip).\n\n\n\n\n\n\n\n\nOther Distance projects\n\n\n\n\n\nThe Sample Projects folder created when you installed the Distance software, contains a number of other data sets, not related to this training workshop. You may want to look at those projects at a later date.\n\n\n\n\nDouble click on Ducknest exercise.zip. Click OK to unpack the project into the current directory and open it. Next time you open the project, you can open the file Ducknest exercise.dst directly."
+  },
+  {
+    "objectID": "02-detfns/DistWin-prac/Pr2-instructions-DistWin.html#examining-the-data",
+    "href": "02-detfns/DistWin-prac/Pr2-instructions-DistWin.html#examining-the-data",
+    "title": "Line transect estimation using Distance for Windows software",
+    "section": "Examining the data",
+    "text": "Examining the data\n\nClick on the Data tab of the Project Browser to show the Data Explorer. Look at the data structure, and in particular how the distance data have been entered. (You will need to click on Observation in the left hand pane of the Data Explorer to see this.)"
+  },
+  {
+    "objectID": "02-detfns/DistWin-prac/Pr2-instructions-DistWin.html#studying-the-first-analysis",
+    "href": "02-detfns/DistWin-prac/Pr2-instructions-DistWin.html#studying-the-first-analysis",
+    "title": "Line transect estimation using Distance for Windows software",
+    "section": "Studying the first analysis",
+    "text": "Studying the first analysis\n\nClick on the Analysis tab of the Project Browser to show the Analysis Browser. You should see one analysis listed, called “Half-normal no adjustments.” Double-click on the grey status button for this analysis to open the Analysis Inputs tab for this analysis (you can do the same thing by clicking the 3rd button after “Analysis:” on the Analysis Browser menu bar, or by choosing Analyses then Analysis Details… from the menu bar at the top).\n\n\n\nA grey status icon indicates that this analysis has yet to be run. Click on the Run button in order to run the analysis. The Results tab should turn green.\nClick on the Results tab to see the results, and use the Next &gt; button to move through the pages of results, looking at each page and trying to relate the analysis given here to the one you did by hand. (Note: These are the analysis details (Inputs/Log/Results) for one analysis – you can resize this window so that you can view details from multiple analyses when you have more than one analysis to examine)."
+  },
+  {
+    "objectID": "02-detfns/DistWin-prac/Pr2-solution-DistWin.html",
+    "href": "02-detfns/DistWin-prac/Pr2-solution-DistWin.html",
+    "title": "Line transect estimation using Distance for Windows software",
+    "section": "",
+    "text": "Introduction to Distance Sampling with duck nest data\n\n\n\n\n\nDistance for Windows Solution\n\n\n\n\nWatch the solutions video, where we work through the exercise step by step.\nWhen you have the Ducknest project open in Distance and click on the Data tab, your screen should look like this:\n\n\n\nOnce you’ve run the analysis, and open the Analysis Details window for that analysis, your screen should look something like this (see below). Distance gets a density estimate of 49.697 nests km-2, similar to the value we obtained by hand of 48.9 nests km-2."
+  },
+  {
+    "objectID": "02-detfns/R-prac/Pr2-instructions.html",
+    "href": "02-detfns/R-prac/Pr2-instructions.html",
+    "title": "Line transect estimation using R",
+    "section": "",
+    "text": "In this exercise, we use R (R Core Team, 2019) and the Distance package (Miller et al., 2019) to fit different detection function models to the duck nest data (introduced in Exercise 1) and estimate duck nest density and abundance.\n\nObjectives\nThe aims of this exercise are to:\n\nLoad the Distance library\nImport a data file\nFit a basic detection function using the ds function\nPlot and examine a detection function\nAssess goodness of fit of the detection function\nFit different detection function forms.\n\n\n\nSurvey data\nAs a reminder of the survey, 20 line transects, each of length 128.75 km, were searched out to a distance of 2.4 metres (Anderson & Pospahala, 1970). Perpendicular distances to detected nests have been provided in a data set named ducknest. The columns in the file ducknest are:\n\nStudy.Area - this is the name of the study, Monte Vista NWR\nRegion.Label - identifier of regions: in this case there is only one region and it is set to ‘Default’\nArea - size of the study region (km\\(^2\\)): here the area is set to zero. The area of the refuge is 47.7 km\\(^2\\) - this is needed to obtain abundance: for the purposes of this exercise, we are interested in fitting detection functions and density rather than abundance.\nSample.Label - line transect identifier (numbered 1-20)\nEffort - length of the line transects (km)\nobject - unique identifier for each duck nest identified\ndistance - perpendicular distance (metres) to each duck nest.\n\nThe distances allow different key functions/adjustments to be fitted in the detection function model and, by including the transect lengths and area of the region, density and abundance can be estimated.\n\n\nUsing the Distance package\nThe Distance package has been installed in RStudio/Cloud. When you work on your own machine, you will need to install it from CRAN:\n\ninstall.packages(Distance)\n\n\n\nAccessing the data\nThe duck nest data are part of the Distance package, so if you have the package installed, the data set can be accessed simply by using the data() function\n\nlibrary(Distance)\ndata(ducknest)\n\nTo look at the first few rows of ducknest type the following command.\n\nhead(ducknest)\n\nThe object ducknest is a dataframe object made up of rows and columns. There is one row for each detected nest: use the function nrow to remind yourself how many detections there are:\n\nnrow(ducknest)\n\n\n\nSummarising the perpendicular distances\nCreate a numerical summary of the distances:\n\nsummary(ducknest$distance)\n\nSimilarly to plot a histogram of distances, the command is:\n\nhist(ducknest$distance, xlab=\"Distance (m)\")\n\n\n\nFitting a simple detection function model with ds\nDetection functions are fitted using the ds function and this function requires a data frame to have a column called distance. We have this in our ducknest data, therefore, we can simply supply the name of the data frame to the function as follows.\n\n\n\n\n\n\nTake care\n\n\n\nA guaranteed way to produce incorrect results from your analysis is to misspecify the units distances are measured. The ds function has an argument convert_units where the user provides a value to report density in proper units. Providing an incorrect value will result in estimates that are out by orders of magnitude.\n\n\nBefore fitting a model, the units of measure within the survey need to be reconciled. We can choose the units in which duck nest density is to be reported, we choose square kilometres. How to import this information to the ds function?\nThe answer is another function convert_units. Arguments to this function are\n\ndistance_units\n\nunits of measure for perpendicular/radial distances\n\neffort_units\n\nunits of measure for effort (NULL for point transects)\n\narea_units\n\nunits of measure for the study area.\n\n\n\nconversion.factor &lt;- convert_units(\"meter\", \"kilometer\", \"square kilometer\")\n\n\n# Fit half-normal detection function, no adjustment terms\nnest.hn &lt;- ds(data=ducknest, key=\"hn\", adjustment=NULL,\n              convert_units=conversion.factor)\n\nDetails about the arguments for this function:\n\nkey=\"hn\"\n\nfit a half-normal key detection function\n\nadjustment=NULL\n\ndo not include adjustment terms\n\nconvert_units=conversion.factor\n\nrequired because, for this example, the perpendicular distances are in metres and the line transect lengths are in km - this argument converts the perpendicular distance measurements from metres to km.\n\n\nAs we have seen, on executing the ds command some information is provided to the screen reminding the user what model has been fitted and the associated AIC value. More information is supplied if we ask for a summary of the model as follows:\n\n# Summarise model object\nsummary(nest.hn)\n\nCan you match the information with the values you used in Exercise 1 - was your density estimate similar to the one obtained here?\nTo look at the fitted detection function, simply use the plot function:\n\nplot(nest.hn)\n\nThe number of bins in the histogram can be changed by specifying the nc argument, for example, to plot the histogram having 8 bins (as in Exercise 1) we can specify:\n\nplot(nest.hn, nc=8)\n\nThe histogram should look like the one you drew in Exercise 1.\n\n\nGoodness of fit\nPrior to making inference based upon a detection function model, it is prudent to assess the fit of the model. The usual tools for checking goodness of fit are available: the function gof_ds performs goodness of fits tests and plots a QQ-plot. In this command, 8 bins will be used for the chi-square goodness of fit test.\n\ngof_ds(nest.hn)\n\n\n\nSpecifying different detection functions\nDifferent detection function forms and shapes, are specified by changing the key and adjustment arguments.\nThe different options available for key detection functions are:\n\nhalf normal (key=\"hn\") - this is the default\nhazard rate (key=\"hr\")\nuniform (key=\"unif\")\n\nThe different options available for adjustment terms are:\n\nno adjustment terms (adjustment=NULL)\ncosine (adjustment=\"cos\") - default\nHermite polynomial (adjustment=\"herm\")\nSimple polynomial (adjustment=\"poly\")\n\nFor each model specified below, note down the AIC, density and 95% confidence interval and compare it to the model already fitted (i.e. half-normal with no adjustments). Which detection function model would you choose?\nTo fit a uniform key function with cosine adjustment terms, use the command:\n\nnest.uf.cos &lt;- ds(ducknest, key=\"unif\", adjustment=\"cos\",\n                  convert_units=conversion.factor)\n\nBy default, AIC selection will be used to fit adjustment terms of up to order 5. Have any adjustment terms been selected?\nTo fit a hazard rate key function with Hermite polynomial adjustment terms, then use the command:\n\nnest.hr.herm &lt;- ds(ducknest, key=\"hr\", adjustment=\"herm\", \n                  convert_units=conversion.factor)\n\n\n\n\n\n\n\n\n\nReferences\n\nAnderson, D. R., & Pospahala, R. S. (1970). Correction of bias in belt transect studies of immotile objects. The Journal of Wildlife Management, 34(1), 141–146. https://doi.org/10.2307/3799501\n\n\nMiller, D. L., Rexstad, E., Thomas, L., Marshall, L., & Laake, J. L. (2019). Distance Sampling in R. Journal of Statistical Software, 89(1), 1–28. https://doi.org/10.18637/jss.v089.i01\n\n\nR Core Team. (2019). R: A language and environment for statistical computing. Retrieved from https://www.R-project.org"
+  },
+  {
+    "objectID": "02-detfns/R-prac/Prac2_solution.html",
+    "href": "02-detfns/R-prac/Prac2_solution.html",
+    "title": "Line transect estimation using R solution",
+    "section": "",
+    "text": "Solution\n\n\n\nLine transect estimation\n\n\n\nInspect duck nest data\nImport and check the data.\n\nlibrary(Distance)\ndata(ducknest)\nhead(ducknest, n=3)\n\n  Region.Label Area Sample.Label Effort object distance      Study.Area\n1      Default    0            1 128.75      1     0.06 Monte Vista NWR\n2      Default    0            1 128.75      2     0.07 Monte Vista NWR\n3      Default    0            1 128.75      3     0.04 Monte Vista NWR\n\nnrow(ducknest)\n\n[1] 534\n\nbrks &lt;- seq(from=0, to=2.4, by=0.3)\nhist(ducknest$distance, breaks=brks, xlab=\"Distance (m)\",\n     main=\"Perpendicular distances duck nests\")\n\n\n\n\n\n\n\n\n\n\nFit detection functions\nFit the three models using proper units of distance measure.\nThe answer is another function convert_units. Arguments to this function are\n\ndistance_units\n\nunits of measure for perpendicular/radial distances\n\neffort_units\n\nunits of measure for effort (NULL for point transects)\n\narea_units\n\nunits of measure for the study area.\n\n\n\nconversion.factor &lt;- convert_units(\"Meter\", \"Kilometer\", \"Square Kilometer\")\n# Half-normal with no adjustments\nnest.hn &lt;- ds(ducknest, key=\"hn\", adjustment=NULL,\n              convert_units=conversion.factor)\nsummary(nest.hn)\n\n\nSummary for distance analysis \nNumber of observations :  534 \nDistance range         :  0  -  2.4 \n\nModel       : Half-normal key function \nAIC         :  928.1338 \nOptimisation:  mrds (nlminb) \n\nDetection function parameters\nScale coefficient(s):  \n             estimate        se\n(Intercept) 0.9328967 0.1703933\n\n                       Estimate          SE         CV\nAverage p             0.8693482  0.03902051 0.04488479\nN in covered region 614.2533225 29.19681554 0.04753221\n\nSummary statistics:\n   Region  Area CoveredArea Effort   n  k        ER       se.ER      cv.ER\n1 Default 12.36       12.36   2575 534 20 0.2073786 0.007970756 0.03843576\n\nDensity:\n  Label Estimate       se         cv     lcl      ucl       df\n1 Total 49.69687 2.936724 0.05909274 44.2033 55.87318 99.55677\n\n\nIn addition to the half normal key function, fit uniform and hazard rate models with possible adjustment terms.\n\nnest.uf.cos &lt;- ds(ducknest, key=\"unif\", adjustment=\"cos\",\n                  convert_units=conversion.factor)\nnest.hr.herm &lt;- ds(ducknest, key=\"hr\", adjustment=\"herm\", \n                  convert_units=conversion.factor)\n\n\n\nAssess absolute model fit\nThe goodness of fit for the basic model is shown below.\n\ngof_ds(nest.hn, plot=FALSE)\n\n\nGoodness of fit results for ddf object\n\nDistance sampling Cramer-von Mises test (unweighted)\nTest statistic = 0.0353634 p-value = 0.955416\n\n\n\n\nContrast competing models\nA function useful for contrasting models is summarize_ds_models. A summary table of goodness of fit statistics for all models is created below.\n\n# Summarise gof statistics\nknitr::kable(summarize_ds_models(nest.hn, nest.uf.cos, nest.hr.herm, output=\"plain\"), \n               caption=\"Model results for ducknest data set.\", digits=3)\n\n\nModel results for ducknest data set.\n\n\n\n\n\n\n\n\n\n\n\nModel\nKey function\nFormula\nC-vM \\(p\\)-value\nAverage detectability\nse(Average detectability)\nDelta AIC\n\n\n\n\nnest.hn\nHalf-normal\n~1\n0.955\n0.869\n0.039\n0.000\n\n\nnest.uf.cos\nUniform with cosine adjustment term of order 1\nNA\n0.821\n0.846\n0.044\n0.346\n\n\nnest.hr.herm\nHazard-rate\n~1\n0.981\n0.889\n0.050\n1.660\n\n\n\n\n\n\n\nDensity estimates from the competing models\nThe density results from all models are summarized below.\n\n\n\nDensity estimates and confidence intervals for three fitted models.\n\n\nModel\nDetectionFunction\nDensity\nLowerCI\nUpperCI\n\n\n\n\n1\nHalf-normal, no adjustments\n49.70\n44.20\n55.87\n\n\n2\nUniform, cosine adjustments\n51.04\n44.92\n58.00\n\n\n3\nHazard rate, no adjustments\n48.59\n42.52\n55.54\n\n\n\n\n\n\n\nVisualise shape of key functions with duck nest data\nThe detection function plots are shown below.\nplot(nest.hn, nc=8, main=\"Half normal, no adjustments\")\nplot(nest.uf.cos, nc=8, main=\"Uniform, cosine adjustments\")\nplot(nest.hr.herm, nc=8, main=\"Hazard rate, no adjustments\")\n\n\n\n\n\n\nHalf normal\n\n\n\n\n\n\n\nUniform with cosine\n\n\n\n\n\n\n\nHazard rate\n\n\n\n\n\nThe half-normal detection function with no adjustments has the smallest AIC which provides support for this model. The \\(\\Delta\\)AIC values for all three models is small. In general, you should get similar density estimates using different detection function models, provided those models fit the data well, as in this example."
   }
 ]
