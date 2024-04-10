@@ -8,22 +8,25 @@ csl: ../style/apa.csl
 
 ## Distance sampling survey design
 
-::: columns
+:::: {.columns}
 
-::: {.column width="60%"}
+::: {.column width='60%'}
 Fundamental to safely making inference from transects you surveyed to the entire study area is a sound survey design that includes random allocation of survey effort.
 
 It is actually difficult for humans to do things that are actually random.  Computerised methods make the process reasonably straightforward.  Employing a randomised sampling design derived with our software, means there is one less threat to the validity of your survey.
-
-You have the opportunity to use shape files from two locations near St Andrews, one marine and one terrestrial, to design surveys.  The marine study will use aircraft so considerations such as fuel load add "incentives" to produce the optimal survey design while allowing the aircraft to return safely to land.  The terrestrial study deploys point transects into strata of a natural area.
 :::
 
-::: {.column width="40%"}
+::: {.column width='40%'}
+
 ![](survey-unsplash.jpg)
 
 :::
 
-:::
+::::
+
+
+You have the opportunity to use shape files from two locations near St Andrews, one marine and one terrestrial, to design surveys.  The marine study will use aircraft so considerations such as fuel load add "incentives" to produce the optimal survey design while allowing the aircraft to return safely to land.  The terrestrial study deploys point transects into strata of a natural area.
+
 
 ## Lecture materials
 ::: slide-deck
@@ -40,39 +43,30 @@ You have the opportunity to use shape files from two locations near St Andrews, 
 :::
 :::
 
-## Exercise materials
+## Exercise materials ![](../style/icons/application-exercise.png){height=30}
 
-::: columns
+::::: {.panel-tabset .nav-pills}
 
-::: {.column width="50%"}
-::: lab
-**Using R package**
+
+## Using R package
 
 ::: video
-[Video introduction](https://youtu.be/z30NvvUvvvw)
-:::
-
-
-::: instructions
-[Instructions](R-prac/Pr6-instructions.qmd)
+[Video introduction  {{<fa brands r-project>}} ](https://youtu.be/z30NvvUvvvw)
 :::
 
 ::: instructions
-[Solution and discussion](R-prac/Prac6_solution.qmd)
+[Instructions  {{<fa brands r-project>}}](R-prac/Pr6-instructions.qmd)
+:::
+
+::: instructions
+[Solution and discussion  {{<fa brands r-project>}}](R-prac/Prac6_solution.qmd)
 :::
 
 ::: video
-[Video summary](https://youtu.be/C9Gl1RNclAs)
+[Video summary  {{<fa brands r-project>}}](https://youtu.be/C9Gl1RNclAs)
 :::
 
-
-:::
-:::
-
-::: {.column width="50%"}
-
-::: lab
-**Using Distance for Windows**
+## Using Distance for Windows
 
 ::: video
 [Video introduction](https://youtu.be/r5IN-UJDPL4)
@@ -90,12 +84,7 @@ You have the opportunity to use shape files from two locations near St Andrews, 
 [Video summary](https://youtu.be/G1JF4kjOEMs)
 :::
 
-:::
-
-:::
-
-
-:::
+:::::
 
 ## Supplemental materials
 ::: homework
