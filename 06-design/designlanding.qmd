@@ -69,19 +69,19 @@ You have the opportunity to use shape files from two locations near St Andrews, 
 ## Using Distance for Windows
 
 ::: video
-[Video introduction](https://youtu.be/r5IN-UJDPL4)
+[Video introduction  {{<fa brands windows>}}](https://youtu.be/r5IN-UJDPL4)
 :::
 
 ::: instructions
-[Instructions](DistWin-prac/Pr6-instructions-DistWin.qmd)
+[Instructions  {{<fa brands windows>}}](DistWin-prac/Pr6-instructions-DistWin.qmd)
 :::
 
 ::: instructions
-[Solution and discussion](DistWin-prac/Pr6-solution-DistWin.qmd)
+[Solution and discussion  {{<fa brands windows>}}](DistWin-prac/Pr6-solution-DistWin.qmd)
 :::
 
 ::: video
-[Video summary](https://youtu.be/G1JF4kjOEMs)
+[Video summary  {{<fa brands windows>}}](https://youtu.be/G1JF4kjOEMs)
 :::
 
 :::::
