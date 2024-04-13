@@ -32,73 +32,58 @@ There is a second data set that shares the same survey design (short transects i
 ::: slide-deck
 **Lecture discussion**
 
-
 ::: slides
 [Slides](Mod4-2023-precision.pdf)
 :::
-
 
 ::: video
 [Video](https://youtu.be/c8kS8v9lB6I)
 :::
 :::
 
-## Exercise materials
+## Exercise materials ![](../style/icons/application-exercise.png){height=30}
 
-::: columns
+::::: {.panel-tabset .nav-pills}
 
-::: {.column width="50%"}
-::: lab
-**Using R package**
+
+## Using R package
 
 ::: video
-[Video introduction](https://youtu.be/NpdFAN79MrE)
-:::
-
-
-::: instructions
-[Instructions](R-prac/Pr4-instructions.qmd)
+[Video introduction  {{<fa brands r-project>}} ](https://youtu.be/NpdFAN79MrE)
 :::
 
 ::: instructions
-[Solution and discussion](R-prac/Prac4_solution.qmd)
-:::
-
-::: video
-[Video summary](https://youtu.be/jy_Q9ZuaF6A)
-:::
-
-
-:::
-:::
-
-::: {.column width="50%"}
-
-::: lab
-**Using Distance for Windows**
-
-::: video
-[Video introduction](https://youtu.be/mETZAAsqB9A)
+[Instructions  {{<fa brands r-project>}}](R-prac/Pr4-instructions.qmd)
 :::
 
 ::: instructions
-[Instructions](DistWin-prac/Pr4-instructions-DistWin.qmd)
-:::
-
-::: instructions
-[Solution and discussion](DistWin-prac/Pr4-solution-DistWin.qmd)
+[Solution and discussion  {{<fa brands r-project>}}](R-prac/Prac4_solution.qmd)
 :::
 
 ::: video
-[Video summary](https://youtu.be/cvoqGnqD4Ms)
+[Video summary  {{<fa brands r-project>}}](https://youtu.be/jy_Q9ZuaF6A)
 :::
 
+## Using Distance for Windows
+
+::: video
+[Video introduction  {{<fa brands windows>}}](https://youtu.be/mETZAAsqB9A)
 :::
 
+::: instructions
+[Instructions  {{<fa brands windows>}}](DistWin-prac/Pr4-instructions-DistWin.qmd)
 :::
 
-
+::: instructions
+[Solution and discussion  {{<fa brands windows>}}](DistWin-prac/Pr4-solution-DistWin.qmd)
 :::
+
+::: video
+[Video summary  {{<fa brands windows>}}](https://youtu.be/cvoqGnqD4Ms)
+:::
+
+:::::
+
 
 ## Supplemental materials
 ::: homework

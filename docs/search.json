@@ -32,7 +32,12 @@
     "href": "11-mrds/mrdslanding.html",
     "title": "Analysis of double platform data",
     "section": "",
-    "text": "Text needed to describe double platform data and analysis."
+    "text": "Text needed to describe double platform data and analysis.",
+    "crumbs": [
+      "https://distancesampling.org",
+      "Double platform data (the g(0) problem)",
+      "Analysis of double platform data"
+    ]
   },
   {
     "objectID": "11-mrds/mrdslanding.html#analysis-of-point-transect-data",
@@ -46,28 +51,48 @@
     "href": "11-mrds/mrdslanding.html#lecture-materials",
     "title": "Analysis of double platform data",
     "section": "Lecture materials",
-    "text": "Lecture materials\n\nLecture discussion\n\nSlides Placeholder\n\n\nVideo"
+    "text": "Lecture materials\n\nLecture discussion\n\nSlides Placeholder\n\n\nVideo",
+    "crumbs": [
+      "https://distancesampling.org",
+      "Double platform data (the g(0) problem)",
+      "Analysis of double platform data"
+    ]
   },
   {
     "objectID": "11-mrds/mrdslanding.html#exercise-materials",
     "href": "11-mrds/mrdslanding.html#exercise-materials",
     "title": "Analysis of double platform data",
-    "section": "Exercise materials",
-    "text": "Exercise materials\n\n\n\nUsing R package\n\nVideo introduction\n\n\nInstructions\n\n\nSolution and discussion\n\n\nVideo summary\n\n\n\n\nUsing Distance for Windows\n\nVideo introduction\n\n\nInstructions\n\n\nSolution and discussion\n\n\nVideo summary"
+    "section": "Exercise materials ",
+    "text": "Exercise materials \n\nUsing R packageUsing Distance for Windows\n\n\n\nVideo introduction \n\n\nInstructions \n\n\nSolution and discussion \n\n\nVideo summary \n\n\n\n\nVideo introduction \n\n\nInstructions \n\n\nSolution and discussion \n\n\nVideo summary",
+    "crumbs": [
+      "https://distancesampling.org",
+      "Double platform data (the g(0) problem)",
+      "Analysis of double platform data"
+    ]
   },
   {
     "objectID": "11-mrds/mrdslanding.html#supplemental-materials",
     "href": "11-mrds/mrdslanding.html#supplemental-materials",
     "title": "Analysis of double platform data",
     "section": "Supplemental materials",
-    "text": "Supplemental materials\n\nNo supplements\n\nNo supplemental material"
+    "text": "Supplemental materials\n\nNo supplements\n\nNo supplemental material",
+    "crumbs": [
+      "https://distancesampling.org",
+      "Double platform data (the g(0) problem)",
+      "Analysis of double platform data"
+    ]
   },
   {
     "objectID": "11-mrds/mrdslanding.html#analysis-of-double-platform-data",
     "href": "11-mrds/mrdslanding.html#analysis-of-double-platform-data",
     "title": "Analysis of double platform data",
     "section": "",
-    "text": "Text needed to describe double platform data and analysis."
+    "text": "Text needed to describe double platform data and analysis.",
+    "crumbs": [
+      "https://distancesampling.org",
+      "Double platform data (the g(0) problem)",
+      "Analysis of double platform data"
+    ]
   },
   {
     "objectID": "index.html",
@@ -365,35 +390,55 @@
     "href": "08-covariates/covariateslanding.html",
     "title": "Including covariates in detection function modelling",
     "section": "",
-    "text": "It is not just distance from the transect that influences the detectability of animals. In most situations, inference regarding animal density is not hindered if additional causes of variation in detectability are unaccounted.\nThere are some situations in which covariates in addition to distance can be added to models of the detection function. One example of this is animal group size. It is commonly the case that small groups at large distances are not detected and do not enter our sample that is used to estimate the average group size in the population. By failing to have the small groups in our sample, the sample is biased; we estimate that the average group size in the field is larger than it really is; producing biased estimates of population size. The use of group size as a covariate is the recommended way to remove that bias.\nThis exercise presents two data sets: Hawaiian amakihi point transect data collected by multiple observers at varying times during the morning. Eastern Tropical Pacific dolphin surveys where there were different types of vessels, sea state and widely varying dolphin school sizes."
+    "text": "It is not just distance from the transect that influences the detectability of animals. In most situations, inference regarding animal density is not hindered if additional causes of variation in detectability are unaccounted.\nThere are some situations in which covariates in addition to distance can be added to models of the detection function. One example of this is animal group size. It is commonly the case that small groups at large distances are not detected and do not enter our sample that is used to estimate the average group size in the population. By failing to have the small groups in our sample, the sample is biased; we estimate that the average group size in the field is larger than it really is; producing biased estimates of population size. The use of group size as a covariate is the recommended way to remove that bias.\nThis exercise presents two data sets: Hawaiian amakihi point transect data collected by multiple observers at varying times during the morning. Eastern Tropical Pacific dolphin surveys where there were different types of vessels, sea state and widely varying dolphin school sizes.",
+    "crumbs": [
+      "Covariates in the detection functions",
+      "Including covariates in detection function modelling"
+    ]
   },
   {
     "objectID": "08-covariates/covariateslanding.html#including-covariates-in-detection-function-modelling",
     "href": "08-covariates/covariateslanding.html#including-covariates-in-detection-function-modelling",
     "title": "Including covariates in detection function modelling",
     "section": "",
-    "text": "It is not just distance from the transect that influences the detectability of animals. In most situations, inference regarding animal density is not hindered if additional causes of variation in detectability are unaccounted.\nThere are some situations in which covariates in addition to distance can be added to models of the detection function. One example of this is animal group size. It is commonly the case that small groups at large distances are not detected and do not enter our sample that is used to estimate the average group size in the population. By failing to have the small groups in our sample, the sample is biased; we estimate that the average group size in the field is larger than it really is; producing biased estimates of population size. The use of group size as a covariate is the recommended way to remove that bias.\nThis exercise presents two data sets: Hawaiian amakihi point transect data collected by multiple observers at varying times during the morning. Eastern Tropical Pacific dolphin surveys where there were different types of vessels, sea state and widely varying dolphin school sizes."
+    "text": "It is not just distance from the transect that influences the detectability of animals. In most situations, inference regarding animal density is not hindered if additional causes of variation in detectability are unaccounted.\nThere are some situations in which covariates in addition to distance can be added to models of the detection function. One example of this is animal group size. It is commonly the case that small groups at large distances are not detected and do not enter our sample that is used to estimate the average group size in the population. By failing to have the small groups in our sample, the sample is biased; we estimate that the average group size in the field is larger than it really is; producing biased estimates of population size. The use of group size as a covariate is the recommended way to remove that bias.\nThis exercise presents two data sets: Hawaiian amakihi point transect data collected by multiple observers at varying times during the morning. Eastern Tropical Pacific dolphin surveys where there were different types of vessels, sea state and widely varying dolphin school sizes.",
+    "crumbs": [
+      "Covariates in the detection functions",
+      "Including covariates in detection function modelling"
+    ]
   },
   {
     "objectID": "08-covariates/covariateslanding.html#lecture-materials",
     "href": "08-covariates/covariateslanding.html#lecture-materials",
     "title": "Including covariates in detection function modelling",
     "section": "Lecture materials",
-    "text": "Lecture materials\n\nLecture discussion\n\nSlides\n\n\nVideo"
+    "text": "Lecture materials\n\nLecture discussion\n\nSlides\n\n\nVideo",
+    "crumbs": [
+      "Covariates in the detection functions",
+      "Including covariates in detection function modelling"
+    ]
   },
   {
     "objectID": "08-covariates/covariateslanding.html#exercise-materials",
     "href": "08-covariates/covariateslanding.html#exercise-materials",
     "title": "Including covariates in detection function modelling",
-    "section": "Exercise materials",
-    "text": "Exercise materials\n\n\n\nUsing R package\n\nVideo introduction\n\n\nInstructions\n\n\nSolution and discussion\n\n\nVideo summary\n\n\n\n\nUsing Distance for Windows\n\nVideo introduction\n\n\nInstructions\n\n\nSolution and discussion\n\n\nVideo summary"
+    "section": "Exercise materials ",
+    "text": "Exercise materials \n\nUsing R packageUsing Distance for Windows\n\n\n\nVideo introduction \n\n\nInstructions \n\n\nSolution and discussion \n\n\nVideo summary \n\n\n\n\nVideo introduction \n\n\nInstructions \n\n\nSolution and discussion \n\n\nVideo summary",
+    "crumbs": [
+      "Covariates in the detection functions",
+      "Including covariates in detection function modelling"
+    ]
   },
   {
     "objectID": "08-covariates/covariateslanding.html#supplemental-materials",
     "href": "08-covariates/covariateslanding.html#supplemental-materials",
     "title": "Including covariates in detection function modelling",
     "section": "Supplemental materials",
-    "text": "Supplemental materials\n\nInterpreting covariate coefficient estimates\n\nPasture type as covariate in detection function"
+    "text": "Supplemental materials\n\nInterpreting covariate coefficient estimates\n\nPasture type as covariate in detection function",
+    "crumbs": [
+      "Covariates in the detection functions",
+      "Including covariates in detection function modelling"
+    ]
   },
   {
     "objectID": "08-covariates/DistWin-prac/Pr8-instructions-DistWin.html",
@@ -694,35 +739,55 @@
     "href": "09-clusters/clusterslanding.html",
     "title": "Analysis of animals in groups",
     "section": "",
-    "text": "Some species travel in groups. The detection of these species is often made of a group. It is standard practice to record the perpendicular distance to the centre of the group and the number of individuals in the group. Conventional distance sampling could then be applied to produce an estimate of the number of groups in the study area.\nConverting that estimate of group abundance into an estimate of abundance of individuals creates a challenge. Simply multiplying the estimated abundance of groups by the average size of the detected groups produces biased estimates of abundance of individuals. As the following lecture describes, there is a problem of size bias. The average size of the detected groups is a positively biased estimate of the average size of groups in the population, leading to estimates of individual abundance that is too large.\nThe practicals in this model address this situation. You are to analyse data from a survey of Risso’s dolphins (Grampus griseus) in the eastern Atlantic Ocean. Not only will you produce estimates of group abundance, but also estimates of abundance of individuals. To prevent bias in the estimates of abundance of individuals, you will apply methods that avoid the size bias problem.\n\n Photo by Wynand Uys on Unsplash"
+    "text": "Some species travel in groups. The detection of these species is often made of a group. It is standard practice to record the perpendicular distance to the centre of the group and the number of individuals in the group. Conventional distance sampling could then be applied to produce an estimate of the number of groups in the study area.\nConverting that estimate of group abundance into an estimate of abundance of individuals creates a challenge. Simply multiplying the estimated abundance of groups by the average size of the detected groups produces biased estimates of abundance of individuals. As the following lecture describes, there is a problem of size bias. The average size of the detected groups is a positively biased estimate of the average size of groups in the population, leading to estimates of individual abundance that is too large.\nThe practicals in this model address this situation. You are to analyse data from a survey of Risso’s dolphins (Grampus griseus) in the eastern Atlantic Ocean. Not only will you produce estimates of group abundance, but also estimates of abundance of individuals. To prevent bias in the estimates of abundance of individuals, you will apply methods that avoid the size bias problem.\n\n Photo by Wynand Uys on Unsplash",
+    "crumbs": [
+      "Animals detected in clusters",
+      "Analysis of animals in groups"
+    ]
   },
   {
     "objectID": "09-clusters/clusterslanding.html#analysis-of-animals-in-groups",
     "href": "09-clusters/clusterslanding.html#analysis-of-animals-in-groups",
     "title": "Analysis of animals in groups",
     "section": "",
-    "text": "Some species travel in groups. The detection of these species is often made of a group. It is standard practice to record the perpendicular distance to the centre of the group and the number of individuals in the group. Conventional distance sampling could then be applied to produce an estimate of the number of groups in the study area.\nConverting that estimate of group abundance into an estimate of abundance of individuals creates a challenge. Simply multiplying the estimated abundance of groups by the average size of the detected groups produces biased estimates of abundance of individuals. As the following lecture describes, there is a problem of size bias. The average size of the detected groups is a positively biased estimate of the average size of groups in the population, leading to estimates of individual abundance that is too large.\nThe practicals in this model address this situation. You are to analyse data from a survey of Risso’s dolphins (Grampus griseus) in the eastern Atlantic Ocean. Not only will you produce estimates of group abundance, but also estimates of abundance of individuals. To prevent bias in the estimates of abundance of individuals, you will apply methods that avoid the size bias problem.\n\n Photo by Wynand Uys on Unsplash"
+    "text": "Some species travel in groups. The detection of these species is often made of a group. It is standard practice to record the perpendicular distance to the centre of the group and the number of individuals in the group. Conventional distance sampling could then be applied to produce an estimate of the number of groups in the study area.\nConverting that estimate of group abundance into an estimate of abundance of individuals creates a challenge. Simply multiplying the estimated abundance of groups by the average size of the detected groups produces biased estimates of abundance of individuals. As the following lecture describes, there is a problem of size bias. The average size of the detected groups is a positively biased estimate of the average size of groups in the population, leading to estimates of individual abundance that is too large.\nThe practicals in this model address this situation. You are to analyse data from a survey of Risso’s dolphins (Grampus griseus) in the eastern Atlantic Ocean. Not only will you produce estimates of group abundance, but also estimates of abundance of individuals. To prevent bias in the estimates of abundance of individuals, you will apply methods that avoid the size bias problem.\n\n Photo by Wynand Uys on Unsplash",
+    "crumbs": [
+      "Animals detected in clusters",
+      "Analysis of animals in groups"
+    ]
   },
   {
     "objectID": "09-clusters/clusterslanding.html#lecture-materials",
     "href": "09-clusters/clusterslanding.html#lecture-materials",
     "title": "Analysis of animals in groups",
     "section": "Lecture materials",
-    "text": "Lecture materials\n\nLecture discussion\n\nSlides\n\n\nVideo"
+    "text": "Lecture materials\n\nLecture discussion\n\nSlides\n\n\nVideo",
+    "crumbs": [
+      "Animals detected in clusters",
+      "Analysis of animals in groups"
+    ]
   },
   {
     "objectID": "09-clusters/clusterslanding.html#exercise-materials",
     "href": "09-clusters/clusterslanding.html#exercise-materials",
     "title": "Analysis of animals in groups",
-    "section": "Exercise materials",
-    "text": "Exercise materials\n\n\n\nUsing R package\n\nVideo introduction\n\n\nInstructions\n\n\nSolution and discussion\n\n\nVideo summary\n\n\n\n\nUsing Distance for Windows\n\nVideo introduction\n\n\nInstructions\n\n\nSolution and discussion\n\n\nVideo summary"
+    "section": "Exercise materials ",
+    "text": "Exercise materials \n\nUsing R packageUsing Distance for Windows\n\n\n\nVideo introduction \n\n\nInstructions \n\n\nSolution and discussion \n\n\nVideo summary \n\n\n\n\nVideo introduction \n\n\nInstructions \n\n\nSolution and discussion \n\n\nVideo summary",
+    "crumbs": [
+      "Animals detected in clusters",
+      "Analysis of animals in groups"
+    ]
   },
   {
     "objectID": "09-clusters/clusterslanding.html#supplemental-materials",
     "href": "09-clusters/clusterslanding.html#supplemental-materials",
     "title": "Analysis of animals in groups",
     "section": "Supplemental materials",
-    "text": "Supplemental materials\n\nNo supplements\n\nNo supplemental material"
+    "text": "Supplemental materials\n\nNo supplements\n\nNo supplemental material",
+    "crumbs": [
+      "Animals detected in clusters",
+      "Analysis of animals in groups"
+    ]
   },
   {
     "objectID": "09-clusters/R-prac/Pr9-instructions.html#data-organisation",
@@ -911,8 +976,8 @@
     "objectID": "10-multipliers/multiplierslanding.html#exercise-materials",
     "href": "10-multipliers/multiplierslanding.html#exercise-materials",
     "title": "Multipliers and indirect surveys",
-    "section": "Exercise materials",
-    "text": "Exercise materials\n\n\n\nUsing R package\n\nVideo introduction\n\n\nInstructions\n\n\nSolution and discussion\n\n\nVideo summary\n\n\n\n\nUsing Distance for Windows\n\nVideo introduction\n\n\nInstructions\n\n\nSolution and discussion\n\n\nVideo summary",
+    "section": "Exercise materials ",
+    "text": "Exercise materials \n\nUsing R packageUsing Distance for Windows\n\n\n\nVideo introduction \n\n\nInstructions \n\n\nSolution and discussion \n\n\nVideo summary \n\n\n\n\nVideo introduction \n\n\nInstructions \n\n\nSolution and discussion \n\n\nVideo summary",
     "crumbs": [
       "https://distancesampling.org",
       "Multipliers",
@@ -978,63 +1043,99 @@
     "href": "12-field/fieldlanding.html",
     "title": "Field methods and summary",
     "section": "",
-    "text": "Understanding the principles of robust data analysis of distance sampling data, we return to data gathering. Rather than fostering tension between field biologists and statisticians, they can work together to produce the most defensible estimates of animal abundance.\n\n\n\n\nIn this discussion, we suggest ways in which data collection methods can be designed to conform with the principles of distance sampling, namely:\n\nmaking detection probability on the transect \\((g(0))\\) close to 1,\navoiding animal movement prior to detection,\naccurately recording distances from animal to transect and\nsuggestions for dealing with special circumstances."
+    "text": "Understanding the principles of robust data analysis of distance sampling data, we return to data gathering. Rather than fostering tension between field biologists and statisticians, they can work together to produce the most defensible estimates of animal abundance.\n\n\n\n\nIn this discussion, we suggest ways in which data collection methods can be designed to conform with the principles of distance sampling, namely:\n\nmaking detection probability on the transect \\((g(0))\\) close to 1,\navoiding animal movement prior to detection,\naccurately recording distances from animal to transect and\nsuggestions for dealing with special circumstances.",
+    "crumbs": [
+      "Field methods",
+      "Field methods and summary"
+    ]
   },
   {
     "objectID": "12-field/fieldlanding.html#field-methods-and-summary",
     "href": "12-field/fieldlanding.html#field-methods-and-summary",
     "title": "Field methods and summary",
     "section": "",
-    "text": "Understanding the principles of robust data analysis of distance sampling data, we return to data gathering. Rather than fostering tension between field biologists and statisticians, they can work together to produce the most defensible estimates of animal abundance.\n\n\n\n\nIn this discussion, we suggest ways in which data collection methods can be designed to conform with the principles of distance sampling, namely:\n\nmaking detection probability on the transect \\((g(0))\\) close to 1,\navoiding animal movement prior to detection,\naccurately recording distances from animal to transect and\nsuggestions for dealing with special circumstances."
+    "text": "Understanding the principles of robust data analysis of distance sampling data, we return to data gathering. Rather than fostering tension between field biologists and statisticians, they can work together to produce the most defensible estimates of animal abundance.\n\n\n\n\nIn this discussion, we suggest ways in which data collection methods can be designed to conform with the principles of distance sampling, namely:\n\nmaking detection probability on the transect \\((g(0))\\) close to 1,\navoiding animal movement prior to detection,\naccurately recording distances from animal to transect and\nsuggestions for dealing with special circumstances.",
+    "crumbs": [
+      "Field methods",
+      "Field methods and summary"
+    ]
   },
   {
     "objectID": "12-field/fieldlanding.html#lecture-materials",
     "href": "12-field/fieldlanding.html#lecture-materials",
     "title": "Field methods and summary",
     "section": "Lecture materials",
-    "text": "Lecture materials\n\nLecture discussion\n\nSlides\n\n\nVideo"
+    "text": "Lecture materials\n\nLecture discussion\n\nSlides\n\n\nVideo",
+    "crumbs": [
+      "Field methods",
+      "Field methods and summary"
+    ]
   },
   {
     "objectID": "12-field/fieldlanding.html#there-are-no-exercise-materials-for-this-module",
     "href": "12-field/fieldlanding.html#there-are-no-exercise-materials-for-this-module",
     "title": "Field methods and summary",
     "section": "There are no exercise materials for this module",
-    "text": "There are no exercise materials for this module"
+    "text": "There are no exercise materials for this module",
+    "crumbs": [
+      "Field methods",
+      "Field methods and summary"
+    ]
   },
   {
     "objectID": "04-precision/precisionlanding.html",
     "href": "04-precision/precisionlanding.html",
     "title": "Precision of density estimates",
     "section": "",
-    "text": "This exercise examines the ability to precisely estimate density from line transect data.\nThe data are again simulated and there are two data sets. The first data set you will analyse has transects of varying lengths; increasing from west to east in the study area. In addition to this change in transect lengths, there is an accompanying gradient in animal density, decreasing from west to east. In combination, this leads to transects with very high encounter rates in the west and transects with very low encounter rates in the east.\nYou are to analyse these data in several ways, focusing your attention on the precision associated with each estimation method.\nThere is a second data set that shares the same survey design (short transects in the west, long transects in the east). But in this second data set, there in no accompanying animal density gradient. Perform similar analyses with this data set."
+    "text": "This exercise examines the ability to precisely estimate density from line transect data.\nThe data are again simulated and there are two data sets. The first data set you will analyse has transects of varying lengths; increasing from west to east in the study area. In addition to this change in transect lengths, there is an accompanying gradient in animal density, decreasing from west to east. In combination, this leads to transects with very high encounter rates in the west and transects with very low encounter rates in the east.\nYou are to analyse these data in several ways, focusing your attention on the precision associated with each estimation method.\nThere is a second data set that shares the same survey design (short transects in the west, long transects in the east). But in this second data set, there in no accompanying animal density gradient. Perform similar analyses with this data set.",
+    "crumbs": [
+      "Precision of density estimates",
+      "Precision of density estimates"
+    ]
   },
   {
     "objectID": "04-precision/precisionlanding.html#precision-of-density-estimates",
     "href": "04-precision/precisionlanding.html#precision-of-density-estimates",
     "title": "Precision of density estimates",
     "section": "",
-    "text": "This exercise examines the ability to precisely estimate density from line transect data.\nThe data are again simulated and there are two data sets. The first data set you will analyse has transects of varying lengths; increasing from west to east in the study area. In addition to this change in transect lengths, there is an accompanying gradient in animal density, decreasing from west to east. In combination, this leads to transects with very high encounter rates in the west and transects with very low encounter rates in the east.\nYou are to analyse these data in several ways, focusing your attention on the precision associated with each estimation method.\nThere is a second data set that shares the same survey design (short transects in the west, long transects in the east). But in this second data set, there in no accompanying animal density gradient. Perform similar analyses with this data set."
+    "text": "This exercise examines the ability to precisely estimate density from line transect data.\nThe data are again simulated and there are two data sets. The first data set you will analyse has transects of varying lengths; increasing from west to east in the study area. In addition to this change in transect lengths, there is an accompanying gradient in animal density, decreasing from west to east. In combination, this leads to transects with very high encounter rates in the west and transects with very low encounter rates in the east.\nYou are to analyse these data in several ways, focusing your attention on the precision associated with each estimation method.\nThere is a second data set that shares the same survey design (short transects in the west, long transects in the east). But in this second data set, there in no accompanying animal density gradient. Perform similar analyses with this data set.",
+    "crumbs": [
+      "Precision of density estimates",
+      "Precision of density estimates"
+    ]
   },
   {
     "objectID": "04-precision/precisionlanding.html#lecture-materials",
     "href": "04-precision/precisionlanding.html#lecture-materials",
     "title": "Precision of density estimates",
     "section": "Lecture materials",
-    "text": "Lecture materials\n\nLecture discussion\n\nSlides\n\n\nVideo"
+    "text": "Lecture materials\n\nLecture discussion\n\nSlides\n\n\nVideo",
+    "crumbs": [
+      "Precision of density estimates",
+      "Precision of density estimates"
+    ]
   },
   {
     "objectID": "04-precision/precisionlanding.html#exercise-materials",
     "href": "04-precision/precisionlanding.html#exercise-materials",
     "title": "Precision of density estimates",
-    "section": "Exercise materials",
-    "text": "Exercise materials\n\n\n\nUsing R package\n\nVideo introduction\n\n\nInstructions\n\n\nSolution and discussion\n\n\nVideo summary\n\n\n\n\nUsing Distance for Windows\n\nVideo introduction\n\n\nInstructions\n\n\nSolution and discussion\n\n\nVideo summary"
+    "section": "Exercise materials ",
+    "text": "Exercise materials \n\nUsing R packageUsing Distance for Windows\n\n\n\nVideo introduction \n\n\nInstructions \n\n\nSolution and discussion \n\n\nVideo summary \n\n\n\n\nVideo introduction \n\n\nInstructions \n\n\nSolution and discussion \n\n\nVideo summary",
+    "crumbs": [
+      "Precision of density estimates",
+      "Precision of density estimates"
+    ]
   },
   {
     "objectID": "04-precision/precisionlanding.html#supplemental-materials",
     "href": "04-precision/precisionlanding.html#supplemental-materials",
     "title": "Precision of density estimates",
     "section": "Supplemental materials",
-    "text": "Supplemental materials\n\nCould use left-truncation\n\nThere is no supplemental material"
+    "text": "Supplemental materials\n\nCould use left-truncation\n\nThere is no supplemental material",
+    "crumbs": [
+      "Precision of density estimates",
+      "Precision of density estimates"
+    ]
   },
   {
     "objectID": "02-detfns/detfnlanding.html",
@@ -1076,8 +1177,8 @@
     "objectID": "02-detfns/detfnlanding.html#exercise-materials",
     "href": "02-detfns/detfnlanding.html#exercise-materials",
     "title": "Fitting detection functions to line transect data",
-    "section": "Exercise materials",
-    "text": "Exercise materials\n\n\n\nUsing R package\n\nVideo introduction\n\n\nInstructions\n\n\nSolution and discussion\n\n\nVideo summary\n\n\n\n\nUsing Distance for Windows\n\nVideo introduction\n\n\nInstructions\n\n\nSolution and discussion\n\n\nVideo summary",
+    "section": "Exercise materials ",
+    "text": "Exercise materials \n\nUsing R packageUsing Distance for Windows\n\n\n\nVideo introduction \n\n\nInstructions \n\n\nSolution and discussion \n\n\nVideo summary \n\n\n\n\nVideo introduction \n\n\nInstructions \n\n\nSolution and discussion \n\n\nVideo summary",
     "crumbs": [
       "https://distancesampling.org",
       "Detection function modelling",
@@ -1163,7 +1264,6 @@
     "section": "",
     "text": "This practical continues the theme of fitting detection functions to line transect distance sampling data. Follow along with the R code inside the Quarto (.qmd) instructions.\nYou will proceed to fit a number of key function/adjustment term combinations to the data. You will also experiment with setting truncation distances.\nThe data you are analysing are simulated, where the true density and the true detection function is known. You will see how well your analyses perform in producing confidence intervals that include the true density. Also examine how much variability there is between different detection functions in their density estimates.\nAfter completing that main task, you also have the opportunity to analyse another line transect data set of capercaillie, a native Scottish bird.",
     "crumbs": [
-      "https://distancesampling.org",
       "Model criticism",
       "Model criticism"
     ]
@@ -1175,7 +1275,6 @@
     "section": "",
     "text": "This practical continues the theme of fitting detection functions to line transect distance sampling data. Follow along with the R code inside the Quarto (.qmd) instructions.\nYou will proceed to fit a number of key function/adjustment term combinations to the data. You will also experiment with setting truncation distances.\nThe data you are analysing are simulated, where the true density and the true detection function is known. You will see how well your analyses perform in producing confidence intervals that include the true density. Also examine how much variability there is between different detection functions in their density estimates.\nAfter completing that main task, you also have the opportunity to analyse another line transect data set of capercaillie, a native Scottish bird.",
     "crumbs": [
-      "https://distancesampling.org",
       "Model criticism",
       "Model criticism"
     ]
@@ -1187,7 +1286,6 @@
     "section": "Lecture materials",
     "text": "Lecture materials\n\nLecture discussion\n\nSlides\n\n\nVideo",
     "crumbs": [
-      "https://distancesampling.org",
       "Model criticism",
       "Model criticism"
     ]
@@ -1196,10 +1294,9 @@
     "objectID": "03-criticism/criticismlanding.html#exercise-materials",
     "href": "03-criticism/criticismlanding.html#exercise-materials",
     "title": "Model criticism",
-    "section": "Exercise materials",
-    "text": "Exercise materials\n\n\n\nUsing R package\n\nVideo introduction\n\n\nInstructions\n\n\nSolution and discussion\n\n\nVideo summary\n\n\n\n\nUsing Distance for Windows\n\nVideo introduction\n\n\nInstructions\n\n\nSolution and discussion\n\n\nVideo summary",
+    "section": "Exercise materials ",
+    "text": "Exercise materials \n\nUsing R packageUsing Distance for Windows\n\n\n\nVideo introduction \n\n\nInstructions \n\n\nSolution and discussion \n\n\nVideo summary \n\n\n\n\nVideo introduction \n\n\nInstructions \n\n\nSolution and discussion \n\n\nVideo summary",
     "crumbs": [
-      "https://distancesampling.org",
       "Model criticism",
       "Model criticism"
     ]
@@ -1211,7 +1308,6 @@
     "section": "Supplemental materials",
     "text": "Supplemental materials\n\nA detailed look at model selection\n\nThe two stages of model selection",
     "crumbs": [
-      "https://distancesampling.org",
       "Model criticism",
       "Model criticism"
     ]
@@ -1221,70 +1317,115 @@
     "href": "05-points/pointslanding.html",
     "title": "Analysis of point transect data",
     "section": "",
-    "text": "Having mastered analysis of line transect data, we move on to analysis of point transect data. These data are more difficult to model because the region of the curve where we wish to be most precise is the region where data are most scarce.\nAssessing fit to point transect data also represents a challenge. Consequently, we use plots of the probability density function to gain perspective regarding the influence of regions of the probability density function upon lack of fit.\nTwo data sets are to be analysed: the first is a simulated data set in which both the true shape of the detection function as well as true animal density is known. Fit various detection functions to these data, also examining the effect of truncation (truncation for points is often more severe than for lines) upon estimates. Look for congruence in density estimates–as you did with a similar exercise performed on simulated line transect data in Practical 3.\nFinally, there are two optional data sets of winter wrens collected by Prof. Buckland. Same species and study area, but two different field protocols: one protocol used traditional 5-minute counts while the other protocol employed the “snapshot” method."
+    "text": "Having mastered analysis of line transect data, we move on to analysis of point transect data. These data are more difficult to model because the region of the curve where we wish to be most precise is the region where data are most scarce.\nAssessing fit to point transect data also represents a challenge. Consequently, we use plots of the probability density function to gain perspective regarding the influence of regions of the probability density function upon lack of fit.\nTwo data sets are to be analysed: the first is a simulated data set in which both the true shape of the detection function as well as true animal density is known. Fit various detection functions to these data, also examining the effect of truncation (truncation for points is often more severe than for lines) upon estimates. Look for congruence in density estimates–as you did with a similar exercise performed on simulated line transect data in Practical 3.\nFinally, there are two optional data sets of winter wrens collected by Prof. Buckland. Same species and study area, but two different field protocols: one protocol used traditional 5-minute counts while the other protocol employed the “snapshot” method.",
+    "crumbs": [
+      "https://distancesampling.org",
+      "Point transect analysis",
+      "Analysis of point transect data"
+    ]
   },
   {
     "objectID": "05-points/pointslanding.html#analysis-of-point-transect-data",
     "href": "05-points/pointslanding.html#analysis-of-point-transect-data",
     "title": "Analysis of point transect data",
     "section": "",
-    "text": "Having mastered analysis of line transect data, we move on to analysis of point transect data. These data are more difficult to model because the region of the curve where we wish to be most precise is the region where data are most scarce.\nAssessing fit to point transect data also represents a challenge. Consequently, we use plots of the probability density function to gain perspective regarding the influence of regions of the probability density function upon lack of fit.\nTwo data sets are to be analysed: the first is a simulated data set in which both the true shape of the detection function as well as true animal density is known. Fit various detection functions to these data, also examining the effect of truncation (truncation for points is often more severe than for lines) upon estimates. Look for congruence in density estimates–as you did with a similar exercise performed on simulated line transect data in Practical 3.\nFinally, there are two optional data sets of winter wrens collected by Prof. Buckland. Same species and study area, but two different field protocols: one protocol used traditional 5-minute counts while the other protocol employed the “snapshot” method."
+    "text": "Having mastered analysis of line transect data, we move on to analysis of point transect data. These data are more difficult to model because the region of the curve where we wish to be most precise is the region where data are most scarce.\nAssessing fit to point transect data also represents a challenge. Consequently, we use plots of the probability density function to gain perspective regarding the influence of regions of the probability density function upon lack of fit.\nTwo data sets are to be analysed: the first is a simulated data set in which both the true shape of the detection function as well as true animal density is known. Fit various detection functions to these data, also examining the effect of truncation (truncation for points is often more severe than for lines) upon estimates. Look for congruence in density estimates–as you did with a similar exercise performed on simulated line transect data in Practical 3.\nFinally, there are two optional data sets of winter wrens collected by Prof. Buckland. Same species and study area, but two different field protocols: one protocol used traditional 5-minute counts while the other protocol employed the “snapshot” method.",
+    "crumbs": [
+      "https://distancesampling.org",
+      "Point transect analysis",
+      "Analysis of point transect data"
+    ]
   },
   {
     "objectID": "05-points/pointslanding.html#lecture-materials",
     "href": "05-points/pointslanding.html#lecture-materials",
     "title": "Analysis of point transect data",
     "section": "Lecture materials",
-    "text": "Lecture materials\n\nLecture discussion\n\nSlides\n\n\nVideo"
+    "text": "Lecture materials\n\nLecture discussion\n\nSlides\n\n\nVideo",
+    "crumbs": [
+      "https://distancesampling.org",
+      "Point transect analysis",
+      "Analysis of point transect data"
+    ]
   },
   {
     "objectID": "05-points/pointslanding.html#exercise-materials",
     "href": "05-points/pointslanding.html#exercise-materials",
     "title": "Analysis of point transect data",
-    "section": "Exercise materials",
-    "text": "Exercise materials\n\n\n\nUsing R package\n\nVideo introduction\n\n\nInstructions\n\n\nSolution and discussion\n\n\nVideo summary\n\n\n\n\nUsing Distance for Windows\n\nVideo introduction\n\n\nInstructions\n\n\nSolution and discussion\n\n\nVideo summary"
+    "section": "Exercise materials ",
+    "text": "Exercise materials \n\nUsing R packageUsing Distance for Windows\n\n\n\nVideo introduction \n\n\nInstructions \n\n\nSolution and discussion \n\n\nVideo summary \n\n\n\n\nVideo introduction \n\n\nInstructions \n\n\nSolution and discussion \n\n\nVideo summary",
+    "crumbs": [
+      "https://distancesampling.org",
+      "Point transect analysis",
+      "Analysis of point transect data"
+    ]
   },
   {
     "objectID": "05-points/pointslanding.html#supplemental-materials",
     "href": "05-points/pointslanding.html#supplemental-materials",
     "title": "Analysis of point transect data",
     "section": "Supplemental materials",
-    "text": "Supplemental materials\n\nNo supplements\n\nNo supplemental material"
+    "text": "Supplemental materials\n\nNo supplements\n\nNo supplemental material",
+    "crumbs": [
+      "https://distancesampling.org",
+      "Point transect analysis",
+      "Analysis of point transect data"
+    ]
   },
   {
     "objectID": "07-stratify/stratifylanding.html",
     "href": "07-stratify/stratifylanding.html",
     "title": "Analysis of stratified surveys",
     "section": "",
-    "text": "Carrying on from the discussion of survey design where stratification was introduced, this exercise describes multiple analyses of a single data set.\nMultiple analyses arise because it is an open question whether a single detection function is appropriate for different strata that might sharply contrast in their vegetation that might influence detectability.\nEmploying an inappropriate detection function will invalidate population inferences; consequently it is important to have a decision framework that can be employed to determine the role stratification should play in the detection function."
+    "text": "Carrying on from the discussion of survey design where stratification was introduced, this exercise describes multiple analyses of a single data set.\nMultiple analyses arise because it is an open question whether a single detection function is appropriate for different strata that might sharply contrast in their vegetation that might influence detectability.\nEmploying an inappropriate detection function will invalidate population inferences; consequently it is important to have a decision framework that can be employed to determine the role stratification should play in the detection function.",
+    "crumbs": [
+      "Analysis of stratified designs",
+      "Analysis of stratified surveys"
+    ]
   },
   {
     "objectID": "07-stratify/stratifylanding.html#analysis-of-stratified-surveys",
     "href": "07-stratify/stratifylanding.html#analysis-of-stratified-surveys",
     "title": "Analysis of stratified surveys",
     "section": "",
-    "text": "Carrying on from the discussion of survey design where stratification was introduced, this exercise describes multiple analyses of a single data set.\nMultiple analyses arise because it is an open question whether a single detection function is appropriate for different strata that might sharply contrast in their vegetation that might influence detectability.\nEmploying an inappropriate detection function will invalidate population inferences; consequently it is important to have a decision framework that can be employed to determine the role stratification should play in the detection function."
+    "text": "Carrying on from the discussion of survey design where stratification was introduced, this exercise describes multiple analyses of a single data set.\nMultiple analyses arise because it is an open question whether a single detection function is appropriate for different strata that might sharply contrast in their vegetation that might influence detectability.\nEmploying an inappropriate detection function will invalidate population inferences; consequently it is important to have a decision framework that can be employed to determine the role stratification should play in the detection function.",
+    "crumbs": [
+      "Analysis of stratified designs",
+      "Analysis of stratified surveys"
+    ]
   },
   {
     "objectID": "07-stratify/stratifylanding.html#lecture-materials",
     "href": "07-stratify/stratifylanding.html#lecture-materials",
     "title": "Analysis of stratified surveys",
     "section": "Lecture materials",
-    "text": "Lecture materials\n\nLecture discussion\n\nSlides\n\n\nVideo"
+    "text": "Lecture materials\n\nLecture discussion\n\nSlides\n\n\nVideo",
+    "crumbs": [
+      "Analysis of stratified designs",
+      "Analysis of stratified surveys"
+    ]
   },
   {
     "objectID": "07-stratify/stratifylanding.html#exercise-materials",
     "href": "07-stratify/stratifylanding.html#exercise-materials",
     "title": "Analysis of stratified surveys",
-    "section": "Exercise materials",
-    "text": "Exercise materials\n\n\n\nUsing R package\n\nVideo introduction\n\n\nInstructions\n\n\nSolution and discussion\n\n\nVideo summary\n\n\n\n\nUsing Distance for Windows\n\nVideo introduction\n\n\nInstructions\n\n\nSolution and discussion\n\n\nVideo summary"
+    "section": "Exercise materials ",
+    "text": "Exercise materials \n\nUsing R packageUsing Distance for Windows\n\n\n\nVideo introduction \n\n\nInstructions \n\n\nSolution and discussion \n\n\nVideo summary \n\n\n\n\nVideo introduction \n\n\nInstructions \n\n\nSolution and discussion \n\n\nVideo summary",
+    "crumbs": [
+      "Analysis of stratified designs",
+      "Analysis of stratified surveys"
+    ]
   },
   {
     "objectID": "07-stratify/stratifylanding.html#supplemental-materials",
     "href": "07-stratify/stratifylanding.html#supplemental-materials",
     "title": "Analysis of stratified surveys",
     "section": "Supplemental materials",
-    "text": "Supplemental materials\n\nNo supplements\n\nNo supplemental material"
+    "text": "Supplemental materials\n\nNo supplements\n\nNo supplemental material",
+    "crumbs": [
+      "Analysis of stratified designs",
+      "Analysis of stratified surveys"
+    ]
   },
   {
     "objectID": "02-detfns/DistWin-prac/Pr2-instructions-DistWin.html",

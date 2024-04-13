@@ -36,62 +36,49 @@ Text needed to describe double platform data and analysis.
 :::
 :::
 
-## Exercise materials
+## Exercise materials ![](../style/icons/application-exercise.png){height=30}
 
-::: columns
+::::: {.panel-tabset .nav-pills}
 
-::: {.column width="50%"}
-::: lab
-**Using R package**
+
+## Using R package
 
 ::: video
-[Video introduction](https://youtu.be/6GGDkGzKZt4)
-:::
-
-
-::: instructions
-[Instructions](R-prac/Pr11-instructions-R.qmd)
+[Video introduction  {{<fa brands r-project>}} ](https://youtu.be/6GGDkGzKZt4)
 :::
 
 ::: instructions
-[Solution and discussion](DistWin-prac/Pr11-solution-DistWin.qmd)
-:::
-
-::: video
-[Video summary](https://youtu.be/HiVKN8MuQHU)
-:::
-
-
-:::
-:::
-
-::: {.column width="50%"}
-
-::: lab
-**Using Distance for Windows**
-
-::: video
-[Video introduction](https://youtu.be/xSXRnWysgEw)
+[Instructions  {{<fa brands r-project>}}](R-prac/Pr11-instructions-R.qmd)
 :::
 
 ::: instructions
-[Instructions](DistWin-prac/Pr11-instructions-DistWin.qmd)
-:::
-
-::: instructions
-[Solution and discussion](DistWin-prac/Pr11-solution-DistWin.qmd)
+[Solution and discussion  {{<fa brands r-project>}}](DistWin-prac/Pr11-solution-DistWin.qmd)
 :::
 
 ::: video
-[Video summary](https://youtu.be/w9_vjoniXTY)
+[Video summary  {{<fa brands r-project>}}](https://youtu.be/HiVKN8MuQHU)
 :::
 
+## Using Distance for Windows
+
+::: video
+[Video introduction  {{<fa brands windows>}}](https://youtu.be/xSXRnWysgEw)
 :::
 
+::: instructions
+[Instructions  {{<fa brands windows>}}](DistWin-prac/Pr11-instructions-DistWin.qmd)
 :::
 
-
+::: instructions
+[Solution and discussion  {{<fa brands windows>}}](DistWin-prac/Pr11-solution-DistWin.qmd)
 :::
+
+::: video
+[Video summary  {{<fa brands windows>}}](https://youtu.be/w9_vjoniXTY)
+:::
+
+:::::
+
 
 ## Supplemental materials
 ::: homework

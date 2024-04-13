@@ -28,73 +28,58 @@ This exercise presents data on a Sika deer dung study in southern Scotland, wher
 ::: slide-deck
 **Lecture discussion**
 
-
 ::: slides
 [Slides](Mod10-2023-multipliers.pdf)
 :::
-
 
 ::: video
 [Video](https://youtu.be/lm5-VR-8jX0)
 :::
 :::
 
-## Exercise materials
+## Exercise materials ![](../style/icons/application-exercise.png){height=30}
 
-::: columns
+::::: {.panel-tabset .nav-pills}
 
-::: {.column width="50%"}
-::: lab
-**Using R package**
+
+## Using R package
 
 ::: video
-[Video introduction](https://youtu.be/AyaMj5ZB2xY)
-:::
-
-
-::: instructions
-[Instructions](R-prac/Pr10-instructions.qmd)
+[Video introduction  {{<fa brands r-project>}} ](https://youtu.be/AyaMj5ZB2xY)
 :::
 
 ::: instructions
-[Solution and discussion](R-prac/Prac10_solution.qmd)
-:::
-
-::: video
-[Video summary](https://youtu.be/w9ek18_Dc0c)
-:::
-
-
-:::
-:::
-
-::: {.column width="50%"}
-
-::: lab
-**Using Distance for Windows**
-
-::: video
-[Video introduction](https://youtu.be/bU-p-xnd2mc)
+[Instructions  {{<fa brands r-project>}}](R-prac/Pr10-instructions.qmd)
 :::
 
 ::: instructions
-[Instructions](DistWin-prac/Pr10-instructions-DistWin.qmd)
-:::
-
-::: instructions
-[Solution and discussion](DistWin-prac/Pr10-solution-DistWin.qmd)
+[Solution and discussion  {{<fa brands r-project>}}](R-prac/Prac10_solution.qmd)
 :::
 
 ::: video
-[Video summary](https://youtu.be/gY5N-283TPo)
+[Video summary  {{<fa brands r-project>}}](https://youtu.be/w9ek18_Dc0c)
 :::
 
+## Using Distance for Windows
+
+::: video
+[Video introduction  {{<fa brands windows>}}](https://youtu.be/bU-p-xnd2mc)
 :::
 
+::: instructions
+[Instructions  {{<fa brands windows>}}](DistWin-prac/Pr10-instructions-DistWin.qmd)
 :::
 
-
+::: instructions
+[Solution and discussion  {{<fa brands windows>}}](DistWin-prac/Pr10-solution-DistWin.qmd)
 :::
+
+::: video
+[Video summary  {{<fa brands windows>}}](https://youtu.be/gY5N-283TPo)
+:::
+
+:::::
+
 
 ## Supplemental materials
 ::: homework

@@ -42,62 +42,49 @@ The estimated detection functions will be plotted and assessed for goodness of f
 :::
 :::
 
-## Exercise materials
 
-::: columns
+## Exercise materials ![](../style/icons/application-exercise.png){height=30}
 
-::: {.column width="50%"}
-::: lab
-**Using R package**
+::::: {.panel-tabset .nav-pills}
+
+
+## Using R package
 
 ::: video
-[Video introduction](https://youtu.be/BCDqJ4xx1T4)
-:::
-
-
-::: instructions
-[Instructions](R-prac/Pr2-instructions.qmd)
+[Video introduction  {{<fa brands r-project>}} ](https://youtu.be/BCDqJ4xx1T4)
 :::
 
 ::: instructions
-[Solution and discussion](R-prac/Prac2_solution.qmd)
-:::
-
-::: video
-[Video summary](https://youtu.be/pJKeXtPvuAI)
-:::
-
-
-:::
-:::
-
-::: {.column width="50%"}
-
-::: lab
-**Using Distance for Windows**
-
-::: video
-[Video introduction](https://youtu.be/MjMHAiV0ZYM)
+[Instructions  {{<fa brands r-project>}}](R-prac/Pr2-instructions.qmd)
 :::
 
 ::: instructions
-[Instructions](DistWin-prac/Pr2-instructions-DistWin.qmd)
-:::
-
-::: instructions
-[Solution and discussion](DistWin-prac/Pr2-solution-DistWin.qmd)
+[Solution and discussion  {{<fa brands r-project>}}](R-prac/Prac2_solution.qmd)
 :::
 
 ::: video
-[Video summary](https://youtu.be/IEGWzXNgTm8)
+[Video summary  {{<fa brands r-project>}}](https://youtu.be/pJKeXtPvuAI)
 :::
 
+## Using Distance for Windows
+
+::: video
+[Video introduction  {{<fa brands windows>}}](https://youtu.be/MjMHAiV0ZYM)
 :::
 
+::: instructions
+[Instructions  {{<fa brands windows>}}](DistWin-prac/Pr2-instructions-DistWin.qmd)
 :::
 
-
+::: instructions
+[Solution and discussion  {{<fa brands windows>}}](DistWin-prac/Pr2-solution-DistWin.qmd)
 :::
+
+::: video
+[Video summary  {{<fa brands windows>}}](https://youtu.be/IEGWzXNgTm8)
+:::
+
+:::::
 
 ## Supplemental materials
 ::: homework

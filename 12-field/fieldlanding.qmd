@@ -34,11 +34,9 @@ In this discussion, we suggest ways in which data collection methods can be desi
 ::: slide-deck
 **Lecture discussion**
 
-
 ::: slides
 [Slides](Mod12-2023-field.pdf)
 :::
-
 
 ::: video
 [Video](https://youtu.be/2P8aYO0GsUA)

@@ -11,8 +11,14 @@ website:
   navbar:
     background: primary
     right: 
-      - icon: fa-people-pulling
-      - href: https://distancesampling.org
+      - icon: server
+        menu: 
+        - text: Distance home
+          url: https://distancesampling.org
+        - text: Workshops
+          url: https://workshops.distancesampling.org
+        - text: Case studies
+          url: https://examples.distancesampling.org
   sidebar: 
     style: docked
     search: true
@@ -30,37 +36,112 @@ website:
           
       - section: "Detection function modelling"
         contents: 
-          - 02-detfns/detfnlanding.qmd
+          - href: 02-detfns/detfnlanding.qmd
+          - href: 02-detfns/Mod2-2023-detfnmod.pdf
+            text: "Lecture slides"
+          - href: "https://youtu.be/E3EJeeM9Wsk"
+            text: "Lecture video"
+          - href: 02-detfns/detfnlanding.html#exercise-materials
+            text: "Exercise materials"
+          
       - section: "Model criticism"
         contents: 
-          - 03-criticism/criticismlanding.qmd
+          - href: 03-criticism/criticismlanding.qmd
+          - href: 03-criticism/Mod3-2023-gof-assumptions.pdf
+            text: "Lecture slides"
+          - href: "https://youtu.be/hYiPkDUL6hU"
+            text: "Lecture video"
+          - href: 03-criticism/criticismlanding.html#exercise-materials
+            text: "Exercise materials"
+          
       - section: "Precision of density estimates"
         contents: 
-          - 04-precision/precisionlanding.qmd
+          - href: 04-precision/precisionlanding.qmd
+          - href: 04-precision/Mod4-2023-precision.pdf
+            text: "Lecture slides"
+          - href: "https://youtu.be/c8kS8v9lB6I"
+            text: "Lecture video"
+          - href: 04-precision/precisionlanding.html#exercise-materials
+            text: "Exercise materials"
+          
       - section: "Point transect analysis"
         contents: 
-          - 05-points/pointslanding.qmd
+          - href: 05-points/pointslanding.qmd
+          - href: 05-points/Mod5-2023-points.pdf
+            text: "Lecture slides"
+          - href: "https://youtu.be/U3dy7X6COw4"
+            text: "Lecture video"
+          - href: 05-points/pointslanding.html#exercise-materials
+            text: "Exercise materials"
+          
       - section: "Design of distance sampling surveys"
         contents: 
-          - 06-design/designlanding.qmd
+          - href: 06-design/designlanding.qmd
+          - href: 06-design/Mod6-2023-design.pdf
+            text: "Lecture slides"
+          - href: "https://youtu.be/cZ-4CHzmO9w"
+            text: "Lecture video"
+          - href: 06-design/designlanding.html#exercise-materials
+            text: "Exercise materials"
+          
       - section: "Analysis of stratified designs"
         contents: 
-          - 07-stratify/stratifylanding.qmd
+          - href: 07-stratify/stratifylanding.qmd
+          - href: 07-stratify/Mod7-2023-stratify.pdf
+            text: "Lecture slides"
+          - href: "https://youtu.be/6B1EzVFqtkE"
+            text: "Lecture video"
+          - href: 07-stratify/stratifylanding.html#exercise-materials
+            text: "Exercise materials"
+          
       - section: "Covariates in the detection functions"
         contents: 
-          - 08-covariates/covariateslanding.qmd
+          - href: 08-covariates/covariateslanding.qmd
+          - href: 08-covariates/Mod8-2023-covariates.pdf
+            text: "Lecture slides"
+          - href: "https://youtu.be/dMuNFpdxClc"
+            text: "Lecture video"
+          - href: 08-covariates/covariateslanding.html#exercise-materials
+            text: "Exercise materials"
+          
       - section: "Animals detected in clusters"
         contents: 
-          - 09-clusters/clusterslanding.qmd
+          - href: 09-clusters/clusterslanding.qmd
+          - href: 09-clusters/Mod9-2023-clusters.pdf
+            text: "Lecture slides"
+          - href: "https://youtu.be/2vhervI6QAc"
+            text: "Lecture video"
+          - href: 09-clusters/clusterslanding.html#exercise-materials
+            text: "Exercise materials"
+
       - section: "Multipliers"
         contents: 
-          - 10-multipliers/multiplierslanding.qmd          
+          - href: 10-multipliers/multiplierslanding.qmd          
+          - href: 10-multipliers/Mod10-2023-multipliers.pdf
+            text: "Lecture slides"
+          - href: "https://youtu.be/lm5-VR-8jX0"
+            text: "Lecture video"
+          - href: 10-multipliers/multiplierslanding.html#exercise-materials
+            text: "Exercise materials"
+
       - section: "Double platform data (the g(0) problem)"
         contents: 
-          - 11-mrds/mrdslanding.qmd          
+          - href: 11-mrds/mrdslanding.qmd          
+          - href: 11-mrds/Mod11-2023-mrds.pdf
+            text: "Lecture slides absent"
+          - href: "https://youtu.be/lm5-VR-8jX0"
+            text: "Lecture video wrong"
+          - href: 11-mrds/mrdslanding.html#exercise-materials
+            text: "Exercise materials"
+
       - section: "Field methods"
         contents: 
-          - 12-field/fieldlanding.qmd  
+          - href: 12-field/fieldlanding.qmd  
+          - href: 12-field/Mod12-2023-field.pdf
+            text: "Lecture slides"
+          - href: "https://youtu.be/2P8aYO0GsUA"
+            text: "Lecture video"
+          
 format:
   html:
     css: styles.css

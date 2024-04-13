@@ -30,73 +30,58 @@ This exercise presents two data sets:  Hawaiian amakihi point transect data coll
 ::: slide-deck
 **Lecture discussion**
 
-
 ::: slides
 [Slides](Mod8-2023-covariates.pdf)
 :::
-
 
 ::: video
 [Video](https://youtu.be/dMuNFpdxClc)
 :::
 :::
 
-## Exercise materials
+## Exercise materials ![](../style/icons/application-exercise.png){height=30}
 
-::: columns
+::::: {.panel-tabset .nav-pills}
 
-::: {.column width="50%"}
-::: lab
-**Using R package**
+
+## Using R package
 
 ::: video
-[Video introduction](https://youtu.be/oM6FFDfRHp8)
-:::
-
-
-::: instructions
-[Instructions](R-prac/Pr8-instructions.qmd)
+[Video introduction  {{<fa brands r-project>}} ](https://youtu.be/oM6FFDfRHp8)
 :::
 
 ::: instructions
-[Solution and discussion](R-prac/Prac8_solution.qmd)
-:::
-
-::: video
-[Video summary](https://youtu.be/tS5MoL_7PTw)
-:::
-
-
-:::
-:::
-
-::: {.column width="50%"}
-
-::: lab
-**Using Distance for Windows**
-
-::: video
-[Video introduction](https://youtu.be/17DheoAg7YM)
+[Instructions  {{<fa brands r-project>}}](R-prac/Pr8-instructions.qmd)
 :::
 
 ::: instructions
-[Instructions](DistWin-prac/Pr8-instructions-DistWin.qmd)
-:::
-
-::: instructions
-[Solution and discussion](DistWin-prac/Pr8-solution-DistWin.qmd)
+[Solution and discussion  {{<fa brands r-project>}}](R-prac/Prac8_solution.qmd)
 :::
 
 ::: video
-[Video summary](https://youtu.be/WBDmj6fD_NI)
+[Video summary  {{<fa brands r-project>}}](https://youtu.be/tS5MoL_7PTw)
 :::
 
+## Using Distance for Windows
+
+::: video
+[Video introduction  {{<fa brands windows>}}](https://youtu.be/17DheoAg7YM)
 :::
 
+::: instructions
+[Instructions  {{<fa brands windows>}}](DistWin-prac/Pr8-instructions-DistWin.qmd)
 :::
 
-
+::: instructions
+[Solution and discussion  {{<fa brands windows>}}](DistWin-prac/Pr8-solution-DistWin.qmd)
 :::
+
+::: video
+[Video summary  {{<fa brands windows>}}](https://youtu.be/WBDmj6fD_NI)
+:::
+
+:::::
+
 
 ## Supplemental materials
 ::: homework

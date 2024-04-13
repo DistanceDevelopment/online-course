@@ -32,73 +32,58 @@ After completing that main task, you also have the opportunity to analyse anothe
 ::: slide-deck
 **Lecture discussion**
 
-
 ::: slides
 [Slides](Mod3-2023-gof-assumptions.pdf)
 :::
-
 
 ::: video
 [Video](https://youtu.be/hYiPkDUL6hU)
 :::
 :::
 
-## Exercise materials
+## Exercise materials ![](../style/icons/application-exercise.png){height=30}
 
-::: columns
+::::: {.panel-tabset .nav-pills}
 
-::: {.column width="50%"}
-::: lab
-**Using R package**
+
+## Using R package
 
 ::: video
-[Video introduction](https://youtu.be/emWCWUDwK2I)
-:::
-
-
-::: instructions
-[Instructions](R-prac/Pr3-instructions.qmd)
+[Video introduction  {{<fa brands r-project>}} ](https://youtu.be/emWCWUDwK2I)
 :::
 
 ::: instructions
-[Solution and discussion](R-prac/Prac3_solution.qmd)
-:::
-
-::: video
-[Video summary](https://youtu.be/ZZt8WmzA1hE)
-:::
-
-
-:::
-:::
-
-::: {.column width="50%"}
-
-::: lab
-**Using Distance for Windows**
-
-::: video
-[Video introduction](https://youtu.be/VuQ-pwVg3dk)
+[Instructions  {{<fa brands r-project>}}](R-prac/Pr3-instructions.qmd)
 :::
 
 ::: instructions
-[Instructions](DistWin-prac/Pr3-instructions-DistWin.qmd)
-:::
-
-::: instructions
-[Solution and discussion](DistWin-prac/Pr3-solution-DistWin.qmd)
+[Solution and discussion  {{<fa brands r-project>}}](R-prac/Prac3_solution.qmd)
 :::
 
 ::: video
-[Video summary](https://youtu.be/PaB9p47dUCY)
+[Video summary  {{<fa brands r-project>}}](https://youtu.be/ZZt8WmzA1hE)
 :::
 
+## Using Distance for Windows
+
+::: video
+[Video introduction  {{<fa brands windows>}}](https://youtu.be/VuQ-pwVg3dk)
 :::
 
+::: instructions
+[Instructions  {{<fa brands windows>}}](DistWin-prac/Pr3-instructions-DistWin.qmd)
 :::
 
-
+::: instructions
+[Solution and discussion  {{<fa brands windows>}}](DistWin-prac/Pr3-solution-DistWin.qmd)
 :::
+
+::: video
+[Video summary  {{<fa brands windows>}}](https://youtu.be/PaB9p47dUCY)
+:::
+
+:::::
+
 
 ## Supplemental materials
 ::: homework

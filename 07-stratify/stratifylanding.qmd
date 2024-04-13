@@ -30,73 +30,58 @@ Employing an inappropriate detection function will invalidate population inferen
 ::: slide-deck
 **Lecture discussion**
 
-
 ::: slides
 [Slides](Mod7-2023-stratanalysis.pdf)
 :::
-
 
 ::: video
 [Video](https://youtu.be/6B1EzVFqtkE)
 :::
 :::
 
-## Exercise materials
+## Exercise materials ![](../style/icons/application-exercise.png){height=30}
 
-::: columns
+::::: {.panel-tabset .nav-pills}
 
-::: {.column width="50%"}
-::: lab
-**Using R package**
+
+## Using R package
 
 ::: video
-[Video introduction](https://youtu.be/Zkug1FThfQ4)
-:::
-
-
-::: instructions
-[Instructions](R-prac/Pr7-instructions.qmd)
+[Video introduction  {{<fa brands r-project>}} ](https://youtu.be/Zkug1FThfQ4)
 :::
 
 ::: instructions
-[Solution and discussion](R-prac/Prac7_solution.qmd)
-:::
-
-::: video
-[Video summary](https://youtu.be/x3tbFZkQnUo)
-:::
-
-
-:::
-:::
-
-::: {.column width="50%"}
-
-::: lab
-**Using Distance for Windows**
-
-::: video
-[Video introduction](https://youtu.be/q3Er-7jewL4)
+[Instructions  {{<fa brands r-project>}}](R-prac/Pr7-instructions.qmd)
 :::
 
 ::: instructions
-[Instructions](DistWin-prac/Pr7-instructions-DistWin.qmd)
-:::
-
-::: instructions
-[Solution and discussion](DistWin-prac/Pr7-solution-DistWin.qmd)
+[Solution and discussion  {{<fa brands r-project>}}](R-prac/Prac7_solution.qmd)
 :::
 
 ::: video
-[Video summary](https://youtu.be/y6YXSK0kSN8)
+[Video summary  {{<fa brands r-project>}}](https://youtu.be/x3tbFZkQnUo)
 :::
 
+## Using Distance for Windows
+
+::: video
+[Video introduction  {{<fa brands windows>}}](https://youtu.be/q3Er-7jewL4)
 :::
 
+::: instructions
+[Instructions  {{<fa brands windows>}}](DistWin-prac/Pr7-instructions-DistWin.qmd)
 :::
 
-
+::: instructions
+[Solution and discussion  {{<fa brands windows>}}](DistWin-prac/Pr7-solution-DistWin.qmd)
 :::
+
+::: video
+[Video summary  {{<fa brands windows>}}](https://youtu.be/y6YXSK0kSN8)
+:::
+
+:::::
+
 
 ## Supplemental materials
 ::: homework

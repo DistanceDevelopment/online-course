@@ -32,73 +32,58 @@ The practicals in this model address this situation. You are to analyse data fro
 ::: slide-deck
 **Lecture discussion**
 
-
 ::: slides
 [Slides](Mod9-2023-clusters.pdf)
 :::
-
 
 ::: video
 [Video](https://youtu.be/2vhervI6QAc)
 :::
 :::
 
-## Exercise materials
+## Exercise materials ![](../style/icons/application-exercise.png){height=30}
 
-::: columns
+::::: {.panel-tabset .nav-pills}
 
-::: {.column width="50%"}
-::: lab
-**Using R package**
+
+## Using R package
 
 ::: video
-[Video introduction](https://youtu.be/rAtfUb08xLw)
-:::
-
-
-::: instructions
-[Instructions](R-prac/Pr9-instructions.qmd)
+[Video introduction  {{<fa brands r-project>}} ](https://youtu.be/rAtfUb08xLw)
 :::
 
 ::: instructions
-[Solution and discussion](R-prac/Prac9_solution.qmd)
-:::
-
-::: video
-[Video summary](https://youtu.be/xVaeDjIhmgU)
-:::
-
-
-:::
-:::
-
-::: {.column width="50%"}
-
-::: lab
-**Using Distance for Windows**
-
-::: video
-[Video introduction](https://youtu.be/3Jl7B_zhWd8)
+[Instructions  {{<fa brands r-project>}}](R-prac/Pr9-instructions.qmd)
 :::
 
 ::: instructions
-[Instructions](DistWin-prac/Pr9-instructions-DistWin.qmd)
-:::
-
-::: instructions
-[Solution and discussion](DistWin-prac/Pr9-solution-DistWin.qmd)
+[Solution and discussion  {{<fa brands r-project>}}](R-prac/Prac9_solution.qmd)
 :::
 
 ::: video
-[Video summary](https://youtu.be/5ACJPzKcIUY)
+[Video summary  {{<fa brands r-project>}}](https://youtu.be/xVaeDjIhmgU)
 :::
 
+## Using Distance for Windows
+
+::: video
+[Video introduction  {{<fa brands windows>}}](https://youtu.be/3Jl7B_zhWd8)
 :::
 
+::: instructions
+[Instructions  {{<fa brands windows>}}](DistWin-prac/Pr9-instructions-DistWin.qmd)
 :::
 
-
+::: instructions
+[Solution and discussion  {{<fa brands windows>}}](DistWin-prac/Pr9-solution-DistWin.qmd)
 :::
+
+::: video
+[Video summary  {{<fa brands windows>}}](https://youtu.be/5ACJPzKcIUY)
+:::
+
+:::::
+
 
 ## Supplemental materials
 ::: homework
