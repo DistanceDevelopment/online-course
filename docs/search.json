@@ -136,7 +136,6 @@
     "section": "",
     "text": "Fundamental to safely making inference from transects you surveyed to the entire study area is a sound survey design that includes random allocation of survey effort.\nIt is actually difficult for humans to do things that are actually random. Computerised methods make the process reasonably straightforward. Employing a randomised sampling design derived with our software, means there is one less threat to the validity of your survey.\n\n\n\n\nYou have the opportunity to use shape files from two locations near St Andrews, one marine and one terrestrial, to design surveys. The marine study will use aircraft so considerations such as fuel load add “incentives” to produce the optimal survey design while allowing the aircraft to return safely to land. The terrestrial study deploys point transects into strata of a natural area.",
     "crumbs": [
-      "https://distancesampling.org",
       "Design of distance sampling surveys",
       "Design of distance sampling surveys"
     ]
@@ -148,7 +147,6 @@
     "section": "",
     "text": "Fundamental to safely making inference from transects you surveyed to the entire study area is a sound survey design that includes random allocation of survey effort.\nIt is actually difficult for humans to do things that are actually random. Computerised methods make the process reasonably straightforward. Employing a randomised sampling design derived with our software, means there is one less threat to the validity of your survey.\n\n\n\n\nYou have the opportunity to use shape files from two locations near St Andrews, one marine and one terrestrial, to design surveys. The marine study will use aircraft so considerations such as fuel load add “incentives” to produce the optimal survey design while allowing the aircraft to return safely to land. The terrestrial study deploys point transects into strata of a natural area.",
     "crumbs": [
-      "https://distancesampling.org",
       "Design of distance sampling surveys",
       "Design of distance sampling surveys"
     ]
@@ -160,7 +158,6 @@
     "section": "Lecture materials",
     "text": "Lecture materials\n\nLecture discussion\n\nSlides\n\n\nVideo",
     "crumbs": [
-      "https://distancesampling.org",
       "Design of distance sampling surveys",
       "Design of distance sampling surveys"
     ]
@@ -172,7 +169,6 @@
     "section": "Exercise materials ",
     "text": "Exercise materials \n\nUsing R packageUsing Distance for Windows\n\n\n\nVideo introduction \n\n\nInstructions \n\n\nSolution and discussion \n\n\nVideo summary \n\n\n\n\nVideo introduction \n\n\nInstructions \n\n\nSolution and discussion \n\n\nVideo summary",
     "crumbs": [
-      "https://distancesampling.org",
       "Design of distance sampling surveys",
       "Design of distance sampling surveys"
     ]
@@ -184,7 +180,6 @@
     "section": "Supplemental materials",
     "text": "Supplemental materials\n\nNo supplements\n\nNo supplemental material",
     "crumbs": [
-      "https://distancesampling.org",
       "Design of distance sampling surveys",
       "Design of distance sampling surveys"
     ]
@@ -943,7 +938,6 @@
     "section": "",
     "text": "It is potentially easier to estimate the density of things produced by animals (songs, dung, nests) than to estimate density of animals. In this situation, the calculated density of animal cues needs to be transformed into an estimate of animal density. This requires companion field investigations to estimate cue production rate and possibly, cue disappearance rate. Those rates are termed multipliers.\nThis exercise presents data on a Sika deer dung study in southern Scotland, where data on dung disappearance needs to be analysed via logistic regression to produce the disappearance rate multiplier. We return to the Montrave Estate study of Prof Buckland to estimate density of winter wrens via detections of song; necessitated because of evasive movement of winter wrens in the field.",
     "crumbs": [
-      "https://distancesampling.org",
       "Multipliers",
       "Multipliers and indirect surveys"
     ]
@@ -955,7 +949,6 @@
     "section": "",
     "text": "It is potentially easier to estimate the density of things produced by animals (songs, dung, nests) than to estimate density of animals. In this situation, the calculated density of animal cues needs to be transformed into an estimate of animal density. This requires companion field investigations to estimate cue production rate and possibly, cue disappearance rate. Those rates are termed multipliers.\nThis exercise presents data on a Sika deer dung study in southern Scotland, where data on dung disappearance needs to be analysed via logistic regression to produce the disappearance rate multiplier. We return to the Montrave Estate study of Prof Buckland to estimate density of winter wrens via detections of song; necessitated because of evasive movement of winter wrens in the field.",
     "crumbs": [
-      "https://distancesampling.org",
       "Multipliers",
       "Multipliers and indirect surveys"
     ]
@@ -967,7 +960,6 @@
     "section": "Lecture materials",
     "text": "Lecture materials\n\nLecture discussion\n\nSlides\n\n\nVideo",
     "crumbs": [
-      "https://distancesampling.org",
       "Multipliers",
       "Multipliers and indirect surveys"
     ]
@@ -979,7 +971,6 @@
     "section": "Exercise materials ",
     "text": "Exercise materials \n\nUsing R packageUsing Distance for Windows\n\n\n\nVideo introduction \n\n\nInstructions \n\n\nSolution and discussion \n\n\nVideo summary \n\n\n\n\nVideo introduction \n\n\nInstructions \n\n\nSolution and discussion \n\n\nVideo summary",
     "crumbs": [
-      "https://distancesampling.org",
       "Multipliers",
       "Multipliers and indirect surveys"
     ]
@@ -991,7 +982,6 @@
     "section": "Supplemental materials",
     "text": "Supplemental materials\n\nNo supplements\n\nNo supplemental material",
     "crumbs": [
-      "https://distancesampling.org",
       "Multipliers",
       "Multipliers and indirect surveys"
     ]
@@ -1144,7 +1134,6 @@
     "section": "",
     "text": "The data are the famous “ducknest” data similar to those data described in (Anderson & Pospahala, 1970). Data exist within the Distance package, so emphasis will be upon performing analysis rather than acquiring data.\nYou will do some exploratory analysis of the detection distances, then use the function ds() to fit detection functions to the data. You’ll also use the function convert_units() for properly dealing with different units of measure in the data.\nThe estimated detection functions will be plotted and assessed for goodness of fit.",
     "crumbs": [
-      "https://distancesampling.org",
       "Detection function modelling",
       "Fitting detection functions to line transect data"
     ]
@@ -1156,7 +1145,6 @@
     "section": "",
     "text": "The data are the famous “ducknest” data similar to those data described in (Anderson & Pospahala, 1970). Data exist within the Distance package, so emphasis will be upon performing analysis rather than acquiring data.\nYou will do some exploratory analysis of the detection distances, then use the function ds() to fit detection functions to the data. You’ll also use the function convert_units() for properly dealing with different units of measure in the data.\nThe estimated detection functions will be plotted and assessed for goodness of fit.",
     "crumbs": [
-      "https://distancesampling.org",
       "Detection function modelling",
       "Fitting detection functions to line transect data"
     ]
@@ -1168,7 +1156,6 @@
     "section": "Lecture materials",
     "text": "Lecture materials\n\nLecture discussion\n\nSlides\n\n\nVideo",
     "crumbs": [
-      "https://distancesampling.org",
       "Detection function modelling",
       "Fitting detection functions to line transect data"
     ]
@@ -1180,7 +1167,6 @@
     "section": "Exercise materials ",
     "text": "Exercise materials \n\nUsing R packageUsing Distance for Windows\n\n\n\nVideo introduction \n\n\nInstructions \n\n\nSolution and discussion \n\n\nVideo summary \n\n\n\n\nVideo introduction \n\n\nInstructions \n\n\nSolution and discussion \n\n\nVideo summary",
     "crumbs": [
-      "https://distancesampling.org",
       "Detection function modelling",
       "Fitting detection functions to line transect data"
     ]
@@ -1192,7 +1178,6 @@
     "section": "Supplemental materials",
     "text": "Supplemental materials\n\nEffect of truncation upon density estimates\n\nDemonstration of changing truncation distance",
     "crumbs": [
-      "https://distancesampling.org",
       "Detection function modelling",
       "Fitting detection functions to line transect data"
     ]
@@ -1319,7 +1304,6 @@
     "section": "",
     "text": "Having mastered analysis of line transect data, we move on to analysis of point transect data. These data are more difficult to model because the region of the curve where we wish to be most precise is the region where data are most scarce.\nAssessing fit to point transect data also represents a challenge. Consequently, we use plots of the probability density function to gain perspective regarding the influence of regions of the probability density function upon lack of fit.\nTwo data sets are to be analysed: the first is a simulated data set in which both the true shape of the detection function as well as true animal density is known. Fit various detection functions to these data, also examining the effect of truncation (truncation for points is often more severe than for lines) upon estimates. Look for congruence in density estimates–as you did with a similar exercise performed on simulated line transect data in Practical 3.\nFinally, there are two optional data sets of winter wrens collected by Prof. Buckland. Same species and study area, but two different field protocols: one protocol used traditional 5-minute counts while the other protocol employed the “snapshot” method.",
     "crumbs": [
-      "https://distancesampling.org",
       "Point transect analysis",
       "Analysis of point transect data"
     ]
@@ -1331,7 +1315,6 @@
     "section": "",
     "text": "Having mastered analysis of line transect data, we move on to analysis of point transect data. These data are more difficult to model because the region of the curve where we wish to be most precise is the region where data are most scarce.\nAssessing fit to point transect data also represents a challenge. Consequently, we use plots of the probability density function to gain perspective regarding the influence of regions of the probability density function upon lack of fit.\nTwo data sets are to be analysed: the first is a simulated data set in which both the true shape of the detection function as well as true animal density is known. Fit various detection functions to these data, also examining the effect of truncation (truncation for points is often more severe than for lines) upon estimates. Look for congruence in density estimates–as you did with a similar exercise performed on simulated line transect data in Practical 3.\nFinally, there are two optional data sets of winter wrens collected by Prof. Buckland. Same species and study area, but two different field protocols: one protocol used traditional 5-minute counts while the other protocol employed the “snapshot” method.",
     "crumbs": [
-      "https://distancesampling.org",
       "Point transect analysis",
       "Analysis of point transect data"
     ]
@@ -1343,7 +1326,6 @@
     "section": "Lecture materials",
     "text": "Lecture materials\n\nLecture discussion\n\nSlides\n\n\nVideo",
     "crumbs": [
-      "https://distancesampling.org",
       "Point transect analysis",
       "Analysis of point transect data"
     ]
@@ -1355,7 +1337,6 @@
     "section": "Exercise materials ",
     "text": "Exercise materials \n\nUsing R packageUsing Distance for Windows\n\n\n\nVideo introduction \n\n\nInstructions \n\n\nSolution and discussion \n\n\nVideo summary \n\n\n\n\nVideo introduction \n\n\nInstructions \n\n\nSolution and discussion \n\n\nVideo summary",
     "crumbs": [
-      "https://distancesampling.org",
       "Point transect analysis",
       "Analysis of point transect data"
     ]
@@ -1367,7 +1348,6 @@
     "section": "Supplemental materials",
     "text": "Supplemental materials\n\nNo supplements\n\nNo supplemental material",
     "crumbs": [
-      "https://distancesampling.org",
       "Point transect analysis",
       "Analysis of point transect data"
     ]
