@@ -87,7 +87,7 @@ website:
       - section: "Analysis of stratified designs"
         contents: 
           - href: 07-stratify/stratifylanding.qmd
-          - href: 07-stratify/Mod7-2023-stratify.pdf
+          - href: 07-stratify/Mod7-2023-stratanalysis.pdf
             text: "Lecture slides"
           - href: "https://youtu.be/6B1EzVFqtkE"
             text: "Lecture video"
