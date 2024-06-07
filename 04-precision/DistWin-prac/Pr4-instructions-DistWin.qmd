@@ -27,7 +27,7 @@ The survey region is a triangle, with dimensions 1km by 1km. The systematically 
 
 ## Basic variance estimation, with bootstrapping
 
-1.  [Download](Systematic_variance_2-2023.zip) and open the Distance project *Systematic_variance_2.zip*.
+1.  [Download](Systematic_variance_2.zip) and open the Distance project *Systematic_variance_2.zip*.
 2.  On the Analysis tab, click New Analysis. Rename it *Without post-stratification*.
 3.  Under Model definition, click Properties. Rename the new model:    *No_adjustments_plus_bootstrap*.
 4.  Click the tab for Detection function, and click Adjustment terms.  Select Manual selection so that no adjustment terms are fitted. Select the Constraints button, and click No constraints. These  options will reduce the work that has to be done during  bootstrapping.
@@ -95,6 +95,6 @@ The following simulated population does not exhibit strong trends across the sur
 
 ![](./media/syst1survey.png)
 
-Download and open the project [**Systematic_variance_1.zip**](Systematic_variance_2-2023.zip). Add the new data column `VarGroup` before conducting any analyses this time. With the augmented data, repeat the analyses you performed on the Systematic_variance_2.zip project. Find the relevant outputs. Has the post-stratification scheme been necessary in this case?
+Download and open the project [**Systematic_variance_1.zip**](Systematic_variance_1.zip). Add the new data column `VarGroup` before conducting any analyses this time. With the augmented data, repeat the analyses you performed on the `Systematic_variance_2.zip` project. Find the relevant outputs. Has the post-stratification scheme been necessary in this case?
 
 [^1]: because it is effectively a sample of size 1 – only the first line position was randomly chosen, and the rest followed on  deterministically from there.
