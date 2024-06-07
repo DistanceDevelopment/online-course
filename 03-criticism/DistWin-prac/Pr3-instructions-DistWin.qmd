@@ -49,7 +49,7 @@ Line 12; length 4km
 1.0 6.6 12.4 4.9 15.4
 ```
 
-1b) The full data set is in project `Exercise3-2023.zip` Download the file from [this link](Exercise3-2023.zip) and save the file in a location on your computer. Open `Distance for Windows`. Choose `Open project` and select zip file type to open the file and begin analysis.
+1b) The full data set is in project `Exercise3-2023.zip` Download the file from [this link](Exercise3.zip) and save the file in a location on your computer. Open `Distance for Windows`. Choose `Open project` and select zip file type to open the file and begin analysis.
 
 - Experiment with keys other than the half-normal (uniform, hazard-rate and negative exponential), to assess whether these data can be  satisfactorily analysed using the wrong model.
 - For each key, determine a suitable truncation point, and decide on  whether, and which, adjustments are needed. Truncation points come  under the data filter – click **New…** in the **Data Filter** section  and create and name your own data filter, including truncation. In the  example data filter below, the largest 10% of distances were truncated–- you may want to truncate at a specific distance, depending on the  data.
