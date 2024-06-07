@@ -49,7 +49,7 @@ As part of the songbird survey conducted by Prof. Buckland [@buckland2006], he c
 Effort for cue count surveys is recorded in time units. For Buckland's survey each visit to a point was 5 minutes in duration, but each point was visited twice. Hence the field *Search effort* associated with each point records 10 minutes of effort. The measurement of cue production rate (next paragraph) must also respect the units of measure of effort.
 
 <img src="global-layer.png" align="right">
-The project [Wren3-2023.zip](Wren3-2023.zip) contains the detections as well as the rate at which birds produce songbursts (1.4558 bursts min<sup>-1</sup>) with a standard error of 0.2428. This standard error is a measure of variability between individual wrens. Note the cue production rate multiplier is stored in the Distance for Windows project in the *Global Layer* of the data sheet (right).
+The project [Wren3.zip](Wren3.zip) contains the detections as well as the rate at which birds produce songbursts (1.4558 bursts min<sup>-1</sup>) with a standard error of 0.2428. This standard error is a measure of variability between individual wrens. Note the cue production rate multiplier is stored in the Distance for Windows project in the *Global Layer* of the data sheet (right).
 
 <img src="multiplier-screen.png" align="left" width=300px>
 Your task is to fit detection function models to the wren point transect data and appropriately apply the multiplier to convert song density into wren density. Prof Buckland in his paper [@buckland2006] used a truncation distance for this data set of 92.5m. See screen shot of *Multipliers* tab of the *Model Definition Properties* (left).
