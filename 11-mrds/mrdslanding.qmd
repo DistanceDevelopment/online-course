@@ -20,8 +20,8 @@ We introduce the topic with a lecture, and follow up with an exercise that cover
 :::
 
 ::: {.column width="40%"}
-![](points-unsplash.jpg)
-
+![](sea-unsplash.jpg)
+<font size=-2>Photo by <a href="https://unsplash.com/@luiztrix?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Luiz Felipe</a> on <a href="https://unsplash.com/photos/body-of-water-1er_kr_E-yM?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a></font>
 :::
 
 :::
@@ -47,10 +47,6 @@ We introduce the topic with a lecture, and follow up with an exercise that cover
 
 ## Using R package
 
-::: video
-[Video introduction  {{<fa brands r-project>}} ](https://youtu.be/6GGDkGzKZt4)
-:::
-
 ::: instructions
 [Instructions  {{<fa brands r-project>}}](R-prac/Pr11-instructions-R.qmd)
 :::
@@ -59,15 +55,7 @@ We introduce the topic with a lecture, and follow up with an exercise that cover
 [Solution and discussion  {{<fa brands r-project>}}](DistWin-prac/Pr11-solution-DistWin.qmd)
 :::
 
-::: video
-[Video summary  {{<fa brands r-project>}}](https://youtu.be/HiVKN8MuQHU)
-:::
-
 ## Using Distance for Windows
-
-::: video
-[Video introduction  {{<fa brands windows>}}](https://youtu.be/xSXRnWysgEw)
-:::
 
 ::: instructions
 [Instructions  {{<fa brands windows>}}](DistWin-prac/Pr11-instructions-DistWin.qmd)
@@ -75,10 +63,6 @@ We introduce the topic with a lecture, and follow up with an exercise that cover
 
 ::: instructions
 [Solution and discussion  {{<fa brands windows>}}](DistWin-prac/Pr11-solution-DistWin.qmd)
-:::
-
-::: video
-[Video summary  {{<fa brands windows>}}](https://youtu.be/w9_vjoniXTY)
 :::
 
 :::::
