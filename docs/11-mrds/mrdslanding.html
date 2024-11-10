@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.55">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -21,7 +21,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -627,7 +647,9 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="analysis-of-double-platform-data">Analysis of double platform data</h2>
 <div class="columns">
 <div class="column" style="width:60%;">
-<p>Text needed to describe double platform data and analysis.</p>
+<p>A fundamental assumption of “conventional” distance sampling is that we detect all animals at zero distance – i.e., that g(0)=1. In some circumstances this assumption is violated, for example in shipboard surveys of marine mammals where they may be underwater or obscured by waves when the observer looks for them even right on the transect line.</p>
+<p>Here we introduce an extended type of distance sampling that can help deal with this issue: the use of two independent observation teams, sometimes called “double platform” (because on ships they operate from different physical platforms). The analysis approach used on double platform data is called “Mark Recapture Distance Sampling” (MRDS).</p>
+<p>We introduce the topic with a lecture, and follow up with an exercise that covers two datasets: an artificial survey of a known population of golf tees in St Andrews (to illustrate the concepts), and a real-world survey of crabeater seals in Antarctica (<span class="citation" data-cites="Southwell2007">Southwell et al. (<a href="#ref-Southwell2007" role="doc-biblioref">2007</a>)</span>).</p>
 </div><div class="column" style="width:40%;">
 <p><img src="points-unsplash.jpg" class="img-fluid"></p>
 </div>
@@ -684,19 +706,43 @@ ul.task-list li input[type="checkbox"] {
 <section id="supplemental-materials" class="level2">
 <h2 class="anchored" data-anchor-id="supplemental-materials">Supplemental materials</h2>
 <div class="homework">
-<p><strong>No supplements</strong></p>
-<div class="instructions">
-<p>No supplemental material</p>
+<p><strong>Further reading</strong></p>
+<ul>
+<li>See <span class="citation" data-cites="Burt2014">Burt et al. (<a href="#ref-Burt2014" role="doc-biblioref">2014</a>)</span> for a paper introducing MRDS methods. This is more accessible than the original MRDS reference <span class="citation" data-cites="Laake2004">(<a href="#ref-Laake2004" role="doc-biblioref">Laake &amp; Borchers, 2004</a>)</span>.</li>
+<li><span class="citation" data-cites="Borchers2006">Borchers et al. (<a href="#ref-Borchers2006" role="doc-biblioref">2006</a>)</span> develop point independence methods.</li>
+<li><span class="citation" data-cites="Buckland2010">Buckland et al. (<a href="#ref-Buckland2010" role="doc-biblioref">2010</a>)</span> go one step futher with “limiting independence” methods - but there is no accessible software to implement this.</li>
+<li><span class="citation" data-cites="Laake2011">Laake et al. (<a href="#ref-Laake2011" role="doc-biblioref">2011</a>)</span> extend the methods to point transect surveys.</li>
+</ul>
 </div>
-</div>
+<p>:::</p>
 </section>
 <section id="references" class="level1">
-<h1>References</h1>
+
+
 
 
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-Borchers2006" class="csl-entry" role="listitem">
+Borchers, D. L., Laake, J. L., Southwell, C., &amp; Paxton, C. G. M. (2006). Accommodating unmodeled heterogeneity in double-observer distance sampling surveys. <em>Biometrics</em>, <em>62</em>, 372–378. <a href="https://doi.org/10.1111/j.1541-0420.2005.00493.x">https://doi.org/10.1111/j.1541-0420.2005.00493.x</a>
+</div>
+<div id="ref-Buckland2010" class="csl-entry" role="listitem">
+Buckland, S. T., Laake, J., &amp; Borchers, D. L. (2010). Double observer line tansect methods: Levels of independence. <em>Biometrics</em>, <em>66</em>, 169–177. <a href="https://doi.org/10.1111/j.1541-0420.2009.01239.x">https://doi.org/10.1111/j.1541-0420.2009.01239.x</a>
+</div>
+<div id="ref-Burt2014" class="csl-entry" role="listitem">
+Burt, M. L., Borchers, D. L., Jenkins, K. J., &amp; Marques, T. A. (2014). Using mark-recapture distance sampling methods on line transect surveys. <em>Methods in Ecology and Evolution</em>, <em>5</em>, 1180–1191. <a href="https://doi.org/10.1111/2041-210X.12294">https://doi.org/10.1111/2041-210X.12294</a>
+</div>
+<div id="ref-Laake2004" class="csl-entry" role="listitem">
+Laake, J. L., &amp; Borchers, D. L. (2004). Methods for incomplete detection at distance zero. In S. T. Buckland, D. R. Anderson, K. P. Burnham, J. L. Laake, D. L. Borchers, &amp; L. Thomas (Eds.), <em>Advanced distance sampling</em> (pp. 127–208). <span>Oxford</span>: <span>Oxford University Press</span>.
+</div>
+<div id="ref-Laake2011" class="csl-entry" role="listitem">
+Laake, J. L., Collier, B. A., Morrison, M. L., &amp; Wilkins, R. N. (2011). Point-based mark-recapture distance sampling. <em>Journal of Agricultural, Biological and Environmental Statistics</em>, <em>16</em>, 389–408. <a href="https://doi.org/doi.org/10.1007/s13253-011-0059-5">https://doi.org/doi.org/10.1007/s13253-011-0059-5</a>
+</div>
+<div id="ref-Southwell2007" class="csl-entry" role="listitem">
+Southwell, C., Borchers, D., de la Mare, B., Paxton, C. G. M., Burt, L., &amp; de la Mare, W. (2007). Estimation of detection probability on aerial surveys of <span>Antarctic</span> pack-ice seals. <em>Journal of Agricultural, Biological, and Environmental Statistics</em>, <em>12</em>, 1–14. <a href="https://doi.org/10.1198/108571107X162920">https://doi.org/10.1198/108571107X162920</a>
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
