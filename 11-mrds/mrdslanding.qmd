@@ -3,6 +3,7 @@ title: Analysis of double platform data
 author: Centre for Research into Ecological and Environmental Modelling <br> **University of St Andrews**
 date-modified: "November 2024"
 date-format: "MMMM YYYY"
+bibliography: references.bib
 csl: ../style/apa.csl
 ---
 
@@ -11,7 +12,11 @@ csl: ../style/apa.csl
 ::: columns
 
 ::: {.column width="60%"}
-Text needed to describe double platform data and analysis.
+A fundamental assumption of “conventional” distance sampling is that we detect all animals at zero distance – i.e., that g(0)=1.  In some circumstances this assumption is violated, for example in shipboard surveys of marine mammals where they may be underwater or obscured by waves when the observer looks for them even right on the transect line.   
+
+Here we introduce an extended type of distance sampling that can help deal with this issue: the use of two independent observation teams, sometimes called “double platform” (because on ships they operate from different physical platforms).  The analysis approach used on double platform data is called “Mark Recapture Distance Sampling” (MRDS).
+
+We introduce the topic with a lecture, and follow up with an exercise that covers two datasets: an artificial survey of a known population of golf tees in St Andrews (to illustrate the concepts), and a real-world survey of crabeater seals in Antarctica.
 :::
 
 ::: {.column width="40%"}
@@ -39,7 +44,6 @@ Text needed to describe double platform data and analysis.
 ## Exercise materials ![](../style/icons/application-exercise.png){height=30}
 
 ::::: {.panel-tabset .nav-pills}
-
 
 ## Using R package
 
