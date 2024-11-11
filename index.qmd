@@ -24,14 +24,14 @@ Each of the lectures has both slides (for you to download) and narrated video. L
 Distance sampling software has undergone an evolution over the >25 years since development began at CREEM. In these training materials, we provide exercises based around both of our software platforms: 
 
 - Distance for Windows (a standalone) Windows-based programme with a graphical user interface
-  - The installation package for this software can be downloaded [from this website](http://distancesampling.org/)
+  - Practicals based upon Distance for Windows in these materials were created using Distance for Windows 8.0. Older versions of Distance for Windows will not open these projects, hence you will need to download and install Distance for Windows 8.0 prior to working with these practicals
+  - The installation package for this software [can be downloaded](https://distancedevelopment.github.io/distancesamplingcom2/software/downloaddistwin.html)
 - an R package `Distance`. 
   - The R language and environment can be downloaded from [CRAN](https://cran.r-project.org/) as well as the [`Distance` package itself](https://cran.r-project.org/web/packages/Distance/index.html).
   - Practicals based around the R package assume you have fundamental knowledge of the R language.
 
-
 ## Other distance sampling resources
 
 - A "one stop" resources for distance sampling materials developed by CREEM can be found at [https://distancesampling.org](https://distancesampling.org)
-- If you wish to receive training in distance sampling with a "live" instructor, CREEM offers workshops carried out online. Offerings of these training opportunities can be found on our [workshop web site](http://workshops.distancesampling.org/)
-- Examples of distance sampling analyses conducted using the `Distance` R package can be found on our [examples](https://examples.distancesampling.org/) web site.
+- If you wish to receive training in distance sampling with a "live" instructor, CREEM offers workshops carried out online. Offerings of these training opportunities can be found on our [training web page](https://distancedevelopment.github.io/distancesamplingcom2/training/training.html)
+- Examples of distance sampling analyses conducted using the `Distance` R package can be found on our [case studies](https://distancedevelopment.github.io/distancesamplingcom2/resources/vignettes.html) pages.
