@@ -32,7 +32,7 @@ We introduce the topic with a lecture, and follow up with an exercise that cover
 
 
 ::: slides
-[Slides](Mod5-2023-points.pdf) **Placeholder**
+[Slides](Mod11-2024-mrds.pdf)
 :::
 
 
