@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Centre for Research into Ecological and Environmental Modelling   University of St Andrews">
 
-<title>Introductory distance sampling training materials</title>
+<title>Other approaches to dealing with g(0)&lt;1 – Introductory distance sampling training materials</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,25 +21,45 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -81,8 +102,37 @@ ul.task-list li input[type="checkbox"] {
 
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="styles.css">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-sidebar docked nav-fixed">
@@ -92,7 +142,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Introductory distance sampling training materials</span>
     </a>
   </div>
@@ -134,7 +184,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Introductory distance sampling training materials</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Other approaches to dealing with g(0)&lt;1</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -165,13 +215,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01-intro/introlanding.html" class="sidebar-item-text sidebar-link">
+  <a href="../01-intro/introlanding.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Fundamentals of distance sampling</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01-intro/Mod1-2023-intro.pdf" class="sidebar-item-text sidebar-link">
+  <a href="../01-intro/Mod1-2023-intro.pdf" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture slides</span></a>
   </div>
 </li>
@@ -183,7 +233,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01-intro/introlanding.html#exercise-materials" class="sidebar-item-text sidebar-link">
+  <a href="../01-intro/introlanding.html#exercise-materials" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercise materials</span></a>
   </div>
 </li>
@@ -200,13 +250,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02-detfns/detfnlanding.html" class="sidebar-item-text sidebar-link">
+  <a href="../02-detfns/detfnlanding.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Fitting detection functions to line transect data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02-detfns/Mod2-2023-detfnmod.pdf" class="sidebar-item-text sidebar-link">
+  <a href="../02-detfns/Mod2-2023-detfnmod.pdf" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture slides</span></a>
   </div>
 </li>
@@ -218,7 +268,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02-detfns/detfnlanding.html#exercise-materials" class="sidebar-item-text sidebar-link">
+  <a href="../02-detfns/detfnlanding.html#exercise-materials" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercise materials</span></a>
   </div>
 </li>
@@ -235,13 +285,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03-criticism/criticismlanding.html" class="sidebar-item-text sidebar-link">
+  <a href="../03-criticism/criticismlanding.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Model criticism</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03-criticism/Mod3-2023-gof-assumptions.pdf" class="sidebar-item-text sidebar-link">
+  <a href="../03-criticism/Mod3-2023-gof-assumptions.pdf" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture slides</span></a>
   </div>
 </li>
@@ -253,7 +303,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03-criticism/criticismlanding.html#exercise-materials" class="sidebar-item-text sidebar-link">
+  <a href="../03-criticism/criticismlanding.html#exercise-materials" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercise materials</span></a>
   </div>
 </li>
@@ -270,13 +320,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04-precision/precisionlanding.html" class="sidebar-item-text sidebar-link">
+  <a href="../04-precision/precisionlanding.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Precision of density estimates</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04-precision/Mod4-2023-precision.pdf" class="sidebar-item-text sidebar-link">
+  <a href="../04-precision/Mod4-2023-precision.pdf" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture slides</span></a>
   </div>
 </li>
@@ -288,7 +338,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04-precision/precisionlanding.html#exercise-materials" class="sidebar-item-text sidebar-link">
+  <a href="../04-precision/precisionlanding.html#exercise-materials" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercise materials</span></a>
   </div>
 </li>
@@ -305,13 +355,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05-points/pointslanding.html" class="sidebar-item-text sidebar-link">
+  <a href="../05-points/pointslanding.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Analysis of point transect data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05-points/Mod5-2023-points.pdf" class="sidebar-item-text sidebar-link">
+  <a href="../05-points/Mod5-2023-points.pdf" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture slides</span></a>
   </div>
 </li>
@@ -323,7 +373,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05-points/pointslanding.html#exercise-materials" class="sidebar-item-text sidebar-link">
+  <a href="../05-points/pointslanding.html#exercise-materials" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercise materials</span></a>
   </div>
 </li>
@@ -340,13 +390,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06-design/designlanding.html" class="sidebar-item-text sidebar-link">
+  <a href="../06-design/designlanding.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Design of distance sampling surveys</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06-design/Mod6-2023-design.pdf" class="sidebar-item-text sidebar-link">
+  <a href="../06-design/Mod6-2023-design.pdf" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture slides</span></a>
   </div>
 </li>
@@ -358,7 +408,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06-design/designlanding.html#exercise-materials" class="sidebar-item-text sidebar-link">
+  <a href="../06-design/designlanding.html#exercise-materials" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercise materials</span></a>
   </div>
 </li>
@@ -375,13 +425,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07-stratify/stratifylanding.html" class="sidebar-item-text sidebar-link">
+  <a href="../07-stratify/stratifylanding.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Analysis of stratified surveys</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07-stratify/Mod7-2023-stratanalysis.pdf" class="sidebar-item-text sidebar-link">
+  <a href="../07-stratify/Mod7-2023-stratanalysis.pdf" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture slides</span></a>
   </div>
 </li>
@@ -393,7 +443,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07-stratify/stratifylanding.html#exercise-materials" class="sidebar-item-text sidebar-link">
+  <a href="../07-stratify/stratifylanding.html#exercise-materials" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercise materials</span></a>
   </div>
 </li>
@@ -410,13 +460,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08-covariates/covariateslanding.html" class="sidebar-item-text sidebar-link">
+  <a href="../08-covariates/covariateslanding.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Including covariates in detection function modelling</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08-covariates/Mod8-2023-covariates.pdf" class="sidebar-item-text sidebar-link">
+  <a href="../08-covariates/Mod8-2023-covariates.pdf" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture slides</span></a>
   </div>
 </li>
@@ -428,7 +478,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08-covariates/covariateslanding.html#exercise-materials" class="sidebar-item-text sidebar-link">
+  <a href="../08-covariates/covariateslanding.html#exercise-materials" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercise materials</span></a>
   </div>
 </li>
@@ -445,13 +495,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./09-clusters/clusterslanding.html" class="sidebar-item-text sidebar-link">
+  <a href="../09-clusters/clusterslanding.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Analysis of animals in groups</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./09-clusters/Mod9-2023-clusters.pdf" class="sidebar-item-text sidebar-link">
+  <a href="../09-clusters/Mod9-2023-clusters.pdf" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture slides</span></a>
   </div>
 </li>
@@ -463,7 +513,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./09-clusters/clusterslanding.html#exercise-materials" class="sidebar-item-text sidebar-link">
+  <a href="../09-clusters/clusterslanding.html#exercise-materials" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercise materials</span></a>
   </div>
 </li>
@@ -480,13 +530,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./10-multipliers/multiplierslanding.html" class="sidebar-item-text sidebar-link">
+  <a href="../10-multipliers/multiplierslanding.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Multipliers and indirect surveys</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./10-multipliers/Mod10-2023-multipliers.pdf" class="sidebar-item-text sidebar-link">
+  <a href="../10-multipliers/Mod10-2023-multipliers.pdf" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture slides</span></a>
   </div>
 </li>
@@ -498,7 +548,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./10-multipliers/multiplierslanding.html#exercise-materials" class="sidebar-item-text sidebar-link">
+  <a href="../10-multipliers/multiplierslanding.html#exercise-materials" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercise materials</span></a>
   </div>
 </li>
@@ -515,13 +565,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./11-mrds/mrdslanding.html" class="sidebar-item-text sidebar-link">
+  <a href="../11-mrds/mrdslanding.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Analysis of double platform data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./11-mrds/Mod11-2023-mrds.pdf" class="sidebar-item-text sidebar-link">
+  <a href="../11-mrds/Mod11-2023-mrds.pdf" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture slides absent</span></a>
   </div>
 </li>
@@ -533,7 +583,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./11-mrds/mrdslanding.html#exercise-materials" class="sidebar-item-text sidebar-link">
+  <a href="../11-mrds/mrdslanding.html#exercise-materials" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercise materials</span></a>
   </div>
 </li>
@@ -550,13 +600,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./12-field/fieldlanding.html" class="sidebar-item-text sidebar-link">
+  <a href="../12-field/fieldlanding.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Field methods and summary</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./12-field/Mod12-2023-field.pdf" class="sidebar-item-text sidebar-link">
+  <a href="../12-field/Mod12-2023-field.pdf" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture slides</span></a>
   </div>
 </li>
@@ -578,8 +628,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#philosophy" id="toc-philosophy" class="nav-link active" data-scroll-target="#philosophy">Philosophy</a></li>
-  <li><a href="#other-distance-sampling-resources" id="toc-other-distance-sampling-resources" class="nav-link" data-scroll-target="#other-distance-sampling-resources">Other distance sampling resources</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#multiplier-approaches-to-dealing-with-availability-bias-in-line-transect-surveys" id="toc-multiplier-approaches-to-dealing-with-availability-bias-in-line-transect-surveys" class="nav-link" data-scroll-target="#multiplier-approaches-to-dealing-with-availability-bias-in-line-transect-surveys">Multiplier approaches to dealing with availability bias in line transect surveys</a></li>
+  <li><a href="#markov-modelling-approaches" id="toc-markov-modelling-approaches" class="nav-link" data-scroll-target="#markov-modelling-approaches">Markov modelling approaches</a></li>
+  <li><a href="#duplicate-uncertainty" id="toc-duplicate-uncertainty" class="nav-link" data-scroll-target="#duplicate-uncertainty">Duplicate uncertainty</a></li>
+  <li><a href="#other-ways-to-view-mrds-models" id="toc-other-ways-to-view-mrds-models" class="nav-link" data-scroll-target="#other-ways-to-view-mrds-models">Other ways to view MRDS models</a></li>
+  <li><a href="#cue-counting" id="toc-cue-counting" class="nav-link" data-scroll-target="#cue-counting">Cue counting</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
     </div>
@@ -588,15 +643,27 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Introductory distance sampling training materials</h1>
+<h1 class="title">Other approaches to dealing with g(0)&lt;1</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Centre for Research into Ecological and Environmental Modelling <br> <strong>University of St Andrews</strong> </p>
+          </div>
+  </div>
     
   
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">November 2024</p>
+    </div>
+  </div>
     
   </div>
   
@@ -605,46 +672,72 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="columns">
-<div class="column" style="width:35%;">
-<p><img src="D60generic.jpg" class="img-fluid" style="width:90.0%"></p>
-</div><div class="column" style="width:60%;">
-<section id="distance-sampling-training-materials" class="level2">
-<h2 class="anchored" data-anchor-id="distance-sampling-training-materials">Distance sampling training materials</h2>
-<p>These materials have been prepared by staff at the Centre for Research into Ecological and Environmental Modelling (CREEM) at the Univ of St Andrews. Members of CREEM have been developing analytical methods for distance sampling data over the past 30 years. In addition to developing methods, CREEM has also been creating software to implement those analytical methods. A comprehensive set of training materials have been developed to bring together best practices in designing, conducting and analysing distance sampling surveys. The aim of materials at this website is to help you produce the most defensible inference from your distance sampling surveys.</p>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>The lecture and exercises in this chapter of the workshop focus on Mark-Recapture Distance Sampling (MRDS) approaches for dealing with cases where detection at zero distance is not certain (i.e., <span class="math inline">\(g(0)&lt;1\)</span>). This is partly because general software exists for analysis of these models in the form of the <code>mrds</code> <code>R</code> package (also implemented in Distance for Windows).</p>
+<p>In this document provide pointers to alternative approaches that may be useful in some circumstances. As a caveat, some of the material referenced is quite technical.</p>
 </section>
+<section id="multiplier-approaches-to-dealing-with-availability-bias-in-line-transect-surveys" class="level2">
+<h2 class="anchored" data-anchor-id="multiplier-approaches-to-dealing-with-availability-bias-in-line-transect-surveys">Multiplier approaches to dealing with availability bias in line transect surveys</h2>
+<p>If a separate estimate of <span class="math inline">\(g0\)</span> is avilable then it can be incorporated as a “multiplier”: <span class="math inline">\(\hat{N} = \hat{g0} \times \hat{N}^*\)</span> where <span class="math inline">\(\hat{N}^*\)</span> is the estimate of <span class="math inline">\(N\)</span> from a conventional or multiple covariate distance sampling analysis. Variance can be estimated using the delta method. Multiplers can readily be incorporated into analyses in the <code>mrds</code> package or in Distance for Windows.</p>
+<p>One approach to estimating <span class="math inline">\(g0\)</span> for marine mammals is based on knowledge of average surfacing and dive times. An early work on this is <span class="citation" data-cites="McLaren1961">McLaren (<a href="#ref-McLaren1961" role="doc-biblioref">1961</a>)</span> but this has been superseded by <span class="citation" data-cites="Laake1997">Laake et al. (<a href="#ref-Laake1997" role="doc-biblioref">1997</a>)</span>. However, <span class="citation" data-cites="Borchers2013">Borchers et al. (<a href="#ref-Borchers2013" role="doc-biblioref">2013</a>)</span> showed that these approaches can be very biased, and developed and demonstrated an improved formulation, based on the use of Hidden Markov models (HHMs).</p>
+</section>
+<section id="markov-modelling-approaches" class="level2">
+<h2 class="anchored" data-anchor-id="markov-modelling-approaches">Markov modelling approaches</h2>
+<p>Distance sampling is traditionally modelled in one dimension: using perpendicular distances for line transct surveys. In a series of papers, Borchers and colleagues showed that it can be viewed as a two-dimnensional process, with detection being a function of forward and perpendicular distances. This leads to approaches that can potentially accommodate uncertain detection at zero perpendicular distance, even using single-platform data. Relevant references are <span class="citation" data-cites="Borchers2013">Borchers et al. (<a href="#ref-Borchers2013" role="doc-biblioref">2013</a>)</span>, <span class="citation" data-cites="Langrock2013">Langrock, Borchers, and Skaug (<a href="#ref-Langrock2013" role="doc-biblioref">2013</a>)</span> and <span class="citation" data-cites="Borchers2015">Borchers and Langrock (<a href="#ref-Borchers2015" role="doc-biblioref">2015</a>)</span>. An <code>R</code> package that implements some of these methods is <a href="https://github.com/david-borchers/hmltm">hmltm</a>, although please note that this is a research-level output, not designed for general use.</p>
+</section>
+<section id="duplicate-uncertainty" class="level2">
+<h2 class="anchored" data-anchor-id="duplicate-uncertainty">Duplicate uncertainty</h2>
+<p>In some situations, assignment of duplicate detections between platforms is not certain. One situation where this can occur is aerial surveys where there are either two planes, one following the other, or a single plane with muliple cameras pointing in different directions. In these circumstances the methods of <span class="citation" data-cites="Stevenson2018">Stevenson, Borchers, and Fewster (<a href="#ref-Stevenson2018" role="doc-biblioref">2018</a>)</span> or <span class="citation" data-cites="Borchers2020">Borchers et al. (<a href="#ref-Borchers2020" role="doc-biblioref">2020</a>)</span> may be useful. These both are accompanied by research-level <code>R</code> packages: <a href="https://github.com/b-steve/palm">palm</a> and <a href="https://github.com/david-borchers/twoplane2">twoplane</a>.</p>
+<p>An alternative approach that involves a probabilistic approach to duplicate identification for aerial surveys is <span class="citation" data-cites="Hiby1998">Hiby and Lovell (<a href="#ref-Hiby1998" role="doc-biblioref">1998</a>)</span>.</p>
+</section>
+<section id="other-ways-to-view-mrds-models" class="level2">
+<h2 class="anchored" data-anchor-id="other-ways-to-view-mrds-models">Other ways to view MRDS models</h2>
+<p>Alternative perspectives on full, point and limiting independence models are given by <span class="citation" data-cites="MacKenzie2015">MacKenzie and Clement (<a href="#ref-MacKenzie2015" role="doc-biblioref">2015</a>)</span> and <span class="citation" data-cites="Pavanato2021">Pavanato (<a href="#ref-Pavanato2021" role="doc-biblioref">2021</a>)</span>.</p>
+</section>
+<section id="cue-counting" class="level2">
+<h2 class="anchored" data-anchor-id="cue-counting">Cue counting</h2>
+<p>Cue counting is a potential approach to deal with <span class="math inline">\(g(0)&lt;1\)</span> of aniamls. Instead of surveying for animals, you can survey for a cue they produce (e.g., a whale blow rather than a whale) where detection at zero distance is certain. However, a new problem then becomes obatining an estimate of cue rate. Cue counting is covered elsewhere in the workshop.</p>
+</section>
+<section id="references" class="level2">
+
+
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-Borchers2015" class="csl-entry" role="listitem">
+Borchers, D. L., and R. Langrock. 2015. <span>“Double-Observer Line Transect Surveys with Markov-Modulated Poisson Process Models for Animal Availability.”</span> <em>Biometrics</em> 71: 1060–69.
 </div>
+<div id="ref-Borchers2020" class="csl-entry" role="listitem">
+Borchers, D. L., P. Nightingale, B. C. Stevenson, and R. M. Fewster. 2020. <span>“A Latent Capture History Model for Digital Aerial Surveys of Marine Mammals Without Recapture Identification.”</span> <em>Biometrics</em> 78: 274–85.
 </div>
-<section id="philosophy" class="level2">
-<h2 class="anchored" data-anchor-id="philosophy">Philosophy</h2>
-<p>The training philosophy involves lecture materials paired with computer exercises to cement concepts described in the lectures. The practical exercises are fundamental to proper analysis of distance sampling data. The purpose of preparing the exercises is to offer you the opportunity to experiment with the software and analytical methods. It is better to experiment (and make mistakes) with data we provide to you, than to make mistakes in the analysis and inference of your own data.</p>
-<p>Each of the lectures has both slides (for you to download) and narrated video. Likewise each computer exercise has a video introduction, describing the concepts being addresses and well as a video summary, emphasising both key steps when using the software as well as important “take home messages” arising in each practical.</p>
-<p>Distance sampling software has undergone an evolution over the &gt;25 years since development began at CREEM. In these training materials, we provide exercises based around both of our software platforms:</p>
-<ul>
-<li>Distance for Windows (a standalone) Windows-based programme with a graphical user interface
-<ul>
-<li>Practicals based upon Distance for Windows in these materials were created using Distance for Windows 8.0. Older versions of Distance for Windows will not open these projects, hence you will need to download and install Distance for Windows 8.0 prior to working with these practicals</li>
-<li>The installation package for this software <a href="https://distancedevelopment.github.io/distancesamplingcom2/software/downloaddistwin.html">can be downloaded</a></li>
-</ul></li>
-<li>an R package <code>Distance</code>.
-<ul>
-<li>The R language and environment can be downloaded from <a href="https://cran.r-project.org/">CRAN</a> as well as the <a href="https://cran.r-project.org/web/packages/Distance/index.html"><code>Distance</code> package itself</a>.</li>
-<li>Practicals based around the R package assume you have fundamental knowledge of the R language.</li>
-</ul></li>
-</ul>
-</section>
-<section id="other-distance-sampling-resources" class="level2">
-<h2 class="anchored" data-anchor-id="other-distance-sampling-resources">Other distance sampling resources</h2>
-<ul>
-<li>A “one stop” resources for distance sampling materials developed by CREEM can be found at <a href="https://distancesampling.org">https://distancesampling.org</a></li>
-<li>If you wish to receive training in distance sampling with a “live” instructor, CREEM offers workshops carried out online. Offerings of these training opportunities can be found on our <a href="https://distancedevelopment.github.io/distancesamplingcom2/training/training.html">training web page</a></li>
-<li>Examples of distance sampling analyses conducted using the <code>Distance</code> R package can be found on our <a href="https://distancedevelopment.github.io/distancesamplingcom2/resources/vignettes.html">case studies</a> pages.</li>
-</ul>
-
-
-</section>
-
-</main> <!-- /main -->
+<div id="ref-Borchers2013" class="csl-entry" role="listitem">
+Borchers, D. L., W. Zucchini, M. P. Heide-Jorgensen, A. Canadas, and R. Langrock. 2013. <span>“Hidden Markov Models to Deal with Availability Bias on Line Transect Surveys.”</span> <em>Biometrics</em> 69: 703–13.
+</div>
+<div id="ref-Hiby1998" class="csl-entry" role="listitem">
+Hiby, L., and P. Lovell. 1998. <span>“Using Aircraft in Tandem Formation to Estimate Abundance of Harbour Porpoise.”</span> <em>Biometrics</em> 54: 1280–89.
+</div>
+<div id="ref-Laake1997" class="csl-entry" role="listitem">
+Laake, J. L., J. Calambokidis, S. D. Osmek, and D. J. Rugh. 1997. <span>“Probability of Detecting Harbor Porpoise from Aerial Surveys: Estimating g(0).”</span> <em>Journal of Wildlife Management</em> 61: 63–75.
+</div>
+<div id="ref-Langrock2013" class="csl-entry" role="listitem">
+Langrock, R., D. L. Borchers, and H. J. Skaug. 2013. <span>“Markov- Modulated Nonhomogeneous Poisson Processes for Modeling Detections in Surveys of Marine Mammal Abundance.”</span> <em>Journal of the American Statistical Association</em> 108: 840–51.
+</div>
+<div id="ref-MacKenzie2015" class="csl-entry" role="listitem">
+MacKenzie, D. L., and D. Clement. 2015. <span>“Accounting for Lack of Independence and Partial Overlap of Observation Zones in Line-Transect Mark-Recapture Distance Sampling.”</span> <em>Journal of Agricultural, Biological and Environmental Statistics</em> 21: 41–57.
+</div>
+<div id="ref-McLaren1961" class="csl-entry" role="listitem">
+McLaren, I. A. 1961. <span>“Methods of Determining the Numbers and Availability of Ringed Seals in the Eastern Canadian Arctic.”</span> <em>Arctic</em> 14: 162–75.
+</div>
+<div id="ref-Pavanato2021" class="csl-entry" role="listitem">
+Pavanato, H. 2021. <span>“Development of Integrated Distance Sampling Models.”</span> PhD thesis, University of Otago. <a href="https://hdl.handle.net/10523/12493">https://hdl.handle.net/10523/12493</a>.
+</div>
+<div id="ref-Stevenson2018" class="csl-entry" role="listitem">
+Stevenson, B. C., D. L. Borchers, and R. M. Fewster. 2018. <span>“Cluster Capture-Recapture to Account for Identification Uncertainty on Aerial Surveys of Animal Populations.”</span> <em>Biometrics</em> 75: 326–36.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

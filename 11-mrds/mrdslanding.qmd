@@ -70,12 +70,19 @@ We introduce the topic with a lecture, and follow up with an exercise that cover
 
 ## Supplemental materials
 ::: homework
-**Further reading**
+**Further reading on MRDS**
 
 - See @Burt2014 for a paper introducing MRDS methods.  This is more accessible than the original MRDS reference [@Laake2004].
 - @Borchers2006 develop point independence methods.
 - @Buckland2010 go one step futher with "limiting independence" methods - but there is no accessible software to implement this.
 - @Laake2011 extend the methods to point transect surveys.
+:::
+
+::: homework
+**Other approaches for dealing with g(0)<1**
+
+::: instructions
+[Pointers to other approaches for dealing with g(0)<1](g0_otherapproaches.qmd)
 :::
 :::
 

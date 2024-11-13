@@ -32,7 +32,7 @@
     "href": "11-mrds/mrdslanding.html",
     "title": "Analysis of double platform data",
     "section": "",
-    "text": "Text needed to describe double platform data and analysis.",
+    "text": "A fundamental assumption of “conventional” distance sampling is that we detect all animals at zero distance – i.e., that g(0)=1. In some circumstances this assumption is violated, for example in shipboard surveys of marine mammals where they may be underwater or obscured by waves when the observer looks for them even right on the transect line.\nHere we introduce an extended type of distance sampling that can help deal with this issue: the use of two independent observation teams, sometimes called “double platform” (because on ships they operate from different physical platforms). The analysis approach used on double platform data is called “Mark Recapture Distance Sampling” (MRDS).\nWe introduce the topic with a lecture, and follow up with an exercise that covers two datasets: an artificial survey of a known population of golf tees in St Andrews (to illustrate the concepts), and a real-world survey of crabeater seals in Antarctica (Southwell et al. (2007)).\n\n Photo by Luiz Felipe on Unsplash",
     "crumbs": [
       "Double platform data (the g(0) problem)",
       "Analysis of double platform data"
@@ -61,7 +61,7 @@
     "href": "11-mrds/mrdslanding.html#exercise-materials",
     "title": "Analysis of double platform data",
     "section": "Exercise materials ",
-    "text": "Exercise materials \n\nUsing R packageUsing Distance for Windows\n\n\n\nVideo introduction \n\n\nInstructions \n\n\nSolution and discussion \n\n\nVideo summary \n\n\n\n\nVideo introduction \n\n\nInstructions \n\n\nSolution and discussion \n\n\nVideo summary",
+    "text": "Exercise materials \n\nUsing R packageUsing Distance for Windows\n\n\n\nInstructions \n\n\nSolution and discussion \n\n\n\n\nInstructions \n\n\nSolution and discussion",
     "crumbs": [
       "Double platform data (the g(0) problem)",
       "Analysis of double platform data"
@@ -72,7 +72,7 @@
     "href": "11-mrds/mrdslanding.html#supplemental-materials",
     "title": "Analysis of double platform data",
     "section": "Supplemental materials",
-    "text": "Supplemental materials\n\nNo supplements\n\nNo supplemental material",
+    "text": "Supplemental materials\n\nFurther reading on MRDS\n\nSee Burt et al. (2014) for a paper introducing MRDS methods. This is more accessible than the original MRDS reference (Laake & Borchers, 2004).\nBorchers et al. (2006) develop point independence methods.\nBuckland et al. (2010) go one step futher with “limiting independence” methods - but there is no accessible software to implement this.\nLaake et al. (2011) extend the methods to point transect surveys.\n\n\n\nOther approaches for dealing with g(0)&lt;1\n\nPointers to other approaches for dealing with g(0)&lt;1",
     "crumbs": [
       "Double platform data (the g(0) problem)",
       "Analysis of double platform data"
@@ -83,7 +83,7 @@
     "href": "11-mrds/mrdslanding.html#analysis-of-double-platform-data",
     "title": "Analysis of double platform data",
     "section": "",
-    "text": "Text needed to describe double platform data and analysis.",
+    "text": "A fundamental assumption of “conventional” distance sampling is that we detect all animals at zero distance – i.e., that g(0)=1. In some circumstances this assumption is violated, for example in shipboard surveys of marine mammals where they may be underwater or obscured by waves when the observer looks for them even right on the transect line.\nHere we introduce an extended type of distance sampling that can help deal with this issue: the use of two independent observation teams, sometimes called “double platform” (because on ships they operate from different physical platforms). The analysis approach used on double platform data is called “Mark Recapture Distance Sampling” (MRDS).\nWe introduce the topic with a lecture, and follow up with an exercise that covers two datasets: an artificial survey of a known population of golf tees in St Andrews (to illustrate the concepts), and a real-world survey of crabeater seals in Antarctica (Southwell et al. (2007)).\n\n Photo by Luiz Felipe on Unsplash",
     "crumbs": [
       "Double platform data (the g(0) problem)",
       "Analysis of double platform data"
@@ -1856,5 +1856,54 @@
     "title": "Analysis of stratified survey data",
     "section": "",
     "text": "For this exercise, we use data from a survey of Antarctic minke whales. The study region was divided into two strata (North and South) the two strata were surveyed by different vessels at the same time. The minkes tend to be found in high densities against the ice edge, where they feed, and so the density in the southern stratum is typically higher than in the northern stratum (Figure 1). This is the primary reason for using a stratified survey design. It is also the reason for covering the southern stratum more intensely: in the southern stratum the transect length per unit area is more than 2.5 times that of the northern stratum.\n\nFigure 1. An example of the sort of survey design used and a typical minke density gradient. The irregular bottom border is the ice-edge. The ‘stepped’ black line defines the boundary between the strata; dotted lines are transects and dots are detections.\n\nObjectives\nThe objectives of this exercise are to:\n\nCreate subsets of the data\nDecide whether to fit separate detection functions or a pooled detection function\nSpecify different stratification options using the dht2 function.\n\n\n\nGetting started\nBegin by reading in the data. Distances are in kilometers and a truncation distance of 1.5km is specified and used in the following detection function fitting. Perpendicular distances, transect lengths and study area size are all measured in kilometers; hence convert_units argument to ds is 1 and has been omitted. To keep things simple, a hazard rate detection function with no adjustments is used for all detection functions.\n\nlibrary(Distance)\ndata(minke)\nhead(minke)\n# Specify truncation distance\nminke.trunc &lt;- 1.5\n\nYou will see that these data contain a column called ‘Region.Label’: this contains values ‘North’ or ‘South’.\n\n\nFull geographical stratification\nFirst, we want to fit encounter rate and detection function separately in each strata. This is easily performed by splitting the data by region and using ds on each subset. The commands below do this for the southern region (note, there are alternative ways to select a subset of data).\n\n# Create dataset for South \nminke.S &lt;- minke[minke$Region.Label==\"South\", ]\n# Fit df to south\nminke.df.S.strat &lt;- ds(minke.S, key=\"hr\", adjustment=NULL, truncation=minke.trunc)\nsummary(minke.df.S.strat)\n\nMake a note of the AIC. Perform a similar commands to obtain estimates for the northern region. What is the total AIC?\nAlso make a note of the abundance in each region. What is the total abundance in the study region?\n\n\nFitting a pooled detection function\nWe want to compare the total AIC found previously with the AIC from fitting a detection function to all data combined. This is easy to obtain:\n\nminke.df.all &lt;- ds(minke, truncation=minke.trunc, key=\"hr\", adjustment=NULL)\nsummary(minke.df.all)\n\nGiven the AIC value for the detection function from the pooled data, would you fit a separate detection function in each strata or not?\n\n\nStratification options using dht2\nThe command summary(minke.df.all) will provide the abundance estimates for each region and the total and for this simple example, this is sufficient. However, if we want to consider different stratification options, then the dht2 function is useful.\nAfter fitting a detection function, the dht2 function, allows abundance estimates to be computed over some specified regions. In the command below, the pooled detection function is used to obtain estimates in each strata and over all (like the summary function previously used).\n\ndht2(ddf=minke.df.all, flatfile=minke, strat_formula=~Region.Label, stratification=\"geographical\")\n\nThe arguments are:\n\nddf\n\nthe detection function (fitted by ds)\n\nflatfile\n\nthe data object containing all the necessary information\n\nData is referred to as being in a flatfile format if it contains information on region, transects and observations. An alternative is to use a hierarchical structure and have region, transect and observation information in separate data files with links between them to ensure that transects are mapped to the relevant region and observations to the relevant transect. We’ve not used the hierarchical structure during this workshop.\n\n\nstrat_formula=~Region.Label\n\nformula (hence the ~) giving the stratification structure\n\nstratification=\"geographical\"\n\nin this example, we specify that each strata (specified in strat_formula) represents a geographical region.\n\nconvert_units\n\ngetting units conversion correct, same purpose as the convert_units argument in ds. For the minke data all measurements are in the same units, so the argument is not needed in this case.\n\n\nMake a note the total abundance in the study region.\n\n\n\n\n\n\nFailure to respect design during analysis\n\n\n\nWhat happens if we were to ignore the regions and treat the data as though it came from one large study region? This can (dangerously) be done by changing the stratification formula, as shown below.\n\ndht2(ddf=minke.df.all, flatfile=minke, strat_formula=~1, stratification=\"geographical\")\n\nHas this changed the abundance estimate? Of course it has; the question is why has this changed the abundance estimate; which estimate is proper?"
+  },
+  {
+    "objectID": "11-mrds/g0_otherapproaches.html",
+    "href": "11-mrds/g0_otherapproaches.html",
+    "title": "Other approaches to dealing with g(0)<1",
+    "section": "",
+    "text": "The lecture and exercises in this chapter of the workshop focus on Mark-Recapture Distance Sampling (MRDS) approaches for dealing with cases where detection at zero distance is not certain (i.e., \\(g(0)&lt;1\\)). This is partly because general software exists for analysis of these models in the form of the mrds R package (also implemented in Distance for Windows).\nIn this document provide pointers to alternative approaches that may be useful in some circumstances. As a caveat, some of the material referenced is quite technical."
+  },
+  {
+    "objectID": "11-mrds/g0_otherapproaches.html#introduction",
+    "href": "11-mrds/g0_otherapproaches.html#introduction",
+    "title": "Other approaches to dealing with g(0)<1",
+    "section": "",
+    "text": "The lecture and exercises in this chapter of the workshop focus on Mark-Recapture Distance Sampling (MRDS) approaches for dealing with cases where detection at zero distance is not certain (i.e., \\(g(0)&lt;1\\)). This is partly because general software exists for analysis of these models in the form of the mrds R package (also implemented in Distance for Windows).\nIn this document provide pointers to alternative approaches that may be useful in some circumstances. As a caveat, some of the material referenced is quite technical."
+  },
+  {
+    "objectID": "11-mrds/g0_otherapproaches.html#multiplier-approaches-to-dealing-with-availability-bias-in-line-transect-surveys",
+    "href": "11-mrds/g0_otherapproaches.html#multiplier-approaches-to-dealing-with-availability-bias-in-line-transect-surveys",
+    "title": "Other approaches to dealing with g(0)<1",
+    "section": "Multiplier approaches to dealing with availability bias in line transect surveys",
+    "text": "Multiplier approaches to dealing with availability bias in line transect surveys\nIf a separate estimate of \\(g0\\) is avilable then it can be incorporated as a “multiplier”: \\(\\hat{N} = \\hat{g0} \\times \\hat{N}^*\\) where \\(\\hat{N}^*\\) is the estimate of \\(N\\) from a conventional or multiple covariate distance sampling analysis. Variance can be estimated using the delta method. Multiplers can readily be incorporated into analyses in the mrds package or in Distance for Windows.\nOne approach to estimating \\(g0\\) for marine mammals is based on knowledge of average surfacing and dive times. An early work on this is McLaren (1961) but this has been superseded by Laake et al. (1997). However, Borchers et al. (2013) showed that these approaches can be very biased, and developed and demonstrated an improved formulation, based on the use of Hidden Markov models (HHMs)."
+  },
+  {
+    "objectID": "11-mrds/g0_otherapproaches.html#markov-modelling-approaches",
+    "href": "11-mrds/g0_otherapproaches.html#markov-modelling-approaches",
+    "title": "Other approaches to dealing with g(0)<1",
+    "section": "Markov modelling approaches",
+    "text": "Markov modelling approaches\nDistance sampling is traditionally modelled in one dimension: using perpendicular distances for line transct surveys. In a series of papers, Borchers and colleagues showed that it can be viewed as a two-dimnensional process, with detection being a function of forward and perpendicular distances. This leads to approaches that can potentially accommodate uncertain detection at zero perpendicular distance, even using single-platform data. Relevant references are Borchers et al. (2013), Langrock, Borchers, and Skaug (2013) and Borchers and Langrock (2015). An R package that implements some of these methods is hmltm, although please note that this is a research-level output, not designed for general use."
+  },
+  {
+    "objectID": "11-mrds/g0_otherapproaches.html#duplicate-uncertainty",
+    "href": "11-mrds/g0_otherapproaches.html#duplicate-uncertainty",
+    "title": "Other approaches to dealing with g(0)<1",
+    "section": "Duplicate uncertainty",
+    "text": "Duplicate uncertainty\nIn some situations, assignment of duplicate detections between platforms is not certain. One situation where this can occur is aerial surveys where there are either two planes, one following the other, or a single plane with muliple cameras pointing in different directions. In these circumstances the methods of Stevenson, Borchers, and Fewster (2018) or Borchers et al. (2020) may be useful. These both are accompanied by research-level R packages: palm and twoplane.\nAn alternative approach that involves a probabilistic approach to duplicate identification for aerial surveys is Hiby and Lovell (1998)."
+  },
+  {
+    "objectID": "11-mrds/g0_otherapproaches.html#other-ways-to-view-mrds-models",
+    "href": "11-mrds/g0_otherapproaches.html#other-ways-to-view-mrds-models",
+    "title": "Other approaches to dealing with g(0)<1",
+    "section": "Other ways to view MRDS models",
+    "text": "Other ways to view MRDS models\nAlternative perspectives on full, point and limiting independence models are given by MacKenzie and Clement (2015) and Pavanato (2021)."
+  },
+  {
+    "objectID": "11-mrds/g0_otherapproaches.html#cue-counting",
+    "href": "11-mrds/g0_otherapproaches.html#cue-counting",
+    "title": "Other approaches to dealing with g(0)<1",
+    "section": "Cue counting",
+    "text": "Cue counting\nCue counting is a potential approach to deal with \\(g(0)&lt;1\\) of aniamls. Instead of surveying for animals, you can survey for a cue they produce (e.g., a whale blow rather than a whale) where detection at zero distance is certain. However, a new problem then becomes obatining an estimate of cue rate. Cue counting is covered elsewhere in the workshop."
   }
 ]
