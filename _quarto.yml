@@ -127,8 +127,8 @@ website:
       - section: "Double platform data (the g(0) problem)"
         contents: 
           - href: 11-mrds/mrdslanding.qmd          
-          - href: 11-mrds/Mod11-2023-mrds.pdf
-            text: "Lecture slides absent"
+          - href: 11-mrds/Mod11-2024-mrds.pdf
+            text: "Lecture slides"
           - href: "https://youtu.be/lm5-VR-8jX0"
             text: "Lecture video wrong"
           - href: 11-mrds/mrdslanding.html#exercise-materials
