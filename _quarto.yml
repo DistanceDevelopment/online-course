@@ -129,8 +129,8 @@ website:
           - href: 11-mrds/mrdslanding.qmd          
           - href: 11-mrds/Mod11-2024-mrds.pdf
             text: "Lecture slides"
-          - href: "https://youtu.be/lm5-VR-8jX0"
-            text: "Lecture video wrong"
+          - href: "https://youtu.be/qPeYp6FTFHo"
+            text: "Lecture video"
           - href: 11-mrds/mrdslanding.html#exercise-materials
             text: "Exercise materials"
 
