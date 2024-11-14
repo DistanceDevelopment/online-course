@@ -2,12 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.5.55">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="ML Burt, CREEM, University of St Andrews">
 
-<title>Introductory distance sampling training materials – supplement-interpretingoutput</title>
+<title>Interpreting MRDS output: making sense of all the numbers – Introductory distance sampling training materials</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +21,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -45,7 +66,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -54,15 +81,56 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
 }</script>
 <script src="https://kit.fontawesome.com/78ddb093ea.js" crossorigin="anonymous"></script>
+<script type="text/javascript">
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    (function(c,l,a,r,i,t,y){
+
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+
+    })(window, document, "clarity", "script", "lo7j6sob8t");
+
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -71,38 +139,55 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Introductory distance sampling training materials</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://distancesampling.org" rel="" target="">
- <span class="menu-text"></span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-bi-server" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="bi bi-server" role="img">
+</i> 
+ <span class="menu-text"></span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-bi-server">    
+        <li>
+    <a class="dropdown-item" href="https://distancesampling.org">
+ <span class="dropdown-text">Distance home</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="https://distancesampling.org/training/training.html">
+ <span class="dropdown-text">Workshops</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://distancesampling.org/resources/vignettes.html">
+ <span class="dropdown-text">Case studies</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
+          </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
-          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Interpreting MRDS output: making sense of all the numbers</li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -111,7 +196,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
@@ -121,9 +206,9 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">Introduction</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -156,9 +241,9 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Detection function modelling</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -169,13 +254,31 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Fitting detection functions to line transect data</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../02-detfns/Mod2-2023-detfnmod.pdf" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture slides</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://youtu.be/E3EJeeM9Wsk" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture video</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../02-detfns/detfnlanding.html#exercise-materials" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercise materials</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
  <span class="menu-text">Model criticism</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -186,13 +289,31 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Model criticism</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../03-criticism/Mod3-2023-gof-assumptions.pdf" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture slides</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://youtu.be/hYiPkDUL6hU" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture video</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../03-criticism/criticismlanding.html#exercise-materials" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercise materials</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
  <span class="menu-text">Precision of density estimates</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -203,13 +324,31 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Precision of density estimates</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../04-precision/Mod4-2023-precision.pdf" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture slides</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://youtu.be/c8kS8v9lB6I" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture video</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../04-precision/precisionlanding.html#exercise-materials" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercise materials</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
  <span class="menu-text">Point transect analysis</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -220,13 +359,31 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Analysis of point transect data</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../05-points/Mod5-2023-points.pdf" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture slides</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://youtu.be/U3dy7X6COw4" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture video</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../05-points/pointslanding.html#exercise-materials" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercise materials</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
  <span class="menu-text">Design of distance sampling surveys</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -237,13 +394,31 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Design of distance sampling surveys</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../06-design/Mod6-2023-design.pdf" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture slides</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://youtu.be/cZ-4CHzmO9w" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture video</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../06-design/designlanding.html#exercise-materials" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercise materials</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
  <span class="menu-text">Analysis of stratified designs</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -254,13 +429,31 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Analysis of stratified surveys</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../07-stratify/Mod7-2023-stratanalysis.pdf" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture slides</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://youtu.be/6B1EzVFqtkE" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture video</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../07-stratify/stratifylanding.html#exercise-materials" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercise materials</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
  <span class="menu-text">Covariates in the detection functions</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -271,13 +464,31 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Including covariates in detection function modelling</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../08-covariates/Mod8-2023-covariates.pdf" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture slides</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://youtu.be/dMuNFpdxClc" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture video</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../08-covariates/covariateslanding.html#exercise-materials" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercise materials</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
  <span class="menu-text">Animals detected in clusters</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -285,16 +496,34 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../09-clusters/clusterslanding.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Analysis of point transect data</span></a>
+ <span class="menu-text">Analysis of animals in groups</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../09-clusters/Mod9-2023-clusters.pdf" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture slides</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://youtu.be/2vhervI6QAc" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture video</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../09-clusters/clusterslanding.html#exercise-materials" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercise materials</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false">
  <span class="menu-text">Multipliers</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -305,13 +534,31 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Multipliers and indirect surveys</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../10-multipliers/Mod10-2023-multipliers.pdf" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture slides</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://youtu.be/lm5-VR-8jX0" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture video</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../10-multipliers/multiplierslanding.html#exercise-materials" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercise materials</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false">
  <span class="menu-text">Double platform data (the g(0) problem)</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -322,57 +569,211 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Analysis of double platform data</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../11-mrds/Mod11-2024-mrds.pdf" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture slides</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://youtu.be/qPeYp6FTFHo" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture video</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../11-mrds/mrdslanding.html#exercise-materials" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercise materials</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false">
+ <span class="menu-text">Field methods</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../12-field/fieldlanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Field methods and summary</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../12-field/Mod12-2023-field.pdf" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture slides</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://youtu.be/2P8aYO0GsUA" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture video</span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#glossary" id="toc-glossary" class="nav-link" data-scroll-target="#glossary">Glossary</a></li>
+  <li><a href="#notation" id="toc-notation" class="nav-link" data-scroll-target="#notation">Notation</a>
+  <ul class="collapse">
+  <li><a href="#observed-values" id="toc-observed-values" class="nav-link" data-scroll-target="#observed-values">Observed values</a></li>
+  <li><a href="#estimated-values" id="toc-estimated-values" class="nav-link" data-scroll-target="#estimated-values">Estimated values</a></li>
+  </ul></li>
+  <li><a href="#output-from-mrds" id="toc-output-from-mrds" class="nav-link" data-scroll-target="#output-from-mrds">Output from MRDS</a>
+  <ul class="collapse">
+  <li><a href="#summary-of-the-observations" id="toc-summary-of-the-observations" class="nav-link" data-scroll-target="#summary-of-the-observations">Summary of the observations</a></li>
+  <li><a href="#detection-function-summary" id="toc-detection-function-summary" class="nav-link" data-scroll-target="#detection-function-summary">Detection function summary</a></li>
+  <li><a href="#density-and-abundance-estimates" id="toc-density-and-abundance-estimates" class="nav-link" data-scroll-target="#density-and-abundance-estimates">Density and abundance estimates</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Interpreting MRDS output: making sense of all the numbers</h1>
+</div>
 
 
-<p><strong>Interpreting MRDS output: making sense of all the numbers</strong></p>
-<p>ML Burt, CREEM, University of St Andrews (lb9@st-andrews.ac.uk)</p>
-<p><strong>INTRODUCTION</strong></p>
-<p>The mrds package (Laake <em>et al</em>. 2019) was written to allow the user to estimate abundance from a mark-recapture distance sampling (MRDS) survey (i.e.&nbsp;taking account of imperfect detection both on and away from the transect centreline). On running an analysis lots of output is generated and wading through all the numbers can be a bit daunting for a first-time user. This document aims to help the user understand the output and find key bits of information. Some knowledge of conventional distance sampling (see Buckland <em>et al</em>. 2001) and MRDS is assumed; for details on undertaking a MRDS analysis see Burt <em>et al</em>. (2014).</p>
-<p>The mrds package can be used in R (R core Team 2019) directly or via program Distance for Windows v7 (Thomas <em>et al</em>. 2010). The same output is available on both software platforms but in Distance for Windows output is generated automatically to a ‘Results’ tab and in R the user is required to do a bit of work to obtain the information (e.g.&nbsp;using the summary and plot commands).</p>
-<p>The example data used here is taken from a survey of faecal pellets (Jenkins and Manly 2008; Example 1 of Burt <em>et al.</em> 2014). The Distance for Windows project of these data is available to download from <a href="http://distancesampling.org/Distance/example-projects" class="uri">http://distancesampling.org/Distance/example-projects</a> (this will likely get moved to <a href="https://examples.distancesampling.org/" class="uri">https://examples.distancesampling.org/</a> at some point). The focus of this study was to estimate the probability of detection of pellet groups rather than estimating density or abundance of animals. Output from an analysis of these example data is annotated (in red text) in the following sections but first terms and quantities are defined.</p>
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>ML Burt, CREEM, University of St Andrews </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>The mrds package (<span class="citation" data-cites="mrdspackage">J. Laake et al. (<a href="#ref-mrdspackage" role="doc-biblioref">2024</a>)</span>) was written to allow the user to estimate abundance from a mark-recapture distance sampling (MRDS) survey (i.e.&nbsp;taking account of imperfect detection both on and away from the transect centreline or point). On running an analysis lots of output is generated and wading through all the numbers can be a bit daunting for a first-time user. This document aims to help the user understand the output and find key bits of information. Some knowledge of conventional distance sampling (<span class="citation" data-cites="buckland2001">Buckland et al. (<a href="#ref-buckland2001" role="doc-biblioref">2001</a>)</span>) and MRDS is assumed; for details on undertaking a MRDS analysis see <span class="citation" data-cites="Burt2014">(<a href="#ref-Burt2014" role="doc-biblioref">Burt et al., 2014</a>)</span>.</p>
+<p>The mrds package can be used in R <span class="citation" data-cites="r2024">R Core Team (<a href="#ref-r2024" role="doc-biblioref">2024</a>)</span> directly or via program Distance for Windows 8.0 (<span class="citation" data-cites="Thomas2010">Thomas et al. (<a href="#ref-Thomas2010" role="doc-biblioref">2010</a>)</span>). The same output is available on both software platforms but in Distance for Windows output is generated automatically to a ‘Results’ tab and in R the user is required to do a bit of work to obtain the information (e.g.&nbsp;using the summary and plot commands).</p>
+<p>The example data used here is taken from a survey of faecal pellets (<span class="citation" data-cites="JenkinsManly">Jenkins &amp; Manly (<a href="#ref-JenkinsManly" role="doc-biblioref">2008</a>)</span>; <span class="citation" data-cites="Burt2014">Burt et al. (<a href="#ref-Burt2014" role="doc-biblioref">2014</a>)</span>, Example 1). The Distance for Windows project of these data is available to download from <a href="MEE_Burtetal_Example1.zip">here</a> The focus of this study was to estimate the probability of detection of pellet groups rather than estimating density or abundance of animals. Output from an analysis of these example data is annotated (in red text) in the following sections but first terms and quantities are defined.</p>
 <p>This is a work in progress; comments and suggestions to improve the document are welcome.</p>
-<p><strong>GLOSSARY</strong></p>
-<p>Covered region Region covered during the survey i.e.&nbsp;2<em>wL</em>.</p>
-<p>Study region Area of interest.</p>
-<p>Detected object This could be a group (cluster) of objects and group size is recorded or individual objects if cluster size is one for all objects.</p>
-<p>Observer One or more people performing the same role or could be an acoustic or digital observer.</p>
-<p>Observer 1 Also known as the Primary observer in a trial configuration setup.</p>
-<p>Observer 2 Also known as the Secondary observer in a trial configuration setup.</p>
-<p>DS model Distance sampling model; fitted assuming <em>g</em>(0)=1 i.e.&nbsp;certain detection on the transect centreline. This could be a conventional distance sampling model (Buckland <em>et al</em>. 2001) or a multiple covariate distance sampling model (Marques and Buckland 2004).</p>
-<p>MR model Mark-recapture model; logistic regression model <span class="math inline">\(p_{j|3 - j}\left( y,\underline{z} \right) = \frac{exp(\beta_{0} + \beta_{1}y + \sum_{k = 1}^{K}{\beta_{k + 1}z_{k})}}{1 + exp(\beta_{0} + \beta_{1}y + \sum_{k = 1}^{K}{\beta_{k + 1}z_{k})}}\)</span></p>
+</section>
+<section id="glossary" class="level1">
+<h1>Glossary</h1>
+<dl>
+<dt>Covered region</dt>
+<dd>
+Region covered during the survey i.e.&nbsp;<span class="math inline">\(2wL\)</span>.
+</dd>
+<dt>Study region</dt>
+<dd>
+Area of interest.
+</dd>
+<dt>Detected object</dt>
+<dd>
+This could be a group (cluster) of objects and group size is recorded or individual objects if cluster size is one for all objects.
+</dd>
+<dt>Observer</dt>
+<dd>
+One or more people performing the same role or could be an acoustic or digital observer.
+</dd>
+<dt>Observer 1</dt>
+<dd>
+Also known as the Primary observer in a trial configuration setup.
+</dd>
+<dt>Observer 2</dt>
+<dd>
+Also known as the Secondary observer in a trial configuration setup.
+</dd>
+<dt>DS model</dt>
+<dd>
+Distance sampling model; fitted assuming <span class="math inline">\(g(0)=1\)</span> i.e.&nbsp;certain detection on the transect centreline. This could be a conventional distance sampling model (<span class="citation" data-cites="buckland2001">Buckland et al. (<a href="#ref-buckland2001" role="doc-biblioref">2001</a>)</span>) or a multiple covariate distance sampling model <span class="citation" data-cites="FMARBUC03">Marques &amp; Buckland (<a href="#ref-FMARBUC03" role="doc-biblioref">2003</a>)</span>.
+</dd>
+<dt>MR model</dt>
+<dd>
+Mark-recapture model; logistic regression model <span class="math inline">\(p_{j|3 - j}\left( y,\underline{z} \right) = \frac{exp(\beta_{0} + \beta_{1}y + \sum_{k = 1}^{K}{\beta_{k + 1}z_{k})}}{1 + exp(\beta_{0} + \beta_{1}y + \sum_{k = 1}^{K}{\beta_{k + 1}z_{k})}}\)</span>
+</dd>
+</dl>
 <blockquote class="blockquote">
 <p>where <em>j</em> (<em>j</em>=1 or 2) is observer, the <em>β</em>’s are model coefficients, <em>y</em> is perpendicular distance and <em>z</em> are covariates.</p>
 </blockquote>
-<p>IO configuration Independent observer configuration; both observers search independently of the other observer. The probability of detection by either, or both, of the observers is of interest.</p>
-<p>Trial configuration One observer (often called the primary) searches independently. A second observer (often called the tracker) searches for animals, beyond the search distance of the primary, and tracks them in order to determine more easily if the primary also detects them. The probability of detection of the primary observer is of interest.</p>
-<p>Full independence Detections between observers are assumed to be independent at all perpendicular distances. This assumption requires only a MR model to be fitted.</p>
-<p>Point independence Detections between observers are assumed to be independent only at the point where perpendicular distance is zero (i.e. on the transect centreline). This assumption requires both a DS and MR model to be fitted.</p>
-<p><strong>NOTATION</strong></p>
-<p><strong>Observed values</strong></p>
-<p>n<sub>1</sub> total number of detected objects seen by observer 1 (also Primary observer)</p>
-<p>n<sub>2</sub> total number of detected objects seen by observer 2 (also Secondary observer)</p>
-<p>n<sub>D</sub> total number of detected objects seen by both observers (Duplicate detections)</p>
-<p>n<sub>P</sub> = n<sub>1</sub>+n<sub>2</sub>-n<sub>D</sub> total number of detected objects (Pooled detections)</p>
-<p>p<sub>1|2</sub> = n<sub>D</sub>/n<sub>2</sub> proportion detected by observer 1 of those seen by observer 2</p>
-<p>p<sub>2|1</sub> = n<sub>D</sub>/n<sub>1</sub> proportion detected by observer 2 of those seen by observer 1</p>
-<p><strong>Estimated values</strong></p>
+<dl>
+<dt>IO configuration</dt>
+<dd>
+Independent observer configuration; both observers search independently of the other observer. The probability of detection by either, or both, of the observers is of interest.
+</dd>
+<dt>Trial configuration</dt>
+<dd>
+One observer (often called the primary) searches independently. A second observer (often called the tracker) searches for animals, beyond the search distance of the primary, and tracks them to determine more easily if the primary also detects them. The probability of detection of the primary observer is of interest.
+</dd>
+<dt>Full independence</dt>
+<dd>
+Detections between observers are assumed to be independent at all perpendicular distances. This assumption requires only a MR model to be fitted.
+</dd>
+<dt>Point independence</dt>
+<dd>
+Detections between observers are assumed to be independent only at the point where perpendicular distance is zero (i.e.&nbsp;on the transect centreline). This assumption requires both a DS and MR model to be fitted.
+</dd>
+</dl>
+</section>
+<section id="notation" class="level1">
+<h1>Notation</h1>
+<section id="observed-values" class="level2">
+<h2 class="anchored" data-anchor-id="observed-values">Observed values</h2>
+<dl>
+<dt>n<sub>1</sub></dt>
+<dd>
+total number of detected objects seen by observer 1 (also Primary observer)
+</dd>
+<dt>n<sub>2</sub></dt>
+<dd>
+total number of detected objects seen by observer 2 (also Secondary observer)
+</dd>
+<dt>n<sub>D</sub></dt>
+<dd>
+total number of detected objects seen by both observers (Duplicate detections)
+</dd>
+<dt>n<sub>P</sub> = n<sub>1</sub>+n<sub>2</sub>-n<sub>D</sub></dt>
+<dd>
+total number of detected objects (Pooled detections)
+</dd>
+<dt>p<sub>1|2</sub> = n<sub>D</sub>/n<sub>2</sub></dt>
+<dd>
+proportion detected by observer 1 of those seen by observer 2
+</dd>
+<dt>p<sub>2|1</sub> = n<sub>D</sub>/n<sub>1</sub></dt>
+<dd>
+proportion detected by observer 2 of those seen by observer 1
+</dd>
+</dl>
+</section>
+<section id="estimated-values" class="level2">
+<h2 class="anchored" data-anchor-id="estimated-values">Estimated values</h2>
 <p>The estimated probabilities are the probabilities of detection for detected objects. The model used to estimate them is given in parentheses.</p>
 <p><span class="math inline">\({\widehat{p}}_{j}(0)\)</span> (MR model) Estimate of probability of detection (of objects) on the trackline for observer <em>j</em> (<em>j</em>=1 or 2). If the MR model is of the form <span class="math inline">\({\widehat{p}}_{j|3 - j}(y) = \frac{exp({\widehat{\beta}}_{0} + {\widehat{\beta}}_{1}y)}{1 + exp({\widehat{\beta}}_{0} + {\widehat{\beta}}_{1}y)}\)</span> i.e.&nbsp;no covariates (except distance) then</p>
-<p><span class="math inline">\({\widehat{p}}_{j|3 - j}(0) = \frac{exp({\widehat{\beta}}_{0})}{1 + exp({\widehat{\beta}}_{0})}\)</span>. Similar calculations hold if observer is included (with the coefficient for observer included) but if other covariates are included, then the function is averaged over all covariates and a more complicated formula is used (see Laake and Borchers 2004).</p>
-<p><span class="math inline">\({\widehat{p}}_{P}(0)\)</span> (MR model) Estimate of probability of detection on the trackline (for both observers combined). When the MR model is simple (i.e.&nbsp;only contains covariates for distance (and/or observer in an IO configuration)), then <span class="math inline">\({\widehat{p}}_{P}(0) = {\widehat{p}}_{1}(0) + {\widehat{p}}_{2}(0) - {\widehat{p}}_{1}(0){\widehat{p}}_{2}(0)\)</span>. This equation does not hold when other covariates are included in the MR model; in this case, the intercept is obtained by averaging over all covariates (see Laake and Borchers 2004).</p>
+<p><span class="math inline">\({\widehat{p}}_{j|3 - j}(0) = \frac{exp({\widehat{\beta}}_{0})}{1 + exp({\widehat{\beta}}_{0})}\)</span>. Similar calculations hold if observer is included (with the coefficient for observer included) but if other covariates are included, then the function is averaged over all covariates and a more complicated formula is used <span class="citation" data-cites="Laake2004">J. L. Laake &amp; Borchers (<a href="#ref-Laake2004" role="doc-biblioref">2004</a>)</span>.</p>
+<p><span class="math inline">\({\widehat{p}}_{P}(0)\)</span> (MR model) Estimate of probability of detection on the trackline (for both observers combined). When the MR model is simple (i.e.&nbsp;only contains covariates for distance (and/or observer in an IO configuration)), then <span class="math inline">\({\widehat{p}}_{P}(0) = {\widehat{p}}_{1}(0) + {\widehat{p}}_{2}(0) - {\widehat{p}}_{1}(0){\widehat{p}}_{2}(0)\)</span>. This equation does not hold when other covariates are included in the MR model; in this case, the intercept is obtained by averaging over all covariates (<span class="citation" data-cites="Laake2004">J. L. Laake &amp; Borchers (<a href="#ref-Laake2004" role="doc-biblioref">2004</a>)</span>).</p>
 <p><span class="math inline">\({\widehat{p}}_{P.DS}\)</span> (DS model) Estimate of probability of detection (over all distances) for both observers pooled</p>
 <p><span class="math inline">\({\widehat{p}}_{1.DS}\)</span> (DS model) Estimate of probability of detection (over all distances) for observer 1</p>
 <p><span class="math inline">\({\widehat{p}}_{P}\)</span> Estimate of probability of detection (over all distances) for both observers pooled taking into account imperfect detection on the trackline. Under the point independence assumption <span class="math inline">\({\widehat{p}}_{P} = \ {\widehat{p}}_{P}(0).{\widehat{p}}_{P.DS}\)</span></p>
@@ -382,37 +783,37 @@ ul.task-list li input[type="checkbox"] {
 <p><span class="math inline">\(\widehat{N}\)</span> Estimated number of individuals in the study region</p>
 <p><span class="math inline">\({\widehat{N}}_{g}\)</span> Estimated number of groups, or clusters, in the study region</p>
 <p><span class="math inline">\(E\left\lbrack \widehat{s} \right\rbrack = \frac{\widehat{N}}{{\widehat{N}}_{g}}\)</span> Expected group size</p>
-<p><strong>OUTPUT FROM MRDS</strong></p>
+</section>
+</section>
+<section id="output-from-mrds" class="level1">
+<h1>Output from MRDS</h1>
 <p>As mentioned previously, output in Distance for Windows goes to the Results tab. In R, the user needs to request model output using summary and plot commands. The exact information provided in the output will depend on the observer configuration and the independence assumption used. Here, we follow the order of the output used in Distance for Windows results tab.</p>
-<p><strong>Summary of the observations</strong></p>
+<section id="summary-of-the-observations" class="level2">
+<h2 class="anchored" data-anchor-id="summary-of-the-observations">Summary of the observations</h2>
 <p>The numbers of detected objects are tabulated and also plotted in histograms. The tabulated data in Distance for Windows is found on the Observation/Summary tab and the histograms are on the Observation/Plot tab. In R use det.tables(ddfmodel) to list these tables (for a fitted MRDS model called ddfmodel) and to plot the histograms use plot(det.tables(ddfmodel)).</p>
 <p>The tabulated data consist of the numbers of objects detected in each perpendicular distance interval used for the histograms for observer 1, observer 2, pooled and duplicate detections. This information is useful because it illustrates the data that underpin the fitted models. Table 1 shows an example of tabulated data for three distance intervals (there are many more intervals in the actual data) and provides a summary of the key bits of information that can be found in these tables.</p>
 <p>The data used for the histograms of the number of objects are described in Table 2a.</p>
-<p><strong>Detection function summary</strong></p>
+</section>
+<section id="detection-function-summary" class="level2">
+<h2 class="anchored" data-anchor-id="detection-function-summary">Detection function summary</h2>
 <p>In Distance for Windows, the detection function(s) is summarised on the Detection Fct/Summary tab: in R use summary(ddfmodel). The estimated coefficients of the fitted models are listed along with the probabilities of detection. The information included in the output depends on the configuration and independence assumption chosen:</p>
 <ul>
-<li><p>for an IO point independence model see Figure 1;</p></li>
-<li><p>for an IO full independence model see Figure 2;</p></li>
-<li><p>for a trial point independence model see Figure 3 and</p></li>
-<li><p>for a trial full independence model see Figure 4.</p></li>
+<li>for an IO point independence model see Figure 1;</li>
+<li>for an IO full independence model see Figure 2;</li>
+<li>for a trial point independence model see Figure 3 and</li>
+<li>for a trial full independence model see Figure 4.</li>
 </ul>
 <p>The detection function plots are described in Table 2b. In R use plot(ddfmodel). The intercepts of the fitted models are also given in Table 2a.</p>
-<p><strong>Density and abundance estimates</strong></p>
-<p>Density and abundance estimates (if requested) are found in Distance on the ‘Density Estimates and associated quantities’ tab. In R, data frames containing information on strata (region.data), transects (sample.data) and observations (obs.data) are required as input to obtain density and abundance estimates using the dht function i.e. dht(ddfmodel,region.data,sample.data,obs.data). These data link objects (detections) to transects and transects to survey regions and provide data on search effort and area of survey strata.</p>
+</section>
+<section id="density-and-abundance-estimates" class="level2">
+<h2 class="anchored" data-anchor-id="density-and-abundance-estimates">Density and abundance estimates</h2>
+<p>Density and abundance estimates (if requested) are found in Distance on the ‘Density Estimates and associated quantities’ tab. In R, data frames containing information on strata (region.data), transects (sample.data) and observations (obs.data) are required as input to obtain density and abundance estimates using the dht function i.e.&nbsp;dht(ddfmodel,region.data,sample.data,obs.data). These data link objects (detections) to transects and transects to survey regions and provide data on search effort and area of survey strata.</p>
 <p>Summary data and estimates (density and abundance) are provided for groups (clusters) and individuals and also expected group size for each strata. In ‘Summary statistics’ (for either clusters or individuals) the number of objects (n) will depended on whether an IO configuration (n<sub>P</sub>) or a trial configuration (n<sub>1</sub>) is selected.</p>
-<p><strong>REFERENCES</strong></p>
-<p>Buckland ST, DR Anderson, KP Burnham. JL Laake, DL Borchers and L Thomas (2001) Introduction to Distance Sampling. Oxford University Press, Oxford, UK</p>
-<p>Burt ML, DL Borchers, KJ Jenkins and TA Marques (2014) Using mark-recapture distance sampling methods on line transect surveys. Methods in Ecology and Evolution. doi: 10.1111/2041-210X.12294</p>
-<p>Laake J, DL Borchers, L Thomas, D Miller and J Bishop (2019) mrds: Mark-Recapture Distance Sampling. R package version 2.2.1</p>
-<p>Laake JL and DL Borchers (2004) Methods for incomplere detection at distance zero. Advanced Distance Sampling (eds) ST Buckland DR Anderson, KP Burnham. JL Laake, DL Borchers and L Thomas, Oxford University Press, Oxford, UK</p>
-<p>Marques FFC and ST Buckland (2004) Covariates models for the detection function. Advanced Distance Sampling (eds) ST Buckland DR Anderson, KP Burnham. JL Laake, DL Borchers and L Thomas, Oxford University Press, Oxford, UK</p>
-<p>R Core Team (2016). R: A language and environment for statistical computing. R Foundation for Statistical Computing, Vienna, Austria. URL https://www.R-project.org/.</p>
-<p>Thomas L, ST Buckland, EA Rexstad, JL Laake, S Strindberg, SL Hedley, JRB Bishop, TA Marques and KP Burnham (2010)&nbsp;Distance software: design and analysis of <a href="mk:@MSITStore:C:\Program%20Files%20(x86)\Distance%207\Help\Distance.chm::/gloss_distancesampling.htm"><u>distance sampling</u></a> surveys for estimating population size.&nbsp; Journal of Applied Ecology 47: 5-14.&nbsp; DOI: 10.1111/j.1365-2664.2009.01737.x</p>
 <p>Table 1 Observation summary tables: a) key information extracted from b) example output. The symbol ‘:’ indicates that there are more distance intervals in the actual data.</p>
-<ol type="1">
+<ol type="a">
 <li>Summary of key information for three distance intervals and on which Results tab the information is found in Distance for Windows.</li>
 </ol>
-<table class="table">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 11%">
 <col style="width: 10%">
@@ -489,48 +890,20 @@ ul.task-list li input[type="checkbox"] {
 </tbody>
 </table>
 <p><sup>1</sup> Not given in Detection function summary – these are Petersen estimates</p>
-<ol start="2" type="1">
+<ol start="2" type="a">
 <li>Example output</li>
 </ol>
-<p>Observer 1 detections</p>
-<p>Detected</p>
-<p>Missed Detected (n<sub>1</sub>)</p>
-<p>[0,5.17] 19 78 (19 + 78 = 97 = n<sub>p</sub>)</p>
-<p>(5.17,10.3] 12 40</p>
-<p>(10.3,15.5] 10 41</p>
-<p>:</p>
-<p>Observer 2 detections</p>
-<p>Detected</p>
-<p>Missed Detected (n<sub>2</sub>)</p>
-<p>[0,5.17] 12 85 (12 + 85 = 97 = n<sub>p</sub>)</p>
-<p>(5.17,10.3] 10 42</p>
-<p>(10.3,15.5] 11 40</p>
-<p>:</p>
-<p>Duplicate detections (n<sub>D</sub>)</p>
-<p>[0,5.17] (5.17,10.3] (10.3,15.5] (15.5,20.7] (20.7,25.9] (25.9,31]</p>
-<p>66 30 30 53 35 46</p>
-<p>:</p>
-<p>Pooled detections (n<sub>P</sub>)</p>
-<p>[0,5.17] (5.17,10.3] (10.3,15.5] (15.5,20.7] (20.7,25.9] (25.9,31]</p>
-<p>97 52 51 86 64 64</p>
-<p>:</p>
-<p>Observer 1 detections of those seen by Observer 2</p>
-<p>Missed Detected Prop. Detected (p<sub>1|2</sub>)</p>
-<p>[0,5.17] 19 66 0.7764706 (66/(19+66) = 66/85 = 0.7764)</p>
-<p>(5.17,10.3] 12 30 0.7142857</p>
-<p>(10.3,15.5] 10 30 0.7500000</p>
-<p>:</p>
-<p>Observer 2 detections of those seen by Observer 1</p>
-<p>Missed Detected Prop. Detected (p<sub>2|1</sub>)</p>
-<p>[0,5.17] 12 66 0.8461538 (66/(12+66)= 66/78 = 0.8461)</p>
-<p>(5.17,10.3] 10 30 0.7500000</p>
-<p>(10.3,15.5] 11 30 0.7317073</p>
-<p>:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Table1b.png" class="img-fluid figure-img"></p>
+<figcaption>Observation summary table, Table 1b</figcaption>
+</figure>
+</div>
 <p>Table 2 Information plotted for each observer configuration (IO and Trial). A dash indicates that figure is not plotted for that observer configuration.</p>
-<ol type="1">
+<ol type="a">
 <li>Observation/Plot tab</li>
 </ol>
-<table class="table">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 19%">
 <col style="width: 8%">
@@ -599,11 +972,10 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
-<ol start="2" type="1">
+<ol start="2" type="a">
 <li>Detection Function/Plot tab</li>
 </ol>
 <p>The points on the plots are estimated values for individual detections and the line is the average value (taking into account all covariates in the model).</p>
-
 <table class="table">
 <colgroup>
 <col style="width: 11%">
@@ -770,114 +1142,63 @@ MR model
 </td>
 </tr>
 </tbody>
-
 </table>
-<p>Figure 1 Example detection function summary for an <strong>IO point independence</strong> model: MR model contains distance and a factor for observer (this is a Petersen model); the DS model uses a hazard rate form with no covariates (apart from distance).</p>
-<p><strong>Summary for io.fi object</strong> (MR model)</p>
-<p>Number of observations : 1380 n<sub>P</sub></p>
-<p>Number seen by primary : 1094 n<sub>1</sub></p>
-<p>Number seen by secondary : 1102 n<sub>2</sub></p>
-<p>Number seen by both : 816 n<sub>D</sub></p>
-<p>AIC : 2652.566</p>
-<p>Conditional detection function parameters:</p>
-<p>estimate se</p>
-<p>(Intercept) 1.334518220 0.107556941</p>
-<p>distance -0.004843781 0.001385673</p>
-<p>observer2 0.028370866 0.084224532</p>
-<p>Estimate SE CV</p>
-<p>Average primary p(0) 0.7915870 0.017744426 0.02241627 <span class="math inline">\({\widehat{p}}_{1}(0)\)</span></p>
-<p>Average secondary p(0) 0.7962288 0.017526680 0.02201211 <span class="math inline">\({\widehat{p}}_{2}(0)\)</span></p>
-<p>Average combined p(0) 0.9575314 0.006690943 0.00698770 <span class="math inline">\({\widehat{p}}_{P}(0)\)</span></p>
-<p><strong>Summary for ds object</strong> (DS model)</p>
-<p>Number of observations : 1380 n<sub>P</sub></p>
-<p>Distance range : 0 - 150</p>
-<p>AIC : 13612.95</p>
-<p>Detection function:</p>
-<p>Hazard-rate key function</p>
-<p>Detection function parameters</p>
-<p>Scale coefficient(s):</p>
-<p>estimate se</p>
-<p>(Intercept) 4.425513 0.05855335</p>
-<p>Shape coefficient(s):</p>
-<p>estimate se</p>
-<p>(Intercept) 0.6851006 0.1247415</p>
-<p>Estimate SE CV</p>
-<p>Average p 0.6924608 0.02190796 0.03163784 <span class="math inline">\({\widehat{p}}_{P.DS}\)</span></p>
-<p><strong>Summary for io object</strong> (MR + DS model combined)</p>
-<p>Total AIC value : 16255.2 = 2652.566 + 13612.95</p>
-<p>Estimate SE CV</p>
-<p>Average p 0.663053 0.02148313 0.03240032 <span class="math inline">\({\widehat{p}}_{P}\)</span></p>
-<p>N in covered region 2081.281660 74.86672579 0.03597145 <span class="math inline">\({\widehat{N}}_{cIO}\)</span></p>
-<p>Figure 2 Example detection function summary for an <strong>IO full independence</strong> model: MR model contains covariates distance and observer (as a factor).</p>
-<p><strong>Summary for io.fi object</strong> (MR model)</p>
-<p>Number of observations : 1380 n<sub>P</sub></p>
-<p>Number seen by primary : 1094 n<sub>1</sub></p>
-<p>Number seen by secondary : 1102 n<sub>2</sub></p>
-<p>Number seen by both : 816 n<sub>D</sub></p>
-<p>AIC : 16481.92</p>
-<p>Conditional detection function parameters:</p>
-<p>estimate se</p>
-<p>(Intercept) 1.334518220 0.107556941</p>
-<p>distance -0.004843781 0.001385673</p>
-<p>observer2 0.028370866 0.084224532</p>
-<p>Estimate SE CV</p>
-<p>Average p 0.9233260 0.007189382 0.007786396 <span class="math inline">\({\widehat{p}}_{P}\)</span></p>
-<p>Average primary p(0) 0.7915870 0.016272902 0.020557313 <span class="math inline">\({\widehat{p}}_{1}(0)\)</span></p>
-<p>Average secondary p(0) 0.7962288 0.016064551 0.020175796 <span class="math inline">\({\widehat{p}}_{2}(0)\)</span></p>
-<p>Average combined p(0) 0.9575314 0.005181690 0.005411509 <span class="math inline">\({\widehat{p}}_{P}(0)\)</span></p>
-<p>N in covered region 1494.5966586 16.110394124 0.010779091 <span class="math inline">\({\widehat{N}}_{cIO}\)</span></p>
-<p>Figure 3 Example detection function summary for a <strong>Trial point independence</strong> model: DS model uses a hazard rate form with no covariates in the scale parameter; MR model contains distance only.</p>
-<p><strong>Summary for trial.fi object</strong> (MR model)</p>
-<p>Number of observations : 1380 n<sub>P</sub></p>
-<p>Number seen by primary : 1094 n<sub>1</sub></p>
-<p>Number seen by secondary (trials) : 1102 n<sub>2</sub></p>
-<p>Number seen by both (detected trials): 816 n<sub>D</sub></p>
-<p>AIC : 1260.732</p>
-<p>Conditional detection function parameters:</p>
-<p>estimate se</p>
-<p>(Intercept) 1.279522703 0.124363484</p>
-<p>distance -0.003960919 0.001732436</p>
-<p>Estimate SE CV</p>
-<p>Average primary p(0) 0.7823685 0.02117513 0.02706542 <span class="math inline">\({\widehat{p}}_{1}(0)\)</span></p>
-<p><strong>Summary for ds object</strong> (DS model)</p>
-<p>Number of observations : 1094 n<sub>1</sub></p>
-<p>Distance range : 0 - 150</p>
-<p>AIC : 10770.29</p>
-<p>Detection function:</p>
-<p>Hazard-rate key function</p>
-<p>Detection function parameters</p>
-<p>Scale coefficient(s):</p>
-<p>estimate se</p>
-<p>(Intercept) 4.442346 0.05685968</p>
-<p>Shape coefficient(s):</p>
-<p>estimate se</p>
-<p>(Intercept) 0.8301251 0.133593</p>
-<p>Estimate SE CV</p>
-<p>Average p 0.6936849 0.02237827 0.03226 <span class="math inline">\({\widehat{p}}_{1.DS}\)</span></p>
-<p><strong>Summary for trial object</strong> (MR + DS model combined)</p>
-<p>Total AIC value = 12031.02 = 10770.29 + 1260.73</p>
-<p>Estimate SE CV</p>
-<p>Average p 0.5427173 0.02285377 0.04210991 <span class="math inline">\({\widehat{p}}_{1}\)</span></p>
-<p>N in covered region 2015.7825642 94.36006632 0.04681064 <span class="math inline">\({\widehat{N}}_{cT}\)</span></p>
-<p>Figure 4 Example detection function summary for a <strong>Trial full independence</strong> model: MR model contains distance only.</p>
-<p><strong>Summary for trial.fi object</strong> (MR model)</p>
-<p>Number of observations : 1380 n<sub>P</sub></p>
-<p>Number seen by primary : 1094 n<sub>1</sub></p>
-<p>Number seen by secondary (trials) : 1102 n<sub>2</sub></p>
-<p>Number seen by both (detected trials): 816 n<sub>D</sub></p>
-<p>AIC : 12185.06</p>
-<p>Conditional detection function parameters:</p>
-<p>estimate se</p>
-<p>(Intercept) 1.279522703 0.124363484</p>
-<p>distance -0.003960919 0.001732436</p>
-<p>Estimate SE CV</p>
-<p>Average p 0.7262759 0.01521478 0.02094904 <span class="math inline">\({\widehat{p}}_{1}\)</span></p>
-<p>Average primary p(0) 0.7823685 0.01621225 0.02072201 <span class="math inline">\({\widehat{p}}_{1}(0)\)</span></p>
-<p>N in covered region 1506.3146420 39.23133973 0.02604458 <span class="math inline">\({\widehat{N}}_{cT}\)</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Figure1.png" class="img-fluid figure-img"></p>
+<figcaption>Figure 1 Example detection function summary for an <strong>IO point independence</strong> model: MR model contains distance and a factor for observer (this is a Petersen model); the DS model uses a hazard rate form with no covariates (apart from distance).</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Figure2.png" class="img-fluid figure-img"></p>
+<figcaption>Figure 2 Example detection function summary for an <strong>IO full independence</strong> model: MR model contains covariates distance and observer (as a factor).</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Figure3.png" class="img-fluid figure-img"></p>
+<figcaption>Figure 3 Example detection function summary for a <strong>Trial point independence</strong> model: DS model uses a hazard rate form with no covariates in the scale parameter; MR model contains distance only.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Figure4.png" class="img-fluid figure-img"></p>
+<figcaption>Figure 4 Example detection function summary for a <strong>Trial full independence</strong> model: MR model contains distance only.</figcaption>
+</figure>
+</div>
 
 
 
-</main> <!-- /main -->
+</section>
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-buckland2001" class="csl-entry" role="listitem">
+Buckland, S. T., Anderson, D. R., Burnham, K. P., Laake, J. L., Borchers, D. L., &amp; Thomas, L. (2001). <em>Introduction to distance sampling: Estimating abundance of biological populations</em>. Oxford, New York: Oxford University Press.
+</div>
+<div id="ref-Burt2014" class="csl-entry" role="listitem">
+Burt, M. L., Borchers, D. L., Jenkins, K. J., &amp; Marques, T. A. (2014). Using mark-recapture distance sampling methods on line transect surveys. <em>Methods in Ecology and Evolution</em>, <em>5</em>, 1180–1191. <a href="https://doi.org/10.1111/2041-210X.12294">https://doi.org/10.1111/2041-210X.12294</a>
+</div>
+<div id="ref-JenkinsManly" class="csl-entry" role="listitem">
+Jenkins, K. J., &amp; Manly, B. F. J. (2008). A double-observer method for reducing bias in faecal pellet surveys of forest ungulates. <em>Journal of Applied Ecology</em>, <em>45</em>(5), 1339–1348. https://doi.org/<a href="https://doi.org/10.1111/j.1365-2664.2008.01512.x">https://doi.org/10.1111/j.1365-2664.2008.01512.x</a>
+</div>
+<div id="ref-Laake2004" class="csl-entry" role="listitem">
+Laake, J. L., &amp; Borchers, D. L. (2004). Methods for incomplete detection at distance zero. In S. T. Buckland, D. R. Anderson, K. P. Burnham, J. L. Laake, D. L. Borchers, &amp; L. Thomas (Eds.), <em>Advanced distance sampling</em> (pp. 127–208). <span>Oxford</span>: <span>Oxford University Press</span>.
+</div>
+<div id="ref-mrdspackage" class="csl-entry" role="listitem">
+Laake, J., Miller, D., &amp; Petersma, F. (2024). <em>Mrds: Mark-recapture distance sampling</em>. Retrieved from <a href="https://github.com/DistanceDevelopment/mrds/">https://github.com/DistanceDevelopment/mrds/</a>
+</div>
+<div id="ref-FMARBUC03" class="csl-entry" role="listitem">
+Marques, F. F. C., &amp; Buckland, S. T. (2003). Incorporating covariates into standard line transect analyses. <em>Biometrics</em>, <em>59</em>, 924–935. <a href="https://doi.org/10.1111/j.0006-341x.2003.00107.x">https://doi.org/10.1111/j.0006-341x.2003.00107.x</a>
+</div>
+<div id="ref-r2024" class="csl-entry" role="listitem">
+R Core Team. (2024). <em>R: A language and environment for statistical computing</em>. Retrieved from <a href="https://www.R-project.org/">https://www.R-project.org/</a>
+</div>
+<div id="ref-Thomas2010" class="csl-entry" role="listitem">
+Thomas, L., Buckland, S. T., Rexstad, E. A., Laake, J. L., Strindberg, S., Hedley, S. L., … Burnham, K. P. (2010). Distance software: Design and analysis of distance sampling surveys for estimating population size. <em>Journal of Applied Ecology</em>, <em>47</em>(1), 5–14. https://doi.org/<a href="https://doi.org/10.1111/j.1365-2664.2009.01737.x">https://doi.org/10.1111/j.1365-2664.2009.01737.x</a>
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -913,18 +1234,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -956,11 +1266,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -970,8 +1319,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -983,7 +1341,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1027,6 +1508,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1052,6 +1534,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1114,13 +1622,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">Centre for Research into Ecological and Environmental Modelling</div>   
+    <div class="nav-footer-left">
+<p>Centre for Research into Ecological and Environmental Modelling</p>
+</div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
-    <div class="nav-footer-right">University of St Andrews</div>
+    <div class="nav-footer-right">
+<p>University of St Andrews</p>
+</div>
   </div>
 </footer>
+
 
 
 
