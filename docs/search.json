@@ -72,7 +72,7 @@
     "href": "11-mrds/mrdslanding.html#supplemental-materials",
     "title": "Analysis of double platform data",
     "section": "Supplemental materials",
-    "text": "Supplemental materials\n\nFurther reading on MRDS\n\nSee Burt et al. (2014) for a paper introducing MRDS methods. This is more accessible than the original MRDS reference (Laake & Borchers, 2004).\nBorchers et al. (2006) develop point independence methods.\nBuckland et al. (2010) go one step futher with “limiting independence” methods - but there is no accessible software to implement this.\nLaake et al. (2011) extend the methods to point transect surveys.\n\n\n\nOther approaches for dealing with g(0)&lt;1\n\nPointers to other approaches for dealing with g(0)&lt;1",
+    "text": "Supplemental materials\n\nFurther reading on MRDS\n\nSee Burt et al. (2014) for a paper introducing MRDS methods. This is more accessible than the original MRDS reference (Laake & Borchers, 2004).\n\nNotes on interpreting output from Burt et al. (2014) faecal pellet data\n\nBorchers et al. (2006) develop point independence methods.\nBuckland et al. (2010) go one step further with “limiting independence” methods - but there is no accessible software to implement this.\nLaake et al. (2011) extend the methods to point transect surveys.\n\n\n\nOther approaches for dealing with g(0)&lt;1\n\nPointers to other approaches for dealing with g(0)&lt;1",
     "crumbs": [
       "Double platform data (the g(0) problem)",
       "Analysis of double platform data"
