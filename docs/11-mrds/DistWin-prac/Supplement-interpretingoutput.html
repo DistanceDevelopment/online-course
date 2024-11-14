@@ -771,18 +771,52 @@ proportion detected by observer 2 of those seen by observer 1
 <section id="estimated-values" class="level2">
 <h2 class="anchored" data-anchor-id="estimated-values">Estimated values</h2>
 <p>The estimated probabilities are the probabilities of detection for detected objects. The model used to estimate them is given in parentheses.</p>
-<p><span class="math inline">\({\widehat{p}}_{j}(0)\)</span> (MR model) Estimate of probability of detection (of objects) on the trackline for observer <em>j</em> (<em>j</em>=1 or 2). If the MR model is of the form <span class="math inline">\({\widehat{p}}_{j|3 - j}(y) = \frac{exp({\widehat{\beta}}_{0} + {\widehat{\beta}}_{1}y)}{1 + exp({\widehat{\beta}}_{0} + {\widehat{\beta}}_{1}y)}\)</span> i.e.&nbsp;no covariates (except distance) then</p>
-<p><span class="math inline">\({\widehat{p}}_{j|3 - j}(0) = \frac{exp({\widehat{\beta}}_{0})}{1 + exp({\widehat{\beta}}_{0})}\)</span>. Similar calculations hold if observer is included (with the coefficient for observer included) but if other covariates are included, then the function is averaged over all covariates and a more complicated formula is used <span class="citation" data-cites="Laake2004">J. L. Laake &amp; Borchers (<a href="#ref-Laake2004" role="doc-biblioref">2004</a>)</span>.</p>
-<p><span class="math inline">\({\widehat{p}}_{P}(0)\)</span> (MR model) Estimate of probability of detection on the trackline (for both observers combined). When the MR model is simple (i.e.&nbsp;only contains covariates for distance (and/or observer in an IO configuration)), then <span class="math inline">\({\widehat{p}}_{P}(0) = {\widehat{p}}_{1}(0) + {\widehat{p}}_{2}(0) - {\widehat{p}}_{1}(0){\widehat{p}}_{2}(0)\)</span>. This equation does not hold when other covariates are included in the MR model; in this case, the intercept is obtained by averaging over all covariates (<span class="citation" data-cites="Laake2004">J. L. Laake &amp; Borchers (<a href="#ref-Laake2004" role="doc-biblioref">2004</a>)</span>).</p>
-<p><span class="math inline">\({\widehat{p}}_{P.DS}\)</span> (DS model) Estimate of probability of detection (over all distances) for both observers pooled</p>
-<p><span class="math inline">\({\widehat{p}}_{1.DS}\)</span> (DS model) Estimate of probability of detection (over all distances) for observer 1</p>
-<p><span class="math inline">\({\widehat{p}}_{P}\)</span> Estimate of probability of detection (over all distances) for both observers pooled taking into account imperfect detection on the trackline. Under the point independence assumption <span class="math inline">\({\widehat{p}}_{P} = \ {\widehat{p}}_{P}(0).{\widehat{p}}_{P.DS}\)</span></p>
-<p><span class="math inline">\({\widehat{p}}_{1}\)</span> Estimate of probability of detection (over all distances) for observer 1 taking into imperfect account detection on the trackline. Under the point independence assumption <span class="math inline">\({\widehat{p}}_{1} = \ {\widehat{p}}_{1}(0){\widehat{p}}_{1.DS}\)</span></p>
-<p><span class="math inline">\({\widehat{N}}_{cIO} = \frac{n_{P}}{\widehat{p}}\)</span> Estimated number of groups in the covered region for IO configuration</p>
-<p><span class="math inline">\({\widehat{N}}_{cT} = \frac{n_{1}}{{\widehat{p}}_{1}}\)</span> Estimated number of groups in the covered region for Trial configuration</p>
-<p><span class="math inline">\(\widehat{N}\)</span> Estimated number of individuals in the study region</p>
-<p><span class="math inline">\({\widehat{N}}_{g}\)</span> Estimated number of groups, or clusters, in the study region</p>
-<p><span class="math inline">\(E\left\lbrack \widehat{s} \right\rbrack = \frac{\widehat{N}}{{\widehat{N}}_{g}}\)</span> Expected group size</p>
+<dl>
+<dt><span class="math inline">\({\widehat{p}}_{j}(0)\)</span></dt>
+<dd>
+(MR model) Estimate of probability of detection (of objects) on the trackline for observer <em>j</em> (<em>j</em>=1 or 2). If the MR model is of the form <span class="math inline">\({\widehat{p}}_{j|3 - j}(y) = \frac{exp({\widehat{\beta}}_{0} + {\widehat{\beta}}_{1}y)}{1 + exp({\widehat{\beta}}_{0} + {\widehat{\beta}}_{1}y)}\)</span> i.e.&nbsp;no covariates (except distance) then <span class="math inline">\({\widehat{p}}_{j|3 - j}(0) = \frac{exp({\widehat{\beta}}_{0})}{1 + exp({\widehat{\beta}}_{0})}\)</span>. Similar calculations hold if observer is included (with the coefficient for observer included) but if other covariates are included, then the function is averaged over all covariates and a more complicated formula is used <span class="citation" data-cites="Laake2004">J. L. Laake &amp; Borchers (<a href="#ref-Laake2004" role="doc-biblioref">2004</a>)</span>.
+</dd>
+<dt><span class="math inline">\({\widehat{p}}_{P}(0)\)</span></dt>
+<dd>
+(MR model) Estimate of probability of detection on the trackline (for both observers combined). When the MR model is simple (i.e.&nbsp;only contains covariates for distance (and/or observer in an IO configuration)), then <span class="math inline">\({\widehat{p}}_{P}(0) = {\widehat{p}}_{1}(0) + {\widehat{p}}_{2}(0) - {\widehat{p}}_{1}(0){\widehat{p}}_{2}(0)\)</span>. This equation does not hold when other covariates are included in the MR model; in this case, the intercept is obtained by averaging over all covariates (<span class="citation" data-cites="Laake2004">J. L. Laake &amp; Borchers (<a href="#ref-Laake2004" role="doc-biblioref">2004</a>)</span>).
+</dd>
+<dt><span class="math inline">\({\widehat{p}}_{P.DS}\)</span></dt>
+<dd>
+(DS model) Estimate of probability of detection (over all distances) for both observers pooled
+</dd>
+<dt><span class="math inline">\({\widehat{p}}_{1.DS}\)</span></dt>
+<dd>
+(DS model) Estimate of probability of detection (over all distances) for observer 1
+</dd>
+<dt><span class="math inline">\({\widehat{p}}_{P}\)</span></dt>
+<dd>
+Estimate of probability of detection (over all distances) for both observers pooled taking into account imperfect detection on the trackline. Under the point independence assumption <span class="math inline">\({\widehat{p}}_{P} = \ {\widehat{p}}_{P}(0).{\widehat{p}}_{P.DS}\)</span>
+</dd>
+<dt><span class="math inline">\({\widehat{p}}_{1}\)</span></dt>
+<dd>
+Estimate of probability of detection (over all distances) for observer 1 taking into imperfect account detection on the trackline. Under the point independence assumption <span class="math inline">\({\widehat{p}}_{1} = \ {\widehat{p}}_{1}(0){\widehat{p}}_{1.DS}\)</span>
+</dd>
+<dt><span class="math inline">\({\widehat{N}}_{cIO} = \frac{n_{P}}{\widehat{p}}\)</span></dt>
+<dd>
+Estimated number of groups in the covered region for IO configuration
+</dd>
+<dt><span class="math inline">\({\widehat{N}}_{cT} = \frac{n_{1}}{{\widehat{p}}_{1}}\)</span></dt>
+<dd>
+Estimated number of groups in the covered region for Trial configuration
+</dd>
+<dt><span class="math inline">\(\widehat{N}\)</span></dt>
+<dd>
+Estimated number of individuals in the study region
+</dd>
+<dt><span class="math inline">\({\widehat{N}}_{g}\)</span></dt>
+<dd>
+Estimated number of groups, or clusters, in the study region
+</dd>
+<dt><span class="math inline">\(E\left\lbrack \widehat{s} \right\rbrack = \frac{\widehat{N}}{{\widehat{N}}_{g}}\)</span></dt>
+<dd>
+Expected group size
+</dd>
+</dl>
 </section>
 </section>
 <section id="output-from-mrds" class="level1">
