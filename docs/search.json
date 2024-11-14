@@ -1876,35 +1876,35 @@
     "href": "11-mrds/g0_otherapproaches.html#multiplier-approaches-to-dealing-with-availability-bias-in-line-transect-surveys",
     "title": "Other approaches to dealing with g(0)<1",
     "section": "Multiplier approaches to dealing with availability bias in line transect surveys",
-    "text": "Multiplier approaches to dealing with availability bias in line transect surveys\nIf a separate estimate of \\(g0\\) is avilable then it can be incorporated as a “multiplier”: \\(\\hat{N} = \\hat{g0} \\times \\hat{N}^*\\) where \\(\\hat{N}^*\\) is the estimate of \\(N\\) from a conventional or multiple covariate distance sampling analysis. Variance can be estimated using the delta method. Multiplers can readily be incorporated into analyses in the mrds package or in Distance for Windows.\nOne approach to estimating \\(g0\\) for marine mammals is based on knowledge of average surfacing and dive times. An early work on this is McLaren (1961) but this has been superseded by Laake et al. (1997). However, Borchers et al. (2013) showed that these approaches can be very biased, and developed and demonstrated an improved formulation, based on the use of Hidden Markov models (HHMs)."
+    "text": "Multiplier approaches to dealing with availability bias in line transect surveys\nIf a separate estimate of \\(g0\\) is available then it can be incorporated as a “multiplier”: \\(\\hat{N} = \\hat{g0} \\times \\hat{N}^*\\) where \\(\\hat{N}^*\\) is the estimate of \\(N\\) from a conventional or multiple covariate distance sampling analysis. Variance can be estimated using the delta method. Multiplers can readily be incorporated into analyses in the mrds package or in Distance for Windows.\nOne approach to estimating \\(g0\\) for marine mammals is based on knowledge of average surfacing and dive times. An early work on this is McLaren (1961) but this has been superseded by Laake et al. (1997). However, Borchers et al. (2013) showed that these approaches can be very biased, and developed and demonstrated an improved formulation, based on the use of Hidden Markov models (HHMs)."
   },
   {
     "objectID": "11-mrds/g0_otherapproaches.html#markov-modelling-approaches",
     "href": "11-mrds/g0_otherapproaches.html#markov-modelling-approaches",
     "title": "Other approaches to dealing with g(0)<1",
     "section": "Markov modelling approaches",
-    "text": "Markov modelling approaches\nDistance sampling is traditionally modelled in one dimension: using perpendicular distances for line transct surveys. In a series of papers, Borchers and colleagues showed that it can be viewed as a two-dimnensional process, with detection being a function of forward and perpendicular distances. This leads to approaches that can potentially accommodate uncertain detection at zero perpendicular distance, even using single-platform data. Relevant references are Borchers et al. (2013), Langrock, Borchers, and Skaug (2013) and Borchers and Langrock (2015). An R package that implements some of these methods is hmltm, although please note that this is a research-level output, not designed for general use."
+    "text": "Markov modelling approaches\nDistance sampling is traditionally modelled in one dimension: using perpendicular distances for line transect surveys. In a series of papers, Borchers and colleagues showed that it can be viewed as a two-dimnensional process, with detection being a function of forward and perpendicular distances. This leads to approaches that can potentially accommodate uncertain detection at zero perpendicular distance, even using single-platform data. Relevant references are Borchers et al. (2013), Langrock et al. (2013) and Borchers & Langrock (2015). An R package that implements some of these methods is hmltm, although please note that this is a research-level output, not designed for general use."
   },
   {
     "objectID": "11-mrds/g0_otherapproaches.html#duplicate-uncertainty",
     "href": "11-mrds/g0_otherapproaches.html#duplicate-uncertainty",
     "title": "Other approaches to dealing with g(0)<1",
     "section": "Duplicate uncertainty",
-    "text": "Duplicate uncertainty\nIn some situations, assignment of duplicate detections between platforms is not certain. One situation where this can occur is aerial surveys where there are either two planes, one following the other, or a single plane with muliple cameras pointing in different directions. In these circumstances the methods of Stevenson, Borchers, and Fewster (2018) or Borchers et al. (2020) may be useful. These both are accompanied by research-level R packages: palm and twoplane.\nAn alternative approach that involves a probabilistic approach to duplicate identification for aerial surveys is Hiby and Lovell (1998)."
+    "text": "Duplicate uncertainty\nIn some situations, assignment of duplicate detections between platforms is not certain. One situation where this can occur is aerial surveys where there are either two planes, one following the other, or a single plane with multiple cameras pointing in different directions. In these circumstances the methods of Stevenson et al. (2018) or Borchers et al. (2020) may be useful. These both are accompanied by research-level R packages: palm and twoplane.\nAn alternative approach that involves a probabilistic approach to duplicate identification for aerial surveys is Hiby & Lovell (1998)."
   },
   {
     "objectID": "11-mrds/g0_otherapproaches.html#other-ways-to-view-mrds-models",
     "href": "11-mrds/g0_otherapproaches.html#other-ways-to-view-mrds-models",
     "title": "Other approaches to dealing with g(0)<1",
     "section": "Other ways to view MRDS models",
-    "text": "Other ways to view MRDS models\nAlternative perspectives on full, point and limiting independence models are given by MacKenzie and Clement (2015) and Pavanato (2021)."
+    "text": "Other ways to view MRDS models\nAlternative perspectives on full, point and limiting independence models are given by MacKenzie & Clement (2015) and Pavanato (2021)."
   },
   {
     "objectID": "11-mrds/g0_otherapproaches.html#cue-counting",
     "href": "11-mrds/g0_otherapproaches.html#cue-counting",
     "title": "Other approaches to dealing with g(0)<1",
     "section": "Cue counting",
-    "text": "Cue counting\nCue counting is a potential approach to deal with \\(g(0)&lt;1\\) of aniamls. Instead of surveying for animals, you can survey for a cue they produce (e.g., a whale blow rather than a whale) where detection at zero distance is certain. However, a new problem then becomes obatining an estimate of cue rate. Cue counting is covered elsewhere in the workshop."
+    "text": "Cue counting\nCue counting is a potential approach to deal with \\(g(0)&lt;1\\) of animals. Instead of surveying for animals, you can survey for a cue they produce (e.g., a whale blow rather than a whale) where detection at zero distance is certain. However, a new problem then becomes obtaining an estimate of cue rate. Cue counting is covered elsewhere in the workshop."
   },
   {
     "objectID": "11-mrds/DistWin-prac/Supplement-interpretingoutput.html#observed-values",
