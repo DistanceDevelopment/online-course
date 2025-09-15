@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.55">
+<meta name="generator" content="quarto-1.6.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -51,15 +51,17 @@ div.csl-indent {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
+<script src="../../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-b663525e4b92bb903b2199e2d401bf36.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-a5524a688d1ded2b50cfac8bc111733f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -87,6 +89,33 @@ div.csl-indent {
     "search-label": "Search"
   }
 }</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-FBMGRT9ZQG"></script>
+
+<script type="text/plain" cookie-consent="tracking">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-FBMGRT9ZQG', { 'anonymize_ip': true});
+</script>
+
+<script type="text/javascript" charset="UTF-8">
+document.addEventListener('DOMContentLoaded', function () {
+cookieconsent.run({
+  "notice_banner_type":"simple",
+  "consent_type":"implied",
+  "palette":"light",
+  "language":"en",
+  "page_load_consent_levels":["strictly-necessary","functionality","tracking","targeting"],
+  "notice_banner_reject_button_hide":false,
+  "preferences_center_close_button_hide":false,
+  "website_name":""
+  ,
+"language":"en"
+  });
+});
+</script> 
+  
 <script src="https://kit.fontawesome.com/78ddb093ea.js" crossorigin="anonymous"></script>
 <script type="text/javascript">
 
@@ -164,11 +193,11 @@ window.Quarto = {
  <span class="dropdown-text">Distance home</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://workshops.distancesampling.org">
+    <a class="dropdown-item" href="https://distancesampling.org/training/training.html">
  <span class="dropdown-text">Workshops</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://examples.distancesampling.org">
+    <a class="dropdown-item" href="https://distancesampling.org/resources/vignettes.html">
  <span class="dropdown-text">Case studies</span></a>
   </li>  
     </ul>
@@ -571,14 +600,14 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../11-mrds/Mod11-2023-mrds.pdf" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture slides absent</span></a>
+  <a href="../../11-mrds/Mod11-2024-mrds.pdf" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture slides</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="https://youtu.be/lm5-VR-8jX0" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture video wrong</span></a>
+  <a href="https://youtu.be/qPeYp6FTFHo" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture video</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -698,7 +727,7 @@ Analysis of double platform data
 <p>These solutions are applicable to both the Distance for Windows and <code>mrds</code> R versions.</p>
 <section id="golf-tee-survey" class="level1">
 <h1>Golf Tee Survey</h1>
-<p>This example dataset is discussed in Chapter 6 of <span class="citation" data-cites="BUC04">Buckland et al. (<a href="#ref-BUC04" role="doc-biblioref">2004</a>)</span> and results for the trial setup are given in Table 6.5 (page 160). Results are also available in the Distance windows project <a href="GolfteesSolutions.zip">GolfteesSolutions.zip</a>.</p>
+<p>This example dataset is discussed in Chapter 6 of <span class="citation" data-cites="BUC04">(<a href="#ref-BUC04" role="doc-biblioref"><strong>BUC04?</strong></a>)</span> and results for the trial setup are given in Table 6.5 (page 160). Results are also available in the Distance windows project <a href="GolfteesSolutions.zip">GolfteesSolutions.zip</a>.</p>
 <p>(Note that there are differences in the measures of precision between the Distance for Windows version and the <code>mrds</code> in R version because the number of transect lines (samples) differed between the two sets of data. Other statistics are the same.)</p>
 <section id="estimation-of-p-fi---mr-dist-and-fi---mr-distsizesexexp" class="level2">
 <h2 class="anchored" data-anchor-id="estimation-of-p-fi---mr-dist-and-fi---mr-distsizesexexp">Estimation of <em>p</em>; FI - MR dist and FI - MR dist+size+sex+exp</h2>
@@ -714,7 +743,7 @@ Analysis of double platform data
 <h2 class="anchored" data-anchor-id="point-independence">Point independence</h2>
 <p>The point independence model with just Distance in the MR model (‘PI – MR dist DS hn’) had a slightly lower AIC than the corresponding full independence model (‘FI – MR dist’), however, the abundance estimate is much closer to truth (Table 1). We can expect the bias to be smaller for the point independence model because the assumption of independence only on the trackline is weaker than assuming independence everywhere.</p>
 <p>Comparing the previous best FI model (‘FI – MR dist + sex x exp’) with the equivalent PI model with no covariates in the DS part (‘PI – MR dist + sex x exp DS hn’), the former had a lower AIC, and similarly for a model with no interactions in the MR model (model ‘PI – MR dist + sex + exp DS hn’). The difference in bias between FI and PI models is less for these models with more covariates, as there is less unmodelled heterogeneity that can contribute to non-independence away from the trackline (i.e., violation of the independence assumption of the FI model).</p>
-<p>Adding sex as a covariate into the DS model (‘PI – MR dist + sex + exp DS hn sex’) produced a model with the lowest AIC yet, and also the closest estimate (695) to true N. This model was found to have lowest AIC in a comparison of 40 models in Chapter 6 <span class="citation" data-cites="BUC04">(<a href="#ref-BUC04" role="doc-biblioref">Buckland et al., 2004</a>, Table 6.5)</span>. The estimate is still less than the true N indicating, perhaps, some unmodelled heterogeneity on the trackline (or perhaps just bad luck – remember that this is only one survey).</p>
+<p>Adding sex as a covariate into the DS model (‘PI – MR dist + sex + exp DS hn sex’) produced a model with the lowest AIC yet, and also the closest estimate (695) to true N. This model was found to have lowest AIC in a comparison of 40 models in Chapter 6 <span class="citation" data-cites="BUC04">(<a href="#ref-BUC04" role="doc-biblioref"><strong>BUC04?</strong></a>, Table 6.5)</span>. The estimate is still less than the true N indicating, perhaps, some unmodelled heterogeneity on the trackline (or perhaps just bad luck – remember that this is only one survey).</p>
 <p><em>Was this complex modelling worthwhile?</em> In this case, the estimated <em>p</em>(0) for the best model was 0.96. If we ran a conventional distance sampling analysis (i.e.&nbsp;single platform), pooling the data from the two observers, we should get a very robust estimate of N. We did this in the final analysis in the solutions Distance project <a href="GolfteeSolutions.zip">GolfteeSolutions.zip</a>.</p>
 <ul>
 <li>To do this, we selected only records where Observer = 1 regardless of whether they were seen by that observer or not – i.e.&nbsp;we use data from both observers combined, who will have a higher <em>p</em>(0) than either of them on their own.</li>
@@ -842,9 +871,6 @@ Analysis of double platform data
 <div id="ref-Borchers2006" class="csl-entry" role="listitem">
 Borchers, D. L., Laake, J. L., Southwell, C., &amp; Paxton, C. G. M. (2006). Accommodating unmodeled heterogeneity in double-observer distance sampling surveys. <em>Biometrics</em>, <em>62</em>, 372–378. <a href="https://doi.org/10.1111/j.1541-0420.2005.00493.x">https://doi.org/10.1111/j.1541-0420.2005.00493.x</a>
 </div>
-<div id="ref-BUC04" class="csl-entry" role="listitem">
-Buckland, S. T., Anderson, D. R., Burnham, K. P., Laake, J. L., Borchers, D. L., &amp; Thomas, L. (2004). <em>Advanced distance sampling</em>. <span>Oxford</span>: <span>Oxford University Press</span>.
-</div>
 <div id="ref-Southwell2007" class="csl-entry" role="listitem">
 Southwell, C., Borchers, D., de la Mare, B., Paxton, C. G. M., Burt, L., &amp; de la Mare, W. (2007). Estimation of detection probability on aerial surveys of <span>Antarctic</span> pack-ice seals. <em>Journal of Agricultural, Biological, and Environmental Statistics</em>, <em>12</em>, 1–14. <a href="https://doi.org/10.1198/108571107X162920">https://doi.org/10.1198/108571107X162920</a>
 </div>
@@ -936,8 +962,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -1048,7 +1072,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
@@ -1281,8 +1304,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <p>Centre for Research into Ecological and Environmental Modelling</p>
 </div>   
     <div class="nav-footer-center">
-      &nbsp;
-    </div>
+
+<div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
     <div class="nav-footer-right">
 <p>University of St Andrews</p>
 </div>

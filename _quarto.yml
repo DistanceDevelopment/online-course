@@ -4,6 +4,9 @@ project:
 
 website:
   title: "Introductory distance sampling training materials"
+  google-analytics: "G-FBMGRT9ZQG"
+  cookie-consent:
+    type: implied
   page-footer:
     left: "Centre for Research into Ecological and Environmental Modelling"
     right: "University of St Andrews"

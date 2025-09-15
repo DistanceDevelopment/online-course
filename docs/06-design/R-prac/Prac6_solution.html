@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.55">
+<meta name="generator" content="quarto-1.6.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -65,15 +65,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
+<script src="../../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-b663525e4b92bb903b2199e2d401bf36.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-a5524a688d1ded2b50cfac8bc111733f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -101,6 +103,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-FBMGRT9ZQG"></script>
+
+<script type="text/plain" cookie-consent="tracking">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-FBMGRT9ZQG', { 'anonymize_ip': true});
+</script>
+
+<script type="text/javascript" charset="UTF-8">
+document.addEventListener('DOMContentLoaded', function () {
+cookieconsent.run({
+  "notice_banner_type":"simple",
+  "consent_type":"implied",
+  "palette":"light",
+  "language":"en",
+  "page_load_consent_levels":["strictly-necessary","functionality","tracking","targeting"],
+  "notice_banner_reject_button_hide":false,
+  "preferences_center_close_button_hide":false,
+  "website_name":""
+  ,
+"language":"en"
+  });
+});
+</script> 
+  
 <script src="https://kit.fontawesome.com/78ddb093ea.js" crossorigin="anonymous"></script>
 <script type="text/javascript">
 
@@ -149,11 +178,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">Distance home</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://workshops.distancesampling.org">
+    <a class="dropdown-item" href="https://distancesampling.org/training/training.html">
  <span class="dropdown-text">Workshops</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://examples.distancesampling.org">
+    <a class="dropdown-item" href="https://distancesampling.org/resources/vignettes.html">
  <span class="dropdown-text">Case studies</span></a>
   </li>  
     </ul>
@@ -556,14 +585,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../11-mrds/Mod11-2023-mrds.pdf" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture slides absent</span></a>
+  <a href="../../11-mrds/Mod11-2024-mrds.pdf" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture slides</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="https://youtu.be/lm5-VR-8jX0" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture video wrong</span></a>
+  <a href="https://youtu.be/qPeYp6FTFHo" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture video</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -676,7 +705,7 @@ Solution
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(dssd)</span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(sf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Linking to GEOS 3.12.1, GDAL 3.8.4, PROJ 9.3.1; sf_use_s2() is TRUE</code></pre>
+<pre><code>Linking to GEOS 3.13.1, GDAL 3.10.2, PROJ 9.5.1; sf_use_s2() is TRUE</code></pre>
 </div>
 </div>
 <section id="aerial-survey-of-marine-mammals-in-st-andrews-bay" class="level1">
@@ -751,61 +780,61 @@ Minimum            7.0   7.0
 Mean               7.9   7.9
 Median             8.0   8.0
 Maximum            8.0   8.0
-sd                 0.2   0.2
+sd                 0.3   0.3
 
     Covered area:
     
         St Andrews Bay     Total
-Minimum      726475938 726475938
-Mean         761495164 761495164
-Median       766397303 766397303
-Maximum      778636421 778636421
-sd            14951337  14951337
+Minimum      725968165 725968165
+Mean         760235415 760235415
+Median       766071154 766071154
+Maximum      778542291 778542291
+sd            15813840  15813840
 
     % of region covered:
     
         St Andrews Bay Total
-Minimum          73.57 73.57
-Mean             77.11 77.11
-Median           77.61 77.61
-Maximum          78.85 78.85
-sd                1.51  1.51
+Minimum          73.52 73.52
+Mean             76.99 76.99
+Median           77.58 77.58
+Maximum          78.84 78.84
+sd                1.60  1.60
 
     Line length:
     
         St Andrews Bay     Total
-Minimum      184440.04 184440.04
-Mean         197769.33 197769.33
-Median       198792.64 198792.64
-Maximum      205770.46 205770.46
-sd             5662.35   5662.35
+Minimum      184426.62 184426.62
+Mean         197279.22 197279.22
+Median       198869.09 198869.09
+Maximum      205758.65 205758.65
+sd             6221.63   6221.63
 
     Trackline length:
     
         St Andrews Bay     Total
-Minimum      220531.41 220531.41
-Mean         242772.12 242772.12
-Median       246251.49 246251.49
-Maximum      248799.33 248799.33
-sd             7485.98   7485.98
+Minimum      220525.55 220525.55
+Mean         242000.35 242000.35
+Median       246185.86 246185.86
+Maximum      248788.84 248788.84
+sd             8294.56   8294.56
 
     Cyclic trackline length:
     
-        St Andrews Bay     Total
-Minimum      251944.76 251944.76
-Mean         279722.19 279722.19
-Median       283646.96 283646.96
-Maximum      285985.72 285985.72
-sd             8556.03   8556.03
+        St Andrews Bay    Total
+Minimum       251934.1 251934.1
+Mean          278675.9 278675.9
+Median        283550.2 283550.2
+Maximum       285975.2 285975.2
+sd              9849.2   9849.2
 
     Coverage Score Summary:
     
         St Andrews Bay      Total
-Minimum     0.37200000 0.37200000
-Mean        0.77120368 0.77120368
-Median      0.79600000 0.79600000
-Maximum     0.84400000 0.84400000
-sd          0.08376865 0.08376865</code></pre>
+Minimum     0.32400000 0.32400000
+Mean        0.76984634 0.76984634
+Median      0.78800000 0.78800000
+Maximum     0.86800000 0.86800000
+sd          0.09231636 0.09231636</code></pre>
 </div>
 </div>
 </section>
@@ -942,29 +971,29 @@ GEOGCRS["WGS 84",
    __________________
 Design:  systematically spaced transects
 Spacing:  751.2295
-Number of samplers:  25
+Number of samplers:  24
 Design angle:  0
 Edge protocol:  minus
-Covered area:  758758.5
-Strata coverage: 5.38%
+Covered area:  740060
+Strata coverage: 5.25%
 Strata area:  14108643
 
    Strata Morton Lochs:
    _____________________
 Design:  systematically spaced transects
 Spacing:  218.3674
-Number of samplers:  15
+Number of samplers:  17
 Design angle:  0
 Edge protocol:  minus
-Covered area:  412791.9
-Strata coverage: 57.71%
+Covered area:  453315.8
+Strata coverage: 63.38%
 Strata area:  715264.9
 
    Study Area Totals:
    _________________
-Number of samplers:  40
-Covered area:  1171550
-Average coverage: 7.9%</code></pre>
+Number of samplers:  41
+Covered area:  1193376
+Average coverage: 8.05%</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -1011,38 +1040,38 @@ Coverage Simulation repetitions:  250
     Number of samplers:
     
         Main Area Morton Lochs Total
-Minimum      22.0         12.0  36.0
-Mean         24.9         15.0  39.9
-Median       25.0         15.0  40.0
-Maximum      27.0         18.0  44.0
-sd            1.0          1.2   1.5
+Minimum        22         11.0  36.0
+Mean           25         15.1  40.1
+Median         25         15.0  40.0
+Maximum        27         18.0  43.0
+sd              1          1.2   1.5
 
     Covered area:
     
         Main Area Morton Lochs      Total
-Minimum 673945.64    347810.04 1067057.29
-Mean    761859.83    416894.79 1178754.63
-Median  763209.08    415642.26 1180365.83
-Maximum 819995.66    469139.40 1282511.60
-sd       30136.67     27749.45   40029.67
+Minimum  678361.0    331874.78 1086003.55
+Mean     764516.7    417150.19 1181666.87
+Median   769381.1    414832.46 1182361.84
+Maximum  819336.4    469112.76 1273688.38
+sd        28428.7     26088.74   36897.17
 
     % of region covered:
     
         Main Area Morton Lochs Total
-Minimum      4.78        48.63  7.20
-Mean         5.40        58.29  7.95
-Median       5.41        58.11  7.96
-Maximum      5.81        65.59  8.65
-sd           0.21         3.88  0.27
+Minimum      4.81        46.40  7.33
+Mean         5.42        58.32  7.97
+Median       5.45        58.00  7.98
+Maximum      5.81        65.59  8.59
+sd           0.20         3.65  0.25
 
     Coverage Score Summary:
     
          Main Area Morton Lochs      Total
-Minimum 0.00800000    0.2640000 0.00800000
-Mean    0.05403951    0.5865167 0.07960864
-Median  0.05200000    0.6200000 0.05200000
-Maximum 0.11200000    0.7360000 0.73600000
-sd      0.01680356    0.1122782 0.11762456</code></pre>
+Minimum 0.00400000    0.2560000 0.00400000
+Mean    0.05419588    0.5825667 0.07956783
+Median  0.05200000    0.6320000 0.05600000
+Maximum 0.10400000    0.7040000 0.70400000
+sd      0.01697018    0.1098726 0.11668828</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -1188,8 +1217,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -1300,7 +1327,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
@@ -1533,8 +1559,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <p>Centre for Research into Ecological and Environmental Modelling</p>
 </div>   
     <div class="nav-footer-center">
-      &nbsp;
-    </div>
+
+<div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
     <div class="nav-footer-right">
 <p>University of St Andrews</p>
 </div>
