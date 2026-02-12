@@ -33,5 +33,5 @@ Distance sampling software has undergone an evolution over the >25 years since d
 ## Other distance sampling resources
 
 - A "one stop" resources for distance sampling materials developed by CREEM can be found at [https://distancesampling.org](https://distancesampling.org)
-- If you wish to receive training in distance sampling with a "live" instructor, CREEM offers workshops carried out online. Offerings of these training opportunities can be found on our [training web page](https://distancedevelopment.github.io/distancesamplingcom2/training/training.html)
-- Examples of distance sampling analyses conducted using the `Distance` R package can be found on our [case studies](https://distancedevelopment.github.io/distancesamplingcom2/resources/vignettes.html) pages.
+- If you wish to receive training in distance sampling with a "live" instructor, CREEM offers workshops carried out online. Offerings of these training opportunities can be found on our [training web page](https://distancesampling.org/training/training.html)
+- Examples of distance sampling analyses conducted using the `Distance` R package can be found on our [case studies](https://distancesampling.org/resources/vignettes.html) pages.
