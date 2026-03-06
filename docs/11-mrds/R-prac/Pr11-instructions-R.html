@@ -1297,7 +1297,7 @@ N in covered region 223.9038534 22.99246338 0.10268900</code></pre>
 <li>altitude – the height of the aircraft in metres</li>
 <li>obsname – unique identifier of observer</li>
 </ul>
-<p>The data from the survey has been saved in a <code>.csv</code> file. This file is read into R using <code>read.csv</code>.</p>
+<p>The data from the survey has been saved in a <code>.csv</code> file. This file is read into R using <code>read.csv</code>. Before reading the <code>CSV</code> file, you will save it to your local computer. These data are available in <a href="crabbieMRDS.csv">crabbieMRDS.csv</a>; use right mouse button on link to save <code>crabbieMRDS.csv</code> to your local drive so you can access the MRDS file.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a>crabseal <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"crabbieMRDS.csv"</span>)</span>
 <span id="cb24-2"><a href="#cb24-2"></a><span class="fu">str</span>(crabseal)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1547,7 +1547,7 @@ pi.mr.dist.observer.ds.hn.fold15  4 5065.830</code></pre>
 </section>
 <section id="crabeater-seals-with-mcds-optional" class="level3">
 <h3 class="anchored" data-anchor-id="crabeater-seals-with-mcds-optional">Crabeater seals with MCDS (optional)</h3>
-<p>We can also analyse the crabeater seals data as if it were single platform data (i.e.&nbsp;ignoring that <span class="math inline">\(p(0)\)</span> is less than 1). These data are available in <a href="crabbieMCDS.csv`"><code>crabbieMCDS.csv</code></a>.</p>
+<p>We can also analyse the crabeater seals data as if it were single platform data (i.e.&nbsp;ignoring that <span class="math inline">\(p(0)\)</span> is less than 1). These data are available in <a href="crabbieMCDS.csv">crabbieMCDS.csv</a>; use right mouse button on link to save <code>crabbieMCDS.csv</code> to your local drive so you can access the MCDS file.</p>
 <p>This short exercise guides you through the import of these data into R and fits a simple half-normal detection function examining the possible improvement of the model by incorporating <em>side of plane</em> and <em>visibility</em> covariates (using the full dataset).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a><span class="co"># Load Distance for MCDS </span></span>
@@ -1652,13 +1652,13 @@ pi.mr.dist.observer.ds.hn.fold15  4 5065.830</code></pre>
 <pre><code>Fitting half-normal key function with cosine(2,3) adjustments</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>AIC= 22304.016</code></pre>
+<pre><code>AIC= 22304.015</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Fitting half-normal key function with cosine(2,3,4) adjustments</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>AIC= 22305.981</code></pre>
+<pre><code>AIC= 22305.943</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
 <pre><code>

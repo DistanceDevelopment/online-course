@@ -250,7 +250,7 @@ There were four independent observers in the helicopter, two on each side (front
 - altitude -- the height of the aircraft in metres
 - obsname -- unique identifier of observer
 
-The data from the survey has been saved in a `.csv` file. This file is read into R using `read.csv`.
+The data from the survey has been saved in a `.csv` file. This file is read into R using `read.csv`. Before reading the `CSV` file, you will save it to your local computer. These data are available in [crabbieMRDS.csv](crabbieMRDS.csv); use right mouse button on link to save `crabbieMRDS.csv` to your local drive so you can access the MRDS file.
 
 ```{r, crabdat, comment=NA, echo=T, message=F}
 crabseal <- read.csv("crabbieMRDS.csv")
@@ -345,7 +345,7 @@ knitr::kable(pi.abund$individual$N, digits=3,
 
 ### Crabeater seals with MCDS (optional)
 
-We can also analyse the crabeater seals data as if it were single platform data (i.e. ignoring that $p(0)$ is less than 1). These data are available in [`crabbieMCDS.csv`](crabbieMCDS.csv`).
+We can also analyse the crabeater seals data as if it were single platform data (i.e. ignoring that $p(0)$ is less than 1). These data are available in [crabbieMCDS.csv](crabbieMCDS.csv); use right mouse button on link to save `crabbieMCDS.csv` to your local drive so you can access the MCDS file.
 
 This short exercise guides you through the import of these data into R and fits a simple half-normal detection function examining the possible improvement of the model by incorporating _side of plane_ and _visibility_ covariates (using the full dataset).
 
