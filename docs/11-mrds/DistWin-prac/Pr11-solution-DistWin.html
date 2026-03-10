@@ -256,7 +256,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="https://youtu.be/_4RX6P4PB4k" class="sidebar-item-text sidebar-link">
+  <a href="https://youtu.be/X5TDNmy7j68" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture video</span></a>
   </div>
 </li>
@@ -727,7 +727,7 @@ Analysis of double platform data
 <p>These solutions are applicable to both the Distance for Windows and <code>mrds</code> R versions.</p>
 <section id="golf-tee-survey" class="level1">
 <h1>Golf Tee Survey</h1>
-<p>This example dataset is discussed in Chapter 6 of <span class="citation" data-cites="BUC04">(<a href="#ref-BUC04" role="doc-biblioref"><strong>BUC04?</strong></a>)</span> and results for the trial setup are given in Table 6.5 (page 160). Results are also available in the Distance windows project <a href="GolfteesSolutions.zip">GolfteesSolutions.zip</a>.</p>
+<p>This example dataset is discussed in <span class="citation" data-cites="Laake2004">Laake &amp; Borchers (<a href="#ref-Laake2004" role="doc-biblioref">2004</a>)</span> and results for the trial setup are given in Table 6.5 (page 160). Results are also available in the Distance windows project <a href="GolfteesSolutions.zip">GolfteesSolutions.zip</a>.</p>
 <p>(Note that there are differences in the measures of precision between the Distance for Windows version and the <code>mrds</code> in R version because the number of transect lines (samples) differed between the two sets of data. Other statistics are the same.)</p>
 <section id="estimation-of-p-fi---mr-dist-and-fi---mr-distsizesexexp" class="level2">
 <h2 class="anchored" data-anchor-id="estimation-of-p-fi---mr-dist-and-fi---mr-distsizesexexp">Estimation of <em>p</em>; FI - MR dist and FI - MR dist+size+sex+exp</h2>
@@ -743,7 +743,7 @@ Analysis of double platform data
 <h2 class="anchored" data-anchor-id="point-independence">Point independence</h2>
 <p>The point independence model with just Distance in the MR model (‘PI – MR dist DS hn’) had a slightly lower AIC than the corresponding full independence model (‘FI – MR dist’), however, the abundance estimate is much closer to truth (Table 1). We can expect the bias to be smaller for the point independence model because the assumption of independence only on the trackline is weaker than assuming independence everywhere.</p>
 <p>Comparing the previous best FI model (‘FI – MR dist + sex x exp’) with the equivalent PI model with no covariates in the DS part (‘PI – MR dist + sex x exp DS hn’), the former had a lower AIC, and similarly for a model with no interactions in the MR model (model ‘PI – MR dist + sex + exp DS hn’). The difference in bias between FI and PI models is less for these models with more covariates, as there is less unmodelled heterogeneity that can contribute to non-independence away from the trackline (i.e., violation of the independence assumption of the FI model).</p>
-<p>Adding sex as a covariate into the DS model (‘PI – MR dist + sex + exp DS hn sex’) produced a model with the lowest AIC yet, and also the closest estimate (695) to true N. This model was found to have lowest AIC in a comparison of 40 models in Chapter 6 <span class="citation" data-cites="BUC04">(<a href="#ref-BUC04" role="doc-biblioref"><strong>BUC04?</strong></a>, Table 6.5)</span>. The estimate is still less than the true N indicating, perhaps, some unmodelled heterogeneity on the trackline (or perhaps just bad luck – remember that this is only one survey).</p>
+<p>Adding sex as a covariate into the DS model (‘PI – MR dist + sex + exp DS hn sex’) produced a model with the lowest AIC yet, and also the closest estimate (695) to true N. This model was found to have lowest AIC in a comparison of 40 models examined <span class="citation" data-cites="Laake2004">(<a href="#ref-Laake2004" role="doc-biblioref">Laake &amp; Borchers, 2004</a>, Table 6.5)</span>. The estimate is still less than the true N indicating, perhaps, some unmodelled heterogeneity on the trackline (or perhaps just bad luck – remember that this is only one survey).</p>
 <p><em>Was this complex modelling worthwhile?</em> In this case, the estimated <em>p</em>(0) for the best model was 0.96. If we ran a conventional distance sampling analysis (i.e.&nbsp;single platform), pooling the data from the two observers, we should get a very robust estimate of N. We did this in the final analysis in the solutions Distance project <a href="GolfteeSolutions.zip">GolfteeSolutions.zip</a>.</p>
 <ul>
 <li>To do this, we selected only records where Observer = 1 regardless of whether they were seen by that observer or not – i.e.&nbsp;we use data from both observers combined, who will have a higher <em>p</em>(0) than either of them on their own.</li>
@@ -870,6 +870,9 @@ Analysis of double platform data
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
 <div id="ref-Borchers2006" class="csl-entry" role="listitem">
 Borchers, D. L., Laake, J. L., Southwell, C., &amp; Paxton, C. G. M. (2006). Accommodating unmodeled heterogeneity in double-observer distance sampling surveys. <em>Biometrics</em>, <em>62</em>, 372–378. <a href="https://doi.org/10.1111/j.1541-0420.2005.00493.x">https://doi.org/10.1111/j.1541-0420.2005.00493.x</a>
+</div>
+<div id="ref-Laake2004" class="csl-entry" role="listitem">
+Laake, J. L., &amp; Borchers, D. L. (2004). Methods for incomplete detection at distance zero. In S. T. Buckland, D. R. Anderson, K. P. Burnham, J. L. Laake, D. L. Borchers, &amp; L. Thomas (Eds.), <em>Advanced distance sampling</em> (pp. 127–208). <span>Oxford</span>: <span>Oxford University Press</span>.
 </div>
 <div id="ref-Southwell2007" class="csl-entry" role="listitem">
 Southwell, C., Borchers, D., de la Mare, B., Paxton, C. G. M., Burt, L., &amp; de la Mare, W. (2007). Estimation of detection probability on aerial surveys of <span>Antarctic</span> pack-ice seals. <em>Journal of Agricultural, Biological, and Environmental Statistics</em>, <em>12</em>, 1–14. <a href="https://doi.org/10.1198/108571107X162920">https://doi.org/10.1198/108571107X162920</a>

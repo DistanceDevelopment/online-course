@@ -16,7 +16,7 @@ These solutions are applicable to both the Distance for Windows and `mrds` R ver
 
 # Golf Tee Survey
 
-This example dataset is discussed in Chapter 6 of @BUC04 and results for the trial setup are given in Table 6.5 (page 160). Results are also available in the Distance windows project [GolfteesSolutions.zip](GolfteesSolutions.zip).
+This example dataset is discussed in @Laake2004 and results for the trial setup are given in Table 6.5 (page 160). Results are also available in the Distance windows project [GolfteesSolutions.zip](GolfteesSolutions.zip).
 
 (Note that there are differences in the measures of precision between the Distance for Windows version and the `mrds` in R version because the number of transect lines (samples) differed between the two sets of data. Other statistics are the same.)
 
@@ -38,7 +38,7 @@ The point independence model with just Distance in the MR model (‘PI – MR di
 
 Comparing the previous best FI model (‘FI – MR dist + sex x exp’) with the equivalent PI model with no covariates in the DS part (‘PI – MR dist + sex x exp DS hn’), the former had a lower AIC, and similarly for a model with no interactions in the MR model (model ‘PI – MR dist + sex + exp DS hn’). The difference in bias between FI and PI models is less for these models with more covariates, as there is less unmodelled heterogeneity that can contribute to non-independence away from the trackline (i.e., violation of the independence assumption of the FI model).
 
-Adding sex as a covariate into the DS model (‘PI – MR dist + sex + exp DS hn sex’) produced a model with the lowest AIC yet, and also the closest estimate (695) to true N. This model was found to have lowest AIC in a comparison of 40 models in Chapter 6 [@BUC04, Table 6.5]. The estimate is still less than the true N indicating, perhaps, some unmodelled heterogeneity on the trackline (or perhaps just bad luck – remember that this is only one survey).
+Adding sex as a covariate into the DS model (‘PI – MR dist + sex + exp DS hn sex’) produced a model with the lowest AIC yet, and also the closest estimate (695) to true N. This model was found to have lowest AIC in a comparison of 40 models examined [@Laake2004, Table 6.5]. The estimate is still less than the true N indicating, perhaps, some unmodelled heterogeneity on the trackline (or perhaps just bad luck – remember that this is only one survey).
 
 _Was this complex modelling worthwhile?_ In this case, the estimated *p*(0) for the best model was 0.96. If we ran a conventional distance sampling analysis (i.e. single platform), pooling the data from the two observers, we should get a very robust estimate of N. We did this in the final analysis in the solutions Distance project [GolfteeSolutions.zip](GolfteeSolutions.zip). 
 
